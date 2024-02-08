@@ -11,7 +11,7 @@ tags:
 
 **Key information**
 
-- This paper learns two models: a world model trained on o**ff-policy sequences through** supervised learning, and an actor-critic model to learn behaviors from trajectories predicted by the learned model.
+- This paper learns two models: a world model trained on **off-policy sequences through** supervised learning, and an actor-critic model to learn behaviors from trajectories predicted by the learned model.
 - The data collection and learning updates are decoupled, enabling fast training without waiting for the environment. A learner thread continuously trains the world model and actor-critic behavior, while an actor thread in parallel computes actions for environment interaction.
 
 **World model learning**
@@ -43,13 +43,5 @@ The paper gives a method in which RL can be trained in real environments aside f
 - [Games](https://github.com/danijar/dreamerv2) (Easier to reproduce)
 This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
 
-Headings are cool
-======
-
-You can have many headings
-======
-
-Aren't headings cool?
 ------
 
-123
