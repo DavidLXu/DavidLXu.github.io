@@ -41,7 +41,6 @@ The paper gives a method in which RL can be trained in real environments aside f
 
 - [Physical robots](https://github.com/danijar/daydreamer) (May require MuJoCo or Isaac to reproduce due to lack of hardware)
 - [Games](https://github.com/danijar/dreamerv2) (Easier to reproduce)
-This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
 
 ------
 
