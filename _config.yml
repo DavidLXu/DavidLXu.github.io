@@ -84,10 +84,10 @@ author:
   avatar           : "profile.png"
   bio              : "Self-motivated student researcher and practitioner in robotics"
   location         : "Shenzhen, China"
-  employer         : Georgia Institute of Technology
+  employer         : "Georgia Institute of Technology"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            : davidxulixin@gmail.com
+  email            : "davidxulixin [at] gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
