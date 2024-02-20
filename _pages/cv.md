@@ -9,6 +9,9 @@ redirect_from:
 
 {% include base_path %}
 
+[English Resume](DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
+[简历中文版](DavidLXu.github.io/files/Lixin_CN_Resume.pdf)
+<!--
 Education
 ======
 * B.S. in GitHub, GitHub University, 2012
@@ -57,3 +60,5 @@ Teaching
 Service and leadership
 ======
 * Currently signed in to 43 different slack teams
+
+-->
