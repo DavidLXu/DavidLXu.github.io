@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Lixin Xu"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Tianjin, China"
+  bio              : "Self-motivated student researcher and practitioner in robotics"
+  location         : "Shenzhen, China"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
@@ -115,6 +115,7 @@ author:
   xing             :
   youtube          :
   wikipedia        :
+  zhihu            : "https://www.zhihu.com/people/david-xu-16"
 
 
 # Reading Files
