@@ -1,5 +1,5 @@
 ---
-title: '[CoRL 2022]DayDreamer: World Models for Physical Robot Learning'
+title: '[Paper Notes] DayDreamer: World Models for Physical Robot Learning - CoRL 2022'
 date: 2024-02-06
 permalink: /posts/2024/02/blog-post-1/
 tags:
