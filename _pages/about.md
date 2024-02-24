@@ -24,6 +24,8 @@ Miscellaneous
 ===
 I like skiing, and I went skiing 5 times this winter. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a very young age.
 
+Driven by my wanderlust, I have journeyed to 5 different countries and 15 provinces in China.
+
 I am a language enthusiast. My preferred languages: Chinese(native), English(IELTS7.5), German(roughly B1), Japanese(roughly N4), and Cantonese (beginner).
 
 Two persons I admire the most:  Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.
