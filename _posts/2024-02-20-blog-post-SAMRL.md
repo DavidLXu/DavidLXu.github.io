@@ -8,12 +8,26 @@ tags:
   - RSS
 ---
 
-
 Key information
 ===
-- This paper 
+- Model-based reinforcement learning (MBRL) is potentially more sample-efficient than model-free RL.
+- Integration of differentiable physics-based simulation and rendering facilitates the learning process.
+- Pipeline: Real2Sim -> Learn@Sim -> Sim2Real to produce efficient policies.
 
+Differentiable Simulation and Rendering
+===
 
+Real2Sim
+===
+
+Learn@Sim
+===
+
+Sim2Real
+===
+
+Experiments
+===
 
 My takeaways
 ===
