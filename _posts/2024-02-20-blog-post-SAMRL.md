@@ -43,8 +43,10 @@ This stage focuses on learning sensing-aware action within a simulated environme
 
 Sim2Real
 ===
+This part starts with the policy learned in simulation, denoted as $\pi_{sim}$, which takes rendered images ($I_{sim}$) as inputs and outputs actions ($a_{sim}$). To bridge the sim-to-real gap, a residual policy $\pi_{res}$ is trained. This policy takes in real-world images ($I_{real}$) and simulated actions ($a_{sim}$), outputting a residual action ($\delta a_{real}$). The actual action applied in the real world ($a_{real}$) is the sum of the simulated action and the residual action.
 
-
+The residual policy is initially set such that it outputs zero adjustments, ensuring it does not worsen the initial policy. Training involves updating this policy based on real-world executions and feedback. The aim is to adjust actions to account for differences between the simulated and real-world environments. This action is then executed in the real world, with outcomes used to further refine the policy.
+ 
 Experiments
 ===
 - Set up: Franka Panda performing the manipulation task, and Flexiv Rizon with the RGB-D RealSense camera for active sensing. PyBullet for real-world simulation, NimblePhysics and Redner as differentiable simulation and renderer.
