@@ -17,6 +17,7 @@ Key information
 Differentiable Simulation and Rendering
 ===
 
+
 Real2Sim
 ===
 
@@ -28,6 +29,9 @@ Sim2Real
 
 Experiments
 ===
+- Set up: Franka Panda performing the manipulation task, and Flexiv Rizon with the RGB-D RealSense camera for active sensing. PyBullet for real-world simulation, NimblePhysics and Redner as differentiable simulation and renderer.
+- Tasks: Peg-Insertion, Spatula-Flipping, and Needle-Threading.
+- Network details: CNN feature extractor and MLP heads to output the action/Q value. Residual policy network to reduce the sim-to-real gap.
 
 My takeaways
 ===
