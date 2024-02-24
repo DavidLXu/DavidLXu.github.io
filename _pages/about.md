@@ -8,31 +8,25 @@ redirect_from:
   - /about.html
 ---
 
-I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to
-create humanoid robots that could revolutionize our modern industry and society.
+I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create foundation models for general robotics that could revolutionize our modern industry and society.
 
-About
-===
-I am currently a senior undergraduate student, working with Associate Professor Jie Yang in the field of SLAM (Simultaneous Localization And Mapping). I will graduate as a Bachelor of Engineering from Department of Mechanical and Electircal Enginnering in July 2021.
-My research interests are in computer vision and robotics, particularly 3D vision, unsupervised learning and their applications in robotics. I will be joining the GTSI and SPIOEE dual degree master program as a student starting from Fall 2021.
+Please refer to my CV [here](DavidLXu.github.io/blob/master/_pages/about.md)
 
 Research Experiences
 ===
-I am broadly interested in compter engimachine learning systems that can perceive the world as we human do, which I believe is the cornerstone of achieving AGI. In my exploration of this goal, I have studied and done research in medical image analysis, efficient inference, unsupervised learning and 3D vision. I have had the great fortune to participate in several interesting projects with inspiring and talented collaborators.
+In my university years, I took part in a robot association where I did a couple of successful robot competitions for college students. During that period, I gained experience in programming the MCUs for motion control, as well as computer vision, which was also the topic of my graduation project.
 
-In the summer of 2020 and winter of 2021, I engaged research at Universal Village, Boston, USA, where I worked with Professor Yanjun Fang on the adversarial attack and defense tasks in 3D point clouds. We combined implicit function networks with a novel optimization process for accurate point cloud restoration.
+For my master's program at Georgia tech, I took both ECE and CS courses with straight A scores. I took ECE classes like image processing, C++ programming, linear systems, random processes, etc. My CS classes include machine learning, deep learning, and robot intelligence. Multiple class projects laid a solid foundation for me to carry on my research in robotics.
 
-Prior to that, I worked on efficient inference for computer vision algorithms under the supervision of Professor Jie Zhou and Jiwen Lu in IVG. We applied binary neural networks (BNNs) for object detection and leveraged the Information Bottleneck (IB) principle to improve their performance.
-
-Previously, I had experience in medical image analysis in my sophomore year, advised by Professor Jianjiang Feng.
+I came to Tianjin University for my master's thesis featuring the control and digital twin for parallel robotics. Following the work of NVIDIA, I am currently doing digital twins of robotics in simulation environments working for further data-driven algorithms.
 
 Miscellaneous
 ===
-I like swimming and I am particularly good at freestyle, reaching national second level athlete in Men's 100m Freestyle. I also like basketball. My favorite player is LeBron James.
+I like skiing, and I went skiing 5 times this winter. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a very young age.
 
-I am also an Anime fan and a lover of Galgame. Some of my favorite works are Fate/stay night, Hyouka, Steins;Gate, Attack on Titan and EVA.
 
-Two persons I admire the most: Kaiming He for his outstanding research tastes and Elon Musk for his aspiration and enthusiasm.
+
+Two persons I admire the most:  Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.
 
 <!--
 Projects and Competitions
