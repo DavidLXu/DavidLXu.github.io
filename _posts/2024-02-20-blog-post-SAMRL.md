@@ -27,25 +27,34 @@ The whole process involves building an initial model that does not have to be pr
 - Using the gradients of these loss functions to iteratively update the model's parameters, thus reducing the discrepancy between the simulation and real-world observations.
 
 Refer to:
+
 [1] X. Zhu, et al, "Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering", CoRL 2023.
 
 [2] Y. Xiang, et al, "Diff-Transfer: Model-based Robotic Manipulation Skill Transfer via Differentiable Physics Simulation" 
 
 Learn@Sim
 ===
+This stage focuses on learning sensing-aware action within a simulated environment. According to this paper, the process includes
+
+ - Sensing-aware Q-function: A Q-function is adapted to include the camera pose's impact, optimizing camera adjustments to enhance task-related information capture. This optimization is achieved by calculating gradients that suggest optimal camera positioning for action improvement.
+ - Learning Actor in Simulation: An actor is trained through imitation learning within a simulated environment. The actor learns to perform tasks by mimicking successful actions, optimized through loss minimization that balances action efficiency and goal achievement.
+ - Learning Sensing-aware Q Function: The sensing-aware Q function is developed using simulated trajectories, focusing on predicting the Q value from image-action pairs. This is approached as a supervised learning problem, emphasizing the role of sensing in action effectiveness.
+ - Selecting Perception and Action: The system dynamically adjusts the camera pose to maximize the Q value, ensuring that both perception and action are optimized for task performance. This iterative process seeks the most informative viewpoint for executing the task.
 
 Sim2Real
 ===
+
 
 Experiments
 ===
 - Set up: Franka Panda performing the manipulation task, and Flexiv Rizon with the RGB-D RealSense camera for active sensing. PyBullet for real-world simulation, NimblePhysics and Redner as differentiable simulation and renderer.
 - Tasks: Peg-Insertion, Spatula-Flipping, and Needle-Threading.
 - Network details: CNN feature extractor and MLP heads to output the action/Q value. Residual policy network to reduce the sim-to-real gap.
+- Evaluation: sensing-aware Q function and its qualitative visualization, salient map of actor-network, comparison with TD3, SAC, and Dreamer, ablation, etc.
 
 My takeaways
 ===
-The paper gives a method in which 
+The paper gives a comprehensive approach in which 
 
 ------
 
