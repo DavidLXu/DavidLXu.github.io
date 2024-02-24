@@ -56,7 +56,7 @@ Experiments
 
 My takeaways
 ===
-The paper gives a comprehensive approach in which 
+The paper gives a comprehensive approach highlighting an active sensing approach with differentiable physics simulation that closes that gap between simulation and the real world. 
 
 ------
 
