@@ -10,7 +10,7 @@ redirect_from:
 
 I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create foundation models for general robotics that could revolutionize our modern industry and society.
 
-Please refer to my CV [here](DavidLXu.github.io/blob/master/_pages/about.md)
+Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
 
 Research Experiences
 ===
