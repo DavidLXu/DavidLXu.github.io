@@ -18,7 +18,7 @@ In my university years, I took part in a robot association where I did a couple 
 
 For my master's program at Georgia tech, I took both ECE and CS courses with straight A scores. I took ECE classes like image processing, C++ programming, linear systems, random processes, etc. My CS classes include machine learning, deep learning, and robot intelligence. Multiple class projects laid a solid foundation for me to carry on my research in robotics.
 
-I came to Tianjin University for my master's thesis featuring the control and digital twin for parallel robotics. Following the work of NVIDIA, I am currently doing digital twins of robotics in simulation environments working for further data-driven algorithms.
+I came to Tianjin University for my master's thesis featuring the control and digital twin for parallel robotics. Finished a paper in Trans. Mechatronics that is still under review. Following the work of NVIDIA, I am currently doing digital twins of robotics in simulation environments working for further data-driven algorithms.
 
 Miscellaneous
 ===
