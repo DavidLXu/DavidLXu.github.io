@@ -16,7 +16,11 @@ Key information
 
 Differentiable Simulation and Rendering
 ===
+The integration of differentiable simulation and rendering forms the core of the model used for model-based reinforcement learning. It allows for the calculation of gradients for the simulation images ($I_{sim}$) with respect to the camera pose (P_c) and object attributes. This enables the updating of the model by directly comparing simulated images with real-world images and adjusting the model parameters to reduce discrepancies, thereby improving the accuracy of the simulation model for better policy generation. The process involves using differentiable rendering to update the model's parameters through backpropagation of the loss between the simulated images and the real-world images, allowing for iterative refinement of the model to closely match the real world. 
 
+Refer to:
+[1] X. Zhu, et al, "Diff-LfD: Contact-aware Model-based Learning from Visual Demonstration for Robotic Manipulation via Differentiable Physics-based Simulation and Rendering", CoRL 2023.
+[2] Y. Xiang, et al, "Diff-Transfer: Model-based Robotic Manipulation Skill Transfer via Differentiable Physics Simulation" 
 
 Real2Sim
 ===
