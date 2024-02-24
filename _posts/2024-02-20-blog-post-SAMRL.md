@@ -58,7 +58,7 @@ My takeaways
 ===
 The paper gives a comprehensive approach highlighting an active sensing approach with differentiable physics simulation that closes that gap between simulation and the real world. 
 
-The research outlines a potential pathway for future general-purpose robots, where active sensing enhances real-world perception, enabling robots to make more informed decisions.
+Practically, the research points a potential pathway for future general-purpose robots, where active sensing enhances real-world perception, enabling robots to make more informed decisions.
 
 ------
 
