@@ -1,11 +1,11 @@
 ---
-title: 'Blog Post number 3'
-date: 2014-08-14
-permalink: /posts/2014/08/blog-post-3/
+title: '[Paper Notes] VIMA: General robot manipulation with multimodel prompts - ICML 2023'
+date: 2024-02-22
+permalink: /posts/2024/02/blog-post-vima/
 tags:
-  - cool posts
-  - category1
-  - category2
+  - Robotics
+  - LLM
+  - ICML
 ---
 
 This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool. 
