@@ -12,6 +12,17 @@ I am deeply committed to advancing the field of robotics with a focus on the int
 
 Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
 
+Education & Experiences
+===
+National University of Singapore, Research Intern
+
+Tianjin University, Master
+
+Georgia Institute of Technology, Master
+
+Qingdao University, Bachelor
+
+
 Research Projects
 ===
 
@@ -48,10 +59,13 @@ Miscellaneous
 
 I like skiing, and I went skiing 5 times this winter. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a very young age.
 
-**Travel: 6 countries, 4 languages, 21 domestic provinces**
+**Traveling: 6 countries, 21 domestic provinces**
 
 Driven by my wanderlust, I have journeyed to 6 different countries (Singapore, France, Czechia, Austria, Hungary) and 21 provinces in China.
+
+**Languages: CN, EN, DE, JP**
 I'm also a language enthusiast. My preferred languages: Chinese(native), English(IELTS7.5), German(roughly B1), Japanese(roughly N4), and Cantonese (beginner).
+
 
 Two persons I admire the most:  Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.
 
