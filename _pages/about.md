@@ -12,8 +12,26 @@ I am deeply committed to advancing the field of robotics with a focus on the int
 
 Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
 
-Research Experiences
+Research Projects
 ===
+
+## Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator
+
+
+## Monocular Depth Estimation - FADE Ain’t Depth Estimation
+
+## Attention-Based Video Inpainting Technique for Wire-Removal Scenarios
+
+## Gatech Buzzy Bowl Game
+
+## ORB-based Stereo Vision Odometry
+
+## Universal Village Program
+
+## The 6th National Engineering Training Competition - Material Handling Robot
+
+
+
 In my university years, I took part in a robot association where I did a couple of successful robot competitions for college students. During that period, I gained experience in programming the MCUs for motion control, as well as computer vision, which was also the topic of my graduation project.
 
 For my master's program at Georgia tech, I took both ECE and CS courses with straight A scores. I took ECE classes like image processing, C++ programming, linear systems, random processes, etc. My CS classes include machine learning, deep learning, and robot intelligence. Multiple class projects laid a solid foundation for me to carry on my research in robotics.
@@ -22,9 +40,12 @@ I came to Tianjin University for my master's thesis featuring the control and di
 
 Miscellaneous
 ===
+
+**Sports: skiing, hiking, biking, table tennis**
 I like skiing, and I went skiing 5 times this winter. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a very young age.
 
-Driven by my wanderlust, I have journeyed to 5 different countries and 15 provinces in China.
+**Travel: 6 countries, 4 languages, 21 domestic provinces**
+Driven by my wanderlust, I have journeyed to 6 different countries (Singapore, France, Czechia, Austria, Hungary) and 21 provinces in China.
 I'm also a language enthusiast. My preferred languages: Chinese(native), English(IELTS7.5), German(roughly B1), Japanese(roughly N4), and Cantonese (beginner).
 
 Two persons I admire the most:  Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.
