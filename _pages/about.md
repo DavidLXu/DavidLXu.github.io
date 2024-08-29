@@ -15,20 +15,23 @@ Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf
 Research Projects
 ===
 
-## Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator
+
+**Cross-embodiment of dexterous end-effectors on various objects and tasks**
+
+**Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator**
 
 
-## Monocular Depth Estimation - FADE Ain’t Depth Estimation
+**Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
-## Attention-Based Video Inpainting Technique for Wire-Removal Scenarios
+**Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
 
-## Gatech Buzzy Bowl Game
+**Gatech Buzzy Bowl Game**
 
-## ORB-based Stereo Vision Odometry
+**ORB-based Stereo Vision Odometry**
 
-## Universal Village Program
+**Universal Village Program**
 
-## The 6th National Engineering Training Competition - Material Handling Robot
+**The 6th National Engineering Training Competition - Material Handling Robot**
 
 
 
@@ -42,9 +45,11 @@ Miscellaneous
 ===
 
 **Sports: skiing, hiking, biking, table tennis**
+
 I like skiing, and I went skiing 5 times this winter. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a very young age.
 
 **Travel: 6 countries, 4 languages, 21 domestic provinces**
+
 Driven by my wanderlust, I have journeyed to 6 different countries (Singapore, France, Czechia, Austria, Hungary) and 21 provinces in China.
 I'm also a language enthusiast. My preferred languages: Chinese(native), English(IELTS7.5), German(roughly B1), Japanese(roughly N4), and Cantonese (beginner).
 
