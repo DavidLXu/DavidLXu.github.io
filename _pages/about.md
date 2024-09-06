@@ -14,13 +14,10 @@ Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf
 
 Education & Experiences
 ===
-National University of Singapore, Research Intern
-
-Tianjin University, Master
-
-Georgia Institute of Technology, Master
-
-Qingdao University, Bachelor
+* National University of Singapore, Research Intern, June 2024-Present
+* Tianjin University, M.Sc., Expected Jan 2025
+* Georgia Institute of Technology, M.Sc., Expected Dec 2024
+* Qingdao University, B.Sc., June 2021
 
 
 Research Projects
