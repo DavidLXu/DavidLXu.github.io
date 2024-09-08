@@ -51,8 +51,8 @@ Research Projects
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" height="100" style="height: 200px; width: auto;"/>
-    <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" height="100" style="height: 200px; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" height="100" style="height: 100; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" height="100" style="height: 100; width: auto;"/>
 </div>
 
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
