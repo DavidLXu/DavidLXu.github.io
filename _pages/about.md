@@ -40,13 +40,14 @@ Research Projects
    
 </div>
 
+
 **Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator**
 
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-</div>
+
 
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
@@ -54,6 +55,9 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="100" />
     <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="100" />
 </div>
+
+
+
 
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
 
