@@ -41,6 +41,7 @@ Research Projects
 </div>
 
 <br>
+
 **Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator**
 
 <div style="white-space: nowrap;">
@@ -49,6 +50,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
 
 <br>
+
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
 <div style="white-space: nowrap;">
@@ -59,6 +61,7 @@ Research Projects
 
 
 <br>
+
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
 
 <div style="white-space: nowrap;">
@@ -68,6 +71,7 @@ Research Projects
 </div>
 
 <br>
+
 **Gatech Buzzy Bowl Game**
 
 <div style="white-space: nowrap;">
@@ -76,6 +80,7 @@ Research Projects
 </div>
 
 <br>
+
 **ORB-based Stereo Vision Odometry**
 
 <div style="white-space: nowrap;">
@@ -85,7 +90,8 @@ Research Projects
 </div>
 
 <br>
-**Universal Village Program**
+
+**Universal Village**
 
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
@@ -94,6 +100,7 @@ Research Projects
 </div>
 
 <br>
+
 **The 6th National Engineering Training Competition - Material Handling Robot**
 
 <div style="white-space: nowrap;">
