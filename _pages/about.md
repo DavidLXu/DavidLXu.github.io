@@ -33,6 +33,8 @@ Research Projects
 
 **Cross-embodiment of dexterous end-effectors on various objects and tasks**
 
+<img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="400"/>
+
 **Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator**
 
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
@@ -61,7 +63,7 @@ Driven by my wanderlust, I have journeyed to 6 different countries (Singapore, F
 
 **Languages: CN, EN, DE, JP**
 
-I'm a language enthusiast. My preferred languages: Chinese(native), English(IELTS7.5), German(roughly B1), Japanese(roughly N4), and Cantonese (beginner).
+I'm a language enthusiast. My preferred languages: Chinese (native), English (IELTS7.5/GRE322), German (roughly B1), Japanese (roughly N4), and Cantonese (beginner).
 
 
 Two persons I admire the most:  Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.
