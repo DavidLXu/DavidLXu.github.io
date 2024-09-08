@@ -66,8 +66,8 @@ Research Projects
 **Gatech Buzzy Bowl Game**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="200"/>
-    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="200"/>
+    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" height="200" style="height: 200px; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" height="200" style="height: 200px; width: auto;"/>
 </div>
 
 **ORB-based Stereo Vision Odometry**
