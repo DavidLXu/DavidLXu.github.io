@@ -33,6 +33,8 @@ Research Projects
 
 **Cross-embodiment of dexterous end-effectors on various objects and tasks**
 
+![Example Image](http://DavidLXu.github.io/images/bio-photo.jpg)
+
 <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="400"/>
 
 **Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator**
