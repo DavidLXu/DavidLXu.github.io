@@ -38,6 +38,14 @@ Research Projects
 <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100" style="display: inline-block;"/>
 <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100" style="display: inline-block;"/>
 <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100" style="display: inline-block;"/>
+
+<div style="white-space: nowrap;">
+    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+</div>
+
+  
 **Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator**
 
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
