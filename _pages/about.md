@@ -34,9 +34,9 @@ Research Projects
 **Cross-embodiment of dexterous end-effectors on various objects and tasks**
 
 <div style="white-space: nowrap;">
-  <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" width="170"/>
-    <img src="http://DavidLXu.github.io/images/panda.gif" alt="panda" title="panda" width="150"/>
-  <img src="http://DavidLXu.github.io/images/leap.png" alt="leap2" title="leap2" width="190"/>
+  <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" height="150" style="height: 200px; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/panda.gif" alt="panda" title="panda" height="150" style="height: 200px; width: auto;"/>
+  <img src="http://DavidLXu.github.io/images/leap.png" alt="leap2" title="leap2" height="150" style="height: 200px; width: auto;"/>
    
 </div>
 
@@ -51,8 +51,8 @@ Research Projects
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="200"/>
-    <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="200"/>
+    <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" height="150" style="height: 200px; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" height="150" style="height: 200px; width: auto;"/>
 </div>
 
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
@@ -66,8 +66,8 @@ Research Projects
 **Gatech Buzzy Bowl Game**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" height="200" style="height: 200px; width: auto;"/>
-    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" height="200" style="height: 200px; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" height="150" style="height: 200px; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" height="150" style="height: 200px; width: auto;"/>
 </div>
 
 **ORB-based Stereo Vision Odometry**
