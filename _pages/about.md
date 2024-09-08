@@ -40,7 +40,7 @@ Research Projects
    
 </div>
 
-
+<br><br>
 **Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator**
 
 <div style="white-space: nowrap;">
@@ -48,7 +48,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
 
-
+<br><br>
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
 <div style="white-space: nowrap;">
