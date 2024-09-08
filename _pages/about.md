@@ -36,7 +36,7 @@ Research Projects
 <div style="white-space: nowrap;">
   <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" width="170"/>
     <img src="http://DavidLXu.github.io/images/panda.gif" alt="panda" title="panda" width="150"/>
-  <img src="http://DavidLXu.github.io/images/leap.png" alt="leap2" title="leap2" width="170"/>
+  <img src="http://DavidLXu.github.io/images/leap.png" alt="leap2" title="leap2" width="190"/>
    
 </div>
 
