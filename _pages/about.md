@@ -33,12 +33,6 @@ Research Projects
 
 **Cross-embodiment of dexterous end-effectors on various objects and tasks**
 
-![Example Image](http://DavidLXu.github.io/images/bio-photo.jpg)
-
-<img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100" style="display: inline-block;"/>
-<img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100" style="display: inline-block;"/>
-<img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100" style="display: inline-block;"/>
-
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
