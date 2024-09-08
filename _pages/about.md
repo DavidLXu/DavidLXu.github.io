@@ -34,9 +34,9 @@ Research Projects
 **Cross-embodiment of dexterous end-effectors on various objects and tasks**
 
 <div style="white-space: nowrap;">
-  <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" height="100" style="height: 200px; width: auto;"/>
-    <img src="http://DavidLXu.github.io/images/panda.gif" alt="panda" title="panda" height="100" style="height: 200px; width: auto;"/>
-  <img src="http://DavidLXu.github.io/images/leap.png" alt="leap2" title="leap2" height="100" style="height: 200px; width: auto;"/>
+  <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" height="100" style="height: 100; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/panda.gif" alt="panda" title="panda" height="100" style="height: 100; width: auto;"/>
+  <img src="http://DavidLXu.github.io/images/leap.png" alt="leap2" title="leap2" height="100" style="height: 100; width: auto;"/>
    
 </div>
 
