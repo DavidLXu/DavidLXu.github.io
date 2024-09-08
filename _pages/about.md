@@ -35,7 +35,7 @@ Research Projects
 
 <div style="white-space: nowrap;">
   <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" height="100" style="height: 100; width: auto;"/>
-    <img src="http://DavidLXu.github.io/images/panda.gif" alt="panda" title="panda" width="150"/>
+    <img src="http://DavidLXu.github.io/images/panda.gif" alt="panda" title="panda" width="120"/>
   <img src="http://DavidLXu.github.io/images/leap.png" alt="leap2" title="leap2" height="100" style="height: 100; width: auto;"/>
    
 </div>
@@ -66,8 +66,8 @@ Research Projects
 **Gatech Buzzy Bowl Game**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" height="100" style="height: 200px; width: auto;"/>
-    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" height="100" style="height: 200px; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" height="100" style="height: 100; width: auto;"/>
+    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" height="100" style="height: 100; width: auto;"/>
 </div>
 
 **ORB-based Stereo Vision Odometry**
