@@ -51,9 +51,8 @@ Research Projects
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+    <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="200"/>
+    <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="200"/>
 </div>
 
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
@@ -67,9 +66,8 @@ Research Projects
 **Gatech Buzzy Bowl Game**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="200"/>
+    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="200"/>
 </div>
 
 **ORB-based Stereo Vision Odometry**
