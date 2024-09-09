@@ -107,7 +107,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/robot1.gif" alt="My Image" title="My Image Title" width="200"/>
     <img src="http://DavidLXu.github.io/images/robot2.gif" alt="My Image" title="My Image Title" width="185"/>
 </div>
-
+[video]
 Miscellaneous
 ===
 
