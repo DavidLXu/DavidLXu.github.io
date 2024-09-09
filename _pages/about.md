@@ -50,7 +50,6 @@ Pneumatic Cylinder (Under Review)**
 
 <br>
 
-**Digital twin-based double-loop control for a 3-PSS pneumatic parallel manipulator (Under Review)**
 
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
