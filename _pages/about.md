@@ -11,6 +11,8 @@ redirect_from:
 I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create robotics foundation models that could revolutionize our modern industry and society.
 
 Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
+[here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
+
 
 In my university years, I took part in a robot association where I did a couple of successful robot competitions for college students. During that period, I gained experience in programming the MCUs for motion control, as well as computer vision, which was also the topic of my graduation project.
 
@@ -47,8 +49,9 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+</div>
 
-
+<br>
 
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
@@ -56,10 +59,11 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="150" />
     <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="150" />
 </div>
-[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf)
 
 
+[[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf)|code]
 
+<br>
 
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
 
@@ -67,10 +71,12 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="150"/>
     <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="150"/>
 </div>
-[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf)
-[presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
 
 
+[[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf)|[presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx) ]
+
+
+<br>
 
 **Gatech Buzzy Bowl Game**
 
