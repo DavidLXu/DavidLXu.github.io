@@ -32,7 +32,7 @@ Education & Experiences
 Research Projects
 ===
 
-**Cross-embodiment of dexterous end-effectors on various objects and tasks**
+**Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)**
 
 <div style="white-space: nowrap;">
   <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" width="100" />
@@ -42,13 +42,9 @@ Research Projects
 </div>
 
 
-**Digital Twin-based Advanced Control of a Pneumatic Parallel Manipulator**
+**Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless
+Pneumatic Cylinder (Under Review)**
 
-<div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-</div>
 
 <br>
 
