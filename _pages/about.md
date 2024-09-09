@@ -56,7 +56,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="150" />
     <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="150" />
 </div>
-[[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf)|code]
+[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf) | code
 
 
 
@@ -67,7 +67,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="150"/>
     <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="150"/>
 </div>
-[[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf)|[presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)]
+[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
 
 
 
