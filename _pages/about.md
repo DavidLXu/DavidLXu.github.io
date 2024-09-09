@@ -117,7 +117,8 @@ undergrad thesis |  [code](https://github.com/DavidLXu/PyVO)
     <img src="http://DavidLXu.github.io/images/robot1.gif" alt="My Image" title="My Image Title" width="200"/>
     <img src="http://DavidLXu.github.io/images/robot2.gif" alt="My Image" title="My Image Title" width="185"/>
 </div>
-video
+
+[video](http://DavidLXu.github.io/files/material-handling_robot_demo_COMPRESS.mp4)
 
 Miscellaneous
 ===
