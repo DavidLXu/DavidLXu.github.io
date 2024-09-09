@@ -57,7 +57,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="150" />
     <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="150" />
 </div>
-
+[paper]
 
 
 <br>
@@ -68,7 +68,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="150"/>
     <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="150"/>
 </div>
-
+[paper|code]
 <br>
 
 **Gatech Buzzy Bowl Game**
@@ -77,7 +77,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="200" />
     <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="110" />
 </div>
-
+[code]
 <br>
 
 **ORB-based Stereo Vision Odometry**
@@ -87,7 +87,7 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/pyvo2.png" alt="My Image" title="My Image Title" width="150"/>
     <img src="http://DavidLXu.github.io/images/pyvo3.png" alt="My Image" title="My Image Title" width="200"/>
 </div>
-
+[paper|code]
 <br>
 
 <!-- **Universal Village**
