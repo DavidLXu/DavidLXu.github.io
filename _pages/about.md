@@ -11,7 +11,6 @@ redirect_from:
 I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create robotics foundation models that could revolutionize our modern industry and society.
 
 Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
-[here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
 
 
 In my university years, I took part in a robot association where I did a couple of successful robot competitions for college students. During that period, I gained experience in programming the MCUs for motion control, as well as computer vision, which was also the topic of my graduation project.
@@ -61,7 +60,7 @@ Research Projects
 </div>
 
 
-[[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf)|code]
+[[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf) | code]
 
 <br>
 
@@ -73,7 +72,7 @@ Research Projects
 </div>
 
 
-[[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf)|[presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx) ]
+[[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx) ]
 
 
 <br>
