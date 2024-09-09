@@ -83,9 +83,11 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="200" />
     <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="110" />
 </div>
+
 [code]
 
 
+<br>
 
 **ORB-based Stereo Vision Odometry**
 
@@ -94,9 +96,10 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/pyvo2.png" alt="My Image" title="My Image Title" width="150"/>
     <img src="http://DavidLXu.github.io/images/pyvo3.png" alt="My Image" title="My Image Title" width="200"/>
 </div>
-[paper|code]
 
 
+[thesis |  [code](https://github.com/DavidLXu/PyVO)]
+<br>
 
 <!-- **Universal Village**
 
