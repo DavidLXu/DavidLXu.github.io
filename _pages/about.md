@@ -80,7 +80,7 @@ Pneumatic Cylinder (Under Review)**
     <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="110" />
 </div>
 
-[code]
+code
 
 
 <br>
@@ -94,7 +94,7 @@ Pneumatic Cylinder (Under Review)**
 </div>
 
 
-[thesis |  [code](https://github.com/DavidLXu/PyVO)]
+undergrad thesis |  [code](https://github.com/DavidLXu/PyVO)
 <br>
 
 <!-- **Universal Village**
@@ -114,7 +114,7 @@ Pneumatic Cylinder (Under Review)**
     <img src="http://DavidLXu.github.io/images/robot1.gif" alt="My Image" title="My Image Title" width="200"/>
     <img src="http://DavidLXu.github.io/images/robot2.gif" alt="My Image" title="My Image Title" width="185"/>
 </div>
-[video]
+video
 
 Miscellaneous
 ===
