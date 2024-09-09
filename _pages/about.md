@@ -29,7 +29,7 @@ Education & Experiences
 * Qingdao University, B.Sc., June 2021
 
 
-Research Projects
+Publication & Projects
 ===
 
 **Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)**
@@ -68,7 +68,7 @@ Pneumatic Cylinder (Under Review)**
 </div>
 
 
-[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
+[project paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
 
 
 <br>
