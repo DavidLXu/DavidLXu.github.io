@@ -65,9 +65,8 @@ Research Projects
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+    <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="100"/>
+    <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="100"/>
 </div>
 
 <br>
