@@ -57,7 +57,7 @@ Pneumatic Cylinder (Under Review)**
 </div>
 
 
-[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf) | code
+[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf)
 
 <br>
 
