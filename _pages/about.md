@@ -75,7 +75,7 @@ Research Projects
 
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="200" />
-    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="100" />
+    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="120" />
 </div>
 
 <br>
