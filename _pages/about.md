@@ -56,7 +56,7 @@ Pneumatic Cylinder (Under Review)**
 </div>
 
 
-[[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf) | code]
+[project paper](http://DavidLXu.github.io/files/Project_Report_final.pdf) | code
 
 <br>
 
@@ -68,7 +68,7 @@ Pneumatic Cylinder (Under Review)**
 </div>
 
 
-[[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx) ]
+[paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
 
 
 <br>
