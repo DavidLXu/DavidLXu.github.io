@@ -41,6 +41,7 @@ Publication & Projects
    
 </div>
 
+<br>
 
 **Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless
 Pneumatic Cylinder (Under Review)**
