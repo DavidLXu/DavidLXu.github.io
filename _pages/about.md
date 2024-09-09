@@ -90,7 +90,7 @@ Research Projects
 
 <br>
 
-**Universal Village**
+<!-- **Universal Village**
 
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
@@ -98,14 +98,14 @@ Research Projects
     <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
 </div>
 
-<br>
+<br> -->
+
 
 **The 6th National Engineering Training Competition - Material Handling Robot**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+    <img src="http://DavidLXu.github.io/images/robot1.gif" alt="My Image" title="My Image Title" width="200"/>
+    <img src="http://DavidLXu.github.io/images/robot2.gif" alt="My Image" title="My Image Title" width="200"/>
 </div>
 
 Miscellaneous
