@@ -70,10 +70,7 @@ Pneumatic Cylinder (Under Review)**
     <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="150"/>
 </div>
 
-
 [project paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
-
-
 <br>
 
 **Gatech Buzzy Bowl Game**
