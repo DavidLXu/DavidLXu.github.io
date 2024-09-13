@@ -51,7 +51,7 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
     <img src="http://DavidLXu.github.io/images/parallel2.png" alt="parallel2" title="parallel2" width="160" />
     <img src="http://DavidLXu.github.io/images/parallel3.png" alt="parallel3" title="parallel3" width="180" />
     <img src="http://DavidLXu.github.io/images/parallel4.png" alt="parallel4" title="parallel4" width="180" />
-    <img src="http://DavidLXu.github.io/images/parallel5.png" alt="parallel5" title="parallel5" width="170" />
+    <img src="http://DavidLXu.github.io/images/parallel5.png" alt="parallel5" title="parallel5" width="160" />
 </div>
 
 <br>
