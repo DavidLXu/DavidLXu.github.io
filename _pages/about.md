@@ -74,8 +74,8 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
 * G2L-net (Global to Local) with Transformer
 * Window-sliding Technique
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="230"/>
-    <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="230"/>
+    <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="270"/>
+    <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="270"/>
 </div>
 
 [project paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/Presentation.mp4)
