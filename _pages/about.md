@@ -48,7 +48,8 @@ Publication & Projects
     <img src="http://DavidLXu.github.io/images/parallel1.png" alt="parallel1" title="parallel1" width="230" />
     <img src="http://DavidLXu.github.io/images/parallel2.png" alt="parallel2" title="parallel2" width="230" />
     <img src="http://DavidLXu.github.io/images/parallel3.png" alt="parallel3" title="parallel3" width="230" />
-    <img src="http://DavidLXu.github.io/images/parallel4.png" alt="parallel4" title="parallel24" width="230" />
+    <img src="http://DavidLXu.github.io/images/parallel4.png" alt="parallel4" title="parallel4" width="230" />
+    <img src="http://DavidLXu.github.io/images/parallel5.png" alt="parallel5" title="parallel5" width="230" />
 </div>
 
 <br>
