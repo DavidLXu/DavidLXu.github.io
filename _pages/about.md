@@ -91,7 +91,7 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
     <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="137" />
 </div>
 
-[code](https://github.com/DavidLXu/)
+[code](https://github.com/DavidLXu/) | [demo1](http://DavidLXu.github.io/files/BuzzysRevengeDemonstration.mp4) | [demo2](http://DavidLXu.github.io/files/FinalProject.mp4)
 <br>
 
 **ORB-based Stereo Vision Odometry**
