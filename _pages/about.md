@@ -48,7 +48,7 @@ Pneumatic Cylinder (Under Review)**
 <br>
 
 
-**Monocular Depth Estimation - FADE Ain’t Depth Estimation**
+**Monocular Depth Estimation - FADE Ain’t Depth Estimation (CS7643)**
 
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="230" />
@@ -60,7 +60,7 @@ Pneumatic Cylinder (Under Review)**
 
 <br>
 
-**Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
+**Attention-Based Video Inpainting Technique for Wire-Removal Scenarios (ECE6258)**
 
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="230"/>
@@ -70,9 +70,12 @@ Pneumatic Cylinder (Under Review)**
 [project paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
 <br>
 
-**Gatech Buzzy Bowl Game**
-
+**C++ Simulation, Games and Visualization (ECE6122)**
+* CUDA temperature simulation
+* Buzzy's Revenge
+* Gatech Buzzy Bowl Game
 <div style="white-space: nowrap;">
+  <img src="http://DavidLXu.github.io/images/temp.png" alt="temp" title="temp" width="300" />
     <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="300" />
     <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="165" />
 </div>
