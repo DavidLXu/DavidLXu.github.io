@@ -75,9 +75,9 @@ Pneumatic Cylinder (Under Review)**
 * Buzzy's Revenge
 * Gatech Buzzy Bowl Game
 <div style="white-space: nowrap;">
-  <img src="http://DavidLXu.github.io/images/temp.png" alt="temp" title="temp" width="250" />
-    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="300" />
-    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="165" />
+  <img src="http://DavidLXu.github.io/images/temp.png" alt="temp" title="temp" width="220" />
+    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="250" />
+    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="137" />
 </div>
 
 code
