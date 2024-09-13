@@ -33,8 +33,8 @@ Publication & Projects
 
 <div style="white-space: nowrap;">
   <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" width="100" />
-    <img src="http://DavidLXu.github.io/images/allegro1.gif" alt="panda" title="panda" width="130"/>
-  <img src="http://DavidLXu.github.io/images/allegro2.png" alt="leap2" title="leap2" width="130" />
+    <img src="http://DavidLXu.github.io/images/allegro1.gif" alt="allegro1" title="allegro1" width="130"/>
+  <img src="http://DavidLXu.github.io/images/allegro2.gif" alt="allegro2" title="allegro2" width="130" />
    
 </div>
 
