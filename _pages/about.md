@@ -41,7 +41,7 @@ Publication & Projects
 <br>
 
 **Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)**
-
+Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
 * Dynamics modeling of parallel robotics
 * Nonlinear disturbance rejection control design
 <div style="white-space: nowrap;">
