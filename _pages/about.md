@@ -21,9 +21,9 @@ I completed bachelors in Qingdao University with a major of Mechanical Engineeri
 Education & Experiences
 ===
 * National University of Singapore, Research Intern, June 2024-Present
-* Tianjin University, M.Sc., Expected Jan 2025
-* Georgia Institute of Technology, M.Sc., Expected Dec 2024
-* Qingdao University, B.Sc., June 2021
+* Tianjin University, M.Sc. Instrument Science, Expected Jan 2025
+* Georgia Institute of Technology, M.Sc. ECE, Expected Dec 2024
+* Qingdao University, B.Sc. ME, June 2021
 
 
 Publication & Projects
