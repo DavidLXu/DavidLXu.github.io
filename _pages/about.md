@@ -33,7 +33,7 @@ Publication & Projects
 
 <div style="white-space: nowrap;">
   <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" width="180" />
-    <img src="http://DavidLXu.github.io/images/allegro1.gif" alt="allegro1" title="allegro1" width="220"/>
+    <img src="http://DavidLXu.github.io/images/allegro1.gif" alt="allegro1" title="allegro1" width="215"/>
   <img src="http://DavidLXu.github.io/images/allegro2.gif" alt="allegro2" title="allegro2" width="220" />
    
 </div>
@@ -51,8 +51,8 @@ Pneumatic Cylinder (Under Review)**
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="180" />
-    <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="180" />
+    <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="230" />
+    <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="230" />
 </div>
 
 
@@ -63,8 +63,8 @@ Pneumatic Cylinder (Under Review)**
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="200"/>
-    <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="200"/>
+    <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="230"/>
+    <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="230"/>
 </div>
 
 [project paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
@@ -73,8 +73,8 @@ Pneumatic Cylinder (Under Review)**
 **Gatech Buzzy Bowl Game**
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="250" />
-    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="137" />
+    <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="300" />
+    <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="165" />
 </div>
 
 code
