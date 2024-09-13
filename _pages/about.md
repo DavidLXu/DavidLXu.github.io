@@ -41,9 +41,11 @@ Publication & Projects
 <br>
 
 **Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)**
+
 Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
 * Dynamics modeling of parallel robotics
 * Nonlinear disturbance rejection control design
+
 <div style="white-space: nowrap;">
     <!-- <img src="http://DavidLXu.github.io/images/parallel1.png" alt="parallel1" title="parallel1" width="230" /> -->
     <img src="http://DavidLXu.github.io/images/parallel2.png" alt="parallel2" title="parallel2" width="160" />
@@ -95,13 +97,13 @@ code
 <br>
 
 **ORB-based Stereo Vision Odometry**
-
+* Designed PyVO: an ORB-SLAM inspired Python Visual Odometry
+* Recorded own dataset in dorm
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/pyvo1.png" alt="My Image" title="My Image Title" width="120"/>
     <img src="http://DavidLXu.github.io/images/pyvo2.png" alt="My Image" title="My Image Title" width="150"/>
     <img src="http://DavidLXu.github.io/images/pyvo3.png" alt="My Image" title="My Image Title" width="200"/>
 </div>
-
 
 undergrad thesis |  [code](https://github.com/DavidLXu/PyVO)
 <br>
@@ -118,7 +120,9 @@ undergrad thesis |  [code](https://github.com/DavidLXu/PyVO)
 
 
 **The 6th National Engineering Training Competition - Material Handling Robot**
-
+* Embedded system (STM32) programming and design
+* Computer vision (OpenMV module, Paspberry Pi)
+* Mechanical structural design
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/robot1.gif" alt="My Image" title="My Image Title" width="200"/>
     <img src="http://DavidLXu.github.io/images/robot2.gif" alt="My Image" title="My Image Title" width="185"/>
