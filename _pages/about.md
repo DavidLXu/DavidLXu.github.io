@@ -40,8 +40,7 @@ Publication & Projects
 
 <br>
 
-**Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless
-Pneumatic Cylinder (Under Review)**
+**Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)**
 
 
 
@@ -49,7 +48,8 @@ Pneumatic Cylinder (Under Review)**
 
 
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation (CS7643)**
-
+* MiDaS and LeRes as backbone
+* Double estimation, patch estimation and Merge Net to boost performance
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/fade1.png" alt="fade1" title="fade1.png" width="230" />
     <img src="http://DavidLXu.github.io/images/fade2.png" alt="fade2" title="fade2" width="230" />
@@ -61,13 +61,14 @@ Pneumatic Cylinder (Under Review)**
 <br>
 
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios (ECE6258)**
-
+* 
+* 
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="230"/>
     <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="230"/>
 </div>
 
-[project paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/ECE_6258_Group6_final_presentation.pptx)
+[project paper](http://DavidLXu.github.io/files/ECE_6258_Group6_term_paper_and_slides.pdf) | [presentation](http://DavidLXu.github.io/files/Presentation.mp4)
 <br>
 
 **C++ Simulation, Games and Visualization (ECE6122)**
@@ -75,7 +76,7 @@ Pneumatic Cylinder (Under Review)**
 * Buzzy's Revenge
 * Gatech Buzzy Bowl Game
 <div style="white-space: nowrap;">
-  <img src="http://DavidLXu.github.io/images/temp.png" alt="temp" title="temp" width="235" />
+  <img src="http://DavidLXu.github.io/images/temp.png" alt="temp" title="temp" width="237" />
     <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="250" />
     <img src="http://DavidLXu.github.io/images/drone.png" alt="drone" title="drone" width="137" />
 </div>
