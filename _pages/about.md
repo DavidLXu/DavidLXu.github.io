@@ -12,14 +12,11 @@ I am deeply committed to advancing the field of robotics with a focus on the int
 
 Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
 
-
-In my university years, I took part in a robot association where I did a couple of successful robot competitions for college students. During that period, I gained experience in programming the MCUs for motion control, as well as computer vision, which was also the topic of my graduation project.
-
-For my master's program at Georgia tech, I took both ECE and CS courses with straight A scores. I took ECE classes like image processing, C++ programming, linear systems, random processes, etc. My CS classes include machine learning, deep learning, and robot intelligence. <!--Multiple class projects laid a solid foundation for me to carry on my research in robotics.-->
-
-I came to Tianjin University for my master's thesis featuring the control and digital twin for parallel robotics. Finished a paper in Trans. Mechatronics that is still under review. For graduation, I am doing digital twins of robotics in simulation environments working for further decision making and control algorithms.
-
 I'm currently in NUS as a visiting intern in Prof. Lin Shao’s group working on a project of cross-embodiment dexterous hand grasping based on generative models and RL.
+I'm also a master student at Tianjin University, where my research focuses on the control and digital twin for parallel robotics.
+Before that, I was a master student at Georgia tech. Took ECE and CS courses like image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence with straight-A scores.
+I completed bachelors in Qingdao University with a major of Mechanical Engineering, where I did a couple of successful robot competitions for university students, and gained experience in embedded systesm, motion control, as well as computer vision, which was also the topic of my undergrad thesis.
+
 
 Education & Experiences
 ===
