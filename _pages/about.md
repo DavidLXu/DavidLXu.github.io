@@ -42,7 +42,14 @@ Publication & Projects
 
 **Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)**
 
-
+* Dynamics modeling of parallel robotics
+* Nonlinear disturbance rejection control design
+<div style="white-space: nowrap;">
+    <img src="http://DavidLXu.github.io/images/parallel1.png" alt="parallel1" title="parallel1" width="230" />
+    <img src="http://DavidLXu.github.io/images/parallel2.png" alt="parallel2" title="parallel2" width="230" />
+    <img src="http://DavidLXu.github.io/images/parallel3.png" alt="parallel3" title="parallel3" width="230" />
+    <img src="http://DavidLXu.github.io/images/parallel4.png" alt="parallel4" title="parallel24" width="230" />
+</div>
 
 <br>
 
@@ -61,8 +68,8 @@ Publication & Projects
 <br>
 
 **Attention-Based Video Inpainting Technique for Wire-Removal Scenarios (ECE6258)**
-* 
-* 
+* G2L-net (Global to Local) with Transformer
+* Window-sliding Technique
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/6258.png" alt="My Image" title="My Image Title" width="230"/>
     <img src="http://DavidLXu.github.io/images/model.png" alt="My Image" title="My Image Title" width="230"/>
