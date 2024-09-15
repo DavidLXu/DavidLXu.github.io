@@ -25,11 +25,14 @@ Education & Experiences
 * Georgia Institute of Technology, M.Sc. ECE, Expected Dec 2024
 * Qingdao University, B.Sc. ME, June 2021
 
-
-Publication & Projects
+Awards
 ===
+* Graduate National Scholarship, 2021
+* Undergraduate Nation Scholarship, 2019
 
-**Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)**
+Publication
+===
+Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)
 
 <div style="white-space: nowrap;">
   <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" width="180" />
@@ -40,9 +43,10 @@ Publication & Projects
 
 <br>
 
-**Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)**
+Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)
 
 Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
+
 * Dynamics modeling of parallel robotics
 * Nonlinear disturbance rejection control design
 
@@ -56,7 +60,26 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
 
 <br>
 
+[Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability](https://ieeexplore.ieee.org/document/9426197)
 
+**Lixin Xu**, Lin Li, Kunniang Liu, Jiarui Zhang, Yuanning Chang, Yunpeng Fang, Hao Yuan, Zhiyuan Yang, Jingyuan Chen, Yiyao Wang, Yajun Fang
+
+[International Conference on Universal Village (UV), 2020](https://universalvillage.org)
+
+<div style="white-space: nowrap;">
+    <img src="http://DavidLXu.github.io/images/uv.png" alt="uv" title="uv" width="120"/>
+    <img src="http://DavidLXu.github.io/images/uv2.png" alt="uv2" title="uv2" width="260"/>
+    <img src="http://DavidLXu.github.io/images/uv3.png" alt="uv3" title="uv3" width="230"/>
+</div>
+
+[paper](https://ieeexplore.ieee.org/document/9426197/) |  [presentation](http://DavidLXu.github.io/files/its_uv.pdf)
+
+
+<br>
+
+
+Projects
+===
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation (CS7643)**
 * MiDaS and LeRes as backbone
 * Double estimation, patch estimation and Merge Net to boost performance
@@ -106,20 +129,7 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
 undergrad thesis |  [code](https://github.com/DavidLXu/PyVO)
 <br>
 
-**Universal Village**
 
-**Lixin Xu**, Lin Li et al., "Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability," 2020 5th International Conference on Universal Village (UV), Boston, MA, USA, 2020.
-
-<div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/uv.png" alt="uv" title="uv" width="120"/>
-    <img src="http://DavidLXu.github.io/images/uv2.png" alt="uv2" title="uv2" width="260"/>
-    <img src="http://DavidLXu.github.io/images/uv3.png" alt="uv3" title="uv3" width="230"/>
-</div>
-
-[paper](https://ieeexplore.ieee.org/document/9426197/) |  [presentation](http://DavidLXu.github.io/files/its_uv.pdf)
-
-
-<br>
 
 **The 6th National Engineering Training Competition - Material Handling Robot**
 * Embedded system (STM32) programming and design
