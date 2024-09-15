@@ -106,15 +106,17 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
 undergrad thesis |  [code](https://github.com/DavidLXu/PyVO)
 <br>
 
-<!-- **Universal Village**
+**Universal Village**
+
+**Lixin Xu**, Lin Li et al., "Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability," 2020 5th International Conference on Universal Village (UV), Boston, MA, USA, 2020.
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
-    <img src="http://DavidLXu.github.io/images/bio-photo.jpg" alt="My Image" title="My Image Title" width="100"/>
+    <img src="http://DavidLXu.github.io/images/uv.jpg" alt="uv" title="uv" width="100"/>
+    <img src="http://DavidLXu.github.io/images/uv2.jpg" alt="uv2" title="uv2" width="100"/>
+    <img src="http://DavidLXu.github.io/images/uv3.jpg" alt="uv3" title="uv3" width="100"/>
 </div>
 
- -->
+
 
 
 **The 6th National Engineering Training Competition - Material Handling Robot**
