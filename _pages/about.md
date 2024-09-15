@@ -25,14 +25,16 @@ Education & Experiences
 * Georgia Institute of Technology, M.Sc. ECE, Expected Dec 2024
 * Qingdao University, B.Sc. ME, June 2021
 
-Awards
+Honors & Awards
 ===
-* Graduate National Scholarship, 2021
-* Undergraduate Nation Scholarship, 2019
+* Graduate National Scholarship, Ministry of Education of the People’s Republic of China, 2021
+* Provincial Outstanding Graduates, Shandong Provincial Education Department, 2021
+* Undergraduate Nation Scholarship, Ministry of Education of the People’s Republic of China, 2019
+
 
 Publication
 ===
-Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)
+**Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)**
 
 <div style="white-space: nowrap;">
   <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" width="180" />
@@ -43,7 +45,7 @@ Cross-embodiment of dexterous end-effectors on various objects and tasks (On-goi
 
 <br>
 
-Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)
+**Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)**
 
 Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
 
@@ -57,14 +59,15 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
     <img src="http://DavidLXu.github.io/images/parallel4.png" alt="parallel4" title="parallel4" width="180" />
     <img src="http://DavidLXu.github.io/images/parallel5.png" alt="parallel5" title="parallel5" width="160" />
 </div>
+[paper]
 
 <br>
 
-[Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability](https://ieeexplore.ieee.org/document/9426197)
+**Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability**
 
 **Lixin Xu**, Lin Li, Kunniang Liu, Jiarui Zhang, Yuanning Chang, Yunpeng Fang, Hao Yuan, Zhiyuan Yang, Jingyuan Chen, Yiyao Wang, Yajun Fang
 
-[International Conference on Universal Village (UV), 2020](https://universalvillage.org)
+[IEEE International Conference on Universal Village (UV), 2020](https://universalvillage.org)
 
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/uv.png" alt="uv" title="uv" width="120"/>
