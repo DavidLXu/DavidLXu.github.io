@@ -83,6 +83,17 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
 
 Projects
 ===
+**The 6th National Engineering Training Competition - Material Handling Robot**
+* Embedded system (STM32) programming and design
+* Computer vision (OpenMV module, Paspberry Pi)
+* Mechanical structural design
+<div style="white-space: nowrap;">
+    <img src="http://DavidLXu.github.io/images/robot1.gif" alt="My Image" title="My Image Title" width="200"/>
+    <img src="http://DavidLXu.github.io/images/robot2.gif" alt="My Image" title="My Image Title" width="185"/>
+</div>
+
+[video](http://DavidLXu.github.io/files/material-handling_robot_demo_COMPRESS.mp4)
+
 **Monocular Depth Estimation - FADE Ain’t Depth Estimation (CS7643)**
 * MiDaS and LeRes as backbone
 * Double estimation, patch estimation and Merge Net to boost performance
@@ -131,19 +142,6 @@ Projects
 
 undergrad thesis |  [code](https://github.com/DavidLXu/PyVO)
 <br>
-
-
-
-**The 6th National Engineering Training Competition - Material Handling Robot**
-* Embedded system (STM32) programming and design
-* Computer vision (OpenMV module, Paspberry Pi)
-* Mechanical structural design
-<div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/robot1.gif" alt="My Image" title="My Image Title" width="200"/>
-    <img src="http://DavidLXu.github.io/images/robot2.gif" alt="My Image" title="My Image Title" width="185"/>
-</div>
-
-[video](http://DavidLXu.github.io/files/material-handling_robot_demo_COMPRESS.mp4)
 
 Miscellaneous
 ===
