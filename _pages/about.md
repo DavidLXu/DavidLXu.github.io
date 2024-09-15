@@ -59,7 +59,7 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
     <img src="http://DavidLXu.github.io/images/parallel4.png" alt="parallel4" title="parallel4" width="180" />
     <img src="http://DavidLXu.github.io/images/parallel5.png" alt="parallel5" title="parallel5" width="160" />
 </div>
-[paper]
+
 
 <br>
 
@@ -76,9 +76,8 @@ Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
     <img src="http://DavidLXu.github.io/images/uv3.png" alt="uv3" title="uv3" width="230"/>
 </div>
 
-[paper](https://ieeexplore.ieee.org/document/9426197/) |  [presentation](http://DavidLXu.github.io/files/its_uv.pdf)
-
-
+[paper](https://ieeexplore.ieee.org/document/9426197/) |  
+[presentation](http://DavidLXu.github.io/files/its_uv.pdf)
 <br>
 
 
