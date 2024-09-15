@@ -111,9 +111,9 @@ undergrad thesis |  [code](https://github.com/DavidLXu/PyVO)
 **Lixin Xu**, Lin Li et al., "Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability," 2020 5th International Conference on Universal Village (UV), Boston, MA, USA, 2020.
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/uv.png" alt="uv" title="uv" width="150"/>
-    <img src="http://DavidLXu.github.io/images/uv2.png" alt="uv2" title="uv2" width="250"/>
-    <img src="http://DavidLXu.github.io/images/uv3.png" alt="uv3" title="uv3" width="250"/>
+    <img src="http://DavidLXu.github.io/images/uv.png" alt="uv" title="uv" width="120"/>
+    <img src="http://DavidLXu.github.io/images/uv2.png" alt="uv2" title="uv2" width="260"/>
+    <img src="http://DavidLXu.github.io/images/uv3.png" alt="uv3" title="uv3" width="230"/>
 </div>
 
 
