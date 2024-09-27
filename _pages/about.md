@@ -58,8 +58,7 @@ Publication
     <img src="http://DavidLXu.github.io/images/uv3.png" alt="uv3" title="uv3" width="230"/>
 </div>
 
-[paper](https://ieeexplore.ieee.org/document/9426197/) |  
-[presentation](http://DavidLXu.github.io/files/its_uv.pdf)
+[paper](https://ieeexplore.ieee.org/document/9426197/) |  [presentation](http://DavidLXu.github.io/files/its_uv.pdf)
 <br>
 
 
