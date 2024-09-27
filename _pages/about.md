@@ -35,8 +35,9 @@ Publication
 **Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)**
 
 <div style="white-space: nowrap;">
-  <img src="http://DavidLXu.github.io/images/hand_mask.png" alt="hand_mask" title="hand_mask" width="180" />
-    <img src="http://DavidLXu.github.io/images/allegro1.gif" alt="allegro1" title="allegro1" width="215"/>
+  <img src="http://DavidLXu.github.io/images/teaser.png" alt="hand_mask" title="hand_mask" width="180" />
+  <img src="http://DavidLXu.github.io/images/pipeline.png" alt="allegro1" title="allegro1" width="215"/>
+  <img src="http://DavidLXu.github.io/images/network.png" alt="allegro1" title="allegro1" width="215"/>
   <img src="http://DavidLXu.github.io/images/allegro2.gif" alt="allegro2" title="allegro2" width="220" />
    
 </div>
