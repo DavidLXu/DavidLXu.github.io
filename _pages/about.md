@@ -38,7 +38,7 @@ Publication
   <img src="http://DavidLXu.github.io/images/teaser.png" alt="hand_mask" title="hand_mask" width="210" />
 <!--   <img src="http://DavidLXu.github.io/images/pipeline.png" alt="allegro1" title="allegro1" width="215"/> -->
   <img src="http://DavidLXu.github.io/images/network.png" alt="allegro1" title="allegro1" width="245"/>
-  <img src="http://DavidLXu.github.io/images/allegro2.gif" alt="allegro2" title="allegro2" width="220" />
+  <img src="http://DavidLXu.github.io/images/allegro2.gif" alt="allegro2" title="allegro2" width="180" />
    
 </div>
 
