@@ -13,7 +13,6 @@ I am deeply committed to advancing the field of robotics with a focus on the int
 Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
 
 I'm currently in NUS as a visiting intern in Prof. Lin Shao’s group working on a project of cross-embodiment dexterous hand grasping based on generative models and RL.
-I'm also a master student at Tianjin University, where my research focuses on the control and digital twin for parallel robotics.
 Before that, I was a master student at Georgia tech. Took ECE and CS courses like image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence with straight-A scores.
 I completed bachelors in Qingdao University with a major of Mechanical Engineering, where I did a couple of successful robot competitions for university students, and gained experience in embedded systesm, motion control, as well as computer vision, which was also the topic of my undergrad thesis.
 
@@ -21,15 +20,14 @@ I completed bachelors in Qingdao University with a major of Mechanical Engineeri
 Education & Experiences
 ===
 * National University of Singapore, Research Intern, June 2024-Present
-* Tianjin University, M.Sc. Instrument Science, Expected Jan 2025
 * Georgia Institute of Technology, M.Sc. ECE, Expected Dec 2024
 * Qingdao University, B.Sc. ME, June 2021
 
 Honors & Awards
 ===
-* Graduate National Scholarship, Ministry of Education of the People’s Republic of China, 2021
+* National Scholarship, Ministry of Education of the People’s Republic of China, 2021
 * Provincial Outstanding Graduates, Shandong Provincial Education Department, 2021
-* Undergraduate Nation Scholarship, Ministry of Education of the People’s Republic of China, 2019
+* Nation Scholarship, Ministry of Education of the People’s Republic of China, 2019
 
 
 Publication
@@ -45,23 +43,6 @@ Publication
 
 <br>
 
-**Nonlinear Decoupling Control for a 3-PSS Pneumatic Parallel Manipulator with Rodless Pneumatic Cylinder (Under Review)**
-
-Ling Zhao (supervisor), **Lixin Xu**, Jianyang Cai and Tao Wang
-
-* Dynamics modeling of parallel robotics
-* Nonlinear disturbance rejection control design
-
-<div style="white-space: nowrap;">
-    <!-- <img src="http://DavidLXu.github.io/images/parallel1.png" alt="parallel1" title="parallel1" width="230" /> -->
-    <img src="http://DavidLXu.github.io/images/parallel2.png" alt="parallel2" title="parallel2" width="160" />
-    <img src="http://DavidLXu.github.io/images/parallel3.png" alt="parallel3" title="parallel3" width="180" />
-    <img src="http://DavidLXu.github.io/images/parallel4.png" alt="parallel4" title="parallel4" width="180" />
-    <img src="http://DavidLXu.github.io/images/parallel5.png" alt="parallel5" title="parallel5" width="160" />
-</div>
-
-
-<br>
 
 
 **Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability**
@@ -119,9 +100,9 @@ Projects
 <br>
 
 **C++ Simulation, Games and Visualization (ECE6122)**
-* CUDA temperature simulation
-* Buzzy's Revenge
-* Gatech Buzzy Bowl Game
+* CUDA-based thermal conduction simulation
+* Buzzy's Revenge, a multimedia game based on SFML library
+* Gatech Buzzy Bowl Game, a multi-threaded 3D simulation using OpenGL
 <div style="white-space: nowrap;">
   <img src="http://DavidLXu.github.io/images/temp.png" alt="temp" title="temp" width="237" />
     <img src="http://DavidLXu.github.io/images/buzz.png" alt="buzz" title="buzz" width="250" />
