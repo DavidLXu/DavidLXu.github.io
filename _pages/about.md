@@ -32,7 +32,8 @@ Honors & Awards
 Publication
 ===
 
-**DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Cluttered Environments** [IROS 2025 under-review]
+**DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Cluttered Environments** [under-review]
+
 **Lixin Xu**, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao
 
 <div style="white-space: nowrap;">
