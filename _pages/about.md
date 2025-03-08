@@ -26,39 +26,20 @@ Education & Experiences
 Honors & Awards
 ===
 * National Scholarship, Ministry of Education of the People’s Republic of China, 2021
-* Provincial Outstanding Graduates, Shandong Provincial Education Department, 2021
 * Nation Scholarship, Ministry of Education of the People’s Republic of China, 2019
 
 
 Publication
 ===
-**Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)**
+
+**DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Cluttered Environments** [IROS 2025 under-review]
+**Lixin Xu**, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao
 
 <div style="white-space: nowrap;">
-  <img src="http://DavidLXu.github.io/images/teaser.png" alt="hand_mask" title="hand_mask" width="210" />
-<!--   <img src="http://DavidLXu.github.io/images/pipeline.png" alt="allegro1" title="allegro1" width="215"/> -->
-  <img src="http://DavidLXu.github.io/images/network.png" alt="allegro1" title="allegro1" width="245"/>
-  <img src="http://DavidLXu.github.io/images/allegro2.gif" alt="allegro2" title="allegro2" width="180" />
-   
+
 </div>
 
-<br>
-
-
-
-**Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability**
-
-**Lixin Xu**, Lin Li, Kunniang Liu, Jiarui Zhang, Yuanning Chang, Yunpeng Fang, Hao Yuan, Zhiyuan Yang, Jingyuan Chen, Yiyao Wang, Yajun Fang
-
-[IEEE International Conference on Universal Village (UV), 2020](https://universalvillage.org)
-
-<div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/uv.png" alt="uv" title="uv" width="120"/>
-    <img src="http://DavidLXu.github.io/images/uv2.png" alt="uv2" title="uv2" width="260"/>
-    <img src="http://DavidLXu.github.io/images/uv3.png" alt="uv3" title="uv3" width="230"/>
-</div>
-
-[paper](https://ieeexplore.ieee.org/document/9426197/) |  [presentation](http://DavidLXu.github.io/files/its_uv.pdf)
+[website]() | [presentation]() | [code]() | [arxiv]()
 <br>
 
 
