@@ -12,8 +12,7 @@ I am deeply committed to advancing the field of robotics with a focus on the int
 
 Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
 
-I'm currently in NUS as a visiting intern in Prof. Lin Shao’s group working on a project of cross-embodiment dexterous hand grasping based on generative models and RL.
-Before that, I was a master student at Georgia tech. Took ECE and CS courses like image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence with straight-A scores.
+I'm currently in Tsinghua AIR working as a visiting intern in [Prof. Yilun Chen](https://air.tsinghua.edu.cn/en/info/1046/1621.htm)'s group for dexterous policy and sim2real deployment. Before that, I work as a visiting intern in [Prof. Lin Shao](https://linsats.github.io)’s group in National University of Singapore. Before that, I was a master student at Georgia tech. Took ECE and CS courses like image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence with straight-A scores.
 I completed bachelors in Qingdao University with a major of Mechanical Engineering, where I did a couple of successful robot competitions for university students, and gained experience in embedded systesm, motion control, as well as computer vision, which was also the topic of my undergrad thesis.
 
 
@@ -35,6 +34,17 @@ Publication
 **DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Cluttered Environments** [under-review]
 
 **Lixin Xu**, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao
+
+<div style="white-space: nowrap;">
+
+</div>
+
+[website]() | [presentation]() | [code]() | [arxiv]()
+<br>
+
+**DexFlow: A Unified Approach for Dexterous Hand Pose Retargeting and Interaction** [under-review]
+
+Xiaoyi Lin, Kunpeng Yao, **Lixin Xu**, Xueqiang Wang, Xuetao Li, Yuchen Wang, Miao Li
 
 <div style="white-space: nowrap;">
 
