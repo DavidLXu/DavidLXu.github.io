@@ -20,7 +20,7 @@ Education & Experiences
 ===
 * Tsinghua University, Research Intern, Jan 2025-Now
 * National University of Singapore, Research Intern, June 2024-Dec 2024
-* Georgia Institute of Technology, M.Sc. ECE, Expected Dec 2024
+* Georgia Institute of Technology, M.Sc. ECE, Dec 2024
 * Qingdao University, B.Sc. ME, June 2021
 
 Honors & Awards
