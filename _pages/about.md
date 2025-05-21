@@ -10,55 +10,48 @@ redirect_from:
 
 I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create robotics foundation models that could revolutionize our modern industry and society.
 
-Please refer to my CV [here](http://DavidLXu.github.io/files/Lixin_EN_Resume.pdf)
+Please refer to my CV [here](http://davidlxu.github.io/files/Lixin_EN_Resume.pdf)
 
-I'm currently in NUS as a visiting intern in Prof. Lin Shao’s group working on a project of cross-embodiment dexterous hand grasping based on generative models and RL.
-Before that, I was a master student at Georgia tech. Took ECE and CS courses like image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence with straight-A scores.
+I'm currently in Tsinghua AIR working as a visiting intern in [Prof. Yilun Chen](https://air.tsinghua.edu.cn/en/info/1046/1621.htm)'s group for dexterous policy and sim2real deployment. Before that, I work as a visiting intern in [Prof. Lin Shao](https://linsats.github.io)’s group in National University of Singapore. Before that, I was a master student at Georgia tech. Took ECE and CS courses like image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence with straight-A scores.
 I completed bachelors in Qingdao University with a major of Mechanical Engineering, where I did a couple of successful robot competitions for university students, and gained experience in embedded systesm, motion control, as well as computer vision, which was also the topic of my undergrad thesis.
 
 
 Education & Experiences
 ===
-* National University of Singapore, Research Intern, June 2024-Present
-* Georgia Institute of Technology, M.Sc. ECE, Expected Dec 2024
+* Tsinghua University, Research Intern, Jan 2025-Now
+* National University of Singapore, Research Intern, June 2024-Dec 2024
+* Georgia Institute of Technology, M.Sc. ECE, Dec 2024
 * Qingdao University, B.Sc. ME, June 2021
 
 Honors & Awards
 ===
 * National Scholarship, Ministry of Education of the People’s Republic of China, 2021
-* Provincial Outstanding Graduates, Shandong Provincial Education Department, 2021
 * Nation Scholarship, Ministry of Education of the People’s Republic of China, 2019
 
 
 Publication
 ===
-**Cross-embodiment of dexterous end-effectors on various objects and tasks (On-going)**
+
+**DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Cluttered Environments** [under-review]
+
+**Lixin Xu**, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao
 
 <div style="white-space: nowrap;">
-  <img src="http://DavidLXu.github.io/images/teaser.png" alt="hand_mask" title="hand_mask" width="210" />
-<!--   <img src="http://DavidLXu.github.io/images/pipeline.png" alt="allegro1" title="allegro1" width="215"/> -->
-  <img src="http://DavidLXu.github.io/images/network.png" alt="allegro1" title="allegro1" width="245"/>
-  <img src="http://DavidLXu.github.io/images/allegro2.gif" alt="allegro2" title="allegro2" width="180" />
-   
+
 </div>
 
+[website](https://nus-lins-lab.github.io/dexsingweb/) |  [code](https://github.com/DavidLXu/DexSinGrasp) | [arxiv](https://arxiv.org/pdf/2504.04516)
 <br>
 
+**DexFlow: A Unified Approach for Dexterous Hand Pose Retargeting and Interaction** [under-review]
 
-
-**Evaluation of Transportation Systems and Novel UV-Oriented Solution for Integration, Resilience, Inclusiveness and Sustainability**
-
-**Lixin Xu**, Lin Li, Kunniang Liu, Jiarui Zhang, Yuanning Chang, Yunpeng Fang, Hao Yuan, Zhiyuan Yang, Jingyuan Chen, Yiyao Wang, Yajun Fang
-
-[IEEE International Conference on Universal Village (UV), 2020](https://universalvillage.org)
+Xiaoyi Lin, Kunpeng Yao, **Lixin Xu**, Xueqiang Wang, Xuetao Li, Yuchen Wang, Miao Li
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/uv.png" alt="uv" title="uv" width="120"/>
-    <img src="http://DavidLXu.github.io/images/uv2.png" alt="uv2" title="uv2" width="260"/>
-    <img src="http://DavidLXu.github.io/images/uv3.png" alt="uv3" title="uv3" width="230"/>
+
 </div>
 
-[paper](https://ieeexplore.ieee.org/document/9426197/) |  [presentation](http://DavidLXu.github.io/files/its_uv.pdf)
+[website](https://xiaoyilin-code.github.io/Dexflow_page/) | [code]() | [arxiv](https://arxiv.org/abs/2505.01083)
 <br>
 
 
