@@ -41,7 +41,7 @@ Honors & Awards
 Publication
 ===
 
-**DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Cluttered Environments** [under-review]
+**DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Densely Cluttered Environments** [under-review]
 
 **Lixin Xu**, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao
 <div style="white-space: nowrap;">
@@ -59,7 +59,7 @@ Publication
 Weize Li, Zhengxiao Han, **Lixin Xu**, Xiangyu Chen, Harrison Bounds, Chenrui Zhang, Yifan Xu
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/wbcd_task_final.png" alt="My Image" title="My Image Title" width="280"/>
+    <img src="http://DavidLXu.github.io/images/wbcd_task_final.png" alt="My Image" title="My Image Title" width="290"/>
     <img src="http://DavidLXu.github.io/images/props.png" alt="My Image" title="My Image Title" width="355"/>
 </div>
 
