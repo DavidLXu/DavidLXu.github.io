@@ -44,9 +44,11 @@ Publication
 **DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Cluttered Environments** [under-review]
 
 **Lixin Xu**, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao
-
 <div style="white-space: nowrap;">
-
+    <img src="http://DavidLXu.github.io/images/new_d8_succ.gif" alt="My Image" title="My Image Title" width="200"/>
+    <img src="http://DavidLXu.github.io/images/new_irr3.gif" alt="My Image" title="My Image Title" width="185"/>
+    <img src="http://DavidLXu.github.io/images/irr_loop.gif" alt="My Image" title="My Image Title" width="185"/>
+    <img src="http://DavidLXu.github.io/images/prac1_loop.gif" alt="My Image" title="My Image Title" width="185"/>
 </div>
 
 [website](https://nus-lins-lab.github.io/dexsingweb/) |  [code](https://github.com/DavidLXu/DexSinGrasp) | [arxiv](https://arxiv.org/pdf/2504.04516)
@@ -57,7 +59,8 @@ Publication
 Weize Li, Zhengxiao Han, **Lixin Xu**, Xiangyu Chen, Harrison Bounds, Chenrui Zhang, Yifan Xu
 
 <div style="white-space: nowrap;">
-
+    <img src="http://DavidLXu.github.io/images/wbcd_task_final.gif" alt="My Image" title="My Image Title" width="200"/>
+    <img src="http://DavidLXu.github.io/images/props.png" alt="My Image" title="My Image Title" width="285"/>
 </div>
 
 [website](https://wbcdcompetition.github.io/) | [WBCD Challenge](https://www.wbcd.live/) | [arxiv](https://arxiv.org/abs/2508.14542)
@@ -145,7 +148,6 @@ Miscellaneous
 I skied more than 5 times, with National Alpine Skiing Center as my favorite spot. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a very young age.
 
 
-
 **Traveling: 9 countries, more than half of domestic provinces**
 
 Driven by my wanderlust, I have journeyed to 9 different countries (United States, Singapore, Malaysia, Thailand, France, Germany, Czechia, Austria, Hungary), and more than half of provinces and regions in China.
@@ -153,6 +155,8 @@ Driven by my wanderlust, I have journeyed to 9 different countries (United State
     <img src="http://DavidLXu.github.io/images/footprint_asia.jpeg" alt="aisa" title="aisa" width="230" />
     <img src="http://DavidLXu.github.io/images/footprint_america.jpeg" alt="america" title="america" width="230" />
 </div>
+
+<br>
 
 **Languages: CN, EN, DE, JP**
 
