@@ -12,13 +12,18 @@ I am deeply committed to advancing the field of robotics with a focus on the int
 
 Please refer to my CV [here](http://davidlxu.github.io/files/Lixin_EN_Resume.pdf)
 
-I'm currently in Tsinghua AIR working as a visiting intern in [Prof. Yilun Chen](https://air.tsinghua.edu.cn/en/info/1046/1621.htm)'s group for dexterous policy and sim2real deployment. Before that, I work as a visiting intern in [Prof. Lin Shao](https://linsats.github.io)’s group in National University of Singapore. Before that, I was a master student at Georgia tech. Took ECE and CS courses like image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence with straight-A scores.
-I completed bachelors in Qingdao University with a major of Mechanical Engineering, where I did a couple of successful robot competitions for university students, and gained experience in embedded systesm, motion control, as well as computer vision, which was also the topic of my undergrad thesis.
+I am currently a PhD student at the Hong Kong University of Science and Technology (Guangzhou), supervised by [Prof.Renjing Xu](https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=97).
+
+Previously, I was a visiting intern in [Prof. Yilun Chen](https://air.tsinghua.edu.cn/en/info/1046/1621.htm)'s group at Tsinghua AIR, and in [Prof. Lin Shao](https://linsats.github.io)’s group in National University of Singapore, focusing on dexterous policy learning and sim-to-real deployment.
+
+I earned my Master’s degree at Georgia Tech, where I took ECE and CS courses—including image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence—achieving straight-A results. Prior to that, I completed my Bachelor’s in Mechanical Engineering at Qingdao University, where I participated in robotics competitions and gained hands-on experience in embedded systems, motion control, and computer vision, which is the topic of my undergraduate thesis.
+
 
 
 Education & Experiences
 ===
-* Tsinghua University, Research Intern, Jan 2025-Now
+* The Hong Kong University of Science and Technology (Guangzhou), Ph.D student, Starting Aug 2025
+* Tsinghua University, Research Intern, Jan 2025-Jun 2025
 * National University of Singapore, Research Intern, June 2024-Dec 2024
 * Georgia Institute of Technology, M.Sc. ECE, Dec 2024
 * Qingdao University, B.Sc. ME, June 2021
