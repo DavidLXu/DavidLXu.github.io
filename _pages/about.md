@@ -59,8 +59,8 @@ Publication
 Weize Li, Zhengxiao Han, **Lixin Xu**, Xiangyu Chen, Harrison Bounds, Chenrui Zhang, Yifan Xu
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/wbcd_task_final.png" alt="My Image" title="My Image Title" width="200"/>
-    <img src="http://DavidLXu.github.io/images/props.png" alt="My Image" title="My Image Title" width="385"/>
+    <img src="http://DavidLXu.github.io/images/wbcd_task_final.png" alt="My Image" title="My Image Title" width="250"/>
+    <img src="http://DavidLXu.github.io/images/props.png" alt="My Image" title="My Image Title" width="345"/>
 </div>
 
 [website](https://wbcdcompetition.github.io/) | [WBCD Challenge](https://www.wbcd.live/) | [arxiv](https://arxiv.org/abs/2508.14542)
