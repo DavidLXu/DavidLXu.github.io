@@ -45,7 +45,7 @@ Publication
 
 **Lixin Xu**, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/new_d8_succ.gif" alt="My Image" title="My Image Title" width="200"/>
+    <img src="http://DavidLXu.github.io/images/new_d8_succ.gif" alt="My Image" title="My Image Title" width="185"/>
     <img src="http://DavidLXu.github.io/images/new_irr3.gif" alt="My Image" title="My Image Title" width="185"/>
     <img src="http://DavidLXu.github.io/images/irr_loop.gif" alt="My Image" title="My Image Title" width="185"/>
     <img src="http://DavidLXu.github.io/images/prac1_loop.gif" alt="My Image" title="My Image Title" width="185"/>
@@ -59,8 +59,8 @@ Publication
 Weize Li, Zhengxiao Han, **Lixin Xu**, Xiangyu Chen, Harrison Bounds, Chenrui Zhang, Yifan Xu
 
 <div style="white-space: nowrap;">
-    <img src="http://DavidLXu.github.io/images/wbcd_task_final.gif" alt="My Image" title="My Image Title" width="200"/>
-    <img src="http://DavidLXu.github.io/images/props.png" alt="My Image" title="My Image Title" width="285"/>
+    <img src="http://DavidLXu.github.io/images/wbcd_task_final.png" alt="My Image" title="My Image Title" width="200"/>
+    <img src="http://DavidLXu.github.io/images/props.png" alt="My Image" title="My Image Title" width="385"/>
 </div>
 
 [website](https://wbcdcompetition.github.io/) | [WBCD Challenge](https://www.wbcd.live/) | [arxiv](https://arxiv.org/abs/2508.14542)
