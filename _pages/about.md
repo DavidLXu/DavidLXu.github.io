@@ -147,12 +147,12 @@ I skied more than 5 times, with National Alpine Skiing Center as my favorite spo
 
 
 **Traveling: 9 countries, more than half of domestic provinces**
-
-Driven by my wanderlust, I have journeyed to 9 different countries (United States, Singapore, Malaysia, Thailand, France, Germany, Czechia, Austria, Hungary), and more than half of provinces and regions in China.
 <div style="white-space: nowrap;">
     <img src="http://DavidLXu.github.io/images/footprint_asia.jpeg" alt="aisa" title="aisa" width="230" />
     <img src="http://DavidLXu.github.io/images/footprint_america.jpeg" alt="america" title="america" width="230" />
 </div>
+Driven by my wanderlust, I have journeyed to 9 different countries (United States, Singapore, Malaysia, Thailand, France, Germany, Czechia, Austria, Hungary), and more than half of provinces and regions in China.
+
 
 **Languages: CN, EN, DE, JP**
 
