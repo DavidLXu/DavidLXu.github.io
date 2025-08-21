@@ -48,7 +48,7 @@ Publication
 [website](https://nus-lins-lab.github.io/dexsingweb/) |  [code](https://github.com/DavidLXu/DexSinGrasp) | [arxiv](https://arxiv.org/pdf/2504.04516)
 <br>
 
-**Taming VR Teleoperation and Learning from Demonstration for Multi-Task Bimanual Table Service Manipulation** [under-review]
+**Taming VR Teleoperation and Learning from Demonstration for Multi-Task Bimanual Table Service Manipulation** [ICRA 2025, challenge report]
 
 Weize Li, Zhengxiao Han, **Lixin Xu**, Xiangyu Chen, Harrison Bounds, Chenrui Zhang, Yifan Xu
 
@@ -59,7 +59,7 @@ Weize Li, Zhengxiao Han, **Lixin Xu**, Xiangyu Chen, Harrison Bounds, Chenrui Zh
 [website](https://wbcdcompetition.github.io/) | [WBCD Challenge](https://www.wbcd.live/) | [arxiv](https://arxiv.org/abs/2508.14542)
 <br>
 
-**DexFlow: A Unified Approach for Dexterous Hand Pose Retargeting and Interaction** [under-review]
+**DexFlow: A Unified Approach for Dexterous Hand Pose Retargeting and Interaction** [arxiv]
 
 Xiaoyi Lin, Kunpeng Yao, **Lixin Xu**, Xueqiang Wang, Xuetao Li, Yuchen Wang, Miao Li
 
