@@ -12,7 +12,7 @@ I am deeply committed to advancing the field of robotics with a focus on the int
 
 Please refer to my CV [here](http://davidlxu.github.io/files/Lixin_EN_Resume.pdf)
 
-I am currently a PhD student at the Hong Kong University of Science and Technology (Guangzhou), supervised by [Prof.Renjing Xu](https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=97).
+I am currently a PhD student at the Hong Kong University of Science and Technology (Guangzhou), supervised by [Prof. Renjing Xu](https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=97).
 
 Previously, I was a visiting intern in [Prof. Yilun Chen](https://air.tsinghua.edu.cn/en/info/1046/1621.htm)'s group at Tsinghua AIR, and in [Prof. Lin Shao](https://linsats.github.io)’s group in National University of Singapore, focusing on dexterous policy learning and sim-to-real deployment.
 
@@ -20,13 +20,17 @@ I earned my Master’s degree at Georgia Tech, where I took ECE and CS courses�
 
 
 
-Education & Experiences
+Education
 ===
-* The Hong Kong University of Science and Technology (Guangzhou), Ph.D student, Starting Aug 2025
-* Tsinghua University, Research Intern, Jan 2025-Jun 2025
-* National University of Singapore, Research Intern, June 2024-Dec 2024
+* HKUST (Guangzhou), Ph.D student, Starting Aug 2025
 * Georgia Institute of Technology, M.Sc. ECE, Dec 2024
 * Qingdao University, B.Sc. ME, June 2021
+
+Research Experiences
+===
+* HKUST (Guangzhou), Research Assistant, Jun 2025-Aug 2025
+* Tsinghua University, Research Intern, Jan 2025-Jun 2025
+* National University of Singapore, Research Intern, June 2024-Dec 2024
 
 Honors & Awards
 ===
@@ -140,9 +144,15 @@ Miscellaneous
 
 I skied more than 5 times, with National Alpine Skiing Center as my favorite spot. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a very young age.
 
+
+
 **Traveling: 9 countries, more than half of domestic provinces**
 
-Driven by my wanderlust, I have journeyed to 9 different countries (United States, Singapore, Malaysia, Thailand, France, Germany, Czechia, Austria, Hungary), and more than half of provinces in China.
+Driven by my wanderlust, I have journeyed to 9 different countries (United States, Singapore, Malaysia, Thailand, France, Germany, Czechia, Austria, Hungary), and more than half of provinces and regions in China.
+<div style="white-space: nowrap;">
+    <img src="http://DavidLXu.github.io/images/footprint_asia.jpeg" alt="aisa" title="aisa" width="230" />
+    <img src="http://DavidLXu.github.io/images/footprint_america.jpeg" alt="america" title="america" width="230" />
+</div>
 
 **Languages: CN, EN, DE, JP**
 
