@@ -16,7 +16,7 @@ I am currently a PhD student at the Hong Kong University of Science and Technolo
 
 Previously, I was a visiting intern in [Prof. Yilun Chen](https://air.tsinghua.edu.cn/en/info/1046/1621.htm)'s group at Tsinghua AIR, and in [Prof. Lin Shao](https://linsats.github.io)’s group in National University of Singapore, focusing on dexterous policy learning and sim-to-real deployment.
 
-I earned my Master’s degree at Georgia Tech, where I took ECE and CS courses—including image processing, C++ programming, random processes, machine learning, deep learning, and robot intelligence—achieving straight-A results. Prior to that, I completed my Bachelor’s in Mechanical Engineering at Qingdao University, where I participated in robotics competitions and gained hands-on experience in embedded systems, motion control, and computer vision, which is the topic of my undergraduate thesis.
+I earned my Master’s degree in ECE at Georgia Tech, and Bachelor’s in Mechanical Engineering at Qingdao University.
 
 
 
