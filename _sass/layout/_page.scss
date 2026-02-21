@@ -449,7 +449,17 @@
 .travel-gallery__meta span {
   color: var(--global-text-color-light);
   font-family: $sans-serif;
-  font-size: $type-size-7;
+  font-size: $type-size-6;
+  line-height: 1.45;
+}
+
+.travel-gallery__meta .travel-gallery__place {
+  font-size: $type-size-5;
+  color: var(--global-text-color-light);
+}
+
+.travel-gallery__meta .travel-gallery__year {
+  font-size: $type-size-6;
 }
 
 .comment__date {

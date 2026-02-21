@@ -25,7 +25,7 @@ redirect_from:
 <div data-lang="zh" style="display: none;">
   <p style="font-size: 0.9rem; color: #6b7280; margin-bottom: 0.4rem;">（中文版由 GPT 5.3 转换生成）</p>
   <blockquote>
-    我一直在做机器人研究，主要关注认知智能和运动智能的结合，希望把机器人基础模型真正落到现实场景里。
+    我长期专注于机器人领域的研究，致力于融合“认知智能”与“运动智能”，构建有望重塑现代工业与社会形态的机器人基础模型。
   </blockquote>
 
   <p>英文简历在<a href="http://davidlxu.github.io/files/Lixin_EN_Resume.pdf">这里</a>。</p>
@@ -155,7 +155,7 @@ redirect_from:
 <p><strong><span data-i18n-en="Traveling:" data-i18n-zh="旅行打卡：">Traveling:</span> <span id="country-count">9</span> <span data-i18n-en="countries" data-i18n-zh="个国家">countries</span>, <span id="city-count">0</span> <span data-i18n-en="cities" data-i18n-zh="座城市">cities</span>.</strong></p>
 
 <p data-lang="en">Cities I’ve visited are shown as green dots on the map below. I am currently primarily based in China’s Greater Bay Area. Feel free to connect—happy to chat no matter where you’re located.</p>
-<p data-lang="zh" style="display: none;">我去过的城市都标在下面这张地图里（绿色小点）。我现在主要在粤港澳大湾区活动，欢迎随时来聊。</p>
+<p data-lang="zh" style="display: none;">我去过的城市都标在下面这张地图里（绿色小点）。现在主要在粤港澳大湾区活动，欢迎随时来聊。</p>
 
 <div style="margin: 0.8rem 0 1rem;">
   <iframe
@@ -217,7 +217,7 @@ redirect_from:
 <p data-lang="zh" style="display: none;">我是一个语言爱好者，可以使用中文（母语）、英文（IELTS 7.5 / GRE 322）和粤语（日常交流没问题）；德语和日语最近有点手生。</p>
 
 <p data-lang="en">Two persons I admire the most: Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.</p>
-<p data-lang="zh" style="display: none;">如果说最欣赏的两个人，应该是 Geoffrey Hinton 和 Elon Musk：一个长期深耕神经网络研究，一个在愿景和执行力上都很强。</p>
+<p data-lang="zh" style="display: none;">我最欣赏的两个人：Geoffrey Hinton 和 Elon Musk。一个长期深耕神经网络研究，一个在愿景和执行力上都很强。</p>
 
 <!--
 Projects and Competitions

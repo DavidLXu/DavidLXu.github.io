@@ -6,9 +6,13 @@
 <section class="travel-gallery-section" data-travel-gallery>
   {% if travel_regions.size > 0 %}
     <div class="travel-gallery__filters" role="tablist" aria-label="Travel photo regions">
-      <button type="button" class="travel-gallery__filter is-active" data-region-filter="all">All</button>
+      <button type="button" class="travel-gallery__filter is-active" data-region-filter="all">
+        <span data-i18n-en="All" data-i18n-zh="全部">All</span>
+      </button>
       {% for region in travel_regions %}
-        <button type="button" class="travel-gallery__filter" data-region-filter="{{ region.key | slugify }}">{{ region.label }}</button>
+        <button type="button" class="travel-gallery__filter" data-region-filter="{{ region.key | slugify }}">
+          <span data-i18n-en="{{ region.label }}" data-i18n-zh="{{ region.zh_label | default: region.label }}">{{ region.label }}</span>
+        </button>
       {% endfor %}
     </div>
   {% endif %}
@@ -25,14 +29,18 @@
           <img src="{{ image_url }}" alt="{{ photo.alt | default: photo.title | escape }}">
         </a>
         <div class="travel-gallery__meta">
-          {% if photo.title %}
-            <strong>{{ photo.title }}</strong>
-          {% endif %}
           {% if photo.location or photo.country %}
-            <span>{% if photo.location %}{{ photo.location }}{% endif %}{% if photo.country %}{% if photo.location %}, {% endif %}{{ photo.country }}{% endif %}</span>
+            <span class="travel-gallery__place">
+              {% if photo.location %}
+                <span data-i18n-en="{% if photo.country %}{{ photo.location }}, {% else %}{{ photo.location }}{% endif %}" data-i18n-zh="{% if photo.country %}{{ photo.zh_location | default: photo.location }}, {% else %}{{ photo.zh_location | default: photo.location }}{% endif %}">{% if photo.country %}{{ photo.location }}, {% else %}{{ photo.location }}{% endif %}</span>
+              {% endif %}
+              {% if photo.country %}
+                <span data-i18n-en="{{ photo.country }}" data-i18n-zh="{{ photo.zh_country | default: photo.country }}">{{ photo.country }}</span>
+              {% endif %}
+            </span>
           {% endif %}
           {% if photo.taken_on %}
-            <span>{{ photo.taken_on }}</span>
+            <span class="travel-gallery__year">{{ photo.taken_on }}</span>
           {% endif %}
         </div>
       </article>

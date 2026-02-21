@@ -1,103 +1,218 @@
 regions:
   - key: united-states
     label: United States
+    zh_label: 美国
   - key: china
     label: China
+    zh_label: 中国
   - key: malaysia
     label: Malaysia
+    zh_label: 马来西亚
   - key: thailand
     label: Thailand
+    zh_label: 泰国
+  - key: vietnam
+    label: Vietnam
+    zh_label: 越南
   - key: singapore
     label: Singapore
+    zh_label: 新加坡
 
 photos:
-  - image_path: travel/united-states/dc-1.jpg
-    location: D.C.
+  - image_path: travel/united-states/los-angeles-1.jpg
+    title: Los Angeles city travel photo
+    zh_title: 洛杉矶旅行照片
+    location: Los Angeles
+    zh_location: 洛杉矶
     country: United States
+    zh_country: 美国
+    region: united-states
+    taken_on: "2025"
+    alt: Los Angeles city travel photo
+
+  - image_path: travel/united-states/los-angeles-2.jpg
+    title: Los Angeles travel photo
+    zh_title: 洛杉矶旅行照片
+    location: Los Angeles
+    zh_location: 洛杉矶
+    country: United States
+    zh_country: 美国
+    region: united-states
+    taken_on: "2025"
+    alt: Los Angeles travel photo
+
+  - image_path: travel/united-states/boston-1.jpg
+    title: Boston city travel photo
+    zh_title: 波士顿旅行照片
+    location: Boston
+    zh_location: 波士顿
+    country: United States
+    zh_country: 美国
+    region: united-states
+    taken_on: "2025"
+    alt: Boston city travel photo
+
+  - image_path: travel/united-states/boston-2.jpg
+    title: Boston travel photo
+    zh_title: 波士顿旅行照片
+    location: Boston
+    zh_location: 波士顿
+    country: United States
+    zh_country: 美国
+    region: united-states
+    taken_on: "2025"
+    alt: Boston travel photo
+
+  - image_path: travel/united-states/dc-1.jpg
+    title: Washington D.C. travel photo
+    zh_title: 华盛顿特区旅行照片
+    location: D.C.
+    zh_location: 华盛顿特区
+    country: United States
+    zh_country: 美国
     region: united-states
     taken_on: "2025"
     alt: Washington D.C. travel photo
 
   - image_path: travel/united-states/new-york-city-1.jpg
+    title: New York City travel photo
+    zh_title: 纽约旅行照片
     location: New York City
+    zh_location: 纽约
     country: United States
+    zh_country: 美国
     region: united-states
     taken_on: "2025"
     alt: New York City travel photo
 
   - image_path: travel/united-states/atlanta-1.jpg
+    title: Atlanta city travel photo
+    zh_title: 亚特兰大旅行照片
     location: Atlanta
+    zh_location: 亚特兰大
     country: United States
+    zh_country: 美国
     region: united-states
     taken_on: "2025"
     alt: Atlanta city travel photo
 
   - image_path: travel/china/xian-1.jpg
+    title: Xi'an city travel photo
+    zh_title: 西安旅行照片
     location: Xi'an
+    zh_location: 西安
     country: China
+    zh_country: 中国
     region: china
     taken_on: "2025"
     alt: Xi'an city travel photo
 
   - image_path: travel/china/wuxi-1.jpg
+    title: Wuxi city travel photo
+    zh_title: 无锡旅行照片
     location: Wuxi
+    zh_location: 无锡
     country: China
+    zh_country: 中国
     region: china
     taken_on: "2025"
     alt: Wuxi city travel photo
 
   - image_path: travel/thailand/bangkok-1.jpg
+    title: Bangkok city travel photo
+    zh_title: 曼谷旅行照片
     location: Bangkok
+    zh_location: 曼谷
     country: Thailand
+    zh_country: 泰国
     region: thailand
     taken_on: "2024"
     alt: Bangkok city travel photo
 
+  - image_path: travel/vietnam/trung-khanh-1.jpg
+    title: Trùng Khánh travel photo
+    zh_title: Trùng Khánh 旅行照片
+    location: Trùng Khánh
+    zh_location: Trùng Khánh
+    country: Vietnam
+    zh_country: 越南
+    region: vietnam
+    taken_on: "2025"
+    alt: Trùng Khánh travel photo
+
   - image_path: travel/malaysia/kuala-lumpur-1.jpg
+    title: Petronas Towers at night in Kuala Lumpur
+    zh_title: 吉隆坡双子塔夜景
     location: Kuala Lumpur
+    zh_location: 吉隆坡
     country: Malaysia
+    zh_country: 马来西亚
     region: malaysia
     taken_on: "2024"
     alt: Petronas Towers at night in Kuala Lumpur
 
   - image_path: travel/malaysia/kuala-lumpur-2.jpg
+    title: Chili crab dish in Kuala Lumpur
+    zh_title: 吉隆坡辣椒蟹
     location: Kuala Lumpur
+    zh_location: 吉隆坡
     country: Malaysia
+    zh_country: 马来西亚
     region: malaysia
     taken_on: "2024"
     alt: Chili crab dish in Kuala Lumpur
 
   - image_path: travel/singapore/singapore-1.jpg
+    title: Singapore street and city scene
+    zh_title: 新加坡街景
     location: Singapore
+    zh_location: 新加坡
     country: Singapore
+    zh_country: 新加坡
     region: singapore
     taken_on: "2024"
     alt: Singapore street and city scene
 
   - image_path: travel/singapore/singapore-2.jpg
+    title: Singapore travel photo
+    zh_title: 新加坡旅行照片
     location: Singapore
+    zh_location: 新加坡
     country: Singapore
+    zh_country: 新加坡
     region: singapore
     taken_on: "2024"
     alt: Singapore travel photo
 
   - image_path: travel/singapore/singapore-4.jpg
+    title: Singapore city architecture
+    zh_title: 新加坡城市建筑
     location: Singapore
+    zh_location: 新加坡
     country: Singapore
+    zh_country: 新加坡
     region: singapore
     taken_on: "2024"
     alt: Singapore city architecture
 
   - image_path: travel/singapore/singapore-5.jpg
+    title: Singapore waterfront scene
+    zh_title: 新加坡滨水风景
     location: Singapore
+    zh_location: 新加坡
     country: Singapore
+    zh_country: 新加坡
     region: singapore
     taken_on: "2024"
     alt: Singapore waterfront scene
 
   - image_path: travel/singapore/singapore-7.jpg
+    title: Singapore skyline and streets
+    zh_title: 新加坡天际线与街景
     location: Singapore
+    zh_location: 新加坡
     country: Singapore
+    zh_country: 新加坡
     region: singapore
     taken_on: "2024"
     alt: Singapore skyline and streets

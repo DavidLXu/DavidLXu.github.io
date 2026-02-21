@@ -25,10 +25,14 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Lixin Xu"
+  zh_name          : "许立昕"
   pronouns         : # example: "she/her"  
-  bio              : "Self-motivated student researcher and practitioner in robotics"
+  bio              : "PhD studnet in Robotics"
+  zh_bio           : "机器人方向在读博士生"
   location         : "Greater Bay Area, China"
+  zh_location      : "广州/深圳"
   employer         : "HKUST(GZ)"
+  zh_employer      : "香港科技大学（广州）"
   uri              : # URL
   email            : "lxu188[at]connect.hkust-gz.edu.cn" 
 
