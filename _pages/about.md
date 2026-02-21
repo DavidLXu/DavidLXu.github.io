@@ -8,38 +8,80 @@ redirect_from:
   - /about.html
 ---
 
-> I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create robotics foundation models that could revolutionize our modern industry and society.
+<div data-lang="en">
+  <blockquote>
+    I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create robotics foundation models that could revolutionize our modern industry and society.
+  </blockquote>
 
-Please refer to my CV [here](http://davidlxu.github.io/files/Lixin_EN_Resume.pdf)
+  <p>Please refer to my CV <a href="http://davidlxu.github.io/files/Lixin_EN_Resume.pdf">here</a>.</p>
 
-I am currently a PhD student at the Hong Kong University of Science and Technology (Guangzhou), supervised by [Prof. Renjing Xu](https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=97).
+  <p>I am currently a PhD student at the Hong Kong University of Science and Technology (Guangzhou), supervised by <a href="https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=97">Prof. Renjing Xu</a>.</p>
 
-Previously, I was a visiting intern in [Prof. Yilun Chen](https://air.tsinghua.edu.cn/en/info/1046/1621.htm)'s group at Tsinghua AIR, and in [Prof. Lin Shao](https://linsats.github.io)’s group in National University of Singapore, focusing on dexterous policy learning and sim-to-real deployment.
+  <p>Previously, I was a visiting intern in <a href="https://air.tsinghua.edu.cn/en/info/1046/1621.htm">Prof. Yilun Chen</a>'s group at Tsinghua AIR, and in <a href="https://linsats.github.io">Prof. Lin Shao</a>'s group in National University of Singapore, focusing on dexterous policy learning and sim-to-real deployment.</p>
 
-I earned my Master’s degree in ECE at Georgia Tech, and Bachelor’s in Mechanical Engineering at Qingdao University.
+  <p>I earned my Master's degree in ECE at Georgia Tech, and Bachelor's in Mechanical Engineering at Qingdao University.</p>
+</div>
 
+<div data-lang="zh" style="display: none;">
+  <p style="font-size: 0.9rem; color: #6b7280; margin-bottom: 0.4rem;">（中文版由 GPT 5.3 转换生成）</p>
+  <blockquote>
+    我一直在做机器人研究，主要关注认知智能和运动智能的结合，希望把机器人基础模型真正落到现实场景里。
+  </blockquote>
 
+  <p>英文简历在<a href="http://davidlxu.github.io/files/Lixin_EN_Resume.pdf">这里</a>。</p>
 
-Education
-===
-* HKUST (Guangzhou), Ph.D student, Starting Aug 2025
-* Georgia Institute of Technology, M.Sc. ECE, Dec 2024
-* Qingdao University, B.Sc. ME, June 2021
+  <p>我目前在香港科技大学（广州）攻读博士，导师是<a href="https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page?id=97">许人镜教授</a>。</p>
 
-Research Experiences
-===
-* HKUST (Guangzhou), Research Assistant, Jun 2025-Aug 2025
-* Tsinghua University, Research Intern, Jan 2025-Jun 2025
-* National University of Singapore, Research Intern, June 2024-Dec 2024
+  <p>之前我在清华 AIR 的<a href="https://air.tsinghua.edu.cn/en/info/1046/1621.htm">陈亦伦</a>组和新加坡国立大学<a href="https://linsats.github.io">邵林</a>课题组做过访问实习，主要做灵巧操作策略学习和 sim-to-real 部署。</p>
 
-Honors & Awards
-===
-* National Scholarship, Ministry of Education of the People’s Republic of China, 2021
-* Nation Scholarship, Ministry of Education of the People’s Republic of China, 2019
+  <p>我硕士毕业于佐治亚理工学院电子与计算机工程专业，本科毕业于青岛大学机械工程专业。</p>
+</div>
 
+<div data-lang="en">
+  <h2>Education</h2>
+  <ul>
+    <li>HKUST (Guangzhou), Ph.D student, Starting Aug 2025</li>
+    <li>Georgia Institute of Technology, M.Sc. ECE, Dec 2024</li>
+    <li>Qingdao University, B.Sc. ME, June 2021</li>
+  </ul>
 
-Publication
-===
+  <h2>Research Experiences</h2>
+  <ul>
+    <li>HKUST (Guangzhou), Research Assistant, Jun 2025-Aug 2025</li>
+    <li>Tsinghua University, Research Intern, Jan 2025-Jun 2025</li>
+    <li>National University of Singapore, Research Intern, June 2024-Dec 2024</li>
+  </ul>
+
+  <h2>Honors &amp; Awards</h2>
+  <ul>
+    <li>National Scholarship, Ministry of Education of the People's Republic of China, 2021</li>
+    <li>Nation Scholarship, Ministry of Education of the People's Republic of China, 2019</li>
+  </ul>
+</div>
+
+<div data-lang="zh" style="display: none;">
+  <h2>教育背景</h2>
+  <ul>
+    <li>香港科技大学（广州）博士在读（2025 年 8 月入学）</li>
+    <li>佐治亚理工学院，电子与计算机工程硕士（2024 年 12 月）</li>
+    <li>青岛大学，机械工程学士（2021 年 6 月）</li>
+  </ul>
+
+  <h2>科研经历</h2>
+  <ul>
+    <li>香港科技大学（广州），研究助理（2025 年 6 月 - 8 月）</li>
+    <li>清华大学，研究实习生（2025 年 1 月 - 6 月）</li>
+    <li>新加坡国立大学，研究实习生（2024 年 6 月 - 12 月）</li>
+  </ul>
+
+  <h2>荣誉与奖项</h2>
+  <ul>
+    <li>教育部国家奖学金（2021）</li>
+    <li>教育部国家奖学金（2019）</li>
+  </ul>
+</div>
+
+<h2><span data-i18n-en="Publication" data-i18n-zh="论文">Publication</span></h2>
 
 <div style="display: grid; gap: 1rem; margin-top: 0.5rem;">
   <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
@@ -103,17 +145,17 @@ Publication
 
 <div style="height: 1.4rem;"></div>
 
-Miscellaneous
-===
+<h2><span data-i18n-en="Miscellaneous" data-i18n-zh="其他">Miscellaneous</span></h2>
 
-**Sports: skiing, hiking, biking, table tennis**
+<p><strong><span data-i18n-en="Sports: skiing, hiking, biking, table tennis" data-i18n-zh="日常爱好：滑雪、徒步、骑行、乒乓球">Sports: skiing, hiking, biking, table tennis</span></strong></p>
 
-I like skiing, my favorite spot is National Alpine Skiing Center in Beijing. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a young age.
+<p data-lang="en">I like skiing, my favorite spot is National Alpine Skiing Center in Beijing. I also like hiking and biking, especially in natural resorts. I'm also a table tennis player from a young age.</p>
+<p data-lang="zh" style="display: none;">平时最常做的事就是滑雪、徒步和骑行。北京国家高山滑雪中心是我很喜欢的雪场。乒乓球也一直在打，从小打到大。</p>
 
+<p><strong><span data-i18n-en="Traveling:" data-i18n-zh="旅行打卡：">Traveling:</span> <span id="country-count">9</span> <span data-i18n-en="countries" data-i18n-zh="个国家">countries</span>, <span id="city-count">0</span> <span data-i18n-en="cities" data-i18n-zh="座城市">cities</span>.</strong></p>
 
-**Traveling: <span id="country-count">9</span> countries, <span id="city-count">0</span> cities.**
-
-Cities I’ve visited are shown as green dots on the map below. I am currently primarily based in China’s Greater Bay Area. Feel free to connect—happy to chat no matter where you’re located.
+<p data-lang="en">Cities I’ve visited are shown as green dots on the map below. I am currently primarily based in China’s Greater Bay Area. Feel free to connect—happy to chat no matter where you’re located.</p>
+<p data-lang="zh" style="display: none;">我去过的城市都标在下面这张地图里（绿色小点）。我现在主要在粤港澳大湾区活动，欢迎随时来聊。</p>
 
 <div style="margin: 0.8rem 0 1rem;">
   <iframe
@@ -169,11 +211,13 @@ Cities I’ve visited are shown as green dots on the map below. I am currently p
   })();
 </script>
 
-**Languages: CN, EN, DE, JP**
+<p><strong><span data-i18n-en="Languages: CN, EN, DE, JP" data-i18n-zh="会的语言：中文、英文、德语、日语">Languages: CN, EN, DE, JP</span></strong></p>
 
-I'm a language enthusiast. My preferred languages: Chinese (native), English (IELTS7.5/GRE322), Cantonese (Non-native but colloquial), German and Japanese (getting rusty).
+<p data-lang="en">I'm a language enthusiast. My preferred languages: Chinese (native), English (IELTS7.5/GRE322), Cantonese (Non-native but colloquial), German and Japanese (getting rusty).</p>
+<p data-lang="zh" style="display: none;">我是一个语言爱好者，可以使用中文（母语）、英文（IELTS 7.5 / GRE 322）和粤语（日常交流没问题）；德语和日语最近有点手生。</p>
 
-Two persons I admire the most:  Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.
+<p data-lang="en">Two persons I admire the most: Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.</p>
+<p data-lang="zh" style="display: none;">如果说最欣赏的两个人，应该是 Geoffrey Hinton 和 Elon Musk：一个长期深耕神经网络研究，一个在愿景和执行力上都很强。</p>
 
 <!--
 Projects and Competitions

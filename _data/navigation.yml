@@ -9,18 +9,23 @@
 
 main:
   - title: "Blog Posts"
+    zh_title: "博客"
     url: /year-archive/
 
   - title: "CV"
+    zh_title: "简历"
     url: /cv/
 
   - title: "Projects"
+    zh_title: "项目"
     url: /projects/
 
   - title: "Publications"
+    zh_title: "论文"
     url: /publications/
 
   - title: "Galleries"
+    zh_title: "画廊"
     url: /galleries/
 
   # - title: "CV"

@@ -48,6 +48,43 @@ var toggleTheme = () => {
 };
 
 /* ==========================================================================
+   Language switch
+   ========================================================================== */
+
+let determineLanguageSetting = () => {
+  let saved = localStorage.getItem("site_lang");
+  if (saved === "en" || saved === "zh") return saved;
+  let browserLang = (navigator.language || "").toLowerCase();
+  return browserLang.startsWith("zh") ? "zh" : "en";
+};
+
+let setLanguage = (lang) => {
+  const useLang = lang === "zh" ? "zh" : "en";
+  localStorage.setItem("site_lang", useLang);
+  document.documentElement.setAttribute("lang", useLang);
+
+  document.querySelectorAll("[data-i18n-en]").forEach((elem) => {
+    const enText = elem.getAttribute("data-i18n-en");
+    const zhText = elem.getAttribute("data-i18n-zh") || enText;
+    elem.textContent = useLang === "zh" ? zhText : enText;
+  });
+
+  document.querySelectorAll("[data-lang]").forEach((elem) => {
+    const elemLang = elem.getAttribute("data-lang");
+    elem.style.display = elemLang === useLang ? "" : "none";
+  });
+
+  const enBtn = document.getElementById("lang-en");
+  const zhBtn = document.getElementById("lang-zh");
+  if (enBtn && zhBtn) {
+    enBtn.style.fontWeight = useLang === "en" ? "700" : "500";
+    enBtn.style.opacity = useLang === "en" ? "1" : "0.65";
+    zhBtn.style.fontWeight = useLang === "zh" ? "700" : "500";
+    zhBtn.style.opacity = useLang === "zh" ? "1" : "0.65";
+  }
+};
+
+/* ==========================================================================
    Plotly integration script so that Markdown codeblocks will be rendered
    ========================================================================== */
 
@@ -101,6 +138,13 @@ $(document).ready(function () {
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
+
+  // Enable language toggle
+  setLanguage(determineLanguageSetting());
+  $('#lang-toggle').on('click', function () {
+    const current = localStorage.getItem("site_lang") || "en";
+    setLanguage(current === "zh" ? "en" : "zh");
+  });
 
   // Enable the sticky footer
   var bumpIt = function () {
