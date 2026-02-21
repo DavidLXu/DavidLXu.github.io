@@ -1,0 +1,22 @@
+regions:
+  - key: asia
+    label: Asia
+  - key: north-america
+    label: North America
+
+photos:
+  - image_path: footprint_asia.jpeg
+    title: Asia Travel Footprint
+    location: East and Southeast Asia
+    country: China, Singapore, Malaysia, Thailand
+    region: asia
+    taken_on: "2025"
+    alt: Travel footprint map across Asia
+
+  - image_path: footprint_america.jpeg
+    title: North America Travel Footprint
+    location: United States
+    country: USA
+    region: north-america
+    taken_on: "2024"
+    alt: Travel footprint map across North America

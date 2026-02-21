@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Photo Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #091121;
+        --text: #eef4ff;
+        --accent: #00e39f;
+        --dot-size: 14px;
+        --dot-border: 2px;
+        --pulse-radius: 14px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-family: "Space Grotesk", "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      #app {
+        position: fixed;
+        inset: 0;
+      }
+
+      #map {
+        position: absolute;
+        inset: 0;
+      }
+
+      .city-dot {
+        width: var(--dot-size);
+        height: var(--dot-size);
+        border-radius: 999px;
+        background: var(--accent);
+        border: var(--dot-border) solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 0 0 rgba(0, 227, 159, 0.65);
+        animation: pulse 1.8s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 227, 159, 0.6);
+        }
+        70% {
+          box-shadow: 0 0 0 var(--pulse-radius) rgba(0, 227, 159, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 227, 159, 0);
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="map"></div>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script>
+      const cities = [
+        {
+          name: "Beijing",
+          lat: 39.9042,
+          lng: 116.4074,
+          photos: [
+            { src: "https://picsum.photos/seed/beijing-1/640/420", caption: "Forbidden City day" },
+            { src: "https://picsum.photos/seed/beijing-2/640/420", caption: "Hutong evening" },
+            { src: "https://picsum.photos/seed/beijing-3/640/420", caption: "Temple rooftop" },
+            { src: "https://picsum.photos/seed/beijing-4/640/420", caption: "Street food stop" }
+          ]
+        },
+        {
+          name: "Shanghai",
+          lat: 31.2304,
+          lng: 121.4737,
+          photos: [
+            { src: "https://picsum.photos/seed/shanghai-1/640/420", caption: "Bund skyline" },
+            { src: "https://picsum.photos/seed/shanghai-2/640/420", caption: "Neon night walk" },
+            { src: "https://picsum.photos/seed/shanghai-3/640/420", caption: "Cafe district" },
+            { src: "https://picsum.photos/seed/shanghai-4/640/420", caption: "River crossing" }
+          ]
+        },
+        {
+          name: "Shenzhen",
+          lat: 22.5431,
+          lng: 114.0579,
+          photos: [
+            { src: "https://picsum.photos/seed/shenzhen-1/640/420", caption: "Bay bridge" },
+            { src: "https://picsum.photos/seed/shenzhen-2/640/420", caption: "Tech district" },
+            { src: "https://picsum.photos/seed/shenzhen-3/640/420", caption: "Park skyline" },
+            { src: "https://picsum.photos/seed/shenzhen-4/640/420", caption: "Night market" }
+          ]
+        },
+        {
+          name: "Singapore",
+          lat: 1.3521,
+          lng: 103.8198,
+          photos: [
+            { src: "https://picsum.photos/seed/singapore-1/640/420", caption: "Marina Bay lights" },
+            { src: "https://picsum.photos/seed/singapore-2/640/420", caption: "Gardens by the Bay" },
+            { src: "https://picsum.photos/seed/singapore-3/640/420", caption: "Chinatown lunch" },
+            { src: "https://picsum.photos/seed/singapore-4/640/420", caption: "Waterfront sunset" }
+          ]
+        },
+        {
+          name: "Guangzhou",
+          lat: 23.1291,
+          lng: 113.2644,
+          photos: [{ src: "https://picsum.photos/seed/guangzhou-1/640/420", caption: "Guangzhou city view" }]
+        },
+        {
+          name: "Xiamen",
+          lat: 24.4798,
+          lng: 118.0894,
+          photos: [{ src: "https://picsum.photos/seed/xiamen-1/640/420", caption: "Xiamen city view" }]
+        },
+        {
+          name: "Hong Kong",
+          lat: 22.3193,
+          lng: 114.1694,
+          photos: [{ src: "https://picsum.photos/seed/hongkong-1/640/420", caption: "Hong Kong city view" }]
+        },
+        {
+          name: "Macau",
+          lat: 22.1987,
+          lng: 113.5439,
+          photos: [{ src: "https://picsum.photos/seed/macau-1/640/420", caption: "Macau city view" }]
+        },
+        {
+          name: "Changsha",
+          lat: 28.2282,
+          lng: 112.9388,
+          photos: [{ src: "https://picsum.photos/seed/changsha-1/640/420", caption: "Changsha city view" }]
+        },
+        {
+          name: "Wuhan",
+          lat: 30.5928,
+          lng: 114.3055,
+          photos: [{ src: "https://picsum.photos/seed/wuhan-1/640/420", caption: "Wuhan city view" }]
+        },
+        {
+          name: "Nanjing",
+          lat: 32.0603,
+          lng: 118.7969,
+          photos: [{ src: "https://picsum.photos/seed/nanjing-1/640/420", caption: "Nanjing city view" }]
+        },
+        {
+          name: "Hefei",
+          lat: 31.8206,
+          lng: 117.2272,
+          photos: [{ src: "https://picsum.photos/seed/hefei-1/640/420", caption: "Hefei city view" }]
+        },
+        {
+          name: "Hangzhou",
+          lat: 30.2741,
+          lng: 120.1551,
+          photos: [{ src: "https://picsum.photos/seed/hangzhou-1/640/420", caption: "Hangzhou city view" }]
+        },
+        {
+          name: "Qingdao",
+          lat: 36.0671,
+          lng: 120.3826,
+          photos: [{ src: "https://picsum.photos/seed/qingdao-1/640/420", caption: "Qingdao city view" }]
+        },
+        {
+          name: "Rizhao",
+          lat: 35.4164,
+          lng: 119.5269,
+          photos: [{ src: "https://picsum.photos/seed/rizhao-1/640/420", caption: "Rizhao city view" }]
+        },
+        {
+          name: "Tianjin",
+          lat: 39.3434,
+          lng: 117.3616,
+          photos: [{ src: "https://picsum.photos/seed/tianjin-1/640/420", caption: "Tianjin city view" }]
+        },
+        {
+          name: "Shenyang",
+          lat: 41.8057,
+          lng: 123.4315,
+          photos: [{ src: "https://picsum.photos/seed/shenyang-1/640/420", caption: "Shenyang city view" }]
+        },
+        {
+          name: "Taiyuan",
+          lat: 37.8706,
+          lng: 112.5489,
+          photos: [{ src: "https://picsum.photos/seed/taiyuan-1/640/420", caption: "Taiyuan city view" }]
+        },
+        {
+          name: "Baoding",
+          lat: 38.8744,
+          lng: 115.4646,
+          photos: [{ src: "https://picsum.photos/seed/baoding-1/640/420", caption: "Baoding city view" }]
+        },
+        {
+          name: "Xi'an",
+          lat: 34.3416,
+          lng: 108.9398,
+          photos: [{ src: "https://picsum.photos/seed/xian-1/640/420", caption: "Xi'an city view" }]
+        },
+        {
+          name: "Xining",
+          lat: 36.6171,
+          lng: 101.7782,
+          photos: [{ src: "https://picsum.photos/seed/xining-1/640/420", caption: "Xining city view" }]
+        },
+        {
+          name: "Chengdu",
+          lat: 30.5728,
+          lng: 104.0668,
+          photos: [{ src: "https://picsum.photos/seed/chengdu-1/640/420", caption: "Chengdu city view" }]
+        },
+        {
+          name: "Chongqing",
+          lat: 29.563,
+          lng: 106.5516,
+          photos: [{ src: "https://picsum.photos/seed/chongqing-1/640/420", caption: "Chongqing city view" }]
+        },
+        {
+          name: "Lhasa",
+          lat: 29.652,
+          lng: 91.1721,
+          photos: [{ src: "https://picsum.photos/seed/lhasa-1/640/420", caption: "Lhasa city view" }]
+        },
+        {
+          name: "Linzhi",
+          lat: 29.6548,
+          lng: 94.3623,
+          photos: [{ src: "https://picsum.photos/seed/linzhi-1/640/420", caption: "Linzhi city view" }]
+        },
+        {
+          name: "Zhanjiang",
+          lat: 21.2707,
+          lng: 110.3594,
+          photos: [{ src: "https://picsum.photos/seed/zhanjiang-1/640/420", caption: "Zhanjiang city view" }]
+        },
+        {
+          name: "Yangjiang",
+          lat: 21.8579,
+          lng: 111.9822,
+          photos: [{ src: "https://picsum.photos/seed/yangjiang-1/640/420", caption: "Yangjiang city view" }]
+        },
+        {
+          name: "Shanwei",
+          lat: 22.7857,
+          lng: 115.3751,
+          photos: [{ src: "https://picsum.photos/seed/shanwei-1/640/420", caption: "Shanwei city view" }]
+        },
+        {
+          name: "Chaozhou",
+          lat: 23.6567,
+          lng: 116.6226,
+          photos: [{ src: "https://picsum.photos/seed/chaozhou-1/640/420", caption: "Chaozhou city view" }]
+        },
+        {
+          name: "Shantou",
+          lat: 23.3541,
+          lng: 116.6819,
+          photos: [{ src: "https://picsum.photos/seed/shantou-1/640/420", caption: "Shantou city view" }]
+        },
+        {
+          name: "Wuxi",
+          lat: 31.4912,
+          lng: 120.3119,
+          photos: [{ src: "https://picsum.photos/seed/wuxi-1/640/420", caption: "Wuxi city view" }]
+        },
+        {
+          name: "Jinan",
+          lat: 36.6512,
+          lng: 117.1201,
+          photos: [{ src: "https://picsum.photos/seed/jinan-1/640/420", caption: "Jinan city view" }]
+        },
+        {
+          name: "Dalian",
+          lat: 38.914,
+          lng: 121.6147,
+          photos: [{ src: "https://picsum.photos/seed/dalian-1/640/420", caption: "Dalian city view" }]
+        },
+        {
+          name: "Kuala Lumpur",
+          lat: 3.139,
+          lng: 101.6869,
+          photos: [{ src: "https://picsum.photos/seed/kualalumpur-1/640/420", caption: "Kuala Lumpur city view" }]
+        },
+        {
+          name: "Bangkok",
+          lat: 13.7563,
+          lng: 100.5018,
+          photos: [{ src: "https://picsum.photos/seed/bangkok-1/640/420", caption: "Bangkok city view" }]
+        },
+        {
+          name: "Los Angeles",
+          lat: 34.0522,
+          lng: -118.2437,
+          photos: [{ src: "https://picsum.photos/seed/losangeles-1/640/420", caption: "Los Angeles city view" }]
+        },
+        {
+          name: "Atlanta",
+          lat: 33.749,
+          lng: -84.388,
+          photos: [{ src: "https://picsum.photos/seed/atlanta-1/640/420", caption: "Atlanta city view" }]
+        },
+        {
+          name: "New York",
+          lat: 40.7128,
+          lng: -74.006,
+          photos: [{ src: "https://picsum.photos/seed/newyork-1/640/420", caption: "New York city view" }]
+        },
+        {
+          name: "Washington",
+          lat: 38.9072,
+          lng: -77.0369,
+          photos: [{ src: "https://picsum.photos/seed/washingtondc-1/640/420", caption: "Washington city view" }]
+        },
+        {
+          name: "New Haven",
+          lat: 41.3083,
+          lng: -72.9279,
+          photos: [{ src: "https://picsum.photos/seed/newhaven-1/640/420", caption: "New Haven city view" }]
+        },
+        {
+          name: "Boston",
+          lat: 42.3601,
+          lng: -71.0589,
+          photos: [{ src: "https://picsum.photos/seed/boston-1/640/420", caption: "Boston city view" }]
+        },
+        {
+          name: "Vienna",
+          lat: 48.2082,
+          lng: 16.3738,
+          photos: [{ src: "https://picsum.photos/seed/vienna-1/640/420", caption: "Vienna city view" }]
+        },
+        {
+          name: "Paris",
+          lat: 48.8566,
+          lng: 2.3522,
+          photos: [{ src: "https://picsum.photos/seed/paris-1/640/420", caption: "Paris city view" }]
+        },
+        {
+          name: "Prague",
+          lat: 50.0755,
+          lng: 14.4378,
+          photos: [{ src: "https://picsum.photos/seed/prague-1/640/420", caption: "Prague city view" }]
+        },
+        {
+          name: "Budapest",
+          lat: 47.4979,
+          lng: 19.0402,
+          photos: [{ src: "https://picsum.photos/seed/budapest-1/640/420", caption: "Budapest city view" }]
+        },
+        {
+          name: "Dresden",
+          lat: 51.0504,
+          lng: 13.7373,
+          photos: [{ src: "https://picsum.photos/seed/dresden-1/640/420", caption: "Dresden city view" }]
+        },
+        {
+          name: "Nanning",
+          lat: 22.817,
+          lng: 108.3669,
+          photos: [{ src: "https://picsum.photos/seed/nanning-1/640/420", caption: "Nanning city view" }]
+        },
+        {
+          name: "Baise",
+          lat: 23.9022,
+          lng: 106.6187,
+          photos: [{ src: "https://picsum.photos/seed/baise-1/640/420", caption: "Baise city view" }]
+        }
+      ];
+
+      window.CITY_MAP_STATS = { cityCount: cities.length };
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage(
+          { type: "CITY_MAP_STATS", cityCount: cities.length },
+          "*"
+        );
+      }
+
+      const map = L.map("map", {
+        worldCopyJump: true,
+        minZoom: 2,
+        zoomControl: true,
+        attributionControl: false
+      }).setView([25, 110], 3);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19
+      }).addTo(map);
+
+      const cityIcon = L.divIcon({
+        className: "",
+        html: '<div class="city-dot" title="City marker"></div>',
+        iconSize: [14, 14],
+        iconAnchor: [7, 7]
+      });
+
+      cities.forEach((city) => {
+        const marker = L.marker([city.lat, city.lng], { icon: cityIcon }).addTo(map);
+        marker.bindTooltip(city.name, { direction: "top", offset: [0, -9], opacity: 0.95 });
+      });
+
+      function updateDotScaleByZoom() {
+        const zoom = map.getZoom();
+        const root = document.documentElement;
+
+        if (zoom <= 3) {
+          root.style.setProperty("--dot-size", "7px");
+          root.style.setProperty("--dot-border", "1px");
+          root.style.setProperty("--pulse-radius", "8px");
+          return;
+        }
+
+        if (zoom <= 4) {
+          root.style.setProperty("--dot-size", "9px");
+          root.style.setProperty("--dot-border", "1.5px");
+          root.style.setProperty("--pulse-radius", "10px");
+          return;
+        }
+
+        if (zoom <= 5) {
+          root.style.setProperty("--dot-size", "11px");
+          root.style.setProperty("--dot-border", "1.5px");
+          root.style.setProperty("--pulse-radius", "12px");
+          return;
+        }
+
+        root.style.setProperty("--dot-size", "14px");
+        root.style.setProperty("--dot-border", "2px");
+        root.style.setProperty("--pulse-radius", "14px");
+      }
+
+      map.on("zoomend", updateDotScaleByZoom);
+      updateDotScaleByZoom();
+    </script>
+  </body>
+</html>

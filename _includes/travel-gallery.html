@@ -1,0 +1,69 @@
+{% include base_path %}
+{% assign travel_data = site.data.travel_photos %}
+{% assign travel_photos = travel_data.photos | default: empty %}
+{% assign travel_regions = travel_data.regions | default: empty %}
+
+<section class="travel-gallery-section" data-travel-gallery>
+  <p class="travel-gallery__intro">
+    Filter by region and click any photo to open it in full size.
+  </p>
+
+  {% if travel_regions.size > 0 %}
+    <div class="travel-gallery__filters" role="tablist" aria-label="Travel photo regions">
+      <button type="button" class="travel-gallery__filter is-active" data-region-filter="all">All</button>
+      {% for region in travel_regions %}
+        <button type="button" class="travel-gallery__filter" data-region-filter="{{ region.key | slugify }}">{{ region.label }}</button>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="travel-gallery__grid">
+    {% for photo in travel_photos %}
+      {% assign region_key = photo.region | default: "other" | slugify %}
+      {% assign image_url = photo.image_path %}
+      {% unless image_url contains "://" %}
+        {% assign image_url = image_url | prepend: "/images/" | prepend: base_path %}
+      {% endunless %}
+      <article class="travel-gallery__item" data-region="{{ region_key }}">
+        <a href="{{ image_url }}" title="{{ photo.title | escape }}">
+          <img src="{{ image_url }}" alt="{{ photo.alt | default: photo.title | escape }}">
+        </a>
+        <div class="travel-gallery__meta">
+          <strong>{{ photo.title }}</strong>
+          <span>{{ photo.location }}{% if photo.country %}, {{ photo.country }}{% endif %}</span>
+          {% if photo.taken_on %}
+            <span>{{ photo.taken_on }}</span>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var galleries = document.querySelectorAll("[data-travel-gallery]");
+    if (!galleries.length) return;
+
+    galleries.forEach(function (gallery) {
+      var buttons = gallery.querySelectorAll("[data-region-filter]");
+      var items = gallery.querySelectorAll(".travel-gallery__item");
+      if (!buttons.length || !items.length) return;
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var filter = button.getAttribute("data-region-filter");
+
+          buttons.forEach(function (btn) {
+            btn.classList.toggle("is-active", btn === button);
+          });
+
+          items.forEach(function (item) {
+            var matches = filter === "all" || item.getAttribute("data-region") === filter;
+            item.hidden = !matches;
+          });
+        });
+      });
+    });
+  })();
+</script>
