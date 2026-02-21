@@ -5,32 +5,62 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<div style="display: grid; gap: 1rem; margin-top: 0.5rem;">
+  <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
+    <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;">arXiv</div>
+    <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">DexFormer: Cross-Embodied Dexterous Manipulation via History-Conditioned Transformer</h3>
+    <p style="margin: 0 0 0.55rem; font-size: 0.92rem;">Ke Zhang, <strong>Lixin Xu</strong>, Chengyi Song, Junzhe Xu, Xiaoyi Lin, Zeyu Jiang, Renjing Xu</p>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 0.6rem;">
+      <img src="{{ '/images/new_teaser.png' | relative_url }}" alt="DexFormer teaser" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;" />
+      <video src="{{ '/files/dexformer/orange.mp4' | relative_url }}" controls muted playsinline style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;"></video>
+      <video src="{{ '/files/dexformer/yellow_block.mp4' | relative_url }}" controls muted playsinline style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;"></video>
+      <video src="{{ '/files/dexformer/red_mug.mp4' | relative_url }}" controls muted playsinline style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;"></video>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <a href="https://davidlxu.github.io/DexFormer-web/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
+      <a href="https://arxiv.org/abs/2602.08278" style="padding: 4px 10px; border-radius: 999px; background: #f4f1ff; color: #5b4b8a; text-decoration: none; font-size: 0.82rem; line-height: 1.2; border: 1px solid #e4dcff;">arXiv</a>
+    </div>
+  </article>
 
-{% include base_path %}
+  <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
+    <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;">R-AL</div>
+    <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Densely Cluttered Environments</h3>
+    <p style="margin: 0 0 0.55rem; font-size: 0.92rem;"><strong>Lixin Xu</strong>, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao</p>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 0.6rem;">
+      <img src="{{ '/images/new_d8_succ.gif' | relative_url }}" alt="DexSinGrap result 1" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
+      <img src="{{ '/images/new_irr3.gif' | relative_url }}" alt="DexSinGrap result 2" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
+      <img src="{{ '/images/irr_loop.gif' | relative_url }}" alt="DexSinGrap result 3" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
+      <img src="{{ '/images/prac1_loop.gif' | relative_url }}" alt="DexSinGrap result 4" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <a href="https://nus-lins-lab.github.io/dexsingweb/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
+      <a href="https://github.com/DavidLXu/DexSinGrasp" style="padding: 4px 10px; border-radius: 999px; background: #e7f5ed; color: #1f6f50; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Code</a>
+      <a href="https://arxiv.org/pdf/2504.04516" style="padding: 4px 10px; border-radius: 999px; background: #f4f1ff; color: #5b4b8a; text-decoration: none; font-size: 0.82rem; line-height: 1.2; border: 1px solid #e4dcff;">arXiv</a>
+    </div>
+  </article>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
+    <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;">ICRA 2025 Challenge Report</div>
+    <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">Taming VR Teleoperation and Learning from Demonstration for Multi-Task Bimanual Table Service Manipulation</h3>
+    <p style="margin: 0 0 0.55rem; font-size: 0.92rem;">Weize Li, Zhengxiao Han, <strong>Lixin Xu</strong>, Xiangyu Chen, Harrison Bounds, Chenrui Zhang, Yifan Xu</p>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 0.6rem;">
+      <img src="{{ '/images/wbcd_task_final.png' | relative_url }}" alt="WBCD task visual" style="width: 100%; height: 126px; object-fit: cover; border-radius: 8px;" />
+      <img src="{{ '/images/props.png' | relative_url }}" alt="WBCD props visual" style="width: 100%; height: 126px; object-fit: cover; border-radius: 8px;" />
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <a href="https://wbcdcompetition.github.io/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
+      <a href="https://www.wbcd.live/" style="padding: 4px 10px; border-radius: 999px; background: #fef3e8; color: #a35b1f; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">WBCD Challenge</a>
+      <a href="https://arxiv.org/abs/2508.14542" style="padding: 4px 10px; border-radius: 999px; background: #f4f1ff; color: #5b4b8a; text-decoration: none; font-size: 0.82rem; line-height: 1.2; border: 1px solid #e4dcff;">arXiv</a>
+    </div>
+  </article>
 
-
-
+  <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
+    <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;">arXiv</div>
+    <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">DexFlow: A Unified Approach for Dexterous Hand Pose Retargeting and Interaction</h3>
+    <p style="margin: 0 0 0.55rem; font-size: 0.92rem;">Xiaoyi Lin, Kunpeng Yao, <strong>Lixin Xu</strong>, Xueqiang Wang, Xuetao Li, Yuchen Wang, Miao Li</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <a href="https://xiaoyilin-code.github.io/Dexflow_page/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
+      <a href="https://arxiv.org/abs/2505.01083" style="padding: 4px 10px; border-radius: 999px; background: #f4f1ff; color: #5b4b8a; text-decoration: none; font-size: 0.82rem; line-height: 1.2; border: 1px solid #e4dcff;">arXiv</a>
+    </div>
+  </article>
+</div>

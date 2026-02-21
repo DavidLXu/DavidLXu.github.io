@@ -4,10 +4,6 @@
 {% assign travel_regions = travel_data.regions | default: empty %}
 
 <section class="travel-gallery-section" data-travel-gallery>
-  <p class="travel-gallery__intro">
-    Filter by region and click any photo to open it in full size.
-  </p>
-
   {% if travel_regions.size > 0 %}
     <div class="travel-gallery__filters" role="tablist" aria-label="Travel photo regions">
       <button type="button" class="travel-gallery__filter is-active" data-region-filter="all">All</button>
@@ -29,8 +25,12 @@
           <img src="{{ image_url }}" alt="{{ photo.alt | default: photo.title | escape }}">
         </a>
         <div class="travel-gallery__meta">
-          <strong>{{ photo.title }}</strong>
-          <span>{{ photo.location }}{% if photo.country %}, {{ photo.country }}{% endif %}</span>
+          {% if photo.title %}
+            <strong>{{ photo.title }}</strong>
+          {% endif %}
+          {% if photo.location or photo.country %}
+            <span>{% if photo.location %}{{ photo.location }}{% endif %}{% if photo.country %}{% if photo.location %}, {% endif %}{{ photo.country }}{% endif %}</span>
+          {% endif %}
           {% if photo.taken_on %}
             <span>{{ photo.taken_on }}</span>
           {% endif %}

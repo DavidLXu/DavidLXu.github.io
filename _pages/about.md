@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create robotics foundation models that could revolutionize our modern industry and society.
+> I am deeply committed to advancing the field of robotics with a focus on the integration of cognitive and athletic intelligence to create robotics foundation models that could revolutionize our modern industry and society.
 
 Please refer to my CV [here](http://davidlxu.github.io/files/Lixin_EN_Resume.pdf)
 
@@ -63,10 +63,10 @@ Publication
     <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">DexSinGrap: Learning a Unified Policy for Dexterous Object Singulation and Grasping in Densely Cluttered Environments</h3>
     <p style="margin: 0 0 0.55rem; font-size: 0.92rem;"><strong>Lixin Xu</strong>, Zixuan Liu, Zhewei Gui, Jingxiang Guo, Zeyu Jiang, Zhixuan Xu, Chongkai Gao, Lin Shao</p>
     <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 0.6rem;">
-      <img src="/images/new_d8_succ.gif" alt="DexSinGrap result 1" style="width: 100%; height: 118px; object-fit: cover; border-radius: 8px;" />
-      <img src="/images/new_irr3.gif" alt="DexSinGrap result 2" style="width: 100%; height: 118px; object-fit: cover; border-radius: 8px;" />
-      <img src="/images/irr_loop.gif" alt="DexSinGrap result 3" style="width: 100%; height: 118px; object-fit: cover; border-radius: 8px;" />
-      <img src="/images/prac1_loop.gif" alt="DexSinGrap result 4" style="width: 100%; height: 118px; object-fit: cover; border-radius: 8px;" />
+      <img src="/images/new_d8_succ.gif" alt="DexSinGrap result 1" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
+      <img src="/images/new_irr3.gif" alt="DexSinGrap result 2" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
+      <img src="/images/irr_loop.gif" alt="DexSinGrap result 3" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
+      <img src="/images/prac1_loop.gif" alt="DexSinGrap result 4" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
       <a href="https://nus-lins-lab.github.io/dexsingweb/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
@@ -101,6 +101,7 @@ Publication
   </article>
 </div>
 
+<div style="height: 1.4rem;"></div>
 
 Miscellaneous
 ===
@@ -170,7 +171,7 @@ Cities I’ve visited are shown as green dots on the map below. I am currently p
 
 **Languages: CN, EN, DE, JP**
 
-I'm a language enthusiast. My preferred languages: Chinese (native), English (IELTS7.5/GRE322), Cantonese (Non-native but colloquial), German (roughly B1) and Japanese (roughly N4).
+I'm a language enthusiast. My preferred languages: Chinese (native), English (IELTS7.5/GRE322), Cantonese (Non-native but colloquial), German and Japanese (getting rusty).
 
 Two persons I admire the most:  Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.
 

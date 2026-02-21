@@ -14,11 +14,15 @@ main:
   - title: "CV"
     url: /cv/
 
+  - title: "Projects"
+    url: /projects/
+
+  - title: "Publications"
+    url: /publications/
+
   - title: "Galleries"
     url: /galleries/
 
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/

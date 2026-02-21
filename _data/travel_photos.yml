@@ -1,22 +1,103 @@
 regions:
-  - key: asia
-    label: Asia
-  - key: north-america
-    label: North America
+  - key: united-states
+    label: United States
+  - key: china
+    label: China
+  - key: malaysia
+    label: Malaysia
+  - key: thailand
+    label: Thailand
+  - key: singapore
+    label: Singapore
 
 photos:
-  - image_path: footprint_asia.jpeg
-    title: Asia Travel Footprint
-    location: East and Southeast Asia
-    country: China, Singapore, Malaysia, Thailand
-    region: asia
+  - image_path: travel/united-states/dc-1.jpg
+    location: D.C.
+    country: United States
+    region: united-states
     taken_on: "2025"
-    alt: Travel footprint map across Asia
+    alt: Washington D.C. travel photo
 
-  - image_path: footprint_america.jpeg
-    title: North America Travel Footprint
-    location: United States
-    country: USA
-    region: north-america
+  - image_path: travel/united-states/new-york-city-1.jpg
+    location: New York City
+    country: United States
+    region: united-states
+    taken_on: "2025"
+    alt: New York City travel photo
+
+  - image_path: travel/united-states/atlanta-1.jpg
+    location: Atlanta
+    country: United States
+    region: united-states
+    taken_on: "2025"
+    alt: Atlanta city travel photo
+
+  - image_path: travel/china/xian-1.jpg
+    location: Xi'an
+    country: China
+    region: china
+    taken_on: "2025"
+    alt: Xi'an city travel photo
+
+  - image_path: travel/china/wuxi-1.jpg
+    location: Wuxi
+    country: China
+    region: china
+    taken_on: "2025"
+    alt: Wuxi city travel photo
+
+  - image_path: travel/thailand/bangkok-1.jpg
+    location: Bangkok
+    country: Thailand
+    region: thailand
     taken_on: "2024"
-    alt: Travel footprint map across North America
+    alt: Bangkok city travel photo
+
+  - image_path: travel/malaysia/kuala-lumpur-1.jpg
+    location: Kuala Lumpur
+    country: Malaysia
+    region: malaysia
+    taken_on: "2024"
+    alt: Petronas Towers at night in Kuala Lumpur
+
+  - image_path: travel/malaysia/kuala-lumpur-2.jpg
+    location: Kuala Lumpur
+    country: Malaysia
+    region: malaysia
+    taken_on: "2024"
+    alt: Chili crab dish in Kuala Lumpur
+
+  - image_path: travel/singapore/singapore-1.jpg
+    location: Singapore
+    country: Singapore
+    region: singapore
+    taken_on: "2024"
+    alt: Singapore street and city scene
+
+  - image_path: travel/singapore/singapore-2.jpg
+    location: Singapore
+    country: Singapore
+    region: singapore
+    taken_on: "2024"
+    alt: Singapore travel photo
+
+  - image_path: travel/singapore/singapore-4.jpg
+    location: Singapore
+    country: Singapore
+    region: singapore
+    taken_on: "2024"
+    alt: Singapore city architecture
+
+  - image_path: travel/singapore/singapore-5.jpg
+    location: Singapore
+    country: Singapore
+    region: singapore
+    taken_on: "2024"
+    alt: Singapore waterfront scene
+
+  - image_path: travel/singapore/singapore-7.jpg
+    location: Singapore
+    country: Singapore
+    region: singapore
+    taken_on: "2024"
+    alt: Singapore skyline and streets
