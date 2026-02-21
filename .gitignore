@@ -14,7 +14,7 @@ log/
 # Ruby/Bundler
 Gemfile.lock
 .bundle/
-vendor/
+/vendor/
 
 # Node/npm
 node_modules/
