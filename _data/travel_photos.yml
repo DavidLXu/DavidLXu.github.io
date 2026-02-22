@@ -11,9 +11,6 @@ regions:
   - key: thailand
     label: Thailand
     zh_label: 泰国
-  - key: vietnam
-    label: Vietnam
-    zh_label: 越南
   - key: singapore
     label: Singapore
     zh_label: 新加坡
@@ -128,17 +125,6 @@ photos:
     region: thailand
     taken_on: "2024"
     alt: Bangkok city travel photo
-
-  - image_path: travel/vietnam/trung-khanh-1.jpg
-    title: Trùng Khánh travel photo
-    zh_title: Trùng Khánh 旅行照片
-    location: Trùng Khánh
-    zh_location: Trùng Khánh
-    country: Vietnam
-    zh_country: 越南
-    region: vietnam
-    taken_on: "2025"
-    alt: Trùng Khánh travel photo
 
   - image_path: travel/malaysia/kuala-lumpur-1.jpg
     title: Petronas Towers at night in Kuala Lumpur
