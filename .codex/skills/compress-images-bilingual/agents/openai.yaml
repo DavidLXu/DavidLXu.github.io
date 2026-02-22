@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compress Images (Bilingual)"
+  short_description: "Batch image compression with bilingual metadata"
+  default_prompt: "Use $compress-images-bilingual to compress this image path list and generate Chinese/English metadata from the provided year, city, and country."
