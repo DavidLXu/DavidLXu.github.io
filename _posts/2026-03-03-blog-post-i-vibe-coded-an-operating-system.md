@@ -1,5 +1,5 @@
 ---
-title: "[Project Notes] I Vibe Coded an Operating System"
+title: "I Vibe Coded an Operating System"
 date: 2026-03-03
 permalink: /posts/2026/03/i-vibe-coded-an-operating-system/
 tags:
@@ -74,7 +74,9 @@ The bytecode VM has also been pushed in a more explicit direction. In `exec` mod
 
 Most of this was built in a loop with Codex, but the useful interaction was not “write feature X” in isolation. The more valuable pattern was: inspect the current repository, read the architecture docs, understand which layer a change belongs to, then push one subsystem forward without losing the internal story of the project. Sometimes that meant adding or refactoring commands. More often it meant tightening the boundary between Python and Pebble, restating the launcher model, clarifying process or TTY semantics, or turning an implicit rule into an explicit one.
 
-That is why “vibe coding” is funny but slightly misleading. The project moved fast, yes, and a lot of it was built in one concentrated weekend day. But the important result was not a pile of quickly generated features. The important result was that the repo ended up with a recognizable architecture: a Python bootloader substrate, a Pebble-defined runtime and shell, a filesystem model with multiple semantics, a growing ABI, and the beginnings of a process/thread/TTY story that can actually be extended rather than rewritten from scratch.
+That is also why I increasingly think of AI agents as **force multipliers for individual builders**. If you already have a technical direction in your head, and you can tell when an implementation is right or wrong, an agent like Codex dramatically compresses the distance between idea and working system. The real superpower is not that it replaces judgment; it is that it lets intent propagate into code, refactors, documentation, and iteration loops much faster than one person could usually sustain alone. In that sense, it can feel a little like saying what you want and watching the system begin to exist.
+
+So “vibe coding” is funny, but slightly misleading. The project moved fast, yes, and a lot of it was built in one concentrated weekend day. But what happened here was not random prompting followed by a pile of disconnected features. What happened was that a project that might once have taken months of stop-and-go solo time could be compressed into a single intense day, because the bottleneck shifted. The hard part was no longer typing every line myself; the hard part was having a coherent idea, choosing the right abstractions, and steering the system as it took shape. The result is not just “more code, faster,” but a repository that ended up with a recognizable architecture: a Python bootloader substrate, a Pebble-defined runtime and shell, a filesystem model with multiple semantics, a growing ABI, and the beginnings of a process/thread/TTY story that can actually be extended rather than rewritten from scratch.
 
 ## 10. Current State
 
@@ -146,9 +148,10 @@ bytecode VM 的方向也是类似的。现在 `exec` 模式已经不再完全依
 
 ## 9. Codex 真正有用的地方
 
-这个项目大部分都是在和 Codex 的反复协作中完成的，但真正有价值的互动并不是“写一个功能”。更有价值的模式其实是：先读当前仓库，再读相关设计文档，搞清楚这次改动应该落在哪一层，然后推进一个子系统，同时不把整个项目的内部叙事搞乱。有时候这表现为加命令或者重构 shell；但更多时候，其实是在收紧 Python 和 Pebble 的边界、明确 launcher 模型、理顺 process 或 TTY 语义，或者把一条原本只是“实现碰巧如此”的规则，写成一条真正的设计规则。
+这个项目大部分都是在和 Codex 的反复协作中完成的，但真正有价值的互动并不是“写一个功能”。更有价值的模式其实是：先读当前仓库，再读相关设计文档，搞清楚这次改动应该落在哪一层，然后推进一个子系统，同时不把整个项目的内部叙事搞乱。
+我现在越来越倾向于把 AI Agent 理解成一种 **个人能力的放大器**。只要脑子里已经有方向，知道什么是对的、什么是错的，像 Codex 这样的工具就能极大压缩“从想法到实现”的距离。它真正厉害的地方，不是神奇地替你做判断，而是让你的意图可以更快地传递到代码、重构、文档和迭代里。某种意义上，会有一种很强的“言出法随”感：想到一个系统结构，就可以很快把它落成一个能跑、能改、能继续长的东西。
 
-所以说 “vibe coding” 虽然好玩，但多少也会有点误导。这个项目确实推进得很快，而且很多关键变化就是在一个很集中的周末里做出来的，但最后真正重要的结果并不是“快速堆出了一堆 feature”，而是这个仓库最后长出了一套还能讲清楚的架构：Python bootloader 作为 substrate，Pebble-defined runtime 和 shell，带多种语义的 filesystem model，逐渐清晰的 ABI，以及一条已经能够继续扩展、而不必整体推倒重来的 process / thread / TTY 主线。
+所以说 “vibe coding” 虽然好玩，但多少也会有点误导。这里发生的并不是随便 prompt 几句，然后凭空长出一堆互不相干的 feature；真正发生的是，原本一个人可能要断断续续做几个月的 side project，现在可以在一个高度集中的周末里被压缩到一天，因为瓶颈变了。难点不再只是“把每一行代码亲手敲出来”，而是你有没有一个成形的想法、能不能选对抽象、能不能在系统成形的过程中稳稳地把方向抓住。
 
 ## 10. 当前状态
 
