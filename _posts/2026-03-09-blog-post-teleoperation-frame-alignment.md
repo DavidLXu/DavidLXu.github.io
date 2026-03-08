@@ -19,18 +19,7 @@ This post supports **English / 中文** switching via the site language toggle i
 
 When building teleoperation systems, the hardest part is often not inverse kinematics, but **frame alignment** between the teleoperation device and the robot end effector.
 
-Different teleoperation devices may output poses in arbitrary world frames:
-
-- VR controllers
-- joysticks
-- HTC Vive Trackers
-- other custom devices
-
-Different robots may also define end-effector coordinates very differently:
-
-- bimanual robots
-- humanoids
-- robot arms
+Different teleoperation devices may output poses in arbitrary world frames, including VR controllers, joysticks, HTC Vive Trackers, and other custom devices. Different robots may also define end-effector coordinates very differently, whether they are bimanual robots, humanoids, or conventional robot arms.
 
 If these frames are not aligned correctly, teleoperation feels wrong immediately. Translation directions are swapped, rotation directions are unintuitive, and the robot moves in ways that do not match the operator’s intent.
 
@@ -48,30 +37,13 @@ The procedure I use is intentionally lightweight.
 
 ### Step 1: Start with coincident frames
 
-First, ask the AI agent to align the teleoperation device frame so that it **coincides with the robot end-effector frame**, with:
-
-- the same position
-- the same orientation
-
-This gives a clean initial guess. Conceptually, you are telling the system:
-
-- “pretend the device frame and robot end-effector frame are the same frame”
-
-Then launch teleoperation and check how the robot actually behaves.
+First, ask the AI agent to align the teleoperation device frame so that it **coincides with the robot end-effector frame**, meaning that the two frames initially share the same position and the same orientation. This gives a clean initial guess. Conceptually, you are telling the system to pretend that the device frame and the robot end-effector frame are the same frame. Then launch teleoperation and check how the robot actually behaves.
 
 ### Step 2: Observe the mismatch in translation
 
 Once teleoperation starts, look for discrepancies.
 
-For translation, you do **not** need to manually derive the rotation matrix first. Instead, just describe the real behavior in plain language.
-
-For example:
-
-- when the robot moves along `+x`, it should actually be `-y`
-- when the robot moves along `+y`, it should actually be `+z`
-- when the robot moves along `+z`, it should actually be `+x`
-
-This description is enough for the AI agent to infer the frame correction.
+For translation, you do **not** need to manually derive the rotation matrix first. Instead, just describe the real behavior in plain language. For example, you might observe that when the robot moves along `+x`, it should actually be `-y`, when it moves along `+y`, it should actually be `+z`, and when it moves along `+z`, it should actually be `+x`. This description is enough for the AI agent to infer the frame correction.
 
 The key idea is that you are describing the **actual directional correspondence**, not trying to hand-derive the transform yourself.
 
@@ -79,13 +51,7 @@ The key idea is that you are describing the **actual directional correspondence*
 
 The process for rotation is exactly the same.
 
-Again, you just describe the real situation:
-
-1. when the robot rotates along `+X`, it should be along `-Z`
-2. when the robot rotates along `+Y`, it should be along `+X`
-3. when the robot rotates along `+Z`, it should be along `+Y`
-
-With this information, the AI agent can infer the rotational correction needed to align the device frame and the end-effector frame.
+Again, you just describe the real situation. You might find that when the robot rotates along `+X`, it should really rotate along `-Z`, when it rotates along `+Y`, it should really rotate along `+X`, and when it rotates along `+Z`, it should really rotate along `+Y`. With this information, the AI agent can infer the rotational correction needed to align the device frame and the end-effector frame.
 
 ## 3. Why Natural-Language Correction Works Well
 
@@ -111,18 +77,7 @@ If your IK is already stable, teleoperation quality usually depends much more on
 
 在搭建遥操作系统时，最麻烦的部分往往不是逆运动学，而是 **输入设备与机器人末端执行器之间的坐标系对齐**。
 
-不同的遥操作设备，往往会在各自定义的世界坐标系下输出位姿：
-
-- 虚拟现实控制器
-- 操纵杆
-- HTC Vive 定位器
-- 其他自定义设备
-
-而不同机器人对末端执行器坐标系的定义也可能差异很大：
-
-- 双臂机器人
-- 人形机器人
-- 机械臂
+不同的遥操作设备往往会在各自定义的世界坐标系下输出位姿，例如虚拟现实控制器、操纵杆、HTC Vive 定位器以及其他自定义设备。而不同机器人对末端执行器坐标系的定义也可能差异很大，无论是双臂机器人、人形机器人还是机械臂，都可能采用完全不同的约定。
 
 如果这些坐标系没有对齐好，遥操作的手感会立刻变差。平移方向会错，旋转方向会别扭，机器人运动也无法准确反映操作者的意图。
 
@@ -140,27 +95,13 @@ If your IK is already stable, teleoperation quality usually depends much more on
 
 ### 第一步：先让两个坐标系重合
 
-第一步，先让智能体把输入设备坐标系对齐到与机器人末端执行器坐标系 **位置和姿态完全一致**。
-
-这样可以得到一个非常干净的初始猜测。可以把它理解成：
-
-- “先假设输入设备坐标系和机器人工具坐标系就是同一个坐标系”
-
-然后启动遥操作，观察机器人实际是怎么运动的。
+第一步，先让智能体把输入设备坐标系对齐到与机器人末端执行器坐标系 **位置和姿态完全一致**。这样可以得到一个非常干净的初始猜测。你可以把它理解成：先假设输入设备坐标系和机器人工具坐标系就是同一个坐标系。然后启动遥操作，观察机器人实际是怎么运动的。
 
 ### 第二步：观察平移误差
 
 启动遥操作之后，重点看平移方向是否存在明显偏差。
 
-对于平移，你**不需要**一开始就手工推导旋转矩阵。只需要用自然语言把实际情况描述出来。
-
-例如：
-
-- 当机器人沿 `+x` 运动时，它其实应该是 `-y`
-- 当机器人沿 `+y` 运动时，它其实应该是 `+z`
-- 当机器人沿 `+z` 运动时，它其实应该是 `+x`
-
-这样的描述就足以让智能体推断出正确的坐标修正关系。
+对于平移，你**不需要**一开始就手工推导旋转矩阵。只需要用自然语言把实际情况描述出来。例如，你可能会发现机器人沿 `+x` 运动时，其实应该对应 `-y`；沿 `+y` 运动时，其实应该对应 `+z`；沿 `+z` 运动时，其实应该对应 `+x`。这样的描述就足以让智能体推断出正确的坐标修正关系。
 
 关键在于，你描述的是**真实的方向对应关系**，而不是先自己硬算坐标变换。
 
@@ -168,13 +109,7 @@ If your IK is already stable, teleoperation quality usually depends much more on
 
 旋转的处理方式完全相同。
 
-同样地，你只需要把实际情况告诉智能体：
-
-1. 当机器人沿 `+X` 旋转时，它其实应该沿 `-Z`
-2. 当机器人沿 `+Y` 旋转时，它其实应该沿 `+X`
-3. 当机器人沿 `+Z` 旋转时，它其实应该沿 `+Y`
-
-有了这些信息，智能体就可以推断出输入设备坐标系与末端执行器坐标系之间所需的旋转修正。
+同样地，你只需要把实际情况告诉智能体。比如，当机器人沿 `+X` 旋转时，它其实应该沿 `-Z`；当机器人沿 `+Y` 旋转时，它其实应该沿 `+X`；当机器人沿 `+Z` 旋转时，它其实应该沿 `+Y`。有了这些信息，智能体就可以推断出输入设备坐标系与末端执行器坐标系之间所需的旋转修正。
 
 ## 3. 为什么这种自然语言修正方式很好用
 
