@@ -1,0 +1,76 @@
+{% include base_path %}
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+<section class="blog-filter-archive" data-blog-filter-archive>
+  <div class="blog-filter-archive__filters" role="tablist" aria-label="Blog post categories">
+    <button type="button" class="blog-filter-archive__filter is-active" data-blog-filter="all">
+      <span data-i18n-en="All" data-i18n-zh="全部">All</span>
+    </button>
+    <button type="button" class="blog-filter-archive__filter" data-blog-filter="personal-thoughts">
+      <span data-i18n-en="Personal Thoughts" data-i18n-zh="个人思考">Personal Thoughts</span>
+    </button>
+    <button type="button" class="blog-filter-archive__filter" data-blog-filter="paper-notes">
+      <span data-i18n-en="Paper Notes" data-i18n-zh="论文笔记">Paper Notes</span>
+    </button>
+  </div>
+
+  {% for year_group in posts_by_year %}
+    <section class="blog-filter-archive__year" data-blog-year>
+      <h2 id="{{ year_group.name | slugify }}" class="archive__subtitle">{{ year_group.name }}</h2>
+      {% for post in year_group.items %}
+        {% assign post_title_downcase = post.title | downcase %}
+        {% assign blog_category = "other" %}
+        {% if post_title_downcase contains "paper notes" %}
+          {% assign blog_category = "paper-notes" %}
+        {% elsif post.title contains "[" or post.title contains "]" %}
+          {% assign blog_category = "other" %}
+        {% else %}
+          {% assign blog_category = "personal-thoughts" %}
+        {% endif %}
+        <div class="blog-filter-archive__item" data-blog-category="{{ blog_category }}">
+          {% include archive-single.html %}
+        </div>
+      {% endfor %}
+    </section>
+  {% endfor %}
+</section>
+
+<script>
+  (function () {
+    var archives = document.querySelectorAll("[data-blog-filter-archive]");
+    if (!archives.length) return;
+
+    archives.forEach(function (archive) {
+      var buttons = archive.querySelectorAll("[data-blog-filter]");
+      var items = archive.querySelectorAll("[data-blog-category]");
+      var years = archive.querySelectorAll("[data-blog-year]");
+      if (!buttons.length || !items.length) return;
+
+      function applyFilter(filter) {
+        items.forEach(function (item) {
+          var matches = filter === "all" || item.getAttribute("data-blog-category") === filter;
+          item.hidden = !matches;
+        });
+
+        years.forEach(function (yearSection) {
+          var visibleItems = yearSection.querySelectorAll("[data-blog-category]:not([hidden])");
+          yearSection.hidden = visibleItems.length === 0;
+        });
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var filter = button.getAttribute("data-blog-filter");
+
+          buttons.forEach(function (btn) {
+            btn.classList.toggle("is-active", btn === button);
+          });
+
+          applyFilter(filter);
+        });
+      });
+
+      applyFilter("all");
+    });
+  })();
+</script>
