@@ -142,11 +142,6 @@ If your IK is already stable, teleoperation quality usually depends much more on
 
 第一步，先让智能体把输入设备坐标系对齐到与机器人末端执行器坐标系 **位置和姿态完全一致**。
 
-也就是：
-
-- 位置一致
-- 姿态一致
-
 这样可以得到一个非常干净的初始猜测。可以把它理解成：
 
 - “先假设输入设备坐标系和机器人工具坐标系就是同一个坐标系”
