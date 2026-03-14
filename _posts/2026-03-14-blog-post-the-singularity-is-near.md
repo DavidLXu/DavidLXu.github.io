@@ -1,7 +1,7 @@
 ---
-title: "After the Singularity, Agents Become Infrastructure"
+title: "The Singularity is Near"
 date: 2026-03-14
-permalink: /posts/2026/03/after-the-singularity-agents-become-infrastructure/
+permalink: /posts/2026/03/the-singularity-is-near/
 tags:
   - AI
   - AI Agents
