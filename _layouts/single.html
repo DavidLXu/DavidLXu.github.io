@@ -4,6 +4,12 @@ layout: default
 
 {% include base_path %}
 
+{% if page.date %}
+<div class="reading-progress" id="reading-progress">
+  <div class="reading-progress__bar" id="reading-progress-bar"></div>
+</div>
+{% endif %}
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% endif %}

@@ -9,10 +9,10 @@ $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
 
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
+$background                 : #161616;
+$background-light           : #2a2a2a;
+$background-lighter         : #3a3a3a;
+$text                       : #f0f0f0;
 $link                       : #0ea1c5;
 $link-dark                  : mix(#000, $link, 25%);
 $link-light                 : mix(#fff, $link, 25%);
@@ -26,7 +26,7 @@ $warning-color              : #f89406;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$box-shadow                 : 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.18);
 $global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
@@ -38,11 +38,16 @@ $sidebar-screen-min-width   : 1024px;
 html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
+    --global-bg-color-translucent       : rgba(22, 22, 22, 0.85);
     --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
+    --global-section-alt-bg             : #1c1c1c;
+    --global-border-color               : rgba(255, 255, 255, 0.08);
+    --global-dark-border-color          : rgba(255, 255, 255, 0.12);
+    --global-surface-1                  : rgba(255, 255, 255, 0.03);
+    --global-surface-2                  : rgba(255, 255, 255, 0.05);
+    --global-surface-3                  : rgba(255, 255, 255, 0.08);
+    --global-code-background-color      : #1e1e1e;
+    --global-code-text-color            : #c9d1d9;
     --global-fig-caption-color          : #{$light-gray};
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-dark};
@@ -50,7 +55,7 @@ html[data-theme="dark"] {
     --global-masthead-link-color        : #{$text};
     --global-masthead-link-color-hover  : #{$primary-color};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #f3f3f3;
+    --global-text-color-light           : #a0a0a0;
     --global-thead-color                : #{$background-lighter};
 }
 

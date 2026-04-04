@@ -34,14 +34,17 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   margin-top: 0;
   font-size: $type-size-3;
+  letter-spacing: -0.03em;
 }
 
 h2 {
   font-size: $type-size-4;
+  letter-spacing: -0.02em;
 }
 
 h3 {
   font-size: $type-size-5;
+  letter-spacing: -0.015em;
 }
 
 h4 {
@@ -338,6 +341,40 @@ nav {
       opacity: 1;
     }
   }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* Staggered fade-in for page content sections */
+.page__content > h2,
+.page__content > h3,
+.page__content > p,
+.page__content > ul,
+.page__content > ol,
+.page__content > blockquote,
+.page__content > div,
+.page__content > article,
+.page__content > table,
+.page__content > figure,
+.hero-banner {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.hero-banner { animation-delay: 0.1s; }
+
+.page__content > :nth-child(1) { animation-delay: 0.15s; }
+.page__content > :nth-child(2) { animation-delay: 0.2s; }
+.page__content > :nth-child(3) { animation-delay: 0.25s; }
+.page__content > :nth-child(4) { animation-delay: 0.3s; }
+.page__content > :nth-child(5) { animation-delay: 0.35s; }
 
 /* Global animation transition */
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, form button, input[type="submit"], .btn, .highlight, .archive__item-teaser {

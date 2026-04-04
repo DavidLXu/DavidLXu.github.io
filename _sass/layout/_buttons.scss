@@ -135,6 +135,76 @@
     }
   }
 
+  /* tinted pill badges for publication links */
+
+  &--pill {
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: $type-size-7;
+    font-weight: 600;
+    line-height: 1.2;
+    border: 0 !important;
+
+    &:hover {
+      filter: brightness(0.92);
+    }
+  }
+
+  &--website {
+    background: #e8eefc;
+    color: #2a4f93 !important;
+  }
+
+  &--arxiv {
+    background: #f4f1ff;
+    color: #5b4b8a !important;
+    border: 1px solid #e4dcff !important;
+  }
+
+  &--code {
+    background: #e7f5ed;
+    color: #1f6f50 !important;
+  }
+
+  &--challenge {
+    background: #fef3e8;
+    color: #a35b1f !important;
+  }
+
+  &--teal {
+    background: #e3f2f5;
+    color: #2f7f93 !important;
+  }
+
+  /* dark mode tinted badges */
+  html[data-theme="dark"] & {
+    &--website {
+      background: rgba(42, 79, 147, 0.2);
+      color: #7db4f0 !important;
+    }
+
+    &--arxiv {
+      background: rgba(91, 75, 138, 0.2);
+      color: #b8a4e8 !important;
+      border-color: rgba(228, 220, 255, 0.15) !important;
+    }
+
+    &--code {
+      background: rgba(31, 111, 80, 0.2);
+      color: #6dd4a0 !important;
+    }
+
+    &--challenge {
+      background: rgba(163, 91, 31, 0.2);
+      color: #f0b06a !important;
+    }
+
+    &--teal {
+      background: rgba(47, 127, 147, 0.2);
+      color: #5cc8dc !important;
+    }
+  }
+
   /* extra large button */
 
   &--x-large {

@@ -3,10 +3,17 @@ permalink: /
 title: ""
 excerpt: "About me"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
+
+<div class="hero-banner">
+  <div class="hero-banner__content">
+    <h1 class="hero-banner__title" data-i18n-en="Lixin Xu" data-i18n-zh="许立昕">Lixin Xu</h1>
+    <p class="hero-banner__subtitle" data-i18n-en="PhD Student in Robotics &middot; HKUST(GZ)" data-i18n-zh="机器人学博士生 &middot; 香港科技大学（广州）">PhD Student in Robotics &middot; HKUST(GZ)</p>
+  </div>
+</div>
 
 <div data-lang="en">
   <blockquote>
@@ -95,8 +102,8 @@ redirect_from:
       <video src="/files/dexformer/red_mug.mp4" controls muted playsinline style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;"></video>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <a href="https://davidlxu.github.io/DexFormer-web/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
-      <a href="https://arxiv.org/abs/2602.08278" style="padding: 4px 10px; border-radius: 999px; background: #f4f1ff; color: #5b4b8a; text-decoration: none; font-size: 0.82rem; line-height: 1.2; border: 1px solid #e4dcff;">arXiv</a>
+      <a href="https://davidlxu.github.io/DexFormer-web/" class="btn btn--pill btn--website">Website</a>
+      <a href="https://arxiv.org/abs/2602.08278" class="btn btn--pill btn--arxiv">arXiv</a>
     </div>
   </article>
 
@@ -111,9 +118,9 @@ redirect_from:
       <img src="/images/prac1_loop.gif" alt="DexSinGrap result 4" style="width: 100%; height: 170px; object-fit: cover; border-radius: 8px;" />
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <a href="https://nus-lins-lab.github.io/dexsingweb/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
-      <a href="https://github.com/DavidLXu/DexSinGrasp" style="padding: 4px 10px; border-radius: 999px; background: #e7f5ed; color: #1f6f50; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Code</a>
-      <a href="https://arxiv.org/pdf/2504.04516" style="padding: 4px 10px; border-radius: 999px; background: #f4f1ff; color: #5b4b8a; text-decoration: none; font-size: 0.82rem; line-height: 1.2; border: 1px solid #e4dcff;">arXiv</a>
+      <a href="https://nus-lins-lab.github.io/dexsingweb/" class="btn btn--pill btn--website">Website</a>
+      <a href="https://github.com/DavidLXu/DexSinGrasp" class="btn btn--pill btn--code">Code</a>
+      <a href="https://arxiv.org/pdf/2504.04516" class="btn btn--pill btn--arxiv">arXiv</a>
     </div>
   </article>
 
@@ -126,9 +133,9 @@ redirect_from:
       <img src="/images/props.png" alt="WBCD props visual" style="width: 100%; height: 126px; object-fit: cover; border-radius: 8px;" />
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <a href="https://wbcdcompetition.github.io/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
-      <a href="https://www.wbcd.live/" style="padding: 4px 10px; border-radius: 999px; background: #fef3e8; color: #a35b1f; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">WBCD Challenge</a>
-      <a href="https://arxiv.org/abs/2508.14542" style="padding: 4px 10px; border-radius: 999px; background: #f4f1ff; color: #5b4b8a; text-decoration: none; font-size: 0.82rem; line-height: 1.2; border: 1px solid #e4dcff;">arXiv</a>
+      <a href="https://wbcdcompetition.github.io/" class="btn btn--pill btn--website">Website</a>
+      <a href="https://www.wbcd.live/" class="btn btn--pill btn--challenge">WBCD Challenge</a>
+      <a href="https://arxiv.org/abs/2508.14542" class="btn btn--pill btn--arxiv">arXiv</a>
     </div>
   </article>
 
@@ -137,8 +144,8 @@ redirect_from:
     <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">DexFlow: A Unified Approach for Dexterous Hand Pose Retargeting and Interaction</h3>
     <p style="margin: 0 0 0.55rem; font-size: 0.92rem;">Xiaoyi Lin, Kunpeng Yao, <strong>Lixin Xu</strong>, Xueqiang Wang, Xuetao Li, Yuchen Wang, Miao Li</p>
     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <a href="https://xiaoyilin-code.github.io/Dexflow_page/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
-      <a href="https://arxiv.org/abs/2505.01083" style="padding: 4px 10px; border-radius: 999px; background: #f4f1ff; color: #5b4b8a; text-decoration: none; font-size: 0.82rem; line-height: 1.2; border: 1px solid #e4dcff;">arXiv</a>
+      <a href="https://xiaoyilin-code.github.io/Dexflow_page/" class="btn btn--pill btn--website">Website</a>
+      <a href="https://arxiv.org/abs/2505.01083" class="btn btn--pill btn--arxiv">arXiv</a>
     </div>
   </article>
 </div>

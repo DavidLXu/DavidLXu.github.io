@@ -18,7 +18,7 @@ $warning-color              : #f89406;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$box-shadow                 : 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06);
 $global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
@@ -29,8 +29,10 @@ $sidebar-screen-min-width   : 1024px;
 /* Default light theme for the site */
 :root {
     --global-base-color                 : #{$primary-color};
-    --global-bg-color                   : #fff;
+    --global-bg-color                   : #fafafa;
+    --global-bg-color-translucent       : rgba(250, 250, 250, 0.85);
     --global-footer-bg-color            : #f2f3f3;
+    --global-section-alt-bg             : #f3f6f7;
     --global-border-color               : #{$lighter-gray};
     --global-dark-border-color          : #bdc1c4;
     --global-code-background-color      : #fafafa;

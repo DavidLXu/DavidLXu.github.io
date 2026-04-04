@@ -184,4 +184,15 @@ $(document).ready(function () {
     preventDefault: false,
   });
 
+  // Reading progress bar for blog posts
+  var progressBar = document.getElementById('reading-progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', function () {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = Math.min(progress, 100) + '%';
+    });
+  }
+
 });
