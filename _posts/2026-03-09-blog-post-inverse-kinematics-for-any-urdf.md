@@ -2,6 +2,7 @@
 title: "Inverse Kinematics for Any URDF: Tasks, Weights, and Solver Design"
 date: 2026-03-09
 permalink: /posts/2026/03/inverse-kinematics-for-any-urdf/
+excerpt: "A practical guide to formulating IK as weighted nonlinear least-squares, with task definition, damping, and solver design that works for any URDF."
 tags:
   - Robotics
   - Inverse Kinematics

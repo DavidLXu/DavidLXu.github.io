@@ -2,6 +2,7 @@
 title: "How to Align Teleoperation Devices with Robot End Effectors"
 date: 2026-03-09
 permalink: /posts/2026/03/teleoperation-frame-alignment/
+excerpt: "The hardest part of teleoperation is aligning coordinate frames between input devices and robot end effectors — a practical walkthrough."
 tags:
   - Robotics
   - Teleoperation

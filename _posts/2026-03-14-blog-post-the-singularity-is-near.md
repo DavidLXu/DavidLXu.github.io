@@ -2,6 +2,7 @@
 title: "The Singularity is Near"
 date: 2026-03-14
 permalink: /posts/2026/03/the-singularity-is-near/
+excerpt: "Autonomous agents are now cheap and networked enough to spread faster than any institution can contain — the question is what order emerges after control becomes partial."
 tags:
   - AI
   - AI Agents

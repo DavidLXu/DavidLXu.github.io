@@ -2,6 +2,7 @@
 title: "Intelligence Is Not Only Reasoning"
 date: 2026-02-23
 permalink: /posts/2026/02/intelligence-needs-retrieval-and-communication/
+excerpt: "Intelligence depends on retrieval and communication as much as reasoning — a powerful model limited by information gaps is still limited."
 tags:
   - AI
   - AI Agents

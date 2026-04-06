@@ -2,6 +2,7 @@
 title: "Bootstrapping and the Game of Entrepreneurship"
 date: 2026-04-06
 permalink: /posts/2026/04/bootstrapping-and-the-game-of-entrepreneurship/
+excerpt: "Bootstrapping is the same pattern across compilers, AI, and startups: borrow external structure to cold-start, then recursively replace dependencies until the system sustains itself."
 tags:
   - Bootstrapping
   - Entrepreneurship

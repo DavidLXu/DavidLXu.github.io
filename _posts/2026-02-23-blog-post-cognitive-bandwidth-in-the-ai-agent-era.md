@@ -2,6 +2,7 @@
 title: "Cognitive Bandwidth in the AI Agent Era"
 date: 2026-02-23
 permalink: /posts/2026/02/cognitive-bandwidth-ai-agent-era/
+excerpt: "As AI tools get more capable, the bottleneck shifts from tool friction to human cognitive bandwidth — compressing intent and steering effectively becomes the key skill."
 tags:
   - AI
   - AI Agents

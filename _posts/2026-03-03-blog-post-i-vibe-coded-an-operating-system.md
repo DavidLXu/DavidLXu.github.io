@@ -2,6 +2,7 @@
 title: "I Vibe Coded an Operating System"
 date: 2026-03-03
 permalink: /posts/2026/03/i-vibe-coded-an-operating-system/
+excerpt: "I built a scripting-first OS prototype in a weekend with Codex, where the system language gradually takes over its own environment from the host."
 tags:
   - Operating Systems
   - Programming Languages
