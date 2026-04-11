@@ -30,6 +30,7 @@ This post supports **English / 中文** switching via the site language toggle i
 - **Authors**: Kevin Frans*, Seohong Park*, Pieter Abbeel, Sergey Levine
 - **Affiliation**: UC Berkeley
 - **Date**: 2025-05-29
+- **Venue**: arXiv preprint, under review
 - **arXiv**: [2505.23458](https://arxiv.org/abs/2505.23458)
 - **Code**: [github.com/kvfrans/cfgrl](https://github.com/kvfrans/cfgrl)
 
@@ -89,9 +90,9 @@ where $o \in \{\emptyset, 0, 1\}$ is the optimality label (with 10% dropout for 
 
 ## 4. Special Case: Goal-Conditioned BC (GCBC)
 
-This is where CFGRL truly shines. Standard GCBC trains a goal-conditioned policy $\pi(a|s,g)$. The GCBC objective implicitly creates a product policy:
+This is where CFGRL truly shines. Standard GCBC trains a goal-conditioned policy $\pi(a|s,g)$. The paper makes the connection more explicit than most prior GCBC writeups:
 
-$$\pi(a|s, g) \propto \hat{\pi}(a|s) \cdot Q^{\hat{\pi}}(s, a, g)$$
+$$\pi(a|s, g) = \frac{\hat{\pi}(a|s)\, p_\gamma(g|s,a)}{p_\gamma(g|s)} \propto \hat{\pi}(a|s) \cdot Q^{\hat{\pi}}(s, a, g)$$
 
 The second factor satisfies the conditions of Theorem 1. Therefore:
 
@@ -133,6 +134,8 @@ CFGRL as drop-in GCBC improvement (selected results, flat policies):
 | visual-cube-single-play | 13 | **37** | **2.8x** |
 | visual-scene-play | 25 | **40** | +60% |
 
+One detail I found especially convincing in the PDF is that these gains are not coming from heavy per-task retuning. For the main GCBC table, the authors use a single fixed guidance strength of `w = 3` and still get broad improvements across state-based and pixel-based tasks.
+
 With hierarchical policies (HCFGRL), gains are even larger:
 
 | Task | Flow HGCBC | HCFGRL |
@@ -164,6 +167,7 @@ The guidance weight `w` provides a reliable knob:
 
 - **One-step improvement only**: CFGRL provides one step of policy improvement over the reference, not iterative optimization — not a full RL algorithm
 - **Distribution shift at high `w`**: theoretical guarantees hold but practical performance degrades when `w` is too large (divergence from reference)
+- **Assumes a separate value-learning story in offline RL**: in the AWR-style setting, CFGRL replaces policy extraction, not the upstream Q / V training pipeline
 - **Requires offline data quality**: still fundamentally limited by the support of the dataset — can improve suboptimal data but can't discover entirely new behaviors
 - **Not SOTA offline RL**: the authors explicitly note CFGRL is a tool (replacing AWR), not a complete offline RL system — advanced methods like policy gradients could extrapolate further
 
@@ -201,6 +205,7 @@ The guidance weight `w` provides a reliable knob:
 - **作者**: Kevin Frans*, Seohong Park*, Pieter Abbeel, Sergey Levine
 - **机构**: UC Berkeley
 - **日期**: 2025-05-29
+- **形式**: arXiv 预印本，under review
 - **arXiv**: [2505.23458](https://arxiv.org/abs/2505.23458)
 - **代码**: [github.com/kvfrans/cfgrl](https://github.com/kvfrans/cfgrl)
 
@@ -260,9 +265,9 @@ $$\mathcal{L}(\theta) = \mathbb{E}_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, 
 
 ## 4. 特殊情况：目标条件行为克隆（GCBC）
 
-这是 CFGRL 真正闪光的地方。标准 GCBC 训练目标条件策略 $\pi(a|s,g)$，其目标隐式创建了乘积策略：
+这是 CFGRL 真正闪光的地方。标准 GCBC 训练目标条件策略 $\pi(a|s,g)$，而论文把这个关系写得比很多以往 GCBC 文章都更直接：
 
-$$\pi(a|s, g) \propto \hat{\pi}(a|s) \cdot Q^{\hat{\pi}}(s, a, g)$$
+$$\pi(a|s, g) = \frac{\hat{\pi}(a|s)\, p_\gamma(g|s,a)}{p_\gamma(g|s)} \propto \hat{\pi}(a|s) \cdot Q^{\hat{\pi}}(s, a, g)$$
 
 第二个因子满足定理 1 的条件。因此：
 
@@ -301,6 +306,8 @@ CFGRL 作为 GCBC 的即插即用改进（部分结果）：
 | visual-cube-single-play | 13 | **37** | **2.8x** |
 | visual-scene-play | 25 | **40** | +60% |
 
+我觉得 PDF 里一个很有说服力的细节是，这些提升并不是靠大量逐任务调参硬凑出来的。作者在 GCBC 主结果表中使用的是一个固定的引导强度 `w = 3`，即便如此，CFGRL 依然在大量 state-based 和 pixel-based 任务上稳定优于基线。
+
 使用分层策略（HCFGRL），增益更大：
 
 | 任务 | Flow HGCBC | HCFGRL |
@@ -331,6 +338,7 @@ CFGRL 作为 GCBC 的即插即用改进（部分结果）：
 
 - **仅一步改进**：CFGRL 提供相对于参考策略的一步策略改进，非迭代优化——不是完整的 RL 算法
 - **高 `w` 时的分布偏移**：理论保证成立但实际性能在 `w` 过大时下降
+- **在离线 RL 场景里默认上游价值学习已经存在**：CFGRL 替代的是 AWR 这类策略提取步骤，而不是把 Q / V 学习也一起替代掉
 - **依赖离线数据质量**：仍根本性地受限于数据集的支撑——可改进次优数据但无法发现全新行为
 - **非 SOTA 离线 RL**：作者明确指出 CFGRL 是工具（替代 AWR），不是完整的离线 RL 系统
 
