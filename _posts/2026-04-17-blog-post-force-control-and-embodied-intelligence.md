@@ -17,7 +17,7 @@ This post supports **English / 中文** switching via the site language toggle i
 
 ## A Gap I Didn't Know I Had
 
-Late one night, over grilled skewers, a friend who builds measurement and control systems for robotic arms said something that stuck with me: most people doing embodied AI algorithms have no real picture of what the arm is doing below the policy level. They send out position targets, the arm moves, and they treat everything in between as a solved problem — a hardware detail.
+Late one night, over grilled skewers, a friend who builds control systems for robotic arms said something that stuck with me: most people doing embodied AI algorithms have no real picture of what the arm is doing below the policy level. They send out position targets, the arm moves, and they treat everything in between as a solved problem — a hardware detail.
 
 He was right. I was one of those people.
 
