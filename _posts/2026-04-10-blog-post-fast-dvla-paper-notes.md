@@ -55,11 +55,11 @@ Replace bidirectional attention with **block-wise causal attention**: each block
 
 Instead of waiting for block *i* to finish before starting block *i+1* (as in standard block diffusion), Fast-dVLA assigns **monotonically increasing noise levels** to blocks:
 
-$$t_1 < t_2 < \cdots < t_N$$
+\\(t_1 < t_2 < \cdots < t_N\\)
 
 Earlier blocks have lower noise (closer to clean) while later blocks are more heavily masked. The model factorizes the denoising as:
 
-$$p_\theta(Y_0 | Y_{t_{1:N}}) = \prod_{i=1}^{N} p_\theta(Y^0_{B_i} | Y^{t_1}_{B_1}, \ldots, Y^{t_i}_{B_i})$$
+\\(p_\theta(Y_0 | Y_{t_{1:N}}) = \prod_{i=1}^{N} p_\theta(Y^0_{B_i} | Y^{t_1}_{B_1}, \ldots, Y^{t_i}_{B_i})\\)
 
 This allows **concurrent denoising across blocks** — earlier blocks finish first, and their cached KV states accelerate later blocks.
 
@@ -67,7 +67,7 @@ This allows **concurrent denoising across blocks** — earlier blocks finish fir
 
 Rather than training from scratch, Fast-dVLA distills from a finetuned bidirectional dVLA teacher:
 
-$$\mathcal{L}_{AD} = \mathbb{E}\left[\sum_{i=1}^{N} D_{KL}\left(p_\theta(\cdot | \text{causal view}) \| p_{\phi^-}(\cdot | \text{global view})\right)\right]$$
+\\(\mathcal{L}_{AD} = \mathbb{E}\left[\sum_{i=1}^{N} D_{KL}\left(p_\theta(\cdot | \text{causal view}) \| p_{\phi^-}(\cdot | \text{global view})\right)\right]\\)
 
 The teacher sees all blocks (bidirectional), while the student only sees causally preceding blocks. This is **asymmetric** — the student learns to approximate the teacher's richer context with restricted attention. Converges in only **1/10 of the steps** needed for training from scratch.
 
@@ -193,11 +193,11 @@ Fast-dVLA 包含三个核心组件：
 
 不同于标准块扩散需要等待第 *i* 块完成才能开始第 *i+1* 块，Fast-dVLA 为各块分配**单调递增的噪声水平**：
 
-$$t_1 < t_2 < \cdots < t_N$$
+\\(t_1 < t_2 < \cdots < t_N\\)
 
 前面的块噪声较低（更接近干净状态），后面的块则有更多掩码。模型将去噪过程分解为：
 
-$$p_\theta(Y_0 | Y_{t_{1:N}}) = \prod_{i=1}^{N} p_\theta(Y^0_{B_i} | Y^{t_1}_{B_1}, \ldots, Y^{t_i}_{B_i})$$
+\\(p_\theta(Y_0 | Y_{t_{1:N}}) = \prod_{i=1}^{N} p_\theta(Y^0_{B_i} | Y^{t_1}_{B_1}, \ldots, Y^{t_i}_{B_i})\\)
 
 这允许**跨块并行去噪**——前面的块先完成，其缓存的 KV 状态加速后续块的解码。
 
@@ -205,7 +205,7 @@ $$p_\theta(Y_0 | Y_{t_{1:N}}) = \prod_{i=1}^{N} p_\theta(Y^0_{B_i} | Y^{t_1}_{B_
 
 Fast-dVLA 从微调后的双向 dVLA 教师模型进行蒸馏，而非从头训练：
 
-$$\mathcal{L}_{AD} = \mathbb{E}\left[\sum_{i=1}^{N} D_{KL}\left(p_\theta(\cdot | \text{因果视野}) \| p_{\phi^-}(\cdot | \text{全局视野})\right)\right]$$
+\\(\mathcal{L}_{AD} = \mathbb{E}\left[\sum_{i=1}^{N} D_{KL}\left(p_\theta(\cdot | \text{因果视野}) \| p_{\phi^-}(\cdot | \text{全局视野})\right)\right]\\)
 
 教师模型看到所有块（双向），而学生模型只看到因果方向的前序块。这种**非对称**设计让学生学习用受限注意力逼近教师更丰富的上下文。收敛仅需从头训练步数的 **1/10**。
 

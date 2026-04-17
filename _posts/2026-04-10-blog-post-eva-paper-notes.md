@@ -52,27 +52,27 @@ While this gap can be mitigated at inference time (e.g., rejection sampling), su
 
 The IDM predicts robot actions from short temporal windows of visual observations:
 
-$$\mathcal{L}_{\text{IDM}} = \mathbb{E}\left[\sum_t \|f_\phi(I_{t-k:t+k}) - a_t^{gt}\|_2^2\right]$$
+\\(\mathcal{L}_{\text{IDM}} = \mathbb{E}\left[\sum_t \|f_\phi(I_{t-k:t+k}) - a_t^{gt}\|_2^2\right]\\)
 
 Architecture: convolutional backbone → spatial softmax → MLP. The spatial softmax produces keypoint-like 2D coordinates per channel, which proves more stable than global pooling when decoding actions from generated (potentially artifact-laden) rollouts.
 
 ### 2.2 IDM-based Executability Reward
 
-Given a generated video $V$, the frozen IDM predicts joint commands $A = \{a_t\}_{t=1}^T$. The reward evaluates the **action sequence** along two axes:
+Given a generated video \\(V\\), the frozen IDM predicts joint commands \\(A = \{a_t\}_{t=1}^T\\). The reward evaluates the **action sequence** along two axes:
 
 **Smoothness penalties** — Huber penalties on acceleration and jerk (finite differences of IDM-decoded actions):
 
-$$P_\alpha = \mathbb{E}_t[\text{Huber}(\alpha_t; \delta_\alpha)], \quad P_j = \mathbb{E}_t[\text{Huber}(j_t; \delta_j)]$$
+\\(P_\alpha = \mathbb{E}_t[\text{Huber}(\alpha_t; \delta_\alpha)], \quad P_j = \mathbb{E}_t[\text{Huber}(j_t; \delta_j)]\\)
 
 **Embodiment limit penalties** — penalize violations of velocity and acceleration bounds:
 
-$$P_{\text{vel}} = \mathbb{E}_t\|\max(|v_t| - v_{\max}, 0)\|_2^2, \quad P_{\text{acc}} = \mathbb{E}_t\|\max(|\alpha_t| - a_{\max}, 0)\|_2^2$$
+\\(P_{\text{vel}} = \mathbb{E}_t\|\max(|v_t| - v_{\max}, 0)\|_2^2, \quad P_{\text{acc}} = \mathbb{E}_t\|\max(|\alpha_t| - a_{\max}, 0)\|_2^2\\)
 
 The total penalty is combined into a bounded reward:
 
-$$R(V) = \left(\frac{1 + P(A)}{P_0}\right)^{-\gamma}$$
+\\(R(V) = \left(\frac{1 + P(A)}{P_0}\right)^{-\gamma}\\)
 
-where $P_0$ is estimated from rollouts of the pretrained model, and $\gamma$ controls decay rate.
+where \\(P_0\\) is estimated from rollouts of the pretrained model, and \\(\gamma\\) controls decay rate.
 
 **Key insight**: the reward remains informative even when generated videos contain **severe visual artifacts**, because such artifacts typically translate into unstable or out-of-bound actions — providing a strong penalty signal.
 
@@ -80,9 +80,9 @@ where $P_0$ is estimated from rollouts of the pretrained model, and $\gamma$ con
 
 EVA uses **Flow-GRPO** (Group Relative Policy Optimization adapted for flow-matching models) to fine-tune the video generator:
 
-- Sample $G=8$ rollouts per prompt from a stochastic SDE derived from the flow model
+- Sample \\(G=8\\) rollouts per prompt from a stochastic SDE derived from the flow model
 - Score each rollout with the IDM-based reward
-- Compute group-relative advantages: $\hat{A}_i = (R_i - \mu_R) / (\sigma_R + \epsilon)$
+- Compute group-relative advantages: \\(\hat{A}_i = (R_i - \mu_R) / (\sigma_R + \epsilon)\\)
 - Optimize using clipped policy gradient with KL regularization against the reference model
 
 The IDM is kept **frozen** during GRPO fine-tuning — it serves purely as a reward model.
@@ -198,27 +198,27 @@ The IDM achieves **89.52%** success rate when decoding ground-truth video demons
 
 IDM 从短时间窗口的视觉观测中预测机器人动作：
 
-$$\mathcal{L}_{\text{IDM}} = \mathbb{E}\left[\sum_t \|f_\phi(I_{t-k:t+k}) - a_t^{gt}\|_2^2\right]$$
+\\(\mathcal{L}_{\text{IDM}} = \mathbb{E}\left[\sum_t \|f_\phi(I_{t-k:t+k}) - a_t^{gt}\|_2^2\right]\\)
 
 架构：卷积主干 → 空间 softmax → MLP。空间 softmax 为每个通道生成类似关键点的 2D 坐标，在从生成的（可能含伪影的）轨迹中解码动作时比全局池化更稳定。
 
 ### 2.2 基于 IDM 的可执行性奖励
 
-给定生成视频 $V$，冻结的 IDM 预测关节指令 $A = \{a_t\}_{t=1}^T$。奖励沿两个维度评估**动作序列**：
+给定生成视频 \\(V\\)，冻结的 IDM 预测关节指令 \\(A = \{a_t\}_{t=1}^T\\)。奖励沿两个维度评估**动作序列**：
 
 **平滑性惩罚** — 对加速度和冲击（IDM 解码动作的有限差分）施加 Huber 惩罚：
 
-$$P_\alpha = \mathbb{E}_t[\text{Huber}(\alpha_t; \delta_\alpha)], \quad P_j = \mathbb{E}_t[\text{Huber}(j_t; \delta_j)]$$
+\\(P_\alpha = \mathbb{E}_t[\text{Huber}(\alpha_t; \delta_\alpha)], \quad P_j = \mathbb{E}_t[\text{Huber}(j_t; \delta_j)]\\)
 
 **本体限制惩罚** — 惩罚违反速度和加速度边界的情况：
 
-$$P_{\text{vel}} = \mathbb{E}_t\|\max(|v_t| - v_{\max}, 0)\|_2^2, \quad P_{\text{acc}} = \mathbb{E}_t\|\max(|\alpha_t| - a_{\max}, 0)\|_2^2$$
+\\(P_{\text{vel}} = \mathbb{E}_t\|\max(|v_t| - v_{\max}, 0)\|_2^2, \quad P_{\text{acc}} = \mathbb{E}_t\|\max(|\alpha_t| - a_{\max}, 0)\|_2^2\\)
 
 总惩罚组合为有界奖励：
 
-$$R(V) = \left(\frac{1 + P(A)}{P_0}\right)^{-\gamma}$$
+\\(R(V) = \left(\frac{1 + P(A)}{P_0}\right)^{-\gamma}\\)
 
-其中 $P_0$ 从预训练模型的轨迹中估计，$\gamma$ 控制衰减速率。
+其中 \\(P_0\\) 从预训练模型的轨迹中估计，\\(\gamma\\) 控制衰减速率。
 
 **关键洞察**：即使生成的视频包含**严重的视觉伪影**，奖励仍然具有信息量，因为这些伪影通常会转化为不稳定或超出范围的动作——提供强惩罚信号。
 
@@ -226,9 +226,9 @@ $$R(V) = \left(\frac{1 + P(A)}{P_0}\right)^{-\gamma}$$
 
 EVA 使用 **Flow-GRPO**（适配流匹配模型的分组相对策略优化）微调视频生成器：
 
-- 每个提示采样 $G=8$ 条轨迹
+- 每个提示采样 \\(G=8\\) 条轨迹
 - 使用 IDM 奖励对每条轨迹评分
-- 计算组内相对优势：$\hat{A}_i = (R_i - \mu_R) / (\sigma_R + \epsilon)$
+- 计算组内相对优势：\\(\hat{A}_i = (R_i - \mu_R) / (\sigma_R + \epsilon)\\)
 - 使用裁剪策略梯度 + 对参考模型的 KL 正则化进行优化
 
 IDM 在 GRPO 微调期间保持**冻结**——纯粹作为奖励模型使用。

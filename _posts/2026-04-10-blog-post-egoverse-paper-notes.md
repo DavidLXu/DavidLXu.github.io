@@ -85,7 +85,7 @@ $$
 
 ### Policy Architecture
 
-An encoder-decoder architecture with modality-specific stems. Image observations go through a ResNet-18 backbone; proprioceptive inputs through an MLP. A shared vision stem processes egocentric RGB from both human and robot embodiments. A shared transformer encoder $f_\phi$ fuses multi-modal tokens via learned query attention, and a flow matching action decoder $\pi_\theta$ (multi-block transformer decoder trained with conditional flow matching loss) generates actions.
+An encoder-decoder architecture with modality-specific stems. Image observations go through a ResNet-18 backbone; proprioceptive inputs through an MLP. A shared vision stem processes egocentric RGB from both human and robot embodiments. A shared transformer encoder \\(f_\phi\\) fuses multi-modal tokens via learned query attention, and a flow matching action decoder \\(\pi_\theta\\) (multi-block transformer decoder trained with conditional flow matching loss) generates actions.
 
 The co-training loss is straightforward:
 
@@ -219,7 +219,7 @@ $$
 
 ### 策略架构
 
-编码器-解码器架构，带模态特定分支。图像走 ResNet-18 backbone，本体感受走 MLP。共享视觉分支处理人和机器人的自我中心 RGB。共享 transformer 编码器 $f_\phi$ 通过学习的查询注意力融合多模态 token，flow matching 动作解码器 $\pi_\theta$ 生成动作。
+编码器-解码器架构，带模态特定分支。图像走 ResNet-18 backbone，本体感受走 MLP。共享视觉分支处理人和机器人的自我中心 RGB。共享 transformer 编码器 \\(f_\phi\\) 通过学习的查询注意力融合多模态 token，flow matching 动作解码器 \\(\pi_\theta\\) 生成动作。
 
 联合训练损失很直接：
 

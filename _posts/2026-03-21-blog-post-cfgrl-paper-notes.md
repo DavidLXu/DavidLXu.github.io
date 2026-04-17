@@ -49,17 +49,17 @@ Can we get policy improvement while keeping the simplicity of supervised learnin
 
 Define an improved policy as a **product** of two factors:
 
-$$\pi(a|s) \propto \hat{\pi}(a|s) \cdot f(A^{\hat{\pi}}(s,a))$$
+\\(\pi(a|s) \propto \hat{\pi}(a|s) \cdot f(A^{\hat{\pi}}(s,a))\\)
 
-where $\hat{\pi}$ is the reference (behavior) policy and $f$ is a non-negative, monotonically increasing function of the advantage $A^{\hat{\pi}}(s,a)$.
+where \\(\hat{\pi}\\) is the reference (behavior) policy and \\(f\\) is a non-negative, monotonically increasing function of the advantage \\(A^{\hat{\pi}}(s,a)\\).
 
-**Theorem 1 (Policy Improvement)**: If $f$ is non-negative and non-decreasing in advantage, then the product policy $\pi$ is guaranteed to improve over $\hat{\pi}$:
+**Theorem 1 (Policy Improvement)**: If \\(f\\) is non-negative and non-decreasing in advantage, then the product policy \\(\pi\\) is guaranteed to improve over \\(\hat{\pi}\\):
 
-$$J(\pi) \geq J(\hat{\pi})$$
+\\(J(\pi) \geq J(\hat{\pi})\\)
 
-**Theorem 2 (Controllable Improvement)**: For $0 \leq w_1 < w_2$, the attenuated product $\pi_{w_2}(a|s) \propto \hat{\pi}(a|s) f(A(s,a))^{w_2}$ is a further improvement over $\pi_{w_1}$:
+**Theorem 2 (Controllable Improvement)**: For \\(0 \leq w_1 < w_2\\), the attenuated product \\(\pi_{w_2}(a|s) \propto \hat{\pi}(a|s) f(A(s,a))^{w_2}\\) is a further improvement over \\(\pi_{w_1}\\):
 
-$$J(\pi_{w_1}) \leq J(\pi_{w_2})$$
+\\(J(\pi_{w_1}) \leq J(\pi_{w_2})\\)
 
 Higher `w` = more improvement (but also more divergence from reference → eventual distribution shift).
 
@@ -67,32 +67,32 @@ Higher `w` = more improvement (but also more divergence from reference → event
 
 The product policy's score function decomposes additively:
 
-$$\nabla_a \log \pi(a|s) = \nabla_a \log \hat{\pi}(a|s) + \nabla_a \log p(o|s,a)$$
+\\(\nabla_a \log \pi(a|s) = \nabla_a \log \hat{\pi}(a|s) + \nabla_a \log p(o|s,a)\\)
 
 Using classifier-free guidance (Bayes' rule trick), this becomes:
 
-$$\nabla_a \log \hat{\pi}(a|s) + w \cdot (\nabla_a \log \hat{\pi}(a|s, o) - \nabla_a \log \hat{\pi}(a|s))$$
+\\(\nabla_a \log \hat{\pi}(a|s) + w \cdot (\nabla_a \log \hat{\pi}(a|s, o) - \nabla_a \log \hat{\pi}(a|s))\\)
 
 This is exactly the standard CFG formula! The guidance weight `w` directly controls the degree of policy improvement. Both the unconditional and conditional scores come from **the same network** trained with a simple flow matching objective:
 
-$$\mathcal{L}(\theta) = \mathbb{E}_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, o) - (a - a_0)\|^2$$
+\\(\mathcal{L}(\theta) = \mathbb{E}_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, o) - (a - a_0)\|^2\\)
 
-where $o \in \{\emptyset, 0, 1\}$ is the optimality label (with 10% dropout for unconditional training).
+where \\(o \in \{\emptyset, 0, 1\}\\) is the optimality label (with 10% dropout for unconditional training).
 
 ### Why this matters vs. AWR
 
 | Property | AWR | CFGRL |
 |---|---|---|
-| Temperature/weight | $1/\beta$ (fixed at train time) | $w$ (tunable at test time) |
+| Temperature/weight | \\(1/\beta\\) (fixed at train time) | \\(w\\) (tunable at test time) |
 | Gradient distribution | Dominated by outlier high-advantage samples | Even weighting across batch |
 | Retraining needed to tune? | Yes | **No** |
-| Empirical scaling | Saturates around $1/\beta = 10$ | Continues improving beyond |
+| Empirical scaling | Saturates around \\(1/\beta = 10\\) | Continues improving beyond |
 
 ## 4. Special Case: Goal-Conditioned BC (GCBC)
 
-This is where CFGRL truly shines. Standard GCBC trains a goal-conditioned policy $\pi(a|s,g)$. The paper makes the connection more explicit than most prior GCBC writeups:
+This is where CFGRL truly shines. Standard GCBC trains a goal-conditioned policy \\(\pi(a|s,g)\\). The paper makes the connection more explicit than most prior GCBC writeups:
 
-$$\pi(a|s, g) = \frac{\hat{\pi}(a|s)\, p_\gamma(g|s,a)}{p_\gamma(g|s)} \propto \hat{\pi}(a|s) \cdot Q^{\hat{\pi}}(s, a, g)$$
+\\(\pi(a|s, g) = \frac{\hat{\pi}(a|s)\, p_\gamma(g|s,a)}{p_\gamma(g|s)} \propto \hat{\pi}(a|s) \cdot Q^{\hat{\pi}}(s, a, g)\\)
 
 The second factor satisfies the conditions of Theorem 1. Therefore:
 
@@ -101,7 +101,7 @@ The second factor satisfies the conditions of Theorem 1. Therefore:
 
 The sampling formula is simply:
 
-$$\nabla_a \log \hat{\pi}(a|s) + w \cdot (\nabla_a \log \pi(a|s, g) - \nabla_a \log \hat{\pi}(a|s))$$
+\\(\nabla_a \log \hat{\pi}(a|s) + w \cdot (\nabla_a \log \pi(a|s, g) - \nabla_a \log \hat{\pi}(a|s))\\)
 
 **No value function needed.** Just train a goal-conditioned flow policy and an unconditional flow policy (same network with dropout), then tune `w` at test time.
 
@@ -159,7 +159,7 @@ The guidance weight `w` provides a reliable knob:
 - **Elegant theory**: clean, provable connection between CFG and policy improvement with formal guarantees (Theorems 1 & 2)
 - **Extreme simplicity**: train conditional diffusion/flow model with supervised loss → tune `w` at test time → done
 - **No value function needed** for GCBC setting — improvement literally comes for free
-- **Test-time tunable**: unlike AWR where $\beta$ is baked into training, `w` can be swept without retraining
+- **Test-time tunable**: unlike AWR where \\(\beta\\) is baked into training, `w` can be swept without retraining
 - **Fixes AWR's gradient issue**: even gradient magnitudes across batch vs. outlier-dominated in AWR
 - **Broad applicability**: state-based, visual, hierarchical, offline RL, goal-conditioned settings
 
@@ -224,17 +224,17 @@ The guidance weight `w` provides a reliable knob:
 
 定义改进策略为两个因子的**乘积**：
 
-$$\pi(a|s) \propto \hat{\pi}(a|s) \cdot f(A^{\hat{\pi}}(s,a))$$
+\\(\pi(a|s) \propto \hat{\pi}(a|s) \cdot f(A^{\hat{\pi}}(s,a))\\)
 
-其中 $\hat{\pi}$ 是参考（行为）策略，$f$ 是关于优势 $A^{\hat{\pi}}(s,a)$ 的非负单调递增函数。
+其中 \\(\hat{\pi}\\) 是参考（行为）策略，\\(f\\) 是关于优势 \\(A^{\hat{\pi}}(s,a)\\) 的非负单调递增函数。
 
-**定理 1（策略改进）**：如果 $f$ 关于优势非负且非递减，则乘积策略 $\pi$ 保证改进 $\hat{\pi}$：
+**定理 1（策略改进）**：如果 \\(f\\) 关于优势非负且非递减，则乘积策略 \\(\pi\\) 保证改进 \\(\hat{\pi}\\)：
 
-$$J(\pi) \geq J(\hat{\pi})$$
+\\(J(\pi) \geq J(\hat{\pi})\\)
 
-**定理 2（可控改进）**：对于 $0 \leq w_1 < w_2$，衰减乘积 $\pi_{w_2}(a|s) \propto \hat{\pi}(a|s) f(A(s,a))^{w_2}$ 相比 $\pi_{w_1}$ 是进一步的改进：
+**定理 2（可控改进）**：对于 \\(0 \leq w_1 < w_2\\)，衰减乘积 \\(\pi_{w_2}(a|s) \propto \hat{\pi}(a|s) f(A(s,a))^{w_2}\\) 相比 \\(\pi_{w_1}\\) 是进一步的改进：
 
-$$J(\pi_{w_1}) \leq J(\pi_{w_2})$$
+\\(J(\pi_{w_1}) \leq J(\pi_{w_2})\\)
 
 更高的 `w` = 更多改进（但也更偏离参考策略 → 最终产生分布偏移）。
 
@@ -242,32 +242,32 @@ $$J(\pi_{w_1}) \leq J(\pi_{w_2})$$
 
 乘积策略的 score function 可加性分解：
 
-$$\nabla_a \log \pi(a|s) = \nabla_a \log \hat{\pi}(a|s) + \nabla_a \log p(o|s,a)$$
+\\(\nabla_a \log \pi(a|s) = \nabla_a \log \hat{\pi}(a|s) + \nabla_a \log p(o|s,a)\\)
 
 利用无分类器引导（贝叶斯规则技巧），变为：
 
-$$\nabla_a \log \hat{\pi}(a|s) + w \cdot (\nabla_a \log \hat{\pi}(a|s, o) - \nabla_a \log \hat{\pi}(a|s))$$
+\\(\nabla_a \log \hat{\pi}(a|s) + w \cdot (\nabla_a \log \hat{\pi}(a|s, o) - \nabla_a \log \hat{\pi}(a|s))\\)
 
 这正是标准的 CFG 公式！引导权重 `w` 直接控制策略改进的程度。无条件和条件 score 来自**同一个网络**，用简单的 flow matching 目标训练：
 
-$$\mathcal{L}(\theta) = \mathbb{E}_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, o) - (a - a_0)\|^2$$
+\\(\mathcal{L}(\theta) = \mathbb{E}_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, o) - (a - a_0)\|^2\\)
 
-其中 $o \in \{\emptyset, 0, 1\}$ 是最优性标签（10% 概率 dropout 用于无条件训练）。
+其中 \\(o \in \{\emptyset, 0, 1\}\\) 是最优性标签（10% 概率 dropout 用于无条件训练）。
 
 ### 相比 AWR 的优势
 
 | 属性 | AWR | CFGRL |
 |---|---|---|
-| 温度/权重 | $1/\beta$（训练时固定） | $w$（测试时可调） |
+| 温度/权重 | \\(1/\beta\\)（训练时固定） | \\(w\\)（测试时可调） |
 | 梯度分布 | 被少数高优势样本主导 | 批次内均匀加权 |
 | 调参需要重新训练？ | 是 | **否** |
-| 经验扩展性 | 在 $1/\beta = 10$ 左右饱和 | 持续改进 |
+| 经验扩展性 | 在 \\(1/\beta = 10\\) 左右饱和 | 持续改进 |
 
 ## 4. 特殊情况：目标条件行为克隆（GCBC）
 
-这是 CFGRL 真正闪光的地方。标准 GCBC 训练目标条件策略 $\pi(a|s,g)$，而论文把这个关系写得比很多以往 GCBC 文章都更直接：
+这是 CFGRL 真正闪光的地方。标准 GCBC 训练目标条件策略 \\(\pi(a|s,g)\\)，而论文把这个关系写得比很多以往 GCBC 文章都更直接：
 
-$$\pi(a|s, g) = \frac{\hat{\pi}(a|s)\, p_\gamma(g|s,a)}{p_\gamma(g|s)} \propto \hat{\pi}(a|s) \cdot Q^{\hat{\pi}}(s, a, g)$$
+\\(\pi(a|s, g) = \frac{\hat{\pi}(a|s)\, p_\gamma(g|s,a)}{p_\gamma(g|s)} \propto \hat{\pi}(a|s) \cdot Q^{\hat{\pi}}(s, a, g)\\)
 
 第二个因子满足定理 1 的条件。因此：
 
@@ -276,7 +276,7 @@ $$\pi(a|s, g) = \frac{\hat{\pi}(a|s)\, p_\gamma(g|s,a)}{p_\gamma(g|s)} \propto \
 
 采样公式很简单：
 
-$$\nabla_a \log \hat{\pi}(a|s) + w \cdot (\nabla_a \log \pi(a|s, g) - \nabla_a \log \hat{\pi}(a|s))$$
+\\(\nabla_a \log \hat{\pi}(a|s) + w \cdot (\nabla_a \log \pi(a|s, g) - \nabla_a \log \hat{\pi}(a|s))\\)
 
 **不需要价值函数。**只需训练一个目标条件 flow 策略和一个无条件 flow 策略（同一网络加 dropout），然后在测试时调节 `w`。
 
@@ -330,7 +330,7 @@ CFGRL 作为 GCBC 的即插即用改进（部分结果）：
 - **优雅的理论**：CFG 与策略改进之间干净、可证明的联系，有形式化保证（定理 1 & 2）
 - **极度简洁**：用监督损失训练条件扩散/flow 模型 → 测试时调 `w` → 完成
 - **GCBC 场景无需价值函数**——改进真的是免费的
-- **测试时可调**：不同于 AWR 将 $\beta$ 固定在训练中，`w` 可以无需重新训练地扫描
+- **测试时可调**：不同于 AWR 将 \\(\beta\\) 固定在训练中，`w` 可以无需重新训练地扫描
 - **修复 AWR 的梯度问题**：批次内均匀梯度 vs. AWR 中被异常值主导
 - **广泛适用**：基于状态、视觉、分层、离线 RL、目标条件等多种场景
 

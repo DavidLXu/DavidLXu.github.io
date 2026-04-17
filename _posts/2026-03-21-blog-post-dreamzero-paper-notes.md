@@ -49,7 +49,7 @@ A WAM has the input-output structure:
 
 Unlike VLAs that directly map observations to actions, WAMs first "imagine" what successful execution looks like (video), then extract actions aligned with that imagined future. The key insight is that joint video-action prediction decomposes into:
 
-$$\pi(o_{l:l+H}, a_{l:l+H} | o_{0:l}, c, q_l) = \underbrace{\pi(o_{l:l+H} | o_{0:l}, c, q_l)}_{\text{video prediction}} \cdot \underbrace{\pi(a_{l:l+H} | o_{0:l+H}, q_l)}_{\text{inverse dynamics}}$$
+\\(\pi(o_{l:l+H}, a_{l:l+H} | o_{0:l}, c, q_l) = \underbrace{\pi(o_{l:l+H} | o_{0:l}, c, q_l)}_{\text{video prediction}} \cdot \underbrace{\pi(a_{l:l+H} | o_{0:l+H}, q_l)}_{\text{inverse dynamics}}\\)
 
 But instead of using two separate models, DreamZero trains a single end-to-end model with a joint denoising objective.
 
@@ -224,7 +224,7 @@ WAM 的输入-输出结构：
 
 与直接将观测映射到动作的 VLAs 不同，WAMs 首先"想象"成功执行的样子（视频），然后提取与想象的未来对齐的动作。联合视频-动作预测可以分解为：
 
-$$\pi(o_{l:l+H}, a_{l:l+H} | o_{0:l}, c, q_l) = \underbrace{\pi(o_{l:l+H} | o_{0:l}, c, q_l)}_{\text{视频预测}} \cdot \underbrace{\pi(a_{l:l+H} | o_{0:l+H}, q_l)}_{\text{逆动力学}}$$
+\\(\pi(o_{l:l+H}, a_{l:l+H} | o_{0:l}, c, q_l) = \underbrace{\pi(o_{l:l+H} | o_{0:l}, c, q_l)}_{\text{视频预测}} \cdot \underbrace{\pi(a_{l:l+H} | o_{0:l+H}, q_l)}_{\text{逆动力学}}\\)
 
 但 DreamZero 并非使用两个独立模型，而是用一个端到端模型以联合去噪目标进行训练。
 

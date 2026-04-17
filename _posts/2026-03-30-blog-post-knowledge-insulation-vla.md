@@ -46,7 +46,7 @@ The recipe has three key ingredients:
 
 Train the model to predict **both** discrete and continuous actions simultaneously:
 
-$$\mathcal{L}_{\text{CO-VLA}}(\theta) = \mathbb{E}\left[-\sum_{j} M_j^{\ell} \log p_\theta(\hat{\ell}_{j+1}|x_{1:j}) + \alpha M^{\text{act}} \| \omega - a_{1:H} - f_\theta^a(a_{1:H}^{\tau,\omega}) \|^2 \right]$$
+\\(\mathcal{L}_{\text{CO-VLA}}(\theta) = \mathbb{E}\left[-\sum_{j} M_j^{\ell} \log p_\theta(\hat{\ell}_{j+1}|x_{1:j}) + \alpha M^{\text{act}} \| \omega - a_{1:H} - f_\theta^a(a_{1:H}^{\tau,\omega}) \|^2 \right]\\)
 
 - The VLM backbone is trained on **discrete action tokens** (FAST tokenization) via standard next-token prediction — this provides a clean learning signal
 - A separate **action expert** (300M parameter transformer) is trained with flow matching on continuous action chunks
@@ -56,7 +56,7 @@ $$\mathcal{L}_{\text{CO-VLA}}(\theta) = \mathbb{E}\left[-\sum_{j} M_j^{\ell} \lo
 
 The critical innovation: **stop the gradient flow** from the action expert back to the VLM backbone. The action expert can *read* backbone features (via cross-attention), but its gradients don't *write* back into them:
 
-$$P_{ab} = \text{softmax}\left(Q_a(X_a) \cdot \text{sg}(K_b(X_b))^T + A\right)$$
+\\(P_{ab} = \text{softmax}\left(Q_a(X_a) \cdot \text{sg}(K_b(X_b))^T + A\right)\\)
 
 where `sg` is the stop-gradient operator. Value embeddings from the backbone are similarly detached. This means:
 - The backbone learns only from the clean autoregressive (discrete action + language) loss
@@ -182,7 +182,7 @@ Co-training on VLM data is particularly important for OOD generalization — the
 
 同时训练模型预测**离散动作和连续动作**：
 
-$$\mathcal{L}_{\text{CO-VLA}}(\theta) = \mathbb{E}\left[-\sum_{j} M_j^{\ell} \log p_\theta(\hat{\ell}_{j+1}|x_{1:j}) + \alpha M^{\text{act}} \| \omega - a_{1:H} - f_\theta^a(a_{1:H}^{\tau,\omega}) \|^2 \right]$$
+\\(\mathcal{L}_{\text{CO-VLA}}(\theta) = \mathbb{E}\left[-\sum_{j} M_j^{\ell} \log p_\theta(\hat{\ell}_{j+1}|x_{1:j}) + \alpha M^{\text{act}} \| \omega - a_{1:H} - f_\theta^a(a_{1:H}^{\tau,\omega}) \|^2 \right]\\)
 
 - VLM 骨干网络通过标准 next-token prediction 在**离散动作 token**（FAST 编码）上训练——提供干净的学习信号
 - 独立的**动作专家**（300M 参数的 transformer）通过 flow matching 在连续动作块上训练
@@ -192,7 +192,7 @@ $$\mathcal{L}_{\text{CO-VLA}}(\theta) = \mathbb{E}\left[-\sum_{j} M_j^{\ell} \lo
 
 关键创新：**阻断从动作专家到 VLM 骨干网络的梯度流**。动作专家可以通过交叉注意力*读取*骨干网络的特征，但其梯度不会*回写*到骨干网络：
 
-$$P_{ab} = \text{softmax}\left(Q_a(X_a) \cdot \text{sg}(K_b(X_b))^T + A\right)$$
+\\(P_{ab} = \text{softmax}\left(Q_a(X_a) \cdot \text{sg}(K_b(X_b))^T + A\right)\\)
 
 其中 `sg` 是 stop-gradient 算子。来自骨干网络的 value 嵌入同样被 detach。这意味着：
 - 骨干网络只从干净的自回归损失（离散动作 + 语言）中学习

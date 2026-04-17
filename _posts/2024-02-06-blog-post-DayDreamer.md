@@ -18,7 +18,7 @@ World model learning
 ===
 - The world model can be thought of as a fast simulator of the environment that the robot learns autonomously, despite that the physical robot runs in real environment.
 - The world model is based on the Recurrent State-Space Model (RSSM) which consists of encoder, decoder, dynamics and reward networks.
-- The encoder network fuses all sensory inputs $x_t$ together into the stochastic representations $z_t$. The dynamics model learns to predict the sequence of stochastic representations by using its recurrent state $h_t$. The reward network predicts task rewards by letting the robot interact with the real world. (It appears that the decoder network is not in use in this paper.)
+- The encoder network fuses all sensory inputs \\(x_t\\) together into the stochastic representations \\(z_t\\). The dynamics model learns to predict the sequence of stochastic representations by using its recurrent state \\(h_t\\). The reward network predicts task rewards by letting the robot interact with the real world. (It appears that the decoder network is not in use in this paper.)
 - All components of the world model are jointly optimized by stochastic backpropagation
 
 Actor-critic learning

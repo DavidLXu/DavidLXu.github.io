@@ -46,7 +46,7 @@ The operator wears two devices simultaneously during data collection:
 
 The captured human hand poses are retargeted to the 22-DOF Sharpa Wave hand via keypoint-based optimization:
 
-$$q^* = \arg\min_q \sum_i \| p_i^h - p_i^r(q) \|_2^2$$
+\\(q^* = \arg\min_q \sum_i \| p_i^h - p_i^r(q) \|_2^2\\)
 
 A collision classifier checks the optimized joint angles and clamps to a safe manifold if self-collision is detected. The result is a paired dataset of sEMG streams and collision-free robotic joint angles.
 
@@ -54,8 +54,8 @@ A collision classifier checks the optimized joint angles and clamps to a safe ma
 
 The model follows an encoder-decoder design:
 
-- **Encoder**: raw sEMG input of shape $(B, 8, T)$ goes through two Conv1d blocks and two Time-Depth Separable (TDS) stages (2D conv + layer norm + feedforward + layer norm).
-- **Decoder**: an LSTM + MLP that predicts **joint velocities** $\dot{\theta}$ rather than absolute angles. Poses are reconstructed iteratively: $\theta_t = \theta_{t-1} + \dot{\theta}_t$, starting from a rest pose $\theta_0$.
+- **Encoder**: raw sEMG input of shape \\((B, 8, T)\\) goes through two Conv1d blocks and two Time-Depth Separable (TDS) stages (2D conv + layer norm + feedforward + layer norm).
+- **Decoder**: an LSTM + MLP that predicts **joint velocities** \\(\dot{\theta}\\) rather than absolute angles. Poses are reconstructed iteratively: \\(\theta_t = \theta_{t-1} + \dot{\theta}_t\\), starting from a rest pose \\(\theta_0\\).
 
 The velocity-based approach decouples muscle activation intensity from static postures, reducing sensitivity to sensor displacement and signal drift during sustained grasping.
 
@@ -151,7 +151,7 @@ sEMG 直接从前臂读取神经肌肉信号，可穿戴、成本低，且不受
 
 采集到的人手姿态通过基于关键点的优化重定向到 22-DOF 的 Sharpa Wave 机器人手：
 
-$$q^* = \arg\min_q \sum_i \| p_i^h - p_i^r(q) \|_2^2$$
+\\(q^* = \arg\min_q \sum_i \| p_i^h - p_i^r(q) \|_2^2\\)
 
 碰撞分类器检查优化后的关节角，如检测到自碰撞则钳制到安全流形。最终得到 sEMG 数据流与无碰撞机器人关节角的配对数据集。
 
@@ -159,8 +159,8 @@ $$q^* = \arg\min_q \sum_i \| p_i^h - p_i^r(q) \|_2^2$$
 
 模型采用编码器-解码器设计：
 
-- **编码器**：原始 sEMG 输入形状为 $(B, 8, T)$，经过两个 Conv1d 模块和两个时间深度可分离（TDS）阶段。
-- **解码器**：LSTM + MLP 预测**关节速度** $\dot{\theta}$ 而非绝对角度。姿态通过迭代重建：$\theta_t = \theta_{t-1} + \dot{\theta}_t$，初始值为静止姿态 $\theta_0$。
+- **编码器**：原始 sEMG 输入形状为 \\((B, 8, T)\\)，经过两个 Conv1d 模块和两个时间深度可分离（TDS）阶段。
+- **解码器**：LSTM + MLP 预测**关节速度** \\(\dot{\theta}\\) 而非绝对角度。姿态通过迭代重建：\\(\theta_t = \theta_{t-1} + \dot{\theta}_t\\)，初始值为静止姿态 \\(\theta_0\\)。
 
 基于速度的方法将肌肉激活强度与静态姿势解耦，降低了传感器偏移和持续抓取过程中信号漂移的敏感性。
 

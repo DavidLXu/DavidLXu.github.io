@@ -46,34 +46,34 @@ This is especially catastrophic for **fine-grained manipulation** (button pressi
 
 Standard CFG for flow policies:
 
-$$v_\theta^{\text{CFG}(\lambda)} = (1+\lambda) \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau) - \lambda \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \varnothing, \tau)$$
+\\(v_\theta^{\text{CFG}(\lambda)} = (1+\lambda) \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau) - \lambda \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \varnothing, \tau)\\)
 
-Problem: in VLAs, removing the language condition $\ell_t$ changes the action distribution dramatically — the "unconditional" direction is not meaningful and causes unstable behavior.
+Problem: in VLAs, removing the language condition \\(\ell_t\\) changes the action distribution dramatically — the "unconditional" direction is not meaningful and causes unstable behavior.
 
 ### 2.2 ACG: Guide Away from Incoherence
 
 Instead of guiding toward a condition, ACG guides **away from incoherence**:
 
-$$v_\theta^{\text{ACG}(\lambda)} = (1+\lambda) \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau) - \lambda \, v_\theta^{\text{IC}}(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau)$$
+\\(v_\theta^{\text{ACG}(\lambda)} = (1+\lambda) \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau) - \lambda \, v_\theta^{\text{IC}}(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau)\\)
 
-where $v_\theta^{\text{IC}}$ is the **incoherent denoising vector** — same model, same inputs, but with modified self-attention.
+where \\(v_\theta^{\text{IC}}\\) is the **incoherent denoising vector** — same model, same inputs, but with modified self-attention.
 
 ### 2.3 Constructing the Incoherent Vector
 
 The key insight: in transformer-based flow policies, **self-attention** is what creates temporal coherence between action tokens. Each token (representing an action at a specific timestep) attends to all other tokens:
 
-$$\text{Attn}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d}}\right) V$$
+\\(\text{Attn}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d}}\right) V\\)
 
 To generate an **incoherent** action sequence, replace the attention map with an **identity matrix**:
 
-$$\text{Attn}^{\text{IC}}(Q, K, V) = I \cdot V = V$$
+\\(\text{Attn}^{\text{IC}}(Q, K, V) = I \cdot V = V\\)
 
 This forces each action token to attend only to itself — no temporal communication — producing a temporally disconnected action chunk. Then ACG steers the generation **away** from this incoherent direction.
 
 **Implementation details**:
 - Replace self-attention in layers 4-6 (out of 8 total) with identity attention
 - Share the first half of layers between base and incoherent passes → ~1.5x compute overhead
-- Guidance scale $\lambda = 3.0$ (default)
+- Guidance scale \\(\lambda = 3.0\\) (default)
 
 ## 3. Key Results
 
@@ -105,7 +105,7 @@ ACG outperforms all baselines by a clear margin, especially on real-world tasks.
 | Vanilla GR00T-N1 | 1.314 | 1.353 |
 | Ensemble (n=5) | **0.984** | 1.172 |
 | CFG | 1.332 | 1.317 |
-| Incoherent ($v_\theta^{\text{IC}}$) | 4.509 | 1.993 |
+| Incoherent (\\(v_\theta^{\text{IC}}\\)) | 4.509 | 1.993 |
 | **ACG** | 1.130 | **1.156** |
 
 The incoherent variant is indeed much worse than baseline (validating the design), and ACG achieves the best smoothness while maintaining accuracy (unlike ensemble which smooths but loses precision).
@@ -193,34 +193,34 @@ Both demonstrate that **test-time guidance is a powerful, underexplored tool** f
 
 标准 CFG 用于 flow 策略：
 
-$$v_\theta^{\text{CFG}(\lambda)} = (1+\lambda) \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau) - \lambda \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \varnothing, \tau)$$
+\\(v_\theta^{\text{CFG}(\lambda)} = (1+\lambda) \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau) - \lambda \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \varnothing, \tau)\\)
 
-问题：在 VLA 中，移除语言条件 $\ell_t$ 会剧烈改变动作分布——"无条件"方向没有意义，会导致不稳定行为。
+问题：在 VLA 中，移除语言条件 \\(\ell_t\\) 会剧烈改变动作分布——"无条件"方向没有意义，会导致不稳定行为。
 
 ### 2.2 ACG：远离不连贯方向
 
 ACG 不是朝着某个条件引导，而是**远离不连贯方向**：
 
-$$v_\theta^{\text{ACG}(\lambda)} = (1+\lambda) \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau) - \lambda \, v_\theta^{\text{IC}}(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau)$$
+\\(v_\theta^{\text{ACG}(\lambda)} = (1+\lambda) \, v_\theta(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau) - \lambda \, v_\theta^{\text{IC}}(\mathbf{A}_t^\tau, \mathbf{o}_t, \ell_t, \tau)\\)
 
-其中 $v_\theta^{\text{IC}}$ 是**不连贯去噪向量**——同一模型、同样输入，但修改了自注意力。
+其中 \\(v_\theta^{\text{IC}}\\) 是**不连贯去噪向量**——同一模型、同样输入，但修改了自注意力。
 
 ### 2.3 构造不连贯向量
 
 核心洞察：在基于 transformer 的 flow 策略中，**自注意力**是创建动作 token 间时序一致性的关键。每个 token（代表特定时间步的动作）关注所有其他 token：
 
-$$\text{Attn}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d}}\right) V$$
+\\(\text{Attn}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d}}\right) V\\)
 
 要生成**不连贯**的动作序列，将注意力图替换为**单位矩阵**：
 
-$$\text{Attn}^{\text{IC}}(Q, K, V) = I \cdot V = V$$
+\\(\text{Attn}^{\text{IC}}(Q, K, V) = I \cdot V = V\\)
 
 这迫使每个动作 token 只关注自身——无时序通信——产生时序断开的动作 chunk。然后 ACG 将生成过程**远离**这个不连贯方向引导。
 
 **实现细节**：
 - 将第 4-6 层（共 8 层）的自注意力替换为单位注意力
 - 共享前半部分层 → 约 1.5 倍计算开销
-- 引导尺度 $\lambda = 3.0$（默认）
+- 引导尺度 \\(\lambda = 3.0\\)（默认）
 
 ## 3. 核心结果
 
@@ -249,7 +249,7 @@ $$\text{Attn}^{\text{IC}}(Q, K, V) = I \cdot V = V$$
 |---|---|---|
 | Vanilla GR00T-N1 | 1.314 | 1.353 |
 | Ensemble (n=5) | **0.984** | 1.172 |
-| 不连贯变体 ($v_\theta^{\text{IC}}$) | 4.509 | 1.993 |
+| 不连贯变体 (\\(v_\theta^{\text{IC}}\\)) | 4.509 | 1.993 |
 | **ACG** | 1.130 | **1.156** |
 
 不连贯变体确实比基线差很多（验证了设计），ACG 在保持精度的同时实现了最佳平滑度。

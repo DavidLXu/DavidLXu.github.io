@@ -57,13 +57,13 @@ The paper benchmarks two representative paradigms.
 
 ### 4.1 Diffusion Model
 
-The motion representation concatenates 3D joint coordinates with a compact rotation scalar per joint (exploiting the limited rotational degrees of freedom of hand joints). An MLP-based encoder projects each frame into a $D$-dimensional embedding. The three text prompts ($T_L$, $T_R$, $T_I$ for left, right, and interaction) are encoded separately by T5, each with a learnable CLS token to prevent left-right confusion. The text embeddings are cross-attended with the motion embeddings and fused through residual connections:
+The motion representation concatenates 3D joint coordinates with a compact rotation scalar per joint (exploiting the limited rotational degrees of freedom of hand joints). An MLP-based encoder projects each frame into a \\(D\\)-dimensional embedding. The three text prompts (\\(T_L\\), \\(T_R\\), \\(T_I\\) for left, right, and interaction) are encoded separately by T5, each with a learnable CLS token to prevent left-right confusion. The text embeddings are cross-attended with the motion embeddings and fused through residual connections:
 
 $$
 \tilde{z} = z'_t + \sum_{k \in \{L,R,I\}} \text{CrossAttention}(z'_t, \mathfrak{T}_k)
 $$
 
-An MLP decoder maps the fused representation back to motion: $\tilde{x} = G(\tilde{z}) \in \mathbb{R}^{F \times 2J \times 4}$.
+An MLP decoder maps the fused representation back to motion: \\(\tilde{x} = G(\tilde{z}) \in \mathbb{R}^{F \times 2J \times 4}\\).
 
 A key design insight is that at inference time, the diffusion model supports diverse generation tasks through **partial denoising** — blending known constraints with the current sample at each denoising step. This enables motion in-betweening, keyframe control, wrist trajectory conditioning, hand-reaction synthesis, and long-horizon generation, all from a single model.
 
@@ -79,7 +79,7 @@ The tokenizer uses 1D convolutional blocks with a temporal downsampling factor o
 
 ## 5. Metrics
 
-Beyond standard FID, Diversity, R-Precision, and MM Distance, the paper introduces **contact-focused metrics**: contact precision ($C_\text{prec}$), recall ($C_\text{rec}$), and F1 ($C_\text{F1}$). These evaluate whether the generated sequence reproduces contact events at the corresponding frames in the ground truth, with a 2 cm contact threshold.
+Beyond standard FID, Diversity, R-Precision, and MM Distance, the paper introduces **contact-focused metrics**: contact precision (\\(C_\text{prec}\\)), recall (\\(C_\text{rec}\\)), and F1 (\\(C_\text{F1}\\)). These evaluate whether the generated sequence reproduces contact events at the corresponding frames in the ground truth, with a 2 cm contact threshold.
 
 This is a meaningful addition. Standard metrics can look good even when contact timing and inter-hand coordination are poor, which is exactly the failure mode you care about in bimanual generation.
 
@@ -109,7 +109,7 @@ The [codebase](https://github.com/handx-project/HandX) is well-structured, with 
 
 - **Diffusion**: Hydra-based config, 4/8/12/16-layer Transformer decoder variants
 - **Autoregressive**: VQ tokenizer training → code extraction → text-prefix AR training; model sizes from 4.6M to 3B parameters; codebook sizes 512–65,536
-- **Evaluation**: Unified pipeline computing FID, R-Precision, MM Dist, Diversity, and contact metrics ($C_\text{prec}$, $C_\text{rec}$, $C_\text{F1}$)
+- **Evaluation**: Unified pipeline computing FID, R-Precision, MM Dist, Diversity, and contact metrics (\\(C_\text{prec}\\), \\(C_\text{rec}\\), \\(C_\text{F1}\\))
 - **Simulation**: IsaacGym-based physics replay for MANO hand meshes, supporting single-sequence and grid visualizations
 
 ## 8. Strengths and Limitations
@@ -172,13 +172,13 @@ HandX 的构建分两步。
 
 ### 4.1 扩散模型
 
-运动表示将每个关节的 3D 坐标与一个紧凑的旋转标量拼接起来（利用手部关节有限的旋转自由度）。MLP 编码器将每帧投影为 $D$ 维嵌入。三种文本提示（$T_L$、$T_R$、$T_I$ 分别对应左手、右手和交互）由 T5 分别编码，每种都附加一个可学习的 CLS token 以避免左右混淆。文本嵌入通过交叉注意力与运动嵌入融合，并通过残差连接汇总：
+运动表示将每个关节的 3D 坐标与一个紧凑的旋转标量拼接起来（利用手部关节有限的旋转自由度）。MLP 编码器将每帧投影为 \\(D\\) 维嵌入。三种文本提示（\\(T_L\\)、\\(T_R\\)、\\(T_I\\) 分别对应左手、右手和交互）由 T5 分别编码，每种都附加一个可学习的 CLS token 以避免左右混淆。文本嵌入通过交叉注意力与运动嵌入融合，并通过残差连接汇总：
 
 $$
 \tilde{z} = z'_t + \sum_{k \in \{L,R,I\}} \text{CrossAttention}(z'_t, \mathfrak{T}_k)
 $$
 
-MLP 解码器将融合表示映射回运动：$\tilde{x} = G(\tilde{z}) \in \mathbb{R}^{F \times 2J \times 4}$。
+MLP 解码器将融合表示映射回运动：\\(\tilde{x} = G(\tilde{z}) \in \mathbb{R}^{F \times 2J \times 4}\\)。
 
 一个关键的设计洞察是：在推理时，扩散模型通过**部分去噪**策略支持多样化生成任务——在每个去噪步骤中将已知约束与当前样本混合。这使得一个模型就能同时支持运动中间插值、关键帧控制、手腕轨迹约束、手部反应合成和长时程生成。
 
@@ -194,7 +194,7 @@ token 化器使用一维卷积块，时间下采样因子为 2；自回归模型
 
 ## 5. 评估指标
 
-除了标准的 FID、Diversity、R-Precision 和 MM Distance，论文引入了**接触相关指标**：接触精确率（$C_\text{prec}$）、召回率（$C_\text{rec}$）和 F1（$C_\text{F1}$）。这些指标评估生成序列是否在 ground truth 对应帧处复现了接触事件，接触阈值为 2 cm。
+除了标准的 FID、Diversity、R-Precision 和 MM Distance，论文引入了**接触相关指标**：接触精确率（\\(C_\text{prec}\\)）、召回率（\\(C_\text{rec}\\)）和 F1（\\(C_\text{F1}\\)）。这些指标评估生成序列是否在 ground truth 对应帧处复现了接触事件，接触阈值为 2 cm。
 
 这是一个有意义的补充。标准指标即使在接触时序和双手协调很差的情况下也可能表现不错，而这恰恰是双手生成中最需要关注的失败模式。
 
@@ -224,7 +224,7 @@ $$
 
 - **扩散模型**：基于 Hydra 配置，4/8/12/16 层 Transformer 解码器
 - **自回归模型**：VQ tokenizer 训练 → 运动编码提取 → 文本前缀 AR 训练；模型规模从 460 万到 30 亿参数；codebook 大小 512–65,536
-- **评估**：统一的评估流水线，计算 FID、R-Precision、MM Dist、Diversity 和接触指标（$C_\text{prec}$、$C_\text{rec}$、$C_\text{F1}$）
+- **评估**：统一的评估流水线，计算 FID、R-Precision、MM Dist、Diversity 和接触指标（\\(C_\text{prec}\\)、\\(C_\text{rec}\\)、\\(C_\text{F1}\\)）
 - **仿真**：基于 IsaacGym 的物理回放，支持 MANO 手部网格的单序列和网格可视化
 
 ## 8. 优势与局限

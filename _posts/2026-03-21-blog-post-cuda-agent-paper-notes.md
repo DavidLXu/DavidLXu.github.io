@@ -73,7 +73,7 @@ The agent loop follows a ReAct-style paradigm (reason → act → observe) compa
 
 Instead of raw speedup (noisy, biased toward easy kernels), they use a **discrete milestone-based reward**:
 
-$$r = \begin{cases} -1 & \text{if correctness check fails} \\ 3 & \text{if faster than both eager and compile} \\ 2 & \text{if faster than eager only} \\ 1 & \text{otherwise (correct but not faster)} \end{cases}$$
+\\(r = \begin{cases} -1 & \text{if correctness check fails} \\ 3 & \text{if faster than both eager and compile} \\ 2 & \text{if faster than eager only} \\ 1 & \text{otherwise (correct but not faster)} \end{cases}\\)
 
 where "faster" means >5% speedup. This normalized reward avoids outlier-driven optimization.
 

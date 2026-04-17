@@ -47,10 +47,10 @@ The framework has three stages:
 
 ### 2.1 Goal State Reasoning (High-Level)
 
-Given an RGB-D observation $O = (I, D)$ and language instruction $L$:
+Given an RGB-D observation \\(O = (I, D)\\) and language instruction \\(L\\):
 
-1. **Prompt Enhancement**: Feed $I$ and $L$ into a text-output VLM (Gemini 2.5 Pro) to produce a richer, more descriptive prompt $L_e$.
-2. **Goal Image Generation**: An image-generative VLM (Gemini 2.5 Flash-image) generates a candidate goal image $I'_{\text{cand}}$.
+1. **Prompt Enhancement**: Feed \\(I\\) and \\(L\\) into a text-output VLM (Gemini 2.5 Pro) to produce a richer, more descriptive prompt \\(L_e\\).
+2. **Goal Image Generation**: An image-generative VLM (Gemini 2.5 Flash-image) generates a candidate goal image \\(I'_{\text{cand}}\\).
 3. **Reflection-through-Synthesis Loop** (the key novelty):
    - **Synthesize**: Segment the target object from the candidate goal using Grounded SAM, overlay it onto the original scene with partial transparency
    - **Reflect**: A Reflector VLM evaluates whether the synthesized image is semantically correct and physically feasible
@@ -61,28 +61,28 @@ This is clever — the synthesis step grounds the reflection by showing the goal
 
 ### 2.2 Spatial Grounding
 
-Once a valid goal image $I'$ is obtained, convert the semantic goal into a precise 3D transformation:
+Once a valid goal image \\(I'\\) is obtained, convert the semantic goal into a precise 3D transformation:
 
-**Semantic Matching**: Use Geo-Aware features to find pixel correspondences between initial image $I$ and goal image $I'$:
+**Semantic Matching**: Use Geo-Aware features to find pixel correspondences between initial image \\(I\\) and goal image \\(I'\\):
 
-$$(x', y') = \arg\max_{(p,q)} \frac{f_{(x,y)} \cdot f'_{(p,q)}}{\|f_{(x,y)}\| \|f'_{(p,q)}\|}$$
+\\((x', y') = \arg\max_{(p,q)} \frac{f_{(x,y)} \cdot f'_{(p,q)}}{\|f_{(x,y)}\| \|f'_{(p,q)}\|}\\)
 
 This is necessary because the generated goal image is semantically correct but may not preserve instance-level appearance — so traditional optical flow fails.
 
 **Point Cloud Registration**: Lift 2D to 3D using depth, align depth scales via least-squares regression on background pixels:
 
-$$D[(M \cup M')^c] = s_1 \cdot D'[(M \cup M')^c] + b$$
+\\(D[(M \cup M')^c] = s_1 \cdot D'[(M \cup M')^c] + b\\)
 
 Then solve for a similarity transformation using the Umeyama algorithm:
 
-$$s_2 \cdot P' = RP + t$$
+\\(s_2 \cdot P' = RP + t\\)
 
-where $R \in SO(3)$, $t \in \mathbb{R}^3$, and $s_2$ accounts for scale differences.
+where \\(R \in SO(3)\\), \\(t \in \mathbb{R}^3\\), and \\(s_2\\) accounts for scale differences.
 
 ### 2.3 Low-Level Policy
 
 - **Contact Module**: Sample-based method to find feasible contact poses on the object's point cloud (surface normals → collision filtering → geometric scoring)
-- **Goal Pose**: Apply the computed $(R, t)$ transformation to the contact pose
+- **Goal Pose**: Apply the computed \\((R, t)\\) transformation to the contact pose
 - **Motion Planning**: Standard sample-based planner to execute the trajectory
 
 The entire low-level policy is **training-free** — no action data needed.
@@ -186,10 +186,10 @@ Goal-VLA 的解决方案：让 VLM 做它擅长的事（语义目标生成），
 
 ### 2.1 目标状态推理（高层）
 
-给定 RGB-D 观测 $O = (I, D)$ 和语言指令 $L$：
+给定 RGB-D 观测 \\(O = (I, D)\\) 和语言指令 \\(L\\)：
 
-1. **提示增强**：将 $I$ 和 $L$ 送入文本输出 VLM（Gemini 2.5 Pro），生成更丰富的描述性提示 $L_e$
-2. **目标图像生成**：图像生成 VLM（Gemini 2.5 Flash-image）生成候选目标图像 $I'_{\text{cand}}$
+1. **提示增强**：将 \\(I\\) 和 \\(L\\) 送入文本输出 VLM（Gemini 2.5 Pro），生成更丰富的描述性提示 \\(L_e\\)
+2. **目标图像生成**：图像生成 VLM（Gemini 2.5 Flash-image）生成候选目标图像 \\(I'_{\text{cand}}\\)
 3. **Reflection-through-Synthesis 循环**（核心创新）：
    - **合成**：使用 Grounded SAM 从候选目标中分割目标物体，以半透明方式叠加到原始场景上
    - **反思**：反思 VLM 评估合成图像是否语义正确且物理可行
@@ -200,28 +200,28 @@ Goal-VLA 的解决方案：让 VLM 做它擅长的事（语义目标生成），
 
 ### 2.2 空间定位
 
-获得有效目标图像 $I'$ 后，将语义目标转换为精确的 3D 变换：
+获得有效目标图像 \\(I'\\) 后，将语义目标转换为精确的 3D 变换：
 
-**语义匹配**：使用 Geo-Aware 特征在初始图像 $I$ 和目标图像 $I'$ 之间找到像素对应关系：
+**语义匹配**：使用 Geo-Aware 特征在初始图像 \\(I\\) 和目标图像 \\(I'\\) 之间找到像素对应关系：
 
-$$(x', y') = \arg\max_{(p,q)} \frac{f_{(x,y)} \cdot f'_{(p,q)}}{\|f_{(x,y)}\| \|f'_{(p,q)}\|}$$
+\\((x', y') = \arg\max_{(p,q)} \frac{f_{(x,y)} \cdot f'_{(p,q)}}{\|f_{(x,y)}\| \|f'_{(p,q)}\|}\\)
 
 这是必要的，因为生成的目标图像语义正确但可能无法保持实例级外观——传统光流方法会失效。
 
 **点云配准**：利用深度信息将 2D 提升到 3D，通过背景像素的最小二乘回归对齐深度尺度：
 
-$$D[(M \cup M')^c] = s_1 \cdot D'[(M \cup M')^c] + b$$
+\\(D[(M \cup M')^c] = s_1 \cdot D'[(M \cup M')^c] + b\\)
 
 然后使用 Umeyama 算法求解相似变换：
 
-$$s_2 \cdot P' = RP + t$$
+\\(s_2 \cdot P' = RP + t\\)
 
-其中 $R \in SO(3)$，$t \in \mathbb{R}^3$，$s_2$ 补偿尺度差异。
+其中 \\(R \in SO(3)\\)，\\(t \in \mathbb{R}^3\\)，\\(s_2\\) 补偿尺度差异。
 
 ### 2.3 底层策略
 
 - **接触模块**：基于采样的方法在物体点云上寻找可行的接触位姿（表面法线 → 碰撞过滤 → 几何评分）
-- **目标位姿**：将计算得到的 $(R, t)$ 变换应用到接触位姿
+- **目标位姿**：将计算得到的 \\((R, t)\\) 变换应用到接触位姿
 - **运动规划**：标准的基于采样的规划器执行轨迹
 
 整个底层策略**无需训练**——不需要动作数据。
