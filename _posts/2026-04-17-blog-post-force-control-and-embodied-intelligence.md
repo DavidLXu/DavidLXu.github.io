@@ -37,7 +37,7 @@ When we talk about **admittance control** and **impedance control** as strategie
 
 $$F = M \ddot{x}_e + B \dot{x}_e + K x_e$$
 
-where $x_e$ is the position error and $F$ is the contact force. The controller does not say "go to position X" or "produce force F." It says "if you are displaced by $x_e$, respond as if this were a spring." The result is a robot that has a calibrated *compliance* — it gives way smoothly under unexpected contact rather than either holding rigid or going limp.
+where \\(x_e\\) is the position error and \\(F\\) is the contact force. The controller does not say "go to position X" or "produce force F." It says "if you are displaced by \\(x_e\\), respond as if this were a spring." The result is a robot that has a calibrated *compliance* — it gives way smoothly under unexpected contact rather than either holding rigid or going limp.
 
 Impedance control is sometimes mislabeled "force-position hybrid control," which is misleading. Traditional hybrid control switches between force and position control on different axes or at different moments. Impedance control is neither — it defines a behavioral contract between displacement and force that holds continuously.
 
@@ -47,15 +47,15 @@ The MIT mini-cheetah control protocol, widely used in embodied AI robots (includ
 
 $$\tau = K_p (q_d - q) + K_d (\dot{q}_d - \dot{q}) + \tau_{ff}$$
 
-where $q_d$ and $\dot{q}_d$ are target position and velocity, $q$ and $\dot{q}$ are current position and velocity, $K_p$ and $K_d$ are stiffness and damping gains, and $\tau_{ff}$ is a feedforward torque.
+where \\(q_d\\) and \\(\dot{q}_d\\) are target position and velocity, \\(q\\) and \\(\dot{q}\\) are current position and velocity, \\(K_p\\) and \\(K_d\\) are stiffness and damping gains, and \\(\tau_{ff}\\) is a feedforward torque.
 
 At first glance this looks like a standard PD controller with a feedforward term. But looking at each piece reveals something more:
 
-- **The $K_d(-\dot{q})$ term** (when target velocity is zero) is a pure damping term that dissipates energy from the system. This is not incidental — it is precisely the definition of mechanical damping, and it prevents oscillation without needing a separate velocity loop.
+- **The \\(K_d(-\dot{q})\\) term** (when target velocity is zero) is a pure damping term that dissipates energy from the system. This is not incidental — it is precisely the definition of mechanical damping, and it prevents oscillation without needing a separate velocity loop.
 
-- **The $\tau_{ff}$ term** is where gravity compensation and friction compensation live. If you have a model of the robot's dynamics, you can cancel the forces that would otherwise bias the position. But critically, this term is also a torque command in its own right. If you zero out $K_p$ and $K_d$, what remains is a direct current (torque) command. The motor's inner current loop closes around this, making $\tau_{ff}$ a direct handle on the robot's output force.
+- **The \\(\tau_{ff}\\) term** is where gravity compensation and friction compensation live. If you have a model of the robot's dynamics, you can cancel the forces that would otherwise bias the position. But critically, this term is also a torque command in its own right. If you zero out \\(K_p\\) and \\(K_d\\), what remains is a direct current (torque) command. The motor's inner current loop closes around this, making \\(\tau_{ff}\\) a direct handle on the robot's output force.
 
-- **The overall law** encodes the mass-spring-damper relationship. $K_p$ is the virtual spring stiffness; $K_d$ is the virtual damper. Together they define how the joint responds to displacement, which is exactly what impedance control means.
+- **The overall law** encodes the mass-spring-damper relationship. \\(K_p\\) is the virtual spring stiffness; \\(K_d\\) is the virtual damper. Together they define how the joint responds to displacement, which is exactly what impedance control means.
 
 This is different from the classical cascaded three-loop architecture (position loop → velocity loop → current loop), where each loop's output is the next loop's reference. In the MIT scheme, position error, velocity error, and feedforward torque combine in parallel to produce the final torque command. The inner current loop still exists inside the motor drive, but the outer control law is not cascaded — it is a single composed expression.
 
@@ -136,7 +136,7 @@ The people building that bridge are probably going to need to understand both si
 
 $$F = M \ddot{x}_e + B \dot{x}_e + K x_e$$
 
-其中 $x_e$ 是位置误差，$F$ 是接触力。控制器既没说"到达位置 X"，也没说"产生力 F"，而是说："如果你被偏移了 $x_e$，就像弹簧一样响应。"结果是机器人有了一种经过标定的**柔顺性**——遇到意外接触时，它会平滑地让步，而不是僵硬地对抗或完全瘫软。
+其中 \\(x_e\\) 是位置误差，\\(F\\) 是接触力。控制器既没说"到达位置 X"，也没说"产生力 F"，而是说："如果你被偏移了 \\(x_e\\)，就像弹簧一样响应。"结果是机器人有了一种经过标定的**柔顺性**——遇到意外接触时，它会平滑地让步，而不是僵硬地对抗或完全瘫软。
 
 阻抗控制有时被错误地叫做"力位混合控制"，这个说法容易误导。传统的力位混合控制是在不同轴、不同关节、或不同时刻之间切换力控和位控；而阻抗控制不是切换，它定义的是位移和力之间持续成立的一种行为契约。
 
@@ -146,15 +146,15 @@ MIT mini-cheetah 控制协议，被具身智能机器人（包括达妙等机械
 
 $$\tau = K_p (q_d - q) + K_d (\dot{q}_d - \dot{q}) + \tau_{ff}$$
 
-其中 $q_d$、$\dot{q}_d$ 是目标位置和速度，$q$、$\dot{q}$ 是当前位置和速度，$K_p$、$K_d$ 是刚度和阻尼增益，$\tau_{ff}$ 是前馈力矩。
+其中 \\(q_d\\)、\\(\dot{q}_d\\) 是目标位置和速度，\\(q\\)、\\(\dot{q}\\) 是当前位置和速度，\\(K_p\\)、\\(K_d\\) 是刚度和阻尼增益，\\(\tau_{ff}\\) 是前馈力矩。
 
 初看像一个带前馈项的标准 PD 控制器。但仔细看每一项，能发现更多：
 
-- **$K_d(-\dot{q})$ 项**（目标速度为零时）是一个纯阻尼项，耗散系统能量。这不是附带效果——它就是机械阻尼的定义，在不需要单独速度环的情况下阻止振荡。
+- **\\(K_d(-\dot{q})\\) 项**（目标速度为零时）是一个纯阻尼项，耗散系统能量。这不是附带效果——它就是机械阻尼的定义，在不需要单独速度环的情况下阻止振荡。
 
-- **$\tau_{ff}$ 项**是重力补偿和摩擦力补偿存在的地方。如果你有机器人的动力学模型，就可以在这里抵消掉那些会拉偏位置的力。但更关键的是，这一项本身就是一个力矩指令。如果把 $K_p$ 和 $K_d$ 全部置零，剩下的就是一个直接的电流（力矩）指令，电机内部的电流环闭环去跟踪它——$\tau_{ff}$ 成了直接操控机器人输出力的把手。
+- **\\(\tau_{ff}\\) 项**是重力补偿和摩擦力补偿存在的地方。如果你有机器人的动力学模型，就可以在这里抵消掉那些会拉偏位置的力。但更关键的是，这一项本身就是一个力矩指令。如果把 \\(K_p\\) 和 \\(K_d\\) 全部置零，剩下的就是一个直接的电流（力矩）指令，电机内部的电流环闭环去跟踪它——\\(\tau_{ff}\\) 成了直接操控机器人输出力的把手。
 
-- **整体控制律**编码了质量-弹簧-阻尼关系。$K_p$ 是虚拟弹簧刚度，$K_d$ 是虚拟阻尼，合起来定义了关节对位移的响应——这就是阻抗控制的含义。
+- **整体控制律**编码了质量-弹簧-阻尼关系。\\(K_p\\) 是虚拟弹簧刚度，\\(K_d\\) 是虚拟阻尼，合起来定义了关节对位移的响应——这就是阻抗控制的含义。
 
 这和经典的级联三环（位置环→速度环→电流环）不同。三环结构里，上一环的输出是下一环的输入，层层串联。MIT 方案中，位置误差、速度误差和前馈力矩并联组合成最终的力矩指令，电流环仍然在电机驱动内部闭合，但上层控制律不是级联的——它是一个并联合成的表达式。
 
