@@ -47,7 +47,7 @@ $$
 \mathcal{L}_{\pi}(\theta) = \mathbb{E}\left[-Q_{\psi}(x, a_{1:C}) + \beta \lVert a_{1:C} - \tilde{a}_{1:C}\rVert_2^2 \right]
 $$
 
-Here, \\(a_{1:C}\\) is the actor’s chunked action, \\(\tilde{a}_{1:C}\\) is the VLA’s sampled reference chunk, and the regularization term keeps the RL policy near the base VLA unless the critic has a good reason to move away.
+Here, \\(a\_{1:C}\\) is the actor’s chunked action, \\(\tilde{a}\_{1:C}\\) is the VLA’s sampled reference chunk, and the regularization term keeps the RL policy near the base VLA unless the critic has a good reason to move away.
 
 That anchoring term is important because the paper is not trying to rediscover robot behavior from scratch. It is trying to take a good-but-imperfect VLA and improve the small, high-precision parts where demonstrations are weakest.
 
@@ -149,7 +149,7 @@ $$
 \mathcal{L}_{\pi}(\theta) = \mathbb{E}\left[-Q_{\psi}(x, a_{1:C}) + \beta \lVert a_{1:C} - \tilde{a}_{1:C}\rVert_2^2 \right]
 $$
 
-这里 \\(a_{1:C}\\) 是 RL actor 输出的动作 chunk，\\(\tilde{a}_{1:C}\\) 是 VLA 提供的参考 chunk，而正则项会把策略约束在靠近 VLA 的区域，除非 critic 有足够理由推动它偏离。
+这里 \\(a\_{1:C}\\) 是 RL actor 输出的动作 chunk，\\(\tilde{a}\_{1:C}\\) 是 VLA 提供的参考 chunk，而正则项会把策略约束在靠近 VLA 的区域，除非 critic 有足够理由推动它偏离。
 
 从方法论上看，这篇论文并不打算重新学习机器人行为本身，而是把重点放在对预训练策略进行“精修”。这也是它样本效率高的根本原因。
 

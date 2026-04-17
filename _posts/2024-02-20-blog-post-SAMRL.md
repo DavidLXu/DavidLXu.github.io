@@ -17,7 +17,7 @@ Key information
 
 Real2Sim with Differentiable Simulation and Rendering
 ===
-The integration of differentiable simulation and rendering forms the core of the model used for model-based reinforcement learning. It allows for the calculation of gradients for the simulation images (\\(I_{sim}\\)) with respect to the camera pose (\\(P_c\\)) and object attributes. This enables the updating of the model by directly comparing simulated images with real-world images and adjusting the model parameters to reduce discrepancies, thereby improving the accuracy of the simulation model for better policy generation.
+The integration of differentiable simulation and rendering forms the core of the model used for model-based reinforcement learning. It allows for the calculation of gradients for the simulation images (\\(I\_{sim}\\)) with respect to the camera pose (\\(P_c\\)) and object attributes. This enables the updating of the model by directly comparing simulated images with real-world images and adjusting the model parameters to reduce discrepancies, thereby improving the accuracy of the simulation model for better policy generation.
 
 The whole process involves building an initial model that does not have to be precise at the first stage and updating the model with differentiable simulation and rendering. During the second half, differentiable simulation and rendering techniques are used to adjust the model parameters, including object mesh vertices, colors, and poses, to minimize the discrepancies between simulated and real images. This process involves:
 
@@ -43,7 +43,7 @@ This stage focuses on learning sensing-aware action within a simulated environme
 
 Sim2Real
 ===
-This part starts with the policy learned in simulation, denoted as \\(\pi_{sim}\\), which takes rendered images (\\(I_{sim}\\)) as inputs and outputs actions (\\(a_{sim}\\)). To bridge the sim-to-real gap, a residual policy \\(\pi_{res}\\) is trained. This policy takes in real-world images (\\(I_{real}\\)) and simulated actions (\\(a_{sim}\\)), outputting a residual action (\\(\delta a_{real}\\)). The actual action applied in the real world (\\(a_{real}\\)) is the sum of the simulated action and the residual action.
+This part starts with the policy learned in simulation, denoted as \\(\pi\_{sim}\\), which takes rendered images (\\(I\_{sim}\\)) as inputs and outputs actions (\\(a\_{sim}\\)). To bridge the sim-to-real gap, a residual policy \\(\pi\_{res}\\) is trained. This policy takes in real-world images (\\(I\_{real}\\)) and simulated actions (\\(a\_{sim}\\)), outputting a residual action (\\(\delta a\_{real}\\)). The actual action applied in the real world (\\(a\_{real}\\)) is the sum of the simulated action and the residual action.
 
 The residual policy is initially set such that it outputs zero adjustments, ensuring it does not worsen the initial policy. Training involves updating this policy based on real-world executions and feedback. The aim is to adjust actions to account for differences between the simulated and real-world environments. This action is then executed in the real world, with outcomes used to further refine the policy.
  

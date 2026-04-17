@@ -55,7 +55,7 @@ A collision classifier checks the optimized joint angles and clamps to a safe ma
 The model follows an encoder-decoder design:
 
 - **Encoder**: raw sEMG input of shape \\((B, 8, T)\\) goes through two Conv1d blocks and two Time-Depth Separable (TDS) stages (2D conv + layer norm + feedforward + layer norm).
-- **Decoder**: an LSTM + MLP that predicts **joint velocities** \\(\dot{\theta}\\) rather than absolute angles. Poses are reconstructed iteratively: \\(\theta_t = \theta_{t-1} + \dot{\theta}_t\\), starting from a rest pose \\(\theta_0\\).
+- **Decoder**: an LSTM + MLP that predicts **joint velocities** \\(\dot{\theta}\\) rather than absolute angles. Poses are reconstructed iteratively: \\(\theta_t = \theta\_{t-1} + \dot{\theta}\_t\\), starting from a rest pose \\(\theta_0\\).
 
 The velocity-based approach decouples muscle activation intensity from static postures, reducing sensitivity to sensor displacement and signal drift during sustained grasping.
 
@@ -160,7 +160,7 @@ sEMG 直接从前臂读取神经肌肉信号，可穿戴、成本低，且不受
 模型采用编码器-解码器设计：
 
 - **编码器**：原始 sEMG 输入形状为 \\((B, 8, T)\\)，经过两个 Conv1d 模块和两个时间深度可分离（TDS）阶段。
-- **解码器**：LSTM + MLP 预测**关节速度** \\(\dot{\theta}\\) 而非绝对角度。姿态通过迭代重建：\\(\theta_t = \theta_{t-1} + \dot{\theta}_t\\)，初始值为静止姿态 \\(\theta_0\\)。
+- **解码器**：LSTM + MLP 预测**关节速度** \\(\dot{\theta}\\) 而非绝对角度。姿态通过迭代重建：\\(\theta_t = \theta\_{t-1} + \dot{\theta}\_t\\)，初始值为静止姿态 \\(\theta_0\\)。
 
 基于速度的方法将肌肉激活强度与静态姿势解耦，降低了传感器偏移和持续抓取过程中信号漂移的敏感性。
 

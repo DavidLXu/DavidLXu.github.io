@@ -57,9 +57,9 @@ where \\(\hat{\pi}\\) is the reference (behavior) policy and \\(f\\) is a non-ne
 
 \\(J(\pi) \geq J(\hat{\pi})\\)
 
-**Theorem 2 (Controllable Improvement)**: For \\(0 \leq w_1 < w_2\\), the attenuated product \\(\pi_{w_2}(a|s) \propto \hat{\pi}(a|s) f(A(s,a))^{w_2}\\) is a further improvement over \\(\pi_{w_1}\\):
+**Theorem 2 (Controllable Improvement)**: For \\(0 \leq w_1 < w_2\\), the attenuated product \\(\pi\_{w_2}(a|s) \propto \hat{\pi}(a|s) f(A(s,a))^{w_2}\\) is a further improvement over \\(\pi\_{w_1}\\):
 
-\\(J(\pi_{w_1}) \leq J(\pi_{w_2})\\)
+\\(J(\pi\_{w_1}) \leq J(\pi\_{w_2})\\)
 
 Higher `w` = more improvement (but also more divergence from reference → eventual distribution shift).
 
@@ -75,7 +75,7 @@ Using classifier-free guidance (Bayes' rule trick), this becomes:
 
 This is exactly the standard CFG formula! The guidance weight `w` directly controls the degree of policy improvement. Both the unconditional and conditional scores come from **the same network** trained with a simple flow matching objective:
 
-\\(\mathcal{L}(\theta) = \mathbb{E}_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, o) - (a - a_0)\|^2\\)
+\\(\mathcal{L}(\theta) = \mathbb{E}\_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, o) - (a - a_0)\|^2\\)
 
 where \\(o \in \{\emptyset, 0, 1\}\\) is the optimality label (with 10% dropout for unconditional training).
 
@@ -232,9 +232,9 @@ The guidance weight `w` provides a reliable knob:
 
 \\(J(\pi) \geq J(\hat{\pi})\\)
 
-**定理 2（可控改进）**：对于 \\(0 \leq w_1 < w_2\\)，衰减乘积 \\(\pi_{w_2}(a|s) \propto \hat{\pi}(a|s) f(A(s,a))^{w_2}\\) 相比 \\(\pi_{w_1}\\) 是进一步的改进：
+**定理 2（可控改进）**：对于 \\(0 \leq w_1 < w_2\\)，衰减乘积 \\(\pi\_{w_2}(a|s) \propto \hat{\pi}(a|s) f(A(s,a))^{w_2}\\) 相比 \\(\pi\_{w_1}\\) 是进一步的改进：
 
-\\(J(\pi_{w_1}) \leq J(\pi_{w_2})\\)
+\\(J(\pi\_{w_1}) \leq J(\pi\_{w_2})\\)
 
 更高的 `w` = 更多改进（但也更偏离参考策略 → 最终产生分布偏移）。
 
@@ -250,7 +250,7 @@ The guidance weight `w` provides a reliable knob:
 
 这正是标准的 CFG 公式！引导权重 `w` 直接控制策略改进的程度。无条件和条件 score 来自**同一个网络**，用简单的 flow matching 目标训练：
 
-\\(\mathcal{L}(\theta) = \mathbb{E}_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, o) - (a - a_0)\|^2\\)
+\\(\mathcal{L}(\theta) = \mathbb{E}\_{s,a \sim \mathcal{D}} \|v_\theta(a_t, t, s, o) - (a - a_0)\|^2\\)
 
 其中 \\(o \in \{\emptyset, 0, 1\}\\) 是最优性标签（10% 概率 dropout 用于无条件训练）。
 

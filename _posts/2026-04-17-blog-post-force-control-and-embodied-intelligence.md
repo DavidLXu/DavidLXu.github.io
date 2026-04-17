@@ -45,15 +45,15 @@ Impedance control is sometimes mislabeled "force-position hybrid control," which
 
 The MIT mini-cheetah control protocol, widely used in embodied AI robots (including arms like those from Damiao/DM) and quadrupeds, is a good lens for understanding impedance control in practice. The control law is:
 
-$$\tau = K_p (q_d - q) + K_d (\dot{q}_d - \dot{q}) + \tau_{ff}$$
+$$\tau = K_p (q_d - q) + K_d (\dot{q}\_d - \dot{q}) + \tau\_{ff}$$
 
-where \\(q_d\\) and \\(\dot{q}_d\\) are target position and velocity, \\(q\\) and \\(\dot{q}\\) are current position and velocity, \\(K_p\\) and \\(K_d\\) are stiffness and damping gains, and \\(\tau_{ff}\\) is a feedforward torque.
+where \\(q_d\\) and \\(\dot{q}\_d\\) are target position and velocity, \\(q\\) and \\(\dot{q}\\) are current position and velocity, \\(K_p\\) and \\(K_d\\) are stiffness and damping gains, and \\(\tau\_{ff}\\) is a feedforward torque.
 
 At first glance this looks like a standard PD controller with a feedforward term. But looking at each piece reveals something more:
 
 - **The \\(K_d(-\dot{q})\\) term** (when target velocity is zero) is a pure damping term that dissipates energy from the system. This is not incidental — it is precisely the definition of mechanical damping, and it prevents oscillation without needing a separate velocity loop.
 
-- **The \\(\tau_{ff}\\) term** is where gravity compensation and friction compensation live. If you have a model of the robot's dynamics, you can cancel the forces that would otherwise bias the position. But critically, this term is also a torque command in its own right. If you zero out \\(K_p\\) and \\(K_d\\), what remains is a direct current (torque) command. The motor's inner current loop closes around this, making \\(\tau_{ff}\\) a direct handle on the robot's output force.
+- **The \\(\tau\_{ff}\\) term** is where gravity compensation and friction compensation live. If you have a model of the robot's dynamics, you can cancel the forces that would otherwise bias the position. But critically, this term is also a torque command in its own right. If you zero out \\(K_p\\) and \\(K_d\\), what remains is a direct current (torque) command. The motor's inner current loop closes around this, making \\(\tau\_{ff}\\) a direct handle on the robot's output force.
 
 - **The overall law** encodes the mass-spring-damper relationship. \\(K_p\\) is the virtual spring stiffness; \\(K_d\\) is the virtual damper. Together they define how the joint responds to displacement, which is exactly what impedance control means.
 
@@ -144,15 +144,15 @@ $$F = M \ddot{x}_e + B \dot{x}_e + K x_e$$
 
 MIT mini-cheetah 控制协议，被具身智能机器人（包括达妙等机械臂）和四足机器狗广泛采用，是理解阻抗控制实践的一个好窗口。控制律是：
 
-$$\tau = K_p (q_d - q) + K_d (\dot{q}_d - \dot{q}) + \tau_{ff}$$
+$$\tau = K_p (q_d - q) + K_d (\dot{q}\_d - \dot{q}) + \tau\_{ff}$$
 
-其中 \\(q_d\\)、\\(\dot{q}_d\\) 是目标位置和速度，\\(q\\)、\\(\dot{q}\\) 是当前位置和速度，\\(K_p\\)、\\(K_d\\) 是刚度和阻尼增益，\\(\tau_{ff}\\) 是前馈力矩。
+其中 \\(q_d\\)、\\(\dot{q}\_d\\) 是目标位置和速度，\\(q\\)、\\(\dot{q}\\) 是当前位置和速度，\\(K_p\\)、\\(K_d\\) 是刚度和阻尼增益，\\(\tau\_{ff}\\) 是前馈力矩。
 
 初看像一个带前馈项的标准 PD 控制器。但仔细看每一项，能发现更多：
 
 - **\\(K_d(-\dot{q})\\) 项**（目标速度为零时）是一个纯阻尼项，耗散系统能量。这不是附带效果——它就是机械阻尼的定义，在不需要单独速度环的情况下阻止振荡。
 
-- **\\(\tau_{ff}\\) 项**是重力补偿和摩擦力补偿存在的地方。如果你有机器人的动力学模型，就可以在这里抵消掉那些会拉偏位置的力。但更关键的是，这一项本身就是一个力矩指令。如果把 \\(K_p\\) 和 \\(K_d\\) 全部置零，剩下的就是一个直接的电流（力矩）指令，电机内部的电流环闭环去跟踪它——\\(\tau_{ff}\\) 成了直接操控机器人输出力的把手。
+- **\\(\tau\_{ff}\\) 项**是重力补偿和摩擦力补偿存在的地方。如果你有机器人的动力学模型，就可以在这里抵消掉那些会拉偏位置的力。但更关键的是，这一项本身就是一个力矩指令。如果把 \\(K_p\\) 和 \\(K_d\\) 全部置零，剩下的就是一个直接的电流（力矩）指令，电机内部的电流环闭环去跟踪它——\\(\tau\_{ff}\\) 成了直接操控机器人输出力的把手。
 
 - **整体控制律**编码了质量-弹簧-阻尼关系。\\(K_p\\) 是虚拟弹簧刚度，\\(K_d\\) 是虚拟阻尼，合起来定义了关节对位移的响应——这就是阻抗控制的含义。
 

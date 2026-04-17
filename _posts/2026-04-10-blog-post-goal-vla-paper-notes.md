@@ -50,7 +50,7 @@ The framework has three stages:
 Given an RGB-D observation \\(O = (I, D)\\) and language instruction \\(L\\):
 
 1. **Prompt Enhancement**: Feed \\(I\\) and \\(L\\) into a text-output VLM (Gemini 2.5 Pro) to produce a richer, more descriptive prompt \\(L_e\\).
-2. **Goal Image Generation**: An image-generative VLM (Gemini 2.5 Flash-image) generates a candidate goal image \\(I'_{\text{cand}}\\).
+2. **Goal Image Generation**: An image-generative VLM (Gemini 2.5 Flash-image) generates a candidate goal image \\(I'\_{\text{cand}}\\).
 3. **Reflection-through-Synthesis Loop** (the key novelty):
    - **Synthesize**: Segment the target object from the candidate goal using Grounded SAM, overlay it onto the original scene with partial transparency
    - **Reflect**: A Reflector VLM evaluates whether the synthesized image is semantically correct and physically feasible
@@ -65,7 +65,7 @@ Once a valid goal image \\(I'\\) is obtained, convert the semantic goal into a p
 
 **Semantic Matching**: Use Geo-Aware features to find pixel correspondences between initial image \\(I\\) and goal image \\(I'\\):
 
-\\((x', y') = \arg\max_{(p,q)} \frac{f_{(x,y)} \cdot f'_{(p,q)}}{\|f_{(x,y)}\| \|f'_{(p,q)}\|}\\)
+\\((x', y') = \arg\max\_{(p,q)} \frac{f\_{(x,y)} \cdot f'\_{(p,q)}}{\|f\_{(x,y)}\| \|f'\_{(p,q)}\|}\\)
 
 This is necessary because the generated goal image is semantically correct but may not preserve instance-level appearance — so traditional optical flow fails.
 
@@ -189,7 +189,7 @@ Goal-VLA 的解决方案：让 VLM 做它擅长的事（语义目标生成），
 给定 RGB-D 观测 \\(O = (I, D)\\) 和语言指令 \\(L\\)：
 
 1. **提示增强**：将 \\(I\\) 和 \\(L\\) 送入文本输出 VLM（Gemini 2.5 Pro），生成更丰富的描述性提示 \\(L_e\\)
-2. **目标图像生成**：图像生成 VLM（Gemini 2.5 Flash-image）生成候选目标图像 \\(I'_{\text{cand}}\\)
+2. **目标图像生成**：图像生成 VLM（Gemini 2.5 Flash-image）生成候选目标图像 \\(I'\_{\text{cand}}\\)
 3. **Reflection-through-Synthesis 循环**（核心创新）：
    - **合成**：使用 Grounded SAM 从候选目标中分割目标物体，以半透明方式叠加到原始场景上
    - **反思**：反思 VLM 评估合成图像是否语义正确且物理可行
@@ -204,7 +204,7 @@ Goal-VLA 的解决方案：让 VLM 做它擅长的事（语义目标生成），
 
 **语义匹配**：使用 Geo-Aware 特征在初始图像 \\(I\\) 和目标图像 \\(I'\\) 之间找到像素对应关系：
 
-\\((x', y') = \arg\max_{(p,q)} \frac{f_{(x,y)} \cdot f'_{(p,q)}}{\|f_{(x,y)}\| \|f'_{(p,q)}\|}\\)
+\\((x', y') = \arg\max\_{(p,q)} \frac{f\_{(x,y)} \cdot f'\_{(p,q)}}{\|f\_{(x,y)}\| \|f'\_{(p,q)}\|}\\)
 
 这是必要的，因为生成的目标图像语义正确但可能无法保持实例级外观——传统光流方法会失效。
 

@@ -76,11 +76,11 @@ The central technical challenge: human videos don't have fine-grained action lab
 
 The latent action model is a **700M spatiotemporal Transformer VAE**:
 
-- **Encoder**: takes two consecutive frames \\(f_t, f_{t+1}\\), extracts a compact latent vector \\(\hat{a}_t\\) (dim=32) representing the action between frames
-- **Decoder**: reconstructs \\(f_{t+1}\\) from \\(\hat{a}_t\\) and \\(f_t\\)
+- **Encoder**: takes two consecutive frames \\(f_t, f\_{t+1}\\), extracts a compact latent vector \\(\hat{a}\_t\\) (dim=32) representing the action between frames
+- **Decoder**: reconstructs \\(f\_{t+1}\\) from \\(\hat{a}\_t\\) and \\(f_t\\)
 - **Information bottleneck**: forces the model to disentangle the most critical motion information
 
-\\(\mathcal{L}_{\theta,\varphi}(f_{t+1}) = \mathbb{E}_{q_\varphi(\hat{a}|f_{t:t+1})} \log p_\theta(f_{t+1}|\hat{a}, f_t) - \beta D_{KL}(q_\varphi(\hat{a}|f_{t:t+1}) \| p(\hat{a}))\\)
+\\(\mathcal{L}\_{\theta,\varphi}(f\_{t+1}) = \mathbb{E}\_{q_\varphi(\hat{a}|f\_{t:t+1})} \log p_\theta(f\_{t+1}|\hat{a}, f_t) - \beta D\_{KL}(q_\varphi(\hat{a}|f\_{t:t+1}) \| p(\hat{a}))\\)
 
 Key finding: the learned latent actions **transfer across embodiments** — frames with similar latent actions show the same motion regardless of whether performed by a human or robot (see Fig. 3 in the paper).
 
@@ -96,7 +96,7 @@ Built on **Cosmos-Predict2.5** (latent video diffusion model with DiT blocks):
 
 Standard flow matching loss + a **temporal consistency loss**:
 
-\\(\mathcal{L}_{\text{temporal}}(\theta) = \mathbb{E}\left[\sum_{i=1}^{K-1} \|(z_{i+1} - z_i) - (v_{i+1} - v_i)\|^2\right]\\)
+\\(\mathcal{L}\_{\text{temporal}}(\theta) = \mathbb{E}\left[\sum\_{i=1}^{K-1} \|(z\_{i+1} - z_i) - (v\_{i+1} - v_i)\|^2\right]\\)
 
 This supervises the *transitions* between frames, not just individual frames — directly encourages learning object dynamics and action following. Found to accelerate action controllability learning and improve object completeness.
 
@@ -288,11 +288,11 @@ These two papers together make a compelling case for the "flexibly conditioned" 
 
 潜在动作模型是一个 **7 亿参数的时空 Transformer VAE**：
 
-- **编码器**：输入连续两帧 \\(f_t, f_{t+1}\\)，提取紧凑的潜在向量 \\(\hat{a}_t\\)（维度=32），���示帧间动作
-- **解码器**：从 \\(\hat{a}_t\\) 和 \\(f_t\\) 重建 \\(f_{t+1}\\)
+- **编码器**：输入连续两帧 \\(f_t, f\_{t+1}\\)，提取紧凑的潜在向量 \\(\hat{a}\_t\\)（维度=32），���示帧间动作
+- **解码器**：从 \\(\hat{a}\_t\\) 和 \\(f_t\\) 重建 \\(f\_{t+1}\\)
 - **信息瓶颈**：迫使模型解纠缠出最关键的运动信息
 
-\\(\mathcal{L}_{\theta,\varphi}(f_{t+1}) = \mathbb{E}_{q_\varphi(\hat{a}|f_{t:t+1})} \log p_\theta(f_{t+1}|\hat{a}, f_t) - \beta D_{KL}(q_\varphi(\hat{a}|f_{t:t+1}) \| p(\hat{a}))\\)
+\\(\mathcal{L}\_{\theta,\varphi}(f\_{t+1}) = \mathbb{E}\_{q_\varphi(\hat{a}|f\_{t:t+1})} \log p_\theta(f\_{t+1}|\hat{a}, f_t) - \beta D\_{KL}(q_\varphi(\hat{a}|f\_{t:t+1}) \| p(\hat{a}))\\)
 
 关键发现：学到的潜在动作可以**跨具身平台迁移**——具有相似潜在动作的帧展现相同的运动，无论是人还是机器人执行。
 
@@ -308,7 +308,7 @@ These two papers together make a compelling case for the "flexibly conditioned" 
 
 标准 flow matching 损失 + **时间一致性损失**：
 
-\\(\mathcal{L}_{\text{temporal}}(\theta) = \mathbb{E}\left[\sum_{i=1}^{K-1} \|(z_{i+1} - z_i) - (v_{i+1} - v_i)\|^2\right]\\)
+\\(\mathcal{L}\_{\text{temporal}}(\theta) = \mathbb{E}\left[\sum\_{i=1}^{K-1} \|(z\_{i+1} - z_i) - (v\_{i+1} - v_i)\|^2\right]\\)
 
 监督帧间的*转换*而不仅仅是单帧——直接鼓励学习物体动力学和动作跟随。
 
