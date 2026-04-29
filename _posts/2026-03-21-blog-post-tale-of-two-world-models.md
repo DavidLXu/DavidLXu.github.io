@@ -1,5 +1,5 @@
 ---
-title: "[Blog Notes] A Tale of Two World Models: WAMs vs. Action-Conditioned World Models"
+title: "A Tale of Two World Models: WAMs vs. Action-Conditioned World Models"
 date: 2026-03-21
 permalink: /posts/2026/03/tale-of-two-world-models/
 tags:
