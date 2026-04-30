@@ -30,11 +30,10 @@ In my case, a 7B model could run, checkpoint, and generate, but the generation q
 
 The experiments used two remote A100 servers:
 
-| Server | GPUs | Notes |
-|---|---:|---|
-| node0 | 8 x A100 80GB | accessed through SSH port 1024 |
-| node1 | 8 x A100 80GB | accessed through SSH port 6007 |
-| shared storage | NAS | `/mnt/data_nas/lixin` visible from both machines |
+| Server | GPUs |
+|---|---:|
+| node0 | 8 x A100 80GB |
+| node1 | 8 x A100 80GB |
 
 The first version used a very manual but transparent stack:
 
@@ -469,11 +468,10 @@ The near-term plan is to keep pushing on this LLM training path until the whole 
 
 实验使用两台远端 A100 服务器：
 
-| 服务器 | GPU | 说明 |
-|---|---:|---|
-| node0 | 8 x A100 80GB | SSH port 1024 |
-| node1 | 8 x A100 80GB | SSH port 6007 |
-| shared storage | NAS | 两台机器都能访问 `/mnt/data_nas/lixin` |
+| 服务器 | GPU |
+|---|---:|
+| node0 | 8 x A100 80GB |
+| node1 | 8 x A100 80GB |
 
 第一版使用的是非常手动但透明的训练栈：
 
