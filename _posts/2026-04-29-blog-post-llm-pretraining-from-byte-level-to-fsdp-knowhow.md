@@ -1,5 +1,5 @@
 ---
-title: "[Engineering Notes] From Byte-Level LLM Smoke Tests to Tokenized FSDP Pretraining"
+title: "From Byte-Level LLM Smoke Tests to Tokenized FSDP Pretraining"
 date: 2026-04-29
 permalink: /posts/2026/04/llm-pretraining-from-byte-level-to-fsdp-knowhow/
 tags:
@@ -308,6 +308,16 @@ This was surprisingly encouraging. With only **8 A100 GPUs**, **5,000 optimizer 
 
 This model was still a base pretraining checkpoint, not an instruction model. It failed many structured QA prompts. For example, it associated Li Bai with wine and `将进酒`, but did not reliably answer the question; it listed wrong countries for socialist states; and it failed to write a requested poem.
 
+That led to a useful distinction:
+
+| Stage | What It Learns |
+|---|---|
+| Base model | Next-token prediction: language structure, knowledge, style, and text patterns |
+| SFT / instruction tuning | How to respond in a "user instruction -> assistant answer" format |
+| Preference tuning / RLHF / DPO | Human preferences: more helpful, safer, less rambling, less obviously wrong |
+
+So the current 0.5B checkpoint is a **base model**. It can continue text, but it does not necessarily obey. If prompted to "write a poem", it may continue with web-style prose because it has only learned text distribution, not the instruction-following behavior of "I should satisfy the user's request."
+
 Still, compared with the 7B 10k-step run, it was clearly more fluent. The reason was not magic:
 
 | Item | 7B CCI3-HQ Run | 0.5B Run |
@@ -436,6 +446,8 @@ Here is the distilled checklist I would keep for future pretraining runs:
 This exercise changed how I think about "training a model." At the start, the milestone was simply: can a 7B model run on the GPUs? Later, the better question became: how many clean tokens did the model actually see, how stable is the input pipeline, how are states sharded, and what exactly does one optimizer step mean?
 
 That shift is the real progress. The experiments moved from "make it run" to "make it measurable."
+
+The near-term plan is to keep pushing on this LLM training path until the whole loop feels clear: tokenizer, cached data, FSDP, checkpoint resume, eval, generation, batch tuning, and eventually SFT. Once that is solid, the natural next experiment is to move from LLMs to VLMs and repeat the same discipline: start with the smallest working version, make the data path measurable, then scale.
 
 </div>
 
@@ -735,6 +747,16 @@ results: results/cci3_llama500m_step5000_full_rank0_generation.jsonl
 
 这个模型仍然只是 base pretraining checkpoint，不是 instruction model。它会答错很多结构化 QA：比如知道李白和酒、`将进酒` 有关联，但不能稳定回答“李白是哪个国家的、代表作有哪些”；问现存社会主义国家时会乱列国家；让它写诗，它会漂移成网页/百科式文本。
 
+这里也引出了一个很有用的区分：
+
+| 阶段 | 学到什么 |
+|---|---|
+| Base model | 预测下一个 token，学语言结构、知识、风格、文本模式 |
+| SFT / Instruction tuning | 学会按“用户指令 -> 助手回答”的格式回答 |
+| Preference tuning / RLHF / DPO | 学会更符合人类偏好，比如更有帮助、更安全、更少啰嗦、更少明显错误 |
+
+所以现在训练出来的 0.5B checkpoint 是 **base model**。它会续写，但不一定“听话”。比如问它“写一首诗”，它可能只是继续生成网页式文本，因为它只学过文本分布，没有专门学过“我应该完成用户请求”这种 instruction-following 行为。
+
 但和 7B 10k-step run 相比，它明显更流畅。原因并不神秘：
 
 | 项目 | 7B CCI3-HQ Run | 0.5B Run |
@@ -863,5 +885,7 @@ dcp/step_00005000/
 这次实践改变了我对“训练一个模型”的理解。刚开始，里程碑只是：7B 能不能在这些 GPU 上跑起来？后来更重要的问题变成：模型到底看过多少干净 token，输入 pipeline 是否稳定，训练状态如何 shard，一个 optimizer step 到底代表什么。
 
 这个转变才是真正的进展：实验从“让它跑起来”，变成了“让它可度量”。
+
+接下来的计划，是先继续把 LLM 训练这条链路整明白：tokenizer、cached data、FSDP、checkpoint resume、eval、generation、batch 调参，以及后面的 SFT。等这套东西比较稳以后，下一步就很自然地去试 VLM，用同样的方式：先跑最小可行版本，把数据和评估路径做清楚，再考虑 scale。
 
 </div>
