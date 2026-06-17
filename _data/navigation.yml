@@ -12,6 +12,10 @@ main:
     zh_title: "博客"
     url: /year-archive/
 
+  - title: "RoboScope"
+    zh_title: "RoboScope"
+    url: /roboscope/
+
   - title: "CV"
     zh_title: "简历"
     url: /cv/
