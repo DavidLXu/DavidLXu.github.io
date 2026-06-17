@@ -45,7 +45,6 @@
 }
 
 .paper-notes-3d__workspace {
-  position: relative;
   margin-top: 1rem;
 }
 
@@ -98,29 +97,22 @@
 }
 
 .paper-notes-3d__clusters {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: min(300px, calc(100% - 2rem));
-  max-height: calc(100% - 2rem);
-  overflow: auto;
-  padding: 0.85rem 0.85rem 0.1rem;
-  border-top: 0;
-  border: 1px solid rgba(216, 225, 234, 0.92);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+  padding: 0.75rem;
+  border: 1px solid #d8e1ea;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 14px 34px rgba(31, 41, 55, 0.08);
+  background: #fff;
 }
 
 .paper-notes-3d__cluster {
-  padding: 0 0 0.62rem;
-  margin-bottom: 0.62rem;
-  border-bottom: 1px solid #d8e1ea;
-}
-
-.paper-notes-3d__cluster:last-child {
-  margin-bottom: 0;
+  min-width: 0;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid #e1e8f0;
+  border-radius: 7px;
+  background: #fbfcfe;
 }
 
 .paper-notes-3d__cluster h3 {
@@ -165,10 +157,6 @@
   }
 
   .paper-notes-3d__clusters {
-    position: static;
-    width: 100%;
-    max-height: none;
-    margin-top: 0.8rem;
-    background: #fff;
+    grid-template-columns: 1fr;
   }
 }
