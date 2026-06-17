@@ -1,0 +1,30 @@
+<section class="paper-notes-3d" id="paper-notes-3d-map" aria-labelledby="paper-notes-3d-title">
+  <div class="paper-notes-3d__header">
+    <div>
+      <p class="paper-notes-3d__eyebrow" data-i18n-en="Reading Map" data-i18n-zh="阅读地图">Reading Map</p>
+      <h2 id="paper-notes-3d-title">
+        <span data-i18n-en="Paper Notes Semantic Space" data-i18n-zh="论文笔记语义空间">Paper Notes Semantic Space</span>
+      </h2>
+    </div>
+    <div class="paper-notes-3d__stats" aria-live="polite">
+      <span id="paper-notes-count">--</span>
+      <span data-i18n-en="notes" data-i18n-zh="篇笔记">notes</span>
+      <span aria-hidden="true">/</span>
+      <span id="paper-notes-cluster-count">--</span>
+      <span data-i18n-en="clusters" data-i18n-zh="个簇">clusters</span>
+    </div>
+  </div>
+
+  <div class="paper-notes-3d__workspace">
+    <div class="paper-notes-3d__stage">
+      <canvas id="paper-notes-3d-canvas" aria-label="3D Paper Notes semantic cluster map"></canvas>
+      <div class="paper-notes-3d__status" id="paper-notes-3d-status">Loading paper notes...</div>
+      <div class="paper-notes-3d__tooltip" id="paper-notes-3d-tooltip"></div>
+    </div>
+    <aside class="paper-notes-3d__clusters" id="paper-notes-3d-clusters" aria-label="Paper note clusters"></aside>
+  </div>
+</section>
+
+<link rel="stylesheet" href="{{ '/assets/css/paper-notes-3d-map.css' | relative_url }}">
+<script src="{{ '/assets/vendor/three/three.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/paper-notes-3d-map.js' | relative_url }}"></script>

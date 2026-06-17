@@ -1,0 +1,29 @@
+---
+layout: null
+permalink: /assets/data/paper_notes.json
+---
+[
+{%- assign first_paper_note = true -%}
+{%- for post in site.posts -%}
+  {%- assign post_title_downcase = post.title | downcase -%}
+  {%- assign is_paper_note = false -%}
+  {%- if post_title_downcase contains "paper notes" -%}
+    {%- assign is_paper_note = true -%}
+  {%- endif -%}
+  {%- if post.tags contains "Paper Notes" -%}
+    {%- assign is_paper_note = true -%}
+  {%- endif -%}
+  {%- if is_paper_note -%}
+    {%- unless first_paper_note -%},{%- endunless -%}
+    {
+      "title": {{ post.title | remove: "[Paper Notes]" | strip | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "tags": {{ post.tags | jsonify }},
+      "excerpt": {{ post.excerpt | strip_html | strip_newlines | strip | jsonify }},
+      "text": {{ post.content | strip_html | strip_newlines | truncate: 9000 | strip | jsonify }}
+    }
+    {%- assign first_paper_note = false -%}
+  {%- endif -%}
+{%- endfor -%}
+]

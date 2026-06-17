@@ -193,6 +193,7 @@ redirect_from:
       "Thailand",
       "France",
       "Germany",
+      "Switzerland",
       "Czechia",
       "Austria",
       "Hungary"
@@ -235,6 +236,8 @@ redirect_from:
 
 <p data-lang="en">Two persons I admire the most: Geoffrey Hinton for his dedication to neural net research and Elon Musk for his aspiration and enthusiasm.</p>
 <p data-lang="zh" style="display: none;">我最欣赏的两个人：Geoffrey Hinton 和 Elon Musk。一个长期深耕神经网络研究，一个在愿景和执行力上都很强。</p>
+
+{% include paper-notes-3d-map.html %}
 
 <!--
 Projects and Competitions
