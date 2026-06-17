@@ -299,8 +299,12 @@ function renderScene(posts, points, labels, clusters) {
   const mouse = new THREE.Vector2();
   let active = null;
   let dragging = false;
+  let pointerInside = false;
+  let hasHoverPosition = false;
   let previousX = 0;
   let previousY = 0;
+  let hoverPreviousX = 0;
+  let hoverPreviousY = 0;
   let targetRotationX = -0.18;
   let targetRotationY = 0.45;
   group.rotation.x = targetRotationX;
@@ -322,7 +326,19 @@ function renderScene(posts, points, labels, clusters) {
   }
 
   CANVAS.addEventListener("pointermove", (event) => {
+    pointerInside = true;
     updatePointer(event);
+    if (!dragging && hasHoverPosition) {
+      const dx = event.clientX - hoverPreviousX;
+      const dy = event.clientY - hoverPreviousY;
+      targetRotationY -= dx * 0.0018;
+      targetRotationX -= dy * 0.0012;
+      targetRotationX = Math.max(-1.15, Math.min(1.15, targetRotationX));
+    }
+    hoverPreviousX = event.clientX;
+    hoverPreviousY = event.clientY;
+    hasHoverPosition = true;
+
     raycaster.setFromCamera(mouse, camera);
     const hit = raycaster.intersectObjects(pointMeshes, false)[0];
     if (hit) {
@@ -334,7 +350,7 @@ function renderScene(posts, points, labels, clusters) {
     } else {
       active = null;
       TOOLTIP.style.opacity = "0";
-      CANVAS.style.cursor = "grab";
+      CANVAS.style.cursor = dragging ? "grabbing" : "grab";
     }
   });
 
@@ -347,6 +363,7 @@ function renderScene(posts, points, labels, clusters) {
 
   CANVAS.addEventListener("pointerup", (event) => {
     dragging = false;
+    CANVAS.style.cursor = active ? "pointer" : "grab";
     if (CANVAS.hasPointerCapture(event.pointerId)) CANVAS.releasePointerCapture(event.pointerId);
   });
 
@@ -372,6 +389,8 @@ function renderScene(posts, points, labels, clusters) {
 
   CANVAS.addEventListener("pointerleave", () => {
     active = null;
+    pointerInside = false;
+    hasHoverPosition = false;
     TOOLTIP.style.opacity = "0";
   });
 
@@ -383,7 +402,7 @@ function renderScene(posts, points, labels, clusters) {
   resize();
 
   function animate() {
-    if (!dragging) targetRotationY += 0.0022;
+    if (!dragging && !pointerInside) targetRotationY += 0.0022;
     group.rotation.x += (targetRotationX - group.rotation.x) * 0.08;
     group.rotation.y += (targetRotationY - group.rotation.y) * 0.08;
     camera.lookAt(0, 0, 0);
