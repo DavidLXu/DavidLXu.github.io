@@ -246,9 +246,6 @@ function renderClusterList(clusters) {
     <section class="paper-notes-3d__cluster">
       <h3><span class="paper-notes-3d__swatch" style="background:${cluster.colorCss}"></span>${cluster.name} (${cluster.papers.length})</h3>
       <p class="paper-notes-3d__keywords">${cluster.keywords.join(", ")}</p>
-      <ol class="paper-notes-3d__papers">
-        ${cluster.papers.map((paper) => `<li><a href="${paper.url}">${paper.title}</a></li>`).join("")}
-      </ol>
     </section>
   `).join("");
 }
@@ -325,6 +322,11 @@ function renderScene(posts, points, labels, clusters) {
     TOOLTIP.style.top = `${event.clientY - rect.top + 14}px`;
   }
 
+  function pickPoint() {
+    raycaster.setFromCamera(mouse, camera);
+    return raycaster.intersectObjects(pointMeshes, false)[0]?.object || null;
+  }
+
   CANVAS.addEventListener("pointermove", (event) => {
     pointerInside = true;
     updatePointer(event);
@@ -339,12 +341,10 @@ function renderScene(posts, points, labels, clusters) {
     hoverPreviousY = event.clientY;
     hasHoverPosition = true;
 
-    raycaster.setFromCamera(mouse, camera);
-    const hit = raycaster.intersectObjects(pointMeshes, false)[0];
-    if (hit) {
-      active = hit.object;
+    active = pickPoint();
+    if (active) {
       const { post, cluster } = active.userData;
-      TOOLTIP.innerHTML = `<strong>${post.title}</strong>${cluster.name}<br>${post.date}`;
+      TOOLTIP.innerHTML = `<strong>${post.title}</strong>${cluster.name}<br>${post.date}<br>Click to open note`;
       TOOLTIP.style.opacity = "1";
       CANVAS.style.cursor = "pointer";
     } else {
@@ -394,8 +394,10 @@ function renderScene(posts, points, labels, clusters) {
     TOOLTIP.style.opacity = "0";
   });
 
-  CANVAS.addEventListener("click", () => {
-    if (active && active.userData.post.url) window.location.href = active.userData.post.url;
+  CANVAS.addEventListener("click", (event) => {
+    updatePointer(event);
+    const clicked = pickPoint();
+    if (clicked && clicked.userData.post.url) window.location.href = clicked.userData.post.url;
   });
 
   window.addEventListener("resize", resize);
