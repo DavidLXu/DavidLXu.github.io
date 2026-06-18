@@ -14,540 +14,344 @@ tags:
 
 <div data-lang="en" markdown="1">
 
-This post supports **English / 中文** switching via the site language toggle in the top navigation.
-
 ## TL;DR
 
-**TopoRetarget** is an interaction-preserving retargeting framework for dexterous manipulation. Its key message is simple and important: for contact-rich manipulation, retargeting should not only copy human hand pose. It should preserve the **local hand-object interaction** that makes the task work.
+**TopoRetarget** shifts dexterous retargeting from **Human Pose -> Robot Pose** to **Human Hand-Object Interaction -> Robot Hand-Object Interaction**. The central object in the method is a shared interaction mesh that contains both hand keypoints and object surface points. On top of that mesh, the method optimizes topology-aware Laplacian coordinates so that the robot hand preserves the local hand-object interaction pattern in the human demonstration.
 
-The method builds a sparse interaction graph over hand and object keypoints, then solves a topology-aware Laplacian optimization with directional consistency, kinematic constraints, and penetration handling. The resulting robot references are used to train a lightweight PPO tracking controller. The paper reports better contact precision and alignment than OmniRetarget, Mink, DexPilot, and GeoRT, improves Pen-Spin RL tracking success by more than 40 percentage points over baselines, and demonstrates zero-shot sim-to-real transfer on Wuji Hand for cube reorientation and pen spinning.
+The important part of the paper is Sections 3.2-3.4. The method first builds a reasonable robot-hand warm start from relative bone directions, then constructs a shared hand-object graph, then refines the robot hand by matching local topology in place of absolute keypoint positions. The RL controller comes after this retargeting stage: it tracks the generated reference with residual joint-position actions and absorbs dynamics, timing, and sim-to-real robustness.
 
-My read: TopoRetarget sits exactly at the bottleneck between human demonstration data and reinforcement learning. If the reference trajectory has wrong contacts, the RL policy learns from a broken target. TopoRetarget tries to make the reference itself physically meaningful before policy learning starts.
+Paper: **"TopoRetarget: Interaction-Preserving Retargeting for Dexterous Manipulation"**. arXiv: [2606.16272](https://arxiv.org/abs/2606.16272). Project page: [toporetarget2026.github.io/TopoRetarget](https://toporetarget2026.github.io/TopoRetarget/).
 
-## Paper Info
+## Core Framing
 
-The paper is **"TopoRetarget: Interaction-Preserving Retargeting for Dexterous Manipulation"** by **Jielin Wu, Shenzhe Yao, Guanqi He, Xiaohan Liu, Zhaoqing Zeng, Xiangrui Jiang, Han Yang, Wentao Zhang, and Hang Zhao**.
+TopoRetarget moves the goal away from direct keypoint fitting. Human and robot hands differ in bone lengths, joint layout, palm shape, finger arrangement, and feasible contact surfaces. A retargeted pose can match fingertips in Euclidean space while losing the actual manipulation structure, especially when useful contact occurs on phalanges, finger sides, or palm regions.
 
-The project page lists the venue as **CoRL 2026**. The arXiv entry is [arXiv:2606.16272](https://arxiv.org/abs/2606.16272), and the project page is [toporetarget2026.github.io/TopoRetarget](https://toporetarget2026.github.io/TopoRetarget/). The project page currently shows the **Code** link as disabled, so I treat the released material as paper + project page for now.
+The paper therefore treats manipulation retargeting as preservation of **local hand-object interaction**. The robot should keep the same local relationship between hand regions and object regions as the human demonstration. In this view, object-relative geometry becomes the object of imitation. The optimization target shifts from "where is this human keypoint in global space" to "where is this hand point relative to its neighboring hand and object points".
 
-## Problem and Motivation
+## 3.2 Relative Bone-Direction Initialization
 
-Human hand-object demonstrations are useful references for dexterous robot learning. They contain dense information about how fingers move, where the object is, and when contact changes. Reference-based reinforcement learning can use these trajectories to avoid exploring long-horizon contact-rich behaviors from scratch.
+The first stage provides a robot-hand initialization. Since human and robot hands have different geometry, TopoRetarget uses the local bending pattern of the fingers as the initialization signal and avoids direct copying of absolute hand keypoint positions.
 
-The problem is that retargeting a human hand to a robot hand is not only a pose-matching problem. Human and robot hands have different link lengths, joint limits, palm shapes, finger arrangement, and contact surfaces. A method can match fingertip positions while destroying the contact structure that actually performs the task.
+For each non-terminal keypoint \(k\), define the bone direction \(d_k\) as the unit vector from the current keypoint to its child keypoint. \(d_k^s\) denotes the source human bone direction, and \(d_k^r(q)\) denotes the robot bone direction under joint configuration \(q\).
 
-For dexterous manipulation, contact can happen on:
+The key design is to compare **relative changes between adjacent bones** on the same finger. For adjacent bone pairs \((k,l)\in A_B\), the bone-direction mismatch is:
 
-- fingertips;
-- intermediate phalanges;
-- finger sides;
-- palm regions;
-- changing combinations of the above over time.
+\[
+E_{bone}(q)
+=
+\sum_{(k,l)\in A_B}
+\left\|
+(d_k^r(q)-d_l^r(q))
+-
+(d_k^s-d_l^s)
+\right\|_2^2 .
+\]
 
-If retargeting drifts away from these local relationships, the downstream policy receives a poor reference: the robot may penetrate the object, miss a non-tip contact, grasp from the wrong side, or track a pose that is kinematically feasible but functionally useless.
+This loss captures local articulation. It describes how a finger bends from one bone to the next and avoids forcing a single bone to point in an absolute direction. This distinction matters for cross-embodiment transfer because link lengths and palm frames are mismatched across hands.
 
-TopoRetarget reframes retargeting as **interaction-preserving reference generation**.
+The initialization solves:
 
-## Core Idea
+\[
+\tilde q_t^r
+=
+\arg\min_q
+\lambda_{warm}E_{bone}(q)
++
+\lambda_{smooth}
+\|q-\tilde q_{t-1}^r\|_2^2 .
+\]
 
-The central idea is to preserve the local topology of hand-object interaction.
+The first term makes the robot reproduce the local hand shape. The second term keeps the initialization temporally continuous. The result \(\tilde q_t^r\) serves as a warm start for the final retargeting output. Its purpose is to put the robot hand near a plausible local articulation state before the interaction-aware refinement begins.
 
-Instead of saying:
+## 3.3 Interaction Mesh Construction
 
-```text
-make robot joints look like the human hand pose
-```
+Matching hand shape alone is insufficient for manipulation. The core signal is the relationship between the hand and the object.
 
-TopoRetarget says:
+At frame \(t\), TopoRetarget forms a source vertex set and a robot vertex set:
 
-```text
-preserve which hand regions are near which object regions, and preserve their local directions and distances
-```
+\[
+V_t^s=[P_t^h;O_t],
+\qquad
+V_t^r(q)=[P_t^r(q);O_t].
+\]
 
-This matters because the object-relative geometry is often the task. In pen spinning, for example, the useful contact does not stay on a single fingertip. It moves across fingertips, phalanges, and side surfaces. A hand-centric objective can look plausible while losing the rolling contact sequence.
+\(P_t^h\) is the human hand keypoint set, \(P_t^r(q)\) is the robot hand keypoint set, and \(O_t\) is a set of points sampled from the object surface. The graph has \(N_v=21+N_o\) vertices: the first 21 are hand keypoints, and the remaining vertices are object surface points.
 
-## Method Overview
+The paper runs Delaunay tetrahedralization on the source vertices \(V_t^s\) to obtain the interaction edge set \(\mathcal I_t\). This gives a source graph:
 
-TopoRetarget takes as input:
+\[
+G_t^s=(V_t^s,\mathcal I_t).
+\]
 
-- a human hand trajectory represented by MediaPipe-style hand keypoints;
-- an object pose trajectory;
-- an object mesh;
-- a target dexterous hand model.
+Then it reuses the same connectivity for the robot graph:
 
-It outputs:
+\[
+G_t^r(q)=(V_t^r(q),\mathcal I_t).
+\]
 
-- a robot base-pose trajectory;
-- a robot joint trajectory;
-- a retargeted reference that can be tracked by an RL policy.
+This shared connectivity is the main structural move. Human and robot graphs now have the same local neighborhood structure, so the optimizer can compare corresponding hand-object interactions directly. The method avoids manually specifying which fingertip, phalanx, or palm point should contact which object region. The interaction mesh encodes those local neighborhoods from the source demonstration.
 
-The pipeline has three major stages.
+## 3.4 Topology-Aware Laplacian Refinement
 
-## 1. Relative Bone-Direction Initialization
+Once the shared graph exists, TopoRetarget compares local geometry through weighted Laplacian coordinates.
 
-First, the method produces an initial robot-hand configuration by matching local finger articulation. For each finger, it compares relative bone directions between adjacent bone pairs rather than trying to directly map human joint angles to robot joint angles.
+The edge weights \(w_{ij,t}\) are computed from spatial distances in the source graph. Close neighbors receive high weight, distant neighbors receive low weight. These weights are computed once on the source graph and then reused for the robot graph.
 
-The initialization objective encourages the robot hand to reproduce the source hand's relative bone directions while staying temporally smooth:
+For vertex \(v_i\), the weighted Laplacian coordinate is:
 
-```text
-E_bone(q) = sum over adjacent bone pairs of relative direction mismatch
-```
+\[
+\Delta_t(V)_i
+=
+\sum_{j\in\mathcal N_t(i)}
+w_{ij,t}(v_i-v_j).
+\]
 
-This gives a reasonable starting point for the more important interaction-aware refinement stage.
+When the weights are normalized so that \(\sum_j w_{ij,t}=1\), the same expression becomes:
 
-## 2. Interaction Mesh Construction
+\[
+\Delta_i
+=
+v_i-\sum_jw_{ij,t}v_j.
+\]
 
-At each frame, TopoRetarget samples object surface points and combines them with hand keypoints:
+This is "the current point minus the weighted center of its neighbors." It describes local structure in place of absolute position. It is naturally insensitive to global translation and fits cross-embodiment comparison better than coordinate matching.
 
-```text
-source vertices = [human hand keypoints; object surface samples]
-robot vertices  = [robot hand keypoints; object surface samples]
-```
+The interaction-mesh energy is:
 
-It then runs Delaunay tetrahedralization on the source vertices to construct an interaction edge set. The same graph connectivity is reused for the robot vertices.
+\[
+E_{IM}(q)
+=
+\frac1{N_v}
+\sum_{i=1}^{N_v}
+\left\|
+\Delta_t(V_t^r(q))_i
+-
+\Delta_t(V_t^s)_i
+\right\|_2^2 .
+\]
 
-This shared graph is important. It lets the optimizer compare the human and robot hand-object configurations under the same local neighborhood structure. In other words, it gives the retargeting objective a way to ask whether the robot preserved the local interaction topology of the human demonstration.
+This objective asks the robot graph to match the human graph's Laplacian coordinates. Put differently, it preserves how a hand point sits relative to surrounding hand points and object surface points. The retained quantity is local hand-object topology: which regions are near each other, in what local direction, and under what local neighborhood geometry.
 
-## 3. Topology-Aware Laplacian Optimization
+## Final Optimization
 
-The refinement step matches weighted Laplacian coordinates on the shared interaction graph.
+The final retargeting problem combines the interaction objective with the hand-shape prior and feasibility terms:
 
-The paper computes source-frame distance-aware edge weights:
+\[
+(q_t^{r,*},s_t^*)
+=
+\arg\min_{q,s}
+\lambda_{IM}E_{IM}(q)
++
+\lambda_{bone}E_{bone}(q)
++
+E_{reg}(q;q_{t-1}^{r,*})
++
+\frac{w_s}{2}
+\sum_{i\in Q_t}s_i^2 .
+\]
 
-```text
-w_ij proportional to exp(-kappa * distance(i, j))
-```
+\(E_{IM}\) is the core term. It keeps local hand-object interaction consistent with the human demonstration. \(E_{bone}\) preserves the local articulation prior from initialization. \(E_{reg}\) provides temporal smoothness and floating-base regularization. The slack variables \(s_i\) belong to the penetration constraints and are penalized so that the optimizer can tolerate small controlled violations while rejecting severe penetration.
 
-Nearby hand-object relationships receive stronger weights. The interaction-mesh energy compares the Laplacian coordinates of the source and robot vertex sets:
+The paper also adds signed-distance constraints \(\phi_i(q)\) for robot-hand and object geometry. The design combines a soft tolerance with a hard bound: the optimization can absorb minor geometric noise, while large interpenetration is blocked. This is important because retargeting is often driven by noisy hand-object capture, where tiny contact errors are common and strict zero-penetration constraints can make the problem brittle.
 
-```text
-E_IM = average || Delta(robot vertices) - Delta(source vertices) ||^2
-```
+## Where RL Fits
 
-The final optimization combines:
+The RL part should be read as a tracking layer on top of the retargeted reference. TopoRetarget first produces \(q_t^{r,*}\) and object-aligned references; then a PPO controller learns to track them.
 
-- interaction-mesh preservation;
-- bone-direction prior;
-- temporal smoothness;
-- floating-base regularization;
-- kinematic feasibility;
-- soft and hard penetration handling.
+The policy uses residual joint-position control:
 
-The authors emphasize that they use a fixed parameter setting across experiments rather than case-by-case tuning. This is a meaningful claim because retargeting methods often become fragile when each object, hand, or scale needs manual adjustment.
+\[
+q^{target}_t = q^{ref}_t + a_t .
+\]
 
-## Minimal RL Tracking Controller
+The observation contains robot proprioception, object state, and current/lookahead reference information. The reward combines object tracking, hand-link tracking, joint tracking, and smoothness. Domain randomization is used for physical robustness.
 
-TopoRetarget is not only evaluated as a static retargeting method. The paper uses the retargeted references to train RL tracking policies.
-
-The RL setup is deliberately lightweight:
-
-- finite-horizon MDP;
-- **PPO** optimizer;
-- residual joint-position action;
-- reference-state initialization;
-- object, hand-link, joint, and smoothness rewards;
-- domain randomization.
-
-The policy action is residual:
-
-```text
-target joint position = reference joint position + residual action
-```
-
-This keeps the demonstration as a strong prior and asks the policy to correct errors rather than discover the full skill from scratch.
-
-The observation includes:
-
-- proprioception: current finger joint positions, velocities, previous action;
-- object observation: object axis points in the robot base frame;
-- reference observation: current and lookahead joint/object/link references.
-
-The reward is:
-
-```text
-r = w_obj r_obj + w_link r_link + w_joint r_joint + w_smooth r_smooth
-```
-
-The largest weight is assigned to object tracking. Training randomizes object mass, center of mass, friction, actuator gains, joint damping, inertial properties, observation noise, delays, and external disturbances. The reported PPO setup uses 4096 parallel environments, 20 Hz control, and 20-second episodes.
-
-## Experiments
-
-The experiments ask three questions:
-
-1. Does TopoRetarget preserve local hand-object interaction?
-2. Do better references improve downstream RL tracking?
-3. Can the same parameters generalize across object scales and robot hand embodiments?
-
-The baselines are:
-
-- **OmniRetarget**;
-- **Mink**;
-- **DexPilot**;
-- **GeoRT**.
-
-## Retargeting Quality
-
-On the ContactPose Dataset, TopoRetarget achieves the best contact precision and alignment:
-
-| Method | Contact Precision ↓ | Contact Alignment ↓ | Max Penetration ↓ | Solve Time ↓ |
-|---|---:|---:|---:|---:|
-| TopoRetarget | 7.71 mm | 15.67 deg | 1.07 mm | 4.70 ms/frame |
-| OmniRetarget | 14.15 mm | 30.80 deg | 1.15 mm | 40.96 ms/frame |
-| Mink | 14.12 mm | 37.36 deg | 20.12 mm | 4.37 ms/frame |
-| DexPilot | 14.13 mm | 33.71 deg | 11.87 mm | 1.74 ms/frame |
-| GeoRT | 26.77 mm | 25.74 deg | 22.22 mm | 1.17 ms/frame |
-
-The takeaway is not only that TopoRetarget is more accurate. It also avoids severe penetration while remaining near real-time. That combination is important because retargeting is often used inside data generation or teleoperation pipelines.
-
-## Downstream RL Tracking
-
-The downstream RL results are the most convincing part of the paper. The authors generate references with each retargeting method, train identical PPO tracking policies, and evaluate success rate and object tracking error.
-
-On the **Ho-cap Dataset**:
-
-| Method | Success Rate ↑ | Object Position Error ↓ | Object Rotation Error ↓ |
-|---|---:|---:|---:|
-| TopoRetarget | 84.4% | 0.87 cm | 5.76 deg |
-| OmniRetarget | 56.2% | 1.07 cm | 7.87 deg |
-| Mink | 75.0% | 0.91 cm | 5.55 deg |
-| DexPilot | 75.0% | 0.92 cm | 4.99 deg |
-| GeoRT | 75.0% | 0.90 cm | 6.07 deg |
-
-On the **MoCap Pen-Spin Dataset**:
-
-| Method | Success Rate ↑ | Object Position Error ↓ | Object Rotation Error ↓ |
-|---|---:|---:|---:|
-| TopoRetarget | 87.5% | 0.98 cm | 9.25 deg |
-| OmniRetarget | 46.9% | 1.45 cm | 14.26 deg |
-| Mink | 21.9% | 1.61 cm | 15.25 deg |
-| DexPilot | 40.6% | 1.29 cm | 17.66 deg |
-| GeoRT | 31.2% | 1.19 cm | 18.62 deg |
-
-Pen spinning is the stress test. It contains fast motion and frequent non-tip contact transitions. This is exactly where preserving local interaction topology matters most.
-
-## Real Robot Transfer
-
-The paper further demonstrates zero-shot sim-to-real transfer on **Wuji Hand** hardware for:
-
-- cube reorientation;
-- pen spinning.
-
-This is important because it suggests that better retargeted references can improve not only simulation tracking but also the real-world execution of learned tracking policies. The project page also shows real-world videos and claims 5 / 5 zero-shot pen-spinning trials keep the pen spinning.
-
-## Generalization
-
-TopoRetarget also demonstrates retargeting across object scales and dexterous hand embodiments while keeping the same retargeting parameters fixed. The interaction mesh is rebuilt over the new object surface, and the Laplacian refinement preserves local relations under the new scale or hand model.
-
-This makes the method useful for augmentation:
-
-```text
-one human demonstration
-  -> multiple object scales
-  -> multiple robot hand embodiments
-  -> more reference trajectories
-```
-
-For dexterous robot learning, this is a practical benefit. Human demonstration data is expensive, so augmentation through reliable retargeting can increase data diversity without new human collection.
-
-## Strengths
-
-The strongest parts of TopoRetarget are:
-
-- It targets the correct abstraction: **interaction**, not only hand pose.
-- It handles non-tip contacts, which are central to real dexterous manipulation.
-- It uses one fixed parameter setting across tasks and embodiments.
-- It links retargeting quality to downstream RL policy success.
-- It demonstrates zero-shot transfer to a real dexterous hand.
-- It remains fast enough for real-time use, with reported solve time under 5 ms per frame.
+This RL section matters because it clarifies the division of labor. Retargeting encodes the contact topology and generates a meaningful reference. RL handles dynamical tracking, residual correction, and robustness. The policy executes and corrects a topology-preserving reference, which reduces the burden of discovering the manipulation sequence from scratch.
 
 ## Limitations
 
-The main limitation is dependence on upstream human reference quality. The authors mention that TopoRetarget can handle some contact distortion caused by penetration in the source motion, but it is less effective for **virtual contacts**, where the source finger is intended to interact with the object but does not actually touch the object surface.
+The most important limitation is source quality. TopoRetarget can preserve local hand-object relations that exist in the captured motion. If the source trajectory contains a virtual contact, where a finger is meant to interact with the object but fails to touch or approach the surface, the interaction mesh has no correct relation to preserve. This suggests that upstream contact completion or motion cleanup may be necessary for noisy egocentric or monocular data.
 
-This is a real issue for pipelines based on noisy perception or imperfect motion capture. If the original human trajectory misses a contact, the interaction graph has no correct contact relation to preserve. Future work may need source-motion preprocessing or contact completion before retargeting.
+Another limitation is that Laplacian topology is a geometric proxy. It preserves local neighborhoods, relative directions, and object-relative structure, but it does not directly optimize contact force, friction cone feasibility, or force closure. The downstream RL controller can absorb part of this gap, yet the retargeted reference itself remains kinematic.
 
-Another limitation is scope. The paper focuses on single-hand object manipulation. Extending the same interaction-preserving idea to bimanual manipulation, articulated objects, or whole arm-hand systems would be a natural next step.
+The current setting mainly targets single-hand rigid-object manipulation. Extending the same idea to bimanual manipulation, articulated objects, deformable objects, and full arm-hand-body retargeting would require richer graph construction and stronger physical constraints.
 
-## Takeaways
+## Takeaway
 
-TopoRetarget is useful because it makes retargeting a first-class part of the learning pipeline. In dexterous manipulation, the reference trajectory is not just a target curve. It defines which contacts the policy should learn to create and maintain.
+TopoRetarget's main contribution is the interaction mesh plus topology-aware Laplacian objective. Relative bone-direction initialization gives a plausible hand shape. The shared hand-object graph gives both human and robot the same local topology. Laplacian refinement makes the robot preserve local interaction in place of absolute pose. Penetration constraints keep the result physically usable. RL then tracks the generated reference.
 
-For me, the key lesson is:
-
-**Retargeting quality becomes policy learning quality.**
-
-If the retargeted reference loses contact topology, RL has to repair a broken demonstration. If the reference preserves local hand-object interaction, RL can focus on robust tracking and sim-to-real adaptation.
-
-This connects directly to the broader trend in recent dexterous manipulation papers: human demonstrations are increasingly valuable, but they only become robot data after careful conversion. TopoRetarget is a strong example of this conversion step.
+The key message for robot learning is: reference quality becomes policy quality. If the retargeted trajectory loses contact topology, the controller inherits a damaged objective. If the retargeted trajectory preserves local hand-object interaction, RL can spend its capacity on execution robustness instead of repairing the demonstration.
 
 </div>
 
 <div data-lang="zh" markdown="1" style="display: none;">
 
-本文支持通过顶部导航栏的语言切换按钮在 **English / 中文** 之间切换。
-
 ## TL;DR
 
-**TopoRetarget** 是一个面向 dexterous manipulation 的 interaction-preserving retargeting 框架。它最重要的信息很简单：对于 contact-rich manipulation，retargeting 不能只复制 human hand pose，还要保留让任务真正成立的 **local hand-object interaction**。
+**TopoRetarget** 把 dexterous retargeting 的目标从 **Human Pose -> Robot Pose** 推进到 **Human Hand-Object Interaction -> Robot Hand-Object Interaction**。它的核心对象是一个同时包含手部关键点和物体表面点的 shared interaction mesh。基于这个 mesh，方法优化 topology-aware Laplacian coordinate，让机器人手保留人手示范中的局部 hand-object interaction。
 
-方法会在手和物体 keypoints 之间构建一个 sparse interaction graph，然后用 topology-aware Laplacian optimization 来做 retargeting，同时加入 directional consistency、kinematic constraints 和 penetration handling。生成的 robot references 会进一步用于训练轻量 PPO tracking controller。论文报告：它在 ContactPose 上比 OmniRetarget、Mink、DexPilot、GeoRT 有更好的接触精度和对齐；在 Pen-Spin 任务上比 baseline 提升超过 40 个百分点的 RL tracking success；并且能在 Wuji Hand 上对 cube reorientation 和 pen spinning 做 zero-shot sim-to-real transfer。
+这篇论文真正重要的是 Section 3.2-3.4。方法先根据 relative bone direction 得到一个合理的机器人手 warm start，然后构造手和物体共享拓扑的 interaction graph，最后通过 Laplacian refinement 优化机器人手，使它保持与人手示范一致的局部 hand-object topology。RL controller 位于 retargeting 之后：它用 residual joint-position action 去 tracking 生成的 reference，主要处理 dynamics、timing 和 sim-to-real robustness。
 
-我的理解是：TopoRetarget 正好处在人类 demonstration data 和 reinforcement learning 之间的关键瓶颈上。如果 reference trajectory 的接触关系错了，RL policy 学到的就是坏目标。TopoRetarget 试图在 policy learning 之前，把 reference 本身变得物理上更有意义。
+论文：**"TopoRetarget: Interaction-Preserving Retargeting for Dexterous Manipulation"**。arXiv: [2606.16272](https://arxiv.org/abs/2606.16272)。项目页：[toporetarget2026.github.io/TopoRetarget](https://toporetarget2026.github.io/TopoRetarget/)。
 
-## Paper Info
+## 核心问题
 
-论文标题是 **"TopoRetarget: Interaction-Preserving Retargeting for Dexterous Manipulation"**，作者是 **Jielin Wu, Shenzhe Yao, Guanqi He, Xiaohan Liu, Zhaoqing Zeng, Xiangrui Jiang, Han Yang, Wentao Zhang, and Hang Zhao**。
+TopoRetarget 的目标从直接拟合人手关键点位置，转向复现人手与物体之间的局部交互关系。人手和机器人手在尺寸、骨骼长度、关节结构、palm shape、finger arrangement 和 feasible contact surfaces 上都存在差异。一个 retargeted pose 可能在欧氏空间里对齐了 fingertip，却破坏了真正完成任务的 manipulation structure，尤其是当有效接触发生在 phalanges、finger sides 或 palm regions 上时。
 
-项目页标注 venue 为 **CoRL 2026**。arXiv 地址是 [arXiv:2606.16272](https://arxiv.org/abs/2606.16272)，项目页是 [toporetarget2026.github.io/TopoRetarget](https://toporetarget2026.github.io/TopoRetarget/)。目前项目页上的 **Code** 链接是 disabled，所以这里暂时把它当作论文和项目页材料来整理。
+因此，TopoRetarget 把 manipulation retargeting 理解成对 **local hand-object interaction** 的保持。机器人应该复现人手与物体之间的局部交互关系。这里被模仿的对象是 object-relative geometry。优化目标从某个人手关键点在全局空间的绝对位置，转向某个手部点相对于周围手部点和物体点的局部关系。
 
-## 问题和动机
+## 3.2 Relative Bone-Direction Initialization
 
-Human hand-object demonstrations 对 dexterous robot learning 很有价值。它们包含手指如何运动、物体在哪里、接触什么时候切换等密集信息。Reference-based reinforcement learning 可以用这些 trajectories 来避免从零探索长程 contact-rich behaviors。
+第一步是给机器人手一个合理初始化。由于人手和机器人手的 geometry 不同，TopoRetarget 选择匹配手指的局部弯曲模式，避开对绝对 hand keypoint positions 的直接复制。
 
-难点在于，把 human hand retarget 到 robot hand，不只是 pose matching。人手和机器人手在 link length、joint limits、palm shape、finger arrangement 和 contact surfaces 上都有差异。一个方法可能把 fingertip positions 对齐得不错，却破坏了真正完成任务的 contact structure。
+对于每个非末端关键点 \(k\)，定义 bone direction \(d_k\) 为从当前关键点指向子关键点的单位向量。其中 \(d_k^s\) 表示人手的 bone direction，\(d_k^r(q)\) 表示机器人在关节配置 \(q\) 下的 bone direction。
 
-在 dexterous manipulation 里，接触可能发生在：
+关键设计是比较同一根手指上相邻骨骼之间的方向变化。对于相邻骨骼对 \((k,l)\in A_B\)，bone-direction mismatch 写为：
 
-- fingertips；
-- intermediate phalanges；
-- finger sides；
-- palm regions；
-- 上面这些区域随时间变化的组合。
+\[
+E_{bone}(q)
+=
+\sum_{(k,l)\in A_B}
+\left\|
+(d_k^r(q)-d_l^r(q))
+-
+(d_k^s-d_l^s)
+\right\|_2^2 .
+\]
 
-如果 retargeting 让这些 local relationships 漂移，downstream policy 会收到很差的 reference：机器人可能穿透物体、错过非指尖接触、从错误方向抓取，或者追踪一个运动学可行但功能上无效的姿态。
+这个 loss 捕捉的是 local articulation。它描述一根手指从一段骨骼到下一段骨骼如何弯曲，避免要求某一根骨骼指向绝对方向。这个区别对 cross-embodiment transfer 很重要，因为不同手之间 link lengths 和 palm frames 都不一致。
 
-TopoRetarget 把 retargeting 重新定义成 **interaction-preserving reference generation**。
+初始化优化为：
 
-## Core Idea
+\[
+\tilde q_t^r
+=
+\arg\min_q
+\lambda_{warm}E_{bone}(q)
++
+\lambda_{smooth}
+\|q-\tilde q_{t-1}^r\|_2^2 .
+\]
 
-核心想法是保留 hand-object interaction 的 local topology。
+第一项鼓励机器人手复现人手的局部手型，第二项保证时间连续性。求得的 \(\tilde q_t^r\) 是后续 refinement 的 warm start，并非最终 retargeting 结果。它的作用是在进入 interaction-aware refinement 之前，把机器人手放到一个合理的局部关节状态附近。
 
-传统目标可以概括为：
+## 3.3 Interaction Mesh Construction
 
-```text
-让机器人关节看起来像 human hand pose
-```
+仅仅匹配手型不足以完成 manipulation retargeting，因为 manipulation 真正重要的是手与物体之间的关系。
 
-TopoRetarget 的目标更接近：
+对于第 \(t\) 帧，TopoRetarget 构造 source 顶点集合和 robot 顶点集合：
 
-```text
-保留哪些手部区域靠近哪些物体区域，以及这些局部关系的方向和距离
-```
+\[
+V_t^s=[P_t^h;O_t],
+\qquad
+V_t^r(q)=[P_t^r(q);O_t].
+\]
 
-这很重要，因为 object-relative geometry 往往就是任务本身。以 pen spinning 为例，有效接触不会固定在某个 fingertip 上。它会在 fingertips、phalanges 和 side surfaces 之间移动。Hand-centric objective 可能看起来合理，但会丢掉 rolling contact sequence。
+其中 \(P_t^h\) 是人手关键点，\(P_t^r(q)\) 是机器人关键点，\(O_t\) 是从物体表面采样得到的点集。整个图共有 \(N_v=21+N_o\) 个顶点，其中前 21 个为手部关键点，其余为物体表面点。
 
-## Method Overview
+作者在 source 顶点集 \(V_t^s\) 上执行 Delaunay tetrahedralization，得到交互边集合 \(\mathcal I_t\)，并构造 source graph：
 
-TopoRetarget 的输入包括：
+\[
+G_t^s=(V_t^s,\mathcal I_t).
+\]
 
-- 由 MediaPipe-style hand keypoints 表示的 human hand trajectory；
-- object pose trajectory；
-- object mesh；
-- target dexterous hand model。
+随后作者直接将同样的 connectivity 复用到机器人图中：
 
-输出包括：
+\[
+G_t^r(q)=(V_t^r(q),\mathcal I_t).
+\]
 
-- robot base-pose trajectory；
-- robot joint trajectory；
-- 一个可被 RL policy tracking 的 retargeted reference。
+这个 shared connectivity 是最关键的结构设计。人手图和机器人图拥有完全相同的局部邻域结构，因此优化器可以直接比较对应的 hand-object interaction。方法无需手工指定哪个 fingertip、phalanx 或 palm point 应该接触哪个物体区域；interaction mesh 会从 source demonstration 中编码这些局部邻域。
 
-整体 pipeline 有三个主要阶段。
+## 3.4 Topology-Aware Laplacian Refinement
 
-## 1. Relative Bone-Direction Initialization
+在获得共享图结构之后，TopoRetarget 通过 weighted Laplacian coordinate 比较局部几何关系。
 
-第一步，方法通过匹配局部 finger articulation 来生成初始 robot-hand configuration。它对比的是相邻 bone pairs 的 relative bone directions，而不是直接把人手关节角映射到机器人关节角。
+边权重 \(w_{ij,t}\) 根据 source graph 中的空间距离计算。距离越近的邻居权重越大，距离越远的邻居权重越小。这些权重只在 source graph 中计算一次，然后复用到 robot graph 中。
 
-初始化目标鼓励机器人手复现 source hand 的 relative bone directions，同时保持时间平滑：
+对于任意顶点 \(v_i\)，加权 Laplacian coordinate 定义为：
 
-```text
-E_bone(q) = sum over adjacent bone pairs of relative direction mismatch
-```
+\[
+\Delta_t(V)_i
+=
+\sum_{j\in\mathcal N_t(i)}
+w_{ij,t}(v_i-v_j).
+\]
 
-这一步为后续更重要的 interaction-aware refinement 提供一个合理初值。
+如果权重满足归一化条件 \(\sum_j w_{ij,t}=1\)，上式可以写成：
 
-## 2. Interaction Mesh Construction
+\[
+\Delta_i
+=
+v_i-\sum_jw_{ij,t}v_j.
+\]
 
-在每一帧，TopoRetarget 会采样 object surface points，并把它们和 hand keypoints 合并：
+这就是“当前点减去邻居加权中心”。它描述的是局部结构，而非绝对位置，因此天然对整体平移不敏感，也更适合跨 embodiment 的比较。
 
-```text
-source vertices = [human hand keypoints; object surface samples]
-robot vertices  = [robot hand keypoints; object surface samples]
-```
+Interaction-mesh energy 写为：
 
-然后它在 source vertices 上做 Delaunay tetrahedralization，得到 interaction edge set。这个相同的 graph connectivity 会被复用到 robot vertices 上。
+\[
+E_{IM}(q)
+=
+\frac1{N_v}
+\sum_{i=1}^{N_v}
+\left\|
+\Delta_t(V_t^r(q))_i
+-
+\Delta_t(V_t^s)_i
+\right\|_2^2 .
+\]
 
-这个 shared graph 很关键。它让优化器可以在相同的 local neighborhood structure 下比较 human 和 robot 的 hand-object configurations。换句话说，它给 retargeting objective 一个方式去检查机器人是否保留了人类 demonstration 的 local interaction topology。
+这个目标要求机器人图中的 Laplacian coordinate 接近人手图中的 Laplacian coordinate。换句话说，它保持的是某个手部点相对于周围手部点和物体点的位置关系。最终被保留下来的量是 local hand-object topology：哪些区域彼此接近、局部方向如何、邻域几何如何组织。
 
-## 3. Topology-Aware Laplacian Optimization
+## 最终优化
 
-refinement 阶段会在 shared interaction graph 上匹配 weighted Laplacian coordinates。
+最终 retargeting 问题把 interaction objective、hand-shape prior 和可行性约束合在一起：
 
-论文计算 source-frame distance-aware edge weights：
+\[
+(q_t^{r,*},s_t^*)
+=
+\arg\min_{q,s}
+\lambda_{IM}E_{IM}(q)
++
+\lambda_{bone}E_{bone}(q)
++
+E_{reg}(q;q_{t-1}^{r,*})
++
+\frac{w_s}{2}
+\sum_{i\in Q_t}s_i^2 .
+\]
 
-```text
-w_ij proportional to exp(-kappa * distance(i, j))
-```
+\(E_{IM}\) 是核心项，用于保持局部 hand-object interaction；\(E_{bone}\) 保留初始化阶段得到的局部手型先验；\(E_{reg}\) 用于时间平滑和 floating-base regularization；slack variables \(s_i\) 对应 penetration constraints，并通过惩罚项限制不可控穿透。
 
-更近的 hand-object relationships 权重更高。Interaction-mesh energy 比较 source 和 robot vertex sets 的 Laplacian coordinates：
+作者还加入 signed-distance 约束 \(\phi_i(q)\)，限制机器人手与物体之间的几何穿透。这里采用 soft tolerance 与 hard bound 相结合的设计，使优化可以吸收少量几何噪声，同时禁止严重 interpenetration。这个设计很实用，因为 hand-object capture 往往有微小接触误差，如果严格要求零穿透，优化会变得很脆。
 
-```text
-E_IM = average || Delta(robot vertices) - Delta(source vertices) ||^2
-```
+## RL 在哪里
 
-最终优化目标结合了：
+RL 部分可以理解为 retargeted reference 之上的 tracking layer。TopoRetarget 先生成 \(q_t^{r,*}\) 和 object-aligned references，然后用 PPO controller 学习 tracking。
 
-- interaction-mesh preservation；
-- bone-direction prior；
-- temporal smoothness；
-- floating-base regularization；
-- kinematic feasibility；
-- soft 和 hard penetration handling。
+Policy 采用 residual joint-position control：
 
-作者强调所有实验使用固定参数设置，没有针对每个 case 做大量调参。这个 claim 很有意义，因为 retargeting 方法经常在每个 object、hand 或 scale 上需要人工调整。
+\[
+q^{target}_t = q^{ref}_t + a_t .
+\]
 
-## Minimal RL Tracking Controller
+Observation 包含 robot proprioception、object state，以及当前和 lookahead 的 reference 信息。Reward 由 object tracking、hand-link tracking、joint tracking 和 smoothness 组成。训练时使用 domain randomization 来增强物理鲁棒性。
 
-TopoRetarget 不只做静态 retargeting 评测。论文还用 retargeted references 来训练 RL tracking policies。
+这部分的意义在于分工清晰：retargeting 负责编码 contact topology 并生成有意义的 reference；RL 负责 dynamics tracking、residual correction 和 robustness。Policy 需要把 topology-preserving reference 执行出来，无需从零发现完整的 manipulation sequence。
 
-RL 设置刻意保持轻量：
+## Limitation
 
-- finite-horizon MDP；
-- **PPO** optimizer；
-- residual joint-position action；
-- reference-state initialization；
-- object、hand-link、joint 和 smoothness rewards；
-- domain randomization。
+最重要的限制是 source quality。TopoRetarget 能保留 captured motion 中已经存在的局部 hand-object relations。如果 source trajectory 里存在 virtual contact，也就是手指本应和物体交互，但几何上没有真正接触或接近 object surface，interaction mesh 就没有正确关系可以保留。这意味着对于 noisy egocentric data 或 monocular capture，retargeting 前可能需要 contact completion 或 motion cleanup。
 
-policy action 是 residual：
+另一个限制是 Laplacian topology 本质上是几何代理目标。它保留 local neighborhood、relative direction 和 object-relative structure，但没有直接优化 contact force、friction cone feasibility 或 force closure。后续 RL controller 可以弥补一部分差距，但 retargeted reference 本身仍然主要是 kinematic reference。
 
-```text
-target joint position = reference joint position + residual action
-```
+当前设置主要面向 single-hand rigid-object manipulation。要扩展到 bimanual manipulation、articulated objects、deformable objects，或者 full arm-hand-body retargeting，需要更丰富的 graph construction 和更强的物理约束。
 
-这样 demonstration 会作为很强的 prior，policy 只需要修正 tracking error，而不是从零发现完整技能。
+## Takeaway
 
-Observation 包括：
+TopoRetarget 的核心创新在于 interaction mesh 和 topology-aware Laplacian objective。Relative bone-direction initialization 给出合理手型；共享 hand-object graph 让人手和机器人手拥有同一套局部拓扑；Laplacian refinement 让机器人保留局部 interaction，减少对绝对 pose 的追逐；penetration constraints 保证结果在几何上可用；RL 则负责把生成的 reference track 起来。
 
-- proprioception：当前 finger joint positions、velocities、previous action；
-- object observation：robot base frame 下的 object axis points；
-- reference observation：当前和 lookahead 的 joint/object/link references。
-
-Reward 形式为：
-
-```text
-r = w_obj r_obj + w_link r_link + w_joint r_joint + w_smooth r_smooth
-```
-
-最大权重给 object tracking。训练时随机化 object mass、center of mass、friction、actuator gains、joint damping、inertial properties、observation noise、delays 和 external disturbances。论文报告的 PPO 设置包括 4096 个 parallel environments、20 Hz control 和 20 秒 episode。
-
-## Experiments
-
-实验回答三个问题：
-
-1. TopoRetarget 是否能保留 local hand-object interaction？
-2. 更好的 references 是否能改善 downstream RL tracking？
-3. 同一套参数是否能泛化到不同 object scales 和 robot hand embodiments？
-
-Baselines 包括：
-
-- **OmniRetarget**；
-- **Mink**；
-- **DexPilot**；
-- **GeoRT**。
-
-## Retargeting Quality
-
-在 ContactPose Dataset 上，TopoRetarget 取得了最好的 contact precision 和 alignment：
-
-| Method | Contact Precision ↓ | Contact Alignment ↓ | Max Penetration ↓ | Solve Time ↓ |
-|---|---:|---:|---:|---:|
-| TopoRetarget | 7.71 mm | 15.67 deg | 1.07 mm | 4.70 ms/frame |
-| OmniRetarget | 14.15 mm | 30.80 deg | 1.15 mm | 40.96 ms/frame |
-| Mink | 14.12 mm | 37.36 deg | 20.12 mm | 4.37 ms/frame |
-| DexPilot | 14.13 mm | 33.71 deg | 11.87 mm | 1.74 ms/frame |
-| GeoRT | 26.77 mm | 25.74 deg | 22.22 mm | 1.17 ms/frame |
-
-这里的 takeaway 不只是 TopoRetarget 更准确。它还能避免严重 penetration，同时接近 real-time。这种组合很重要，因为 retargeting 经常会被放进数据生成或 teleoperation pipeline。
-
-## Downstream RL Tracking
-
-downstream RL 结果是论文最有说服力的部分。作者用每种 retargeting method 生成 references，训练相同的 PPO tracking policies，然后评估 success rate 和 object tracking error。
-
-在 **Ho-cap Dataset** 上：
-
-| Method | Success Rate ↑ | Object Position Error ↓ | Object Rotation Error ↓ |
-|---|---:|---:|---:|
-| TopoRetarget | 84.4% | 0.87 cm | 5.76 deg |
-| OmniRetarget | 56.2% | 1.07 cm | 7.87 deg |
-| Mink | 75.0% | 0.91 cm | 5.55 deg |
-| DexPilot | 75.0% | 0.92 cm | 4.99 deg |
-| GeoRT | 75.0% | 0.90 cm | 6.07 deg |
-
-在 **MoCap Pen-Spin Dataset** 上：
-
-| Method | Success Rate ↑ | Object Position Error ↓ | Object Rotation Error ↓ |
-|---|---:|---:|---:|
-| TopoRetarget | 87.5% | 0.98 cm | 9.25 deg |
-| OmniRetarget | 46.9% | 1.45 cm | 14.26 deg |
-| Mink | 21.9% | 1.61 cm | 15.25 deg |
-| DexPilot | 40.6% | 1.29 cm | 17.66 deg |
-| GeoRT | 31.2% | 1.19 cm | 18.62 deg |
-
-Pen spinning 是压力测试。它包含快速运动和频繁的 non-tip contact transitions。这正是 local interaction topology 最重要的场景。
-
-## Real Robot Transfer
-
-论文进一步在 **Wuji Hand** 硬件上展示了 zero-shot sim-to-real transfer：
-
-- cube reorientation；
-- pen spinning。
-
-这说明更好的 retargeted references 不只改善 simulation tracking，也可能改善 learned tracking policies 的真实执行。项目页还展示了真实视频，并写到 5 / 5 zero-shot pen-spinning trials 都能保持 pen spinning。
-
-## Generalization
-
-TopoRetarget 还展示了在保持同一套 retargeting parameters 不变的情况下，跨 object scales 和 dexterous hand embodiments 做 retargeting。Interaction mesh 会在新的 object surface 上重建，Laplacian refinement 会在新的 scale 或 hand model 下保留局部关系。
-
-这让它可以用于 augmentation：
-
-```text
-one human demonstration
-  -> multiple object scales
-  -> multiple robot hand embodiments
-  -> more reference trajectories
-```
-
-对 dexterous robot learning 来说，这是非常实用的优势。Human demonstration data 很贵，如果 reliable retargeting 能产生多样化 reference，就可以在不重新采集人类数据的情况下增加数据多样性。
-
-## Strengths
-
-TopoRetarget 的优势主要在于：
-
-- 它抓住了正确抽象：**interaction**，而不只是 hand pose。
-- 它能处理真实 dexterous manipulation 中非常关键的 non-tip contacts。
-- 它在不同任务和 embodiments 上使用固定参数。
-- 它把 retargeting quality 和 downstream RL policy success 直接连起来。
-- 它展示了 zero-shot transfer 到真实 dexterous hand。
-- 它速度足够快，报告 solve time 小于 5 ms/frame。
-
-## Limitations
-
-主要限制是依赖 upstream human reference quality。作者提到，TopoRetarget 可以处理一些由 source motion penetration 带来的 contact distortion，但对 **virtual contacts** 效果较弱。所谓 virtual contacts，是指 source finger 本应和物体交互，但实际没有接触到 object surface。
-
-对于基于 noisy perception 或 imperfect motion capture 的 pipeline，这会是现实问题。如果原始 human trajectory 漏掉了某个 contact，interaction graph 就没有正确的 contact relation 可以保留。未来可能需要在 retargeting 之前加入 source-motion preprocessing 或 contact completion。
-
-另一个限制是任务范围。论文主要关注 single-hand object manipulation。把同样的 interaction-preserving idea 扩展到 bimanual manipulation、articulated objects，或者完整 arm-hand systems，会是很自然的下一步。
-
-## Takeaways
-
-TopoRetarget 的价值在于，它把 retargeting 变成 learning pipeline 里的核心环节。在 dexterous manipulation 里，reference trajectory 不只是目标曲线。它定义了 policy 应该学会制造和维持哪些接触。
-
-对我来说，最关键的结论是：
-
-**Retargeting quality becomes policy learning quality.**
-
-如果 retargeted reference 丢掉了 contact topology，RL 就必须修复一个坏 demonstration。如果 reference 保留了 local hand-object interaction，RL 就可以专注于 robust tracking 和 sim-to-real adaptation。
-
-这和最近 dexterous manipulation 论文里的大趋势直接相关：human demonstrations 越来越有价值，但它们只有经过仔细转换之后，才真正变成 robot data。TopoRetarget 是这个 conversion step 的一个很强例子。
+对 robot learning 来说，最关键的 takeaway 是：reference quality becomes policy quality。如果 retargeted trajectory 丢掉了 contact topology，controller 继承的就是损坏的目标。如果 retargeted trajectory 保留了 local hand-object interaction，RL 的容量可以更多用于 execution robustness，减少对 demonstration 修补的负担。
 
 </div>
