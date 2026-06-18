@@ -265,6 +265,10 @@ function renderClusterList(clusters) {
   }).join("");
 }
 
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
 function clusterExtents(points, labels, clusterId) {
   const members = points.filter((_, i) => labels[i] === clusterId);
   const center = members.reduce((sum, point) => {
@@ -274,13 +278,14 @@ function clusterExtents(points, labels, clusterId) {
     return sum;
   }, [0, 0, 0]).map((value) => value / Math.max(1, members.length));
 
-  const spread = members.reduce((sum, point) => {
-    return sum + Math.hypot(point[0] - center[0], point[1] - center[1], point[2] - center[2]);
-  }, 0) / Math.max(1, members.length);
+  const axes = [0, 0, 0];
+  members.forEach((point) => {
+    for (let i = 0; i < 3; i++) axes[i] = Math.max(axes[i], Math.abs(point[i] - center[i]));
+  });
 
   return {
     center,
-    radius: Math.max(0.9, Math.min(2.8, spread * 0.82 + 0.55))
+    axes: axes.map((axis) => clamp(axis * 1.42 + 0.55, 0.85, 5.2))
   };
 }
 
@@ -304,6 +309,68 @@ function renderScene(posts, points, labels, clusters) {
   scene.add(light);
 
   const group = new THREE.Group();
+  const makeSoftHaloMaterial = (color, opacity) => new THREE.ShaderMaterial({
+    uniforms: {
+      uColor: { value: new THREE.Color(color) },
+      uOpacity: { value: opacity }
+    },
+    vertexShader: `
+      varying vec3 vNormalView;
+      void main() {
+        vNormalView = normalize(normalMatrix * normal);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform vec3 uColor;
+      uniform float uOpacity;
+      varying vec3 vNormalView;
+      void main() {
+        float centerGlow = smoothstep(0.03, 0.86, abs(vNormalView.z));
+        float feather = pow(centerGlow, 1.9);
+        gl_FragColor = vec4(uColor, uOpacity * feather);
+      }
+    `,
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    side: THREE.DoubleSide
+  });
+
+  const starCount = 260;
+  const starPositions = new Float32Array(starCount * 3);
+  const starColors = new Float32Array(starCount * 3);
+  for (let i = 0; i < starCount; i++) {
+    const a = Math.sin((i + 1) * 12.9898) * 43758.5453;
+    const b = Math.sin((i + 7) * 78.233) * 24634.6345;
+    const c = Math.sin((i + 13) * 37.719) * 97531.1357;
+    const rx = a - Math.floor(a);
+    const ry = b - Math.floor(b);
+    const rz = c - Math.floor(c);
+    starPositions[i * 3] = (rx - 0.5) * 18;
+    starPositions[i * 3 + 1] = (ry - 0.45) * 13;
+    starPositions[i * 3 + 2] = -7.5 + rz * 8;
+    const tint = 0.66 + (rx * 0.26);
+    starColors[i * 3] = tint * 0.78;
+    starColors[i * 3 + 1] = tint * 0.86;
+    starColors[i * 3 + 2] = tint;
+  }
+  const starGeometry = new THREE.BufferGeometry();
+  starGeometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
+  starGeometry.setAttribute("color", new THREE.BufferAttribute(starColors, 3));
+  const stars = new THREE.Points(
+    starGeometry,
+    new THREE.PointsMaterial({
+      size: 0.035,
+      transparent: true,
+      opacity: 0.32,
+      vertexColors: true,
+      depthWrite: false,
+      sizeAttenuation: true
+    })
+  );
+  group.add(stars);
+
   const horizon = new THREE.Mesh(
     new THREE.PlaneGeometry(18, 18, 1, 1),
     new THREE.MeshBasicMaterial({
@@ -330,23 +397,25 @@ function renderScene(posts, points, labels, clusters) {
   const haloMeshes = [];
   const haloGeometry = new THREE.SphereGeometry(1, 40, 24);
   clusters.forEach((cluster) => {
-    const { center, radius } = clusterExtents(points, labels, cluster.id);
-    const material = new THREE.MeshBasicMaterial({
-      color: cluster.color,
-      transparent: true,
-      opacity: 0,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending
+    const { center, axes } = clusterExtents(points, labels, cluster.id);
+    [
+      { scale: 1.08, baseOpacity: 0.052, highlightOpacity: 0.118, dimOpacity: 0.01 },
+      { scale: 1.46, baseOpacity: 0.026, highlightOpacity: 0.058, dimOpacity: 0.005 }
+    ].forEach((layer) => {
+      const material = makeSoftHaloMaterial(cluster.color, 0);
+      const halo = new THREE.Mesh(haloGeometry, material);
+      halo.position.set(center[0], center[1], center[2]);
+      halo.scale.set(axes[0] * layer.scale, axes[1] * layer.scale, axes[2] * layer.scale);
+      halo.userData = {
+        cluster,
+        baseOpacity: layer.baseOpacity,
+        highlightOpacity: layer.highlightOpacity,
+        dimOpacity: layer.dimOpacity,
+        targetOpacity: layer.baseOpacity
+      };
+      group.add(halo);
+      haloMeshes.push(halo);
     });
-    const halo = new THREE.Mesh(haloGeometry, material);
-    halo.position.set(center[0], center[1], center[2]);
-    halo.scale.set(radius * 1.15, radius * 0.72, radius * 1.15);
-    halo.userData = {
-      cluster,
-      targetOpacity: 0.095
-    };
-    group.add(halo);
-    haloMeshes.push(halo);
   });
 
   const pointMeshes = [];
@@ -410,7 +479,11 @@ function renderScene(posts, points, labels, clusters) {
     haloMeshes.forEach((halo) => {
       const sameCluster = focusClusterId !== null && halo.userData.cluster.id === focusClusterId;
       const isDimmed = focusClusterId !== null && !sameCluster;
-      halo.userData.targetOpacity = sameCluster ? 0.18 : isDimmed ? 0.018 : 0.095;
+      halo.userData.targetOpacity = sameCluster
+        ? halo.userData.highlightOpacity
+        : isDimmed
+          ? halo.userData.dimOpacity
+          : halo.userData.baseOpacity;
     });
 
     clusterCards.forEach((card) => {
@@ -458,8 +531,8 @@ function renderScene(posts, points, labels, clusters) {
     if (!dragging && hasHoverPosition) {
       const dx = event.clientX - hoverPreviousX;
       const dy = event.clientY - hoverPreviousY;
-      targetRotationY -= dx * 0.0018;
-      targetRotationX -= dy * 0.0012;
+      targetRotationY -= dx * 0.0032;
+      targetRotationX -= dy * 0.0022;
       targetRotationX = Math.max(-1.15, Math.min(1.15, targetRotationX));
     }
     hoverPreviousX = event.clientX;
@@ -546,7 +619,8 @@ function renderScene(posts, points, labels, clusters) {
       mesh.material.emissiveIntensity += (mesh.userData.targetEmissive - mesh.material.emissiveIntensity) * 0.12;
     });
     haloMeshes.forEach((halo) => {
-      halo.material.opacity += ((halo.userData.targetOpacity * introEase) - halo.material.opacity) * 0.08;
+      const uniform = halo.material.uniforms.uOpacity;
+      uniform.value += ((halo.userData.targetOpacity * introEase) - uniform.value) * 0.08;
     });
     camera.lookAt(0, 0, 0);
     renderer.render(scene, camera);
