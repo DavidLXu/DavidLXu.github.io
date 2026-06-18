@@ -139,14 +139,14 @@ This objective asks the robot graph to match the human graph's Laplacian coordin
 The final retargeting problem combines the interaction objective with the hand-shape prior and feasibility terms:
 
 \\[
-(q_t^{r,*},s_t^*)
+(q_t^{r,\ast},s_t^\ast)
 =
 \arg\min_{q,s}
 \lambda_{IM}E_{IM}(q)
 +
 \lambda_{bone}E_{bone}(q)
 +
-E_{reg}(q;q_{t-1}^{r,*})
+E_{reg}(q;q_{t-1}^{r,\ast})
 +
 \frac{w_s}{2}
 \sum_{i\in Q_t}s_i^2 .
@@ -158,7 +158,7 @@ The paper also adds signed-distance constraints \\(\phi_i(q)\\) for robot-hand a
 
 ## Where RL Fits
 
-The RL part should be read as a tracking layer on top of the retargeted reference. TopoRetarget first produces \\(q_t^{r,*}\\) and object-aligned references; then a PPO controller learns to track them.
+The RL part should be read as a tracking layer on top of the retargeted reference. TopoRetarget first produces \\(q_t^{r,\ast}\\) and object-aligned references; then a PPO controller learns to track them.
 
 The policy uses residual joint-position control:
 
@@ -313,14 +313,14 @@ E_{IM}(q)
 最终 retargeting 问题把 interaction objective、hand-shape prior 和可行性约束合在一起：
 
 \\[
-(q_t^{r,*},s_t^*)
+(q_t^{r,\ast},s_t^\ast)
 =
 \arg\min_{q,s}
 \lambda_{IM}E_{IM}(q)
 +
 \lambda_{bone}E_{bone}(q)
 +
-E_{reg}(q;q_{t-1}^{r,*})
+E_{reg}(q;q_{t-1}^{r,\ast})
 +
 \frac{w_s}{2}
 \sum_{i\in Q_t}s_i^2 .
@@ -332,7 +332,7 @@ E_{reg}(q;q_{t-1}^{r,*})
 
 ## RL 在哪里
 
-RL 部分可以理解为 retargeted reference 之上的 tracking layer。TopoRetarget 先生成 \\(q_t^{r,*}\\) 和 object-aligned references，然后用 PPO controller 学习 tracking。
+RL 部分可以理解为 retargeted reference 之上的 tracking layer。TopoRetarget 先生成 \\(q_t^{r,\ast}\\) 和 object-aligned references，然后用 PPO controller 学习 tracking。
 
 Policy 采用 residual joint-position control：
 
