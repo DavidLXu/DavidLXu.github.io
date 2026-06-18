@@ -326,8 +326,8 @@ function renderScene(posts, points, labels, clusters) {
       uniform float uOpacity;
       varying vec3 vNormalView;
       void main() {
-        float centerGlow = smoothstep(0.03, 0.86, abs(vNormalView.z));
-        float feather = pow(centerGlow, 1.9);
+        float centerGlow = smoothstep(0.0, 1.0, abs(vNormalView.z));
+        float feather = pow(centerGlow, 3.15);
         gl_FragColor = vec4(uColor, uOpacity * feather);
       }
     `,
@@ -371,51 +371,23 @@ function renderScene(posts, points, labels, clusters) {
   );
   group.add(stars);
 
-  const horizon = new THREE.Mesh(
-    new THREE.PlaneGeometry(18, 18, 1, 1),
-    new THREE.MeshBasicMaterial({
-      color: 0x172131,
-      transparent: true,
-      opacity: 0.5,
-      depthWrite: false
-    })
-  );
-  horizon.rotation.x = -Math.PI / 2;
-  horizon.position.y = -6.08;
-  group.add(horizon);
-
-  const grid = new THREE.GridHelper(15, 10, 0x5c6f8a, 0x2b3546);
-  grid.position.y = -6;
-  const gridMaterials = Array.isArray(grid.material) ? grid.material : [grid.material];
-  gridMaterials.forEach((material) => {
-    material.transparent = true;
-    material.opacity = 0.2;
-    material.depthWrite = false;
-  });
-  group.add(grid);
-
   const haloMeshes = [];
   const haloGeometry = new THREE.SphereGeometry(1, 40, 24);
   clusters.forEach((cluster) => {
     const { center, axes } = clusterExtents(points, labels, cluster.id);
-    [
-      { scale: 1.08, baseOpacity: 0.052, highlightOpacity: 0.118, dimOpacity: 0.01 },
-      { scale: 1.46, baseOpacity: 0.026, highlightOpacity: 0.058, dimOpacity: 0.005 }
-    ].forEach((layer) => {
-      const material = makeSoftHaloMaterial(cluster.color, 0);
-      const halo = new THREE.Mesh(haloGeometry, material);
-      halo.position.set(center[0], center[1], center[2]);
-      halo.scale.set(axes[0] * layer.scale, axes[1] * layer.scale, axes[2] * layer.scale);
-      halo.userData = {
-        cluster,
-        baseOpacity: layer.baseOpacity,
-        highlightOpacity: layer.highlightOpacity,
-        dimOpacity: layer.dimOpacity,
-        targetOpacity: layer.baseOpacity
-      };
-      group.add(halo);
-      haloMeshes.push(halo);
-    });
+    const material = makeSoftHaloMaterial(cluster.color, 0);
+    const halo = new THREE.Mesh(haloGeometry, material);
+    halo.position.set(center[0], center[1], center[2]);
+    halo.scale.set(axes[0] * 1.36, axes[1] * 1.36, axes[2] * 1.36);
+    halo.userData = {
+      cluster,
+      baseOpacity: 0.055,
+      highlightOpacity: 0.12,
+      dimOpacity: 0.008,
+      targetOpacity: 0.055
+    };
+    group.add(halo);
+    haloMeshes.push(halo);
   });
 
   const pointMeshes = [];
