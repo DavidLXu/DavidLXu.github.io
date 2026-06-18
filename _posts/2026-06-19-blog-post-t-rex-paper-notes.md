@@ -18,57 +18,31 @@ This post supports **English / 中文** switching via the site language toggle i
 
 ## TL;DR
 
-**T-Rex** is a tactile-reactive dexterous manipulation framework. Its core argument is that dexterous robot policies should not only see and reason, but also **feel and react** at a higher frequency than ordinary vision-language-action models.
+**T-Rex** argues that tactile feedback should be treated as a high-frequency control signal for dexterous manipulation. In this framing, touch is part of the control loop: vision and language provide slow semantic planning, while touch provides local, fast correction when contact changes inside an action chunk.
 
-The paper contributes three connected pieces: a **100-hour tactile-synchronized bimanual dexterous manipulation dataset**, a **variable-rate Mixture-of-Transformer-Experts (MoT)** model with a spatial-temporal tactile VQ-VAE encoder, and a real-world benchmark of **12 contact-rich tactile-reactive tasks**. T-Rex combines large-scale human egocentric pretraining, tactile-grounded robot mid-training, and task-specific post-training.
-
-The headline result is strong: T-Rex reaches **65% average success** across 12 real-world tasks, compared with **35%** for EgoScale, the strongest baseline. A particularly important finding is that simply concatenating tactile signals into a pretrained VLA can make performance worse. Tactile feedback helps only when the architecture and training recipe can use it as a dynamic, high-frequency control signal.
+The paper combines a tactile-synchronized bimanual robot dataset, a variable-rate Mixture-of-Transformer-Experts (MoT) policy, and a three-stage training recipe. Across 12 real-world contact-rich tasks, T-Rex reaches **65%** average success, compared with **35%** for EgoScale, the strongest baseline. A useful warning in the results is that **π0.5 + tactile** drops to **6%**, below π0.5 without tactile, showing that tactile signals need architecture and training alignment to help.
 
 ## Paper Info
 
-The paper is **"T-Rex: Tactile-Reactive Dexterous Manipulation"** by **Dantong Niu, Zhuoyang Liu, Zekai Wang, Boning Shao, Zhao-Heng Yin, Anirudh Pai, Yuvan Sharma, Stefano Saravalle, Ruijie Zheng, Jing Wang, Ryan Punamiya, Mengda Xu, Yuqi Xie, Yunfan Jiang, Letian Fu, Konstantinos Kallidromitis, Matteo Gioia, Junyi Zhang, Jiaxin Ge, Haiwen Feng, Fabio Galasso, Wei Zhan, David M. Chan, Yutong Bai, Roei Herzig, Jiahui Lei, Fei-Fei Li, Ken Goldberg, Jitendra Malik, Pieter Abbeel, Yuke Zhu, Danfei Xu, Jim Fan, and Trevor Darrell**.
+The paper is **"T-Rex: Tactile-Reactive Dexterous Manipulation"** by Dantong Niu, Zhuoyang Liu, Zekai Wang, Boning Shao, Zhao-Heng Yin, Anirudh Pai, Yuvan Sharma, Stefano Saravalle, Ruijie Zheng, Jing Wang, Ryan Punamiya, Mengda Xu, Yuqi Xie, Yunfan Jiang, Letian Fu, Konstantinos Kallidromitis, Matteo Gioia, Junyi Zhang, Jiaxin Ge, Haiwen Feng, Fabio Galasso, Wei Zhan, David M. Chan, Yutong Bai, Roei Herzig, Jiahui Lei, Fei-Fei Li, Ken Goldberg, Jitendra Malik, Pieter Abbeel, Yuke Zhu, Danfei Xu, Jim Fan, and Trevor Darrell.
 
-It is available as [arXiv:2606.17055](https://arxiv.org/abs/2606.17055). The project page is [tactile-rex.github.io](https://tactile-rex.github.io/), and the code is released at [ZhuoyangLiu2005/T-Rex](https://github.com/ZhuoyangLiu2005/T-Rex). The public dataset is on Hugging Face as [zekaiwang/trex_dataset](https://huggingface.co/datasets/zekaiwang/trex_dataset).
+It is available as [arXiv:2606.17055](https://arxiv.org/abs/2606.17055). The project page is [tactile-rex.github.io](https://tactile-rex.github.io/), the code is released at [ZhuoyangLiu2005/T-Rex](https://github.com/ZhuoyangLiu2005/T-Rex), and the dataset is on Hugging Face as [zekaiwang/trex_dataset](https://huggingface.co/datasets/zekaiwang/trex_dataset).
 
-## Problem and Motivation
+## Core Argument
 
-Humans rely heavily on touch for dexterous manipulation. Turning a thin page, sliding a card out of a slot, squeezing toothpaste, handling a fragile egg, or opening a lock all require fast closed-loop reactions to contact, force, slip, and deformation.
+Many VLA policies can interpret instructions and visual context, but contact-rich dexterity often fails at a shorter time scale. Turning a page, extracting a card, squeezing toothpaste, handling an egg, or opening a lock requires quick reactions to force, slip, deformation, and contact geometry. Those signals are local and high-frequency, and the useful correction may need to happen before a slower visual policy replans.
 
-Most current VLA policies are still vision-heavy. They may use language and images well, but tactile feedback is often missing, encoded statically, or added as a simple extra observation channel. That is not enough for contact-rich dexterity because touch is different from vision in two ways:
+T-Rex addresses this frequency mismatch directly. It keeps a slow visual-language-action pathway for task progress and adds a fast tactile pathway for contact-level refinement. The result is a policy whose control loop is shaped by the sensing modality: vision carries broad context; touch adjusts the action when the physical interaction changes.
 
-- tactile signals are high-frequency and local;
-- useful tactile responses often need to happen inside an action chunk, before the slower visual policy replans.
+## Dataset and Training Recipe
 
-T-Rex targets this frequency mismatch. It keeps slow visuomotor planning for semantic task progress, then adds a fast tactile refinement path for contact-level correction.
+The **T-Rex Dataset** is collected on a fixed-base **Dexmate Vega-1** robot with two **Sharpa Wave** dexterous hands. The setup uses a head camera, two wrist cameras, five fingertip tactile sensors per hand, tactile force vectors, tactile deformation maps, Manus gloves, and VIVE trackers. The full dataset described in the paper contains **100 hours** of teleoperation, **7700+ trajectories**, **22 motor primitives**, **200+ daily objects**, and synchronized RGB, tactile, robot-state, action, and language streams. The public release currently contains about **50 hours** and **5400+ trajectories** in **LeRobot v3.0** format.
 
-## Dataset
+The data is designed for more than task cloning. By covering elementary motor primitives and object interactions, it gives the model reusable contact-rich building blocks during robot mid-training. The training recipe has three stages: first, the latent and action experts inherit broad visuomotor priors from EgoScale-style pretraining on **22,889 hours** of egocentric human video; second, robot mid-training on the T-Rex Dataset aligns those priors with bimanual actions and synchronized tactile feedback; third, task-specific post-training adapts the model with about **100 demonstrations** per downstream task. The recipe suggests that tactile reactivity can be learned efficiently in a dedicated robot stage, after large-scale visual pretraining.
 
-The **T-Rex Dataset** is a tactile-synchronized bimanual dexterous manipulation dataset collected on a real robot. The full dataset described in the paper contains:
+## Variable-Rate MoT
 
-- **100 hours** of teleoperation data;
-- **7700+ trajectories**;
-- **22 motor primitives**;
-- **200+ daily objects**;
-- synchronized RGB, tactile, robot state, action, and language data.
-
-The public release currently contains about **50 hours** and **5400+ trajectories** in **LeRobot v3.0** format.
-
-The robot platform is a fixed-base **Dexmate Vega-1** with two **Sharpa Wave** dexterous hands. The setup uses:
-
-- one ZED X Mini head camera;
-- two ZED X One S wrist cameras;
-- five fingertip tactile sensors per hand;
-- per-fingertip tactile force vectors;
-- tactile deformation maps;
-- Manus gloves and VIVE trackers for teleoperation.
-
-The released dataset includes head and wrist RGB videos, joint states and targets, raw tactile images, tactile deformation fields, and estimated 6D fingertip wrenches.
-
-This dataset design matters because it does not only collect full task demonstrations. It deliberately covers elementary motor primitives and object interactions, so mid-training can teach the model contact-rich building blocks that transfer to later tasks.
-
-## Model Overview
-
-T-Rex uses a **Mixture-of-Transformer-Experts** architecture with three experts:
+The model uses a **Mixture-of-Transformer-Experts** policy with three experts:
 
 | Expert | Role | Rate |
 |---|---|---|
@@ -76,108 +50,15 @@ T-Rex uses a **Mixture-of-Transformer-Experts** architecture with three experts:
 | Action Expert | Low-frequency action denoising | About 5 Hz |
 | Tactile Expert | High-frequency tactile refinement | About 20 Hz |
 
-The model receives RGB observations, language instructions, tactile force history, and tactile deformation maps. It predicts a future action chunk using flow matching.
+The action expert first produces an intermediate action chunk through flow matching, then the tactile expert refines it using fresh tactile observations. In the implementation, the action chunk length is **16**, denoising uses **10** Euler steps, the split is **τ_split = 0.4**, the action expert runs **6** slow steps, and the tactile expert runs **4** fast refinement steps. Tactile updates are triggered at offsets `{0, 4, 8, 12}` inside the chunk, so the model can react to new contact without rerunning the full vision-language stack.
 
-The key architectural idea is split control:
+The tactile encoder also matches the nature of the signal. For fingertip force, a per-finger **VQ-VAE** compresses recent 6D force/torque history into temporal tokens while preserving the current force vector for instantaneous contact. For deformation, a convolutional encoder processes tactile maps. The final tactile tokens combine temporal force, current force, and spatial deformation features, allowing the policy to distinguish events such as force spikes, gradual slip, and local surface deformation.
 
-```text
-slow visual-language planning
-  -> intermediate action chunk
-  -> fast tactile refinement
-  -> executable action chunk
-```
+## Empirical Evidence
 
-This keeps the expensive visual-language context cached, then lets the tactile expert update actions more frequently using fresh tactile observations.
+The benchmark contains **12 real-world tactile-reactive tasks**: Flip Page, Transfer Egg, Wipe Plate, Apply Toothpaste, Split Cup, Sort Mahjong, Open Lock, Refill Tablet, Acid-Base Neutralization, Extract Card, Deal Poker, and Screw Lightbulb. Each task is evaluated with **16 rollouts** under randomized object poses, and multi-stage tasks use progress-based scoring.
 
-## Spatial-Temporal Tactile Encoding
-
-T-Rex does not treat touch as a single static vector.
-
-For tactile force, it uses a per-finger **VQ-VAE** over recent force history. The encoder compresses a window of recent 6D force/torque signals into compact temporal tokens. It also keeps the current force vector to preserve instantaneous contact information.
-
-For tactile deformation, it uses a convolutional encoder over deformation maps.
-
-The final tactile token sequence combines:
-
-```text
-VQ-VAE temporal force token
-+ current force projection
-+ deformation-map feature
-```
-
-This is important because tactile information has both temporal and spatial structure. A force spike, a gradual slip, and a local deformation patch mean different things for action correction.
-
-## Cascaded Flow Matching
-
-The action generation process is split into slow and fast stages.
-
-The action expert first denoises from pure noise to an intermediate timestep:
-
-```text
-tau: 1 -> tau_split
-```
-
-Then the tactile expert continues from that intermediate state:
-
-```text
-tau_split -> 0
-```
-
-In the paper's implementation:
-
-- action chunk length is **16**;
-- total Euler denoising steps are **10**;
-- the split is at **tau_split = 0.4**;
-- the action expert runs **6** slow steps;
-- the tactile expert runs **4** fast refinement steps;
-- tactile updates are triggered at offsets `{0, 4, 8, 12}` inside the action chunk.
-
-The point is not just speed. The tactile expert can react to new contact signals without rerunning the full vision-language stack.
-
-## Training Recipe
-
-T-Rex uses a three-stage training recipe.
-
-**1. Large-scale human egocentric pretraining.**  
-Following EgoScale, the latent and action experts are pretrained on **22,889 hours** of egocentric human video. This gives the model broad visual-language and visuomotor priors.
-
-**2. Tactile-grounded robot mid-training.**  
-The model is then trained on the **100-hour T-Rex Dataset**, aligning the pretrained visuomotor representation with robot-executable bimanual actions and synchronized tactile feedback.
-
-**3. Skill-specific post-training.**  
-For downstream tasks, the model is fine-tuned with about **100 task demonstrations**.
-
-This recipe is a major part of the contribution. The paper argues that tactile capability does not need to be learned from scratch at pretraining scale. It can be acquired during a dedicated robot mid-training stage.
-
-## Evaluation Setup
-
-The benchmark includes **12 real-world tactile-reactive tasks** covering:
-
-- insertion;
-- deformation-aware manipulation;
-- force-sensitive interaction;
-- bimanual coordination;
-- extraction;
-- precise contact.
-
-Tasks include **Flip Page**, **Transfer Egg**, **Wipe Plate**, **Apply Toothpaste**, **Split Cup**, **Sort Mahjong**, **Open Lock**, **Refill Tablet**, **Acid-Base Neutralization**, **Extract Card**, **Deal Poker**, and **Screw Lightbulb**.
-
-Each task is evaluated with **16 rollouts** under randomized object positions and rotations. Multi-stage tasks use progress-based rubrics to capture partial completion.
-
-The baselines are:
-
-- **ViTacFormer**;
-- **RDP**;
-- **Tactile-VLA**;
-- **EgoScale**;
-- **π0.5**;
-- **π0.5 + tactile**.
-
-All methods use the same robot setup, action space, and evaluation protocol.
-
-## Main Results
-
-Average success across 12 tasks:
+Average success across the 12 tasks:
 
 | Method | Average Success |
 |---|---:|
@@ -189,13 +70,7 @@ Average success across 12 tasks:
 | π0.5 + tactile | 6% |
 | T-Rex | 65% |
 
-T-Rex is far ahead of the strongest baseline, EgoScale. The result also contains a subtle warning: **π0.5 + tactile performs worse than π0.5**. Naively adding tactile signals to a pretrained VLA can degrade performance.
-
-The paper's interpretation is that tactile feedback needs architectural support and training alignment. It is not just another low-dimensional state vector.
-
-## Ablations
-
-The tactile modality ablation is very clear:
+The main result supports the paper's central claim: tactile feedback is most useful when the policy can react with a separate fast pathway. The tactile ablation tells the same story:
 
 | Configuration | Average |
 |---|---:|
@@ -206,14 +81,7 @@ The tactile modality ablation is very clear:
 | MLP Force + VQ-VAE Force | 59% |
 | w/o Async | 60% |
 
-Several takeaways:
-
-- Removing tactile drops average success from **65%** to **42%**.
-- Force and deformation are complementary.
-- The VQ-VAE temporal force representation helps.
-- Asynchronous tactile refinement matters, though it is a smaller gap than removing tactile entirely.
-
-The training recipe ablation also supports the three-stage design:
+Removing tactile drops success from **65%** to **42%**. Force and deformation both help, the temporal VQ-VAE improves force modeling, and asynchronous refinement adds a smaller but still meaningful gain. The training ablation further supports the recipe:
 
 | Recipe | Average |
 |---|---:|
@@ -222,57 +90,13 @@ The training recipe ablation also supports the three-stage design:
 | Mid-training only | 45% |
 | Full recipe | 65% |
 
-Human egocentric pretraining provides broad priors, while tactile-grounded mid-training connects those priors to robot contact dynamics.
+The full system wins because it combines broad human-video priors with tactile-grounded robot mid-training. The code release reflects this split: the main branch includes post-training, inference, dataset quickstart, tactile VQ-VAE tools, and robot-side code, while pretraining and mid-training scripts are provided in the `full-pipeline` branch with released checkpoints.
 
-## Code and Release
+## Limitations and Takeaway
 
-The [GitHub repository](https://github.com/ZhuoyangLiu2005/T-Rex) is substantial. It includes:
+The paper notes that long-horizon tasks with tight contact tolerances remain difficult to teleoperate and learn from demonstrations alone. Reinforcement learning or online interaction-based refinement may be needed for those cases. It also highlights hardware constraints: tactile sensor distortion, calibration drift, cross-device variation, and the lack of dense palm sensing make tactile foundation policies harder to scale. A practical adoption issue is that T-Rex depends on a rich dexterous platform with fingertip tactile sensing, so broader use will depend on tactile hardware becoming more common and standardized.
 
-- `qwen_vla/`: the three-expert MoT model and VLA wrapper;
-- `tactile_vqvae/`: tactile VQ-VAE training and extraction code;
-- `scripts/train.py` and `scripts/test.py`: post-training and ZMQ inference server;
-- `dataset_quickstart/`: tools to browse, inspect, and replay the released dataset;
-- `hardware_code/`: teleoperation and robot-side inference stack;
-- `utils/`: data conversion, LeRobot support, and checkpoint tools.
-
-The README says the main branch ships post-training and inference code. Pretraining and mid-training scripts live in a separate `full-pipeline` branch, while pretrained and midtrained checkpoints are released on Hugging Face.
-
-## Why This Paper Matters
-
-T-Rex is interesting because it pushes tactile sensing into the foundation-policy discussion.
-
-Many recent robotics papers focus on scaling vision-language-action models, world models, or human egocentric pretraining. T-Rex says that for dexterous manipulation, scale and vision are not enough. The robot must react to physical contact in real time.
-
-The most important lesson is:
-
-**Tactile feedback is not just an observation modality. It changes the control frequency and architecture.**
-
-That is why the variable-rate MoT design matters. The slow expert handles visual-language planning; the fast expert handles contact-level corrections.
-
-## Limitations
-
-The paper points to two main limitations.
-
-First, some long-horizon tasks with tight contact tolerances are still difficult to teleoperate and learn from demonstrations alone. The authors suggest reinforcement learning or online interaction-based refinement as future directions.
-
-Second, tactile-reactive manipulation remains hardware-limited. Sensor distortion, calibration drift, cross-device tactile variation, and the lack of dense palm sensing all make tactile foundation policies harder to scale.
-
-I would add one more practical limitation: the system is tied to a rich dexterous platform with fingertip tactile sensors. This is exactly the right setup for the research question, but it also means adoption depends on tactile hardware becoming more common and standardized.
-
-## Takeaways
-
-T-Rex is best understood as a tactile counterpart to the recent VLA and ego-video scaling wave.
-
-The model uses human egocentric pretraining to get broad visuomotor priors, then uses tactile-rich robot mid-training to make those priors physically reactive. The strong result across 12 real-world tasks suggests that tactile grounding is not an optional add-on for dexterous manipulation. It is a core capability.
-
-For future robot learning, I would summarize the direction as:
-
-```text
-vision-language planning
-+ tactile-reactive refinement
-+ dexterous hardware
-= contact-rich manipulation that actually works
-```
+The clear takeaway is that tactile feedback changes the control problem. For dexterous manipulation, the policy needs slow vision-language planning plus fast tactile-reactive refinement. T-Rex is valuable because it turns that principle into a dataset, architecture, training recipe, and real-world benchmark result.
 
 </div>
 
@@ -282,59 +106,31 @@ vision-language planning
 
 ## TL;DR
 
-**T-Rex** 是一个 tactile-reactive dexterous manipulation 框架。它的核心观点是：灵巧操作 policy 不应该只会看图像和理解语言，还应该能以比普通 VLA 更高的频率 **感知触觉并做出反应**。
+**T-Rex** 的核心观点是：在灵巧操作里，触觉反馈应该被当作高频控制信号。按照这个视角，触觉属于控制循环的一部分：视觉和语言负责较慢的语义规划，触觉负责在一个 action chunk 内接触状态变化时做局部、快速的修正。
 
-论文贡献了三件彼此关联的东西：一个 **100 小时 tactile-synchronized bimanual dexterous manipulation dataset**，一个带 spatial-temporal tactile VQ-VAE encoder 的 **variable-rate Mixture-of-Transformer-Experts (MoT)** 模型，以及一个包含 **12 个 contact-rich tactile-reactive tasks** 的真实机器人 benchmark。T-Rex 结合了 large-scale human egocentric pretraining、tactile-grounded robot mid-training 和 task-specific post-training。
-
-最核心的结果很强：T-Rex 在 12 个真实任务上的平均成功率是 **65%**，而最强 baseline EgoScale 是 **35%**。一个特别重要的发现是，简单把 tactile signals 拼进 pretrained VLA 可能会让性能变差。触觉要发挥作用，需要能把它当成动态高频控制信号的 architecture 和 training recipe。
+论文把 tactile-synchronized bimanual robot dataset、variable-rate Mixture-of-Transformer-Experts (MoT) policy 和三阶段训练 recipe 结合起来。在 12 个真实 contact-rich tasks 上，T-Rex 平均成功率达到 **65%**，而最强 baseline EgoScale 是 **35%**。结果里一个很有价值的警告是：**π0.5 + tactile** 只有 **6%**，低于不加 tactile 的 π0.5，说明触觉信号需要匹配的 architecture 和 training alignment 才能真正发挥作用。
 
 ## Paper Info
 
-论文标题是 **"T-Rex: Tactile-Reactive Dexterous Manipulation"**，作者包括 **Dantong Niu, Zhuoyang Liu, Zekai Wang, Boning Shao, Zhao-Heng Yin, Anirudh Pai, Yuvan Sharma, Stefano Saravalle, Ruijie Zheng, Jing Wang, Ryan Punamiya, Mengda Xu, Yuqi Xie, Yunfan Jiang, Letian Fu, Konstantinos Kallidromitis, Matteo Gioia, Junyi Zhang, Jiaxin Ge, Haiwen Feng, Fabio Galasso, Wei Zhan, David M. Chan, Yutong Bai, Roei Herzig, Jiahui Lei, Fei-Fei Li, Ken Goldberg, Jitendra Malik, Pieter Abbeel, Yuke Zhu, Danfei Xu, Jim Fan, and Trevor Darrell**。
+论文标题是 **"T-Rex: Tactile-Reactive Dexterous Manipulation"**，作者包括 Dantong Niu, Zhuoyang Liu, Zekai Wang, Boning Shao, Zhao-Heng Yin, Anirudh Pai, Yuvan Sharma, Stefano Saravalle, Ruijie Zheng, Jing Wang, Ryan Punamiya, Mengda Xu, Yuqi Xie, Yunfan Jiang, Letian Fu, Konstantinos Kallidromitis, Matteo Gioia, Junyi Zhang, Jiaxin Ge, Haiwen Feng, Fabio Galasso, Wei Zhan, David M. Chan, Yutong Bai, Roei Herzig, Jiahui Lei, Fei-Fei Li, Ken Goldberg, Jitendra Malik, Pieter Abbeel, Yuke Zhu, Danfei Xu, Jim Fan, and Trevor Darrell。
 
-论文地址是 [arXiv:2606.17055](https://arxiv.org/abs/2606.17055)。项目页是 [tactile-rex.github.io](https://tactile-rex.github.io/)，代码在 [ZhuoyangLiu2005/T-Rex](https://github.com/ZhuoyangLiu2005/T-Rex)。公开数据集在 Hugging Face：[zekaiwang/trex_dataset](https://huggingface.co/datasets/zekaiwang/trex_dataset)。
+论文地址是 [arXiv:2606.17055](https://arxiv.org/abs/2606.17055)。项目页是 [tactile-rex.github.io](https://tactile-rex.github.io/)，代码在 [ZhuoyangLiu2005/T-Rex](https://github.com/ZhuoyangLiu2005/T-Rex)，数据集在 Hugging Face：[zekaiwang/trex_dataset](https://huggingface.co/datasets/zekaiwang/trex_dataset)。
 
-## 问题和动机
+## 核心论点
 
-人类灵巧操作高度依赖触觉。翻薄纸、从缝里抽卡、挤牙膏、拿脆弱的鸡蛋、开锁，这些任务都需要对接触、力、滑动和形变做快速闭环反应。
+很多 VLA policy 能理解语言指令和视觉上下文，但 contact-rich dexterity 的失败经常发生在更短的时间尺度上。翻纸、抽卡、挤牙膏、拿鸡蛋、开锁，都需要对力、滑动、形变和接触几何做快速反应。这些信号局部且高频，有用的修正往往需要在慢速视觉 policy 重新规划之前完成。
 
-当前大多数 VLA policy 仍然以视觉为主。它们可以用语言和图像做出不错的语义决策，但触觉反馈常常缺失，或者只被静态编码，或者被当成简单额外 observation channel。对 contact-rich dexterity 来说，这不够。
+T-Rex 直接处理这个频率错配。它保留慢速 vision-language-action 路径来推进任务语义进展，同时加入快速 tactile 路径来做接触级 refinement。这样，policy 的控制循环会随感知模态而分层：视觉提供全局上下文，触觉在物理交互变化时修正动作。
 
-触觉和视觉有两个关键差异：
+## 数据集和训练 Recipe
 
-- tactile signals 更高频、更局部；
-- 有用的触觉反应经常需要发生在一个 action chunk 内部，比慢速视觉 policy 重新规划更快。
+**T-Rex Dataset** 采集自固定基座的 **Dexmate Vega-1** 机器人和两只 **Sharpa Wave** dexterous hands。系统包含一个 head camera、两个 wrist cameras、每只手五个 fingertip tactile sensors、tactile force vectors、tactile deformation maps、Manus gloves 和 VIVE trackers。论文描述的完整数据集包含 **100 小时** teleoperation、**7700+ trajectories**、**22 个 motor primitives**、**200+ daily objects**，以及同步 RGB、tactile、robot state、action 和 language streams。当前公开 release 约 **50 小时**、**5400+ trajectories**，格式为 **LeRobot v3.0**。
 
-T-Rex 直接瞄准这个频率错配。它保留慢速 visuomotor planning 来处理语义任务进展，然后加入快速 tactile refinement 路径来做接触级修正。
+这个数据集的目标不只是克隆完整任务。它刻意覆盖 elementary motor primitives 和 object interactions，让模型在 robot mid-training 阶段获得可迁移的 contact-rich building blocks。训练 recipe 分三步：首先，latent expert 和 action expert 通过 EgoScale 风格的 **22,889 小时** egocentric human video pretraining 获得广泛 visuomotor priors；然后，在 T-Rex Dataset 上做 robot mid-training，把这些 priors 对齐到 bimanual robot actions 和同步 tactile feedback；最后，每个下游任务用大约 **100 条 demonstrations** 做 task-specific post-training。这个 recipe 说明，触觉反应能力可以在大规模视觉预训练之后，通过专门的机器人阶段高效获得。
 
-## Dataset
+## Variable-Rate MoT
 
-**T-Rex Dataset** 是一个在真实机器人上采集的 tactile-synchronized bimanual dexterous manipulation dataset。论文描述的完整数据集包含：
-
-- **100 小时** teleoperation data；
-- **7700+ trajectories**；
-- **22 个 motor primitives**；
-- **200+ daily objects**；
-- 同步 RGB、tactile、robot state、action 和 language data。
-
-当前公开 release 约 **50 小时**、**5400+ trajectories**，格式是 **LeRobot v3.0**。
-
-机器人平台是固定基座的 **Dexmate Vega-1**，搭配两只 **Sharpa Wave** dexterous hands。系统使用：
-
-- 一个 ZED X Mini head camera；
-- 两个 ZED X One S wrist cameras；
-- 每只手五个 fingertip tactile sensors；
-- 每个指尖的 tactile force vectors；
-- tactile deformation maps；
-- Manus gloves 和 VIVE trackers 做 teleoperation。
-
-公开数据包含 head/wrist RGB videos、joint states 和 targets、raw tactile images、tactile deformation fields，以及估计的 6D fingertip wrenches。
-
-这个数据设计很关键，因为它不只采集完整任务 demonstrations。它刻意覆盖 elementary motor primitives 和 object interactions，让 mid-training 可以学习能迁移到后续任务的 contact-rich building blocks。
-
-## Model Overview
-
-T-Rex 使用 **Mixture-of-Transformer-Experts** architecture，包含三个 experts：
+模型使用包含三个 experts 的 **Mixture-of-Transformer-Experts** policy：
 
 | Expert | Role | Rate |
 |---|---|---|
@@ -342,108 +138,15 @@ T-Rex 使用 **Mixture-of-Transformer-Experts** architecture，包含三个 expe
 | Action Expert | Low-frequency action denoising | About 5 Hz |
 | Tactile Expert | High-frequency tactile refinement | About 20 Hz |
 
-模型输入 RGB observations、language instructions、tactile force history 和 tactile deformation maps。它用 flow matching 预测未来 action chunk。
+Action expert 先通过 flow matching 生成中间 action chunk，tactile expert 再用最新 tactile observations 继续 refine。实现中，action chunk length 是 **16**，Euler denoising 共 **10** 步，split 位置是 **τ_split = 0.4**；action expert 运行 **6** 个 slow steps，tactile expert 运行 **4** 个 fast refinement steps。Tactile updates 在 chunk 内 `{0, 4, 8, 12}` 这些 offset 触发，因此模型可以响应新的接触信号，而不用重新运行完整 vision-language stack。
 
-关键 architecture idea 是把控制拆成两层：
+触觉编码方式也贴合信号本身。对 fingertip force，per-finger **VQ-VAE** 会把最近的 6D force/torque history 压缩成 temporal tokens，同时保留 current force vector 来表达瞬时接触。对 deformation，convolutional encoder 处理 tactile maps。最终 tactile tokens 结合 temporal force、current force 和 spatial deformation features，使 policy 能区分 force spike、缓慢滑动、局部表面形变等不同事件。
 
-```text
-slow visual-language planning
-  -> intermediate action chunk
-  -> fast tactile refinement
-  -> executable action chunk
-```
+## 实验证据
 
-这样可以缓存昂贵的 visual-language context，然后让 tactile expert 用最新 tactile observations 更高频地更新动作。
+Benchmark 包含 **12 个真实 tactile-reactive tasks**：Flip Page、Transfer Egg、Wipe Plate、Apply Toothpaste、Split Cup、Sort Mahjong、Open Lock、Refill Tablet、Acid-Base Neutralization、Extract Card、Deal Poker 和 Screw Lightbulb。每个任务评测 **16 次 rollout**，物体 pose 随机；多阶段任务使用 progress-based scoring。
 
-## Spatial-Temporal Tactile Encoding
-
-T-Rex 没有把触觉当成单帧静态向量。
-
-对 tactile force，它使用 per-finger **VQ-VAE** 处理最近一段 force history。encoder 会把最近的 6D force/torque signals 压缩成 compact temporal tokens。同时，它也保留 current force vector 来表达瞬时接触。
-
-对 tactile deformation，它使用 convolutional encoder 处理 deformation maps。
-
-最终 tactile token sequence 结合了：
-
-```text
-VQ-VAE temporal force token
-+ current force projection
-+ deformation-map feature
-```
-
-这很重要，因为 tactile information 同时有时间结构和空间结构。force spike、缓慢滑动、局部形变 patch，对 action correction 来说含义完全不同。
-
-## Cascaded Flow Matching
-
-动作生成被分成慢速和快速两个阶段。
-
-Action expert 先从纯噪声 denoise 到中间 timestep：
-
-```text
-tau: 1 -> tau_split
-```
-
-然后 tactile expert 从中间状态继续 denoise：
-
-```text
-tau_split -> 0
-```
-
-论文实现里：
-
-- action chunk length 是 **16**；
-- 总 Euler denoising steps 是 **10**；
-- split 在 **tau_split = 0.4**；
-- action expert 运行 **6** 个 slow steps；
-- tactile expert 运行 **4** 个 fast refinement steps；
-- tactile updates 在 action chunk 内的 `{0, 4, 8, 12}` 这些 offset 触发。
-
-重点不只是速度。tactile expert 可以使用新的接触信号做反应，而不需要重新跑完整的 vision-language stack。
-
-## Training Recipe
-
-T-Rex 使用三阶段训练。
-
-**1. Large-scale human egocentric pretraining.**  
-沿用 EgoScale，latent expert 和 action expert 先在 **22,889 小时** egocentric human video 上预训练。这一步提供广泛的 visual-language 和 visuomotor priors。
-
-**2. Tactile-grounded robot mid-training.**  
-然后模型在 **100 小时 T-Rex Dataset** 上训练，把 pretrained visuomotor representation 对齐到 robot-executable bimanual actions 和同步 tactile feedback。
-
-**3. Skill-specific post-training.**  
-对下游任务，模型再用约 **100 条 task demonstrations** fine-tune。
-
-这个 recipe 是论文的主要贡献之一。论文认为触觉能力不一定要在 pretraining scale 从零学出来，它可以在专门的 robot mid-training 阶段被高效获得。
-
-## Evaluation Setup
-
-Benchmark 包含 **12 个真实世界 tactile-reactive tasks**，覆盖：
-
-- insertion；
-- deformation-aware manipulation；
-- force-sensitive interaction；
-- bimanual coordination；
-- extraction；
-- precise contact。
-
-任务包括 **Flip Page**、**Transfer Egg**、**Wipe Plate**、**Apply Toothpaste**、**Split Cup**、**Sort Mahjong**、**Open Lock**、**Refill Tablet**、**Acid-Base Neutralization**、**Extract Card**、**Deal Poker** 和 **Screw Lightbulb**。
-
-每个任务评测 **16 次 rollout**，物体位置和姿态随机。多阶段任务使用 progress-based rubrics 来计算部分完成度。
-
-Baselines 包括：
-
-- **ViTacFormer**；
-- **RDP**；
-- **Tactile-VLA**；
-- **EgoScale**；
-- **π0.5**；
-- **π0.5 + tactile**。
-
-所有方法使用相同 robot setup、action space 和 evaluation protocol。
-
-## Main Results
-
-12 个任务平均成功率：
+12 个任务的平均成功率：
 
 | Method | Average Success |
 |---|---:|
@@ -455,13 +158,7 @@ Baselines 包括：
 | π0.5 + tactile | 6% |
 | T-Rex | 65% |
 
-T-Rex 明显超过最强 baseline EgoScale。这个结果里还有一个很微妙但重要的警告：**π0.5 + tactile 比 π0.5 更差**。简单给 pretrained VLA 拼上 tactile signals 可能会破坏性能。
-
-论文的解释是：触觉反馈需要 architecture support 和 training alignment。它不是另一个低维 state vector。
-
-## Ablations
-
-Tactile modality ablation 非常清楚：
+主结果支持论文的中心论点：当 policy 有单独的快速路径时，触觉反馈最有价值。Tactile ablation 也给出同样结论：
 
 | Configuration | Average |
 |---|---:|
@@ -472,14 +169,7 @@ Tactile modality ablation 非常清楚：
 | MLP Force + VQ-VAE Force | 59% |
 | w/o Async | 60% |
 
-几个 takeaway：
-
-- 去掉 tactile 后，平均成功率从 **65%** 掉到 **42%**。
-- Force 和 deformation 互补。
-- VQ-VAE temporal force representation 有帮助。
-- Asynchronous tactile refinement 也有收益，不过 gap 小于完全去掉 tactile。
-
-训练 recipe ablation 也支持三阶段设计：
+去掉 tactile 后，成功率从 **65%** 降到 **42%**。Force 和 deformation 都有贡献，temporal VQ-VAE 改善了 force modeling，asynchronous refinement 也带来较小但明确的收益。训练 ablation 进一步支持这个 recipe：
 
 | Recipe | Average |
 |---|---:|
@@ -488,56 +178,12 @@ Tactile modality ablation 非常清楚：
 | Mid-training only | 45% |
 | Full recipe | 65% |
 
-Human egocentric pretraining 提供广泛 priors，tactile-grounded mid-training 把这些 priors 连接到机器人接触动力学。
+完整系统的优势来自 broad human-video priors 和 tactile-grounded robot mid-training 的结合。代码发布也对应这种拆分：main branch 包含 post-training、inference、dataset quickstart、tactile VQ-VAE tools 和 robot-side code；pretraining/mid-training scripts 在 `full-pipeline` branch，相关 checkpoints 已发布。
 
-## Code and Release
+## 局限和 Takeaway
 
-[GitHub 仓库](https://github.com/ZhuoyangLiu2005/T-Rex) 很完整，包含：
+论文指出，带有高接触精度要求的 long-horizon tasks 仍然很难 teleoperate，也很难只靠 demonstrations 学好，未来可能需要 reinforcement learning 或 online interaction-based refinement。论文还强调硬件限制：tactile sensor distortion、calibration drift、跨设备 tactile variation，以及缺少 dense palm sensing，都会让 tactile foundation policies 更难 scale。一个现实层面的限制是，T-Rex 依赖带 fingertip tactile sensing 的高能力 dexterous platform，因此更广泛的使用还取决于 tactile hardware 的普及和标准化。
 
-- `qwen_vla/`：three-expert MoT model 和 VLA wrapper；
-- `tactile_vqvae/`：tactile VQ-VAE training 和 extraction code；
-- `scripts/train.py` 和 `scripts/test.py`：post-training 和 ZMQ inference server；
-- `dataset_quickstart/`：浏览、检查和 replay 公开 dataset 的工具；
-- `hardware_code/`：teleoperation 和 robot-side inference stack；
-- `utils/`：data conversion、LeRobot support 和 checkpoint tools。
-
-README 说明 main branch 发布的是 post-training 和 inference code。Pretraining/midtraining scripts 在单独的 `full-pipeline` branch 里，pretrained 和 midtrained checkpoints 已经在 Hugging Face 发布。
-
-## Why This Paper Matters
-
-T-Rex 有意思的地方在于，它把 tactile sensing 拉进了 foundation policy 的讨论中心。
-
-最近很多机器人论文在 scale vision-language-action models、world models 或 human egocentric pretraining。T-Rex 的观点是：对 dexterous manipulation 来说，scale 和 vision 还不够。机器人必须能实时响应物理接触。
-
-最重要的 lesson 是：
-
-**Tactile feedback is not just an observation modality. It changes the control frequency and architecture.**
-
-这也是 variable-rate MoT design 的意义。慢 expert 负责 visual-language planning，快 expert 负责 contact-level corrections。
-
-## Limitations
-
-论文指出两个主要限制。
-
-第一，对一些 contact coordination 精度要求很高、teleoperation 本身很难的长程任务，仅靠 demonstrations 仍然不够。作者建议未来可以结合 reinforcement learning 或 online interaction-based refinement。
-
-第二，tactile-reactive manipulation 仍然受限于硬件。Sensor distortion、calibration drift、跨设备 tactile variation，以及缺少 dense palm sensing，都会让 tactile foundation policies 更难 scale。
-
-我会再补充一个现实限制：系统依赖带 fingertip tactile sensors 的高能力 dexterous platform。这正好匹配研究问题，但也意味着这条路线的普及依赖 tactile hardware 变得更常见、更标准化。
-
-## Takeaways
-
-T-Rex 可以看作最近 VLA 和 ego-video scaling 浪潮里的 tactile counterpart。
-
-模型用 human egocentric pretraining 获得广泛 visuomotor priors，再用 tactile-rich robot mid-training 让这些 priors 具备物理反应能力。12 个真实任务上的强结果说明，tactile grounding 对 dexterous manipulation 不是可选项，而是核心能力。
-
-我会把这个方向总结成：
-
-```text
-vision-language planning
-+ tactile-reactive refinement
-+ dexterous hardware
-= contact-rich manipulation that actually works
-```
+最清晰的 takeaway 是：触觉反馈改变了控制问题本身。对 dexterous manipulation 来说，policy 需要慢速 vision-language planning，也需要快速 tactile-reactive refinement。T-Rex 的价值在于，它把这个原则落实成了数据集、architecture、training recipe 和真实机器人 benchmark 结果。
 
 </div>
