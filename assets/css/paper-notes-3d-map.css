@@ -53,11 +53,11 @@
   min-height: 620px;
   border-radius: 8px;
   background:
-    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.92), rgba(244, 249, 254, 0.64) 38%, rgba(237, 244, 252, 0.88) 100%),
-    linear-gradient(180deg, #f9fbfe 0%, #eef5fb 100%);
-  border: 1px solid #d8e1ea;
+    radial-gradient(circle at 48% 34%, rgba(58, 72, 92, 0.34), rgba(24, 29, 39, 0.72) 38%, rgba(14, 17, 24, 0.96) 100%),
+    linear-gradient(180deg, #1c222d 0%, #10141c 100%);
+  border: 1px solid #263140;
   overflow: hidden;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 14px 36px rgba(16, 20, 28, 0.08);
 }
 
 .paper-notes-3d__stage canvas {
@@ -72,10 +72,10 @@
   bottom: 1rem;
   max-width: calc(100% - 2rem);
   padding: 0.38rem 0.55rem;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(204, 216, 229, 0.82);
+  background: rgba(17, 24, 35, 0.72);
+  border: 1px solid rgba(139, 154, 176, 0.28);
   border-radius: 6px;
-  color: #506177;
+  color: #d8e2ef;
   font-size: 0.76rem;
   backdrop-filter: blur(8px);
 }

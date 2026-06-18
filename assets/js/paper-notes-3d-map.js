@@ -292,14 +292,14 @@ function renderScene(posts, points, labels, clusters) {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xf8fbfe);
-  scene.fog = new THREE.Fog(0xf8fbfe, 18, 34);
+  scene.background = new THREE.Color(0x111722);
+  scene.fog = new THREE.Fog(0x111722, 17, 33);
 
   const camera = new THREE.PerspectiveCamera(48, 1, 0.1, 1000);
   camera.position.set(0, 2.5, 17);
 
-  scene.add(new THREE.AmbientLight(0xffffff, 1.35));
-  const light = new THREE.DirectionalLight(0xffffff, 1.4);
+  scene.add(new THREE.AmbientLight(0xdde7ff, 1.05));
+  const light = new THREE.DirectionalLight(0xffffff, 1.75);
   light.position.set(5, 8, 9);
   scene.add(light);
 
@@ -307,9 +307,9 @@ function renderScene(posts, points, labels, clusters) {
   const horizon = new THREE.Mesh(
     new THREE.PlaneGeometry(18, 18, 1, 1),
     new THREE.MeshBasicMaterial({
-      color: 0xffffff,
+      color: 0x172131,
       transparent: true,
-      opacity: 0.3,
+      opacity: 0.5,
       depthWrite: false
     })
   );
@@ -317,12 +317,12 @@ function renderScene(posts, points, labels, clusters) {
   horizon.position.y = -6.08;
   group.add(horizon);
 
-  const grid = new THREE.GridHelper(15, 10, 0xd6e2ef, 0xeaf1f8);
+  const grid = new THREE.GridHelper(15, 10, 0x5c6f8a, 0x2b3546);
   grid.position.y = -6;
   const gridMaterials = Array.isArray(grid.material) ? grid.material : [grid.material];
   gridMaterials.forEach((material) => {
     material.transparent = true;
-    material.opacity = 0.22;
+    material.opacity = 0.2;
     material.depthWrite = false;
   });
   group.add(grid);
@@ -343,7 +343,7 @@ function renderScene(posts, points, labels, clusters) {
     halo.scale.set(radius * 1.15, radius * 0.72, radius * 1.15);
     halo.userData = {
       cluster,
-      targetOpacity: 0.065
+      targetOpacity: 0.095
     };
     group.add(halo);
     haloMeshes.push(halo);
@@ -410,7 +410,7 @@ function renderScene(posts, points, labels, clusters) {
     haloMeshes.forEach((halo) => {
       const sameCluster = focusClusterId !== null && halo.userData.cluster.id === focusClusterId;
       const isDimmed = focusClusterId !== null && !sameCluster;
-      halo.userData.targetOpacity = sameCluster ? 0.14 : isDimmed ? 0.012 : 0.065;
+      halo.userData.targetOpacity = sameCluster ? 0.18 : isDimmed ? 0.018 : 0.095;
     });
 
     clusterCards.forEach((card) => {
