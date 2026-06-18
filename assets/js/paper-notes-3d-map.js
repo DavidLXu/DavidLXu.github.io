@@ -241,13 +241,47 @@ function makeClusters(posts, matrix, vocab, labels) {
   }).sort((a, b) => b.papers.length - a.papers.length || a.name.localeCompare(b.name));
 }
 
+function hexToRgb(value) {
+  return {
+    r: (value >> 16) & 255,
+    g: (value >> 8) & 255,
+    b: value & 255
+  };
+}
+
 function renderClusterList(clusters) {
-  CLUSTERS_EL.innerHTML = clusters.map((cluster) => `
-    <section class="paper-notes-3d__cluster">
-      <h3><span class="paper-notes-3d__swatch" style="background:${cluster.colorCss}"></span>${cluster.name} (${cluster.papers.length})</h3>
-      <p class="paper-notes-3d__keywords">${cluster.keywords.join(", ")}</p>
-    </section>
-  `).join("");
+  CLUSTERS_EL.innerHTML = clusters.map((cluster) => {
+    const { r, g, b } = hexToRgb(cluster.color);
+    return `
+    <button class="paper-notes-3d__cluster" type="button" data-cluster-id="${cluster.id}" style="--cluster-color:${cluster.colorCss}; --cluster-glow:rgba(${r}, ${g}, ${b}, 0.18);">
+      <span class="paper-notes-3d__cluster-title">
+        <span class="paper-notes-3d__swatch" style="background:${cluster.colorCss}"></span>
+        <span>${cluster.name}</span>
+        <span class="paper-notes-3d__count">${cluster.papers.length}</span>
+      </span>
+      <span class="paper-notes-3d__keywords">${cluster.keywords.join(", ")}</span>
+    </button>
+  `;
+  }).join("");
+}
+
+function clusterExtents(points, labels, clusterId) {
+  const members = points.filter((_, i) => labels[i] === clusterId);
+  const center = members.reduce((sum, point) => {
+    sum[0] += point[0];
+    sum[1] += point[1];
+    sum[2] += point[2];
+    return sum;
+  }, [0, 0, 0]).map((value) => value / Math.max(1, members.length));
+
+  const spread = members.reduce((sum, point) => {
+    return sum + Math.hypot(point[0] - center[0], point[1] - center[1], point[2] - center[2]);
+  }, 0) / Math.max(1, members.length);
+
+  return {
+    center,
+    radius: Math.max(0.9, Math.min(2.8, spread * 0.82 + 0.55))
+  };
 }
 
 function renderScene(posts, points, labels, clusters) {
@@ -258,21 +292,63 @@ function renderScene(posts, points, labels, clusters) {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xf6f8fb);
+  scene.background = new THREE.Color(0xf8fbfe);
+  scene.fog = new THREE.Fog(0xf8fbfe, 18, 34);
 
   const camera = new THREE.PerspectiveCamera(48, 1, 0.1, 1000);
   camera.position.set(0, 2.5, 17);
 
-  scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+  scene.add(new THREE.AmbientLight(0xffffff, 1.35));
   const light = new THREE.DirectionalLight(0xffffff, 1.4);
   light.position.set(5, 8, 9);
   scene.add(light);
 
-  const grid = new THREE.GridHelper(15, 15, 0xc8d3df, 0xe0e7ef);
-  grid.position.y = -6;
-  scene.add(grid);
-
   const group = new THREE.Group();
+  const horizon = new THREE.Mesh(
+    new THREE.PlaneGeometry(18, 18, 1, 1),
+    new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.3,
+      depthWrite: false
+    })
+  );
+  horizon.rotation.x = -Math.PI / 2;
+  horizon.position.y = -6.08;
+  group.add(horizon);
+
+  const grid = new THREE.GridHelper(15, 10, 0xd6e2ef, 0xeaf1f8);
+  grid.position.y = -6;
+  const gridMaterials = Array.isArray(grid.material) ? grid.material : [grid.material];
+  gridMaterials.forEach((material) => {
+    material.transparent = true;
+    material.opacity = 0.22;
+    material.depthWrite = false;
+  });
+  group.add(grid);
+
+  const haloMeshes = [];
+  const haloGeometry = new THREE.SphereGeometry(1, 40, 24);
+  clusters.forEach((cluster) => {
+    const { center, radius } = clusterExtents(points, labels, cluster.id);
+    const material = new THREE.MeshBasicMaterial({
+      color: cluster.color,
+      transparent: true,
+      opacity: 0,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
+    });
+    const halo = new THREE.Mesh(haloGeometry, material);
+    halo.position.set(center[0], center[1], center[2]);
+    halo.scale.set(radius * 1.15, radius * 0.72, radius * 1.15);
+    halo.userData = {
+      cluster,
+      targetOpacity: 0.065
+    };
+    group.add(halo);
+    haloMeshes.push(halo);
+  });
+
   const pointMeshes = [];
   const geometry = new THREE.SphereGeometry(0.16, 24, 16);
   posts.forEach((post, i) => {
@@ -282,11 +358,20 @@ function renderScene(posts, points, labels, clusters) {
       roughness: 0.42,
       metalness: 0.08,
       emissive: cluster.color,
-      emissiveIntensity: 0.08
+      emissiveIntensity: 0.08,
+      transparent: true,
+      opacity: 0
     });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(points[i][0], points[i][1], points[i][2]);
-    mesh.userData = { post, cluster };
+    mesh.userData = {
+      post,
+      cluster,
+      targetOpacity: 0.86,
+      targetScale: 1,
+      targetEmissive: 0.08
+    };
+    mesh.scale.setScalar(0.001);
     group.add(mesh);
     pointMeshes.push(mesh);
   });
@@ -294,7 +379,9 @@ function renderScene(posts, points, labels, clusters) {
 
   const raycaster = new THREE.Raycaster();
   const mouse = new THREE.Vector2();
+  const clusterCards = Array.from(CLUSTERS_EL.querySelectorAll(".paper-notes-3d__cluster"));
   let active = null;
+  let selectedClusterId = null;
   let dragging = false;
   let pointerInside = false;
   let hasHoverPosition = false;
@@ -306,6 +393,44 @@ function renderScene(posts, points, labels, clusters) {
   let targetRotationY = 0.45;
   group.rotation.x = targetRotationX;
   group.rotation.y = targetRotationY;
+
+  function updateEmphasis() {
+    const hoverClusterId = active?.userData.cluster.id ?? null;
+    const focusClusterId = hoverClusterId ?? selectedClusterId;
+
+    pointMeshes.forEach((mesh) => {
+      const sameCluster = focusClusterId !== null && mesh.userData.cluster.id === focusClusterId;
+      const isActive = mesh === active;
+      const isDimmed = focusClusterId !== null && !sameCluster;
+      mesh.userData.targetOpacity = isDimmed ? 0.18 : sameCluster ? 0.94 : 0.86;
+      mesh.userData.targetScale = isActive ? 1.72 : sameCluster ? 1.22 : isDimmed ? 0.78 : 1;
+      mesh.userData.targetEmissive = isActive ? 0.62 : sameCluster ? 0.26 : 0.08;
+    });
+
+    haloMeshes.forEach((halo) => {
+      const sameCluster = focusClusterId !== null && halo.userData.cluster.id === focusClusterId;
+      const isDimmed = focusClusterId !== null && !sameCluster;
+      halo.userData.targetOpacity = sameCluster ? 0.14 : isDimmed ? 0.012 : 0.065;
+    });
+
+    clusterCards.forEach((card) => {
+      const clusterId = Number(card.getAttribute("data-cluster-id"));
+      const isActive = focusClusterId !== null && clusterId === focusClusterId;
+      card.classList.toggle("is-active", isActive);
+      card.classList.toggle("is-muted", focusClusterId !== null && !isActive);
+      card.setAttribute("aria-pressed", selectedClusterId === clusterId ? "true" : "false");
+    });
+  }
+
+  clusterCards.forEach((card) => {
+    const clusterId = Number(card.getAttribute("data-cluster-id"));
+    card.setAttribute("aria-pressed", "false");
+    card.addEventListener("click", () => {
+      selectedClusterId = selectedClusterId === clusterId ? null : clusterId;
+      updateEmphasis();
+    });
+  });
+  updateEmphasis();
 
   function resize() {
     const rect = CANVAS.parentElement.getBoundingClientRect();
@@ -341,7 +466,9 @@ function renderScene(posts, points, labels, clusters) {
     hoverPreviousY = event.clientY;
     hasHoverPosition = true;
 
-    active = pickPoint();
+    const nextActive = pickPoint();
+    const activeChanged = nextActive !== active;
+    active = nextActive;
     if (active) {
       const { post, cluster } = active.userData;
       TOOLTIP.innerHTML = `<strong>${post.title}</strong>${cluster.name}<br>${post.date}<br>Click to open note`;
@@ -352,6 +479,7 @@ function renderScene(posts, points, labels, clusters) {
       TOOLTIP.style.opacity = "0";
       CANVAS.style.cursor = dragging ? "grabbing" : "grab";
     }
+    if (activeChanged) updateEmphasis();
   });
 
   CANVAS.addEventListener("pointerdown", (event) => {
@@ -392,6 +520,7 @@ function renderScene(posts, points, labels, clusters) {
     pointerInside = false;
     hasHoverPosition = false;
     TOOLTIP.style.opacity = "0";
+    updateEmphasis();
   });
 
   CANVAS.addEventListener("click", (event) => {
@@ -402,11 +531,23 @@ function renderScene(posts, points, labels, clusters) {
 
   window.addEventListener("resize", resize);
   resize();
+  const startTime = performance.now();
 
   function animate() {
+    const intro = Math.min(1, (performance.now() - startTime) / 1150);
+    const introEase = 1 - (1 - intro) ** 3;
     if (!dragging && !pointerInside) targetRotationY += 0.0022;
     group.rotation.x += (targetRotationX - group.rotation.x) * 0.08;
     group.rotation.y += (targetRotationY - group.rotation.y) * 0.08;
+    pointMeshes.forEach((mesh) => {
+      const targetScale = Math.max(0.001, mesh.userData.targetScale * introEase);
+      mesh.scale.setScalar(mesh.scale.x + (targetScale - mesh.scale.x) * 0.12);
+      mesh.material.opacity += ((mesh.userData.targetOpacity * introEase) - mesh.material.opacity) * 0.12;
+      mesh.material.emissiveIntensity += (mesh.userData.targetEmissive - mesh.material.emissiveIntensity) * 0.12;
+    });
+    haloMeshes.forEach((halo) => {
+      halo.material.opacity += ((halo.userData.targetOpacity * introEase) - halo.material.opacity) * 0.08;
+    });
     camera.lookAt(0, 0, 0);
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
