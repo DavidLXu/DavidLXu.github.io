@@ -42,7 +42,7 @@ Backdrivability and active compliance should be separated conceptually. Mechanic
 
 ## The Software Stack Is a Core Moat
 
-For an embodied-intelligence company, durable capability comes from both the machine and the software system around it. Individual models can often be reproduced; a reliable pipeline spanning hardware, data, training, deployment, and diagnosis takes much longer to build. Three systems are especially important.
+For an embodied-intelligence company, durable capability comes from both the machine and the software system around it. Individual models can often be reproduced; a reliable pipeline spanning hardware, data, training, deployment, and diagnosis takes much longer to build. Four systems are especially important.
 
 ### 1. Embodiment and motion control
 
@@ -56,7 +56,13 @@ Teleoperation is both a control interface and a data-production system. Whole-bo
 
 For a seven-degree-of-freedom arm, one end-effector pose admits many joint-space solutions. This null-space freedom can produce unnatural elbows, self-collision, or discontinuous motion. A practical system constrains it through multi-objective optimization: extra trackers provide body context, secondary objectives favor human-like posture and joint margins, or a learned model predicts a stable configuration. Good teleoperation therefore depends as much on redundancy resolution and ergonomics as on pose tracking accuracy.
 
-### 3. Training and deployment
+### 3. Data collection
+
+Data collection connects teleoperation to learning. Its front end should let operators label an episode and control recording without interrupting the manipulation itself. Keyboard and mouse shortcuts or foot pedals provide simple inputs for marking success or failure, pausing, and ending a recording while the operator's hands remain on the teleoperation devices.
+
+The back end synchronizes streams from robot proprioception, wrist and head cameras, tactile sensors, and force sensors against a shared clock. It can preserve each raw episode in MCAP or a similar container, together with timestamps, calibration, and task metadata, then convert the result into a training format such as LeRobot or HDF5. A production system should support streaming writes and transfers, integrity checks, retryable uploads, and automatic cloud ingestion so that newly collected data enters the training pipeline with minimal manual handling.
+
+### 4. Training and deployment
 
 An early-stage team can reproduce an open-source policy manually. A mature robotics organization needs a repeatable production loop: automatically ingest collected data, validate and version it, launch training, save checkpoints, deploy a selected model, run tests, and inspect every joint and subsystem during evaluation.
 
@@ -142,7 +148,7 @@ That is a reason for patience, not pessimism. Progress comes from reducing one s
 
 ## 软件系统是核心壁垒
 
-对具身智能公司而言，长期能力同时来自机器本体和围绕它构建的软件系统。单个模型往往可以复现，贯穿硬件、数据、训练、部署和诊断的可靠链路却需要长期积累。其中有三个系统尤其重要。
+对具身智能公司而言，长期能力同时来自机器本体和围绕它构建的软件系统。单个模型往往可以复现，贯穿硬件、数据、训练、部署和诊断的可靠链路却需要长期积累。其中有四个系统尤其重要。
 
 ### 1. 本体运控系统
 
@@ -156,7 +162,13 @@ That is a reason for patience, not pessimism. Progress comes from reducing one s
 
 七自由度机械臂到达同一末端位姿时，关节空间存在多组解。零空间自由度处理不当，会产生不自然的肘部姿态、自碰撞或运动跳变。工程系统通常采用多目标优化约束它：增加定位器以提供身体上下文，用次要目标约束仿人姿态和关节余量，或者用学习模型预测稳定构型。遥操质量因此同时取决于冗余度求解、人体工学和位姿追踪精度。
 
-### 3. 训练与部署系统
+### 3. 数采系统
+
+数采系统连接遥操与学习。前端要让数采人员在不打断操作的情况下标记 episode 并控制录制。键盘、鼠标快捷键或脚踏板都可以作为简单可靠的入口，用于标记成功或失败、暂停以及结束录制，让操作者的双手继续留在遥操设备上。
+
+后端负责用统一时钟同步机器人本体感知、腕部与头部相机、触觉传感器和力传感器等数据流。每段原始数据可以连同时间戳、标定信息和任务元数据先保存为 MCAP 等容器格式，再转换成 LeRobot 或 HDF5 等训练格式。成熟的系统还应支持流式写入与传输、完整性检查、失败重试和自动上云，让新采集的数据无需大量人工搬运即可进入训练流水线。
+
+### 4. 训练与部署系统
 
 初创团队可以手工复现开源策略，成熟的机器人公司则需要可重复的生产闭环：自动接入采集数据，完成校验与版本管理，启动训练并定期保存 checkpoint，选择模型后一键部署、测试，同时观察评测期间每个关节和子系统的状态。
 
