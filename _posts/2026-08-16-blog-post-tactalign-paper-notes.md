@@ -1,6 +1,6 @@
 ---
 title: "[Paper Notes] TactAlign: Human-to-Robot Policy Transfer via Tactile Alignment"
-date: 2026-08-14
+date: 2026-08-16
 permalink: /posts/2026/08/tactalign-paper-notes/
 tags:
   - Tactile Sensing
