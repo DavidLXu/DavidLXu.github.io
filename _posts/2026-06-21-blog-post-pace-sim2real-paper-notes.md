@@ -7,6 +7,7 @@ tags:
   - Sim-to-Real
   - System Identification
   - Actuator Modeling
+  - Energy-Efficient Locomotion
   - Reinforcement Learning
   - Paper Notes
 ---
@@ -15,15 +16,19 @@ tags:
 
 This post supports **English / 中文** switching via the site language toggle in the top navigation.
 
+## Which PACE Is This?
+
+This article covers **PACE: Precise Adaptation through Continuous Evolution**, the ETH Zurich pipeline for identifying joint-space dynamics and training energy-efficient legged-robot policies. It is distinct from **PACE: Phase-Aware Chunk Execution**, a test-time method that dynamically chooses how much of a predicted robot-action chunk to execute before replanning. The latter is covered in a separate note: [PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking](/posts/2026/08/pace-phase-aware-chunk-execution-paper-notes/).
+
 ## TL;DR
 
-**PACE** is a sim-to-real pipeline for legged robots that treats actuator and joint dynamics as the main reality gap. The key move is practical: collect short fixed-base, in-air encoder trajectories, fit a compact physical parameterization in simulation with CMA-ES, then train locomotion policies directly in the fitted simulator without dynamics randomization. The paper is useful if you are thinking about parameter identification as an alternative to ActuatorNet-style black-box actuator modeling.
+**PACE** is a sim-to-real pipeline for legged robots that treats actuator and joint dynamics as the main reality gap. The key move is practical: collect short fixed-base, in-air encoder trajectories, fit a compact physical parameterization in simulation with CMA-ES, then train locomotion policies directly in the fitted simulator without actuator-dynamics randomization. The published pipeline also introduces a four-term locomotion reward whose dominant regularizer is a physics-grounded PMSM energy model. The paper is useful if you are thinking about parameter identification as an alternative to ActuatorNet-style black-box actuator modeling, or physical energy accounting as an alternative to a long list of heuristic penalties.
 
-My read: PACE is strongest as a **joint-space dynamics alignment recipe**. It does not try to learn a full residual simulator. It fits per-joint effective inertia, viscous damping, Coulomb friction, joint bias, and one global command delay. That gives a small parameter vector, enough physical meaning to debug, and a workflow that works even when the robot has only joint encoders and no joint torque sensors.
+My read: PACE's most reusable contribution is the **joint-space dynamics alignment recipe**. It fits per-joint effective inertia, viscous damping, Coulomb friction, joint bias, and one global command delay instead of learning a full residual simulator. That gives a small parameter vector, enough physical meaning to debug, and a workflow that works even when the robot has only joint encoders and no joint torque sensors. The energy-aware policy objective then uses that aligned simulator to optimize electrical, mechanical, and gravitational energy in shared physical units.
 
 ## Paper and Resources
 
-The paper is **"Towards Bridging the Gap: Systematic Sim-to-Real Transfer for Diverse Legged Robots"** by **Filip Bjelonic, Fabian Tischhauser, and Marco Hutter** from ETH Zurich's Robotic Systems Lab. It is available as [arXiv:2509.06342](https://arxiv.org/abs/2509.06342), with the project code at [leggedrobotics/pace-sim2real](https://github.com/leggedrobotics/pace-sim2real), documentation at [pace.filipbjelonic.com](https://pace.filipbjelonic.com/), and an ETH Research Collection dataset for actuator model identification and locomotion experiments at [PACE Dataset for Sim-to-Real Transfer in Legged Robots](https://www.research-collection.ethz.ch/items/ea53e17a-76eb-460f-81ba-6e65f7078539).
+The paper is **"Towards Bridging the Gap: Systematic Sim-to-Real Transfer for Diverse Legged Robots"** by **Filip Bjelonic, Fabian Tischhauser, and Marco Hutter** from ETH Zurich's Robotic Systems Lab. This note has been refreshed against [arXiv:2509.06342v2](https://arxiv.org/abs/2509.06342), revised July 31, 2026, and the published *International Journal of Robotics Research* version ([DOI: 10.1177/02783649261459628](https://doi.org/10.1177/02783649261459628)). Project code is available at [leggedrobotics/pace-sim2real](https://github.com/leggedrobotics/pace-sim2real), documentation at [pace.filipbjelonic.com](https://pace.filipbjelonic.com/), and the identification/locomotion dataset at [PACE Dataset for Sim-to-Real Transfer in Legged Robots](https://www.research-collection.ethz.ch/items/ea53e17a-76eb-460f-81ba-6e65f7078539).
 
 The repository frames PACE as **Precise Adaptation through Continuous Evolution**. In the public code path, the basic example collects excitation data and runs `scripts/pace/fit.py`, which estimates actuator and joint parameters with CMA-ES for Isaac Lab / Isaac Sim 5.0-style workflows.
 
@@ -101,6 +106,55 @@ This equation is the heart of the paper for me. The authors are not just matchin
 
 One subtle but important point: PACE does **not** co-optimize PD gains with the dynamics. If \\(I_a,d,P_\tau,D_\tau\\) are scaled together, the same trajectories can be preserved, which creates non-uniqueness. The gains are treated as known, and the fit focuses on the physical simulator parameters.
 
+## Physics-Grounded Energy and the Four-Term Reward
+
+The IJRR paper presents PACE as a complete identification-to-control pipeline. Once the simulator is fitted, a blind locomotion policy is trained with asymmetric PPO: the actor receives proprioception, commands, joint states, and the previous action, while the critic receives privileged contact, terrain, wrench, and height-scan information. Actuator dynamics remain fixed at the identified nominal values. Training still randomizes the task and environment, including pushes, ground friction, and terrain geometry.
+
+The reward contains four independently weighted terms:
+
+1. commanded base-velocity tracking;
+2. physics-grounded energy consumption;
+3. collision avoidance;
+4. foot-touchdown velocity.
+
+The energy model combines electrical dissipation, signed mechanical power, and gravitational potential power:
+
+\[
+P_{\mathrm{total}}=P_{\mathrm{el}}+P_{\mathrm{mech}}+P_{\mathrm{pot}}.
+\]
+
+For PMSM joint \(j\), Joule heating is approximated from commanded torque using motor resistance \(R_j\), gear ratio \(r_j\), and torque constant \(k_{i,j}\):
+
+\[
+P_{\mathrm{el}}
+=\sum_{j=1}^{n}R_j i_{q,j}^{2}
+=\sum_{j=1}^{n}\frac{\tau_j^2R_j}{r_j^2k_{i,j}^2}.
+\]
+
+Mechanical power preserves regeneration through coefficient \(k_{\mathrm{regen}}\):
+
+\[
+P_{\mathrm{mech}}=
+\begin{cases}
+\boldsymbol{\tau}^{\top}\dot{\mathbf q},
+&\boldsymbol{\tau}^{\top}\dot{\mathbf q}>0,\\
+k_{\mathrm{regen}}\boldsymbol{\tau}^{\top}\dot{\mathbf q},
+&\boldsymbol{\tau}^{\top}\dot{\mathbf q}<0.
+\end{cases}
+\]
+
+The potential term sums body gravitational power, \(P_{\mathrm{pot}}=\sum_b m_b g v_{b,z}\). It rewards the necessary gain in potential energy while climbing and discourages unnecessary injection during descent. Because power grows with commanded speed, PACE normalizes the energy objective:
+
+\[
+\gamma_v=\frac{1}{\|\hat{\mathbf v}_B\|^2+1},
+\qquad
+r_e=\gamma_vP_{\mathrm{total}}.
+\]
+
+All three components use physical energy units, so their relative scale comes from robot mass, gravity, gearing, resistance, and motor constants. One reward coefficient can therefore transfer across robot morphologies more naturally than several independently tuned torque, power, vertical-motion, and posture penalties. Energy and foot-touchdown penalties are introduced gradually during training so that early gait discovery is not suppressed.
+
+This section also clarifies the paper's “without dynamics randomization” claim. PACE removes broad **actuator-dynamics randomization** after fitting the nominal model. It retains **environment and task randomization** for robustness to terrain, friction, and disturbances.
+
 ## PACE versus ActuatorNet
 
 The paper's ANYmal comparison is the cleanest place to read PACE against ActuatorNet. The authors compare three settings: URDF-only, actuator network, and PACE. URDF-only diverges in in-air replay and fails in forward walking. Both actuator network and PACE transfer, but PACE has smaller delta phase-portrait spread in the reported in-air comparison and avoids the joint-position bias visible in the actuator-network baseline.
@@ -120,7 +174,7 @@ The paper does not make ActuatorNet obsolete. It shows that for many PMSM-driven
 
 The single-drive experiments validate that the fitted inertia tracks known analytic changes in load. At the full-robot level, Tytan, ANYmal, and Minimal show close real-sim trajectory overlays in in-air replay. The fitted simulators generalize across unseen gains and trajectories, which is important because a parameter fit that only memorizes one chirp would be much less useful.
 
-On the locomotion side, policies are trained in fitted simulation and deployed zero-shot. The paper reports deployment across three main platforms and more than ten additional robots. It also reports an energy result: ANYmal D reaches full Cost of Transport **1.27**, about **32% lower** than the state-of-the-art ANYmal C reference in the paper's comparison. Tytan reaches CoT **0.97** in the same running-track analysis.
+On the locomotion side, policies are trained in fitted simulation and deployed zero-shot. The paper reports deployment across three main platforms and ten additional robots. In the 400 m running-track protocol, ANYmal D reaches full Cost of Transport **1.27**, about **32% lower** than the ANYmal C reference in the paper's comparison, with a reported endurance estimate of **4.12 km**. Tytan reaches CoT **0.97** and **6.10 km**. Dynamic-limit demonstrations include two-legged ANYmal balancing, running near **3 m/s** under a 32 A battery-current limit, and continuous 18 cm stair climbing by the 4 kg Minimal robot.
 
 I would keep the RL part secondary. The more reusable idea is the upstream alignment loop:
 
@@ -138,6 +192,8 @@ That is a clean recipe for teams trying to reduce sim-to-real iteration cost wit
 
 PACE depends on the assumptions behind its fitted parameterization. The paper is explicit about this. Identification and deployment need consistent firmware compensation modes and filters. Finite excitation bandwidth can hide higher-frequency dynamics, especially on suspended setups where structural constraints cap the chirp. Temperature, wear, and aging can shift effective parameters over time. The method currently folds many electrical effects into joint-space terms; future work targets bus-voltage/current limits, inverter switching behavior, compliance, and higher-order motion terms such as jerk and snap.
 
+The energy reward is a low-order PMSM loss model designed for large-scale RL. It omits iron and magnet losses, inverter switching, temperature-dependent resistance, battery dynamics, detailed field weakening, and load-dependent transmission loss. Its physical units improve portability, while its accuracy still depends on operating within the identified torque, speed, and temperature regime. Robots with strongly nonlinear transmissions or frequent electrical saturation may need a higher-fidelity or learned power model.
+
 The contact side is also deliberately indirect. PACE identifies in-air joint dynamics, then shows that this suffices for the tested contact tasks. If foot contact parameters, compliance, or terrain interaction dominate the gap for another platform, the recipe may need contact-parameter refinement or online adaptation.
 
 ## Takeaways
@@ -150,15 +206,19 @@ PACE is worth remembering because it gives a concrete middle path between hand t
 
 这篇文章支持通过顶部导航栏进行 **English / 中文** 切换。
 
+## 这里是哪一个 PACE？
+
+本文介绍的是 **PACE: Precise Adaptation through Continuous Evolution**，即 ETH Zurich 面向 joint-space dynamics identification 与 energy-efficient legged-robot policy training 的 sim-to-real pipeline。另一个 **PACE: Phase-Aware Chunk Execution** 是 test-time execution 方法，用于动态决定 predicted action chunk 在重新规划前实际执行多长。后者见单独的论文笔记：[PACE: Phase-Aware Chunk Execution for Robot Policies with Action Chunking](/posts/2026/08/pace-phase-aware-chunk-execution-paper-notes/)。
+
 ## TL;DR
 
-**PACE** 是一个面向足式机器人的 sim-to-real pipeline，它把 actuator 和 joint dynamics 当成主要 reality gap 来处理。核心做法很工程化：先采集固定基座、腿悬空的短时 encoder trajectory；再用 CMA-ES 在仿真里拟合一组小而物理可解释的参数；最后直接在拟合后的仿真中训练 locomotion policy，不再依赖 dynamics randomization。这个论文很适合作为“参数辨识能否替代一部分 ActuatorNet 用途”的参考。
+**PACE** 是一个面向足式机器人的 sim-to-real pipeline，它把 actuator 和 joint dynamics 当成主要 reality gap 来处理。核心做法很工程化：先采集固定基座、腿悬空的短时 encoder trajectory；再用 CMA-ES 在仿真里拟合一组小而物理可解释的参数；最后直接在拟合后的仿真中训练 locomotion policy，不再依赖 actuator-dynamics randomization。正式发表的 pipeline 还提出只包含四项的 locomotion reward，其中最主要的 regularizer 是 physics-grounded PMSM energy model。这篇论文既适合作为“参数辨识能否替代一部分 ActuatorNet 用途”的参考，也适合观察 physical energy accounting 如何取代一长串 heuristic penalties。
 
-我的理解是：PACE 最强的地方是给出了一套 **joint-space dynamics alignment recipe**。它避开完整 residual simulator 的学习，把目标收缩到每个关节的 effective inertia、viscous damping、Coulomb friction、joint bias，以及一个全局 command delay。这组参数足够小，有物理含义，方便 debug；并且即使机器人只有 joint encoder、没有 joint torque sensor，也可以跑起来。
+我的理解是：PACE 最可复用的贡献是 **joint-space dynamics alignment recipe**。它用每个关节的 effective inertia、viscous damping、Coulomb friction、joint bias，以及一个全局 command delay 表达主要 gap，省去了完整 residual simulator 的学习。这组参数足够小，有物理含义，方便 debug；即使机器人只有 joint encoder、没有 joint torque sensor，也可以运行。Energy-aware policy objective 随后在这个 aligned simulator 中，用统一物理单位优化 electrical、mechanical 与 gravitational energy。
 
 ## 论文与资源
 
-论文是 ETH Zurich Robotic Systems Lab 的 **Filip Bjelonic, Fabian Tischhauser, Marco Hutter** 写的 **"Towards Bridging the Gap: Systematic Sim-to-Real Transfer for Diverse Legged Robots"**。论文地址是 [arXiv:2509.06342](https://arxiv.org/abs/2509.06342)，代码在 [leggedrobotics/pace-sim2real](https://github.com/leggedrobotics/pace-sim2real)，文档在 [pace.filipbjelonic.com](https://pace.filipbjelonic.com/)，ETH Research Collection 还放了用于 actuator model identification 和 locomotion experiments 的 [PACE Dataset for Sim-to-Real Transfer in Legged Robots](https://www.research-collection.ethz.ch/items/ea53e17a-76eb-460f-81ba-6e65f7078539)。
+论文是 ETH Zurich Robotic Systems Lab 的 **Filip Bjelonic、Fabian Tischhauser、Marco Hutter** 写的 **"Towards Bridging the Gap: Systematic Sim-to-Real Transfer for Diverse Legged Robots"**。本文已按 2026 年 7 月 31 日修订的 [arXiv:2509.06342v2](https://arxiv.org/abs/2509.06342) 与正式发表的 *The International Journal of Robotics Research* 版本更新（[DOI: 10.1177/02783649261459628](https://doi.org/10.1177/02783649261459628)）。代码在 [leggedrobotics/pace-sim2real](https://github.com/leggedrobotics/pace-sim2real)，文档在 [pace.filipbjelonic.com](https://pace.filipbjelonic.com/)，用于 actuator model identification 和 locomotion experiments 的数据位于 [PACE Dataset for Sim-to-Real Transfer in Legged Robots](https://www.research-collection.ethz.ch/items/ea53e17a-76eb-460f-81ba-6e65f7078539)。
 
 仓库里把 PACE 展开为 **Precise Adaptation through Continuous Evolution**。公开代码路径里，基础示例先收集 excitation data，再运行 `scripts/pace/fit.py`，用 CMA-ES 为 Isaac Lab / Isaac Sim 5.0 风格的工作流估计 actuator 和 joint parameters。
 
@@ -236,6 +296,55 @@ I_a\ddot q+d\dot q=
 
 还有一个容易忽略的点：PACE 不把 PD gains 和 dynamics 一起优化。如果 \\(I_a,d,P_\tau,D_\tau\\) 被共同缩放，轨迹可以保持不变，会产生 non-uniqueness。因此 gains 被视为已知量，拟合集中在物理仿真参数上。
 
+## Physics-Grounded Energy 与四项 Reward
+
+IJRR 论文把 PACE 描述为一条从 identification 延伸到 control 的完整 pipeline。Simulator 拟合完成后，blind locomotion policy 使用 asymmetric PPO 训练：actor 接收 proprioception、commands、joint states 和 previous action；critic 额外读取 privileged contact、terrain、wrench 与 height-scan information。Actuator dynamics 固定为辨识得到的 nominal values；训练仍会随机化 task 和 environment，包括 pushes、ground friction 与 terrain geometry。
+
+Reward 只包含四个 independently weighted terms：
+
+1. commanded base-velocity tracking；
+2. physics-grounded energy consumption；
+3. collision avoidance；
+4. foot-touchdown velocity。
+
+Energy model 把 electrical dissipation、signed mechanical power 和 gravitational potential power 合并起来：
+
+\[
+P_{\mathrm{total}}=P_{\mathrm{el}}+P_{\mathrm{mech}}+P_{\mathrm{pot}}.
+\]
+
+对于 PMSM joint \(j\)，Joule heating 由 commanded torque、motor resistance \(R_j\)、gear ratio \(r_j\) 与 torque constant \(k_{i,j}\) 近似得到：
+
+\[
+P_{\mathrm{el}}
+=\sum_{j=1}^{n}R_j i_{q,j}^{2}
+=\sum_{j=1}^{n}\frac{\tau_j^2R_j}{r_j^2k_{i,j}^2}.
+\]
+
+Mechanical power 通过系数 \(k_{\mathrm{regen}}\) 保留 regeneration：
+
+\[
+P_{\mathrm{mech}}=
+\begin{cases}
+\boldsymbol{\tau}^{\top}\dot{\mathbf q},
+&\boldsymbol{\tau}^{\top}\dot{\mathbf q}>0,\\
+k_{\mathrm{regen}}\boldsymbol{\tau}^{\top}\dot{\mathbf q},
+&\boldsymbol{\tau}^{\top}\dot{\mathbf q}<0.
+\end{cases}
+\]
+
+Potential term 对各个 robot bodies 的 gravitational power 求和：\(P_{\mathrm{pot}}=\sum_b m_b g v_{b,z}\)。它奖励爬坡时必要的 potential-energy increase，同时抑制下坡时不必要的 energy injection。由于 power 会随 commanded speed 增长，PACE 对 energy objective 做速度归一化：
+
+\[
+\gamma_v=\frac{1}{\|\hat{\mathbf v}_B\|^2+1},
+\qquad
+r_e=\gamma_vP_{\mathrm{total}}.
+\]
+
+三个 components 都使用物理 energy units，因此 relative scale 由 robot mass、gravity、gearing、resistance 与 motor constants 决定。相比独立调节 torque、power、vertical-motion 和 posture penalties，一个 reward coefficient 更容易跨 robot morphologies 复用。Energy 与 foot-touchdown penalties 在训练中逐渐开启，避免早期 gait discovery 被过强 regularization 压制。
+
+这里也能更准确地理解论文的 “without dynamics randomization”：PACE 在拟合 nominal model 后移除了广泛的 **actuator-dynamics randomization**；为了适应 terrain、friction 与 disturbances，**environment/task randomization** 仍然保留。
+
 ## PACE 与 ActuatorNet
 
 论文里 ANYmal 的对比最适合看 PACE 和 ActuatorNet 的关系。作者比较了三种设置：URDF-only、actuator network、PACE。URDF-only 在 in-air replay 中明显发散，forward walking 也失败。Actuator network 和 PACE 都能 transfer，但 PACE 在报告的 in-air 对比里 delta phase portrait 更集中，也避免了 actuator-network baseline 中可见的 joint-position bias。
@@ -255,7 +364,7 @@ I_a\ddot q+d\dot q=
 
 single-drive 实验验证了拟合出的 inertia 能跟随已知 load 的解析变化。full-robot 层面，Tytan、ANYmal、Minimal 的 in-air replay 中真实和仿真轨迹高度贴合。拟合后的 simulator 还能跨 unseen gains 和 unseen trajectories 泛化，这一点很重要，因为只记住某一条 chirp 的 parameter fit 没有太大价值。
 
-locomotion 部分，policy 在拟合后的仿真中训练，并 zero-shot 部署到硬件。论文报告了三个主平台和十多个额外机器人上的部署。能耗结果也比较突出：ANYmal D 的 full Cost of Transport 达到 **1.27**，相比论文中引用的 ANYmal C state-of-the-art reference 降低约 **32%**；Tytan 在同一 running-track 分析中达到 CoT **0.97**。
+locomotion 部分，policy 在拟合后的仿真中训练，并 zero-shot 部署到硬件。论文报告了三个主平台和十个额外机器人上的部署。在 400 m running-track protocol 中，ANYmal D 的 full Cost of Transport 达到 **1.27**，相比论文中的 ANYmal C reference 降低约 **32%**，reported endurance estimate 为 **4.12 km**；Tytan 达到 CoT **0.97** 与 **6.10 km**。Dynamic-limit demonstrations 还包括 ANYmal 双腿平衡、在 32 A battery-current limit 下接近 **3 m/s** 的跑动，以及 4 kg Minimal robot 连续攀爬 18 cm 台阶。
 
 我会把 RL 部分放在次要位置。更可复用的是前面的 alignment loop：
 
@@ -272,6 +381,8 @@ fixed-base encoder logs
 ## 局限
 
 PACE 依赖它那组参数背后的假设。论文对此说得很清楚：辨识和部署时 firmware compensation modes 与 filters 要一致；悬空实验的结构约束会限制 excitation bandwidth，从而隐藏更高频 dynamics；temperature、wear、aging 会让 effective parameters 随时间漂移。当前方法还把很多 electrical effects 折叠进 joint-space terms，后续工作会继续处理 bus-voltage/current limits、inverter switching behavior、compliance，以及 jerk、snap 等更高阶运动项。
+
+Energy reward 是为 large-scale RL 设计的 low-order PMSM loss model，没有显式覆盖 iron/magnet losses、inverter switching、temperature-dependent resistance、battery dynamics、detailed field weakening 和 load-dependent transmission loss。Physical units 提高了跨平台复用性，但精度仍依赖 robot 在已辨识的 torque、speed 与 temperature regime 内运行。Strongly nonlinear transmission 或频繁 electrical saturation 的平台可能需要更高保真或 learned power model。
 
 contact 相关内容也是间接处理的。PACE 辨识的是 in-air joint dynamics，然后证明这足以支持论文里的 contact tasks。如果某个平台的主要 gap 来自 foot contact parameters、compliance 或 terrain interaction，那么这套 recipe 可能还需要 contact-parameter refinement 或 online adaptation。
 
