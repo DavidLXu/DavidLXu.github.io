@@ -86,7 +86,7 @@ redirect_from:
 <div style="display: grid; gap: 1rem; margin-top: 0.5rem;">
   <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
     <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;">CoRL 2026</div>
-    <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">How to Learn from What a Human Would Avoid? Intervention-Aware World Models with Real-World RL for Dexterous Manipulation</h3>
+    <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">WHIRL: Intervention-Aware World Models with Real-World RL for Dexterous Manipulation</h3>
     <p style="margin: 0 0 0.55rem; font-size: 0.92rem;">Jiaju Yin, Zhenhui Zhang, <strong>Lixin Xu</strong>, Heng Zhang, Jun Shao, Yating Feng, Arash Ajoudani, Renjing Xu</p>
     <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 0.6rem;">
       <img src="/images/whirl-teaser.jpg" alt="WHIRL teaser showing human interventions converted into predictive risk for dexterous manipulation" style="width: 100%; height: 190px; object-fit: contain; border-radius: 8px;" />
