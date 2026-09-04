@@ -1,0 +1,130 @@
+# Editorial mappings, not claimed chronological recipes. See the accompanying post.
+routes:
+  - {id: all, en: Overview, zh: 总览}
+  - {id: pi05, en: π0.5, zh: π0.5}
+  - {id: pi06, en: 'π0.6 / π*0.6', zh: 'π0.6 / π*0.6'}
+  - {id: pi07, en: π0.7, zh: π0.7}
+  - {id: gr00t, en: 'GR00T N1 / N1.5', zh: 'GR00T N1 / N1.5'}
+  - {id: lingva, en: LingBot-VA 2.0, zh: LingBot-VA 2.0}
+  - {id: lingvla, en: LingBot-VLA 2.0, zh: LingBot-VLA 2.0}
+  - {id: cosmos, en: Cosmos Policy, zh: Cosmos Policy}
+  - {id: generalist, en: Generalist AI / GEN, zh: Generalist AI / GEN}
+  - {id: helix, en: Helix 02, zh: Helix 02}
+  - {id: gemini, en: Gemini Robotics (2025), zh: Gemini Robotics (2025)}
+  - {id: egoscale, en: EgoScale, zh: EgoScale}
+stages:
+  - label: STAGE 1 · PRE-TRAINING
+    en: Semantic foundations
+    zh: 语义基础训练
+    purpose_en: Language, objects, scenes, common sense, and task intent.
+    purpose_zh: 理解语言、物体、场景、常识与任务意图。
+    nodes:
+      - en: LLM / VLM
+        zh: LLM / VLM
+        detail_en: Web text and image priors
+        detail_zh: Web text + image 先验
+        paths: pi05 pi06 pi07 gr00t lingva lingvla helix gemini egoscale
+      - en: Visual / video representations
+        zh: Visual / video representations
+        detail_en: Semantic encoders and tokenizers
+        detail_zh: 语义编码器与视觉 tokenizer
+        paths: lingva cosmos
+  - label: STAGE 2 · PRE-TRAINING
+    en: Physical-world priors
+    zh: 物理世界预训练
+    purpose_en: Interaction, temporal change, affordances, and transferable motion priors.
+    purpose_zh: 学习交互过程、时序变化、affordance 与可迁移的 motion prior。
+    nodes:
+      - en: Action-free world learning
+        zh: Action-free world learning
+        detail_en: Predict observations or latent transitions without robot action labels
+        detail_zh: 无机器人动作标签的观察预测与潜在转移学习
+        paths: lingva cosmos
+      - en: Ego / human video
+        zh: Ego / human video
+        detail_en: Unlabeled video or video with human motion labels
+        detail_zh: 无动作视频，或带人体动作标注的视频
+        paths: pi07 gr00t lingva lingvla egoscale
+      - en: High-fidelity physical interaction
+        zh: High-fidelity physical interaction
+        detail_en: Wearable human sensorimotor streams
+        detail_zh: 可穿戴人类传感—动作流
+        paths: generalist
+      - en: Simulation / synthetic
+        zh: Simulation / synthetic
+        detail_en: Synthetic trajectories and diverse environments
+        detail_zh: 合成轨迹与多样化环境
+        paths: gr00t
+  - label: STAGE 3 · PRE-TRAINING / MID-TRAINING
+    en: Action foundations / grounding
+    zh: 动作基础训练 / Grounding
+    purpose_en: Learn a transferable action representation; align it with executable robot controls.
+    purpose_zh: 学习可迁移的动作表示，并与机器人可执行控制建立对应关系。
+    nodes:
+      - en: Broad robot trajectories
+        zh: Broad robot trajectories
+        detail_en: Multi-task, multi-scene, or multi-robot co-training
+        detail_zh: 多任务、多环境或多机器人共同训练
+        paths: pi05 pi06 pi07 gr00t lingva lingvla helix gemini
+      - en: Aligned human–robot data
+        zh: Aligned human–robot data
+        detail_en: Retargeted action spaces or paired human–robot play
+        detail_zh: 动作空间重定向，或配对的人—机器人 play data
+        paths: lingva lingvla egoscale
+      - en: High-fidelity human interface
+        zh: High-fidelity human interface
+        detail_en: Tracked motion, gloves, handheld grippers, or exoskeletons
+        detail_zh: 动作追踪、手套、手持夹爪或外骨骼
+        paths: generalist helix egoscale
+  - label: STAGE 4 · FINE-TUNING / POST-TRAINING
+    en: Deployment adaptation
+    zh: 部署后训练
+    purpose_en: Adapt to the target robot, task, and environment; improve reliability and recovery.
+    purpose_zh: 贴合目标机器人、目标环境与任务；优化可靠性、恢复与闭环稳定性。
+    nodes:
+      - en: Target robot demonstrations
+        zh: Target robot demonstrations
+        detail_en: Task demonstrations; supervised adaptation / behavior cloning
+        detail_zh: 目标任务示范；监督适配 / 行为克隆
+        paths: pi05 pi06 gr00t lingva lingvla cosmos generalist gemini egoscale
+      - en: Deployment / controller adaptation
+        zh: Deployment / controller adaptation
+        detail_en: Latency, control frequency, and hardware integration
+        detail_zh: 延迟、控制频率与硬件适配
+        paths: lingva lingvla generalist helix gemini
+      - en: On-robot RL + corrections
+        zh: On-robot RL + corrections
+        detail_en: Reward feedback, advantage estimation, and expert intervention
+        detail_zh: 奖励反馈、优势估计与专家干预
+        paths: pi06
+      - en: World / value refinement
+        zh: World / value refinement
+        detail_en: Rollout-based prediction and value updates for planning
+        detail_zh: 利用 rollout 更新预测与价值，支持规划
+        paths: cosmos
+continuum:
+  - en: Web text / image
+    zh: Web text / image
+    detail_en: Semantic context; little direct action supervision
+    detail_zh: 语义上下文强，直接动作监督弱
+    paths: pi05 pi06 pi07 gr00t lingva lingvla cosmos helix gemini egoscale
+  - en: Action-free video
+    zh: Action-free video
+    detail_en: Observed interactions and world changes
+    detail_zh: 观察交互过程与世界变化
+    paths: pi07 gr00t lingva cosmos
+  - en: Human motion signals
+    zh: Human motion signals
+    detail_en: Ego + reconstructed pose or sensorimotor capture
+    detail_zh: Ego + 重建姿态，或传感—动作采集
+    paths: gr00t lingva lingvla generalist helix egoscale
+  - en: Robot-aligned human
+    zh: Robot-aligned human
+    detail_en: Retargeting or co-designed action interfaces
+    detail_zh: 动作重定向，或共同设计的动作接口
+    paths: lingva lingvla generalist helix egoscale
+  - en: Robot-native
+    zh: Robot-native
+    detail_en: Robot commands and states; contact when recorded
+    detail_zh: 机器人 command、state，以及可用的接触记录
+    paths: pi05 pi06 pi07 gr00t lingva lingvla cosmos generalist helix gemini egoscale

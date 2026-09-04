@@ -1,0 +1,46 @@
+{% assign training = site.data.embodied_training %}
+<link rel="stylesheet" href="{{ '/assets/css/embodied-training.css' | relative_url }}">
+<div id="embodied-training-stack" markdown="0" role="region" aria-labelledby="training-map-title">
+  <h2 id="training-map-title" data-i18n-en="Four stages of embodied-model training" data-i18n-zh="具身模型的四阶段训练栈">Four stages of embodied-model training</h2>
+  <p class="subtitle" data-i18n-en="A shared map of capabilities and data—not four mandatory training runs." data-i18n-zh="四个阶段表示能力与分布迁移，不要求四次独立训练。">A shared map of capabilities and data—not four mandatory training runs.</p>
+  <div class="route-controls" role="group" aria-label="Model selection">
+    {% for route in training.routes %}
+    <button type="button" data-route="{{ route.id }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" data-i18n-en="{{ route.en | escape }}" data-i18n-zh="{{ route.zh | escape }}">{{ route.en }}</button>
+    {% endfor %}
+  </div>
+  <p class="route-detail" aria-live="polite" aria-atomic="true">Select a model to highlight shared components. Gray means not mapped here, not proven absent.</p>
+  <div class="stage-grid">
+    {% for stage in training.stages %}
+    <section class="stage" aria-labelledby="training-stage-{{ forloop.index }}">
+      <div class="stage-kicker">{{ stage.label }}</div>
+      <h3 id="training-stage-{{ forloop.index }}" data-i18n-en="{{ stage.en | escape }}" data-i18n-zh="{{ stage.zh | escape }}">{{ stage.en }}</h3>
+      <div class="purpose" data-i18n-en="{{ stage.purpose_en | escape }}" data-i18n-zh="{{ stage.purpose_zh | escape }}">{{ stage.purpose_en }}</div>
+      <div class="node-list">
+        {% for node in stage.nodes %}
+        <div class="node" data-path="{{ node.paths }}">
+          <strong data-i18n-en="{{ node.en | escape }}" data-i18n-zh="{{ node.zh | escape }}">{{ node.en }}</strong>
+          <span data-i18n-en="{{ node.detail_en | escape }}" data-i18n-zh="{{ node.detail_zh | escape }}">{{ node.detail_en }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+  <section aria-labelledby="training-continuum-title">
+    <div class="continuum-title">
+      <h3 id="training-continuum-title" data-i18n-en="The data continuum" data-i18n-zh="数据连续谱">The data continuum</h3>
+      <span data-i18n-en="Toward more explicit action alignment—not a quality ranking" data-i18n-zh="动作对齐逐渐明确，不代表数据质量排名">Toward more explicit action alignment—not a quality ranking</span>
+    </div>
+    <div class="continuum">
+      {% for node in training.continuum %}
+      <div class="data-node" data-path="{{ node.paths }}">
+        <strong data-i18n-en="{{ node.en | escape }}" data-i18n-zh="{{ node.zh | escape }}">{{ node.en }}</strong>
+        <span data-i18n-en="{{ node.detail_en | escape }}" data-i18n-zh="{{ node.detail_zh | escape }}">{{ node.detail_en }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <p class="map-note" data-i18n-en="π0.6 / π*0.6: the RL highlight refers to π*0.6 / RECAP, not supervised π0.6. Training a controller, running feedback control, and adapting model weights are distinct operations. See the article for version scope and evidence." data-i18n-zh="π0.6 / π*0.6：RL 高亮对应 π*0.6 / RECAP，不代表基础 π0.6 使用 RL。控制器训练、闭环执行与模型权重适配是不同操作；版本范围与证据见正文。">π0.6 / π*0.6: the RL highlight refers to π*0.6 / RECAP, not supervised π0.6. Training a controller, running feedback control, and adapting model weights are distinct operations. See the article for version scope and evidence.</p>
+  <noscript>The full map remains visible without JavaScript. Model selection requires JavaScript. / 关闭 JavaScript 时仍可查看完整图，模型切换需要 JavaScript。</noscript>
+</div>
+<script src="{{ '/assets/js/embodied-training.js' | relative_url }}" defer></script>
