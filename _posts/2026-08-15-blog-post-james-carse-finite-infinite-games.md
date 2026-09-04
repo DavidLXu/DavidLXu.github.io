@@ -1,5 +1,5 @@
 ---
-title: "James P. Carse: Finite Games, Infinite Play, and the Art of Keeping Possibility Open"
+title: "[Book Notes] James P. Carse: Finite Games, Infinite Play, and the Art of Keeping Possibility Open"
 date: 2026-08-15
 permalink: /posts/2026/08/james-carse-finite-infinite-games/
 excerpt: "James P. Carse's distinction between finite and infinite games offers a lens for understanding competition, identity, education, culture, technology, and the open-ended work of research and AI."

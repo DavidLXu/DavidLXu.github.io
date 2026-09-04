@@ -1,5 +1,5 @@
 ---
-title: "John von Neumann: The Statistical Language of the Brain"
+title: "[Book Notes] John von Neumann: The Statistical Language of the Brain"
 date: 2026-08-21
 permalink: /posts/2026/08/john-von-neumann-computer-brain/
 excerpt: "The Computer and the Brain asks how slow, noisy, low-precision neurons produce fast and reliable intelligence—and why the brain's language may differ fundamentally from mathematical notation."

@@ -1,5 +1,5 @@
 ---
-title: "Douglas Hofstadter: Strange Loops, Meaning, and the Emergence of Mind"
+title: "[Book Notes] Douglas Hofstadter: Strange Loops, Meaning, and the Emergence of Mind"
 date: 2026-08-16
 permalink: /posts/2026/08/douglas-hofstadter-geb/
 excerpt: "Gödel, Escher, Bach explores how meaning, intelligence, and the self can emerge from formal rules through recursion, layered description, and strange loops."

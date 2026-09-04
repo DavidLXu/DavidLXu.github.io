@@ -1,9 +1,10 @@
 ---
-title: "Michael Polanyi: Tacit Knowledge, Personal Knowing, and What AI Still Cannot Tell"
+title: "[Book Notes] Michael Polanyi: Tacit Knowledge, Personal Knowing, and What AI Still Cannot Tell"
 date: 2026-04-05
 permalink: /posts/2026/04/michael-polanyi-tacit-knowledge-ai/
 excerpt: "Polanyi's framework of tacit knowledge and personal knowing offers a lens for understanding what AI still cannot do — and why embodied, context-dependent skill remains hard to formalize."
 tags:
+  - Book Notes
   - Philosophy
   - AI
   - Robotics

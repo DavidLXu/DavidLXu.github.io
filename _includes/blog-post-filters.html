@@ -2,15 +2,18 @@
 {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
 <section class="blog-filter-archive" data-blog-filter-archive>
-  <div class="blog-filter-archive__filters" role="tablist" aria-label="Blog post categories">
-    <button type="button" class="blog-filter-archive__filter" data-blog-filter="all">
+  <div class="blog-filter-archive__filters" role="group" aria-label="Blog post categories">
+    <button type="button" class="blog-filter-archive__filter" data-blog-filter="all" aria-pressed="false">
       <span data-i18n-en="All" data-i18n-zh="全部">All</span>
     </button>
-    <button type="button" class="blog-filter-archive__filter is-active" data-blog-filter="personal-thoughts">
+    <button type="button" class="blog-filter-archive__filter is-active" data-blog-filter="personal-thoughts" aria-pressed="true">
       <span data-i18n-en="Personal Thoughts" data-i18n-zh="个人思考">Personal Thoughts</span>
     </button>
-    <button type="button" class="blog-filter-archive__filter" data-blog-filter="paper-notes">
+    <button type="button" class="blog-filter-archive__filter" data-blog-filter="paper-notes" aria-pressed="false">
       <span data-i18n-en="Paper Notes" data-i18n-zh="论文笔记">Paper Notes</span>
+    </button>
+    <button type="button" class="blog-filter-archive__filter" data-blog-filter="book-notes" aria-pressed="false">
+      <span data-i18n-en="Book Notes" data-i18n-zh="读书笔记">Book Notes</span>
     </button>
   </div>
 
@@ -22,6 +25,8 @@
         {% assign blog_category = "other" %}
         {% if post_title_downcase contains "paper notes" %}
           {% assign blog_category = "paper-notes" %}
+        {% elsif post.tags contains "Book Notes" or post_title_downcase contains "[book notes]" %}
+          {% assign blog_category = "book-notes" %}
         {% elsif post.title contains "[" or post.title contains "]" %}
           {% assign blog_category = "other" %}
         {% else %}
@@ -64,6 +69,7 @@
 
           buttons.forEach(function (btn) {
             btn.classList.toggle("is-active", btn === button);
+            btn.setAttribute("aria-pressed", String(btn === button));
           });
 
           applyFilter(filter);
