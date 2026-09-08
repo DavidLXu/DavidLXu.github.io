@@ -1,0 +1,68 @@
+{% assign app = include.app %}
+    <a class="app-card" href="{{ app.url | relative_url }}" aria-labelledby="app-title-{{ app.id }}">
+      <div class="app-preview app-preview--{{ app.id }}" aria-hidden="true">
+        {% case app.id %}
+        {% when 'world-model-rl' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g fill="none" stroke="#d3e1e6"><circle cx="110" cy="98" r="68"/><circle cx="110" cy="98" r="34"/><path d="M194 43H329M194 94H329M194 146H329"/></g>
+          <path d="M110 98L68 60L124 43" fill="none" stroke="#427da5" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#fff" stroke="#427da5" stroke-width="2"><circle cx="110" cy="98" r="9"/><circle cx="68" cy="60" r="6"/></g>
+          <circle cx="110" cy="98" r="3" fill="#427da5"/>
+          <rect x="132" y="53" width="17" height="17" rx="1" fill="#e89448" transform="rotate(18 140 61)"/>
+          <rect x="126" y="113" width="29" height="29" fill="#2b9574" fill-opacity=".1" stroke="#2b9574" stroke-dasharray="4 3"/>
+          <path d="M198 131L216 127L235 97L250 100L269 64L290 53L324 47" fill="none" stroke="#2b9574" stroke-width="2.5"/>
+          <path d="M198 140L220 132L245 111L269 114L292 87L324 68" fill="none" stroke="#427da5" stroke-width="1.5"/>
+          <g fill="#64717c" font-size="9" font-family="monospace"><text x="40" y="176">SIMULATOR → WORLD MODEL → RL</text></g>
+        </svg>
+        {% when 'mono-color' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <text x="30" y="121" fill="#232421" font-family="Helvetica,Arial,sans-serif" font-size="83" font-weight="800" letter-spacing="-7">mono<tspan fill="#c83232">.</tspan></text>
+          <path d="M33 146H145" stroke="#c83232" stroke-width="2"/>
+          <text x="33" y="168" fill="#66675f" font-family="monospace" font-size="9" letter-spacing="1">FOUR HANDS / ONE SYSTEM</text>
+          <g fill="#c83232"><rect x="288" y="28" width="13" height="20"/><rect x="307" y="28" width="13" height="20"/></g>
+          <g fill="#232421"><rect x="288" y="54" width="13" height="20"/><rect x="307" y="54" width="13" height="20"/></g>
+        </svg>
+        {% when 'world-model-history' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g fill="none" stroke-width="2">
+            <path d="M40 132H100L157 99H225L306 55" stroke="#40594a"/>
+            <path d="M100 132L157 62H247" stroke="#8a9760"/>
+            <path d="M157 99L225 137H306" stroke="#a18c68"/>
+            <path d="M225 137L271 105H306" stroke="#7c889d"/>
+          </g>
+          <g fill="#40594a"><circle cx="40" cy="132" r="7"/><circle cx="100" cy="132" r="5"/><circle cx="157" cy="99" r="7"/><circle cx="225" cy="99" r="5"/><circle cx="306" cy="55" r="8"/></g>
+          <g fill="#8a9760"><circle cx="157" cy="62" r="5"/><circle cx="247" cy="62" r="7"/></g>
+          <g fill="#a18c68"><circle cx="225" cy="137" r="5"/><circle cx="306" cy="137" r="7"/></g>
+          <g fill="#7c889d"><circle cx="271" cy="105" r="5"/><circle cx="306" cy="105" r="7"/></g>
+          <g fill="#526050" font-size="11" font-family="monospace"><text x="28" y="160">1991</text><text x="280" y="33">2026</text></g>
+        </svg>
+        {% when 'jepa' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <path d="M40 125H112V90H184V58H316" fill="none" stroke="#72988a" stroke-width="2"/>
+          <g fill="#216653"><circle cx="40" cy="125" r="7"/><circle cx="112" cy="125" r="7"/><circle cx="112" cy="90" r="7"/><circle cx="184" cy="90" r="7"/><circle cx="184" cy="58" r="7"/><circle cx="290" cy="58" r="10"/></g>
+          <g fill="#586761" font-size="11" font-family="monospace"><text x="28" y="152">JEPA</text><text x="232" y="37">JEPA-VLA</text></g>
+          <path d="m311 53 5 5-5 5" fill="none" stroke="#216653" stroke-width="2"/>
+        </svg>
+        {% when 'roboscope' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g stroke="#8185b9" stroke-opacity=".55" fill="none"><ellipse cx="180" cy="95" rx="126" ry="57"/><ellipse cx="180" cy="95" rx="126" ry="57" transform="rotate(-25 180 95)"/><path d="m76 82 43 48 55-65 50 49 54-45M119 130l105-16 24 33M174 65l-20-29"/></g>
+          <g fill="#c0b5f6"><circle cx="76" cy="82" r="6"/><circle cx="119" cy="130" r="9"/><circle cx="174" cy="65" r="11"/><circle cx="154" cy="36" r="4"/></g>
+          <g fill="#7dc6ca"><circle cx="224" cy="114" r="10"/><circle cx="278" cy="69" r="7"/><circle cx="248" cy="147" r="5"/></g>
+          <g fill="#f2c090"><circle cx="93" cy="57" r="3"/><circle cx="197" cy="149" r="4"/><circle cx="293" cy="115" r="4"/></g>
+        </svg>
+        {% when 'training' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g fill="none" stroke="#a66b40" stroke-width="2"><path d="M59 95h240"/><path d="m291 90 8 5-8 5"/></g>
+          <g fill="#fffcf5" stroke="#d6bba1"><rect x="30" y="64" width="60" height="62" rx="8"/><rect x="110" y="64" width="60" height="62" rx="8"/><rect x="190" y="64" width="60" height="62" rx="8"/><rect x="270" y="64" width="60" height="62" rx="8"/></g>
+          <g fill="#a66b40" font-size="19" font-family="monospace" text-anchor="middle"><text x="60" y="102">01</text><text x="140" y="102">02</text><text x="220" y="102">03</text><text x="300" y="102">04</text></g>
+          <g fill="#8b715e"><circle cx="60" cy="146" r="3"/><circle cx="140" cy="146" r="3"/><circle cx="220" cy="146" r="3"/><circle cx="300" cy="146" r="3"/></g>
+        </svg>
+        {% endcase %}
+      </div>
+      <div class="app-card-body">
+        <p class="app-category" data-i18n-en="{{ app.category | escape }}" data-i18n-zh="{{ app.zh_category | escape }}">{{ app.category }}</p>
+        <h2 id="app-title-{{ app.id }}" data-i18n-en="{{ app.title | escape }}" data-i18n-zh="{{ app.zh_title | escape }}">{{ app.title }}</h2>
+        <p class="app-description" data-i18n-en="{{ app.description | escape }}" data-i18n-zh="{{ app.zh_description | escape }}">{{ app.description }}</p>
+        <div class="app-card-footer"><span data-i18n-en="{{ app.detail | escape }}" data-i18n-zh="{{ app.zh_detail | escape }}">{{ app.detail }}</span><span class="app-open" aria-hidden="true">↗</span></div>
+      </div>
+    </a>
