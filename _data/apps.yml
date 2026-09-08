@@ -1,3 +1,14 @@
+- id: world-model-rl
+  title: Reinforcement Learning in World Models
+  zh_title: 在世界模型中强化学习
+  category: Interactive RL lab
+  zh_category: 强化学习实验室
+  description: Train a two-joint arm to push a block, learn a state world model from its trajectories, and refine PPO inside that model. Try the bundled best policy or train with your browser CPU.
+  zh_description: 训练两关节机械臂推方块，从轨迹中学习状态世界模型，再在模型里微调 PPO。可直接体验内置最佳策略，也可使用浏览器 CPU 训练。
+  detail: 3 stages · Browser CPU · 中文
+  zh_detail: 三阶段实验 · 浏览器 CPU · 中文
+  url: /apps/world-model-rl/
+
 - id: mono-color
   title: Mono Color Design Lab
   zh_title: Mono Color 设计实验室

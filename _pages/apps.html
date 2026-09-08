@@ -17,6 +17,18 @@ author_profile: false
     <a class="app-card" href="{{ app.url | relative_url }}" aria-labelledby="app-title-{{ app.id }}">
       <div class="app-preview app-preview--{{ app.id }}" aria-hidden="true">
         {% case app.id %}
+        {% when 'world-model-rl' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g fill="none" stroke="#d3e1e6"><circle cx="110" cy="98" r="68"/><circle cx="110" cy="98" r="34"/><path d="M194 43H329M194 94H329M194 146H329"/></g>
+          <path d="M110 98L68 60L124 43" fill="none" stroke="#427da5" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#fff" stroke="#427da5" stroke-width="2"><circle cx="110" cy="98" r="9"/><circle cx="68" cy="60" r="6"/></g>
+          <circle cx="110" cy="98" r="3" fill="#427da5"/>
+          <rect x="132" y="53" width="17" height="17" rx="1" fill="#e89448" transform="rotate(18 140 61)"/>
+          <rect x="126" y="113" width="29" height="29" fill="#2b9574" fill-opacity=".1" stroke="#2b9574" stroke-dasharray="4 3"/>
+          <path d="M198 131L216 127L235 97L250 100L269 64L290 53L324 47" fill="none" stroke="#2b9574" stroke-width="2.5"/>
+          <path d="M198 140L220 132L245 111L269 114L292 87L324 68" fill="none" stroke="#427da5" stroke-width="1.5"/>
+          <g fill="#64717c" font-size="9" font-family="monospace"><text x="40" y="176">SIMULATOR → WORLD MODEL → RL</text></g>
+        </svg>
         {% when 'mono-color' %}
         <svg viewBox="0 0 360 190" focusable="false">
           <text x="30" y="121" fill="#232421" font-family="Helvetica,Arial,sans-serif" font-size="83" font-weight="800" letter-spacing="-7">mono<tspan fill="#c83232">.</tspan></text>

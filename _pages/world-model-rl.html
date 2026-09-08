@@ -1,0 +1,151 @@
+---
+layout: null
+title: "在世界模型中强化学习 · Push Lab"
+permalink: /apps/world-model-rl/
+author_profile: false
+excerpt: "用浏览器 CPU 训练机械臂推块策略、学习世界模型，并在模型中继续强化学习。"
+---
+<!doctype html>
+<html lang="zh-CN">
+<head><meta name="description" content="在浏览器中训练推块策略、学习状态世界模型，并在模型预测轨迹中微调 PPO。内置最佳策略，支持访客 CPU 训练。"><meta charset="utf-8"><meta name="push-lab-mode" content="static"><meta name="viewport" content="width=device-width,initial-scale=1"><title>在世界模型中强化学习 · Push Lab</title><link rel="stylesheet" href="{{ '/assets/apps/world-model-rl/style.css' | relative_url }}"></head>
+<body>
+<main>
+  <header><a class="brand" href="{{ '/apps/' | relative_url }}" aria-label="返回 Apps" style="color:inherit;text-decoration:none"><span class="brand-mark">←</span> Apps <span class="divider">/</span><span class="muted">PUSH LAB</span></a><span id="connection" class="connection">你的 CPU · 浏览器训练</span></header>
+  <section class="intro"><div><div class="eyebrow">WORLD MODEL · REINFORCEMENT LEARNING</div><h1>在世界模型中强化学习</h1><p>先在物理仿真器中训练基座策略，再采集数据、学习世界模型，并在模型中继续强化学习。</p></div><div class="hardware"><span class="chip-symbol">⌘</span><div><strong id="chip">Apple Silicon</strong><small id="hardware-detail">正在读取设备</small></div></div></section>
+  <section id="base-training" aria-labelledby="base-training-title">
+  <div class="stage-heading"><span class="stage-number" aria-hidden="true">01</span><div><h2 id="base-training-title">在仿真器中训练强化学习基座</h2><p>在随机推块场景中训练策略，通过下面三条曲线观察学习效果。</p></div></div>
+  <section class="metrics" aria-label="后台实时训练指标">
+    <div><span>训练进度</span><strong id="generation">—<small>轮</small></strong></div>
+    <div><span>环境步数 / 秒</span><strong id="throughput">—</strong></div>
+    <div><span>后台最佳策略 · 验证成功率</span><strong id="validation">—</strong><span id="validation-count" class="metric-detail"></span></div>
+    <div><span id="test-label">独立测试 · 100 个初始状态</span><strong id="test-rate">—</strong></div>
+  </section>
+  <section class="workspace">
+    <div class="scene-panel">
+      <div class="panel-heading"><div><span class="live-dot"></span><strong>随机场景 · 固定底座</strong></div><span id="policy-tag" class="tag">布局预览</span></div>
+      <div class="canvas-wrap"><canvas id="scene" aria-label="固定底座的两关节机械臂通过碰撞将方块推向绿色目标区"></canvas><div id="episode-result" role="status" aria-live="polite"></div></div>
+      <div class="scene-stats"><span>距目标 <b id="distance">—</b></span><span>仿真时间 <b id="sim-time">0.0 s</b></span><span>回合 <b id="episode-number">1</b></span></div>
+      <div class="playback-controls"><button id="layout-new">随机新场景</button><button id="layout-demo">验证推动</button><button id="replay-reset">重置本场景</button><button id="replay-pause">暂停</button><label>速度 <select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><label class="policy-selector"><select id="policy-mode" aria-label="控制方式"><option value="manual">手动控制</option><option value="reference">参考控制器（非 RL）</option><option value="best" id="best-option" selected>内置最佳策略</option><option value="baseline">零输出基线</option></select></label></div>
+      <div class="manual-controls" id="manual-controls"><label>底座 θ₁ · 连续角度 <output id="q1-value"></output><input type="range" id="q1" min="-360" max="360" step="0.5"></label><label>肘部 θ₂ <output id="q2-value"></output><input type="range" id="q2" min="-155" max="155" step="0.5"></label></div>
+      <div class="layout-details"><span id="layout-seed"></span><span>拖动画面移动末端 · 参考控制器已验证可解</span></div>
+      <div class="scene-footnote" id="checkpoint-live-follow" hidden><label><input type="checkbox" id="follow-best"> 自动跟随训练</label><label><select id="follow-target" aria-label="训练回放策略"><option id="follow-latest-option" value="latest" selected>最新策略（实时）</option><option value="best">验证最佳策略</option></select></label><span id="follow-note">每轮更新后立即跟随 · 结束后回放验证最佳</span></div>
+      <details id="checkpoint-settings" class="checkpoint-panel" aria-labelledby="checkpoint-title">
+        <summary id="checkpoint-toggle" class="checkpoint-heading"><div class="checkpoint-heading-copy"><div class="checkpoint-heading-title"><h2 id="checkpoint-title">Checkpoint</h2><span id="checkpoint-source" class="tag">内置最佳 · 无需导入</span></div><p id="checkpoint-summary">已随页面提供最佳策略，打开即可体验。</p></div><span class="checkpoint-toggle-label" aria-hidden="true"><span class="checkpoint-expand">展开</span><span class="checkpoint-collapse">收起</span></span></summary>
+        <div class="checkpoint-body">
+        <div id="checkpoint-current-path" class="checkpoint-current-path">暂无可回放的 checkpoint</div>
+        <label class="checkpoint-file-label" for="checkpoint-file">选择本地 JSON 文件（最多 5 MiB）<input type="file" id="checkpoint-file" accept=".json,application/json"></label>
+        <form id="checkpoint-path-form" class="checkpoint-path-form" hidden><label for="checkpoint-path">或输入本机文件路径</label><div><input id="checkpoint-path" type="text" placeholder="models/ppo-cartesian-gen1777-v79.json" autocomplete="off" spellcheck="false"><button id="checkpoint-load-path" type="submit">加载路径</button></div></form>
+        <div class="checkpoint-actions"><button id="checkpoint-builtin" type="button">体验内置最佳</button><button id="checkpoint-download" type="button" disabled>导出当前策略 JSON</button><button id="checkpoint-follow" type="button" disabled hidden>恢复跟随训练</button></div>
+        <p id="checkpoint-help" class="checkpoint-help">内置策略和本地 JSON 都在你的浏览器中回放，无需上传文件。</p>
+        <div id="checkpoint-error" role="alert"></div>
+        </div>
+      </details>
+    </div>
+    <aside>
+      <div class="panel-heading"><strong>基座策略训练</strong><span id="train-status" class="tag">读取中</span></div>
+      <div class="training-content">
+        <div class="settings backend-settings"><label>训练设备 <select id="training-backend"><option value="browser" selected>我的浏览器 CPU（默认）</option><option id="server-backend-option" value="server">本机 Node.js 服务</option></select></label></div>
+        <p class="action-description">浏览器后台线程负责训练，前台可跟随最新策略，也可回放验证最佳。数据保存在你的设备。</p>
+        <div class="progress-label"><span id="phase">—</span><span id="progress-text">—</span></div><div class="progress"><div id="progress-fill"></div></div>
+        <div class="settings"><label>训练算法 <select id="algorithm"><option value="ppo" selected>PPO（默认）</option><option value="sac">SAC</option><option value="cem">CEM 策略搜索</option></select></label><label>动作类型 <select id="action-type"><option value="position" selected>位置控制（默认）</option><option value="velocity">关节速度</option><option value="acceleration">关节加速度</option></select></label></div>
+        <div class="settings position-settings"><label>位置控制方式 <select id="position-control" aria-describedby="action-description"><option value="cartesianDelta" selected>末端位置增量</option><option value="jointDelta">关节角度增量</option><option value="jointAbsolute">绝对关节角度</option></select></label></div>
+        <p id="action-description" class="action-description">末端位置增量：每次决策指定末端 x、y 方向最多 ±4 cm 的位移，通过逆运动学转成关节目标。</p>
+        <div class="settings"><label>并行环境 <select id="workers" aria-describedby="workers-description"><option value="1">正在读取 CPU…</option></select></label><label>更新轮数 <select id="generations"><option value="35">35 · 快速验证</option><option value="100">100</option><option value="300">300</option><option value="1000" selected>1,000</option><option value="2000">2,000</option></select></label></div>
+        <p id="workers-description" class="action-description workers-description">根据训练电脑的 CPU 自动确定并行环境上限。</p>
+        <details id="time-settings" class="time-settings">
+          <summary id="time-settings-toggle"><span>回合时间</span><span id="episode-time-summary">5 秒</span></summary>
+          <div class="time-settings-body">
+            <p id="episode-description" class="action-description episode-description">每次尝试最多持续多久。通常保持 5 秒即可，也可以设为 1–60 秒。</p>
+            <div class="settings episode-settings"><label>每回合时长（秒）<input id="episode-seconds" type="number" min="1" max="60" step="1" value="5" required aria-describedby="episode-description"></label></div>
+          </div>
+        </details>
+        <button id="train-start" class="primary" disabled>从头训练</button>
+        <div class="train-actions"><button id="train-pause" disabled>暂停训练</button><button id="train-stop" disabled>停止</button></div>
+        <div id="api-error" role="alert"></div>
+        <dl><div><dt id="diagnostic-label">PPO 近似 KL</dt><dd id="ppo-kl">—</dd></div><div><dt>并行计算</dt><dd id="backend">ARM64 · CPU</dd></div><div><dt>累计采样</dt><dd id="steps">—</dd></div><div><dt>训练用时</dt><dd id="elapsed">—</dd></div><div><dt>最佳版本</dt><dd id="best-version">—</dd></div></dl>
+        <div class="note" id="training-note">底座支持连续旋转，位置控制按最近方向跟踪。旧环境模型需要重新训练后再评估。</div>
+      </div>
+    </aside>
+  </section>
+  <details id="experiment-settings" class="experiment" aria-labelledby="experiment-title">
+    <summary id="experiment-toggle" class="experiment-heading"><div class="experiment-heading-copy"><h2 id="experiment-title">实验配置</h2><p id="config-summary"></p></div><span class="experiment-heading-meta"><span id="config-state" class="tag">应用于下一次训练</span><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开</span><span class="experiment-collapse">收起</span></span></span></summary>
+    <div class="experiment-grid">
+      <fieldset id="observation-settings"><legend>Observation <span id="observation-dimension" class="dimension-badge">16 维</span></legend><p class="field-help">勾选后参与训练；取消后直接移除该项输入维度。方块和目标位置以固定底座为原点，单位为米。</p><div id="observation-options" class="observation-options"></div></fieldset>
+      <fieldset id="reward-settings"><legend>Reward <button type="button" id="reward-defaults" class="text-button">恢复默认</button></legend><p class="field-help">回报是每回合 reward 的累加。以下系数用于每次动作决策。</p><div id="reward-options" class="reward-options"></div></fieldset>
+    </div>
+    <div class="experiment-foot"><span>选择策略能看到的状态，调整它学到什么。</span><span>设置随模型保存 · 训练期间锁定</span></div>
+  </details>
+  <details id="learning-settings" class="experiment learning-settings" open aria-labelledby="learning-title">
+    <summary id="learning-toggle" class="experiment-heading"><div class="experiment-heading-copy"><h2 id="learning-title">基座训练曲线</h2><p>回合回报 · 成功率 · 平均单步 reward</p></div><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开全部</span><span class="experiment-collapse">收起全部</span></span></summary>
+  <section class="learning-grid" aria-label="三项学习曲线">
+    <div class="learning"><div class="chart-heading"><div><h2>回合回报</h2><span class="muted">一个回合中 reward 的总和</span></div></div><div class="legend"><span><i class="mean"></i>训练平均</span><span><i class="best"></i>最佳验证</span></div><canvas id="chart" class="learning-chart" aria-label="随更新轮数变化的回合总回报曲线"></canvas></div>
+    <div class="learning"><div class="chart-heading"><div><h2>成功率</h2><span class="muted">训练与验证回合中到达目标的比例</span></div></div><div class="legend"><span><i class="mean"></i>训练</span><span><i class="validation"></i>本轮验证</span><span><i class="best"></i>历史最佳</span></div><canvas id="success-chart" class="learning-chart" aria-label="随更新轮数变化的训练、本轮验证和历史最佳策略成功率曲线"></canvas></div>
+    <div class="learning"><div class="chart-heading"><div><h2>平均单步 reward</h2><span class="muted">原始 reward 总和 ÷ 动作决策次数</span></div></div><div class="legend"><span><i class="mean"></i>训练平均</span><span><i class="best"></i>最佳验证</span></div><canvas id="reward-chart" class="learning-chart" aria-label="随更新轮数变化的每次动作决策平均奖励曲线"></canvas></div>
+  </section>
+  </details>
+  </section>
+  <section id="world-training" aria-labelledby="world-training-title">
+  <div class="stage-heading"><span class="stage-number" aria-hidden="true">02</span><div><h2 id="world-training-title">训练世界模型</h2><p>用基座策略采集仿真轨迹，学习状态变化，并检查预测误差。</p></div></div>
+  <section id="wm-live-metrics" class="metrics" aria-label="世界模型实时训练指标">
+    <div><span>采集进度</span><strong id="wm-collection-progress">—</strong><span id="wm-collection-detail" class="metric-detail">等待采集</span></div>
+    <div><span>转移数据量</span><strong id="wm-transition-count">—</strong><span id="wm-transition-detail" class="metric-detail">状态 + 动作 → 下一步状态</span></div>
+    <div><span>世界模型训练进度</span><strong id="wm-fitting-progress">—</strong><span id="wm-fitting-detail" class="metric-detail">等待训练</span></div>
+    <div><span>当前模型 · 验证损失</span><strong id="wm-current-loss">—</strong><span id="wm-loss-detail" class="metric-detail">标准化均方误差 · 越低越好</span></div>
+  </section>
+  <details id="world-settings" class="experiment world-experiment" open>
+    <summary class="experiment-heading"><div class="experiment-heading-copy"><h3>数据采集与模型训练</h3><p id="wm-summary">采集数据 → 训练状态预测模型</p></div><span class="experiment-heading-meta"><span id="wm-status" class="tag">就绪</span><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开</span><span class="experiment-collapse">收起</span></span></span></summary>
+    <div class="wm-body">
+      <div class="wm-stages wm-fit-stages">
+        <div><h3>采集仿真轨迹</h3><label>采集回合数 <select id="wm-episodes"><option value="20">20</option><option value="50">50</option><option value="100" selected>100（默认）</option><option value="200">200</option><option value="500">500</option><option value="1000">1,000</option></select></label><button id="wm-collect" disabled>用当前策略采集</button><p class="field-help">40% 原策略、50% 加噪策略、10% 随机动作。按完整回合拆分 80% / 10% / 10%。</p></div>
+        <div><h3>训练状态世界模型</h3><label>世界模型数量 <select id="wm-model-count"><option value="1">1</option><option value="2">2</option><option value="3" selected>3（默认）</option><option value="4">4</option><option value="5">5</option></select></label><label>每个模型训练轮数 <select id="wm-epochs"><option value="1">1</option><option value="3">3</option><option value="5">5</option><option value="10">10</option><option value="15" selected>15（默认）</option><option value="25">25</option><option value="50">50</option><option value="75">75</option><option value="100">100</option></select></label><button id="wm-fit" disabled>训练世界模型</button><p class="field-help" id="wm-ensemble-help">3 个 MLP 预测下一步状态变化，以模型间分歧估计不确定性。完整状态与 policy 的 observation 勾选独立。</p></div>
+      </div>
+      <p id="wm-dataset" class="field-help"></p>
+      <div class="checkpoint-actions"><button id="wm-data-export" disabled>导出采集数据</button><button id="wm-model-export" disabled>导出世界模型</button><button id="wm-stop" disabled>停止模型训练</button></div>
+      <div id="wm-error" role="alert"></div>
+      <div class="wm-results wm-model-results"><div><h3>世界模型预测误差</h3><p id="wm-model-metrics"></p></div></div>
+      <div id="wm-preview" hidden>
+        <div class="wm-preview-heading"><h3>预测误差 · 仿真场景对比</h3><p class="field-help">左侧回放原仿真状态，右侧回放世界模型预测；共享相同的机械臂、方块和目标样式。</p></div>
+        <div class="wm-scene-grid">
+          <div class="scene-panel"><div class="panel-heading"><strong>原物理仿真</strong><span class="tag">实际轨迹</span></div><div class="canvas-wrap"><canvas id="wm-actual-canvas" aria-label="原物理仿真器的机械臂和方块场景"></canvas></div><div class="scene-stats"><span>距目标 <b id="wm-actual-distance">—</b></span><span>仿真时间 <b id="wm-actual-time">—</b></span></div></div>
+          <div class="scene-panel"><div class="panel-heading"><strong>世界模型预测</strong><span class="tag">自回归预测</span></div><div class="canvas-wrap"><canvas id="wm-preview-canvas" aria-label="世界模型预测的机械臂和方块场景"></canvas></div><div class="scene-stats"><span>距目标 <b id="wm-predicted-distance">—</b></span><span>预测时间 <b id="wm-predicted-time">—</b></span></div></div>
+        </div>
+        <div class="playback-controls wm-preview-controls"><button id="wm-preview-play">播放对比</button><button id="wm-preview-reset">回到起点</button><label>速度 <select id="wm-preview-speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label></div>
+        <label for="wm-preview-step"><span id="wm-preview-label"></span></label><input id="wm-preview-step" type="range" min="0" max="15" value="0" step="1">
+        <p id="wm-preview-seed" class="field-help"></p>
+      </div>
+      <p class="field-help">完成后进入 03，在这个学到的世界模型中训练策略。完成的数据和模型自动保存在此浏览器。</p>
+    </div>
+  </details>
+  <details id="wm-chart-settings" class="experiment learning-settings wm-chart-settings" open>
+    <summary class="experiment-heading"><div class="experiment-heading-copy"><h3>世界模型训练曲线</h3><p>实时更新 · 完成后随实验保存在浏览器中</p></div><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开</span><span class="experiment-collapse">收起</span></span></summary>
+    <div class="learning-grid wm-loss-grid" aria-label="世界模型训练曲线">
+      <div class="learning"><div class="chart-heading"><h3>状态预测损失</h3><span class="muted">标准化状态变化的均方误差 · 越低越好</span></div><div class="legend" id="wm-model-legend"></div><p class="wm-chart-note">实线：训练集 · 虚线：验证集</p><canvas id="wm-loss-chart" class="learning-chart" aria-label="世界模型的训练和验证损失曲线"></canvas></div>
+    </div>
+  </details>
+  </section>
+  <section id="world-rl" aria-labelledby="world-rl-title">
+  <div class="stage-heading"><span class="stage-number" aria-hidden="true">03</span><div><h2 id="world-rl-title">在世界模型中跑强化学习</h2><p>在预测出的短轨迹中微调 PPO，再回到原物理仿真器验证效果。</p></div></div>
+  <details id="world-rl-settings" class="experiment world-experiment" open>
+    <summary class="experiment-heading"><div class="experiment-heading-copy"><h3>策略微调与验证</h3><p id="wm-rl-summary">先在 02 完成世界模型训练</p></div><span class="experiment-heading-meta"><span id="wm-rl-status" class="tag">就绪</span><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开</span><span class="experiment-collapse">收起</span></span></span></summary>
+    <div class="wm-body">
+      <div class="wm-stages wm-refine-stages">
+        <div><h3>PPO 微调</h3><div class="wm-pair"><label>更新轮数 <select id="wm-updates"><option value="1">1</option><option value="5">5</option><option value="10" selected>10（默认）</option><option value="20">20</option><option value="35">35</option><option value="50">50</option><option value="100">100</option></select></label><label>想象步数 <input id="wm-horizon" type="number" min="1" max="5" value="3"></label></div><button id="wm-refine" disabled>模型内微调当前 PPO</button><p class="field-help" id="wm-refine-help">从采集状态出发，短轨迹 + 不确定性限制；保留真实验证中表现更好的策略。</p></div>
+        <div><h3>回到原仿真器验证</h3><p id="wm-result" class="field-help"></p></div>
+      </div>
+      <div class="checkpoint-actions"><button id="wm-policy-export" disabled>导出候选策略</button><button id="wm-use-policy" disabled>回放验证后策略</button><button id="wm-rl-stop" disabled>停止策略微调</button></div>
+      <div id="wm-rl-error" role="alert"></div>
+      <p class="field-help">实验运行在浏览器 Worker 中，完成的结果自动保存。刷新会停止未完成的阶段。</p>
+    </div>
+  </details>
+  <details id="wm-rl-chart-settings" class="experiment learning-settings wm-chart-settings" open>
+    <summary class="experiment-heading"><div class="experiment-heading-copy"><h3>模型内强化学习曲线</h3><p>实时更新 · 完成后随实验保存在浏览器中</p></div><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开</span><span class="experiment-collapse">收起</span></span></summary>
+    <div class="learning-grid wm-rl-grid" aria-label="模型内强化学习曲线">
+      <div class="learning"><div class="chart-heading"><h3>模型内 PPO 回报</h3><span class="muted">每次更新的平均想象短轨迹回报</span></div><div class="legend"><span><i class="mean"></i>模型预测轨迹</span></div><p class="wm-chart-note">含不确定性惩罚；不等于完整回合回报</p><canvas id="wm-return-chart" class="learning-chart" aria-label="模型内 PPO 平均短轨迹回报曲线"></canvas></div>
+      <div class="learning"><div class="chart-heading"><h3>原仿真验证成功率</h3><span class="muted">每轮更新后，在原物理仿真器中验证</span></div><div class="legend"><span><i class="mean"></i>本轮</span><span><i class="best"></i>历史最佳</span><span><i class="validation"></i>原策略</span></div><p class="wm-chart-note">虚线：微调前基线 · 独立测试不参与选优</p><canvas id="wm-success-chart" class="learning-chart" aria-label="模型内 PPO 微调后的原仿真验证成功率与原策略基线"></canvas></div>
+    </div>
+  </details>
+  </section>
+
+  <footer><span>成功条件：方块中心距目标 ≤ 7 cm，持续 0.25 s。前台与后台共用同一物理环境。</span><span>方块与目标的采样半径：0.65–1.65 m；间距：0.4–0.8 m。布局经过关节限位、连杆避碰与实际推动验证。</span></footer>
+</main><script src="{{ '/assets/apps/world-model-rl/app.js' | relative_url }}"></script>
+</body></html>
