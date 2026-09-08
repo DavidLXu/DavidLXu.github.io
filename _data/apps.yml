@@ -1,3 +1,14 @@
+- id: mono-color
+  title: Mono Color Design Lab
+  zh_title: Mono Color 设计实验室
+  category: Design study
+  zh_category: 设计实验
+  description: Explore four dexterous-hand posters, unpack their design decisions, and compose a prompt to see how a skill can take on parts of a designer’s work.
+  zh_description: 拆解四张灵巧手海报的构图、用色与字体，动手组合设计提示词，看看 skill 如何接手设计师的一部分工作。
+  detail: 4 posters · 中文
+  zh_detail: 四张海报 · 中文
+  url: /apps/mono-color/
+
 - id: world-model-history
   title: World Model History
   zh_title: World Model 发展历程

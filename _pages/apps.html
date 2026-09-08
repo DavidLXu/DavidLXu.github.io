@@ -17,6 +17,14 @@ author_profile: false
     <a class="app-card" href="{{ app.url | relative_url }}" aria-labelledby="app-title-{{ app.id }}">
       <div class="app-preview app-preview--{{ app.id }}" aria-hidden="true">
         {% case app.id %}
+        {% when 'mono-color' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <text x="30" y="121" fill="#232421" font-family="Helvetica,Arial,sans-serif" font-size="83" font-weight="800" letter-spacing="-7">mono<tspan fill="#c83232">.</tspan></text>
+          <path d="M33 146H145" stroke="#c83232" stroke-width="2"/>
+          <text x="33" y="168" fill="#66675f" font-family="monospace" font-size="9" letter-spacing="1">FOUR HANDS / ONE SYSTEM</text>
+          <g fill="#c83232"><rect x="288" y="28" width="13" height="20"/><rect x="307" y="28" width="13" height="20"/></g>
+          <g fill="#232421"><rect x="288" y="54" width="13" height="20"/><rect x="307" y="54" width="13" height="20"/></g>
+        </svg>
         {% when 'world-model-history' %}
         <svg viewBox="0 0 360 190" focusable="false">
           <g fill="none" stroke-width="2">
