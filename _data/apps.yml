@@ -1,3 +1,14 @@
+- id: world-model-history
+  title: World Model History
+  zh_title: World Model 发展历程
+  category: Interactive timeline
+  zh_category: 交互式时间线
+  description: Trace world models from Dyna to video and 3D world simulation. Explore four research routes and compare what different methods predict and how they use it.
+  zh_description: 从 Dyna 到视频与三维世界模拟，沿四条研究路线探索世界模型的发展，对照不同方法预测什么、又如何利用预测。
+  detail: 18 milestones · 中文
+  zh_detail: 18 个精选节点 · 中文
+  url: /apps/world-model-history/
+
 - id: jepa
   title: JEPA Learning Route
   zh_title: JEPA 学习路线

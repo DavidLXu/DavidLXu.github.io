@@ -17,6 +17,20 @@ author_profile: false
     <a class="app-card" href="{{ app.url | relative_url }}" aria-labelledby="app-title-{{ app.id }}">
       <div class="app-preview app-preview--{{ app.id }}" aria-hidden="true">
         {% case app.id %}
+        {% when 'world-model-history' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g fill="none" stroke-width="2">
+            <path d="M40 132H100L157 99H225L306 55" stroke="#40594a"/>
+            <path d="M100 132L157 62H247" stroke="#8a9760"/>
+            <path d="M157 99L225 137H306" stroke="#a18c68"/>
+            <path d="M225 137L271 105H306" stroke="#7c889d"/>
+          </g>
+          <g fill="#40594a"><circle cx="40" cy="132" r="7"/><circle cx="100" cy="132" r="5"/><circle cx="157" cy="99" r="7"/><circle cx="225" cy="99" r="5"/><circle cx="306" cy="55" r="8"/></g>
+          <g fill="#8a9760"><circle cx="157" cy="62" r="5"/><circle cx="247" cy="62" r="7"/></g>
+          <g fill="#a18c68"><circle cx="225" cy="137" r="5"/><circle cx="306" cy="137" r="7"/></g>
+          <g fill="#7c889d"><circle cx="271" cy="105" r="5"/><circle cx="306" cy="105" r="7"/></g>
+          <g fill="#526050" font-size="11" font-family="monospace"><text x="28" y="160">1991</text><text x="280" y="33">2026</text></g>
+        </svg>
         {% when 'jepa' %}
         <svg viewBox="0 0 360 190" focusable="false">
           <path d="M40 125H112V90H184V58H316" fill="none" stroke="#72988a" stroke-width="2"/>

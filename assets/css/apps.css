@@ -26,6 +26,7 @@
 .app-preview { aspect-ratio: 360 / 190; border-bottom: 1px solid var(--global-border-color); }
 .app-preview svg { display: block; width: 100%; height: 100%; }
 .app-preview--jepa { background: #eef2e8; }
+.app-preview--world-model-history { background: #f1f2dc; }
 .app-preview--roboscope { background: #22263d; }
 .app-preview--training { background: #f5ede2; }
 .app-card-body { padding: 25px; display: flex; flex-direction: column; flex: 1; }
