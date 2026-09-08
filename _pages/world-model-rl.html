@@ -7,11 +7,11 @@ excerpt: "用浏览器 CPU 训练机械臂推块策略、学习世界模型，�
 ---
 <!doctype html>
 <html lang="zh-CN">
-<head><meta name="description" content="在浏览器中训练推块策略、学习状态世界模型，并在模型预测轨迹中微调 PPO。内置最佳策略，支持访客 CPU 训练。"><meta charset="utf-8"><meta name="push-lab-mode" content="static"><meta name="viewport" content="width=device-width,initial-scale=1"><title>在世界模型中强化学习 · Push Lab</title><link rel="stylesheet" href="{{ '/assets/apps/world-model-rl/style.css' | relative_url }}"></head>
+<head><meta name="description" content="在浏览器中训练推块策略、学习状态世界模型，并在模型中微调或从零训练 PPO。内置最佳策略，支持访客 CPU 训练。"><meta charset="utf-8"><meta name="push-lab-mode" content="static"><meta name="viewport" content="width=device-width,initial-scale=1"><title>在世界模型中强化学习 · Push Lab</title><link rel="stylesheet" href="{{ '/assets/apps/world-model-rl/style.css' | relative_url }}"></head>
 <body>
 <main>
   <header><a class="brand" href="{{ '/apps/' | relative_url }}" aria-label="返回 Apps" style="color:inherit;text-decoration:none"><span class="brand-mark">←</span> Apps <span class="divider">/</span><span class="muted">PUSH LAB</span></a><span id="connection" class="connection">你的 CPU · 浏览器训练</span></header>
-  <section class="intro"><div><div class="eyebrow">WORLD MODEL · REINFORCEMENT LEARNING</div><h1>在世界模型中强化学习</h1><p>先在物理仿真器中训练基座策略，再采集数据、学习世界模型，并在模型中继续强化学习。</p></div><div class="hardware"><span class="chip-symbol">⌘</span><div><strong id="chip">Apple Silicon</strong><small id="hardware-detail">正在读取设备</small></div></div></section>
+  <section class="intro"><div><div class="eyebrow">WORLD MODEL · REINFORCEMENT LEARNING</div><h1>在世界模型中强化学习</h1><p>先在物理仿真器中训练基座策略，再采集数据、学习世界模型，并在模型中微调或从零训练 PPO。</p></div><div class="hardware"><span class="chip-symbol">⌘</span><div><strong id="chip">Apple Silicon</strong><small id="hardware-detail">正在读取设备</small></div></div></section>
   <section id="base-training" aria-labelledby="base-training-title">
   <div class="stage-heading"><span class="stage-number" aria-hidden="true">01</span><div><h2 id="base-training-title">在仿真器中训练强化学习基座</h2><p>在随机推块场景中训练策略，通过下面三条曲线观察学习效果。</p></div></div>
   <section class="metrics" aria-label="后台实时训练指标">
@@ -124,7 +124,7 @@ excerpt: "用浏览器 CPU 训练机械臂推块策略、学习世界模型，�
   </details>
   </section>
   <section id="world-rl" aria-labelledby="world-rl-title">
-  <div class="stage-heading"><span class="stage-number" aria-hidden="true">03</span><div><h2 id="world-rl-title">在世界模型中跑强化学习</h2><p>在预测出的短轨迹中微调 PPO，再回到原物理仿真器验证效果。</p></div></div>
+  <div class="stage-heading"><span class="stage-number" aria-hidden="true">03</span><div><h2 id="world-rl-title">在世界模型中微调强化学习</h2><p>在预测出的短轨迹中微调 PPO，再回到原物理仿真器验证效果。</p></div></div>
   <details id="world-rl-settings" class="experiment world-experiment" open>
     <summary class="experiment-heading"><div class="experiment-heading-copy"><h3>策略微调与验证</h3><p id="wm-rl-summary">先在 02 完成世界模型训练</p></div><span class="experiment-heading-meta"><span id="wm-rl-status" class="tag">就绪</span><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开</span><span class="experiment-collapse">收起</span></span></span></summary>
     <div class="wm-body">
@@ -142,6 +142,28 @@ excerpt: "用浏览器 CPU 训练机械臂推块策略、学习世界模型，�
     <div class="learning-grid wm-rl-grid" aria-label="模型内强化学习曲线">
       <div class="learning"><div class="chart-heading"><h3>模型内 PPO 回报</h3><span class="muted">每次更新的平均想象短轨迹回报</span></div><div class="legend"><span><i class="mean"></i>模型预测轨迹</span></div><p class="wm-chart-note">含不确定性惩罚；不等于完整回合回报</p><canvas id="wm-return-chart" class="learning-chart" aria-label="模型内 PPO 平均短轨迹回报曲线"></canvas></div>
       <div class="learning"><div class="chart-heading"><h3>原仿真验证成功率</h3><span class="muted">每轮更新后，在原物理仿真器中验证</span></div><div class="legend"><span><i class="mean"></i>本轮</span><span><i class="best"></i>历史最佳</span><span><i class="validation"></i>原策略</span></div><p class="wm-chart-note">虚线：微调前基线 · 独立测试不参与选优</p><canvas id="wm-success-chart" class="learning-chart" aria-label="模型内 PPO 微调后的原仿真验证成功率与原策略基线"></canvas></div>
+    </div>
+  </details>
+  </section>
+  <section id="world-cold" aria-labelledby="world-cold-title">
+  <div class="stage-heading"><span class="stage-number" aria-hidden="true">04</span><div><h2 id="world-cold-title">在世界模型中冷启动强化学习训练</h2><p>随机初始化 actor 和 critic，在 02 的世界模型中学习，再回原仿真器验证。</p></div></div>
+  <details id="world-cold-settings" class="experiment world-experiment" open>
+    <summary class="experiment-heading"><div class="experiment-heading-copy"><h3>从零训练 PPO 与验证</h3><p id="wm-cold-summary">先在 02 完成世界模型训练</p></div><span class="experiment-heading-meta"><span id="wm-cold-status" class="tag">就绪</span><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开</span><span class="experiment-collapse">收起</span></span></span></summary>
+    <div class="wm-body">
+      <div class="wm-stages wm-refine-stages">
+        <div><h3>PPO 冷启动</h3><div class="wm-pair"><label>更新轮数 <select id="wm-cold-updates"><option value="1">1</option><option value="10">10</option><option value="50">50</option><option value="100" selected>100（默认）</option><option value="300">300</option><option value="1000">1,000</option><option value="2000">2,000</option></select></label><label>想象步数 <select id="wm-cold-horizon"><option value="1">1 步</option><option value="3">3 步</option><option value="5" selected>5 步</option><option value="10">10 步</option><option value="15">15 步</option></select></label></div><button id="wm-cold-start" disabled>从零训练 PPO</button><p class="field-help" id="wm-cold-help">不继承基座网络权重。复用 02 的数据和任务配置；从初始状态与采集状态各半采样，生成短轨迹训练。</p></div>
+        <div><h3>回到原仿真器验证</h3><p id="wm-cold-result" class="field-help"></p></div>
+      </div>
+      <div class="checkpoint-actions"><button id="wm-cold-export" disabled>导出冷启动策略</button><button id="wm-cold-use" disabled>回放验证后策略</button><button id="wm-cold-stop" disabled>停止冷启动训练</button></div>
+      <div id="wm-cold-error" role="alert"></div>
+      <p class="field-help">实验运行在浏览器 Worker 中，完成的结果自动保存。刷新会停止未完成的阶段。</p>
+    </div>
+  </details>
+  <details id="wm-cold-chart-settings" class="experiment learning-settings wm-chart-settings" open>
+    <summary class="experiment-heading"><div class="experiment-heading-copy"><h3>冷启动强化学习曲线</h3><p>实时更新 · 完成后随实验保存在浏览器中</p></div><span class="experiment-toggle-label" aria-hidden="true"><span class="experiment-expand">展开</span><span class="experiment-collapse">收起</span></span></summary>
+    <div class="learning-grid wm-rl-grid" aria-label="冷启动强化学习曲线">
+      <div class="learning"><div class="chart-heading"><h3>冷启动 PPO 回报</h3><span class="muted">每次更新的平均想象短轨迹回报</span></div><div class="legend"><span><i class="mean"></i>模型预测轨迹</span></div><p class="wm-chart-note">含不确定性惩罚；不等于完整回合回报</p><canvas id="wm-cold-return-chart" class="learning-chart" aria-label="模型内 PPO 平均短轨迹回报曲线"></canvas></div>
+      <div class="learning"><div class="chart-heading"><h3>原仿真验证成功率</h3><span class="muted">每 10 轮及最后一轮，在原仿真器中验证</span></div><div class="legend"><span><i class="mean"></i>本轮</span><span><i class="best"></i>历史最佳</span><span><i class="validation"></i>随机初始策略</span></div><p class="wm-chart-note">虚线：随机初始化基线 · 独立测试不参与选优</p><canvas id="wm-cold-success-chart" class="learning-chart" aria-label="模型内 PPO 冷启动后的原仿真验证成功率与原策略基线"></canvas></div>
     </div>
   </details>
   </section>
