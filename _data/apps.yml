@@ -1,0 +1,32 @@
+- id: jepa
+  title: JEPA Learning Route
+  zh_title: JEPA 学习路线
+  category: Interactive course
+  zh_category: 交互式学习
+  description: Six stops from visual representations to robot actions. Try the experiments, check your understanding, and pick up where you left off.
+  zh_description: 从视觉表征到机器人行动，沿着六站路线动手实验、检验理解，并保存自己的学习进度。
+  detail: 6 chapters · 中文
+  zh_detail: 六站完整路线 · 中文
+  url: /apps/jepa/
+
+- id: roboscope
+  title: RoboScope
+  zh_title: RoboScope
+  category: Research map
+  zh_category: 研究地图
+  description: Explore my paper notes as a 3D semantic map. Rotate the view, discover related ideas, and open the notes that catch your eye.
+  zh_description: 在三维语义地图中探索我的论文笔记。旋转视角、发现相近的研究方向，点开感兴趣的笔记。
+  detail: 3D exploration · EN / 中文
+  zh_detail: 三维探索 · EN / 中文
+  url: /roboscope/
+
+- id: training
+  title: Embodied Model Training
+  zh_title: 具身模型训练阶段
+  category: Interactive map
+  zh_category: 交互式图解
+  description: Select an embodied model to trace its training stages, shared components, and data sources on one interactive map.
+  zh_description: 选择一个具身模型，在同一张交互图中查看它的训练阶段、共享组件与数据来源。
+  detail: Model comparison · EN / 中文
+  zh_detail: 模型对比 · EN / 中文
+  url: /demos/embodied-training-stages/

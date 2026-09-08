@@ -5,6 +5,8 @@ excerpt: "A semantic map of paper notes"
 author_profile: true
 ---
 
+<p><a href="{{ '/apps/' | relative_url }}" data-i18n-en="← All apps" data-i18n-zh="← 返回 Apps">← All apps</a></p>
+
 <div data-lang="en">
   <p>RoboScope is a lightweight semantic map for the papers I have read and summarized. It recomputes clusters directly in the browser from the current Paper Notes collection, so the map updates automatically when new notes are added to the site.</p>
 </div>

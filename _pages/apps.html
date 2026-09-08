@@ -1,0 +1,52 @@
+---
+layout: default
+title: "Apps"
+permalink: /apps/
+excerpt: "Interactive experiments, learning routes, and research maps."
+author_profile: false
+---
+<link rel="stylesheet" href="{{ '/assets/css/apps.css' | relative_url }}">
+<main class="apps-hub" id="main">
+  <header class="apps-intro">
+    <p class="apps-eyebrow" data-i18n-en="A small collection of things to try" data-i18n-zh="一些可以动手玩的小应用">A small collection of things to try</p>
+    <h1>Apps<span aria-hidden="true">.</span></h1>
+    <p class="apps-lead" data-i18n-en="Explore an idea by interacting with it. Here are the learning tools and experiments I’ve built along the way." data-i18n-zh="把想法变成可以动手探索的东西。这里收集了我做的学习工具和交互实验。">Explore an idea by interacting with it. Here are the learning tools and experiments I’ve built along the way.</p>
+  </header>
+  <div class="apps-grid">
+    {% for app in site.data.apps %}
+    <a class="app-card" href="{{ app.url | relative_url }}" aria-labelledby="app-title-{{ app.id }}">
+      <div class="app-preview app-preview--{{ app.id }}" aria-hidden="true">
+        {% case app.id %}
+        {% when 'jepa' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <path d="M40 125H112V90H184V58H316" fill="none" stroke="#72988a" stroke-width="2"/>
+          <g fill="#216653"><circle cx="40" cy="125" r="7"/><circle cx="112" cy="125" r="7"/><circle cx="112" cy="90" r="7"/><circle cx="184" cy="90" r="7"/><circle cx="184" cy="58" r="7"/><circle cx="290" cy="58" r="10"/></g>
+          <g fill="#586761" font-size="11" font-family="monospace"><text x="28" y="152">JEPA</text><text x="232" y="37">JEPA-VLA</text></g>
+          <path d="m311 53 5 5-5 5" fill="none" stroke="#216653" stroke-width="2"/>
+        </svg>
+        {% when 'roboscope' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g stroke="#8185b9" stroke-opacity=".55" fill="none"><ellipse cx="180" cy="95" rx="126" ry="57"/><ellipse cx="180" cy="95" rx="126" ry="57" transform="rotate(-25 180 95)"/><path d="m76 82 43 48 55-65 50 49 54-45M119 130l105-16 24 33M174 65l-20-29"/></g>
+          <g fill="#c0b5f6"><circle cx="76" cy="82" r="6"/><circle cx="119" cy="130" r="9"/><circle cx="174" cy="65" r="11"/><circle cx="154" cy="36" r="4"/></g>
+          <g fill="#7dc6ca"><circle cx="224" cy="114" r="10"/><circle cx="278" cy="69" r="7"/><circle cx="248" cy="147" r="5"/></g>
+          <g fill="#f2c090"><circle cx="93" cy="57" r="3"/><circle cx="197" cy="149" r="4"/><circle cx="293" cy="115" r="4"/></g>
+        </svg>
+        {% when 'training' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g fill="none" stroke="#a66b40" stroke-width="2"><path d="M59 95h240"/><path d="m291 90 8 5-8 5"/></g>
+          <g fill="#fffcf5" stroke="#d6bba1"><rect x="30" y="64" width="60" height="62" rx="8"/><rect x="110" y="64" width="60" height="62" rx="8"/><rect x="190" y="64" width="60" height="62" rx="8"/><rect x="270" y="64" width="60" height="62" rx="8"/></g>
+          <g fill="#a66b40" font-size="19" font-family="monospace" text-anchor="middle"><text x="60" y="102">01</text><text x="140" y="102">02</text><text x="220" y="102">03</text><text x="300" y="102">04</text></g>
+          <g fill="#8b715e"><circle cx="60" cy="146" r="3"/><circle cx="140" cy="146" r="3"/><circle cx="220" cy="146" r="3"/><circle cx="300" cy="146" r="3"/></g>
+        </svg>
+        {% endcase %}
+      </div>
+      <div class="app-card-body">
+        <p class="app-category" data-i18n-en="{{ app.category | escape }}" data-i18n-zh="{{ app.zh_category | escape }}">{{ app.category }}</p>
+        <h2 id="app-title-{{ app.id }}" data-i18n-en="{{ app.title | escape }}" data-i18n-zh="{{ app.zh_title | escape }}">{{ app.title }}</h2>
+        <p class="app-description" data-i18n-en="{{ app.description | escape }}" data-i18n-zh="{{ app.zh_description | escape }}">{{ app.description }}</p>
+        <div class="app-card-footer"><span data-i18n-en="{{ app.detail | escape }}" data-i18n-zh="{{ app.zh_detail | escape }}">{{ app.detail }}</span><span class="app-open" aria-hidden="true">↗</span></div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</main>
