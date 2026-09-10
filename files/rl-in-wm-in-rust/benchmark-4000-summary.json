@@ -1,0 +1,47 @@
+{
+  "format": "push-policy-benchmark-v2",
+  "world_model_config": "4000 trajectories / 10 epochs / 3 members",
+  "eval_seed": 80000,
+  "episodes": 100,
+  "policies": [
+    {
+      "name": "real PPO",
+      "checkpoint": "ppo-1000.json",
+      "trajectory": "benchmark-4000-real-ppo.json",
+      "metrics": {
+        "episodes": 100,
+        "mean_final_distance": 0.07112901657819748,
+        "mean_min_distance": 0.03606385737657547,
+        "mean_return": 133.5593719482422,
+        "mean_steps": 33.7599983215332,
+        "success_rate": 0.8500000238418579
+      }
+    },
+    {
+      "name": "world-model fine-tuned (4000/10)",
+      "checkpoint": "imagined-finetuned-4000e10.json",
+      "trajectory": "benchmark-4000-world-finetuned.json",
+      "metrics": {
+        "episodes": 100,
+        "mean_final_distance": 0.1763755828142166,
+        "mean_min_distance": 0.13785172998905182,
+        "mean_return": 90.2349624633789,
+        "mean_steps": 48.27000045776367,
+        "success_rate": 0.5400000214576721
+      }
+    },
+    {
+      "name": "world-model cold-start (4000/10)",
+      "checkpoint": "imagined-cold-start-4000e10.json",
+      "trajectory": "benchmark-4000-world-cold-start.json",
+      "metrics": {
+        "episodes": 100,
+        "mean_final_distance": 0.4642229378223419,
+        "mean_min_distance": 0.45921826362609863,
+        "mean_return": -17.022123336791992,
+        "mean_steps": 75.0,
+        "success_rate": 0.0
+      }
+    }
+  ]
+}

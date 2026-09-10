@@ -1,0 +1,838 @@
+{
+  "format": "push-world-heldout-curve-v1",
+  "evaluation_dataset": "dataset-wm-heldout-900000.json",
+  "evaluation_seeds": [
+    900000,
+    900999
+  ],
+  "available_episodes": 1000,
+  "cohort_episodes": 299,
+  "cohort_rule": "Only episodes with at least 30 transitions, fixed across horizons and models",
+  "state_action_sha256": "2fc83e7c597fd9767bf1a68c299863755fd3d773134f41aeceb2941ef4a1a66e",
+  "protocol": "Same real initial state and recorded action sequence; autoregressive predictions without teacher forcing",
+  "units": "Full/learned state MSE mixes physical units; block XY MSE is in m^2",
+  "curves": [
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 1,
+      "full_state_mse": 0.004174267528993244,
+      "learned_state_mse": 0.005366915394419885,
+      "block_xy_mse": 1.975188179563068e-06,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 2,
+      "full_state_mse": 0.04218470657700976,
+      "learned_state_mse": 0.054237479884726825,
+      "block_xy_mse": 5.608966963039538e-05,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 3,
+      "full_state_mse": 0.1500358676008377,
+      "learned_state_mse": 0.19290325834393438,
+      "block_xy_mse": 0.0005589913232596624,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 4,
+      "full_state_mse": 0.10123563969008148,
+      "learned_state_mse": 0.13016010817296195,
+      "block_xy_mse": 0.000997855408446073,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 5,
+      "full_state_mse": 0.09956279968866807,
+      "learned_state_mse": 0.1280093138854302,
+      "block_xy_mse": 0.0007737809032045014,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 6,
+      "full_state_mse": 0.11886820135155211,
+      "learned_state_mse": 0.1528305445948514,
+      "block_xy_mse": 0.0009023603521533972,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 7,
+      "full_state_mse": 0.13923589183360652,
+      "learned_state_mse": 0.1790175752146347,
+      "block_xy_mse": 0.0008095133189113465,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 8,
+      "full_state_mse": 0.12478963832737705,
+      "learned_state_mse": 0.16044382070662666,
+      "block_xy_mse": 0.0008866508659442189,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 9,
+      "full_state_mse": 0.15563786862497353,
+      "learned_state_mse": 0.20010583108925126,
+      "block_xy_mse": 0.0008436311978523332,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 10,
+      "full_state_mse": 0.15252656440720802,
+      "learned_state_mse": 0.19610558280926757,
+      "block_xy_mse": 0.0008983455527889468,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 11,
+      "full_state_mse": 0.16025096213354678,
+      "learned_state_mse": 0.20603695131455987,
+      "block_xy_mse": 0.0009051720799636273,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 12,
+      "full_state_mse": 0.20013886890007768,
+      "learned_state_mse": 0.2573214028715275,
+      "block_xy_mse": 0.0009467257503743446,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 13,
+      "full_state_mse": 0.18240074260531358,
+      "learned_state_mse": 0.23451524049254366,
+      "block_xy_mse": 0.0009956015149530065,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 14,
+      "full_state_mse": 0.21911883640319382,
+      "learned_state_mse": 0.2817242182326738,
+      "block_xy_mse": 0.0010595391930919558,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 15,
+      "full_state_mse": 0.19273467373137543,
+      "learned_state_mse": 0.24780172336890485,
+      "block_xy_mse": 0.0011520800193259109,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 16,
+      "full_state_mse": 0.20492572763140335,
+      "learned_state_mse": 0.26347593552608084,
+      "block_xy_mse": 0.001247480226448104,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 17,
+      "full_state_mse": 0.18522417761476753,
+      "learned_state_mse": 0.23814510578389486,
+      "block_xy_mse": 0.0014239665751615692,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 18,
+      "full_state_mse": 0.18032382581145043,
+      "learned_state_mse": 0.23184120280952875,
+      "block_xy_mse": 0.001575662071926212,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 19,
+      "full_state_mse": 0.17843811236083104,
+      "learned_state_mse": 0.2294062957608223,
+      "block_xy_mse": 0.001883398300606644,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 20,
+      "full_state_mse": 0.18394563769497543,
+      "learned_state_mse": 0.23647333170435147,
+      "block_xy_mse": 0.002179724402254199,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 21,
+      "full_state_mse": 0.19112269659756878,
+      "learned_state_mse": 0.24567762057923143,
+      "block_xy_mse": 0.002683471494948283,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 22,
+      "full_state_mse": 0.19206255322028035,
+      "learned_state_mse": 0.246872271400952,
+      "block_xy_mse": 0.003235872956131182,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 23,
+      "full_state_mse": 0.21125499466597664,
+      "learned_state_mse": 0.27150360809705243,
+      "block_xy_mse": 0.004043672364408938,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 24,
+      "full_state_mse": 0.21286633704718538,
+      "learned_state_mse": 0.2735585452489083,
+      "block_xy_mse": 0.004939791049958296,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 25,
+      "full_state_mse": 0.23018094704787337,
+      "learned_state_mse": 0.29584301409387526,
+      "block_xy_mse": 0.006078736330991886,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 26,
+      "full_state_mse": 0.23949609590743384,
+      "learned_state_mse": 0.30784060342550795,
+      "block_xy_mse": 0.0073473271286162425,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 27,
+      "full_state_mse": 0.2574118876859708,
+      "learned_state_mse": 0.3308429424917989,
+      "block_xy_mse": 0.008806620038819891,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 28,
+      "full_state_mse": 0.27246306946705173,
+      "learned_state_mse": 0.3499679131000885,
+      "block_xy_mse": 0.01035854423558343,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 29,
+      "full_state_mse": 0.28996396603304503,
+      "learned_state_mse": 0.3720904227248193,
+      "block_xy_mse": 0.01198513138812379,
+      "episodes": 299
+    },
+    {
+      "configuration": "1000 trajectories / 30 epochs",
+      "tag": "1000e30",
+      "step": 30,
+      "full_state_mse": 0.31017977297827065,
+      "learned_state_mse": 0.3975369708216387,
+      "block_xy_mse": 0.013605984745335725,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 1,
+      "full_state_mse": 0.002010517197723982,
+      "learned_state_mse": 0.002584950682787977,
+      "block_xy_mse": 1.2916458107688664e-06,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 2,
+      "full_state_mse": 0.036762032583602444,
+      "learned_state_mse": 0.04726547046463172,
+      "block_xy_mse": 5.706331166797479e-05,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 3,
+      "full_state_mse": 0.1545796322947047,
+      "learned_state_mse": 0.19874524152176318,
+      "block_xy_mse": 0.0005671606770232594,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 4,
+      "full_state_mse": 0.10954103327544512,
+      "learned_state_mse": 0.14083847135414373,
+      "block_xy_mse": 0.0009906517834797081,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 5,
+      "full_state_mse": 0.08763629332007418,
+      "learned_state_mse": 0.11267523426866656,
+      "block_xy_mse": 0.000791320773938305,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 6,
+      "full_state_mse": 0.12111128598282908,
+      "learned_state_mse": 0.15571451054935043,
+      "block_xy_mse": 0.0009516977289170502,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 7,
+      "full_state_mse": 0.11945670815651302,
+      "learned_state_mse": 0.15358719620122896,
+      "block_xy_mse": 0.000895964906168969,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 8,
+      "full_state_mse": 0.13025561080074843,
+      "learned_state_mse": 0.1674714996009613,
+      "block_xy_mse": 0.0009932876552446836,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 9,
+      "full_state_mse": 0.16111933361783476,
+      "learned_state_mse": 0.20715342893721594,
+      "block_xy_mse": 0.0009959096149922421,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 10,
+      "full_state_mse": 0.13413840579673383,
+      "learned_state_mse": 0.17246366459580056,
+      "block_xy_mse": 0.0010444343804537968,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 11,
+      "full_state_mse": 0.17370576738348803,
+      "learned_state_mse": 0.22333598663591273,
+      "block_xy_mse": 0.0010807824555151028,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 12,
+      "full_state_mse": 0.14782966389780572,
+      "learned_state_mse": 0.19006671072574907,
+      "block_xy_mse": 0.001127413834995811,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 13,
+      "full_state_mse": 0.17791957861145966,
+      "learned_state_mse": 0.22875374392901746,
+      "block_xy_mse": 0.0012005058959970265,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 14,
+      "full_state_mse": 0.1564878670543487,
+      "learned_state_mse": 0.20119868621273002,
+      "block_xy_mse": 0.0012684441470813058,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 15,
+      "full_state_mse": 0.19311198398065363,
+      "learned_state_mse": 0.24828683654654857,
+      "block_xy_mse": 0.001379351333112496,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 16,
+      "full_state_mse": 0.16755459518009366,
+      "learned_state_mse": 0.21542733666011116,
+      "block_xy_mse": 0.0014798288615505298,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 17,
+      "full_state_mse": 0.2030150704573123,
+      "learned_state_mse": 0.26101911086716645,
+      "block_xy_mse": 0.001675187416756144,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 18,
+      "full_state_mse": 0.1674596662890278,
+      "learned_state_mse": 0.21530156913784232,
+      "block_xy_mse": 0.0018503239314839035,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 19,
+      "full_state_mse": 0.1942707018133548,
+      "learned_state_mse": 0.24976248219978112,
+      "block_xy_mse": 0.002175305188656005,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 20,
+      "full_state_mse": 0.1774610205942292,
+      "learned_state_mse": 0.22813596686053425,
+      "block_xy_mse": 0.002478494676873383,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 21,
+      "full_state_mse": 0.19488727205555625,
+      "learned_state_mse": 0.25051778902521543,
+      "block_xy_mse": 0.002972374717691116,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 22,
+      "full_state_mse": 0.18011383061737998,
+      "learned_state_mse": 0.23150962805436587,
+      "block_xy_mse": 0.0034736960698149117,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 23,
+      "full_state_mse": 0.2037585688704106,
+      "learned_state_mse": 0.26186534635989617,
+      "block_xy_mse": 0.004206607379182803,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 24,
+      "full_state_mse": 0.19927312254532448,
+      "learned_state_mse": 0.2560815551750875,
+      "block_xy_mse": 0.004986960069258526,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 25,
+      "full_state_mse": 0.21566461870270012,
+      "learned_state_mse": 0.27717916336436654,
+      "block_xy_mse": 0.005970148156994114,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 26,
+      "full_state_mse": 0.21142954854771448,
+      "learned_state_mse": 0.27175504253444,
+      "block_xy_mse": 0.0070559364506304345,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 27,
+      "full_state_mse": 0.22217399903056456,
+      "learned_state_mse": 0.28553708564913394,
+      "block_xy_mse": 0.008292345300169396,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 28,
+      "full_state_mse": 0.22126190256188025,
+      "learned_state_mse": 0.2841378413648681,
+      "block_xy_mse": 0.009609835629024158,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 29,
+      "full_state_mse": 0.2378055908895798,
+      "learned_state_mse": 0.3050296546832217,
+      "block_xy_mse": 0.01101778857192207,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000 trajectories / 10 epochs",
+      "tag": "4000e10",
+      "step": 30,
+      "full_state_mse": 0.23152169647868365,
+      "learned_state_mse": 0.2964051581793124,
+      "block_xy_mse": 0.012464611528536854,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 1,
+      "full_state_mse": 0.0018216056407176463,
+      "learned_state_mse": 0.0023420643952083995,
+      "block_xy_mse": 9.909169590513293e-07,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 2,
+      "full_state_mse": 0.035073162046073324,
+      "learned_state_mse": 0.045094065487808574,
+      "block_xy_mse": 4.9889625600743575e-05,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 3,
+      "full_state_mse": 0.15695132436795478,
+      "learned_state_mse": 0.20179455990165587,
+      "block_xy_mse": 0.0005193268204315163,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 4,
+      "full_state_mse": 0.11202677674721515,
+      "learned_state_mse": 0.14403442724641924,
+      "block_xy_mse": 0.001042925621594457,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 5,
+      "full_state_mse": 0.08701884407773838,
+      "learned_state_mse": 0.11188137095709197,
+      "block_xy_mse": 0.0008168401596272872,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 6,
+      "full_state_mse": 0.12871518742226143,
+      "learned_state_mse": 0.16549095525719235,
+      "block_xy_mse": 0.0009695551438220455,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 7,
+      "full_state_mse": 0.11553508513766818,
+      "learned_state_mse": 0.14854510946271385,
+      "block_xy_mse": 0.0008648882150624787,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 8,
+      "full_state_mse": 0.14453397584551536,
+      "learned_state_mse": 0.18582939751566166,
+      "block_xy_mse": 0.0009418296689855364,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 9,
+      "full_state_mse": 0.1668089950268257,
+      "learned_state_mse": 0.21446870789163278,
+      "block_xy_mse": 0.0008845407986123577,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 10,
+      "full_state_mse": 0.18886371083085854,
+      "learned_state_mse": 0.24282477106824668,
+      "block_xy_mse": 0.0009279081967338897,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 11,
+      "full_state_mse": 0.21341408363864273,
+      "learned_state_mse": 0.2743895361068262,
+      "block_xy_mse": 0.0009255546459893528,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 12,
+      "full_state_mse": 0.25005983034587076,
+      "learned_state_mse": 0.3215054961589757,
+      "block_xy_mse": 0.0009543201723246149,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 13,
+      "full_state_mse": 0.2727056963470141,
+      "learned_state_mse": 0.3506216095890157,
+      "block_xy_mse": 0.0010001834749326591,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 14,
+      "full_state_mse": 0.28811739396866054,
+      "learned_state_mse": 0.37043664938827325,
+      "block_xy_mse": 0.0010461922482959362,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 15,
+      "full_state_mse": 0.3137872401845917,
+      "learned_state_mse": 0.4034407373801832,
+      "block_xy_mse": 0.0011459464926040915,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 16,
+      "full_state_mse": 0.30467956085468995,
+      "learned_state_mse": 0.39173086395602064,
+      "block_xy_mse": 0.001227929286417451,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 17,
+      "full_state_mse": 0.34622200892924665,
+      "learned_state_mse": 0.4451423174739398,
+      "block_xy_mse": 0.0014216340687000044,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 18,
+      "full_state_mse": 0.3286312487451437,
+      "learned_state_mse": 0.42252217515284857,
+      "block_xy_mse": 0.001592016395873718,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 19,
+      "full_state_mse": 0.39559819506853755,
+      "learned_state_mse": 0.5086121163850167,
+      "block_xy_mse": 0.0019282361483463442,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 20,
+      "full_state_mse": 0.3986463166507499,
+      "learned_state_mse": 0.5125170617903471,
+      "block_xy_mse": 0.002253874886430222,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 21,
+      "full_state_mse": 0.4923051915026083,
+      "learned_state_mse": 0.6329122568857102,
+      "block_xy_mse": 0.002785289320575314,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 22,
+      "full_state_mse": 0.5024878893469094,
+      "learned_state_mse": 0.6459905607066181,
+      "block_xy_mse": 0.0033680048237867775,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 23,
+      "full_state_mse": 0.6002361971402113,
+      "learned_state_mse": 0.7716222969924952,
+      "block_xy_mse": 0.00417675895651741,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 24,
+      "full_state_mse": 0.6265460984762212,
+      "learned_state_mse": 0.8054325242290976,
+      "block_xy_mse": 0.005090354398689744,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 25,
+      "full_state_mse": 0.6988984197678998,
+      "learned_state_mse": 0.8984797647339097,
+      "block_xy_mse": 0.006197101634646185,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 26,
+      "full_state_mse": 0.7501470624966685,
+      "learned_state_mse": 0.9643918461830948,
+      "block_xy_mse": 0.007419074324803934,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 27,
+      "full_state_mse": 0.8176271304648653,
+      "learned_state_mse": 1.0511196832075207,
+      "block_xy_mse": 0.008792755606148063,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 28,
+      "full_state_mse": 0.8628941947895611,
+      "learned_state_mse": 1.1090936456576008,
+      "block_xy_mse": 0.010264489560979742,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 29,
+      "full_state_mse": 0.9162580868756991,
+      "learned_state_mse": 1.1773257209510892,
+      "block_xy_mse": 0.011833601004833891,
+      "episodes": 299
+    },
+    {
+      "configuration": "10000 trajectories / 5 epochs",
+      "tag": "10000e5",
+      "step": 30,
+      "full_state_mse": 0.959580921193305,
+      "learned_state_mse": 1.2324813042409677,
+      "block_xy_mse": 0.013448207080736076,
+      "episodes": 299
+    }
+  ],
+  "training": {
+    "checkpoint": "runs/world-model-10000e5.json",
+    "dataset": "runs/dataset-10000.json",
+    "stage": "train-world",
+    "test_episodes": 1000,
+    "test_five_step_mse": 0.03574131801724434,
+    "test_one_step_mse": 0.016091497614979744,
+    "train_episodes": 8000,
+    "train_mse": 0.05240733548998833,
+    "validation_episodes": 1000,
+    "validation_mse": 0.05260908231139183
+  }
+}

@@ -1,0 +1,728 @@
+{
+  "format": "push-world-short-rollout-comparison-v1",
+  "evaluation_dataset": "dataset-wm-heldout-900000.json",
+  "cohort_episodes": 299,
+  "protocol": "same held-out initial states/actions; autoregressive predictions without teacher forcing",
+  "curves": [
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 1,
+      "full_state_mse": 0.002010517197723982,
+      "block_xy_mse": 1.2916458107688664e-06,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 2,
+      "full_state_mse": 0.036762032583602444,
+      "block_xy_mse": 5.706331166797479e-05,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 3,
+      "full_state_mse": 0.1545796322947047,
+      "block_xy_mse": 0.0005671606770232594,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 4,
+      "full_state_mse": 0.10954103327544512,
+      "block_xy_mse": 0.0009906517834797081,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 5,
+      "full_state_mse": 0.08763629332007418,
+      "block_xy_mse": 0.000791320773938305,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 6,
+      "full_state_mse": 0.12111128598282908,
+      "block_xy_mse": 0.0009516977289170502,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 7,
+      "full_state_mse": 0.11945670815651302,
+      "block_xy_mse": 0.000895964906168969,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 8,
+      "full_state_mse": 0.13025561080074843,
+      "block_xy_mse": 0.0009932876552446836,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 9,
+      "full_state_mse": 0.16111933361783476,
+      "block_xy_mse": 0.0009959096149922421,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 10,
+      "full_state_mse": 0.13413840579673383,
+      "block_xy_mse": 0.0010444343804537968,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 11,
+      "full_state_mse": 0.17370576738348803,
+      "block_xy_mse": 0.0010807824555151028,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 12,
+      "full_state_mse": 0.14782966389780572,
+      "block_xy_mse": 0.001127413834995811,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 13,
+      "full_state_mse": 0.17791957861145966,
+      "block_xy_mse": 0.0012005058959970265,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 14,
+      "full_state_mse": 0.1564878670543487,
+      "block_xy_mse": 0.0012684441470813058,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 15,
+      "full_state_mse": 0.19311198398065363,
+      "block_xy_mse": 0.001379351333112496,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 16,
+      "full_state_mse": 0.16755459518009366,
+      "block_xy_mse": 0.0014798288615505298,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 17,
+      "full_state_mse": 0.2030150704573123,
+      "block_xy_mse": 0.001675187416756144,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 18,
+      "full_state_mse": 0.1674596662890278,
+      "block_xy_mse": 0.0018503239314839035,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 19,
+      "full_state_mse": 0.1942707018133548,
+      "block_xy_mse": 0.002175305188656005,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 20,
+      "full_state_mse": 0.1774610205942292,
+      "block_xy_mse": 0.002478494676873383,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 21,
+      "full_state_mse": 0.19488727205555625,
+      "block_xy_mse": 0.002972374717691116,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 22,
+      "full_state_mse": 0.18011383061737998,
+      "block_xy_mse": 0.0034736960698149117,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 23,
+      "full_state_mse": 0.2037585688704106,
+      "block_xy_mse": 0.004206607379182803,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 24,
+      "full_state_mse": 0.19927312254532448,
+      "block_xy_mse": 0.004986960069258526,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 25,
+      "full_state_mse": 0.21566461870270012,
+      "block_xy_mse": 0.005970148156994114,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 26,
+      "full_state_mse": 0.21142954854771448,
+      "block_xy_mse": 0.0070559364506304345,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 27,
+      "full_state_mse": 0.22217399903056456,
+      "block_xy_mse": 0.008292345300169396,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 28,
+      "full_state_mse": 0.22126190256188025,
+      "block_xy_mse": 0.009609835629024158,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 29,
+      "full_state_mse": 0.2378055908895798,
+      "block_xy_mse": 0.01101778857192207,
+      "episodes": 299
+    },
+    {
+      "configuration": "4000/10 baseline",
+      "tag": "base",
+      "step": 30,
+      "full_state_mse": 0.23152169647868365,
+      "block_xy_mse": 0.012464611528536854,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 1,
+      "full_state_mse": 0.005103931198168271,
+      "block_xy_mse": 6.427169946205439e-07,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 2,
+      "full_state_mse": 0.03107984250255758,
+      "block_xy_mse": 4.184630139105691e-05,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 3,
+      "full_state_mse": 0.12845699119808643,
+      "block_xy_mse": 0.00038149126253330014,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 4,
+      "full_state_mse": 0.17374935432876334,
+      "block_xy_mse": 0.0006684259925879503,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 5,
+      "full_state_mse": 0.2033119559851746,
+      "block_xy_mse": 0.0006586097044069501,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 6,
+      "full_state_mse": 0.2233463531797961,
+      "block_xy_mse": 0.000962466676691395,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 7,
+      "full_state_mse": 0.28314580971802356,
+      "block_xy_mse": 0.0011051155653115053,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 8,
+      "full_state_mse": 0.25409184073508656,
+      "block_xy_mse": 0.001539789846667741,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 9,
+      "full_state_mse": 0.2908499794805873,
+      "block_xy_mse": 0.0019218108428723638,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 10,
+      "full_state_mse": 0.23763570329918568,
+      "block_xy_mse": 0.002583799878809217,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 11,
+      "full_state_mse": 0.29025135958273524,
+      "block_xy_mse": 0.003376196186857578,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 12,
+      "full_state_mse": 0.2652086861092847,
+      "block_xy_mse": 0.0044044614206506984,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 13,
+      "full_state_mse": 0.3268393539160233,
+      "block_xy_mse": 0.005703038704192425,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 14,
+      "full_state_mse": 0.3220516724662662,
+      "block_xy_mse": 0.007142784737673174,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 15,
+      "full_state_mse": 0.36829710774204777,
+      "block_xy_mse": 0.008901255218972164,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 16,
+      "full_state_mse": 0.3575489003622959,
+      "block_xy_mse": 0.010676573971862372,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 17,
+      "full_state_mse": 0.38970228347456853,
+      "block_xy_mse": 0.012799149148159654,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 18,
+      "full_state_mse": 0.37794960196678384,
+      "block_xy_mse": 0.014898620300490713,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 19,
+      "full_state_mse": 0.39713371401826425,
+      "block_xy_mse": 0.017368346086618688,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 20,
+      "full_state_mse": 0.41302887081922335,
+      "block_xy_mse": 0.019829822236072017,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 21,
+      "full_state_mse": 0.4106772649729683,
+      "block_xy_mse": 0.022594366651631732,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 22,
+      "full_state_mse": 0.4159432484856959,
+      "block_xy_mse": 0.02529727070132677,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 23,
+      "full_state_mse": 0.43767648181085805,
+      "block_xy_mse": 0.028417820882059058,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 24,
+      "full_state_mse": 0.44313466537570145,
+      "block_xy_mse": 0.03124832261399939,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 25,
+      "full_state_mse": 0.45097553915077826,
+      "block_xy_mse": 0.03418253221122066,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 26,
+      "full_state_mse": 0.436695439502266,
+      "block_xy_mse": 0.03670253017837872,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 27,
+      "full_state_mse": 0.42945444265945687,
+      "block_xy_mse": 0.03924857999466426,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 28,
+      "full_state_mse": 0.42956762529779113,
+      "block_xy_mse": 0.041517082286441465,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 29,
+      "full_state_mse": 0.4320311717982046,
+      "block_xy_mse": 0.04375497075268472,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 episode-start",
+      "tag": "episode",
+      "step": 30,
+      "full_state_mse": 0.4323432962591353,
+      "block_xy_mse": 0.045716510897405555,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 1,
+      "full_state_mse": 0.004689318959154658,
+      "block_xy_mse": 1.1204577251981311e-06,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 2,
+      "full_state_mse": 0.019292329988846755,
+      "block_xy_mse": 2.8107056796105183e-05,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 3,
+      "full_state_mse": 0.09474183485094428,
+      "block_xy_mse": 0.00030610932070673747,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 4,
+      "full_state_mse": 0.11969260124077143,
+      "block_xy_mse": 0.0005385900911319152,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 5,
+      "full_state_mse": 0.10455437295297902,
+      "block_xy_mse": 0.00047014934504752603,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 6,
+      "full_state_mse": 0.10999143176205553,
+      "block_xy_mse": 0.0006193243974108371,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 7,
+      "full_state_mse": 0.12955644960534426,
+      "block_xy_mse": 0.0006516800876353475,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 8,
+      "full_state_mse": 0.10686631958327505,
+      "block_xy_mse": 0.0008859784276358006,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 9,
+      "full_state_mse": 0.15697633688637633,
+      "block_xy_mse": 0.0010902695915596032,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 10,
+      "full_state_mse": 0.10957996917003002,
+      "block_xy_mse": 0.0014652350658468424,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 11,
+      "full_state_mse": 0.18985627657100088,
+      "block_xy_mse": 0.0019584786895468,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 12,
+      "full_state_mse": 0.14533587532227704,
+      "block_xy_mse": 0.0026056961922723124,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 13,
+      "full_state_mse": 0.2365342401820048,
+      "block_xy_mse": 0.003528983573626776,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 14,
+      "full_state_mse": 0.20144868403458724,
+      "block_xy_mse": 0.004640928604942137,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 15,
+      "full_state_mse": 0.2943589979762666,
+      "block_xy_mse": 0.006230578994580783,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 16,
+      "full_state_mse": 0.25740616862658344,
+      "block_xy_mse": 0.008029274501275474,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 17,
+      "full_state_mse": 0.36886015276028156,
+      "block_xy_mse": 0.010427063792819234,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 18,
+      "full_state_mse": 0.3266899744934589,
+      "block_xy_mse": 0.01301366761138142,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 19,
+      "full_state_mse": 0.41874723917736917,
+      "block_xy_mse": 0.01611482507155421,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 20,
+      "full_state_mse": 0.39413066473281383,
+      "block_xy_mse": 0.01940990929355332,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 21,
+      "full_state_mse": 0.45258404145553943,
+      "block_xy_mse": 0.023150959438565415,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 22,
+      "full_state_mse": 0.43850576920652123,
+      "block_xy_mse": 0.026968679998235802,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 23,
+      "full_state_mse": 0.4852473901943797,
+      "block_xy_mse": 0.031172824319363728,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 24,
+      "full_state_mse": 0.49073867308134356,
+      "block_xy_mse": 0.03523981542610159,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 25,
+      "full_state_mse": 0.5293043798324506,
+      "block_xy_mse": 0.03955031560237009,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 26,
+      "full_state_mse": 0.541747696637601,
+      "block_xy_mse": 0.043474791717601706,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 27,
+      "full_state_mse": 0.5924179157647843,
+      "block_xy_mse": 0.0474680660186417,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 28,
+      "full_state_mse": 0.6365025485275105,
+      "block_xy_mse": 0.050868127318307234,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 29,
+      "full_state_mse": 0.7166302402462162,
+      "block_xy_mse": 0.054235509849967514,
+      "episodes": 299
+    },
+    {
+      "configuration": "short30 replay-start",
+      "tag": "replay",
+      "step": 30,
+      "full_state_mse": 0.7763823715025955,
+      "block_xy_mse": 0.05681838335550055,
+      "episodes": 299
+    }
+  ]
+}
