@@ -169,5 +169,15 @@ excerpt: "用浏览器 CPU 训练机械臂推块策略、学习世界模型，�
   </section>
 
   <footer><span>成功条件：方块中心距目标 ≤ 7 cm，持续 0.25 s。前台与后台共用同一物理环境。</span><span>方块与目标的采样半径：0.65–1.65 m；间距：0.4–0.8 m。布局经过关节限位、连杆避碰与实际推动验证。</span></footer>
+  <section id="rust-project" class="rust-project" aria-labelledby="rust-project-title">
+    <span class="eyebrow">RUST · 本机训练</span>
+    <h2 id="rust-project-title">想训练得更快？试试 Rust 版</h2>
+    <p>如果你想进一步追求本机训练速度，可以试试开源项目 <strong>RL-in-WM-in-Rust</strong>。它用 Rust 实现物理仿真和 CPU 并行 PPO，支持从强化学习、轨迹采集、世界模型训练，到模型内策略微调与冷启动的完整实验流程。</p>
+    <p class="rust-project-note">仓库提供运行命令与实验记录，方便复现和继续探索；实际训练速度取决于硬件与配置。</p>
+    <div class="rust-project-links">
+      <a href="https://github.com/DavidLXu/RL-in-WM-in-Rust" target="_blank" rel="noopener noreferrer">查看 Rust 项目 ↗</a>
+      <a href="{{ '/posts/2026/09/rl-in-wm-in-rust/' | relative_url }}" target="_blank" rel="noopener noreferrer">阅读实验发现 ↗</a>
+    </div>
+  </section>
 </main><script src="{{ '/assets/apps/world-model-rl/app.js' | relative_url }}"></script>
 </body></html>
