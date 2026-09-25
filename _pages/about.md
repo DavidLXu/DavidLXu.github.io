@@ -100,7 +100,7 @@ redirect_from:
   </article>
 
   <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
-    <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;">arXiv</div>
+    <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;">NeurIPS 2026</div>
     <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">PDF-HR: Pose Distance Fields for Humanoid Robots</h3>
     <p style="margin: 0 0 0.55rem; font-size: 0.92rem;">Yi Gu, Yukang Gao, Yangchen Zhou, Xingyu Chen, Yixiao Feng, Mingle Zhao, Yunyang Mo, Zhaorui Wang, <strong>Lixin Xu</strong>, Renjing Xu</p>
     <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 0.6rem;">
