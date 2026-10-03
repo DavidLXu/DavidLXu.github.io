@@ -14,7 +14,7 @@ tags:
   - Personal Thoughts
 ---
 
-<div data-lang="en" markdown="1">
+<div id="sysid-en" data-lang="en" markdown="1">
 
 This post supports **English / 中文** switching via the site language toggle in the top navigation.
 
@@ -219,7 +219,7 @@ A policy does not send motion into an empty mathematical space. It sends a reque
 
 </div>
 
-<div data-lang="zh" markdown="1" style="display: none;">
+<div id="sysid-zh" data-lang="zh" markdown="1" style="display: none;">
 
 本文支持通过网站顶部语言切换按钮在 **English / 中文** 间切换。
 
@@ -422,3 +422,5 @@ Policy 并不是把运动发送到一片空白的数学空间里。它把 reques
 **参考：** [PACE repository](https://github.com/leggedrobotics/pace-sim2real) · [PACE paper](https://arxiv.org/abs/2509.06342)
 
 </div>
+
+{% include sysid-blog-diagrams.html %}
