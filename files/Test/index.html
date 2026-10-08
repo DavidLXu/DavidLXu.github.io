@@ -76,9 +76,7 @@
       .map-tools a, .map-tools button, .map-tools select { font: inherit; font-size: 13px; color: #173c32; background: white; border: 1px solid #bfd4cb; border-radius: 6px; padding: 7px 9px; text-decoration: none; cursor: pointer; }
       .map-tools strong { font-size: 15px; }
       .map-tools select { max-width: 180px; }
-      .preview .full-only { display: none; }
-      .preview .map-tools { top: 8px; left: 8px; padding: 6px; gap: 4px; }
-      .preview .map-tools button { padding: 5px 7px; font-size: 12px; }
+      .preview .map-tools { display: none; }
       @media (prefers-reduced-motion: reduce) { .city-dot { animation: none; } }
     </style>
   </head>
@@ -537,6 +535,7 @@
         iconAnchor: [7, 7]
       });
 
+      map.attributionControl.setPrefix(false);
       L.control.zoom({ position: "topright" }).addTo(map);
       const markers = [];
       const citySelect = document.getElementById("city-select");

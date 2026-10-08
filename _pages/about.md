@@ -199,7 +199,7 @@ redirect_from:
 <div style="margin: 0.8rem 0 1rem;">
   <iframe
     id="city-map-preview"
-    src="/files/Test/?v=20261008-map-app&amp;preview=1"
+    src="/files/Test/?v=20261008-map-clean&amp;preview=1"
     title="Travel Map Preview"
     loading="lazy"
     style="width: 100%; max-width: 560px; height: 260px; border: 1px solid #d7dce2; border-radius: 10px;"
