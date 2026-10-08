@@ -2,6 +2,13 @@
     <a class="app-card" href="{{ app.url | relative_url }}" aria-labelledby="app-title-{{ app.id }}">
       <div class="app-preview app-preview--{{ app.id }}" aria-hidden="true">
         {% case app.id %}
+        {% when 'travel-map' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <g fill="none" stroke="#b8cfc3"><ellipse cx="180" cy="95" rx="120" ry="70"/><ellipse cx="180" cy="95" rx="60" ry="70"/><path d="M60 95H300M79 60H281M79 130H281M180 25V165"/></g>
+          <path d="M91 77L111 101L194 64L263 107" fill="none" stroke="#258468" stroke-width="2" stroke-dasharray="4 5"/>
+          <g fill="#258468" stroke="white" stroke-width="3"><circle cx="91" cy="77" r="7"/><circle cx="111" cy="101" r="7"/><circle cx="194" cy="64" r="7"/><circle cx="263" cy="107" r="7"/></g>
+          <text x="26" y="177" fill="#426654" font-family="monospace" font-size="10">PLACES I HAVE BEEN</text>
+        </svg>
         {% when 'world-model-rl' %}
         <svg viewBox="0 0 360 190" focusable="false">
           <g fill="none" stroke="#d3e1e6"><circle cx="110" cy="98" r="68"/><circle cx="110" cy="98" r="34"/><path d="M194 43H329M194 94H329M194 146H329"/></g>

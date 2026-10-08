@@ -69,3 +69,15 @@
   detail: Model comparison · EN / 中文
   zh_detail: 模型对比 · EN / 中文
   url: /demos/embodied-training-stages/
+
+- id: travel-map
+  group: personal
+  title: Travel Map
+  zh_title: 旅行地图
+  category: Interactive map
+  zh_category: 交互地图
+  description: Explore the cities I have visited. Zoom into the Bay Area, browse the United States, or jump to a city on a fullscreen map.
+  zh_description: 在全屏地图中探索我去过的城市。放大查看湾区、浏览美国，或直接选择城市定位。
+  detail: City explorer · EN / 中文
+  zh_detail: 城市探索 · EN / 中文
+  url: /apps/travel-map/

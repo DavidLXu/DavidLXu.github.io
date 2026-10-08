@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>City Photo Map</title>
+    <title>Travel Map · Lixin Xu</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -72,11 +72,28 @@
         }
       }
 
+      .map-tools { position: absolute; z-index: 1000; top: 16px; left: 16px; right: 60px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 12px; width: fit-content; max-width: calc(100% - 76px); background: rgba(255,255,255,.96); color: #173c32; border-radius: 12px; box-shadow: 0 4px 24px #0002; }
+      .map-tools a, .map-tools button, .map-tools select { font: inherit; font-size: 13px; color: #173c32; background: white; border: 1px solid #bfd4cb; border-radius: 6px; padding: 7px 9px; text-decoration: none; cursor: pointer; }
+      .map-tools strong { font-size: 15px; }
+      .map-tools select { max-width: 180px; }
+      .preview .full-only { display: none; }
+      .preview .map-tools { top: 8px; left: 8px; padding: 6px; gap: 4px; }
+      .preview .map-tools button { padding: 5px 7px; font-size: 12px; }
+      @media (prefers-reduced-motion: reduce) { .city-dot { animation: none; } }
     </style>
   </head>
   <body>
     <div id="app">
-      <div id="map"></div>
+      <div id="map" aria-label="Visited cities map"></div>
+      <nav class="map-tools" aria-label="Map controls">
+        <a class="full-only" href="/apps/" target="_top">← Apps</a>
+        <strong class="full-only">Travel Map <span id="total"></span></strong>
+        <button id="world" type="button">World / 全球</button>
+        <button id="usa" type="button">USA / 美国</button>
+        <button id="bay" type="button">Bay Area / 湾区</button>
+        <select id="city-select" class="full-only" aria-label="Choose a city"><option value="">Choose a city / 选择城市</option></select>
+        <button id="fullscreen" class="full-only" type="button" hidden>Fullscreen / 全屏</button>
+      </nav>
     </div>
 
     <script
@@ -85,6 +102,7 @@
       crossorigin=""
     ></script>
     <script>
+      if (new URLSearchParams(location.search).has("preview")) document.body.classList.add("preview");
       const cities = [
         {
           name: "Beijing",
@@ -503,12 +521,13 @@
       const map = L.map("map", {
         worldCopyJump: true,
         minZoom: 2,
-        zoomControl: true,
-        attributionControl: false
+        zoomControl: false,
+        attributionControl: true
       }).setView([26, 70], 2);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
       }).addTo(map);
 
       const cityIcon = L.divIcon({
@@ -518,10 +537,47 @@
         iconAnchor: [7, 7]
       });
 
-      cities.forEach((city) => {
+      L.control.zoom({ position: "topright" }).addTo(map);
+      const markers = [];
+      const citySelect = document.getElementById("city-select");
+      document.getElementById("total").textContent = "· " + cities.length;
+      cities.forEach((city, index) => {
         const marker = L.marker([city.lat, city.lng], { icon: cityIcon }).addTo(map);
+        markers.push(marker);
         marker.bindTooltip(city.name, { direction: "top", offset: [0, -9], opacity: 0.95 });
       });
+
+      cities.map((city, index) => ({ city, index })).sort((a, b) => a.city.name.localeCompare(b.city.name)).forEach(({ city, index }) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.textContent = city.name;
+        citySelect.appendChild(option);
+      });
+      function showWorld() {
+        map.fitBounds(cities.map(city => [city.lat, city.lng]), { padding: [35, 65] });
+      }
+      document.getElementById("world").onclick = showWorld;
+      document.getElementById("usa").onclick = () => map.fitBounds([[25, -125], [49, -66]], { padding: [30, 65] });
+      document.getElementById("bay").onclick = () => map.fitBounds([[37.3, -122.52], [37.83, -121.8]], { padding: [30, 65] });
+      citySelect.onchange = () => {
+        if (citySelect.value === "") return;
+        const index = Number(citySelect.value);
+        map.setView([cities[index].lat, cities[index].lng], 12);
+        markers[index].openTooltip();
+      };
+      const fullscreen = document.getElementById("fullscreen");
+      fullscreen.hidden = !document.fullscreenEnabled;
+      fullscreen.onclick = async () => {
+        try {
+          if (document.fullscreenElement) await document.exitFullscreen();
+          else await document.documentElement.requestFullscreen();
+        } catch (error) { fullscreen.textContent = "Use browser fullscreen / 使用浏览器全屏"; }
+      };
+      document.addEventListener("fullscreenchange", () => {
+        fullscreen.textContent = document.fullscreenElement ? "Exit fullscreen / 退出全屏" : "Fullscreen / 全屏";
+        map.invalidateSize();
+      });
+      showWorld();
 
       function updateDotScaleByZoom() {
         const zoom = map.getZoom();
