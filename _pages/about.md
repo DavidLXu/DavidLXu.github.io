@@ -204,6 +204,7 @@ redirect_from:
     loading="lazy"
     style="width: 100%; max-width: 560px; height: 260px; border: 1px solid #d7dce2; border-radius: 10px;"
   ></iframe>
+  <p><a href="/apps/travel-map/" data-i18n-en="Open fullscreen travel map ↗" data-i18n-zh="打开全屏旅行地图 ↗">Open fullscreen travel map ↗</a></p>
 </div>
 
 <script>
