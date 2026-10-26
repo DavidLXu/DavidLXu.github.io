@@ -26,7 +26,9 @@ My main takeaway is that reference quality and the reward design have to be solv
 
 **Grounding Generated Video Plans in Simulation Towards Versatile Dexterous Controllers**, by Tianyue Wu, Boyuan An, Shuqi Zhao, Heyu Guo, Wanli Xing, Yi Ma, Kaifeng Zhang, Ruihai Wu, and Masayoshi Tomizuka. Affiliations: UC Berkeley, Sharpa Robotics, and the University of Hong Kong. These notes use **arXiv:2609.10050v1, September 9, 2026**, a preprint.
 
-Sources: [paper](https://arxiv.org/pdf/2609.10050v1) · [arXiv record](https://arxiv.org/abs/2609.10050v1) · [project page](https://boyuan-an.github.io/GALATEA/) · [code repository](https://github.com/boyuan-an/GALATEA). As checked on September 11, the project page labels code availability as **“by Nov.”**; the repository link alone should not be read as a completed implementation release.
+Sources: [paper](https://arxiv.org/pdf/2609.10050v1) · [arXiv record](https://arxiv.org/abs/2609.10050v1) · [project page](https://boyuan-an.github.io/GALATEA/) · [code repository](https://github.com/boyuan-an/GALATEA).
+
+**Code update, October 26, 2026.** The repository now includes [HOI reconstruction](https://github.com/boyuan-an/GALATEA/tree/main/recon) and [RL tracking](https://github.com/boyuan-an/GALATEA/tree/main/rl). The [rl-v1.0 release](https://github.com/boyuan-an/GALATEA/releases/tag/rl-v1.0) contains checkpoints, processed datasets, and raw trajectories for `power_drill`, `dog`, and `old_camera2`. Reconstruction also supports an RGB-only input mode; its predicted first-frame calibration differs from the measured RGB-D setup used in the paper. Paper-specific reconstruction benchmark drivers and scoring scripts are excluded from that package. This update checks the public files and release assets; the paper analysis below remains tied to v1, and the GPU pipeline has not been run here.
 
 ## From a video plan to a feedback controller
 
@@ -180,7 +182,9 @@ Flat objects near the table and human grasps that depend heavily on palm frictio
 
 **Grounding Generated Video Plans in Simulation Towards Versatile Dexterous Controllers**，作者为 Tianyue Wu、Boyuan An、Shuqi Zhao、Heyu Guo、Wanli Xing、Yi Ma、Kaifeng Zhang、Ruihai Wu、Masayoshi Tomizuka，来自加州大学伯克利分校、Sharpa Robotics 和香港大学。本文依据 **2026 年 9 月 9 日的 arXiv:2609.10050v1 预印本**。
 
-来源：[论文 PDF](https://arxiv.org/pdf/2609.10050v1) · [arXiv 页面](https://arxiv.org/abs/2609.10050v1) · [项目主页](https://boyuan-an.github.io/GALATEA/) · [代码仓库](https://github.com/boyuan-an/GALATEA)。截至 9 月 11 日查阅时，项目主页将代码发布时间标为 **“by Nov.”**；已有仓库链接不代表完整实现已经发布。
+来源：[论文 PDF](https://arxiv.org/pdf/2609.10050v1) · [arXiv 页面](https://arxiv.org/abs/2609.10050v1) · [项目主页](https://boyuan-an.github.io/GALATEA/) · [代码仓库](https://github.com/boyuan-an/GALATEA)。
+
+**代码更新，2026 年 10 月 26 日。** 仓库现已提供 [HOI 重建](https://github.com/boyuan-an/GALATEA/tree/main/recon)与[强化学习跟踪](https://github.com/boyuan-an/GALATEA/tree/main/rl)代码。[rl-v1.0 release](https://github.com/boyuan-an/GALATEA/releases/tag/rl-v1.0) 包含 `power_drill`、`dog`、`old_camera2` 的检查点、处理后数据集及原始轨迹。重建额外支持 RGB-only 输入，但其首帧标定来自预测，与论文使用的实测 RGB-D 设置有区别；该重建包未包含论文专用的基准运行与评分脚本。本次核对了公开文件和发布附件，下文论文分析仍对应 v1，未在本地运行 GPU 流程。
 
 ## 从视频计划到反馈控制
 
