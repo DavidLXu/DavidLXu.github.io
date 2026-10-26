@@ -350,5 +350,7 @@
       "push_any_letter/render.py": "0c16d7124dd6c133db76c12aea9c03c0d7f835cb82be7c0e449514617c7521af"
     }
   },
-  "scope": "Single training seed. 520 final tasks and 52-case learning curves are distinct. Core model/environment code matches the public reference; deployment/import adapters differ."
+  "scope": "Single training seed. 520 final tasks and 52-case learning curves are distinct. Core model/environment code matches the public reference; deployment/import adapters differ.",
+  "curve_subset_seed": 20261028,
+  "evaluation_policy_rng_seed": 20261026
 }

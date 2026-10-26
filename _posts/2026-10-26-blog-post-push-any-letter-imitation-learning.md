@@ -101,7 +101,7 @@ BC reaches low supervised error but solves zero state tasks and only five image 
 
 The success curves use **52 fixed training starts and 52 fixed unseen-angle starts**, one per letter. The training starts come from demonstrations; the test starts are a subset of the 520-task manifest. These are simulator rollouts from those states, not accuracy on recorded expert actions. A single success changes a curve point by 1.92 percentage points.
 
-The test manifest was sampled with seed **20261027** before training. Its ten angles are at least 3° from the twelve demonstration angles and from one another. Test starts were not filtered for planner success. All algorithms and both observation types share the tasks. The curves monitor progress; the final EMA at the predetermined update budget remains the reported model.
+The test manifest was sampled with seed **20261027** before training. Curve-subset selection uses seed **20261028**; policy sampling during evaluation resets the PyTorch RNG to **20261026**. Its ten angles are at least 3° from the twelve demonstration angles and from one another. Test starts were not filtered for planner success. All algorithms and both observation types share the tasks. The curves monitor progress; the final EMA at the predetermined update budget remains the reported model.
 
 ![Training-start and unseen-angle success curves for both observation types](/images/push-any-letter-20261026/success-curves.png)
 
@@ -230,7 +230,7 @@ BC 的监督误差已经较低，但状态版一个任务也没完成，图像�
 
 成功率曲线采用 **52 个固定训练起点和 52 个固定未见角度起点**，各自每个字母一个。训练起点来自示范；测试起点是 520 个最终测试任务的子集。这些分数都来自策略在仿真中的自主执行，不是对专家动作的预测准确率。每多成功一个案例，曲线就变化约 1.92 个百分点。
 
-最终测试清单在训练前用 seed **20261027** 生成。十个测试角度距示范网格及彼此至少 3°，起点不经过规划器成功筛选。所有算法、两种观测使用相同任务。曲线用于监控训练，报告模型始终是预定预算结束时的最终 EMA，没有按测试结果挑选 checkpoint。
+最终测试清单在训练前用 seed **20261027** 生成。曲线子集的选择使用 seed **20261028**；每次评估中的策略采样把 PyTorch RNG 重置为 **20261026**。十个测试角度距示范网格及彼此至少 3°，起点不经过规划器成功筛选。所有算法、两种观测使用相同任务。曲线用于监控训练，报告模型始终是预定预算结束时的最终 EMA，没有按测试结果挑选 checkpoint。
 
 ![两种观测下的训练起点与未见角度成功率曲线](/images/push-any-letter-20261026/success-curves.png)
 
