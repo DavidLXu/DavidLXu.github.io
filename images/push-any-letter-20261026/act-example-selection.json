@@ -1,0 +1,116 @@
+[
+  {
+    "letter": "S",
+    "slot": 2,
+    "angle": 12.192381363527174,
+    "success": true,
+    "steps": 618,
+    "coverage": 0.9501804183078277,
+    "original": {
+      "letter": "S",
+      "angle": 12.192381363527174,
+      "slot": 2,
+      "success": true,
+      "coverage": 0.9501804183078277,
+      "best_coverage": 0.9501804183078277,
+      "steps": 618
+    },
+    "matches_original": true,
+    "local_replay_max_error": 0.0
+  },
+  {
+    "letter": "S",
+    "slot": 0,
+    "angle": 355.3535222128452,
+    "success": false,
+    "steps": 2400,
+    "coverage": 0.8803267281340957,
+    "original": {
+      "letter": "S",
+      "angle": 355.3535222128452,
+      "slot": 0,
+      "success": false,
+      "coverage": 0.8803267281340957,
+      "best_coverage": 0.905487880165033,
+      "steps": 2400
+    },
+    "matches_original": true,
+    "local_replay_max_error": 0.0
+  },
+  {
+    "letter": "T",
+    "slot": 8,
+    "angle": 100.86014097234312,
+    "success": true,
+    "steps": 568,
+    "coverage": 0.9545285175159695,
+    "original": {
+      "letter": "T",
+      "angle": 100.86014097234312,
+      "slot": 8,
+      "success": true,
+      "coverage": 0.9545285175159695,
+      "best_coverage": 0.9545285175159695,
+      "steps": 568
+    },
+    "matches_original": true,
+    "local_replay_max_error": 0.0
+  },
+  {
+    "letter": "T",
+    "slot": 3,
+    "angle": 159.52813885249233,
+    "success": false,
+    "steps": 2400,
+    "coverage": 0.4724118011823528,
+    "original": {
+      "letter": "T",
+      "angle": 159.52813885249233,
+      "slot": 3,
+      "success": false,
+      "coverage": 0.4724118011823528,
+      "best_coverage": 0.8788765776803553,
+      "steps": 2400
+    },
+    "matches_original": true,
+    "local_replay_max_error": 0.0
+  },
+  {
+    "letter": "a",
+    "slot": 4,
+    "angle": 137.98303626771246,
+    "success": true,
+    "steps": 280,
+    "coverage": 0.9519226996900624,
+    "original": {
+      "letter": "a",
+      "angle": 137.98303626771246,
+      "slot": 4,
+      "success": true,
+      "coverage": 0.9519226996900624,
+      "best_coverage": 0.9519226996900624,
+      "steps": 280
+    },
+    "matches_original": true,
+    "local_replay_max_error": 0.0
+  },
+  {
+    "letter": "a",
+    "slot": 0,
+    "angle": 355.3535222128452,
+    "success": false,
+    "steps": 2400,
+    "coverage": 0.5074272139331087,
+    "original": {
+      "letter": "a",
+      "angle": 355.3535222128452,
+      "slot": 0,
+      "success": false,
+      "coverage": 0.5074272139331087,
+      "best_coverage": 0.5301379542865184,
+      "steps": 2400
+    },
+    "matches_original": true,
+    "local_replay_max_error": 0.0
+  }
+]
