@@ -92,8 +92,9 @@ function chordAt(name,t,duration,level=.055,bus=backingBus,kind='backing'){
 }
 function bassAt(name,t,duration,fifth=false){
  const root={A:33,B:35,C:36,D:38,E:28,F:29,G:31}[name[0]];
- note(root+(fifth?7:0),t,duration,.16,backingBus,'sine');
- note(root+(fifth?19:12),t,duration*.65,.025,backingBus,'triangle');
+ const interval=fifth?(name.includes('b5')?6:7):0;
+ note(root+interval,t,duration,.16,backingBus,'sine');
+ note(root+interval+12,t,duration*.65,.025,backingBus,'triangle');
 }
 function accompaniment(name,b,t,seconds){
  if(!$('backing').checked)return;

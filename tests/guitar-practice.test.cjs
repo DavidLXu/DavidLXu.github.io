@@ -61,6 +61,9 @@ const close = (a,b) => assert.ok(Math.abs(a-b)<1e-8, `${a} != ${b}`);
     if(groove==='swing')assert.ok(events.some(e=>e.time>=12+2/3 && e.time<12+2/3+.05),'swung offbeat');
     if(groove==='bossa')assert.ok(events.some(e=>e.time>=11.5 && e.time<11.55),'straight offbeat');
   }
+  // The half-diminished chord uses a diminished fifth in the bass, never F-sharp.
+  events.length=0;run("bassAt('Bm7b5',30,1,true)");
+  assert.ok(events.every(e=>Math.round(69+12*Math.log2(e.frequency/440))%12===5));
   // Audio clock stays on the beat grid despite timer jitter; loop returns to bar zero.
   element('sound').checked=false; element('backing').checked=false; element('countIn').checked=false;element('bpm').value='120';
   run('selected=2;bar=0;beat=-1;audio.currentTime=0;running=true;countRemaining=0;scheduledBar=0;scheduledBeat=0;nextTime=.05;pendingVisuals=[]');
