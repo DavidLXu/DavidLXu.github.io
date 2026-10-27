@@ -11,7 +11,7 @@
   url: https://davidlxu.github.io/Push-Any-Letter/
 
 - id: world-model-rl
-  group: intelligence
+  group: research-tools
   title: Reinforcement Learning in World Models
   zh_title: 在世界模型中强化学习
   category: Interactive RL lab
@@ -35,7 +35,7 @@
   url: /apps/mono-color/
 
 - id: world-model-history
-  group: intelligence
+  group: research-tools
   title: World Model History
   zh_title: World Model 发展历程
   category: Interactive timeline
@@ -47,7 +47,7 @@
   url: /apps/world-model-history/
 
 - id: jepa
-  group: intelligence
+  group: research-tools
   title: JEPA Learning Route
   zh_title: JEPA 学习路线
   category: Interactive course
@@ -71,7 +71,7 @@
   url: /roboscope/
 
 - id: training
-  group: intelligence
+  group: research-tools
   title: Embodied Model Training
   zh_title: 具身模型训练阶段
   category: Interactive map

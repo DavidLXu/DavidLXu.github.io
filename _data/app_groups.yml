@@ -1,14 +1,8 @@
 - id: research-tools
-  title: Robotics & Embodied AI Research
-  zh_title: 机器人与具身智能检索
-  description: Find papers, explore related work, and navigate research notes.
-  zh_description: 查找论文、探索相关工作，整理机器人与具身智能的研究线索。
-
-- id: intelligence
-  title: Understanding Frontier AI
-  zh_title: 前沿智能理解
-  description: Explore new ideas through interactive explanations, learning routes, and experiments.
-  zh_description: 通过交互讲解、学习路线与动手实验，理解新模型和新方法。
+  title: Understanding Robotics, Embodied & Frontier AI
+  zh_title: 机器人、具身与前沿智能理解
+  description: Explore robotics, embodied AI, and frontier models through research maps, interactive explanations, learning routes, and experiments.
+  zh_description: 通过研究地图、交互讲解、学习路线与动手实验，理解机器人、具身智能和前沿模型。
 
 - id: arts-design
   title: Art History, Design & Visual Arts
