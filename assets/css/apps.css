@@ -1,5 +1,5 @@
-.apps-hub {
-  max-width: 1200px;
+#main.apps-hub {
+  max-width: 1600px;
   margin: 0 auto;
   padding: 54px 24px 80px;
 }
@@ -8,7 +8,7 @@
 .apps-intro h1 { margin: 10px 0 18px; font-size: clamp(48px, 7vw, 76px); letter-spacing: -.055em; line-height: 1; }
 .apps-intro h1 span { color: #438776; }
 .apps-lead { font-size: 18px; line-height: 1.8; margin: 0; }
-.apps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
 .apps-filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 38px; }
 .apps-filters a { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--global-border-color); border-radius: 8px; color: var(--global-text-color); text-decoration: none; font-size: 13px; }
 .apps-filters a:hover { border-color: var(--global-text-color); }
@@ -56,7 +56,7 @@
 .app-card-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--global-border-color); font-size: 11px; }
 .app-open { font-size: 23px; line-height: 1; }
 @media (max-width: 600px) {
-  .apps-hub { padding: 30px 18px 50px; }
+  #main.apps-hub { padding: 30px 18px 50px; }
   .apps-grid { grid-template-columns: 1fr; gap: 22px; }
   .apps-lead { font-size: 16px; }
   .apps-intro { margin-bottom: 28px; }
