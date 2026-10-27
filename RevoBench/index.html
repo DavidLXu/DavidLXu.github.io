@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RevoBench · 任务与轨迹</title>
+<meta name="description" content="RevoBench 任务进度、验收轨迹、真实视频与开发协作看板。">
+<meta name="theme-color" content="#153d35"><link rel="stylesheet" href="./style.css">
+<script src="./app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="mark" aria-hidden="true">R<span>↗</span></span><span>RevoBench<small>MANIPULATION LAB</small></span></a><nav><a href="https://davidlxu.github.io/apps/">DavidLXu / Apps ↗</a><a href="https://github.com/DavidLXu/RevoBench-Refactor">GitHub ↗</a><a class="nav-guide" href="https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/DASHBOARD.md">更新指南 ↗</a></nav></header>
+<div class="layout">
+<aside class="sidebar"><div class="aside-title">WORKSPACE <span>01</span></div><button class="overview active" id="reset">▦ <span>任务总览</span><span class="small-dot"></span></button><div class="aside-label">任务状态</div><div id="status-filters" class="status-filters" role="group" aria-label="按任务状态筛选"></div><div class="aside-label">任务批次</div><select id="group" aria-label="按任务批次筛选"><option value="all">全部批次</option><option value="original">首批参考 · 10 项</option><option value="expansion">扩展任务 · 22 项</option><option value="tabletop">新桌面场景 · 4 项</option></select><div class="aside-note"><span class="line-icon">↗</span><strong>从实验到证据</strong><p>任务、轨迹和验收记录，<br>在这里保持同步。</p><a href="https://github.com/DavidLXu/RevoBench-Refactor/tree/main/dashboard/tasks">查看任务 JSON ↗</a></div><div class="aside-bottom">RevoTron × MT Hands<br><span>56 joints · multimodal tactile</span></div></aside>
+<main>
+<section class="intro"><div><p class="eyebrow"><span></span> REVOBENCH / LIVE TASK REGISTRY</p><h1>每个任务，都有迹可循。</h1><p class="subtitle">查看开发进度，回放真实动作，追踪每一条验收轨迹。</p></div><div class="sync-box"><button id="refresh" aria-label="刷新任务数据">↻ 同步数据</button><div id="sync" role="status" aria-live="polite">正在读取任务记录…</div></div></section>
+<section class="stats" id="stats" aria-label="任务统计"></section>
+<div class="scope-note"><span>统计口径</span>“验收通过”指物理与完整数据通过；仿人动作四项单独复核。轨迹数仅统计已登记的完整验收录制，不代表全部历史数据。</div>
+<section class="catalog"><div class="section-heading"><div><p class="eyebrow">TASK LIBRARY</p><h2>任务库 <span id="result-count"></span></h2></div><div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索任务、ID 或负责人" aria-label="搜索任务"></label><select id="sort" aria-label="排序方式"><option value="status">按任务状态</option><option value="updated">最近更新</option><option value="name">按名称</option><option value="episodes">验收轨迹最多</option></select></div></div>
+<div class="quickfilters"><label><input type="checkbox" id="active-only"> 仅看正在推进</label><label><input type="checkbox" id="video-only"> 有视频</label><span id="video-count"></span></div><div id="error" class="error" hidden></div><div id="grid" class="grid" aria-live="polite"><div class="loading">正在读取最新任务列表…</div></div><div id="empty" class="empty" hidden>没有符合条件的任务。<button id="clear">清除筛选</button></div></section>
+<section class="workflow"><div><p class="eyebrow">ONE TASK. ONE RECORD.</p><h2>让每次 push，带上最新进度。</h2><p>各开发 agent 维护自己的任务 JSON；校验后随代码提交，看板自动读取主分支。</p></div><ol><li><span>01</span> 更新任务状态与负责人</li><li><span>02</span> 登记轨迹、报告和视频</li><li><span>03</span> 校验、push、自动同步</li></ol><a href="https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/DASHBOARD.md">查看维护约定 ↗</a></section>
+<footer><span>RevoBench · Evidence before acceptance.</span><span>数据来自 GitHub main · 每 60 秒刷新</span></footer>
+</main></div>
+<dialog id="detail" aria-labelledby="detail-title"><div class="modal-top"><span class="eyebrow">TASK INSPECTOR</span><button id="close" aria-label="关闭任务详情">✕</button></div><div id="detail-body"></div></dialog>
+</body></html>

@@ -1,3 +1,15 @@
+- id: revobench
+  group: research-tools
+  title: RevoBench Task Board
+  zh_title: RevoBench 任务与轨迹
+  category: Manipulation progress and evidence
+  zh_category: 灵巧操作进度与验收
+  description: Browse task status, owners, verified trajectories and real robot simulation videos. A shared JSON registry keeps agent progress and evidence in sync.
+  zh_description: 查看任务状态、负责人、验收轨迹和真实仿真视频。开发 agent 维护共享 JSON，随代码提交同步进展与证据。
+  detail: Live task registry · Video replay · 中文
+  zh_detail: 任务进度 · 轨迹验收 · 视频回放
+  url: /RevoBench/
+
 - id: push-any-letter
   group: research-tools
   title: Push Any Letter
