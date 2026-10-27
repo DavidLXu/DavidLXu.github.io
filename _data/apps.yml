@@ -105,3 +105,15 @@
   detail: City explorer · EN / 中文
   zh_detail: 城市探索 · EN / 中文
   url: /apps/travel-map/
+
+- id: guitar-practice
+  group: personal
+  title: Six Strings Practice Room
+  zh_title: 六弦练习室
+  category: Guitar chord practice
+  zh_category: 吉他和弦练习
+  description: Practice blues, jazz, mellow pop, minor progressions, and funk ninth chords with fingering diagrams, chord previews, and an adjustable looping metronome.
+  zh_description: 从 C 调出发，练习蓝调、爵士、柔和流行、小调与 Funk 九和弦。配有指法图、和弦试听和可调速循环节拍器。
+  detail: 6 progressions · 13 chords · 中文
+  zh_detail: 6 组进行 · 13 个和弦 · 中文
+  url: /apps/guitar-practice/

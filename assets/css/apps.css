@@ -68,3 +68,5 @@
   .apps-grid--single .app-preview { aspect-ratio: 360 / 190; min-height: 0; border-right: 0; border-bottom: 1px solid var(--global-border-color); }
 }
 @media (prefers-reduced-motion: reduce) { .apps-hub .app-card { transition: none; } .apps-hub .app-card:hover { transform: none; } }
+
+.app-preview--guitar-practice { background: #f8f6f1; }

@@ -1,0 +1,15 @@
+---
+layout: null
+title: "六弦练习室 · Guitar Practice"
+permalink: /apps/guitar-practice/
+author_profile: false
+excerpt: "蓝调、爵士与更多吉他和弦进行，配合指法图、试听和循环节拍练习。"
+---
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="从熟悉的 C 调走向蓝调、爵士和更多风格。吉他指法图、和弦进行与循环节拍练习。"><title>六弦练习室 · Guitar practice</title><link rel="canonical" href="https://davidlxu.github.io/apps/guitar-practice/"><link rel="stylesheet" href="{{ '/assets/apps/guitar-practice/style.css' | relative_url }}"></head><body>
+<header><a class="brand" href="./"><span class="brand-icon">Ⅵ</span> 六弦练习室</a><a class="back-apps" href="{{ '/apps/' | relative_url }}">← Apps</a><span class="tuning">标准调弦 · E A D G B E</span></header>
+<main><section class="intro"><div><p class="eyebrow">A LITTLE PRACTICE, EVERY DAY</p><h1>从 C 调出发，<br>弹一点不一样的。</h1><p class="sub">选一个进行，放慢速度。让手指先熟悉，再让音乐流动。</p></div><div class="intro-art" aria-hidden="true"><span>PLAY<br>SOMETHING<br><i>new.</i></span><div class="strings"></div></div></section>
+<section class="workspace"><aside><p class="eyebrow">01 / 选择一种感觉</p><nav id="styles" aria-label="练习风格"></nav><div class="aside-note"><span>练习小建议</span><p>先把每个和弦弹清楚，再开始循环。换和弦时，尽量保留不需要移动的手指。</p></div></aside><div class="practice"><div class="section-top"><div><p class="eyebrow" id="category"></p><h2 id="title"></h2></div><span class="pill" id="key"></span></div><p id="description" class="description"></p><div class="progress-label"><span>和弦进行 <small>· 每格 1 小节 / 4 拍</small></span><span id="position"></span></div><div id="progression" class="progression"></div><div class="tip" id="tip"></div>
+<div class="control"><button id="play" class="play">▶ 开始练习</button><div class="tempo"><label for="bpm">速度 <strong id="bpmLabel">72</strong> <small>BPM</small></label><input id="bpm" aria-label="练习速度" type="range" min="40" max="160" value="72"></div><div id="beats" class="beats" aria-label="当前拍数"><i>1</i><i>2</i><i>3</i><i>4</i></div><label class="sound"><input id="sound" type="checkbox" checked> 节拍声</label><button id="reset" class="text-button" aria-label="回到第一小节">↺ 重置</button></div>
+<div class="diagram-header"><div><p class="eyebrow">02 / 看指法，慢慢弹</p><h3>这组进行用到的和弦</h3></div><button id="download" class="download">↓ 保存指法图</button></div><div class="legend">从左到右：6 弦 → 1 弦（粗 → 细） <span>× 不弹　○ 空弦　数字 = 手指</span></div><div id="chords" class="chords"></div><p class="finger-note">手指标记：1 食指 · 2 中指 · 3 无名指 · 4 小指。点击和弦卡上的 ♪ 可听合成音参考。</p></div></section>
+<footer><span>六根弦，一点新的可能。</span><span>无需变调夹 · 4/4 拍 · 循环练习</span></footer></main><script src="{{ '/assets/apps/guitar-practice/app.js' | relative_url }}"></script></body></html>
