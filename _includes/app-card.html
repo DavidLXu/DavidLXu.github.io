@@ -2,6 +2,17 @@
     <a class="app-card" href="{{ app.url | relative_url }}" aria-labelledby="app-title-{{ app.id }}">
       <div class="app-preview app-preview--{{ app.id }}" aria-hidden="true">
         {% case app.id %}
+        {% when 'push-any-letter' %}
+        <svg viewBox="0 0 360 190" focusable="false">
+          <rect x="22" y="20" width="316" height="142" rx="8" fill="#fffdf8" stroke="#d9d5cb"/>
+          <path d="M42 55H318M42 90H318M42 125H318M92 35V148M162 35V148M232 35V148M302 35V148" fill="none" stroke="#ece9df"/>
+          <path d="M214 56H270V72H250V116H234V72H214Z" fill="#498c79" fill-opacity=".12" stroke="#498c79" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <path d="M121 61H177V77H157V121H141V77H121Z" fill="#e7783e" transform="rotate(-20 149 91)"/>
+          <path d="M65 135C79 119 88 106 108 103" fill="none" stroke="#657c87" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle cx="108" cy="103" r="10" fill="#657c87" stroke="#fffdf8" stroke-width="3"/>
+          <path d="M181 91H207M202 86L207 91L202 96" fill="none" stroke="#498c79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="26" y="179" fill="#69716a" font-family="monospace" font-size="10">52 LETTERS / SHAPE × ORIENTATION</text>
+        </svg>
         {% when 'travel-map' %}
         <svg viewBox="0 0 360 190" focusable="false">
           <g fill="none" stroke="#b8cfc3"><ellipse cx="180" cy="95" rx="120" ry="70"/><ellipse cx="180" cy="95" rx="60" ry="70"/><path d="M60 95H300M79 60H281M79 130H281M180 25V165"/></g>

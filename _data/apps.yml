@@ -1,3 +1,15 @@
+- id: push-any-letter
+  group: research-tools
+  title: Push Any Letter
+  zh_title: Push Any Letter
+  category: Interactive manipulation explorer
+  zh_category: 机器人推移交互探索
+  description: Explore pushing demonstrations for 52 uppercase and lowercase letters. Select a letter and goal orientation, replay trajectories, and inspect imitation-learning and world-model experiments.
+  zh_description: 探索 52 个大小写字母的推移示范。选择字母与目标朝向，回放运动轨迹，并查看模仿学习和世界模型实验。
+  detail: 52 letters · Trajectory replay · EN
+  zh_detail: 52 个字母 · 轨迹回放 · 英文
+  url: https://davidlxu.github.io/Push-Any-Letter/
+
 - id: world-model-rl
   group: intelligence
   title: Reinforcement Learning in World Models
