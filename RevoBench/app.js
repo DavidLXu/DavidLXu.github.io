@@ -48,6 +48,7 @@ async function refresh(){
  finally{loading=false;$('#refresh').disabled=false;}
 }
 function render(){
+ for(const [key,label] of Object.entries(GROUPS)){const option=$('#group').querySelector(`option[value="${key}"]`);if(option)option.textContent=`${label} · ${tasks.filter(t=>t.group===key).length} 项`;}
  const counts=Object.fromEntries(Object.keys(LABELS).map(s=>[s,tasks.filter(t=>t.status===s).length]));
  const running=tasks.filter(t=>active(t)&&t.status==='in_progress').length;
  $('#stats').innerHTML=[['登记任务',tasks.length,'全部任务与准备场景','main'],['验收通过',counts.accepted,'物理 + 完整数据',''],['开发中',counts.in_progress,`${running} 项最近标记为推进中`,''],['尚未开始',counts.not_started,'可分配动作开发',''],['验收轨迹',episodeCount(tasks),'已登记条数 · 非历史总量','']].map(([name,num,note,cls])=>`<div class="stat ${cls}"><div class="stat-head">${name}<span>↗</span></div><div class="number">${num}<span>${name==='验收轨迹'?'条':'项'}</span></div><small>${note}</small></div>`).join('');
