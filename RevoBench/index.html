@@ -2,29 +2,33 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RevoBench · 灵巧操作任务集</title>
-<meta name="description" content="从精准插接到双手协作，探索 RevoBench 的 36 项机器人操作任务与仿真视频。">
+<title>RevoBench: An Agent-Native Framework for Dexterous Manipulation Benchmarking</title>
+<meta name="description" content="RevoBench 基于高保真数字资产，由 Agent 构建灵巧操作环境并生成示例轨迹，用于任务验证与动作诊断。">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script>
+<link rel="stylesheet" href="./style.css?v=20261101-copy"><script src="./app.js?v=20261101-copy" defer></script>
 </head>
 <body>
-<header class="nav-shell"><nav class="nav" aria-label="主导航"><a class="brand" href="#top">RevoBench<span class="brand-dot">.</span></a><div class="nav-links"><a href="#highlights">精选演示</a><a href="#principles" class="principles-link">动作理念</a><a class="pill primary" href="#tasks">探索任务 <span aria-hidden="true">↗</span></a></div></nav></header>
+<header class="nav-shell"><nav class="nav" aria-label="主导航"><a class="brand" href="#top">RevoBench<span class="brand-dot">.</span></a><div class="nav-links"><a href="#about">项目介绍</a><a class="pill primary" href="#tasks">场景任务集 <span aria-hidden="true">↗</span></a></div></nav></header>
 <main id="top">
 <section class="hero wrap">
-<p class="eyebrow">DEXTEROUS MANIPULATION</p>
-<h1>从一次抓握，<br>到完整操作。</h1>
-<p class="hero-description">让双手协作，让动作连贯。<br class="mobile-break">探索 RevoBench 的机器人操作任务。</p>
-<div class="hero-stage"><video id="hero-video" muted loop playsinline preload="metadata" poster="./media/carry_dutch_oven--v060-pot_full.jpg" aria-label="双手搬双耳锅仿真演示"><source src="./media/carry_dutch_oven--v060-pot_full.mp4" type="video/mp4"></video><div class="hero-caption"><div><span class="tiny-label">BIMANUAL COORDINATION</span><strong>两只手，一个完整动作。</strong><span>双手搬双耳锅 · 仿真录制</span></div><button class="round-button" id="hero-toggle" aria-label="播放首页演示"><span aria-hidden="true">▶</span></button></div></div>
+<h1 class="project-title"><span class="project-name">RevoBench:</span> <span class="project-subtitle">An Agent-Native Framework for Dexterous Manipulation Benchmarking</span></h1>
+<p class="hero-description">基于高保真数字资产，由 Agent 构建灵巧操作环境并生成示例轨迹。</p>
+<div class="hero-stage"><video id="hero-video" muted loop playsinline preload="metadata" poster="./media/carry_dutch_oven--v060-pot_full.jpg" aria-label="双手搬双耳锅仿真演示"><source src="./media/carry_dutch_oven--v060-pot_full.mp4" type="video/mp4"></video><div class="hero-caption"><div><span class="tiny-label">示例轨迹</span><strong>双手搬双耳锅</strong><span>仿真录制</span></div><button class="round-button" id="hero-toggle" aria-label="播放首页演示"><span aria-hidden="true">▶</span></button></div></div>
 <div class="hero-meta" id="hero-meta"><span>36 项操作任务</span><span>29 段仿真视频</span><span>21 条验收参考轨迹</span></div>
 </section>
-<section class="highlights section-space" id="highlights"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">IN MOTION</p><h2>先看几个动作。</h2></div><a class="text-link" href="#tasks">查看所有任务 <span aria-hidden="true">↗</span></a></div><div class="highlight-grid" id="highlights-grid"></div></div></section>
-<section class="catalog wrap section-space" id="tasks"><div class="section-heading"><div><p class="eyebrow">THE TASK COLLECTION</p><h2>每一种操作，<br>都有细节。</h2></div><p class="section-description">插接、旋转、倾倒、搬运。<br>从日常物品出发，观察灵巧操作的不同方式。</p></div>
+<section class="catalog wrap section-space" id="tasks"><div class="section-heading"><h2>场景任务集</h2></div>
 <div class="catalog-tools"><div class="filter-tabs" role="group" aria-label="按任务状态筛选"><button class="active" data-status="all" aria-pressed="true">全部 <span>36</span></button><button data-status="accepted" aria-pressed="false">已验收 <span>21</span></button><button data-status="in_progress" aria-pressed="false">开发中 <span>8</span></button><button data-status="not_started" aria-pressed="false">未开始 <span>7</span></button></div><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="搜索任务" aria-label="搜索任务"></label></div>
 <div class="catalog-note"><span id="result-count" role="status">36 项任务</span><span>展示快照 · <time id="snapshot-date">2026.10.27</time></span></div>
 <div id="grid" class="task-grid"></div><p id="empty" class="empty" hidden>没有找到相关任务。试试其他关键词。</p><p id="error" class="empty" hidden role="alert">任务列表暂时无法加载，请刷新页面重试。</p>
 <p class="acceptance-note">“已验收”指物理与数据验收通过；动作的仿人程度仍需单独复核。轨迹数为已登记的验收参考，不代表全部历史数据。开发中视频包含调试记录。</p>
 </section>
-<section class="principles section-space" id="principles"><div class="wrap"><p class="eyebrow">WHAT MAKES A GOOD MOTION</p><h2>完成任务。<br><span>也关注怎么完成。</span></h2><p class="principles-intro">我们希望每一段轨迹，朝这四个方向改进。</p><div class="principles-grid"><article><span class="principle-number">01</span><h3>有始有终</h3><p>从默认姿态出发，完成操作后通过真实运动回到默认姿态。</p></article><article><span class="principle-number">02</span><h3>衔接自然</h3><p>各阶段连续过渡，避免位置跳变、骤然加减速和无意义停顿。</p></article><article><span class="principle-number">03</span><h3>姿态仿人</h3><p>肩、肘、腕协调配合，避免异常抬肘、腕部反折与绕远接近目标。</p></article><article><span class="principle-number">04</span><h3>接触合理</h3><p>用手指内侧形成有效握持，尤其避免拇指背部抓握；减少穿透、撞击与滑脱。</p></article></div></div></section>
+<section class="about section-space" id="about"><div class="wrap about-layout">
+<h2>项目介绍</h2>
+<div class="about-copy">
+<p>RevoBench 探索用 Agent 完成灵巧操作 benchmark 的构建与验证。我们基于高保真的数字资产搭建仿真环境，由 Agent 编写任务、生成示例轨迹，并根据执行结果检查和修改实现。</p>
+<p>示例轨迹用于验证任务能否完成，也用于发现问题。物体到达目标位置时，手臂仍可能出现不自然的绕行，或依靠拇指背部抓持。我们结合执行记录检查姿态、运动连续性与接触方式，并要求机器人从默认姿态出发，完成后回到默认姿态。</p>
+<p>后续将由 Agent 参与构建评测程序，在固定的任务条件下比较不同 agent-based policy。环境、示例轨迹和评测接口将整理为统一的任务包，方便新的 Agent 独立运行和复现结果。</p>
+</div></div></section>
 </main>
 <footer class="wrap footer"><a class="brand" href="#top">RevoBench<span class="brand-dot">.</span></a><p>灵巧操作任务集 · 静态展示</p><a href="https://github.com/DavidLXu/RevoBench-Refactor">项目代码 ↗</a></footer>
 <dialog id="detail" aria-labelledby="detail-title"><button class="close-button" id="close" aria-label="关闭任务详情">✕</button><div id="detail-body"></div></dialog>

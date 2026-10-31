@@ -28,13 +28,6 @@ function render() {
     return `<button class="task-card" data-task="${esc(t.id)}" aria-label="查看${esc(t.title)}${v ? '视频' : '任务介绍'}"><div class="task-media ${v ? '' : 'placeholder'}">${v ? `<img src="${esc(v.poster)}" alt="${esc(t.title)}仿真画面" loading="lazy" width="640" height="480">${v.kind !== 'accepted' ? `<span class="video-kind">${kindLabels[v.kind] || '开发录像'}</span>` : ''}<span class="play-icon" aria-hidden="true">▶</span>` : placeholder}</div><div class="task-copy"><span class="card-category">${esc(t.category)}</span><h3>${esc(t.title)}</h3><div class="card-bottom"><span class="status ${t.status}">${labels[t.status]}</span><span>${v ? `${duration(v.duration_s)}${t.trajectory_count ? ` · ${t.trajectory_count} 条参考` : ''}` : '等待录制'}</span></div></div></button>`;
   }).join('');
 }
-function renderHighlights() {
-  const featured = [ ['kettle_pour','稳稳拿起，缓缓倾倒。'], ['insert_pen','拿起一支笔，放进笔筒。'], ['stack_blocks','抓取之后，再进一步。'] ];
-  $('#highlights-grid').innerHTML = featured.map(([id,headline]) => {
-    const t = tasks.find(t => t.id === id), v = t?.videos[0];
-    return v ? `<button class="highlight-card" data-task="${id}" aria-label="播放${esc(t.title)}"><div class="highlight-copy"><span>${esc(t.category)} / ${esc(t.title)}</span><h3>${headline}</h3></div><img src="${esc(v.poster)}" alt="${esc(t.title)}仿真画面" width="640" height="480" loading="lazy"><span class="play-icon" aria-hidden="true">▶</span></button>` : '';
-  }).join('');
-}
 function openTask(id) {
   const t = tasks.find(task => task.id === id);
   if (!t) return;
@@ -82,6 +75,6 @@ fetch('./snapshot.json').then(r => { if (!r.ok) throw Error('Task collection una
   document.querySelectorAll('[data-status]').forEach(b => { b.querySelector('span').textContent = b.dataset.status === 'all' ? tasks.length : tasks.filter(t => t.status === b.dataset.status).length; });
   $('#hero-meta').innerHTML = `<span>${tasks.length} 项操作任务</span><span>${tasks.reduce((n,t) => n+t.videos.length,0)} 段仿真视频</span><span>${tasks.reduce((n,t) => n+t.trajectory_count,0)} 条验收参考轨迹</span>`;
   $('#snapshot-date').textContent = data.snapshot_date.replaceAll('-', '.');
-  renderHighlights(); render();
+  render();
   if (location.hash.startsWith('#task=')) openTask(decodeURIComponent(location.hash.slice(6)));
 }).catch(() => { $('#error').hidden = false; $('#result-count').textContent = '列表加载失败'; });

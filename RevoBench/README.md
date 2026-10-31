@@ -1,4 +1,4 @@
-# RevoBench 任务展示页
+# RevoBench: An Agent-Native Framework for Dexterous Manipulation Benchmarking
 
 公开地址：https://davidlxu.github.io/RevoBench/
 
@@ -13,7 +13,7 @@
 - `snapshot.json` 是本站独立的展示数据，不轮询 GitHub，也不自动读取开发仓库。
 - `media/` 保存所有展示视频及封面，页面只请求本站资源。`media/provenance.json` 保留导入视频的来源记录。
 - 当前内容快照日期为 2026-10-27：36 项任务、29 段视频、21 条已登记验收参考轨迹。21 项已验收、8 项开发中、7 项未开始。这是历史展示快照，不是实时工作进度。
-- 修改任务时手动更新 `snapshot.json`，新增视频与封面放入 `media/`，随本站提交发布即可。首页统计和筛选数量根据快照计算。精选演示的任务 ID 和标题位于 `app.js`；首页主视频位于 `index.html`。
+- 修改任务时手动更新 `snapshot.json`，新增视频与封面放入 `media/`，随本站提交发布即可。首页统计和筛选数量根据快照计算。项目介绍和首页主视频位于 `index.html`。
 - 每项任务包含 `id`、`title`、`status`、`category`、`description`、`trajectory_count` 和 `videos`。状态值为 `accepted`、`in_progress` 或 `not_started`。视频沿用来源标记 `kind` 与 `sampling`，不能把调试视频标成验收结果。
 - “已验收”仅指物理与数据验收；默认姿态回归、轨迹连续、整体姿态仿人、有效内侧接触四项动作质量另行复核。尚未录制的任务显示占位提示，不补造视频。
 
