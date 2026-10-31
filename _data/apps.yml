@@ -1,13 +1,13 @@
 - id: revobench
   group: research-tools
-  title: RevoBench Task Board
-  zh_title: RevoBench 任务与轨迹
-  category: Manipulation progress and evidence
-  zh_category: 灵巧操作进度与验收
-  description: Browse task status, owners, verified trajectories and real robot simulation videos. A shared JSON registry keeps agent progress and evidence in sync.
-  zh_description: 查看任务状态、负责人、验收轨迹和真实仿真视频。开发 agent 维护共享 JSON，随代码提交同步进展与证据。
-  detail: Live task registry · Video replay · 中文
-  zh_detail: 任务进度 · 轨迹验收 · 视频回放
+  title: RevoBench Task Collection
+  zh_title: RevoBench 灵巧操作任务集
+  category: Dexterous manipulation showcase
+  zh_category: 灵巧操作任务展示
+  description: Explore 36 dexterous manipulation tasks, from precision insertion to bimanual coordination, through a static collection of simulation videos.
+  zh_description: 从精准插接到双手协作，通过仿真视频探索 36 项灵巧操作任务。独立静态展示，支持任务筛选与视频回放。
+  detail: Task collection · Simulation videos · 中文
+  zh_detail: 任务展示 · 仿真视频 · 动作理念
   url: /RevoBench/
 
 - id: push-any-letter

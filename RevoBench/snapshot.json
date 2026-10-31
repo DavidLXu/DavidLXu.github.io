@@ -1,1718 +1,618 @@
 {
-  "schema_version": 1,
-  "updated_at": "2026-10-27T11:31:32+00:00",
-  "repository": "https://github.com/DavidLXu/RevoBench-Refactor",
-  "counts_scope": "registered_verified_episodes_only",
+  "snapshot_date": "2026-10-27",
+  "note": "静态展示快照；验收状态指物理与数据验收，仿人动作质量仍需单独复核。轨迹数仅包含已登记的验收参考。",
   "tasks": [
     {
       "id": "arrange_condiments",
       "title": "盐和胡椒瓶归位",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "任务 0–3 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "完整物理与官方回读通过；低运动过渡仍需优化。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "v047/arrange_full",
-          "frames": 8343,
-          "duration_s": 139.05,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/arrange_condiments/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/arrange_condiments/validation_summary.json"
-        }
-      ],
+      "category": "日常整理",
+      "description": "抓取调味瓶，将它们依次放回目标位置。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/arrange_condiments--v047-arrange_full.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/arrange_condiments--v047-arrange_full.jpg",
+          "url": "./media/arrange_condiments--v047-arrange_full.mp4",
+          "poster": "./media/arrange_condiments--v047-arrange_full.jpg",
           "run_id": "v047/arrange_full",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 139.05,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/arrange_condiments/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/arrange_condiments/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/arrange_condiments/validation_summary.json"
         }
       ]
     },
     {
       "id": "assemble_gears",
       "title": "齿轮装配",
-      "group": "tabletop",
       "status": "not_started",
-      "owner": null,
-      "activity": "unassigned",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "场景已准备，动作规划、成功判据与录制尚未开始。",
-      "next_step": "实现接触动作与物理判据，完成全模态录制和四条动作验收。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
-      "videos": [],
-      "video_pending_reason": "尚未产生动作录像；实现后必须补充真实视频。",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/assemble_gears/task.json"
-        }
-      ]
+      "category": "精细操作",
+      "description": "对齐齿轮与安装位置，完成桌面装配。",
+      "trajectory_count": 0,
+      "videos": []
     },
     {
       "id": "carry_dutch_oven",
       "title": "双手搬双耳锅",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "任务 0–3 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "v060 的 4380 帧完整录制已通过物理与官方回读；四条动作质量逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "v060/pot_full",
-          "frames": 4380,
-          "duration_s": 73.0,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/dashboard/evidence/carry_dutch_oven/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/dashboard/evidence/carry_dutch_oven/validation_summary.json"
-        }
-      ],
+      "category": "双手协作",
+      "description": "双手配合握住两侧锅柄，抬起并搬放锅具。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/carry_dutch_oven--v060-pot_full.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/carry_dutch_oven--v060-pot_full.jpg",
+          "url": "./media/carry_dutch_oven--v060-pot_full.mp4",
+          "poster": "./media/carry_dutch_oven--v060-pot_full.jpg",
           "run_id": "v060/pot_full",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 73.0,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/carry_dutch_oven/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/dashboard/evidence/carry_dutch_oven/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/dashboard/evidence/carry_dutch_oven/validation_summary.json"
         }
       ]
     },
     {
       "id": "coffee_handle_turn",
       "title": "旋转咖啡机手柄",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "任务 0–3 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "完整物理与官方回读通过；起始和接近段节奏待复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "v029/coffee_full",
-          "frames": 3989,
-          "duration_s": 66.483,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/coffee_handle_turn/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/coffee_handle_turn/validation_summary.json"
-        }
-      ],
+      "category": "工具交互",
+      "description": "握持咖啡机手柄，完成旋转操作。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/coffee_handle_turn--v029-coffee_full.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/coffee_handle_turn--v029-coffee_full.jpg",
+          "url": "./media/coffee_handle_turn--v029-coffee_full.mp4",
+          "poster": "./media/coffee_handle_turn--v029-coffee_full.jpg",
           "run_id": "v029/coffee_full",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 66.483333,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/coffee_handle_turn/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/coffee_handle_turn/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/coffee_handle_turn/validation_summary.json"
-        }
       ]
     },
     {
       "id": "cup_hang",
       "title": "挂杯",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "cup_supported_setdown_generic_full_001",
-          "frames": 3892,
-          "duration_s": 64.867,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/cup_hang/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/cup_hang/validation_summary.json"
-        }
-      ],
+      "category": "日常整理",
+      "description": "调整杯子的位置与朝向，将杯柄挂到支架上。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/cup_hang--cup_supported_setdown_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/cup_hang--cup_supported_setdown_generic_full_001.jpg",
+          "url": "./media/cup_hang--cup_supported_setdown_generic_full_001.mp4",
+          "poster": "./media/cup_hang--cup_supported_setdown_generic_full_001.jpg",
           "run_id": "cup_supported_setdown_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 64.866667,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/cup_hang/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/cup_hang/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/cup_hang/validation_summary.json"
-        }
       ]
     },
     {
       "id": "fold_glasses",
       "title": "双手折叠眼镜",
-      "group": "expansion",
       "status": "in_progress",
-      "owner": "任务 11–14 组",
-      "activity": "active",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "镜腿折叠、撤指与稳定接触仍在调试，整项未通过。",
-      "next_step": "继续当前开发与完整验收，保留失败尝试。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
+      "category": "双手协作",
+      "description": "双手协调扶持眼镜，折叠细小的镜腿。",
+      "trajectory_count": 0,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/fold_glasses--fold_glasses_motion_200.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/fold_glasses--fold_glasses_motion_200.jpg",
+          "url": "./media/fold_glasses--fold_glasses_motion_200.mp4",
+          "poster": "./media/fold_glasses--fold_glasses_motion_200.jpg",
           "run_id": "fold_glasses_motion_200",
           "kind": "development",
           "label": "开发试跑 · 抽帧回放（失败）",
           "duration_s": 46.733333,
           "sampling": "sparse_actual_frames_held_at_native_timestamps_60hz"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/fold_glasses/task.json"
-        }
       ]
     },
     {
       "id": "fold_phone",
       "title": "展开折叠手机",
-      "group": "expansion",
       "status": "in_progress",
-      "owner": "任务 11–14 组",
-      "activity": "active",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "自然双手抓取、展开和合拢仍在调试，整项未通过。",
-      "next_step": "继续当前开发与完整验收，保留失败尝试。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
+      "category": "双手协作",
+      "description": "双手握持折叠手机，沿铰链展开屏幕。",
+      "trajectory_count": 0,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/fold_phone--fold_phone_motion_201.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/fold_phone--fold_phone_motion_201.jpg",
+          "url": "./media/fold_phone--fold_phone_motion_201.mp4",
+          "poster": "./media/fold_phone--fold_phone_motion_201.jpg",
           "run_id": "fold_phone_motion_201",
           "kind": "development",
           "label": "开发试跑 · 抽帧回放（失败）",
           "duration_s": 15.266667,
           "sampling": "sparse_actual_frames_held_at_native_timestamps_60hz"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/fold_phone/task.json"
-        }
       ]
     },
     {
       "id": "folder_store_pen",
       "title": "文件夹收纳笔",
-      "group": "expansion",
       "status": "in_progress",
-      "owner": "任务 15–19 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "物理操作通过，完整多模态采集与数据验收待完成。",
-      "next_step": "继续当前开发与完整验收，保留失败尝试。",
-      "physical_status": "passed",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
+      "category": "日常整理",
+      "description": "操作文件夹，将笔收纳到指定位置。",
+      "trajectory_count": 0,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/folder_store_pen--review005_folder_store_pen.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/folder_store_pen--review005_folder_store_pen.jpg",
+          "url": "./media/folder_store_pen--review005_folder_store_pen.mp4",
+          "poster": "./media/folder_store_pen--review005_folder_store_pen.jpg",
           "run_id": "review005_folder_store_pen",
           "kind": "diagnostic",
           "label": "物理诊断 · 抽帧回放",
           "duration_s": 60.066667,
           "sampling": "sparse_actual_frames_held_at_native_timestamps_60hz"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/folder_store_pen/task.json"
-        }
       ]
     },
     {
       "id": "hammer",
       "title": "锤子敲钉子",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "hammer_generic_full_001",
-          "frames": 1403,
-          "duration_s": 23.383,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/hammer/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/hammer/validation_summary.json"
-        }
-      ],
+      "category": "工具交互",
+      "description": "握持锤柄，控制锤头完成敲钉动作。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/hammer--hammer_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/hammer--hammer_generic_full_001.jpg",
+          "url": "./media/hammer--hammer_generic_full_001.mp4",
+          "poster": "./media/hammer--hammer_generic_full_001.jpg",
           "run_id": "hammer_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 23.383333,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/hammer/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/hammer/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/hammer/validation_summary.json"
-        }
       ]
     },
     {
       "id": "insert_peg",
       "title": "插杆",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "peg_generic_full_001",
-          "frames": 3033,
-          "duration_s": 50.55,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/insert_peg/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/insert_peg/validation_summary.json"
-        }
-      ],
+      "category": "精细操作",
+      "description": "调整杆件的位置与姿态，对准目标孔插入。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/insert_peg--peg_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/insert_peg--peg_generic_full_001.jpg",
+          "url": "./media/insert_peg--peg_generic_full_001.mp4",
+          "poster": "./media/insert_peg--peg_generic_full_001.jpg",
           "run_id": "peg_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 50.55,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/insert_peg/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/insert_peg/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/insert_peg/validation_summary.json"
         }
       ]
     },
     {
       "id": "insert_pen",
       "title": "把笔插入笔筒",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "插笔 / 茶壶 / 纸箱组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "pen_full_001",
-          "frames": 1627,
-          "duration_s": 27.117,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/insert_pen/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/insert_pen/official_reader.json"
-        }
-      ],
+      "category": "精细操作",
+      "description": "拾取桌上的笔，调整朝向并插入笔筒。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/insert_pen--pen_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/insert_pen--pen_full_001.jpg",
+          "url": "./media/insert_pen--pen_full_001.mp4",
+          "poster": "./media/insert_pen--pen_full_001.jpg",
           "run_id": "pen_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 27.116667,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/insert_pen/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/insert_pen/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/insert_pen/official_reader.json"
-        }
       ]
     },
     {
       "id": "insert_pipette",
       "title": "插移液管",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "pipette_generic_full_001",
-          "frames": 2551,
-          "duration_s": 42.517,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/insert_pipette/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/insert_pipette/validation_summary.json"
-        }
-      ],
+      "category": "精细操作",
+      "description": "握持细长移液管，对齐支架并插入。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/insert_pipette--pipette_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/insert_pipette--pipette_generic_full_001.jpg",
+          "url": "./media/insert_pipette--pipette_generic_full_001.mp4",
+          "poster": "./media/insert_pipette--pipette_generic_full_001.jpg",
           "run_id": "pipette_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 42.516667,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/insert_pipette/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/insert_pipette/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/insert_pipette/validation_summary.json"
-        }
       ]
     },
     {
       "id": "kettle_pour",
       "title": "茶壶向杯中倾倒",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "插笔 / 茶壶 / 纸箱组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "kettle_fast_full_002",
-          "frames": 1716,
-          "duration_s": 28.6,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/kettle_pour/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/kettle_pour/official_reader.json"
-        }
-      ],
+      "category": "厨房操作",
+      "description": "提起茶壶，对准杯口并控制倾倒姿态。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/kettle_pour--kettle_fast_full_002.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/kettle_pour--kettle_fast_full_002.jpg",
+          "url": "./media/kettle_pour--kettle_fast_full_002.mp4",
+          "poster": "./media/kettle_pour--kettle_fast_full_002.jpg",
           "run_id": "kettle_fast_full_002",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 28.6,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/kettle_pour/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/kettle_pour/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/kettle_pour/official_reader.json"
         }
       ]
     },
     {
       "id": "kitchen",
       "title": "厨房食材转移",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "kitchen_original_generic_full_001",
-          "frames": 5424,
-          "duration_s": 90.4,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/kitchen/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/kitchen/validation_summary.json"
-        }
-      ],
+      "category": "厨房操作",
+      "description": "抓取厨房食材，将其转移到目标容器。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/kitchen--kitchen_original_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/kitchen--kitchen_original_generic_full_001.jpg",
+          "url": "./media/kitchen--kitchen_original_generic_full_001.mp4",
+          "poster": "./media/kitchen--kitchen_original_generic_full_001.jpg",
           "run_id": "kitchen_original_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 90.4,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/kitchen/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/kitchen/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/kitchen/validation_summary.json"
         }
       ]
     },
     {
       "id": "lift_basket",
       "title": "翻起提手搬篮筐",
-      "group": "expansion",
       "status": "in_progress",
-      "owner": "任务 15–19 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "物理操作通过，完整多模态采集与数据验收待完成。",
-      "next_step": "继续当前开发与完整验收，保留失败尝试。",
-      "physical_status": "passed",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
+      "category": "双手协作",
+      "description": "翻起篮筐提手，再握住提手搬运篮筐。",
+      "trajectory_count": 0,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_basket--review005_lift_basket.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_basket--review005_lift_basket.jpg",
+          "url": "./media/lift_basket--review005_lift_basket.mp4",
+          "poster": "./media/lift_basket--review005_lift_basket.jpg",
           "run_id": "review005_lift_basket",
           "kind": "diagnostic",
           "label": "物理诊断 · 抽帧回放",
           "duration_s": 21.066667,
           "sampling": "sparse_actual_frames_held_at_native_timestamps_60hz"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/lift_basket/task.json"
-        }
       ]
     },
     {
       "id": "lift_bucket",
       "title": "翻起桶把并提桶",
-      "group": "expansion",
       "status": "in_progress",
-      "owner": "任务 15–19 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "物理操作通过，完整多模态采集与数据验收待完成。",
-      "next_step": "继续当前开发与完整验收，保留失败尝试。",
-      "physical_status": "passed",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
+      "category": "工具交互",
+      "description": "翻起桶把，转换抓持姿态并提起桶。",
+      "trajectory_count": 0,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_bucket--review005_lift_bucket.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_bucket--review005_lift_bucket.jpg",
+          "url": "./media/lift_bucket--review005_lift_bucket.mp4",
+          "poster": "./media/lift_bucket--review005_lift_bucket.jpg",
           "run_id": "review005_lift_bucket",
           "kind": "diagnostic",
           "label": "物理诊断 · 抽帧回放",
           "duration_s": 28.066667,
           "sampling": "sparse_actual_frames_held_at_native_timestamps_60hz"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/lift_bucket/task.json"
-        }
       ]
     },
     {
       "id": "lift_carton",
       "title": "双手搬纸箱",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "插笔 / 茶壶 / 纸箱组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "carton_full_001",
-          "frames": 1026,
-          "duration_s": 17.1,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/lift_carton/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/lift_carton/official_reader.json"
-        }
-      ],
+      "category": "双手协作",
+      "description": "双手从两侧配合，抬起并搬放纸箱。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_carton--carton_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_carton--carton_full_001.jpg",
+          "url": "./media/lift_carton--carton_full_001.mp4",
+          "poster": "./media/lift_carton--carton_full_001.jpg",
           "run_id": "carton_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 17.1,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/lift_carton/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/lift_carton/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/extended_reference_evidence/lift_carton/official_reader.json"
         }
       ]
     },
     {
       "id": "lift_kettle_lid",
       "title": "提壶盖再盖回",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "任务 7–10 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "lid_multimodal_full_001",
-          "frames": 1284,
-          "duration_s": 21.4,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/lift_kettle_lid/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/lift_kettle_lid/validation_summary.json"
-        }
-      ],
+      "category": "厨房操作",
+      "description": "抓住壶盖提钮，提起盖子再放回壶口。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_kettle_lid--lid_multimodal_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_kettle_lid--lid_multimodal_full_001.jpg",
+          "url": "./media/lift_kettle_lid--lid_multimodal_full_001.mp4",
+          "poster": "./media/lift_kettle_lid--lid_multimodal_full_001.jpg",
           "run_id": "lid_multimodal_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 21.4,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/lift_kettle_lid/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/lift_kettle_lid/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/lift_kettle_lid/validation_summary.json"
         }
       ]
     },
     {
       "id": "lift_pot_lid",
       "title": "提锅盖再盖回",
-      "group": "expansion",
       "status": "in_progress",
-      "owner": "任务 15–19 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "物理与录制格式通过，但压力和光学深度全零，触觉响应尚待复核。",
-      "next_step": "继续当前开发与完整验收，保留失败尝试。",
-      "physical_status": "passed",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
+      "category": "厨房操作",
+      "description": "提起锅盖，调整位置并重新盖回锅上。",
+      "trajectory_count": 0,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_pot_lid--lid_sensor_episode_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/lift_pot_lid--lid_sensor_episode_001.jpg",
+          "url": "./media/lift_pot_lid--lid_sensor_episode_001.mp4",
+          "poster": "./media/lift_pot_lid--lid_sensor_episode_001.jpg",
           "run_id": "lid_sensor_episode_001",
           "kind": "diagnostic",
           "label": "物理通过 · 触觉待验收",
           "duration_s": 22.916667,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/lift_pot_lid/task.json"
-        }
       ]
     },
     {
       "id": "open_bench2dex_stapler",
       "title": "订书机开合 · Bench2Dex",
-      "group": "tabletop",
       "status": "not_started",
-      "owner": null,
-      "activity": "unassigned",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "场景已准备，动作规划、成功判据与录制尚未开始。",
-      "next_step": "实现接触动作与物理判据，完成全模态录制和四条动作验收。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
-      "videos": [],
-      "video_pending_reason": "尚未产生动作录像；实现后必须补充真实视频。",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/open_bench2dex_stapler/task.json"
-        }
-      ]
+      "category": "工具交互",
+      "description": "围绕订书机铰链，完成打开与合拢动作。",
+      "trajectory_count": 0,
+      "videos": []
     },
     {
       "id": "open_laptop",
       "title": "打开笔记本电脑",
-      "group": "expansion",
       "status": "in_progress",
-      "owner": "任务 15–19 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "约 10° 手部支承初态下物理通过；完整采集与默认姿态要求待核对。",
-      "next_step": "继续当前开发与完整验收，保留失败尝试。",
-      "physical_status": "passed",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
+      "category": "双手协作",
+      "description": "扶持底座，同时抬起笔记本电脑屏幕。",
+      "trajectory_count": 0,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/open_laptop--review005_open_laptop.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/open_laptop--review005_open_laptop.jpg",
+          "url": "./media/open_laptop--review005_open_laptop.mp4",
+          "poster": "./media/open_laptop--review005_open_laptop.jpg",
           "run_id": "review005_open_laptop",
           "kind": "diagnostic",
           "label": "物理诊断 · 抽帧回放",
           "duration_s": 17.066667,
           "sampling": "sparse_actual_frames_held_at_native_timestamps_60hz"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/open_laptop/task.json"
-        }
       ]
     },
     {
       "id": "open_stapler",
       "title": "打开并合上订书机",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "任务 7–10 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "stapler_multimodal_full_003",
-          "frames": 1392,
-          "duration_s": 23.2,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/open_stapler/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/open_stapler/validation_summary.json"
-        }
-      ],
+      "category": "工具交互",
+      "description": "控制接触位置与关节姿态，开合订书机。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/open_stapler--stapler_multimodal_full_003.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/open_stapler--stapler_multimodal_full_003.jpg",
+          "url": "./media/open_stapler--stapler_multimodal_full_003.mp4",
+          "poster": "./media/open_stapler--stapler_multimodal_full_003.jpg",
           "run_id": "stapler_multimodal_full_003",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 23.2,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/open_stapler/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/open_stapler/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/open_stapler/validation_summary.json"
         }
       ]
     },
     {
       "id": "operate_scissors",
       "title": "抓持剪刀开合",
-      "group": "expansion",
       "status": "not_started",
-      "owner": null,
-      "activity": "unassigned",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "场景已准备，动作规划、成功判据与录制尚未开始。",
-      "next_step": "实现接触动作与物理判据，完成全模态录制和四条动作验收。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
-      "videos": [],
-      "video_pending_reason": "尚未产生动作录像；实现后必须补充真实视频。",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/operate_scissors/task.json"
-        }
-      ]
+      "category": "工具交互",
+      "description": "稳定抓持剪刀，驱动手指完成开合。",
+      "trajectory_count": 0,
+      "videos": []
     },
     {
       "id": "pack_groceries",
       "title": "把日用品装入篮筐",
-      "group": "expansion",
       "status": "in_progress",
-      "owner": "任务 7–10 组",
-      "activity": "active",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "三件物体装篮仍在调试，局部成功不计整项验收。视频保留早期开发试跑。",
-      "next_step": "继续当前开发与完整验收，保留失败尝试。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
+      "category": "日常整理",
+      "description": "依次抓取日用品，将它们装入篮筐。",
+      "trajectory_count": 0,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/pack_groceries--pack_groceries_trial_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/pack_groceries--pack_groceries_trial_001.jpg",
+          "url": "./media/pack_groceries--pack_groceries_trial_001.mp4",
+          "poster": "./media/pack_groceries--pack_groceries_trial_001.jpg",
           "run_id": "pack_groceries_trial_001",
           "kind": "development",
           "label": "早期试跑 · 未验收",
           "duration_s": 9.266667,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/pack_groceries/task.json"
-        }
       ]
     },
     {
       "id": "pan_to_stove",
       "title": "平底锅放到炉上",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "任务 7–10 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "pan_multimodal_full_001",
-          "frames": 2652,
-          "duration_s": 44.2,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/pan_to_stove/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/pan_to_stove/validation_summary.json"
-        }
-      ],
+      "category": "厨房操作",
+      "description": "握住平底锅手柄，将锅移动到炉面上。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/pan_to_stove--pan_multimodal_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/pan_to_stove--pan_multimodal_full_001.jpg",
+          "url": "./media/pan_to_stove--pan_multimodal_full_001.mp4",
+          "poster": "./media/pan_to_stove--pan_multimodal_full_001.jpg",
           "run_id": "pan_multimodal_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 44.2,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/pan_to_stove/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/pan_to_stove/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/pan_to_stove/validation_summary.json"
         }
       ]
     },
     {
       "id": "plug_charger",
       "title": "插充电器",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "charger_generic_full_001",
-          "frames": 2457,
-          "duration_s": 40.95,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/plug_charger/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/plug_charger/validation_summary.json"
-        }
-      ],
+      "category": "精细操作",
+      "description": "抓取充电器，对齐插口并完成插接。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/plug_charger--charger_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/plug_charger--charger_generic_full_001.jpg",
+          "url": "./media/plug_charger--charger_generic_full_001.mp4",
+          "poster": "./media/plug_charger--charger_generic_full_001.jpg",
           "run_id": "charger_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 40.95,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/plug_charger/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/plug_charger/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/plug_charger/validation_summary.json"
         }
       ]
     },
     {
       "id": "pour_can",
       "title": "罐头向碗倾倒",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "pour_generic_full_002",
-          "frames": 3720,
-          "duration_s": 62.0,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/pour_can/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/pour_can/validation_summary.json"
-        }
-      ],
+      "category": "厨房操作",
+      "description": "握持罐头，朝碗口倾转并恢复姿态。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/pour_can--pour_generic_full_002.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/pour_can--pour_generic_full_002.jpg",
+          "url": "./media/pour_can--pour_generic_full_002.mp4",
+          "poster": "./media/pour_can--pour_generic_full_002.jpg",
           "run_id": "pour_generic_full_002",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 62.0,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/pour_can/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/pour_can/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/pour_can/validation_summary.json"
         }
       ]
     },
     {
       "id": "power_drill",
       "title": "电钻",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "drill_replanned_placement_generic_full_001",
-          "frames": 2784,
-          "duration_s": 46.4,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/power_drill/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/power_drill/validation_summary.json"
-        }
-      ],
+      "category": "工具交互",
+      "description": "抓取电钻，调整工具朝向并完成操作。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/power_drill--drill_replanned_placement_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/power_drill--drill_replanned_placement_generic_full_001.jpg",
+          "url": "./media/power_drill--drill_replanned_placement_generic_full_001.mp4",
+          "poster": "./media/power_drill--drill_replanned_placement_generic_full_001.jpg",
           "run_id": "drill_replanned_placement_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 46.4,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/power_drill/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/power_drill/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/power_drill/validation_summary.json"
         }
       ]
     },
     {
       "id": "press_spring_button",
       "title": "弹簧按钮按压",
-      "group": "tabletop",
       "status": "not_started",
-      "owner": null,
-      "activity": "unassigned",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "场景已准备，动作规划、成功判据与录制尚未开始。",
-      "next_step": "实现接触动作与物理判据，完成全模态录制和四条动作验收。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
-      "videos": [],
-      "video_pending_reason": "尚未产生动作录像；实现后必须补充真实视频。",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/press_spring_button/task.json"
-        }
-      ]
+      "category": "精细操作",
+      "description": "控制指尖与按钮的接触，执行按压动作。",
+      "trajectory_count": 0,
+      "videos": []
     },
     {
       "id": "rotate_knob",
       "title": "旋转旋钮",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "已有冻结参考执行通过物理与完整数据验证；新动作质量标准仍需逐项复核。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "knob_continuous_generic_full_001",
-          "frames": 2230,
-          "duration_s": 37.167,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/rotate_knob/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/rotate_knob/validation_summary.json"
-        }
-      ],
+      "category": "精细操作",
+      "description": "手指贴合旋钮，控制抓持与旋转。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/rotate_knob--knob_continuous_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/rotate_knob--knob_continuous_generic_full_001.jpg",
+          "url": "./media/rotate_knob--knob_continuous_generic_full_001.mp4",
+          "poster": "./media/rotate_knob--knob_continuous_generic_full_001.jpg",
           "run_id": "knob_continuous_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 37.166667,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/rotate_knob/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/rotate_knob/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/rotate_knob/validation_summary.json"
-        }
       ]
     },
     {
       "id": "rotate_tube_cap",
       "title": "双手旋转离心管盖",
-      "group": "expansion",
       "status": "not_started",
-      "owner": null,
-      "activity": "unassigned",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "场景已准备，动作规划、成功判据与录制尚未开始。",
-      "next_step": "实现接触动作与物理判据，完成全模态录制和四条动作验收。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
-      "videos": [],
-      "video_pending_reason": "尚未产生动作录像；实现后必须补充真实视频。",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/rotate_tube_cap/task.json"
-        }
-      ]
+      "category": "双手协作",
+      "description": "一只手稳定管身，另一只手旋转管盖。",
+      "trajectory_count": 0,
+      "videos": []
     },
     {
       "id": "set_table",
       "title": "杯具摆放",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "任务 11–14 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "full078 完整参考通过，未检测到 ≥250 ms 近静止段；右手压力为零、光学有响应，保留实测。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "set_table_multimodal_full_078",
-          "frames": 2547,
-          "duration_s": 42.45,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/update_1806/set_table/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/update_1806/set_table/validation_summary.json"
-        }
-      ],
+      "category": "日常整理",
+      "description": "抓取杯具，将它们摆放到指定位置。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/set_table--set_table_multimodal_full_078.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/set_table--set_table_multimodal_full_078.jpg",
+          "url": "./media/set_table--set_table_multimodal_full_078.mp4",
+          "poster": "./media/set_table--set_table_multimodal_full_078.jpg",
           "run_id": "set_table_multimodal_full_078",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 42.45,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/set_table/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/update_1806/set_table/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/update_1806/set_table/validation_summary.json"
         }
       ]
     },
     {
       "id": "slide_utility_knife",
       "title": "推出与收回刀片",
-      "group": "expansion",
       "status": "not_started",
-      "owner": null,
-      "activity": "unassigned",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "场景已准备，动作规划、成功判据与录制尚未开始。",
-      "next_step": "实现接触动作与物理判据，完成全模态录制和四条动作验收。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
-      "videos": [],
-      "video_pending_reason": "尚未产生动作录像；实现后必须补充真实视频。",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/slide_utility_knife/task.json"
-        }
-      ]
+      "category": "工具交互",
+      "description": "握持刀身，操作滑块推出并收回刀片。",
+      "trajectory_count": 0,
+      "videos": []
     },
     {
       "id": "solve_hanoi",
       "title": "三层汉诺塔",
-      "group": "tabletop",
       "status": "not_started",
-      "owner": null,
-      "activity": "unassigned",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "场景已准备，动作规划、成功判据与录制尚未开始。",
-      "next_step": "实现接触动作与物理判据，完成全模态录制和四条动作验收。",
-      "physical_status": "pending",
-      "data_status": "pending",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [],
-      "videos": [],
-      "video_pending_reason": "尚未产生动作录像；实现后必须补充真实视频。",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/solve_hanoi/task.json"
-        }
-      ]
+      "category": "精细操作",
+      "description": "依次抓取和放置圆盘，完成三层汉诺塔。",
+      "trajectory_count": 0,
+      "videos": []
     },
     {
       "id": "stack_blocks",
       "title": "叠放方块和圆柱",
-      "group": "expansion",
       "status": "accepted",
-      "owner": "任务 11–14 组",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "full104 完整参考通过，未检测到 ≥250 ms 近静止段；替代较早 full041 的展示版本。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "pending"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "stack_blocks_multimodal_full_104",
-          "frames": 4174,
-          "duration_s": 69.567,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/update_1806/stack_blocks/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/update_1806/stack_blocks/validation_summary.json"
-        }
-      ],
+      "category": "精细操作",
+      "description": "拾取方块与圆柱，对齐后逐个叠放。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/stack_blocks--stack_blocks_multimodal_full_104.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/stack_blocks--stack_blocks_multimodal_full_104.jpg",
+          "url": "./media/stack_blocks--stack_blocks_multimodal_full_104.mp4",
+          "poster": "./media/stack_blocks--stack_blocks_multimodal_full_104.jpg",
           "run_id": "stack_blocks_multimodal_full_104",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 69.566667,
           "sampling": "original_video"
         }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/stack_blocks/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/update_1806/stack_blocks/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/task_status_20261027/update_1806/stack_blocks/validation_summary.json"
-        }
       ]
     },
     {
       "id": "tray_carry",
       "title": "双手端托盘",
-      "group": "original",
       "status": "accepted",
-      "owner": "首批参考任务",
-      "activity": "idle",
-      "updated_at": "2026-10-27T11:31:32+00:00",
-      "summary": "参考数据已通过；原拇指外壳接触不满足新增内侧握持要求，待改进。",
-      "next_step": "维护参考证据，并逐项复核四条仿人动作要求。",
-      "physical_status": "passed",
-      "data_status": "passed",
-      "motion_quality": {
-        "home_return": "pending",
-        "smoothness": "pending",
-        "humanlike": "pending",
-        "contact": "failed"
-      },
-      "trajectory_inventory_complete": false,
-      "trajectories": [
-        {
-          "run_id": "tray_thumb_down_generic_full_001",
-          "frames": 1676,
-          "duration_s": 27.933,
-          "physical_passed": true,
-          "data_passed": true,
-          "physical_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/tray_carry/physical_report.json",
-          "data_report": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/tray_carry/validation_summary.json"
-        }
-      ],
+      "category": "双手协作",
+      "description": "双手配合托起托盘，保持姿态并完成搬运。",
+      "trajectory_count": 1,
       "videos": [
         {
-          "url": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/tray_carry--tray_thumb_down_generic_full_001.mp4",
-          "poster": "https://raw.githubusercontent.com/DavidLXu/RevoBench-Refactor/main/dashboard/media/tray_carry--tray_thumb_down_generic_full_001.jpg",
+          "url": "./media/tray_carry--tray_thumb_down_generic_full_001.mp4",
+          "poster": "./media/tray_carry--tray_thumb_down_generic_full_001.jpg",
           "run_id": "tray_thumb_down_generic_full_001",
           "kind": "accepted",
           "label": "验收参考 · 完整总览",
           "duration_s": 27.933333,
           "sampling": "original_video"
-        }
-      ],
-      "video_pending_reason": "",
-      "evidence": [
-        {
-          "label": "任务定义",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/src/revobench/tasks/tray_carry/task.json"
-        },
-        {
-          "label": "物理报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/tray_carry/physical_report.json"
-        },
-        {
-          "label": "数据报告",
-          "url": "https://github.com/DavidLXu/RevoBench-Refactor/blob/main/docs/reference_evidence/tray_carry/validation_summary.json"
         }
       ]
     }
