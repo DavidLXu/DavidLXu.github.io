@@ -1,0 +1,13 @@
+# Optional reviewed corrections keyed by the paper note permalink.
+# A facets entry replaces that entire dimension; [] clears a false positive.
+# Allowed IDs are in roboscope_taxonomy.json. Omitted dimensions stay inferred.
+# Example:
+# /posts/2026/09/example-paper-notes/:
+#   facets:
+#     task: [in_hand]
+#     method: [rl]
+#     embodiment: [dexterous_hand]
+#     data: [tactile]
+#   reason: "Checked the method and experimental setup in the paper."
+#   summary: "Optional reviewed one-sentence contribution."
+{}

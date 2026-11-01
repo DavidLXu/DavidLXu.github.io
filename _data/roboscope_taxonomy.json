@@ -1,0 +1,440 @@
+[
+  {
+    "id": "task",
+    "zh": "研究问题 / 任务",
+    "en": "Research problem / task",
+    "values": [
+      {
+        "id": "grasp",
+        "zh": "抓取",
+        "en": "Grasping",
+        "color": "#287b88",
+        "aliases": [
+          "grasp",
+          "grasping",
+          "grasps",
+          "抓取"
+        ]
+      },
+      {
+        "id": "in_hand",
+        "zh": "手内操作",
+        "en": "In-hand manipulation",
+        "color": "#ab6334",
+        "aliases": [
+          "in-hand",
+          "in hand",
+          "手内操作",
+          "手内旋转"
+        ]
+      },
+      {
+        "id": "assembly",
+        "zh": "装配",
+        "en": "Assembly",
+        "color": "#755ba7",
+        "aliases": [
+          "assembly",
+          "insertion",
+          "peg-in-hole",
+          "装配",
+          "插接"
+        ]
+      },
+      {
+        "id": "deformable",
+        "zh": "可变形物体操作",
+        "en": "Deformable objects",
+        "color": "#32845c",
+        "aliases": [
+          "deformable",
+          "deformation",
+          "cloth manipulation",
+          "rope manipulation",
+          "柔性物体",
+          "可变形"
+        ]
+      },
+      {
+        "id": "locomotion",
+        "zh": "运动与全身操作",
+        "en": "Locomotion & whole-body control",
+        "color": "#b04e6a",
+        "aliases": [
+          "locomotion",
+          "loco-manipulation",
+          "whole-body",
+          "whole body",
+          "全身控制",
+          "行走"
+        ]
+      },
+      {
+        "id": "navigation",
+        "zh": "导航",
+        "en": "Navigation",
+        "color": "#5272ac",
+        "aliases": [
+          "navigation",
+          "导航"
+        ]
+      },
+      {
+        "id": "long_horizon",
+        "zh": "长时程任务",
+        "en": "Long-horizon tasks",
+        "color": "#8a752b",
+        "aliases": [
+          "long-horizon",
+          "long horizon",
+          "long-term memory",
+          "memory-dependent",
+          "长时程",
+          "长程任务"
+        ]
+      },
+      {
+        "id": "design",
+        "zh": "机构与形态设计",
+        "en": "Mechanism & morphology design",
+        "color": "#376e75",
+        "aliases": [
+          "robot design",
+          "mechanical design",
+          "morphology design",
+          "co-design",
+          "morphology optimization",
+          "机构设计",
+          "形态优化"
+        ]
+      },
+      {
+        "id": "manipulation",
+        "zh": "通用操作",
+        "en": "General manipulation",
+        "color": "#796953",
+        "aliases": [
+          "manipulation",
+          "机器人操作"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "method",
+    "zh": "方法",
+    "en": "Method",
+    "values": [
+      {
+        "id": "imitation",
+        "zh": "模仿学习",
+        "en": "Imitation learning",
+        "color": "#287b88",
+        "aliases": [
+          "imitation learning",
+          "behavior cloning",
+          "behaviour cloning",
+          "模仿学习",
+          "行为克隆"
+        ]
+      },
+      {
+        "id": "rl",
+        "zh": "强化学习",
+        "en": "Reinforcement learning",
+        "color": "#ab6334",
+        "aliases": [
+          "reinforcement learning",
+          "RL",
+          "强化学习"
+        ]
+      },
+      {
+        "id": "vla",
+        "zh": "视觉语言动作模型",
+        "en": "Vision-language-action",
+        "color": "#755ba7",
+        "aliases": [
+          "vision-language-action",
+          "VLA",
+          "VLAs",
+          "视觉语言动作"
+        ]
+      },
+      {
+        "id": "world_model",
+        "zh": "世界模型",
+        "en": "World models",
+        "color": "#32845c",
+        "aliases": [
+          "world model",
+          "world models",
+          "world modeling",
+          "世界模型"
+        ]
+      },
+      {
+        "id": "generative_policy",
+        "zh": "扩散与流模型",
+        "en": "Diffusion & flow models",
+        "color": "#b04e6a",
+        "aliases": [
+          "diffusion policy",
+          "diffusion policies",
+          "flow matching",
+          "diffusion-based policy",
+          "diffusion model",
+          "扩散策略",
+          "流匹配",
+          "diffusion models",
+          "diffusion VLA",
+          "action diffusion",
+          "flow-based VLA"
+        ]
+      },
+      {
+        "id": "planning",
+        "zh": "规划与优化",
+        "en": "Planning & optimization",
+        "color": "#5272ac",
+        "aliases": [
+          "motion planning",
+          "trajectory optimization",
+          "model predictive control",
+          "MPC",
+          "task planning",
+          "轨迹优化",
+          "运动规划"
+        ]
+      },
+      {
+        "id": "retargeting",
+        "zh": "重定向与动作迁移",
+        "en": "Retargeting & motion transfer",
+        "color": "#8a752b",
+        "aliases": [
+          "retargeting",
+          "motion transfer",
+          "重定向",
+          "动作迁移"
+        ]
+      },
+      {
+        "id": "representation",
+        "zh": "表征与奖励学习",
+        "en": "Representation & reward learning",
+        "color": "#376e75",
+        "aliases": [
+          "representation learning",
+          "reward learning",
+          "reward model",
+          "reward modeling",
+          "value learning",
+          "表征学习",
+          "奖励建模"
+        ]
+      },
+      {
+        "id": "sim2real",
+        "zh": "仿真到现实迁移",
+        "en": "Sim-to-real transfer",
+        "color": "#796953",
+        "aliases": [
+          "sim-to-real",
+          "sim2real",
+          "real2sim2real",
+          "仿真到现实"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "embodiment",
+    "zh": "机器人形态",
+    "en": "Embodiment",
+    "values": [
+      {
+        "id": "single_arm",
+        "zh": "单臂",
+        "en": "Single arm",
+        "color": "#287b88",
+        "aliases": [
+          "single-arm",
+          "single arm",
+          "单臂"
+        ]
+      },
+      {
+        "id": "bimanual",
+        "zh": "双臂 / 双手",
+        "en": "Bimanual",
+        "color": "#ab6334",
+        "aliases": [
+          "bimanual",
+          "dual-arm",
+          "dual arm",
+          "two-handed",
+          "双臂",
+          "双手"
+        ]
+      },
+      {
+        "id": "dexterous_hand",
+        "zh": "灵巧手",
+        "en": "Dexterous hand",
+        "color": "#755ba7",
+        "aliases": [
+          "dexterous",
+          "robot hand",
+          "robotic hand",
+          "robot hands",
+          "robotic hands",
+          "in-hand",
+          "灵巧手",
+          "灵巧操作",
+          "手内操作"
+        ]
+      },
+      {
+        "id": "humanoid",
+        "zh": "人形机器人",
+        "en": "Humanoid",
+        "color": "#32845c",
+        "aliases": [
+          "humanoid",
+          "humanoids",
+          "人形机器人"
+        ]
+      },
+      {
+        "id": "mobile",
+        "zh": "移动机器人",
+        "en": "Mobile robot",
+        "color": "#b04e6a",
+        "aliases": [
+          "mobile robot",
+          "mobile manipulation",
+          "quadruped",
+          "移动机器人",
+          "四足"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "data",
+    "zh": "感知与数据",
+    "en": "Sensing & data",
+    "values": [
+      {
+        "id": "vision",
+        "zh": "视觉",
+        "en": "Vision",
+        "color": "#287b88",
+        "aliases": [
+          "visual",
+          "vision",
+          "visuo",
+          "RGB",
+          "视觉",
+          "visuotactile",
+          "visuomotor",
+          "point cloud",
+          "RGB-D"
+        ]
+      },
+      {
+        "id": "tactile",
+        "zh": "触觉",
+        "en": "Touch",
+        "color": "#ab6334",
+        "aliases": [
+          "tactile",
+          "touch",
+          "taxels",
+          "触觉"
+        ]
+      },
+      {
+        "id": "human_video",
+        "zh": "人类视频",
+        "en": "Human video",
+        "color": "#755ba7",
+        "aliases": [
+          "human video",
+          "human videos",
+          "human demonstration videos",
+          "人类视频",
+          "第一视角",
+          "人类演示视频",
+          "egocentric human",
+          "human egocentric",
+          "egocentric video",
+          "egocentric videos"
+        ]
+      },
+      {
+        "id": "teleop",
+        "zh": "遥操作",
+        "en": "Teleoperation",
+        "color": "#32845c",
+        "aliases": [
+          "teleoperation",
+          "teleoperated",
+          "teleop",
+          "遥操作"
+        ]
+      },
+      {
+        "id": "simulation",
+        "zh": "仿真与合成数据",
+        "en": "Simulation & synthetic data",
+        "color": "#b04e6a",
+        "aliases": [
+          "simulation",
+          "simulated",
+          "synthetic data",
+          "data generation",
+          "sim-to-real",
+          "sim2real",
+          "仿真",
+          "合成数据",
+          "数据生成"
+        ]
+      },
+      {
+        "id": "force",
+        "zh": "力与本体感知",
+        "en": "Force & proprioception",
+        "color": "#5272ac",
+        "aliases": [
+          "force sensing",
+          "force feedback",
+          "force control",
+          "proprioceptive",
+          "proprioception",
+          "wrench",
+          "力感知",
+          "力反馈",
+          "本体感知"
+        ]
+      },
+      {
+        "id": "language",
+        "zh": "语言指令",
+        "en": "Language instructions",
+        "color": "#8a752b",
+        "aliases": [
+          "language-conditioned",
+          "language guided",
+          "language-guided",
+          "language instruction",
+          "vision-language-action",
+          "语言指令",
+          "language instructions",
+          "vision-and-language navigation"
+        ]
+      }
+    ]
+  }
+]

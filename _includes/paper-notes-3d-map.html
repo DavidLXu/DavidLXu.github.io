@@ -1,31 +1,7 @@
-<section class="paper-notes-3d" id="paper-notes-3d-map" aria-labelledby="paper-notes-3d-title">
-  <div class="paper-notes-3d__header">
-    <div>
-      <p class="paper-notes-3d__eyebrow" data-i18n-en="Research Map" data-i18n-zh="研究地图">Research Map</p>
-      <h2 id="paper-notes-3d-title">
-        <span data-i18n-en="RoboScope Research Map" data-i18n-zh="RoboScope 论文阅读语义地图">RoboScope Research Map</span>
-      </h2>
-    </div>
-    <div class="paper-notes-3d__stats" aria-live="polite">
-      <span id="paper-notes-count">--</span>
-      <span data-i18n-en="notes" data-i18n-zh="篇笔记">notes</span>
-      <span aria-hidden="true">/</span>
-      <span id="paper-notes-cluster-count">--</span>
-      <span data-i18n-en="clusters" data-i18n-zh="个簇">clusters</span>
-    </div>
-  </div>
-
-  <div class="paper-notes-3d__workspace">
-    <div class="paper-notes-3d__stage">
-      <canvas id="paper-notes-3d-canvas" aria-label="3D Paper Notes semantic cluster map"></canvas>
-      <div class="paper-notes-3d__status" id="paper-notes-3d-status">Loading paper notes...</div>
-      <div class="paper-notes-3d__tooltip" id="paper-notes-3d-tooltip"></div>
-    </div>
-    <aside class="paper-notes-3d__clusters" id="paper-notes-3d-clusters" aria-label="Paper note clusters"></aside>
-  </div>
+<section id="roboscope" class="rs" aria-label="RoboScope" data-index-url="{{ '/assets/data/roboscope-index.json' | relative_url }}" data-baseurl="{{ site.baseurl }}">
+  <p class="rs-loading" role="status">Loading reading atlas / 正在加载阅读地图…</p>
+  <noscript><p>RoboScope requires JavaScript. <a href="{{ '/year-archive/' | relative_url }}">Browse all notes / 浏览全部笔记</a></p></noscript>
 </section>
-
-{% assign paper_notes_map_asset_version = site.time | date: '%s' %}
-<link rel="stylesheet" href="{{ '/assets/css/paper-notes-3d-map.css' | relative_url }}?v={{ paper_notes_map_asset_version }}">
-<script src="{{ '/assets/vendor/three/three.min.js' | relative_url }}?v={{ paper_notes_map_asset_version }}"></script>
-<script src="{{ '/assets/js/paper-notes-3d-map.js' | relative_url }}?v={{ paper_notes_map_asset_version }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/paper-notes-3d-map.css' | relative_url }}?v=2">
+<script defer src="{{ '/assets/vendor/three/three.min.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/paper-notes-3d-map.js' | relative_url }}?v=2"></script>

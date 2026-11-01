@@ -1,629 +1,377 @@
-const ROOT = document.getElementById("paper-notes-3d-map");
-const CANVAS = document.getElementById("paper-notes-3d-canvas");
-const STATUS = document.getElementById("paper-notes-3d-status");
-const TOOLTIP = document.getElementById("paper-notes-3d-tooltip");
-const CLUSTERS_EL = document.getElementById("paper-notes-3d-clusters");
-const COUNT_EL = document.getElementById("paper-notes-count");
-const CLUSTER_COUNT_EL = document.getElementById("paper-notes-cluster-count");
-
-const STOPWORDS = new Set([
-  "the", "and", "for", "with", "from", "that", "this", "paper", "notes",
-  "are", "can", "not", "into", "using", "uses", "used", "via", "its",
-  "their", "which", "than", "then", "also", "more", "but", "one", "two",
-  "three", "model", "models", "data", "learning", "robot", "robots",
-  "policy", "policies", "method", "task", "tasks", "train", "training",
-  "results", "based", "post", "supports", "english", "switching", "site",
-  "language", "toggle", "navigation", "paper notes", "中文", "摘要", "论文",
-  "方法", "模型"
-]);
-
-const DOMAIN_KEEP = new Set([
-  "vla", "world", "action", "dexterous", "manipulation", "tactile",
-  "hand", "hands", "egocentric", "video", "videos", "humanoid", "rl",
-  "reinforcement", "diffusion", "flow", "matching", "bimanual", "grasp",
-  "grasping", "sim", "real", "simulation", "dynamics", "embodied",
-  "memory", "planning", "contact", "tracking", "teleoperation", "cross",
-  "embodiment", "foundation", "dataset", "datasets", "trajectory",
-  "trajectories", "reward", "state", "states", "vision", "language",
-  "open", "vocabulary", "representation", "morphology", "human"
-]);
-
-const COLORS = [
-  0x2563eb, 0xdc2626, 0x16a34a, 0x9333ea, 0xea580c,
-  0x0891b2, 0x4f46e5, 0xbe123c, 0x65a30d, 0x7c3aed
-];
-
-function tokenize(text) {
-  const matches = String(text).toLowerCase().match(/[a-z][a-z0-9+\-]{1,}|[\u4e00-\u9fff]{2,}/g) || [];
-  return matches
-    .map((token) => token.replace(/^[-+]+|[-+]+$/g, ""))
-    .filter((token) => token.length > 1 && !STOPWORDS.has(token));
-}
-
-function chooseK(n) {
-  return Math.max(5, Math.min(10, Math.round(Math.sqrt(n)) + 2));
-}
-
-function buildTfidf(posts, maxFeatures = 520) {
-  const docCounts = new Map();
-  const termCounts = posts.map((post) => {
-    const weighted = [
-      post.title, post.title, post.title, post.title,
-      ...(post.tags || []), ...(post.tags || []), ...(post.tags || []),
-      post.excerpt || "", post.text || ""
-    ].join(" ");
-    const counts = new Map();
-    for (const token of tokenize(weighted)) counts.set(token, (counts.get(token) || 0) + 1);
-    for (const token of counts.keys()) docCounts.set(token, (docCounts.get(token) || 0) + 1);
-    return counts;
-  });
-
-  const n = posts.length;
-  const vocab = Array.from(docCounts.entries())
-    .filter(([term, df]) => (df >= 2 || DOMAIN_KEEP.has(term)) && (df <= Math.max(5, Math.floor(n * 0.75)) || DOMAIN_KEEP.has(term)))
-    .sort((a, b) => (b[1] + (DOMAIN_KEEP.has(b[0]) ? 4 : 0)) - (a[1] + (DOMAIN_KEEP.has(a[0]) ? 4 : 0)))
-    .slice(0, maxFeatures)
-    .map(([term]) => term)
-    .sort();
-
-  const index = new Map(vocab.map((term, i) => [term, i]));
-  const matrix = termCounts.map((counts) => {
-    const row = new Array(vocab.length).fill(0);
-    const total = Array.from(counts.values()).reduce((sum, value) => sum + value, 0) || 1;
-    for (const [term, count] of counts.entries()) {
-      const col = index.get(term);
-      if (col === undefined) continue;
-      const df = docCounts.get(term) || 0;
-      row[col] = (count / total) * (Math.log((1 + n) / (1 + df)) + 1);
-    }
-    const norm = Math.hypot(...row) || 1;
-    return row.map((value) => value / norm);
-  });
-
-  return { matrix, vocab };
-}
-
-function centeredCopy(matrix) {
-  const rows = matrix.length;
-  const cols = matrix[0].length;
-  const means = new Array(cols).fill(0);
-  for (const row of matrix) for (let j = 0; j < cols; j++) means[j] += row[j] / rows;
-  return matrix.map((row) => row.map((value, j) => value - means[j]));
-}
-
-function normalize(vector) {
-  const norm = Math.hypot(...vector) || 1;
-  return vector.map((value) => value / norm);
-}
-
-function pca(matrix, components = 3) {
-  const work = centeredCopy(matrix);
-  const rows = work.length;
-  const cols = work[0].length;
-  const scores = Array.from({ length: rows }, () => new Array(components).fill(0));
-
-  for (let component = 0; component < components; component++) {
-    let vector = normalize(Array.from({ length: cols }, (_, j) => Math.sin((j + 1) * (component + 2))));
-    for (let iter = 0; iter < 45; iter++) {
-      const left = work.map((row) => row.reduce((sum, value, j) => sum + value * vector[j], 0));
-      const next = new Array(cols).fill(0);
-      for (let i = 0; i < rows; i++) for (let j = 0; j < cols; j++) next[j] += work[i][j] * left[i];
-      vector = normalize(next);
-    }
-    const componentScores = work.map((row) => row.reduce((sum, value, j) => sum + value * vector[j], 0));
-    for (let i = 0; i < rows; i++) scores[i][component] = componentScores[i];
-    for (let i = 0; i < rows; i++) for (let j = 0; j < cols; j++) work[i][j] -= componentScores[i] * vector[j];
+/* RoboScope: stable research facets and independent similarity neighborhoods. */
+(() => {
+  "use strict";
+  const root = document.getElementById("roboscope");
+  if (!root) return;
+  const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[c]);
+  let lang = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
+  const t = (en, zh) => lang === "zh" ? zh : en;
+  const name = v => v?.[lang] || v?.en || "";
+  const $ = s => root.querySelector(s);
+  const state = {
+    q: "",
+    filters: new Set(),
+    view: "2d",
+    color: "method",
+    selected: null,
+    near: null,
+    sort: "date"
+  };
+  let data, papers, byId, labels, search, scene;
+  const facets = p => Object.values(p.facets).flat();
+  const color = p => labels.get(p.facets[state.color][0])?.color || "#8b9198";
+  const url = p => (root.dataset.baseurl || "") + p.url;
+  const matches = (p, filters = state.filters) => state.q.toLowerCase().trim().split(/\s+/).every(w => search.get(p.id).includes(w)) && [ ...filters ].every(id => facets(p).includes(id));
+  const nearby = () => state.near ? new Set([ state.near, ...byId.get(state.near).related.map(r => r.id) ]) : null;
+  const tag = id => `<span class="rs-tag">${esc(name(labels.get(id)))}</span>`;
+  function shell() {
+    root.innerHTML = `<div class="rs-toolbar"><label class="rs-search"><span>${t("Search your reading", "搜索阅读笔记")}</span><input id="rs-search" type="search" placeholder="${t("Title, method, keyword…", "标题、方法、关键词…")}" value="${esc(state.q)}"></label><div class="rs-views" role="group" aria-label="${t("View", "视图")}">${[ [ "list", t("List", "列表") ], [ "2d", "2D" ], [ "3d", "3D" ] ].map(([ id, n ]) => `<button data-view="${id}">${n}</button>`).join("")}</div></div>
+    <div class="rs-workspace"><aside class="rs-filters" aria-label="${t("Research filters", "研究筛选")}"><div class="rs-section-head"><h2>${t("Research lenses", "研究维度")}</h2><button id="rs-clear" class="rs-text-button">${t("Reset", "重置")}</button></div><p class="rs-muted">${t("All selected labels must match. A paper can have several labels.", "所选标签同时满足；每篇论文可以拥有多个标签。")}</p><div id="rs-facets">${data.taxonomy.map(d => `<fieldset><legend>${esc(name(d))}</legend>${d.values.map(v => `<label class="rs-facet"><input type="checkbox" data-facet="${v.id}"><span>${esc(name(v))}</span><span class="rs-facet-count" data-count="${v.id}"></span></label>`).join("")}</fieldset>`).join("")}</div><details class="rs-about"><summary>${t("How classification works", "分类是怎么来的？")}</summary><p>${t("Labels are inferred from existing tags, titles and summaries. Inspect the evidence in paper details. Uncertain dimensions stay empty; manual corrections take priority.", "标签依据原有标签、标题和摘要推断。详情中可查看判定依据。不确定的维度留空，人工校正优先。")}</p><p>${t("Similarity neighborhoods use cleaned text and shared labels. They are suggestions, not research categories or citations.", "相似邻域依据清洗后的文本和共同标签计算，用于探索，不代表研究分类或引用关系。")}</p></details></aside>
+    <section class="rs-results" aria-label="${t("Matching papers", "匹配论文")}"><div class="rs-section-head"><p id="rs-count" role="status" aria-live="polite"></p><label class="rs-sort">${t("Sort", "排序")} <select id="rs-sort"><option value="date">${t("Newest notes", "笔记日期")}</option><option value="title">${t("Title A–Z", "标题 A–Z")}</option></select></label></div><div id="rs-active"></div><div id="rs-map-panel"><div class="rs-map-toolbar"><label>${t("Color by", "颜色维度")} <select id="rs-color">${data.taxonomy.map(d => `<option value="${d.id}">${esc(name(d))}</option>`).join("")}</select></label><button id="rs-reset-view" class="rs-text-button">${t("Reset view", "重置视角")}</button></div><div class="rs-map"><svg id="rs-map-svg" viewBox="0 0 800 470" role="group" aria-label="${t("Select a paper to inspect it", "选择论文以查看详情")}"></svg><div id="rs-three" hidden></div><div id="rs-map-tip" role="status"></div></div><div id="rs-legend" class="rs-legend"></div><p class="rs-map-caption">${t("Fixed positions · nearby points suggest related reading, not precise semantic distances. Select a point for details.", "位置固定 · 邻近点提供阅读线索，距离不代表精确的语义差异。选择节点查看详情。")}</p></div><div id="rs-list" class="rs-paper-list"></div></section>
+    <aside id="rs-detail" class="rs-detail" aria-label="${t("Paper details", "论文详情")}" tabindex="-1"></aside></div>`;
+    $("#rs-color").value = state.color;
+    $("#rs-sort").value = state.sort;
+    $("#rs-search").addEventListener("input", e => {
+      state.q = e.target.value;
+      update();
+    });
+    $("#rs-clear").addEventListener("click", () => {
+      state.filters.clear();
+      state.q = "";
+      state.near = null;
+      $("#rs-search").value = "";
+      update();
+    });
+    $("#rs-sort").addEventListener("change", e => {
+      state.sort = e.target.value;
+      update();
+    });
+    $("#rs-color").addEventListener("change", e => {
+      state.color = e.target.value;
+      update();
+    });
+    $("#rs-reset-view").addEventListener("click", () => scene?.reset());
+    root.querySelectorAll("[data-view]").forEach(b => b.addEventListener("click", () => {
+      state.view = b.dataset.view;
+      update();
+    }));
+    $("#rs-facets").addEventListener("change", e => {
+      const id = e.target.dataset.facet;
+      if (id) {
+        e.target.checked ? state.filters.add(id) : state.filters.delete(id);
+        update();
+      }
+    });
+    root.addEventListener("click", click);
+    detail();
+    update();
   }
-
-  return scores;
-}
-
-function normalizePoints(points) {
-  const dims = points[0].length;
-  const mins = new Array(dims).fill(Infinity);
-  const maxs = new Array(dims).fill(-Infinity);
-  for (const point of points) {
-    for (let j = 0; j < dims; j++) {
-      mins[j] = Math.min(mins[j], point[j]);
-      maxs[j] = Math.max(maxs[j], point[j]);
+  function click(e) {
+    const p = e.target.closest("[data-paper]"), remove = e.target.closest("[data-remove]");
+    if (p) select(p.dataset.paper);
+    if (remove) {
+      state.filters.delete(remove.dataset.remove);
+      update();
+    }
+    if (e.target.closest("#rs-near")) {
+      state.near = state.selected;
+      update();
+    }
+    if (e.target.closest("#rs-exit-near")) {
+      state.near = null;
+      update();
+    }
+    if (e.target.closest("#rs-close")) {
+      state.selected = null;
+      state.near = null;
+      detail();
+      update();
     }
   }
-  return points.map((point) => point.map((value, j) => {
-    const span = maxs[j] - mins[j] || 1;
-    return ((value - mins[j]) / span - 0.5) * 10;
-  }));
-}
-
-function squaredDistance(a, b) {
-  let total = 0;
-  for (let i = 0; i < a.length; i++) total += (a[i] - b[i]) ** 2;
-  return total;
-}
-
-function kmeans(points, k, rounds = 100) {
-  const centers = [points[0].slice()];
-  while (centers.length < k) {
-    let farthest = 0;
-    let farthestDistance = -1;
-    for (let i = 0; i < points.length; i++) {
-      const distance = Math.min(...centers.map((center) => squaredDistance(points[i], center)));
-      if (distance > farthestDistance) {
-        farthest = i;
-        farthestDistance = distance;
+  function select(id) {
+    if (!byId.has(id)) return;
+    state.selected = id;
+    if (state.near) state.near = id;
+    detail();
+    update();
+    $("#rs-detail").focus({
+      preventScroll: true
+    });
+    if (innerWidth < 1100) $("#rs-detail").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+  function detail() {
+    root.classList.toggle("rs-has-selection", Boolean(state.selected));
+    if (!state.selected) {
+      $("#rs-detail").innerHTML = `<span class="rs-eyebrow">${t("READING COMPANION", "阅读线索")}</span><h2>${t("Follow an idea.", "沿着问题读下去。")}</h2><p>${t("Select a paper in the map or list to see its summary, classification evidence and related reading.", "选择地图或列表中的论文，查看摘要、分类依据与相似论文。")}</p><div class="rs-detail-example">${t("Try a combination", "试试组合筛选")}<br><strong>${t("Dexterous hand + Touch + Reinforcement learning", "灵巧手 + 触觉 + 强化学习")}</strong></div><p class="rs-muted">${t("Dates refer to reading notes, not publication dates.", "日期为笔记日期，并非论文发表日期。")}</p>`;
+      return;
+    }
+    const p = byId.get(state.selected), sources = {
+      tags: t("Existing tag", "原有标签"),
+      title: t("Title", "标题"),
+      summary: t("Summary · suggested", "摘要 · 推断"),
+      reviewed: t("Manually reviewed", "人工校正")
+    };
+    $("#rs-detail").innerHTML = `<div class="rs-section-head"><span class="rs-eyebrow">${t("PAPER DETAIL", "论文详情")}</span><button id="rs-close" aria-label="${t("Close details", "关闭详情")}">×</button></div><h2>${esc(p.title)}</h2><p class="rs-muted">${t("Note", "笔记")} · ${p.date}</p><p>${esc(p.summary || t("Open the note for details.", "打开笔记查看详情。"))}</p><a class="rs-open-note" href="${esc(url(p))}">${t("Read full note ↗", "阅读全文 ↗")}</a>${data.taxonomy.map(d => `<div class="rs-detail-facet"><h3>${esc(name(d))}</h3><div>${p.facets[d.id].length ? p.facets[d.id].map(tag).join("") : `<span class="rs-muted">${t("Not specified", "未确定")}</span>`}</div></div>`).join("")}<details class="rs-evidence"><summary>${t("Inspect classification evidence", "查看分类依据")}</summary><ul>${Object.entries(p.evidence).map(([ id, v ]) => `<li><strong>${esc(name(labels.get(id)))}</strong><br>${sources[v.source]} · ${esc(v.phrase)}</li>`).join("") || `<li>${t("No confident labels yet.", "暂未确定标签。")}</li>`}</ul></details><div class="rs-section-head rs-related-head"><h3>${t("Related reading", "相似论文")}</h3><button id="rs-near" class="rs-text-button">${t("Explore neighborhood", "查看邻域")}</button></div><p class="rs-muted">${t("Suggested by text and shared labels; independent of filters.", "依据文本相似度和共同标签推荐，不受当前筛选限制。")}</p><div class="rs-related">${p.related.map(r => `<button data-paper="${r.id}"><strong>${esc(byId.get(r.id).title)}</strong><small>${r.shared.length ? esc(r.shared.slice(0, 3).map(id => name(labels.get(id))).join(" · ")) : t("Similar wording in notes", "笔记文本相近")}</small></button>`).join("") || `<p>${t("No close matches yet.", "暂时没有足够相近的论文。")}</p>`}</div>`;
+  }
+  function update() {
+    const near = nearby();
+    const found = papers.filter(p => matches(p) && (!near || near.has(p.id))).sort((a, b) => state.sort === "title" ? a.title.localeCompare(b.title) : b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+    const visible = new Set(found.map(p => p.id));
+    $("#rs-count").textContent = t(`${found.length} of ${papers.length} notes`, `${found.length} / ${papers.length} 篇笔记`);
+    root.querySelectorAll("[data-view]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.view === state.view)));
+    root.querySelectorAll("[data-facet]").forEach(i => {
+      i.checked = state.filters.has(i.dataset.facet);
+    });
+    root.querySelectorAll("[data-count]").forEach(el => {
+      const f = new Set(state.filters);
+      f.add(el.dataset.count);
+      el.textContent = papers.filter(p => matches(p, f) && (!near || near.has(p.id))).length;
+    });
+    $("#rs-active").innerHTML = [ ...state.filters ].map(id => `<button class="rs-active-tag" data-remove="${id}" aria-label="${esc(t("Remove ", "移除 ") + name(labels.get(id)))}">${esc(name(labels.get(id)))} ×</button>`).join("") + (state.near ? `<button id="rs-exit-near" class="rs-active-tag">${t("Neighborhood", "相似邻域")}: ${esc(byId.get(state.near).title.split(":")[0])} ×</button>` : "");
+    $("#rs-list").innerHTML = found.length ? found.map(p => `<article class="rs-paper ${state.selected === p.id ? "is-selected" : ""}"><div class="rs-paper-meta"><span class="rs-dot" style="background:${color(p)}"></span><time>${p.date}</time><span>${t("READING NOTE", "论文笔记")}</span></div><h3><button data-paper="${p.id}" aria-pressed="${state.selected === p.id}">${esc(p.title)}</button></h3><p>${esc(p.summary || t("Open the note for details.", "打开笔记查看详情。"))}</p><div class="rs-tags">${facets(p).map(tag).join("")}</div><a href="${esc(url(p))}" class="rs-note-link">${t("Read note ↗", "阅读笔记 ↗")}</a></article>`).join("") : `<div class="rs-empty"><h3>${t("No matching notes", "没有匹配的笔记")}</h3><p>${t("Remove a label, clear the search, or leave the neighborhood.", "移除标签、清空搜索，或退出相似邻域以扩大范围。")}</p></div>`;
+    $("#rs-map-panel").hidden = state.view === "list";
+    $("#rs-map-svg").style.display = state.view === "2d" ? "block" : "none";
+    $("#rs-three").hidden = state.view !== "3d";
+    $("#rs-reset-view").hidden = state.view !== "3d";
+    const colors = new Set(found.map(p => p.facets[state.color][0]));
+    $("#rs-legend").innerHTML = data.taxonomy.find(d => d.id === state.color).values.filter(v => colors.has(v.id)).map(v => `<span><i style="background:${v.color}"></i>${esc(name(v))}</span>`).join("") + (colors.has(undefined) ? `<span><i style="background:#8b9198"></i>${t("Not specified", "未确定")}</span>` : "") + `<small>${t("Color uses the first label in the chosen dimension. All labels appear in details.", "颜色取所选维度的首个标签，全部标签见详情。")}</small>`;
+    $("#rs-map-tip").textContent = "";
+    if (state.view === "2d") map2d(found);
+    if (state.view === "3d") {
+      try {
+        if (!scene) scene = makeScene();
+        scene.update(visible);
+      } catch (e) {
+        $("#rs-three").textContent = t("3D unavailable. Please use 2D or the list.", "当前环境无法显示 3D，请切换 2D 或列表。");
       }
     }
-    centers.push(points[farthest].slice());
+    scene?.active(state.view === "3d");
+    save();
   }
-
-  let labels = new Array(points.length).fill(0);
-  for (let iter = 0; iter < rounds; iter++) {
-    const nextLabels = points.map((point) => {
-      let best = 0;
-      let bestDistance = Infinity;
-      centers.forEach((center, i) => {
-        const distance = squaredDistance(point, center);
-        if (distance < bestDistance) {
-          best = i;
-          bestDistance = distance;
+  const point = p => [ 400 + p.position[0] * 49, 235 + p.position[1] * 49 ];
+  const svgEl = (type, attrs) => {
+    const el = document.createElementNS("http://www.w3.org/2000/svg", type);
+    Object.entries(attrs).forEach(([ k, v ]) => el.setAttribute(k, v));
+    return el;
+  };
+  function map2d(found) {
+    const svg = $("#rs-map-svg");
+    svg.replaceChildren();
+    const ids = new Set(found.map(p => p.id));
+    if (state.selected && ids.has(state.selected)) {
+      const p = byId.get(state.selected), a = point(p);
+      p.related.filter(r => ids.has(r.id)).forEach(r => {
+        const b = point(byId.get(r.id));
+        svg.append(svgEl("line", {
+          x1: a[0],
+          y1: a[1],
+          x2: b[0],
+          y2: b[1],
+          stroke: "#8aa9ad",
+          "stroke-width": 1.5,
+          "stroke-dasharray": "4 5"
+        }));
+      });
+    }
+    found.forEach(p => {
+      const [ x, y ] = point(p), selected = state.selected === p.id, g = svgEl("g", {
+        role: "button",
+        tabindex: 0,
+        "aria-label": p.title,
+        "aria-pressed": selected,
+        "data-paper": p.id
+      });
+      const title = svgEl("title", {});
+      title.textContent = p.title;
+      g.append(svgEl("circle", {
+        cx: x,
+        cy: y,
+        r: selected ? 9 : 5.5,
+        fill: color(p),
+        stroke: selected ? "#172e3c" : "#fff",
+        "stroke-width": selected ? 3 : 1.4
+      }), title);
+      g.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          select(p.id);
         }
       });
-      return best;
+      g.addEventListener("pointerenter", () => {
+        $("#rs-map-tip").textContent = p.title;
+      });
+      g.addEventListener("pointerleave", () => {
+        $("#rs-map-tip").textContent = "";
+      });
+      svg.append(g);
     });
-    if (nextLabels.every((label, i) => label === labels[i])) break;
-    labels = nextLabels;
-    for (let cid = 0; cid < k; cid++) {
-      const members = points.filter((_, i) => labels[i] === cid);
-      if (!members.length) continue;
-      for (let j = 0; j < centers[cid].length; j++) {
-        centers[cid][j] = members.reduce((sum, point) => sum + point[j], 0) / members.length;
+  }
+  function makeScene() {
+    const T = window.THREE;
+    if (!T) throw new Error("Three unavailable");
+    const host = $("#rs-three"), renderer = new T.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    host.append(renderer.domElement);
+    renderer.domElement.setAttribute("aria-label", t("3D map: drag to rotate, scroll to zoom. Use the list for keyboard selection.", "3D 地图：拖动旋转，滚轮缩放。键盘操作请使用论文列表。"));
+    const world = new T.Scene(), camera = new T.PerspectiveCamera(42, 1, .1, 100), group = new T.Group(), geometry = new T.SphereGeometry(.07, 12, 10);
+    camera.position.z = 17;
+    world.add(group);
+    const meshes = papers.map(p => {
+      const m = new T.Mesh(geometry, new T.MeshBasicMaterial({
+        color: color(p)
+      }));
+      m.position.set(...p.position);
+      m.userData.id = p.id;
+      group.add(m);
+      return m;
+    });
+    const ray = new T.Raycaster(), pointer = new T.Vector2();
+    let running = false, frame = null, down = null, origin = null, moved = false;
+    function draw() {
+      if (!running) return;
+      renderer.render(world, camera);
+      frame = requestAnimationFrame(draw);
+    }
+    const observer = new ResizeObserver(() => {
+      if (!host.clientWidth) return;
+      renderer.setSize(host.clientWidth, 360);
+      camera.aspect = host.clientWidth / 360;
+      camera.updateProjectionMatrix();
+    });
+    observer.observe(host);
+    function pick(e) {
+      const r = renderer.domElement.getBoundingClientRect();
+      pointer.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
+      ray.setFromCamera(pointer, camera);
+      return ray.intersectObjects(meshes.filter(m => m.visible))[0]?.object;
+    }
+    renderer.domElement.addEventListener("pointerdown", e => {
+      down = origin = [ e.clientX, e.clientY ];
+      moved = false;
+      renderer.domElement.setPointerCapture(e.pointerId);
+    });
+    renderer.domElement.addEventListener("pointermove", e => {
+      if (down) {
+        if (Math.hypot(e.clientX - origin[0], e.clientY - origin[1]) > 4) moved = true;
+        group.rotation.y += (e.clientX - down[0]) * .006;
+        group.rotation.x += (e.clientY - down[1]) * .006;
+        down = [ e.clientX, e.clientY ];
+      } else {
+        const hit = pick(e);
+        $("#rs-map-tip").textContent = hit ? byId.get(hit.userData.id).title : "";
+        renderer.domElement.style.cursor = hit ? "pointer" : "grab";
       }
-    }
-  }
-  return labels;
-}
-
-function topTerms(matrix, vocab, labels, cid) {
-  const members = labels.map((label, i) => label === cid ? i : -1).filter((i) => i >= 0);
-  const others = labels.map((label, i) => label !== cid ? i : -1).filter((i) => i >= 0);
-  return vocab
-    .map((term, col) => {
-      const a = members.reduce((sum, row) => sum + matrix[row][col], 0) / Math.max(1, members.length);
-      const b = others.reduce((sum, row) => sum + matrix[row][col], 0) / Math.max(1, others.length);
-      return { term, score: a - 0.55 * b };
-    })
-    .filter((item) => item.score > 0 && !STOPWORDS.has(item.term))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 8)
-    .map((item) => item.term);
-}
-
-function clusterName(terms) {
-  const labels = [
-    [["tactile", "contact", "sensor", "force", "sensing"], "触觉与接触建模"],
-    [["bimanual", "ambidextrous", "symmetric", "motion"], "双手/双臂操作"],
-    [["egocentric", "video", "videos", "human", "trajectory"], "人类视频与数据集"],
-    [["vla", "language", "action", "vision", "vlm"], "VLA 与动作生成"],
-    [["reward", "state", "states", "distance", "representation"], "状态表示与奖励建模"],
-    [["world", "dynamics", "state", "reward", "latent"], "世界模型与动力学"],
-    [["rl", "reinforcement", "policy", "guidance", "online"], "强化学习与策略改进"],
-    [["humanoid", "mimic", "teleoperation"], "人形机器人与遥操作"],
-    [["dexterous", "hand", "hands", "grasp", "grasping"], "灵巧手与抓取"],
-    [["planning", "memory", "open", "vocabulary"], "规划、记忆与开放词汇"]
-  ];
-  const termSet = new Set(terms);
-  let best = terms.slice(0, 3).join(" / ") || "未命名主题";
-  let bestScore = 0;
-  for (const [keys, name] of labels) {
-    const score = keys.filter((key) => termSet.has(key)).length;
-    if (score > bestScore) {
-      best = name;
-      bestScore = score;
-    }
-  }
-  return best;
-}
-
-function makeClusters(posts, matrix, vocab, labels) {
-  return Array.from(new Set(labels)).map((cid, order) => {
-    const papers = posts
-      .map((post, i) => ({ ...post, index: i }))
-      .filter((_, i) => labels[i] === cid);
-    const keywords = topTerms(matrix, vocab, labels, cid);
+    });
+    renderer.domElement.addEventListener("pointerup", e => {
+      if (down && !moved) {
+        const hit = pick(e);
+        if (hit) select(hit.userData.id);
+      }
+      down = null;
+      if (renderer.domElement.hasPointerCapture(e.pointerId)) renderer.domElement.releasePointerCapture(e.pointerId);
+    });
+    renderer.domElement.addEventListener("pointercancel", () => {
+      down = null;
+    });
+    renderer.domElement.addEventListener("pointerleave", () => {
+      $("#rs-map-tip").textContent = "";
+    });
+    renderer.domElement.addEventListener("wheel", e => {
+      e.preventDefault();
+      camera.position.z = Math.max(5, Math.min(30, camera.position.z + e.deltaY * .01));
+    }, {
+      passive: false
+    });
     return {
-      id: cid,
-      order,
-      color: COLORS[order % COLORS.length],
-      colorCss: `#${COLORS[order % COLORS.length].toString(16).padStart(6, "0")}`,
-      name: clusterName(keywords),
-      keywords,
-      papers
-    };
-  }).sort((a, b) => b.papers.length - a.papers.length || a.name.localeCompare(b.name));
-}
-
-function hexToRgb(value) {
-  return {
-    r: (value >> 16) & 255,
-    g: (value >> 8) & 255,
-    b: value & 255
-  };
-}
-
-function renderClusterList(clusters) {
-  CLUSTERS_EL.innerHTML = clusters.map((cluster) => {
-    const { r, g, b } = hexToRgb(cluster.color);
-    return `
-    <button class="paper-notes-3d__cluster" type="button" data-cluster-id="${cluster.id}" style="--cluster-color:${cluster.colorCss}; --cluster-glow:rgba(${r}, ${g}, ${b}, 0.18);">
-      <span class="paper-notes-3d__cluster-title">
-        <span class="paper-notes-3d__swatch" style="background:${cluster.colorCss}"></span>
-        <span>${cluster.name}</span>
-        <span class="paper-notes-3d__count">${cluster.papers.length}</span>
-      </span>
-      <span class="paper-notes-3d__keywords">${cluster.keywords.join(", ")}</span>
-    </button>
-  `;
-  }).join("");
-}
-
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
-
-function clusterExtents(points, labels, clusterId) {
-  const members = points.filter((_, i) => labels[i] === clusterId);
-  const center = members.reduce((sum, point) => {
-    sum[0] += point[0];
-    sum[1] += point[1];
-    sum[2] += point[2];
-    return sum;
-  }, [0, 0, 0]).map((value) => value / Math.max(1, members.length));
-
-  const axes = [0, 0, 0];
-  members.forEach((point) => {
-    for (let i = 0; i < 3; i++) axes[i] = Math.max(axes[i], Math.abs(point[i] - center[i]));
-  });
-
-  return {
-    center,
-    axes: axes.map((axis) => clamp(axis * 1.42 + 0.55, 0.85, 5.2))
-  };
-}
-
-function renderScene(posts, points, labels, clusters) {
-  if (!window.THREE) throw new Error("Three.js is not loaded.");
-  const THREE = window.THREE;
-  const clusterById = new Map(clusters.map((cluster) => [cluster.id, cluster]));
-  const renderer = new THREE.WebGLRenderer({ canvas: CANVAS, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x111722);
-  scene.fog = new THREE.Fog(0x111722, 17, 33);
-
-  const camera = new THREE.PerspectiveCamera(48, 1, 0.1, 1000);
-  camera.position.set(0, 2.5, 17);
-
-  scene.add(new THREE.AmbientLight(0xdde7ff, 1.05));
-  const light = new THREE.DirectionalLight(0xffffff, 1.75);
-  light.position.set(5, 8, 9);
-  scene.add(light);
-
-  const group = new THREE.Group();
-  const makeSoftHaloMaterial = (color, opacity) => new THREE.ShaderMaterial({
-    uniforms: {
-      uColor: { value: new THREE.Color(color) },
-      uOpacity: { value: opacity }
-    },
-    vertexShader: `
-      varying vec3 vNormalView;
-      void main() {
-        vNormalView = normalize(normalMatrix * normal);
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      update(ids) {
+        meshes.forEach(m => {
+          m.visible = ids.has(m.userData.id);
+          m.material.color.set(color(byId.get(m.userData.id)));
+          m.scale.setScalar(state.selected === m.userData.id ? 1.9 : 1);
+        });
+      },
+      active(v) {
+        if (running === v) return;
+        running = v;
+        if (v) draw(); else cancelAnimationFrame(frame);
+      },
+      reset() {
+        group.rotation.set(0, 0, 0);
+        camera.position.z = 17;
+      },
+      dispose() {
+        running = false;
+        cancelAnimationFrame(frame);
+        observer.disconnect();
+        geometry.dispose();
+        meshes.forEach(m => m.material.dispose());
+        renderer.dispose();
       }
-    `,
-    fragmentShader: `
-      uniform vec3 uColor;
-      uniform float uOpacity;
-      varying vec3 vNormalView;
-      void main() {
-        float centerGlow = smoothstep(0.0, 1.0, abs(vNormalView.z));
-        float feather = pow(centerGlow, 3.15);
-        gl_FragColor = vec4(uColor, uOpacity * feather);
-      }
-    `,
-    transparent: true,
-    depthWrite: false,
-    blending: THREE.AdditiveBlending,
-    side: THREE.DoubleSide
-  });
-
-  const starCount = 260;
-  const starPositions = new Float32Array(starCount * 3);
-  const starColors = new Float32Array(starCount * 3);
-  for (let i = 0; i < starCount; i++) {
-    const a = Math.sin((i + 1) * 12.9898) * 43758.5453;
-    const b = Math.sin((i + 7) * 78.233) * 24634.6345;
-    const c = Math.sin((i + 13) * 37.719) * 97531.1357;
-    const rx = a - Math.floor(a);
-    const ry = b - Math.floor(b);
-    const rz = c - Math.floor(c);
-    starPositions[i * 3] = (rx - 0.5) * 18;
-    starPositions[i * 3 + 1] = (ry - 0.45) * 13;
-    starPositions[i * 3 + 2] = -7.5 + rz * 8;
-    const tint = 0.66 + (rx * 0.26);
-    starColors[i * 3] = tint * 0.78;
-    starColors[i * 3 + 1] = tint * 0.86;
-    starColors[i * 3 + 2] = tint;
-  }
-  const starGeometry = new THREE.BufferGeometry();
-  starGeometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
-  starGeometry.setAttribute("color", new THREE.BufferAttribute(starColors, 3));
-  const stars = new THREE.Points(
-    starGeometry,
-    new THREE.PointsMaterial({
-      size: 0.035,
-      transparent: true,
-      opacity: 0.32,
-      vertexColors: true,
-      depthWrite: false,
-      sizeAttenuation: true
-    })
-  );
-  group.add(stars);
-
-  const haloMeshes = [];
-  const haloGeometry = new THREE.SphereGeometry(1, 40, 24);
-  clusters.forEach((cluster) => {
-    const { center, axes } = clusterExtents(points, labels, cluster.id);
-    const material = makeSoftHaloMaterial(cluster.color, 0);
-    const halo = new THREE.Mesh(haloGeometry, material);
-    halo.position.set(center[0], center[1], center[2]);
-    halo.scale.set(axes[0] * 1.36, axes[1] * 1.36, axes[2] * 1.36);
-    halo.userData = {
-      cluster,
-      baseOpacity: 0.055,
-      highlightOpacity: 0.12,
-      dimOpacity: 0.008,
-      targetOpacity: 0.055
     };
-    group.add(halo);
-    haloMeshes.push(halo);
-  });
-
-  const pointMeshes = [];
-  const geometry = new THREE.SphereGeometry(0.16, 24, 16);
-  posts.forEach((post, i) => {
-    const cluster = clusterById.get(labels[i]);
-    const material = new THREE.MeshStandardMaterial({
-      color: cluster.color,
-      roughness: 0.42,
-      metalness: 0.08,
-      emissive: cluster.color,
-      emissiveIntensity: 0.08,
-      transparent: true,
-      opacity: 0
-    });
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set(points[i][0], points[i][1], points[i][2]);
-    mesh.userData = {
-      post,
-      cluster,
-      targetOpacity: 0.86,
-      targetScale: 1,
-      targetEmissive: 0.08
-    };
-    mesh.scale.setScalar(0.001);
-    group.add(mesh);
-    pointMeshes.push(mesh);
-  });
-  scene.add(group);
-
-  const raycaster = new THREE.Raycaster();
-  const mouse = new THREE.Vector2();
-  const clusterCards = Array.from(CLUSTERS_EL.querySelectorAll(".paper-notes-3d__cluster"));
-  let active = null;
-  let selectedClusterId = null;
-  let dragging = false;
-  let pointerInside = false;
-  let hasHoverPosition = false;
-  let previousX = 0;
-  let previousY = 0;
-  let hoverPreviousX = 0;
-  let hoverPreviousY = 0;
-  let targetRotationX = -0.18;
-  let targetRotationY = 0.45;
-  group.rotation.x = targetRotationX;
-  group.rotation.y = targetRotationY;
-
-  function updateEmphasis() {
-    const hoverClusterId = active?.userData.cluster.id ?? null;
-    const focusClusterId = hoverClusterId ?? selectedClusterId;
-
-    pointMeshes.forEach((mesh) => {
-      const sameCluster = focusClusterId !== null && mesh.userData.cluster.id === focusClusterId;
-      const isActive = mesh === active;
-      const isDimmed = focusClusterId !== null && !sameCluster;
-      mesh.userData.targetOpacity = isDimmed ? 0.18 : sameCluster ? 0.94 : 0.86;
-      mesh.userData.targetScale = isActive ? 1.72 : sameCluster ? 1.22 : isDimmed ? 0.78 : 1;
-      mesh.userData.targetEmissive = isActive ? 0.62 : sameCluster ? 0.26 : 0.08;
-    });
-
-    haloMeshes.forEach((halo) => {
-      const sameCluster = focusClusterId !== null && halo.userData.cluster.id === focusClusterId;
-      const isDimmed = focusClusterId !== null && !sameCluster;
-      halo.userData.targetOpacity = sameCluster
-        ? halo.userData.highlightOpacity
-        : isDimmed
-          ? halo.userData.dimOpacity
-          : halo.userData.baseOpacity;
-    });
-
-    clusterCards.forEach((card) => {
-      const clusterId = Number(card.getAttribute("data-cluster-id"));
-      const isActive = focusClusterId !== null && clusterId === focusClusterId;
-      card.classList.toggle("is-active", isActive);
-      card.classList.toggle("is-muted", focusClusterId !== null && !isActive);
-      card.setAttribute("aria-pressed", selectedClusterId === clusterId ? "true" : "false");
-    });
   }
-
-  clusterCards.forEach((card) => {
-    const clusterId = Number(card.getAttribute("data-cluster-id"));
-    card.setAttribute("aria-pressed", "false");
-    card.addEventListener("click", () => {
-      selectedClusterId = selectedClusterId === clusterId ? null : clusterId;
-      updateEmphasis();
-    });
-  });
-  updateEmphasis();
-
-  function resize() {
-    const rect = CANVAS.parentElement.getBoundingClientRect();
-    renderer.setSize(rect.width, rect.height, false);
-    camera.aspect = rect.width / rect.height;
-    camera.updateProjectionMatrix();
+  function save() {
+    const p = new URLSearchParams();
+    if (state.q) p.set("q", state.q);
+    if (state.filters.size) p.set("tags", [ ...state.filters ].sort().join(","));
+    if (state.view !== "2d") p.set("view", state.view);
+    if (state.selected) p.set("paper", state.selected);
+    if (state.near) p.set("near", state.near);
+    if (state.color !== "method") p.set("color", state.color);
+    if (state.sort !== "date") p.set("sort", state.sort);
+    history.replaceState(null, "", location.pathname + (p.size ? "?" + p : "") + location.hash);
   }
-
-  function updatePointer(event) {
-    const rect = CANVAS.getBoundingClientRect();
-    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-    TOOLTIP.style.left = `${event.clientX - rect.left + 14}px`;
-    TOOLTIP.style.top = `${event.clientY - rect.top + 14}px`;
+  function restore() {
+    const p = new URLSearchParams(location.search);
+    state.q = p.get("q") || "";
+    state.filters = new Set((p.get("tags") || "").split(",").filter(id => labels.has(id)));
+    if ([ "list", "2d", "3d" ].includes(p.get("view"))) state.view = p.get("view");
+    if (byId.has(p.get("paper"))) state.selected = p.get("paper");
+    if (byId.has(p.get("near"))) state.near = p.get("near");
+    if (data.taxonomy.some(d => d.id === p.get("color"))) state.color = p.get("color");
+    if (p.get("sort") === "title") state.sort = "title";
   }
-
-  function pickPoint() {
-    raycaster.setFromCamera(mouse, camera);
-    return raycaster.intersectObjects(pointMeshes, false)[0]?.object || null;
-  }
-
-  CANVAS.addEventListener("pointermove", (event) => {
-    pointerInside = true;
-    updatePointer(event);
-    if (!dragging && hasHoverPosition) {
-      const dx = event.clientX - hoverPreviousX;
-      const dy = event.clientY - hoverPreviousY;
-      targetRotationY -= dx * 0.0032;
-      targetRotationX -= dy * 0.0022;
-      targetRotationX = Math.max(-1.15, Math.min(1.15, targetRotationX));
+  async function init() {
+    try {
+      const response = await fetch(root.dataset.indexUrl);
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      data = await response.json();
+      papers = data.papers;
+      byId = new Map(papers.map(p => [ p.id, p ]));
+      labels = new Map(data.taxonomy.flatMap(d => d.values.map(v => [ v.id, v ])));
+      search = new Map(papers.map(p => [ p.id, [ p.title, p.summary, ...p.tags, ...facets(p).flatMap(id => {
+        const v = labels.get(id);
+        return [ v.en, v.zh, ...v.aliases ];
+      }) ].join(" ").toLowerCase() ]));
+      restore();
+      shell();
+      new MutationObserver(() => {
+        const next = document.documentElement.lang.startsWith("zh") ? "zh" : "en";
+        if (next === lang) return;
+        lang = next;
+        scene?.dispose();
+        scene = null;
+        root.removeEventListener("click", click);
+        shell();
+      }).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: [ "lang" ]
+      });
+    } catch (e) {
+      root.innerHTML = `<p role="alert">${t("Reading index unavailable. Reload to retry.", "阅读索引暂时无法加载，请刷新重试。")} <a href="${esc(root.dataset.baseurl || "")}/year-archive/">${t("All notes", "全部笔记")}</a></p>`;
+      console.error("RoboScope:", e);
     }
-    hoverPreviousX = event.clientX;
-    hoverPreviousY = event.clientY;
-    hasHoverPosition = true;
-
-    const nextActive = pickPoint();
-    const activeChanged = nextActive !== active;
-    active = nextActive;
-    if (active) {
-      const { post, cluster } = active.userData;
-      TOOLTIP.innerHTML = `<strong>${post.title}</strong>${cluster.name}<br>${post.date}<br>Click to open note`;
-      TOOLTIP.style.opacity = "1";
-      CANVAS.style.cursor = "pointer";
-    } else {
-      active = null;
-      TOOLTIP.style.opacity = "0";
-      CANVAS.style.cursor = dragging ? "grabbing" : "grab";
-    }
-    if (activeChanged) updateEmphasis();
-  });
-
-  CANVAS.addEventListener("pointerdown", (event) => {
-    dragging = true;
-    previousX = event.clientX;
-    previousY = event.clientY;
-    CANVAS.setPointerCapture(event.pointerId);
-  });
-
-  CANVAS.addEventListener("pointerup", (event) => {
-    dragging = false;
-    CANVAS.style.cursor = active ? "pointer" : "grab";
-    if (CANVAS.hasPointerCapture(event.pointerId)) CANVAS.releasePointerCapture(event.pointerId);
-  });
-
-  CANVAS.addEventListener("pointercancel", () => {
-    dragging = false;
-  });
-
-  CANVAS.addEventListener("pointermove", (event) => {
-    if (!dragging) return;
-    const dx = event.clientX - previousX;
-    const dy = event.clientY - previousY;
-    previousX = event.clientX;
-    previousY = event.clientY;
-    targetRotationY += dx * 0.006;
-    targetRotationX += dy * 0.004;
-    targetRotationX = Math.max(-1.15, Math.min(1.15, targetRotationX));
-  });
-
-  CANVAS.addEventListener("wheel", (event) => {
-    event.preventDefault();
-    camera.position.z = Math.max(8, Math.min(28, camera.position.z + event.deltaY * 0.012));
-  }, { passive: false });
-
-  CANVAS.addEventListener("pointerleave", () => {
-    active = null;
-    pointerInside = false;
-    hasHoverPosition = false;
-    TOOLTIP.style.opacity = "0";
-    updateEmphasis();
-  });
-
-  CANVAS.addEventListener("click", (event) => {
-    updatePointer(event);
-    const clicked = pickPoint();
-    if (clicked && clicked.userData.post.url) window.location.href = clicked.userData.post.url;
-  });
-
-  window.addEventListener("resize", resize);
-  resize();
-  const startTime = performance.now();
-
-  function animate() {
-    const intro = Math.min(1, (performance.now() - startTime) / 1150);
-    const introEase = 1 - (1 - intro) ** 3;
-    if (!dragging && !pointerInside) targetRotationY += 0.0022;
-    group.rotation.x += (targetRotationX - group.rotation.x) * 0.08;
-    group.rotation.y += (targetRotationY - group.rotation.y) * 0.08;
-    pointMeshes.forEach((mesh) => {
-      const targetScale = Math.max(0.001, mesh.userData.targetScale * introEase);
-      mesh.scale.setScalar(mesh.scale.x + (targetScale - mesh.scale.x) * 0.12);
-      mesh.material.opacity += ((mesh.userData.targetOpacity * introEase) - mesh.material.opacity) * 0.12;
-      mesh.material.emissiveIntensity += (mesh.userData.targetEmissive - mesh.material.emissiveIntensity) * 0.12;
-    });
-    haloMeshes.forEach((halo) => {
-      const uniform = halo.material.uniforms.uOpacity;
-      uniform.value += ((halo.userData.targetOpacity * introEase) - uniform.value) * 0.08;
-    });
-    camera.lookAt(0, 0, 0);
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
   }
-  animate();
-}
-
-async function main() {
-  if (!ROOT || !CANVAS) return;
-  try {
-    const response = await fetch("/assets/data/paper_notes.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`Cannot load paper_notes.json (${response.status})`);
-    const posts = await response.json();
-    if (!Array.isArray(posts) || posts.length < 3) throw new Error("Need at least 3 Paper Notes.");
-
-    const { matrix, vocab } = buildTfidf(posts);
-    const projection = pca(matrix, 12);
-    const k = chooseK(posts.length);
-    const labels = kmeans(projection, k);
-    const points = normalizePoints(pca(matrix, 3));
-    const clusters = makeClusters(posts, matrix, vocab, labels);
-
-    COUNT_EL.textContent = String(posts.length);
-    CLUSTER_COUNT_EL.textContent = String(clusters.length);
-    STATUS.textContent = `TF-IDF + PCA + KMeans, k=${clusters.length}`;
-    renderClusterList(clusters);
-    renderScene(posts, points, labels, clusters);
-  } catch (error) {
-    STATUS.textContent = error.message || "Unable to render Paper Notes map.";
-  }
-}
-
-main();
+  init();
+})();
