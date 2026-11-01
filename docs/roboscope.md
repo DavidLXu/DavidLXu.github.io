@@ -2,7 +2,10 @@
 
 RoboScope separates four independent research facets from suggested related reading.
 The interface supports intersecting labels, bilingual search, paper details, evidence,
-related neighborhoods, stable 2D/3D maps and a keyboard-accessible list. Query parameters
+related neighborhoods, stable 2D/3D maps and a keyboard-accessible paper list below the map.
+The default view is 3D; there is no separate list-only view. The 3D map slowly rotates
+by default, pauses while the pointer is over it or during interaction, and offers an
+auto-rotate toggle. Reduced-motion preferences disable automatic rotation initially. Query parameters
 retain filters, selection, neighborhood, view, color dimension and sorting on reload.
 Dates are note dates, not publication dates.
 

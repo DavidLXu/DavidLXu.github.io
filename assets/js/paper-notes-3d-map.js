@@ -17,7 +17,8 @@
   const state = {
     q: "",
     filters: new Set(),
-    view: "2d",
+    view: "3d",
+    autoRotate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     color: "method",
     selected: null,
     near: null,
@@ -31,9 +32,9 @@
   const nearby = () => state.near ? new Set([ state.near, ...byId.get(state.near).related.map(r => r.id) ]) : null;
   const tag = id => `<span class="rs-tag">${esc(name(labels.get(id)))}</span>`;
   function shell() {
-    root.innerHTML = `<div class="rs-toolbar"><label class="rs-search"><span>${t("Search your reading", "搜索阅读笔记")}</span><input id="rs-search" type="search" placeholder="${t("Title, method, keyword…", "标题、方法、关键词…")}" value="${esc(state.q)}"></label><div class="rs-views" role="group" aria-label="${t("View", "视图")}">${[ [ "list", t("List", "列表") ], [ "2d", "2D" ], [ "3d", "3D" ] ].map(([ id, n ]) => `<button data-view="${id}">${n}</button>`).join("")}</div></div>
+    root.innerHTML = `<div class="rs-toolbar"><label class="rs-search"><span>${t("Search your reading", "搜索阅读笔记")}</span><input id="rs-search" type="search" placeholder="${t("Title, method, keyword…", "标题、方法、关键词…")}" value="${esc(state.q)}"></label><div class="rs-views" role="group" aria-label="${t("View", "视图")}">${[ [ "3d", "3D" ], [ "2d", "2D" ] ].map(([ id, n ]) => `<button data-view="${id}">${n}</button>`).join("")}</div></div>
     <div class="rs-workspace"><aside class="rs-filters" aria-label="${t("Research filters", "研究筛选")}"><div class="rs-section-head"><h2>${t("Research lenses", "研究维度")}</h2><button id="rs-clear" class="rs-text-button">${t("Reset", "重置")}</button></div><p class="rs-muted">${t("All selected labels must match. A paper can have several labels.", "所选标签同时满足；每篇论文可以拥有多个标签。")}</p><div id="rs-facets">${data.taxonomy.map(d => `<fieldset><legend>${esc(name(d))}</legend>${d.values.map(v => `<label class="rs-facet"><input type="checkbox" data-facet="${v.id}"><span>${esc(name(v))}</span><span class="rs-facet-count" data-count="${v.id}"></span></label>`).join("")}</fieldset>`).join("")}</div><details class="rs-about"><summary>${t("How classification works", "分类是怎么来的？")}</summary><p>${t("Labels are inferred from existing tags, titles and summaries. Inspect the evidence in paper details. Uncertain dimensions stay empty; manual corrections take priority.", "标签依据原有标签、标题和摘要推断。详情中可查看判定依据。不确定的维度留空，人工校正优先。")}</p><p>${t("Similarity neighborhoods use cleaned text and shared labels. They are suggestions, not research categories or citations.", "相似邻域依据清洗后的文本和共同标签计算，用于探索，不代表研究分类或引用关系。")}</p></details></aside>
-    <section class="rs-results" aria-label="${t("Matching papers", "匹配论文")}"><div class="rs-section-head"><p id="rs-count" role="status" aria-live="polite"></p><label class="rs-sort">${t("Sort", "排序")} <select id="rs-sort"><option value="date">${t("Newest notes", "笔记日期")}</option><option value="title">${t("Title A–Z", "标题 A–Z")}</option></select></label></div><div id="rs-active"></div><div id="rs-map-panel"><div class="rs-map-toolbar"><label>${t("Color by", "颜色维度")} <select id="rs-color">${data.taxonomy.map(d => `<option value="${d.id}">${esc(name(d))}</option>`).join("")}</select></label><button id="rs-reset-view" class="rs-text-button">${t("Reset view", "重置视角")}</button></div><div class="rs-map"><svg id="rs-map-svg" viewBox="0 0 800 470" role="group" aria-label="${t("Select a paper to inspect it", "选择论文以查看详情")}"></svg><div id="rs-three" hidden></div><div id="rs-map-tip" role="status"></div></div><div id="rs-legend" class="rs-legend"></div><p class="rs-map-caption">${t("Fixed positions · nearby points suggest related reading, not precise semantic distances. Select a point for details.", "位置固定 · 邻近点提供阅读线索，距离不代表精确的语义差异。选择节点查看详情。")}</p></div><div id="rs-list" class="rs-paper-list"></div></section>
+    <section class="rs-results" aria-label="${t("Matching papers", "匹配论文")}"><div class="rs-section-head"><p id="rs-count" role="status" aria-live="polite"></p><label class="rs-sort">${t("Sort", "排序")} <select id="rs-sort"><option value="date">${t("Newest notes", "笔记日期")}</option><option value="title">${t("Title A–Z", "标题 A–Z")}</option></select></label></div><div id="rs-active"></div><div id="rs-map-panel"><div class="rs-map-toolbar"><label>${t("Color by", "颜色维度")} <select id="rs-color">${data.taxonomy.map(d => `<option value="${d.id}">${esc(name(d))}</option>`).join("")}</select></label><div class="rs-map-controls"><button id="rs-auto-rotate" class="rs-text-button" aria-pressed="${state.autoRotate}">${t("Auto-rotate", "自动旋转")}</button><button id="rs-reset-view" class="rs-text-button">${t("Reset view", "重置视角")}</button></div></div><div class="rs-map"><svg id="rs-map-svg" viewBox="0 0 800 470" role="group" aria-label="${t("Select a paper to inspect it", "选择论文以查看详情")}"></svg><div id="rs-three" hidden></div><div id="rs-map-tip" role="status"></div></div><div id="rs-legend" class="rs-legend"></div><p class="rs-map-caption">${t("Fixed positions · nearby points suggest related reading, not precise semantic distances. Select a point for details.", "位置固定 · 邻近点提供阅读线索，距离不代表精确的语义差异。选择节点查看详情。")}</p></div><div id="rs-list" class="rs-paper-list"></div></section>
     <aside id="rs-detail" class="rs-detail" aria-label="${t("Paper details", "论文详情")}" tabindex="-1"></aside></div>`;
     $("#rs-color").value = state.color;
     $("#rs-sort").value = state.sort;
@@ -54,6 +55,10 @@
     });
     $("#rs-color").addEventListener("change", e => {
       state.color = e.target.value;
+      update();
+    });
+    $("#rs-auto-rotate").addEventListener("click", () => {
+      state.autoRotate = !state.autoRotate;
       update();
     });
     $("#rs-reset-view").addEventListener("click", () => scene?.reset());
@@ -138,10 +143,10 @@
     });
     $("#rs-active").innerHTML = [ ...state.filters ].map(id => `<button class="rs-active-tag" data-remove="${id}" aria-label="${esc(t("Remove ", "移除 ") + name(labels.get(id)))}">${esc(name(labels.get(id)))} ×</button>`).join("") + (state.near ? `<button id="rs-exit-near" class="rs-active-tag">${t("Neighborhood", "相似邻域")}: ${esc(byId.get(state.near).title.split(":")[0])} ×</button>` : "");
     $("#rs-list").innerHTML = found.length ? found.map(p => `<article class="rs-paper ${state.selected === p.id ? "is-selected" : ""}"><div class="rs-paper-meta"><span class="rs-dot" style="background:${color(p)}"></span><time>${p.date}</time><span>${t("READING NOTE", "论文笔记")}</span></div><h3><button data-paper="${p.id}" aria-pressed="${state.selected === p.id}">${esc(p.title)}</button></h3><p>${esc(p.summary || t("Open the note for details.", "打开笔记查看详情。"))}</p><div class="rs-tags">${facets(p).map(tag).join("")}</div><a href="${esc(url(p))}" class="rs-note-link">${t("Read note ↗", "阅读笔记 ↗")}</a></article>`).join("") : `<div class="rs-empty"><h3>${t("No matching notes", "没有匹配的笔记")}</h3><p>${t("Remove a label, clear the search, or leave the neighborhood.", "移除标签、清空搜索，或退出相似邻域以扩大范围。")}</p></div>`;
-    $("#rs-map-panel").hidden = state.view === "list";
     $("#rs-map-svg").style.display = state.view === "2d" ? "block" : "none";
     $("#rs-three").hidden = state.view !== "3d";
-    $("#rs-reset-view").hidden = state.view !== "3d";
+    $(".rs-map-controls").hidden = state.view !== "3d";
+    $("#rs-auto-rotate").setAttribute("aria-pressed", String(state.autoRotate));
     const colors = new Set(found.map(p => p.facets[state.color][0]));
     $("#rs-legend").innerHTML = data.taxonomy.find(d => d.id === state.color).values.filter(v => colors.has(v.id)).map(v => `<span><i style="background:${v.color}"></i>${esc(name(v))}</span>`).join("") + (colors.has(undefined) ? `<span><i style="background:#8b9198"></i>${t("Not specified", "未确定")}</span>` : "") + `<small>${t("Color uses the first label in the chosen dimension. All labels appear in details.", "颜色取所选维度的首个标签，全部标签见详情。")}</small>`;
     $("#rs-map-tip").textContent = "";
@@ -151,7 +156,7 @@
         if (!scene) scene = makeScene();
         scene.update(visible);
       } catch (e) {
-        $("#rs-three").textContent = t("3D unavailable. Please use 2D or the list.", "当前环境无法显示 3D，请切换 2D 或列表。");
+        $("#rs-three").textContent = t("3D unavailable. Please switch to 2D.", "当前环境无法显示 3D，请切换 2D。");
       }
     }
     scene?.active(state.view === "3d");
@@ -239,8 +244,14 @@
     });
     const ray = new T.Raycaster(), pointer = new T.Vector2();
     let running = false, frame = null, down = null, origin = null, moved = false;
-    function draw() {
+    let lastTime = 0, hovering = false, pauseUntil = 0;
+    function draw(now = performance.now()) {
       if (!running) return;
+      const elapsed = lastTime ? Math.min((now - lastTime) / 1000, 0.05) : 0;
+      lastTime = now;
+      if (state.autoRotate && !hovering && !down && now >= pauseUntil && !document.hidden) {
+        group.rotation.y += elapsed * 0.075;
+      }
       renderer.render(world, camera);
       frame = requestAnimationFrame(draw);
     }
@@ -257,6 +268,7 @@
       ray.setFromCamera(pointer, camera);
       return ray.intersectObjects(meshes.filter(m => m.visible))[0]?.object;
     }
+    renderer.domElement.addEventListener("pointerenter", () => { hovering = true; });
     renderer.domElement.addEventListener("pointerdown", e => {
       down = origin = [ e.clientX, e.clientY ];
       moved = false;
@@ -280,16 +292,22 @@
         if (hit) select(hit.userData.id);
       }
       down = null;
+      pauseUntil = performance.now() + 2000;
       if (renderer.domElement.hasPointerCapture(e.pointerId)) renderer.domElement.releasePointerCapture(e.pointerId);
     });
     renderer.domElement.addEventListener("pointercancel", () => {
       down = null;
+      hovering = false;
+      pauseUntil = performance.now() + 2000;
     });
     renderer.domElement.addEventListener("pointerleave", () => {
+      hovering = false;
+      pauseUntil = performance.now() + 1200;
       $("#rs-map-tip").textContent = "";
     });
     renderer.domElement.addEventListener("wheel", e => {
       e.preventDefault();
+      pauseUntil = performance.now() + 2000;
       camera.position.z = Math.max(5, Math.min(30, camera.position.z + e.deltaY * .01));
     }, {
       passive: false
@@ -305,6 +323,7 @@
       active(v) {
         if (running === v) return;
         running = v;
+        lastTime = 0;
         if (v) draw(); else cancelAnimationFrame(frame);
       },
       reset() {
@@ -325,7 +344,7 @@
     const p = new URLSearchParams();
     if (state.q) p.set("q", state.q);
     if (state.filters.size) p.set("tags", [ ...state.filters ].sort().join(","));
-    if (state.view !== "2d") p.set("view", state.view);
+    if (state.view !== "3d") p.set("view", state.view);
     if (state.selected) p.set("paper", state.selected);
     if (state.near) p.set("near", state.near);
     if (state.color !== "method") p.set("color", state.color);
@@ -336,7 +355,7 @@
     const p = new URLSearchParams(location.search);
     state.q = p.get("q") || "";
     state.filters = new Set((p.get("tags") || "").split(",").filter(id => labels.has(id)));
-    if ([ "list", "2d", "3d" ].includes(p.get("view"))) state.view = p.get("view");
+    if ([ "2d", "3d" ].includes(p.get("view"))) state.view = p.get("view");
     if (byId.has(p.get("paper"))) state.selected = p.get("paper");
     if (byId.has(p.get("near"))) state.near = p.get("near");
     if (data.taxonomy.some(d => d.id === p.get("color"))) state.color = p.get("color");

@@ -111,3 +111,7 @@ html[data-theme="dark"] .roboscope-page > div[data-lang] { color: #adbfbd; }
   .rs-paper h3 button { font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) { .rs * { scroll-behavior: auto !important; } }
+
+.rs-map-controls { display: flex; align-items: center; gap: 14px; }
+.rs #rs-auto-rotate { padding: 3px 7px; border: 1px solid var(--rs-line); border-radius: 4px; }
+.rs #rs-auto-rotate[aria-pressed="true"] { background: var(--rs-accent); border-color: var(--rs-accent); color: var(--rs-bg); }
