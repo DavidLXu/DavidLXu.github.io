@@ -21,7 +21,7 @@ redirect_from:
 
   <p>I earned my Master's degree in ECE at Georgia Tech, and Bachelor's in Mechanical Engineering at Qingdao University.</p>
 
-  <p>Explore <a href="https://davidlxu.github.io/roboscope/">RoboScope</a>, my personal paper reading list and notes, organized into an interactive research map.</p>
+  <p>My personal paper reading list and notes are here: <a href="https://davidlxu.github.io/roboscope/">RoboScope</a>.</p>
 </div>
 
 <div data-lang="zh" style="display: none;">
@@ -38,7 +38,7 @@ redirect_from:
 
   <p>我硕士毕业于佐治亚理工学院电子与计算机工程专业，本科毕业于青岛大学机械工程专业。</p>
 
-  <p>欢迎浏览 <a href="https://davidlxu.github.io/roboscope/">RoboScope</a>：我的个人论文阅读列表与笔记，支持按研究主题检索和交互式地图浏览。</p>
+  <p>我的个人论文阅读列表与笔记在这里 <a href="https://davidlxu.github.io/roboscope/">RoboScope</a></p>
 </div>
 
 <div data-lang="en">
