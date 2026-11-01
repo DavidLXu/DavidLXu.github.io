@@ -35,7 +35,7 @@
   url: /apps/world-model-rl/
 
 - id: mono-color
-  group: arts-design
+  group: arts-life-travel
   title: Mono Color Design Lab
   zh_title: Mono Color 设计实验室
   category: Design study
@@ -95,7 +95,7 @@
   url: /demos/embodied-training-stages/
 
 - id: travel-map
-  group: personal
+  group: arts-life-travel
   title: Travel Map
   zh_title: 旅行地图
   category: Interactive map
@@ -107,7 +107,7 @@
   url: /apps/travel-map/
 
 - id: guitar-practice
-  group: personal
+  group: arts-life-travel
   title: Six Strings Practice Room
   zh_title: 六弦练习室
   category: Guitar chord practice

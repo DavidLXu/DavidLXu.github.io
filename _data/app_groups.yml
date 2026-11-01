@@ -4,14 +4,8 @@
   description: Explore robotics, embodied AI, and frontier models through research maps, interactive explanations, learning routes, and experiments.
   zh_description: 通过研究地图、交互讲解、学习路线与动手实验，理解机器人、具身智能和前沿模型。
 
-- id: arts-design
-  title: Art History, Design & Visual Arts
-  zh_title: 文艺史、设计与视觉艺术
-  description: Explore visual expression, creative methods, and the ideas behind works of art and design.
-  zh_description: 从作品出发，探索艺术与设计中的表达方式、创作方法和思想。
-
-- id: personal
-  title: Life & Travel
-  zh_title: 生活与旅行
-  description: Places, memories, and personal explorations.
-  zh_description: 记录走过的地方，探索生活中的点滴。
+- id: arts-life-travel
+  title: Art, Life & Travel
+  zh_title: 艺术、生活与旅行
+  description: Explore expression and creativity in art and design, record places visited, and discover the details of everyday life.
+  zh_description: 探索艺术与设计中的表达和创作，记录走过的地方与生活中的点滴。
