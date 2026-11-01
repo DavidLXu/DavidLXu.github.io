@@ -20,7 +20,8 @@
 .rs-toolbar { display: flex; gap: 24px; align-items: flex-end; padding: 20px 0; border-top: 1px solid var(--rs-line); border-bottom: 1px solid var(--rs-line); }
 .rs-search { display: block; flex: 1; min-width: 0; margin: 0; }
 .rs-search span { display: block; font-size: 11px; font-weight: 600; margin-bottom: 7px; color: var(--rs-muted); }
-.rs-search input { display: block; width: 100%; height: 44px; border: 1px solid var(--rs-line); border-radius: 6px; padding: 10px 14px; background: var(--rs-bg); box-shadow: none; margin: 0; }
+/* Override the theme's input[type="search"] content-box reset. */
+.rs-search input { box-sizing: border-box; display: block; width: 100%; height: 44px; border: 1px solid var(--rs-line); border-radius: 6px; padding: 10px 14px; background: var(--rs-bg); box-shadow: none; margin: 0; }
 .rs-views { display: flex; flex-shrink: 0; gap: 3px; padding: 3px; border: 1px solid var(--rs-line); border-radius: 7px; height: 44px; }
 .rs-views button { border-color: transparent; min-width: 48px; }
 .rs-views button[aria-pressed="true"] { color: white; background: var(--rs-accent); }
