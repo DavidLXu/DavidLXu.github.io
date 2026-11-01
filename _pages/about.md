@@ -20,6 +20,8 @@ redirect_from:
   <p>Previously, I was a visiting intern in <a href="https://air.tsinghua.edu.cn/en/info/1046/1621.htm">Prof. Yilun Chen</a>'s group at Tsinghua AIR, and in <a href="https://linsats.github.io">Prof. Lin Shao</a>'s group in National University of Singapore, focusing on dexterous policy learning and sim-to-real deployment.</p>
 
   <p>I earned my Master's degree in ECE at Georgia Tech, and Bachelor's in Mechanical Engineering at Qingdao University.</p>
+
+  <p>Explore <a href="https://davidlxu.github.io/roboscope/">RoboScope</a>, my personal paper reading list and notes, organized into an interactive research map.</p>
 </div>
 
 <div data-lang="zh" style="display: none;">
@@ -35,6 +37,8 @@ redirect_from:
   <p>之前我在清华 AIR 的<a href="https://air.tsinghua.edu.cn/en/info/1046/1621.htm">陈亦伦</a>组和新加坡国立大学<a href="https://linsats.github.io">邵林</a>课题组做过访问实习，主要做灵巧操作策略学习和 sim-to-real 部署。</p>
 
   <p>我硕士毕业于佐治亚理工学院电子与计算机工程专业，本科毕业于青岛大学机械工程专业。</p>
+
+  <p>欢迎浏览 <a href="https://davidlxu.github.io/roboscope/">RoboScope</a>：我的个人论文阅读列表与笔记，支持按研究主题检索和交互式地图浏览。</p>
 </div>
 
 <div data-lang="en">
