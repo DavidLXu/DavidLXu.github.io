@@ -1,11 +1,15 @@
 ---
 title: "[Paper Notes] FACT: A Multimodal Force-Action-Track Foundation Model for Human-to-Robot Dexterity"
 date: 2026-10-25
+last_modified_at: 2026-11-03
 permalink: /posts/2026/10/fact-paper-notes/
 excerpt: "FACT couples future force and action denoising after visual-track planning; these notes explain EgoForce, the noise handoff, and the different metrics in its ten-task evaluation."
 tags:
   - Dexterous Manipulation
   - Force Prediction
+  - Tactile Sensing
+  - Flow Matching
+  - Human Demonstration Videos
   - Human-Robot Transfer
   - Paper Notes
 ---
@@ -20,17 +24,25 @@ The distinction to watch is the role of force: observed touch supplies current c
 
 ## Paper and reading version
 
-**FACT: A Multimodal Force-Action-Track Foundation Model for Human-to-Robot Dexterity** — Zhi Cao, Yining Hong, Jiaolong Yang, Yejin Choi, Li Fei-Fei, Jiajun Wu, Huang Huang. These notes follow [arXiv:2610.19155v1](https://arxiv.org/abs/2610.19155v1), an arXiv preprint, checked on October 25, 2026. [PDF](https://arxiv.org/pdf/2610.19155v1) · [Project](https://fact-1-0.github.io/)
+**FACT: A Multimodal Force-Action-Track Foundation Model for Human-to-Robot Dexterity** — Zhi Cao, Yining Hong, Jiaolong Yang, Yejin Choi, Li Fei-Fei, Jiajun Wu, Huang Huang. These notes follow [arXiv:2610.19155v1](https://arxiv.org/abs/2610.19155v1), an arXiv preprint, rechecked against the main text and appendices on November 3, 2026. [PDF](https://arxiv.org/pdf/2610.19155v1) · [Project](https://fact-1-0.github.io/)
 
 These notes focus on Sections III–V, Figure 3, and Tables I–III. The model is evaluated after skill-specific fine-tuning, not as one unchanged zero-shot policy across the ten tasks.
 
 ## EgoForce adds contact measurements to human demonstrations
 
-The collection platform combines a head camera, two wrist cameras, tactile gloves, and hand motion capture. A calibration system applies approximately uniform pneumatic pressure from 0 to 50 psi. For each sensing element, pressure and area determine a reference force, $F_i=P_iA_i$, which is paired with the raw A/D reading to fit a calibration mapping.
+The EgoForce collection platform combines a head stereo camera, two wrist cameras, and tactile gloves. Hand motion is estimated from video using ViTPose keypoints and HaMeR hand meshes, with stereo depth supplying metric scale. Glove bend sensors and an orientation IMU help refine estimates under occlusion. A calibration system applies approximately uniform pneumatic pressure from 0 to 50 psi. For each sensing element, pressure and area determine a reference force, $F_i=P_iA_i$, which is paired with the raw A/D reading to fit a calibration mapping.
 
 EgoForce contains approximately **2,000 hours, 40,000 episodes, 1,000 tasks, 120 scenes, and 1,000 demonstrators**. Fine manipulation occupies more than two thirds of the corpus. Pretraining mixes these human demonstrations with 100 hours of T-Rex robot teleoperation data, sampled proportionally to hours.
 
 Calibration does not remove every human–robot difference. It does provide a physical supervision signal that visual motion alone omits: similar hand poses can correspond to different contact loads.
+
+## A shared wrench format still leaves a sensing gap
+
+Human fingertip measurements are converted into the robot model's six-axis wrench format. For twelve taxels on a fingertip, summing the calibrated normal forces gives the normal load. Their force-weighted centroid gives the center of pressure, from which two bending moments are derived. **Tangential forces and the twisting moment are set to zero**, because the pressure array cannot observe them. Thus, a shared six-dimensional tensor does not imply equally complete sensing on humans and robots. [Appendix C(b)](https://arxiv.org/pdf/2610.19155v1#page=10)
+
+Human finger angles are retargeted to the Sharpa Wave's 22 joints. Wrist poses use the same chunk-relative convention as robot actions. Each arm contributes three position coordinates, six rotation coordinates, and 22 hand joints, giving $2(3+6+22)=62$ action dimensions. This end-effector representation also accommodates the different arms used for T-Rex pretraining and YAM fine-tuning.
+
+The ninety human demonstrations per downstream task are newly collected on the evaluation tasks, using Wuji gloves, wrist cameras, and VIVE wrist trackers. They are separate from EgoForce's pretraining corpus and use a different acquisition setup. The ten-robot-trajectory result therefore also depends on ninety task-specific human demonstrations, plus the human and robot pretraining data. [Appendix C(e–f)](https://arxiv.org/pdf/2610.19155v1#page=11)
 
 ## The coarse planner predicts a shared visual future
 
@@ -51,7 +63,7 @@ $$
 +2\mathcal L_{\rm trk}^{\rm smooth}\right).
 $$
 
-At inference, six Euler steps take the generated modalities to $\tau=0.4$. Video and tracks are read out; the action is still partially denoised. Hidden states from observation and action tokens become fixed coarse memory for the next stage. This shared visual-motion prediction is the proposed route for transferring task structure across different hands.
+At inference, six Euler steps take the generated modalities to $\tau=0.4$. An additional forward pass at $\tau=0.4$ reads out video and tracks and supplies the cached hidden states; the action is still partially denoised. Hidden states from observation and action tokens become fixed coarse memory for the next stage. This shared visual-motion prediction is the proposed route for transferring task structure across different hands.
 
 ## Future force and action are refined together
 
@@ -63,7 +75,7 @@ $$
 \tau_a:0.4\rightarrow0,\qquad \tau_F:1\rightarrow0.
 $$
 
-Four Euler steps update the remaining action suffix and unobserved force slots. Executed actions and observed force remain fixed. A new tactile refresh supplies fresh contact evidence and triggers another refinement of the unexecuted suffix.
+Four Euler steps update the remaining action suffix and unobserved force slots. Executed actions and observed force remain fixed. At the subsequent 5 Hz tactile refreshes—action offsets 4, 8, and 12—the refiner runs again against cached coarse memory, with executed actions and newly measured force slots clamped. **Predicted future force is not sent to the controller as a force reference**; it influences action through joint denoising and is logged for analysis. This separates learned anticipation from measured feedback in the execution loop. [Appendix B(f)](https://arxiv.org/pdf/2610.19155v1#page=10)
 
 The policy outputs a 16-step action chunk at 20 Hz, with 62 dimensions for the two arms and hands. Future tactile prediction has shape $4\times10\times6$, matching four 5 Hz refresh slots and ten fingertips. The refiner loss supervises action and force velocities, with force weight 0.5, plus a VQ term. The overall objective adds this loss to the coarse objective, and the components train jointly.
 
@@ -94,6 +106,8 @@ Removing future-force prediction reduces the seven-task binary mean from 41.4% t
 
 Human force supervision during pretraining is also consequential. Removing it while retaining human data drops test-tube opening from 80% to zero and pipetting from 40% to 20%. Multi-object grasp remains at 40%, showing that the effect varies by task.
 
+A separate comparison keeps ten robot demonstrations fixed and adds ninety human demonstrations: shoelace success rises from 10% to 20%, card shuffling from 10% to 30%, and pipette-dial engagement from 4/10 to 5/10, with conditional error falling from 11.2 to 6.4 µL. This tests the benefit of adding human data; the following mixture experiment instead holds total dataset size fixed. [Table III](https://arxiv.org/pdf/2610.19155v1#page=6)
+
 On three selected tasks, replacing part of a fixed 100-trajectory fine-tuning set with additional robot data produces fairly small observed changes. This supports the usefulness of human data in that regime. Ten evaluation trials and a few mixtures cannot establish a universal human-to-robot data exchange rate.
 
 My takeaway is to test future-force prediction as an action-coupled target, and to preserve engagement or contact-establishment metrics alongside final precision. For manipulation like turning a pipette dial, reaching stable contact is already a large part of the problem.
@@ -110,17 +124,25 @@ FACT 先预测视觉运动和粗动作，再联合细化动作及其未来力学
 
 ## 论文与阅读版本
 
-**FACT: A Multimodal Force-Action-Track Foundation Model for Human-to-Robot Dexterity**，作者：Zhi Cao, Yining Hong, Jiaolong Yang, Yejin Choi, Li Fei-Fei, Jiajun Wu, Huang Huang。本文依据 [arXiv:2610.19155v1](https://arxiv.org/abs/2610.19155v1) 预印本，原文核验日期为 2026 年 10 月 25 日。[PDF 全文](https://arxiv.org/pdf/2610.19155v1) · [项目主页](https://fact-1-0.github.io/)
+**FACT: A Multimodal Force-Action-Track Foundation Model for Human-to-Robot Dexterity**，作者：Zhi Cao, Yining Hong, Jiaolong Yang, Yejin Choi, Li Fei-Fei, Jiajun Wu, Huang Huang。本文依据 [arXiv:2610.19155v1](https://arxiv.org/abs/2610.19155v1) 预印本，于 2026 年 11 月 3 日重新核对正文与附录。[PDF 全文](https://arxiv.org/pdf/2610.19155v1) · [项目主页](https://fact-1-0.github.io/)
 
 本文重点阅读第 III–V 节、Figure 3 及 Tables I–III。每项技能都经过单独微调，不能把十项任务的结果理解为同一个未经适配的零样本策略。
 
 ## EgoForce 为人类示范补上接触测量
 
-采集平台包含头部相机、双腕相机、触觉手套和手部运动捕捉。标定系统施加约均匀的 0–50 psi 气压，对每个感知单元根据压力与面积计算参考力 $F_i=P_iA_i$，再与原始 A/D 读数配对拟合标定映射。
+EgoForce 采集平台包含头部双目相机、双腕相机和触觉手套。手部运动由视频中的 ViTPose 关键点和 HaMeR 手部网格估计，双目深度提供公制尺度；遮挡时，手套弯曲传感器与姿态 IMU 辅助修正估计。标定系统施加约均匀的 0–50 psi 气压，对每个感知单元根据压力与面积计算参考力 $F_i=P_iA_i$，再与原始 A/D 读数配对拟合标定映射。
 
 EgoForce 约包含 **2,000 小时、40,000 个回合、1,000 项任务、120 个场景和 1,000 名示范者**，精细操作占数据的三分之二以上。预训练将这些人类数据与 100 小时 T-Rex 机器人遥操作数据按时长比例混合。
 
 标定不能消除人手与机器人之间的所有差异，但能提供视觉运动缺少的物理监督：类似手部姿态可能对应不同的接触载荷。
+
+## 统一力旋量格式之后，感知差异仍然存在
+
+人类指尖测量会转换为机器人模型使用的六轴力旋量。每个指尖有十二个感知单元：标定后的法向力求和得到法向载荷，以力为权重计算质心得到压力中心，再据此推导两个弯曲力矩。**切向力和绕法向的扭转力矩被置零**，因为压力阵列无法观测这些分量。因此，两端具有相同的六维张量格式，并不意味着它们具有同样完整的力学信息。[附录 C(b)](https://arxiv.org/pdf/2610.19155v1#page=10)
+
+人手关节角被重定向到 Sharpa Wave 的 22 个关节，腕部位姿采用与机器人动作相同的动作块起点相对坐标约定。每条手臂对应三维位置、六维旋转表示和 22 个手部关节，合计 $2(3+6+22)=62$ 维。末端位姿表示也使 T-Rex 预训练与 YAM 微调所用的不同机械臂能够共享动作空间。
+
+每项下游任务的九十条人类示范是在评测任务上重新采集的，使用 Wuji 手套、腕部相机和 VIVE 腕部追踪器。这批数据独立于 EgoForce 预训练语料，采集配置也不同。因此，“十条机器人轨迹”的结果同时依赖九十条任务专属人类示范，以及此前的人类与机器人预训练数据。[附录 C(e–f)](https://arxiv.org/pdf/2610.19155v1#page=11)
 
 ## 粗规划器预测可共享的视觉未来
 
@@ -141,7 +163,7 @@ $$
 +2\mathcal L_{\rm trk}^{\rm smooth}\right).
 $$
 
-推理时，六次 Euler 更新将生成模态推进到 $\tau=0.4$，随后读出视频与轨迹，动作仍保留部分噪声。观测和动作 token 的隐藏状态被固定为下一阶段的粗规划记忆。共享的视觉运动预测，承担不同手部之间任务结构迁移的作用。
+推理时，六次 Euler 更新将生成模态推进到 $\tau=0.4$，随后在 $\tau=0.4$ 额外做一次前向计算，读出视频、轨迹和用于缓存的隐藏状态；动作仍保留部分噪声。观测和动作 token 的隐藏状态被固定为下一阶段的粗规划记忆。共享的视觉运动预测，承担不同手部之间任务结构迁移的作用。
 
 ## 未来力与动作如何共同细化
 
@@ -153,7 +175,7 @@ $$
 \tau_a:0.4\rightarrow0,\qquad \tau_F:1\rightarrow0.
 $$
 
-四次 Euler 更新只修改尚未执行的动作后缀与尚未观测的力。已经执行的动作和已观测力保持固定；下一次触觉刷新提供新接触证据，再次细化剩余动作。
+四次 Euler 更新只修改尚未执行的动作后缀与尚未观测的力。已经执行的动作和已观测力保持固定；后续 5 Hz 触觉刷新对应动作偏移 4、8、12，细化器利用缓存的粗规划记忆再次运行，并锁定已执行动作和新测得的力槽位。**预测的未来力不会作为力参考发送给控制器**；它通过联合去噪影响动作，并被记录用于分析。执行闭环中，学习到的接触预期与实际测量反馈分别承担不同作用。[附录 B(f)](https://arxiv.org/pdf/2610.19155v1#page=10)
 
 策略输出 20 Hz、16 步的动作块，双臂双手合计 62 维。未来触觉预测形状为 $4\times10\times6$，对应四个 5 Hz 刷新槽和十个指尖。细化损失监督动作与力的速度场，力项权重为 0.5，另有 VQ 项；整体目标将其与粗规划损失相加，联合训练各组件。
 
@@ -183,6 +205,8 @@ $$
 移除未来力预测后，七项二元任务均值由 41.4% 降至 14.3%；移除轨迹预测后为 35.7%。竖琴任务中，去除力预测让清晰音符数从 6.7 降到零。力预测通路在这个架构内有明显作用，但消融也会改变整个模型的学习结果。
 
 预训练阶段的人类力监督同样重要。保留人类数据、去掉其中的力监督后，开试管旋盖从 80% 降到零，移液从 40% 降到 20%；多物体抓取仍为 40%，说明影响依任务而异。
+
+另一组比较固定十条机器人示范，再加入九十条人类示范：系鞋带成功率从 10% 升至 20%，洗牌从 10% 升至 30%，移液器旋钮接合从 4/10 升至 5/10，条件误差从 11.2 降至 6.4 µL。这检验的是增加人类数据的收益；下面的数据混合实验则固定总数据量。[表 III](https://arxiv.org/pdf/2610.19155v1#page=6)
 
 在三项选定任务上，保持微调集为 100 条轨迹，增加机器人数据、减少人类数据，观察到的变化较小。这支持人类数据在该设置下的实用价值，但少量数据混合比例和每项十次评测，不足以建立普遍的人类—机器人数据换算关系。
 
