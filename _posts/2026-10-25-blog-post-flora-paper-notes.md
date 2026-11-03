@@ -1,12 +1,15 @@
 ---
 title: "[Paper Notes] Flora: An Open Model Suite for Scaling Robotics Data Engines"
 date: 2026-10-25
+last_modified_at: 2026-11-03
 permalink: /posts/2026/10/flora-paper-notes/
 excerpt: "Flora segments and captions robot videos and labels execution quality; the notes explain its training recipe, benchmark tradeoffs, and conditional cost estimate."
 tags:
   - Robot Data
   - Video Annotation
-  - Reward Models
+  - Reward Modeling
+  - Vision
+  - Human Demonstration Videos
   - Paper Notes
 ---
 
@@ -20,9 +23,15 @@ This identifies the “Flora” associated with Jim Fan: **a robotics data engin
 
 ## Report and source version
 
-**Flora: An Open Model Suite for Scaling Robotics Data Engines** — Sicong Leng, Yunze Man, Zhiqi Li, Jing Wang, Yuhe Zhang, Ryan Punamiya, Siddharth Patki, Kaiyuan Zheng, Zi-ang Cao, Zhiding Yu, Sifei Liu, Danfei Xu, Ben Levin, Jan Kautz, Yuke Zhu, Johan Bjorck, and Linxi “Jim” Fan, NVIDIA. These notes follow the technical report linked by the [official project](https://research.nvidia.com/labs/gear/flora/), downloaded October 25, 2026: [PDF](https://research.nvidia.com/labs/gear/flora/assets/paper/flora.pdf?v=2026-10-19c). The source URL carries the revision marker 2026-10-19c; it is not an arXiv version number.
+**Flora: An Open Model Suite for Scaling Robotics Data Engines** — Sicong Leng, Yunze Man, Zhiqi Li, Jing Wang, Yuhe Zhang, Ryan Punamiya, Siddharth Patki, Kaiyuan Zheng, Zi-ang Cao, Zhiding Yu, Sifei Liu, Danfei Xu, Ben Levin, Jan Kautz, Yuke Zhu, Johan Bjorck, and Linxi “Jim” Fan, NVIDIA. Flora has a research paper: [arXiv:2610.31779v1](https://arxiv.org/abs/2610.31779v1), submitted October 22, 2026. These notes were rechecked against that preprint on November 3, 2026. [PDF](https://arxiv.org/pdf/2610.31779v1) · [Official project](https://research.nvidia.com/labs/gear/flora/). The initial notes used the project-hosted report; the version cited here is the arXiv release.
 
 These notes focus on Section 4 and Appendices D, F, and G. Model weights are linked in the [official Flora collection](https://huggingface.co/collections/nvidia/flora).
+
+## What NVIDIA released
+
+As of November 3, 2026, the [official repository](https://github.com/NVlabs/Flora) provides sample inference code for TempSeg, Captioner, and Rewarder, with weights hosted on Hugging Face. Training code and the optimized production serving system are not included. The repository states that code and weights use an NVIDIA license restricted to non-commercial research and evaluation. “Open” here therefore needs both the release scope and license conditions attached.
+
+The sample scripts' speed does not reproduce the paper's production throughput. Scaling the released models requires additional serving engineering, which matters when interpreting the cost comparison below.
 
 ## Segment first, then describe the intended action
 
@@ -46,7 +55,7 @@ Before, target, and after blocks are explicitly identified. Context helps resolv
 
 ## Three reward outputs, with different meanings
 
-One task-conditioned model supports outcome, dense, and rubric-based rewards. The outcome mode assigns one of five completion levels. A continuous score can be computed from the expected score-token value, rescaled to $\lbrack 0,1\rbrack$.
+One task-conditioned model supports outcome, dense, and rubric-based rewards. The outcome mode assigns one of five completion levels. For score-token probabilities $p_k$, its normalized expected score is $R_{\mathrm{out}}=(\sum_{k=1}^{5}k p_k-1)/4$. This maps the five-level prediction to $\lbrack 0,1\rbrack$; it does not by itself make the output a calibrated probability of binary success. [Appendix G](https://arxiv.org/pdf/2610.31779v1)
 
 Dense labeling assigns **normal, suboptimal, or failure** to half-second steps. These labels are retrospective. Later observations can reveal an earlier mistake, while a later recovery does not erase it. Windows cover 16 seconds and advance by ten; the last four seconds of each non-final window are discarded so retained labels have later evidence. These annotations are designed for offline processing. Using them as a causal live reward would require changing the information available to the model.
 
@@ -107,9 +116,15 @@ Flora 将现有的人类与机器人视频转换成带时间戳的动作指令�
 
 ## 报告与原文版本
 
-**Flora: An Open Model Suite for Scaling Robotics Data Engines**，作者：Sicong Leng, Yunze Man, Zhiqi Li, Jing Wang, Yuhe Zhang, Ryan Punamiya, Siddharth Patki, Kaiyuan Zheng, Zi-ang Cao, Zhiding Yu, Sifei Liu, Danfei Xu, Ben Levin, Jan Kautz, Yuke Zhu, Johan Bjorck, and Linxi “Jim” Fan，NVIDIA。本文依据[官方项目](https://research.nvidia.com/labs/gear/flora/)链接的技术报告，下载于 2026 年 10 月 25 日：[PDF 全文](https://research.nvidia.com/labs/gear/flora/assets/paper/flora.pdf?v=2026-10-19c)。源链接带有 2026-10-19c 修订标识，这不是 arXiv 版本号。
+**Flora: An Open Model Suite for Scaling Robotics Data Engines**，作者：Sicong Leng, Yunze Man, Zhiqi Li, Jing Wang, Yuhe Zhang, Ryan Punamiya, Siddharth Patki, Kaiyuan Zheng, Zi-ang Cao, Zhiding Yu, Sifei Liu, Danfei Xu, Ben Levin, Jan Kautz, Yuke Zhu, Johan Bjorck, and Linxi “Jim” Fan，NVIDIA。Flora 有对应研究论文：[arXiv:2610.31779v1](https://arxiv.org/abs/2610.31779v1)，于 2026 年 10 月 22 日提交。本文于 2026 年 11 月 3 日依据该预印本重新核对。[PDF 全文](https://arxiv.org/pdf/2610.31779v1) · [官方项目](https://research.nvidia.com/labs/gear/flora/)。初版笔记采用项目托管的技术报告，本次将引用版本明确为 arXiv 发布版。
 
 本文重点阅读第 4 节和附录 D、F、G。模型权重见[官方 Flora 集合](https://huggingface.co/collections/nvidia/flora)。
+
+## 英伟达具体发布了什么
+
+截至 2026 年 11 月 3 日，[官方仓库](https://github.com/NVlabs/Flora)提供 TempSeg、Captioner 和 Rewarder 的示例推理代码，模型权重托管于 Hugging Face；训练代码和优化后的生产推理系统没有一并发布。仓库说明，代码和权重采用限定非商业研究与评估用途的 NVIDIA 许可证。因此，理解这里的“开放”时，需要同时说明发布范围和许可条件。
+
+示例脚本的运行速度不能直接复现论文中的生产吞吐率。大规模使用仍需要额外的推理服务工程，这也影响下文成本比较的适用条件。
 
 ## 先定位时间区间，再描述动作意图
 
@@ -133,7 +148,7 @@ $$
 
 ## 三种奖励输出分别表达什么
 
-同一个任务条件化模型支持结果奖励、密集奖励和 rubric 评分。结果模式给出五档完成程度，也可以根据分数 token 的期望值构造 $\lbrack 0,1\rbrack$ 连续得分。
+同一个任务条件化模型支持结果奖励、密集奖励和 rubric 评分。结果模式给出五档完成程度。设分数 token 的概率为 $p_k$，归一化期望得分为 $R_{\mathrm{out}}=(\sum_{k=1}^{5}k p_k-1)/4$。它将五档预测映射到 $\lbrack 0,1\rbrack$，但这一转换本身并不使输出成为经过校准的二元成功概率。[附录 G](https://arxiv.org/pdf/2610.31779v1)
 
 密集模式每半秒标注一次**正常、次优或失败**。这些是回溯标签：后续画面可能揭示之前的错误，但之后恢复成功不会抹去早先的失误。窗口长度为 16 秒、步长为十秒，非末尾窗口会丢弃最后四秒的标签，让保留部分拥有后续视觉证据。因此，该输出面向离线标注；若要用于因果在线奖励，需要重新限定模型可访问的信息。
 

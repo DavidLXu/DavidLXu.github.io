@@ -521,7 +521,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.1747,
+          "score": 0.1749,
           "shared": [
             "bimanual",
             "dexterous_hand",
@@ -530,7 +530,7 @@
         },
         {
           "id": "cd6a943ab35b",
-          "score": 0.1722,
+          "score": 0.1721,
           "shared": [
             "dexterous_hand"
           ]
@@ -626,7 +626,7 @@
       "related": [
         {
           "id": "f223bb245c12",
-          "score": 0.3249,
+          "score": 0.3247,
           "shared": [
             "manipulation",
             "rl",
@@ -638,7 +638,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.2986,
+          "score": 0.2985,
           "shared": [
             "manipulation",
             "imitation",
@@ -651,7 +651,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.276,
+          "score": 0.2757,
           "shared": [
             "manipulation",
             "rl",
@@ -662,7 +662,7 @@
         },
         {
           "id": "5ba5e325bfdd",
-          "score": 0.2696,
+          "score": 0.2694,
           "shared": [
             "manipulation",
             "rl",
@@ -673,7 +673,7 @@
         },
         {
           "id": "caf7147e5918",
-          "score": 0.2689,
+          "score": 0.2688,
           "shared": [
             "manipulation",
             "rl",
@@ -683,7 +683,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.2649,
+          "score": 0.2648,
           "shared": [
             "manipulation",
             "rl",
@@ -740,7 +740,7 @@
       "related": [
         {
           "id": "88d5026b8a8c",
-          "score": 0.3208,
+          "score": 0.3205,
           "shared": [
             "manipulation",
             "tactile",
@@ -749,7 +749,7 @@
         },
         {
           "id": "aeacad3587b1",
-          "score": 0.2368,
+          "score": 0.2365,
           "shared": [
             "manipulation",
             "tactile",
@@ -758,7 +758,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.1986,
+          "score": 0.1983,
           "shared": [
             "manipulation",
             "tactile",
@@ -767,7 +767,7 @@
         },
         {
           "id": "2074eedfad72",
-          "score": 0.1886,
+          "score": 0.1884,
           "shared": [
             "manipulation",
             "tactile"
@@ -775,7 +775,7 @@
         },
         {
           "id": "179254b32a25",
-          "score": 0.1736,
+          "score": 0.1733,
           "shared": [
             "manipulation",
             "simulation"
@@ -783,7 +783,7 @@
         },
         {
           "id": "e6274122d26c",
-          "score": 0.1734,
+          "score": 0.1732,
           "shared": [
             "manipulation",
             "tactile",
@@ -836,7 +836,7 @@
       "related": [
         {
           "id": "023d509ab1fb",
-          "score": 0.2562,
+          "score": 0.2561,
           "shared": [
             "vla",
             "vision",
@@ -845,7 +845,7 @@
         },
         {
           "id": "4e1addd18ce2",
-          "score": 0.2545,
+          "score": 0.2543,
           "shared": [
             "vla",
             "vision",
@@ -863,7 +863,7 @@
         },
         {
           "id": "6bb14bb5ffda",
-          "score": 0.2342,
+          "score": 0.234,
           "shared": [
             "vla",
             "vision",
@@ -872,7 +872,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.222,
+          "score": 0.2219,
           "shared": [
             "vla",
             "vision",
@@ -881,7 +881,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.2144,
+          "score": 0.2143,
           "shared": [
             "vla",
             "vision",
@@ -950,7 +950,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.3343,
+          "score": 0.3337,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -970,7 +970,7 @@
         },
         {
           "id": "8b313c23aeae",
-          "score": 0.3096,
+          "score": 0.3095,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -980,7 +980,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.2955,
+          "score": 0.2953,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -1064,7 +1064,7 @@
       "related": [
         {
           "id": "d6bc21f6140c",
-          "score": 0.3343,
+          "score": 0.3337,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -1074,7 +1074,7 @@
         },
         {
           "id": "76f0dccd769a",
-          "score": 0.2989,
+          "score": 0.2984,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -1084,7 +1084,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2798,
+          "score": 0.2795,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -1095,7 +1095,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.2789,
+          "score": 0.2781,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -1106,7 +1106,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2621,
+          "score": 0.2618,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -1116,7 +1116,7 @@
         },
         {
           "id": "e8a4069565ea",
-          "score": 0.255,
+          "score": 0.2543,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -1169,7 +1169,7 @@
       "related": [
         {
           "id": "3c7ecd104f87",
-          "score": 0.3208,
+          "score": 0.3205,
           "shared": [
             "manipulation",
             "tactile",
@@ -1187,7 +1187,7 @@
         },
         {
           "id": "522c3da19f23",
-          "score": 0.2131,
+          "score": 0.213,
           "shared": [
             "manipulation",
             "tactile"
@@ -1213,7 +1213,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.1819,
+          "score": 0.1818,
           "shared": [
             "manipulation",
             "tactile"
@@ -1290,7 +1290,7 @@
       "related": [
         {
           "id": "e7543107d325",
-          "score": 0.2787,
+          "score": 0.2786,
           "shared": [
             "manipulation",
             "vision",
@@ -1299,7 +1299,7 @@
         },
         {
           "id": "f99778f21bec",
-          "score": 0.2757,
+          "score": 0.2756,
           "shared": [
             "manipulation",
             "vision"
@@ -1325,7 +1325,7 @@
         },
         {
           "id": "54d78cd9b122",
-          "score": 0.2318,
+          "score": 0.2316,
           "shared": [
             "vision",
             "tactile"
@@ -1333,7 +1333,7 @@
         },
         {
           "id": "76f0dccd769a",
-          "score": 0.2278,
+          "score": 0.2277,
           "shared": [
             "manipulation",
             "vision",
@@ -1350,16 +1350,36 @@
       "tags": [
         "Robot Data",
         "Video Annotation",
-        "Reward Models"
+        "Reward Modeling",
+        "Vision",
+        "Human Demonstration Videos"
       ],
       "summary": "Flora segments and captions robot videos and labels execution quality; the notes explain its training recipe, benchmark tradeoffs, and conditional cost estimate.",
       "facets": {
         "task": [],
-        "method": [],
+        "method": [
+          "representation"
+        ],
         "embodiment": [],
-        "data": []
+        "data": [
+          "vision",
+          "human_video"
+        ]
       },
-      "evidence": {},
+      "evidence": {
+        "representation": {
+          "source": "tags",
+          "phrase": "reward modeling"
+        },
+        "vision": {
+          "source": "tags",
+          "phrase": "vision"
+        },
+        "human_video": {
+          "source": "tags",
+          "phrase": "human demonstration videos"
+        }
+      },
       "position": [
         -5.45076,
         2.59753,
@@ -1367,9 +1387,51 @@
       ],
       "related": [
         {
+          "id": "24ca1ef08088",
+          "score": 0.2482,
+          "shared": [
+            "vision",
+            "human_video"
+          ]
+        },
+        {
+          "id": "285ca34f7bce",
+          "score": 0.2247,
+          "shared": [
+            "representation",
+            "human_video"
+          ]
+        },
+        {
+          "id": "8fcb2d661e6d",
+          "score": 0.1879,
+          "shared": [
+            "vision",
+            "human_video"
+          ]
+        },
+        {
+          "id": "bad19f81c263",
+          "score": 0.164,
+          "shared": [
+            "vision",
+            "human_video"
+          ]
+        },
+        {
           "id": "d3b9962d1603",
-          "score": 0.146,
-          "shared": []
+          "score": 0.1635,
+          "shared": [
+            "vision"
+          ]
+        },
+        {
+          "id": "75c75b12ca45",
+          "score": 0.1634,
+          "shared": [
+            "vision",
+            "human_video"
+          ]
         }
       ]
     },
@@ -1433,7 +1495,7 @@
         },
         {
           "id": "caf7147e5918",
-          "score": 0.3303,
+          "score": 0.3305,
           "shared": [
             "manipulation",
             "rl",
@@ -1443,7 +1505,7 @@
         },
         {
           "id": "ce889227443f",
-          "score": 0.284,
+          "score": 0.2839,
           "shared": [
             "manipulation",
             "rl",
@@ -1452,7 +1514,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2537,
+          "score": 0.2538,
           "shared": [
             "rl",
             "retargeting",
@@ -1471,7 +1533,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.2277,
+          "score": 0.2276,
           "shared": [
             "manipulation",
             "rl",
@@ -1533,7 +1595,7 @@
       "related": [
         {
           "id": "2b9a2ebdf89f",
-          "score": 0.2836,
+          "score": 0.2837,
           "shared": [
             "locomotion",
             "rl",
@@ -1542,7 +1604,7 @@
         },
         {
           "id": "c99095f2c788",
-          "score": 0.2674,
+          "score": 0.2673,
           "shared": [
             "locomotion",
             "rl",
@@ -1560,7 +1622,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.2419,
+          "score": 0.2418,
           "shared": [
             "locomotion",
             "rl",
@@ -1569,7 +1631,7 @@
         },
         {
           "id": "a5c9a400ee08",
-          "score": 0.2399,
+          "score": 0.2398,
           "shared": [
             "locomotion",
             "rl",
@@ -1578,7 +1640,7 @@
         },
         {
           "id": "6a4b8cab99a2",
-          "score": 0.2145,
+          "score": 0.2144,
           "shared": [
             "rl",
             "world_model"
@@ -1643,7 +1705,7 @@
       "related": [
         {
           "id": "b1f186f47428",
-          "score": 0.3401,
+          "score": 0.3403,
           "shared": [
             "manipulation",
             "rl",
@@ -1653,7 +1715,7 @@
         },
         {
           "id": "0185a87289d0",
-          "score": 0.3303,
+          "score": 0.3305,
           "shared": [
             "manipulation",
             "rl",
@@ -1663,7 +1725,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.2689,
+          "score": 0.2688,
           "shared": [
             "manipulation",
             "rl",
@@ -1692,7 +1754,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2477,
+          "score": 0.2479,
           "shared": [
             "rl",
             "retargeting",
@@ -1765,7 +1827,7 @@
         },
         {
           "id": "f656acde39fc",
-          "score": 0.1904,
+          "score": 0.1902,
           "shared": [
             "assembly",
             "rl",
@@ -1774,7 +1836,7 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.1878,
+          "score": 0.1879,
           "shared": [
             "rl",
             "simulation"
@@ -1844,7 +1906,7 @@
       "related": [
         {
           "id": "8360ceead094",
-          "score": 0.2732,
+          "score": 0.273,
           "shared": [
             "design",
             "rl"
@@ -1852,7 +1914,7 @@
         },
         {
           "id": "fab90a023fc0",
-          "score": 0.2422,
+          "score": 0.2423,
           "shared": [
             "design",
             "rl"
@@ -1951,7 +2013,7 @@
       "related": [
         {
           "id": "dc4519f9f5de",
-          "score": 0.2827,
+          "score": 0.2825,
           "shared": [
             "manipulation",
             "vla",
@@ -1962,7 +2024,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2803,
+          "score": 0.2802,
           "shared": [
             "manipulation",
             "vla",
@@ -1985,7 +2047,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.2696,
+          "score": 0.2694,
           "shared": [
             "manipulation",
             "vla",
@@ -1997,7 +2059,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.2673,
+          "score": 0.2671,
           "shared": [
             "manipulation",
             "vla",
@@ -2009,7 +2071,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2584,
+          "score": 0.2582,
           "shared": [
             "manipulation",
             "vla",
@@ -2080,7 +2142,7 @@
         },
         {
           "id": "3cb655bc0053",
-          "score": 0.2374,
+          "score": 0.2373,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -2089,7 +2151,7 @@
         },
         {
           "id": "2074eedfad72",
-          "score": 0.2318,
+          "score": 0.2316,
           "shared": [
             "vision",
             "tactile"
@@ -2097,7 +2159,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.228,
+          "score": 0.2277,
           "shared": [
             "dexterous_hand",
             "vision",
@@ -2106,7 +2168,7 @@
         },
         {
           "id": "634fd2a6460c",
-          "score": 0.2132,
+          "score": 0.2137,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -2114,7 +2176,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2123,
+          "score": 0.2122,
           "shared": [
             "dexterous_hand",
             "vision",
@@ -2180,7 +2242,7 @@
       "related": [
         {
           "id": "ad096e4dc5cb",
-          "score": 0.2318,
+          "score": 0.2335,
           "shared": [
             "manipulation",
             "world_model",
@@ -2207,7 +2269,7 @@
         },
         {
           "id": "c5f4869725d3",
-          "score": 0.1919,
+          "score": 0.192,
           "shared": [
             "manipulation",
             "imitation",
@@ -2288,7 +2350,7 @@
       "related": [
         {
           "id": "d271b9594227",
-          "score": 0.2887,
+          "score": 0.2889,
           "shared": [
             "grasp",
             "rl",
@@ -2298,7 +2360,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.2715,
+          "score": 0.2716,
           "shared": [
             "rl",
             "retargeting",
@@ -2316,7 +2378,7 @@
         },
         {
           "id": "0185a87289d0",
-          "score": 0.2537,
+          "score": 0.2538,
           "shared": [
             "rl",
             "retargeting",
@@ -2325,7 +2387,7 @@
         },
         {
           "id": "caf7147e5918",
-          "score": 0.2477,
+          "score": 0.2479,
           "shared": [
             "rl",
             "retargeting",
@@ -2334,7 +2396,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2369,
+          "score": 0.237,
           "shared": [
             "grasp",
             "rl",
@@ -2383,7 +2445,7 @@
       "related": [
         {
           "id": "2910b38ffdef",
-          "score": 0.2609,
+          "score": 0.261,
           "shared": [
             "world_model",
             "generative_policy"
@@ -2391,7 +2453,7 @@
         },
         {
           "id": "bf5964cc5cf2",
-          "score": 0.1859,
+          "score": 0.186,
           "shared": [
             "world_model"
           ]
@@ -2412,14 +2474,14 @@
         },
         {
           "id": "90deee6438be",
-          "score": 0.1697,
+          "score": 0.1695,
           "shared": [
             "world_model"
           ]
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.1669,
+          "score": 0.1668,
           "shared": [
             "world_model"
           ]
@@ -2487,7 +2549,7 @@
         },
         {
           "id": "634fd2a6460c",
-          "score": 0.2145,
+          "score": 0.2144,
           "shared": [
             "grasp",
             "rl",
@@ -2621,7 +2683,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2348,
+          "score": 0.235,
           "shared": [
             "rl",
             "retargeting",
@@ -2694,7 +2756,7 @@
       "related": [
         {
           "id": "920abc919c5a",
-          "score": 0.2249,
+          "score": 0.2247,
           "shared": [
             "vision",
             "simulation"
@@ -2702,7 +2764,7 @@
         },
         {
           "id": "5619cee13687",
-          "score": 0.218,
+          "score": 0.2176,
           "shared": [
             "deformable",
             "simulation"
@@ -2710,7 +2772,7 @@
         },
         {
           "id": "64e5ac14880b",
-          "score": 0.1523,
+          "score": 0.152,
           "shared": [
             "deformable",
             "vision"
@@ -2718,7 +2780,7 @@
         },
         {
           "id": "90deee6438be",
-          "score": 0.1437,
+          "score": 0.1434,
           "shared": [
             "vision"
           ]
@@ -2783,7 +2845,7 @@
       "related": [
         {
           "id": "caf7147e5918",
-          "score": 0.3401,
+          "score": 0.3403,
           "shared": [
             "manipulation",
             "rl",
@@ -2803,7 +2865,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.2936,
+          "score": 0.2938,
           "shared": [
             "manipulation",
             "rl",
@@ -2814,7 +2876,7 @@
         },
         {
           "id": "5ba5e325bfdd",
-          "score": 0.2834,
+          "score": 0.2833,
           "shared": [
             "manipulation",
             "rl",
@@ -2825,7 +2887,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.2541,
+          "score": 0.254,
           "shared": [
             "manipulation",
             "rl",
@@ -2835,7 +2897,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.2521,
+          "score": 0.252,
           "shared": [
             "manipulation",
             "rl",
@@ -2915,7 +2977,7 @@
         },
         {
           "id": "66691161d1e4",
-          "score": 0.2438,
+          "score": 0.2437,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -2924,7 +2986,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2197,
+          "score": 0.2196,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -2951,7 +3013,7 @@
         },
         {
           "id": "2c9be4d44b9c",
-          "score": 0.2084,
+          "score": 0.2083,
           "shared": [
             "imitation",
             "dexterous_hand"
@@ -3017,7 +3079,7 @@
       "related": [
         {
           "id": "2c9be4d44b9c",
-          "score": 0.3464,
+          "score": 0.3463,
           "shared": [
             "manipulation",
             "imitation",
@@ -3027,7 +3089,7 @@
         },
         {
           "id": "b12f1cb06751",
-          "score": 0.2438,
+          "score": 0.2437,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -3045,7 +3107,7 @@
         },
         {
           "id": "3daf785bdf27",
-          "score": 0.2232,
+          "score": 0.2231,
           "shared": [
             "manipulation",
             "imitation",
@@ -3055,7 +3117,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.2232,
+          "score": 0.2228,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -3064,7 +3126,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2209,
+          "score": 0.2207,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -3136,7 +3198,7 @@
       "related": [
         {
           "id": "dc4519f9f5de",
-          "score": 0.3402,
+          "score": 0.3401,
           "shared": [
             "manipulation",
             "vla",
@@ -3147,7 +3209,7 @@
         },
         {
           "id": "435c28d7118d",
-          "score": 0.2954,
+          "score": 0.2953,
           "shared": [
             "manipulation",
             "vla",
@@ -3169,7 +3231,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.2517,
+          "score": 0.2516,
           "shared": [
             "manipulation",
             "vla",
@@ -3180,7 +3242,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2504,
+          "score": 0.2503,
           "shared": [
             "manipulation",
             "vla",
@@ -3191,7 +3253,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.239,
+          "score": 0.2391,
           "shared": [
             "manipulation",
             "vla",
@@ -3357,7 +3419,7 @@
       "related": [
         {
           "id": "b1e094aac4a1",
-          "score": 0.188,
+          "score": 0.1882,
           "shared": [
             "navigation",
             "vision",
@@ -3366,7 +3428,7 @@
         },
         {
           "id": "d3b9962d1603",
-          "score": 0.1687,
+          "score": 0.1686,
           "shared": [
             "vision",
             "language"
@@ -3374,7 +3436,7 @@
         },
         {
           "id": "4e1addd18ce2",
-          "score": 0.1626,
+          "score": 0.1624,
           "shared": [
             "vision",
             "language"
@@ -3382,7 +3444,7 @@
         },
         {
           "id": "3eee620ee499",
-          "score": 0.1607,
+          "score": 0.1606,
           "shared": [
             "vision",
             "language"
@@ -3398,7 +3460,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.1596,
+          "score": 0.1598,
           "shared": [
             "vision",
             "language"
@@ -3478,7 +3540,7 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.248,
+          "score": 0.2479,
           "shared": [
             "in_hand",
             "rl",
@@ -3487,7 +3549,7 @@
         },
         {
           "id": "66691161d1e4",
-          "score": 0.2031,
+          "score": 0.203,
           "shared": [
             "dexterous_hand",
             "force"
@@ -3570,7 +3632,7 @@
       "related": [
         {
           "id": "d52d9313e9ff",
-          "score": 0.3365,
+          "score": 0.3364,
           "shared": [
             "manipulation",
             "imitation",
@@ -3581,7 +3643,7 @@
         },
         {
           "id": "2eea4fdfcb3f",
-          "score": 0.3156,
+          "score": 0.3157,
           "shared": [
             "imitation",
             "vla",
@@ -3591,7 +3653,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2884,
+          "score": 0.2883,
           "shared": [
             "manipulation",
             "vla",
@@ -3601,7 +3663,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.2762,
+          "score": 0.2761,
           "shared": [
             "manipulation",
             "vla",
@@ -3611,7 +3673,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2746,
+          "score": 0.2747,
           "shared": [
             "manipulation",
             "vla",
@@ -3621,7 +3683,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.2684,
+          "score": 0.2682,
           "shared": [
             "manipulation",
             "imitation",
@@ -3694,7 +3756,7 @@
         },
         {
           "id": "6bb14bb5ffda",
-          "score": 0.2967,
+          "score": 0.2966,
           "shared": [
             "manipulation",
             "vla",
@@ -3704,7 +3766,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.2884,
+          "score": 0.2883,
           "shared": [
             "manipulation",
             "vla",
@@ -3714,7 +3776,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2862,
+          "score": 0.2861,
           "shared": [
             "manipulation",
             "vla",
@@ -3724,7 +3786,7 @@
         },
         {
           "id": "c3963efd3d9b",
-          "score": 0.2849,
+          "score": 0.2848,
           "shared": [
             "manipulation",
             "vla",
@@ -3812,7 +3874,7 @@
       "related": [
         {
           "id": "4ac9027be283",
-          "score": 0.2684,
+          "score": 0.2682,
           "shared": [
             "manipulation",
             "imitation",
@@ -3823,7 +3885,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.2671,
+          "score": 0.2669,
           "shared": [
             "manipulation",
             "vla",
@@ -3834,7 +3896,7 @@
         },
         {
           "id": "c57e481f3b43",
-          "score": 0.2595,
+          "score": 0.2594,
           "shared": [
             "manipulation",
             "vla",
@@ -3845,7 +3907,7 @@
         },
         {
           "id": "f54f7c6bffb4",
-          "score": 0.2592,
+          "score": 0.2591,
           "shared": [
             "manipulation",
             "imitation",
@@ -3857,7 +3919,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.2578,
+          "score": 0.2577,
           "shared": [
             "manipulation",
             "vla",
@@ -3868,7 +3930,7 @@
         },
         {
           "id": "54252546ee7a",
-          "score": 0.2517,
+          "score": 0.2516,
           "shared": [
             "manipulation",
             "vla",
@@ -3936,7 +3998,7 @@
       "related": [
         {
           "id": "7825ffb9cfe5",
-          "score": 0.3642,
+          "score": 0.3641,
           "shared": [
             "long_horizon",
             "vla",
@@ -3946,7 +4008,7 @@
         },
         {
           "id": "2eea4fdfcb3f",
-          "score": 0.3042,
+          "score": 0.3041,
           "shared": [
             "imitation",
             "vla",
@@ -3966,7 +4028,7 @@
         },
         {
           "id": "d52d9313e9ff",
-          "score": 0.2301,
+          "score": 0.23,
           "shared": [
             "imitation",
             "vla",
@@ -3976,7 +4038,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.2149,
+          "score": 0.2148,
           "shared": [
             "imitation",
             "vla",
@@ -3986,7 +4048,7 @@
         },
         {
           "id": "e5e0ea460833",
-          "score": 0.2134,
+          "score": 0.2132,
           "shared": [
             "vla",
             "vision",
@@ -4042,7 +4104,7 @@
       "related": [
         {
           "id": "54d78cd9b122",
-          "score": 0.2374,
+          "score": 0.2373,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -4059,7 +4121,7 @@
         },
         {
           "id": "1a0cb1f79f9a",
-          "score": 0.2138,
+          "score": 0.2139,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -4084,7 +4146,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.1993,
+          "score": 0.1996,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -4143,7 +4205,7 @@
       "related": [
         {
           "id": "4ac9027be283",
-          "score": 0.3156,
+          "score": 0.3157,
           "shared": [
             "imitation",
             "vla",
@@ -4153,7 +4215,7 @@
         },
         {
           "id": "428b1a10df2e",
-          "score": 0.3042,
+          "score": 0.3041,
           "shared": [
             "imitation",
             "vla",
@@ -4163,7 +4225,7 @@
         },
         {
           "id": "d52d9313e9ff",
-          "score": 0.2965,
+          "score": 0.2962,
           "shared": [
             "imitation",
             "vla",
@@ -4173,7 +4235,7 @@
         },
         {
           "id": "7825ffb9cfe5",
-          "score": 0.2718,
+          "score": 0.2716,
           "shared": [
             "vla",
             "vision",
@@ -4182,7 +4244,7 @@
         },
         {
           "id": "4e1addd18ce2",
-          "score": 0.2671,
+          "score": 0.2668,
           "shared": [
             "vla",
             "vision",
@@ -4241,7 +4303,7 @@
       "related": [
         {
           "id": "3a2030aa29c0",
-          "score": 0.2193,
+          "score": 0.2194,
           "shared": [
             "locomotion",
             "rl"
@@ -4265,7 +4327,7 @@
         },
         {
           "id": "8360ceead094",
-          "score": 0.2002,
+          "score": 0.2001,
           "shared": [
             "rl"
           ]
@@ -4280,7 +4342,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.1825,
+          "score": 0.1824,
           "shared": [
             "locomotion",
             "rl"
@@ -4356,7 +4418,7 @@
       "related": [
         {
           "id": "16b4cd88127b",
-          "score": 0.3343,
+          "score": 0.3344,
           "shared": [
             "manipulation",
             "rl",
@@ -4369,7 +4431,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.3249,
+          "score": 0.3247,
           "shared": [
             "manipulation",
             "rl",
@@ -4381,7 +4443,7 @@
         },
         {
           "id": "5ba5e325bfdd",
-          "score": 0.3122,
+          "score": 0.3121,
           "shared": [
             "manipulation",
             "rl",
@@ -4393,7 +4455,7 @@
         },
         {
           "id": "a199e45d177b",
-          "score": 0.3102,
+          "score": 0.3103,
           "shared": [
             "manipulation",
             "retargeting",
@@ -4405,7 +4467,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.3049,
+          "score": 0.305,
           "shared": [
             "manipulation",
             "rl",
@@ -4417,7 +4479,7 @@
         },
         {
           "id": "b1f186f47428",
-          "score": 0.2936,
+          "score": 0.2938,
           "shared": [
             "manipulation",
             "rl",
@@ -4469,7 +4531,7 @@
       "related": [
         {
           "id": "2074eedfad72",
-          "score": 0.2757,
+          "score": 0.2756,
           "shared": [
             "manipulation",
             "vision"
@@ -4477,14 +4539,14 @@
         },
         {
           "id": "24ca1ef08088",
-          "score": 0.2539,
+          "score": 0.2538,
           "shared": [
             "vision"
           ]
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2296,
+          "score": 0.2295,
           "shared": [
             "manipulation",
             "vision"
@@ -4492,7 +4554,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.213,
+          "score": 0.2129,
           "shared": [
             "manipulation",
             "vision"
@@ -4500,7 +4562,7 @@
         },
         {
           "id": "d9cb767c9ad0",
-          "score": 0.1935,
+          "score": 0.1934,
           "shared": [
             "manipulation",
             "vision"
@@ -4508,7 +4570,7 @@
         },
         {
           "id": "e7543107d325",
-          "score": 0.188,
+          "score": 0.1879,
           "shared": [
             "manipulation",
             "vision"
@@ -4584,7 +4646,7 @@
         },
         {
           "id": "ad096e4dc5cb",
-          "score": 0.3104,
+          "score": 0.3119,
           "shared": [
             "manipulation",
             "world_model",
@@ -4595,7 +4657,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.2989,
+          "score": 0.2984,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -4605,7 +4667,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2976,
+          "score": 0.2975,
           "shared": [
             "manipulation",
             "world_model",
@@ -4698,7 +4760,7 @@
       "related": [
         {
           "id": "f223bb245c12",
-          "score": 0.2678,
+          "score": 0.2677,
           "shared": [
             "manipulation",
             "sim2real",
@@ -4719,7 +4781,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2373,
+          "score": 0.2372,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -4739,7 +4801,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.2261,
+          "score": 0.226,
           "shared": [
             "manipulation",
             "sim2real",
@@ -4750,7 +4812,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2232,
+          "score": 0.223,
           "shared": [
             "manipulation",
             "representation",
@@ -4812,7 +4874,7 @@
       "related": [
         {
           "id": "285ac43395dc",
-          "score": 0.3192,
+          "score": 0.319,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -4822,7 +4884,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2813,
+          "score": 0.281,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -4832,7 +4894,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2789,
+          "score": 0.2786,
           "shared": [
             "manipulation",
             "vision",
@@ -4841,7 +4903,7 @@
         },
         {
           "id": "2074eedfad72",
-          "score": 0.2787,
+          "score": 0.2786,
           "shared": [
             "manipulation",
             "vision",
@@ -4850,7 +4912,7 @@
         },
         {
           "id": "76f0dccd769a",
-          "score": 0.2768,
+          "score": 0.2765,
           "shared": [
             "manipulation",
             "vision",
@@ -4859,7 +4921,7 @@
         },
         {
           "id": "3daf785bdf27",
-          "score": 0.2677,
+          "score": 0.2681,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -4909,21 +4971,29 @@
       "related": [
         {
           "id": "f99778f21bec",
-          "score": 0.2539,
+          "score": 0.2538,
           "shared": [
             "vision"
           ]
         },
         {
+          "id": "15a299f17498",
+          "score": 0.2482,
+          "shared": [
+            "vision",
+            "human_video"
+          ]
+        },
+        {
           "id": "4ac9027be283",
-          "score": 0.1891,
+          "score": 0.189,
           "shared": [
             "vision"
           ]
         },
         {
           "id": "2074eedfad72",
-          "score": 0.1834,
+          "score": 0.1833,
           "shared": [
             "vision"
           ]
@@ -4937,16 +5007,9 @@
         },
         {
           "id": "8fcb2d661e6d",
-          "score": 0.1582,
+          "score": 0.1579,
           "shared": [
             "vision",
-            "human_video"
-          ]
-        },
-        {
-          "id": "285ca34f7bce",
-          "score": 0.1562,
-          "shared": [
             "human_video"
           ]
         }
@@ -5001,7 +5064,7 @@
         },
         {
           "id": "f99778f21bec",
-          "score": 0.1631,
+          "score": 0.163,
           "shared": [
             "vision"
           ]
@@ -5103,7 +5166,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2887,
+          "score": 0.2889,
           "shared": [
             "grasp",
             "rl",
@@ -5122,7 +5185,7 @@
         },
         {
           "id": "334bde1459ae",
-          "score": 0.2804,
+          "score": 0.2805,
           "shared": [
             "locomotion",
             "rl",
@@ -5132,7 +5195,7 @@
         },
         {
           "id": "2b9a2ebdf89f",
-          "score": 0.2469,
+          "score": 0.247,
           "shared": [
             "locomotion",
             "rl",
@@ -5230,7 +5293,7 @@
         },
         {
           "id": "8b313c23aeae",
-          "score": 0.281,
+          "score": 0.2808,
           "shared": [
             "manipulation",
             "vla",
@@ -5241,7 +5304,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2696,
+          "score": 0.2694,
           "shared": [
             "manipulation",
             "vla",
@@ -5253,7 +5316,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.2696,
+          "score": 0.2693,
           "shared": [
             "manipulation",
             "vla",
@@ -5264,7 +5327,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2692,
+          "score": 0.269,
           "shared": [
             "manipulation",
             "vla",
@@ -5276,7 +5339,7 @@
         },
         {
           "id": "c3963efd3d9b",
-          "score": 0.2648,
+          "score": 0.2647,
           "shared": [
             "manipulation",
             "vla",
@@ -5351,7 +5414,7 @@
       "related": [
         {
           "id": "264a1bb5dfbe",
-          "score": 0.3334,
+          "score": 0.334,
           "shared": [
             "in_hand",
             "rl",
@@ -5362,7 +5425,7 @@
         },
         {
           "id": "52f408326cda",
-          "score": 0.3222,
+          "score": 0.3227,
           "shared": [
             "grasp",
             "sim2real",
@@ -5372,7 +5435,7 @@
         },
         {
           "id": "c2d20ab65ee2",
-          "score": 0.2868,
+          "score": 0.287,
           "shared": [
             "grasp",
             "in_hand",
@@ -5383,7 +5446,7 @@
         },
         {
           "id": "01f4e6a501a5",
-          "score": 0.2857,
+          "score": 0.286,
           "shared": [
             "grasp",
             "in_hand",
@@ -5395,7 +5458,7 @@
         },
         {
           "id": "234a0f375dca",
-          "score": 0.2799,
+          "score": 0.2802,
           "shared": [
             "in_hand",
             "rl",
@@ -5406,7 +5469,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2672,
+          "score": 0.2676,
           "shared": [
             "grasp",
             "rl",
@@ -5495,7 +5558,7 @@
       "related": [
         {
           "id": "234a0f375dca",
-          "score": 0.3063,
+          "score": 0.3062,
           "shared": [
             "in_hand",
             "rl",
@@ -5520,7 +5583,7 @@
         },
         {
           "id": "9e6b717cf17a",
-          "score": 0.2703,
+          "score": 0.2702,
           "shared": [
             "in_hand",
             "rl",
@@ -5533,7 +5596,7 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.2702,
+          "score": 0.2697,
           "shared": [
             "in_hand",
             "rl",
@@ -5555,7 +5618,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2493,
+          "score": 0.2497,
           "shared": [
             "in_hand",
             "rl",
@@ -5646,7 +5709,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.2434,
+          "score": 0.2433,
           "shared": [
             "rl",
             "dexterous_hand",
@@ -5656,7 +5719,7 @@
         },
         {
           "id": "f656acde39fc",
-          "score": 0.2349,
+          "score": 0.2347,
           "shared": [
             "in_hand",
             "rl",
@@ -5666,7 +5729,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2194,
+          "score": 0.2193,
           "shared": [
             "rl",
             "dexterous_hand",
@@ -5726,7 +5789,7 @@
       "related": [
         {
           "id": "1a0cb1f79f9a",
-          "score": 0.2236,
+          "score": 0.2235,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -5742,7 +5805,7 @@
         },
         {
           "id": "634fd2a6460c",
-          "score": 0.2099,
+          "score": 0.21,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -5766,7 +5829,7 @@
         },
         {
           "id": "c2d20ab65ee2",
-          "score": 0.2,
+          "score": 0.1998,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -5857,7 +5920,7 @@
       "related": [
         {
           "id": "a199e45d177b",
-          "score": 0.3405,
+          "score": 0.3402,
           "shared": [
             "manipulation",
             "retargeting",
@@ -5870,7 +5933,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.3343,
+          "score": 0.3344,
           "shared": [
             "manipulation",
             "rl",
@@ -5896,7 +5959,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.284,
+          "score": 0.2842,
           "shared": [
             "manipulation",
             "rl",
@@ -5908,7 +5971,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.272,
+          "score": 0.2721,
           "shared": [
             "manipulation",
             "rl",
@@ -6004,7 +6067,7 @@
       "related": [
         {
           "id": "d271b9594227",
-          "score": 0.2804,
+          "score": 0.2805,
           "shared": [
             "locomotion",
             "rl",
@@ -6014,7 +6077,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.2688,
+          "score": 0.2689,
           "shared": [
             "locomotion",
             "rl",
@@ -6054,7 +6117,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.238,
+          "score": 0.2381,
           "shared": [
             "rl",
             "retargeting",
@@ -6123,7 +6186,7 @@
       "related": [
         {
           "id": "11fbdc4c86ca",
-          "score": 0.3334,
+          "score": 0.334,
           "shared": [
             "in_hand",
             "rl",
@@ -6134,7 +6197,7 @@
         },
         {
           "id": "c2d20ab65ee2",
-          "score": 0.3287,
+          "score": 0.3285,
           "shared": [
             "in_hand",
             "rl",
@@ -6144,7 +6207,7 @@
         },
         {
           "id": "f656acde39fc",
-          "score": 0.3227,
+          "score": 0.3225,
           "shared": [
             "in_hand",
             "rl",
@@ -6155,7 +6218,7 @@
         },
         {
           "id": "234a0f375dca",
-          "score": 0.3075,
+          "score": 0.3074,
           "shared": [
             "in_hand",
             "rl",
@@ -6166,7 +6229,7 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.3045,
+          "score": 0.304,
           "shared": [
             "in_hand",
             "rl",
@@ -6256,7 +6319,7 @@
       "related": [
         {
           "id": "264a1bb5dfbe",
-          "score": 0.3227,
+          "score": 0.3225,
           "shared": [
             "in_hand",
             "rl",
@@ -6267,7 +6330,7 @@
         },
         {
           "id": "01f4e6a501a5",
-          "score": 0.3038,
+          "score": 0.3037,
           "shared": [
             "in_hand",
             "assembly",
@@ -6291,7 +6354,7 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.2773,
+          "score": 0.2769,
           "shared": [
             "in_hand",
             "rl",
@@ -6303,7 +6366,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2537,
+          "score": 0.2538,
           "shared": [
             "in_hand",
             "rl",
@@ -6314,7 +6377,7 @@
         },
         {
           "id": "fc24470329b8",
-          "score": 0.2469,
+          "score": 0.2467,
           "shared": [
             "in_hand",
             "rl",
@@ -6415,7 +6478,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2672,
+          "score": 0.2676,
           "shared": [
             "grasp",
             "rl",
@@ -6502,7 +6565,7 @@
         },
         {
           "id": "88d5026b8a8c",
-          "score": 0.1455,
+          "score": 0.1457,
           "shared": [
             "manipulation"
           ]
@@ -6578,7 +6641,7 @@
       "related": [
         {
           "id": "17440b2ce07b",
-          "score": 0.2787,
+          "score": 0.2786,
           "shared": [
             "rl",
             "sim2real",
@@ -6600,7 +6663,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.258,
+          "score": 0.2581,
           "shared": [
             "grasp",
             "rl",
@@ -6621,7 +6684,7 @@
         },
         {
           "id": "f96255a2098b",
-          "score": 0.2285,
+          "score": 0.2284,
           "shared": [
             "rl",
             "sim2real",
@@ -6632,7 +6695,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2276,
+          "score": 0.2279,
           "shared": [
             "grasp",
             "rl",
@@ -6717,7 +6780,7 @@
       "related": [
         {
           "id": "2910b38ffdef",
-          "score": 0.3331,
+          "score": 0.333,
           "shared": [
             "manipulation",
             "vla",
@@ -6729,7 +6792,7 @@
         },
         {
           "id": "76f0dccd769a",
-          "score": 0.2976,
+          "score": 0.2975,
           "shared": [
             "manipulation",
             "world_model",
@@ -6740,7 +6803,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2884,
+          "score": 0.2882,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -6751,7 +6814,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2881,
+          "score": 0.2879,
           "shared": [
             "manipulation",
             "vla",
@@ -6764,7 +6827,7 @@
         },
         {
           "id": "e7543107d325",
-          "score": 0.2813,
+          "score": 0.281,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -6774,7 +6837,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2803,
+          "score": 0.2802,
           "shared": [
             "manipulation",
             "vla",
@@ -6839,7 +6902,7 @@
       "related": [
         {
           "id": "dc4519f9f5de",
-          "score": 0.3007,
+          "score": 0.3006,
           "shared": [
             "manipulation",
             "vla",
@@ -6849,7 +6912,7 @@
         },
         {
           "id": "6bb14bb5ffda",
-          "score": 0.298,
+          "score": 0.2979,
           "shared": [
             "manipulation",
             "vla",
@@ -6859,7 +6922,7 @@
         },
         {
           "id": "d52d9313e9ff",
-          "score": 0.2885,
+          "score": 0.2886,
           "shared": [
             "manipulation",
             "vla",
@@ -6869,7 +6932,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2862,
+          "score": 0.2861,
           "shared": [
             "manipulation",
             "vla",
@@ -6879,7 +6942,7 @@
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.276,
+          "score": 0.2759,
           "shared": [
             "manipulation",
             "vla",
@@ -6889,7 +6952,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.2746,
+          "score": 0.2747,
           "shared": [
             "manipulation",
             "vla",
@@ -6963,7 +7026,7 @@
       "related": [
         {
           "id": "76f0dccd769a",
-          "score": 0.3104,
+          "score": 0.3119,
           "shared": [
             "manipulation",
             "world_model",
@@ -6974,7 +7037,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.2715,
+          "score": 0.2726,
           "shared": [
             "manipulation",
             "rl",
@@ -6985,7 +7048,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2476,
+          "score": 0.2488,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -6995,7 +7058,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2425,
+          "score": 0.2438,
           "shared": [
             "manipulation",
             "world_model",
@@ -7006,7 +7069,7 @@
         },
         {
           "id": "51b0a39a7bf2",
-          "score": 0.2318,
+          "score": 0.2335,
           "shared": [
             "manipulation",
             "world_model",
@@ -7015,7 +7078,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2242,
+          "score": 0.2253,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -7090,7 +7153,7 @@
         },
         {
           "id": "5425cba54dd6",
-          "score": 0.2997,
+          "score": 0.2996,
           "shared": [
             "locomotion",
             "rl",
@@ -7099,7 +7162,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.2674,
+          "score": 0.2673,
           "shared": [
             "locomotion",
             "rl",
@@ -7108,7 +7171,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.2394,
+          "score": 0.2395,
           "shared": [
             "locomotion",
             "rl",
@@ -7219,7 +7282,7 @@
         },
         {
           "id": "2b9a2ebdf89f",
-          "score": 0.2405,
+          "score": 0.2404,
           "shared": [
             "locomotion",
             "rl",
@@ -7228,7 +7291,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.2399,
+          "score": 0.2398,
           "shared": [
             "locomotion",
             "rl",
@@ -7306,7 +7369,7 @@
       "related": [
         {
           "id": "2910b38ffdef",
-          "score": 0.2907,
+          "score": 0.2906,
           "shared": [
             "manipulation",
             "vla",
@@ -7316,7 +7379,7 @@
         },
         {
           "id": "9d7596e57dc0",
-          "score": 0.2789,
+          "score": 0.2787,
           "shared": [
             "manipulation",
             "vla",
@@ -7337,7 +7400,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.276,
+          "score": 0.2759,
           "shared": [
             "manipulation",
             "vla",
@@ -7357,7 +7420,7 @@
         },
         {
           "id": "6bb14bb5ffda",
-          "score": 0.2591,
+          "score": 0.259,
           "shared": [
             "manipulation",
             "vla",
@@ -7414,7 +7477,7 @@
       "related": [
         {
           "id": "512a614d1366",
-          "score": 0.2796,
+          "score": 0.2793,
           "shared": [
             "vla",
             "vision",
@@ -7423,7 +7486,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2742,
+          "score": 0.2738,
           "shared": [
             "vla",
             "vision",
@@ -7432,7 +7495,7 @@
         },
         {
           "id": "a025156ff12e",
-          "score": 0.2678,
+          "score": 0.2675,
           "shared": [
             "vla",
             "vision",
@@ -7441,7 +7504,7 @@
         },
         {
           "id": "2eea4fdfcb3f",
-          "score": 0.2671,
+          "score": 0.2668,
           "shared": [
             "vla",
             "vision",
@@ -7450,7 +7513,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.2593,
+          "score": 0.2591,
           "shared": [
             "vla",
             "vision",
@@ -7459,7 +7522,7 @@
         },
         {
           "id": "e5e0ea460833",
-          "score": 0.2545,
+          "score": 0.2543,
           "shared": [
             "vla",
             "vision",
@@ -7546,7 +7609,7 @@
       "related": [
         {
           "id": "234a0f375dca",
-          "score": 0.2933,
+          "score": 0.2935,
           "shared": [
             "in_hand",
             "rl",
@@ -7570,7 +7633,7 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.2791,
+          "score": 0.2788,
           "shared": [
             "in_hand",
             "rl",
@@ -7582,7 +7645,7 @@
         },
         {
           "id": "fc24470329b8",
-          "score": 0.2703,
+          "score": 0.2702,
           "shared": [
             "in_hand",
             "rl",
@@ -7605,7 +7668,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2586,
+          "score": 0.2588,
           "shared": [
             "grasp",
             "in_hand",
@@ -7669,7 +7732,7 @@
       "related": [
         {
           "id": "ebb918baa301",
-          "score": 0.298,
+          "score": 0.2979,
           "shared": [
             "manipulation",
             "vla",
@@ -7679,7 +7742,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2967,
+          "score": 0.2966,
           "shared": [
             "manipulation",
             "vla",
@@ -7689,7 +7752,7 @@
         },
         {
           "id": "d52d9313e9ff",
-          "score": 0.2876,
+          "score": 0.2873,
           "shared": [
             "manipulation",
             "vla",
@@ -7699,7 +7762,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.2658,
+          "score": 0.2657,
           "shared": [
             "manipulation",
             "vla",
@@ -7709,7 +7772,7 @@
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.2591,
+          "score": 0.259,
           "shared": [
             "manipulation",
             "vla",
@@ -7719,7 +7782,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.2518,
+          "score": 0.2516,
           "shared": [
             "manipulation",
             "vla",
@@ -7781,7 +7844,7 @@
       "related": [
         {
           "id": "5379224a4b93",
-          "score": 0.2277,
+          "score": 0.2276,
           "shared": [
             "deformable",
             "tactile"
@@ -7789,7 +7852,7 @@
         },
         {
           "id": "e7543107d325",
-          "score": 0.2176,
+          "score": 0.2173,
           "shared": [
             "vision",
             "tactile"
@@ -7797,7 +7860,7 @@
         },
         {
           "id": "2074eedfad72",
-          "score": 0.2144,
+          "score": 0.2143,
           "shared": [
             "vision",
             "tactile"
@@ -7805,7 +7868,7 @@
         },
         {
           "id": "54d78cd9b122",
-          "score": 0.2092,
+          "score": 0.2097,
           "shared": [
             "vision",
             "tactile"
@@ -7813,7 +7876,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2058,
+          "score": 0.2056,
           "shared": [
             "vision",
             "tactile"
@@ -7821,7 +7884,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.1999,
+          "score": 0.1995,
           "shared": [
             "representation",
             "vision",
@@ -7876,7 +7939,7 @@
       "related": [
         {
           "id": "512a614d1366",
-          "score": 0.2271,
+          "score": 0.227,
           "shared": [
             "rl",
             "vision",
@@ -7885,7 +7948,7 @@
         },
         {
           "id": "3fa9c0e3af2d",
-          "score": 0.197,
+          "score": 0.1971,
           "shared": [
             "rl",
             "vision",
@@ -7894,7 +7957,7 @@
         },
         {
           "id": "e5e0ea460833",
-          "score": 0.1755,
+          "score": 0.1754,
           "shared": [
             "vision",
             "language"
@@ -7902,7 +7965,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.1737,
+          "score": 0.1736,
           "shared": [
             "vision",
             "language"
@@ -7910,7 +7973,7 @@
         },
         {
           "id": "5992229682af",
-          "score": 0.1687,
+          "score": 0.1686,
           "shared": [
             "vision",
             "language"
@@ -7984,7 +8047,7 @@
       "related": [
         {
           "id": "66691161d1e4",
-          "score": 0.3464,
+          "score": 0.3463,
           "shared": [
             "manipulation",
             "imitation",
@@ -7994,7 +8057,7 @@
         },
         {
           "id": "522c3da19f23",
-          "score": 0.2524,
+          "score": 0.2523,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -8003,7 +8066,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.252,
+          "score": 0.2517,
           "shared": [
             "manipulation",
             "imitation",
@@ -8012,7 +8075,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2336,
+          "score": 0.2335,
           "shared": [
             "manipulation",
             "retargeting",
@@ -8022,7 +8085,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2329,
+          "score": 0.2328,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -8031,7 +8094,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2326,
+          "score": 0.2325,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -8114,7 +8177,7 @@
         },
         {
           "id": "09cd71c6767d",
-          "score": 0.2669,
+          "score": 0.2668,
           "shared": [
             "dexterous_hand",
             "vision",
@@ -8123,7 +8186,7 @@
         },
         {
           "id": "4781a9441172",
-          "score": 0.2411,
+          "score": 0.241,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -8133,7 +8196,7 @@
         },
         {
           "id": "c5f4869725d3",
-          "score": 0.2298,
+          "score": 0.2297,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -8143,7 +8206,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2168,
+          "score": 0.2167,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -8210,7 +8273,7 @@
         },
         {
           "id": "aeacad3587b1",
-          "score": 0.2079,
+          "score": 0.2085,
           "shared": [
             "manipulation",
             "dexterous_hand"
@@ -8225,7 +8288,7 @@
         },
         {
           "id": "828fca0794c2",
-          "score": 0.1909,
+          "score": 0.1908,
           "shared": [
             "manipulation",
             "dexterous_hand"
@@ -8233,7 +8296,7 @@
         },
         {
           "id": "522c3da19f23",
-          "score": 0.1893,
+          "score": 0.1892,
           "shared": [
             "manipulation",
             "dexterous_hand"
@@ -8241,7 +8304,7 @@
         },
         {
           "id": "6075bb29a07b",
-          "score": 0.1863,
+          "score": 0.1862,
           "shared": [
             "manipulation",
             "dexterous_hand"
@@ -8322,7 +8385,7 @@
       "related": [
         {
           "id": "269f5d2a62c3",
-          "score": 0.2986,
+          "score": 0.2985,
           "shared": [
             "manipulation",
             "imitation",
@@ -8346,7 +8409,7 @@
         },
         {
           "id": "b6fa1984302b",
-          "score": 0.2345,
+          "score": 0.2346,
           "shared": [
             "generative_policy",
             "sim2real",
@@ -8357,7 +8420,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2292,
+          "score": 0.2291,
           "shared": [
             "manipulation",
             "imitation",
@@ -8368,7 +8431,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.2282,
+          "score": 0.2284,
           "shared": [
             "manipulation",
             "sim2real",
@@ -8379,7 +8442,7 @@
         },
         {
           "id": "2a8910a4e791",
-          "score": 0.2261,
+          "score": 0.226,
           "shared": [
             "manipulation",
             "sim2real",
@@ -8446,7 +8509,7 @@
         },
         {
           "id": "aeacad3587b1",
-          "score": 0.281,
+          "score": 0.2809,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -8464,7 +8527,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2798,
+          "score": 0.2799,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -8482,7 +8545,7 @@
         },
         {
           "id": "2c9be4d44b9c",
-          "score": 0.2524,
+          "score": 0.2523,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -8533,7 +8596,7 @@
       "related": [
         {
           "id": "8360ceead094",
-          "score": 0.341,
+          "score": 0.3408,
           "shared": [
             "design",
             "rl"
@@ -8541,7 +8604,7 @@
         },
         {
           "id": "e304cc9f6f98",
-          "score": 0.2422,
+          "score": 0.2423,
           "shared": [
             "design",
             "rl"
@@ -8645,7 +8708,7 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.2444,
+          "score": 0.2443,
           "shared": [
             "rl",
             "sim2real",
@@ -8655,7 +8718,7 @@
         },
         {
           "id": "c2d20ab65ee2",
-          "score": 0.2326,
+          "score": 0.2325,
           "shared": [
             "rl",
             "dexterous_hand",
@@ -8674,7 +8737,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.2295,
+          "score": 0.2294,
           "shared": [
             "rl",
             "sim2real",
@@ -8684,7 +8747,7 @@
         },
         {
           "id": "f96255a2098b",
-          "score": 0.2281,
+          "score": 0.228,
           "shared": [
             "rl",
             "sim2real",
@@ -8763,7 +8826,7 @@
       "related": [
         {
           "id": "75c75b12ca45",
-          "score": 0.3391,
+          "score": 0.3388,
           "shared": [
             "manipulation",
             "vla",
@@ -8775,7 +8838,7 @@
         },
         {
           "id": "435c28d7118d",
-          "score": 0.3237,
+          "score": 0.3234,
           "shared": [
             "manipulation",
             "vla",
@@ -8787,7 +8850,7 @@
         },
         {
           "id": "c57e481f3b43",
-          "score": 0.3169,
+          "score": 0.3166,
           "shared": [
             "manipulation",
             "vla",
@@ -8799,7 +8862,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2833,
+          "score": 0.2831,
           "shared": [
             "manipulation",
             "vla",
@@ -8812,7 +8875,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.2789,
+          "score": 0.2781,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -8823,7 +8886,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2673,
+          "score": 0.2671,
           "shared": [
             "manipulation",
             "vla",
@@ -8889,7 +8952,7 @@
         },
         {
           "id": "8360ceead094",
-          "score": 0.1537,
+          "score": 0.1539,
           "shared": [
             "design"
           ]
@@ -8964,7 +9027,7 @@
       "related": [
         {
           "id": "5ba5e325bfdd",
-          "score": 0.3727,
+          "score": 0.3726,
           "shared": [
             "manipulation",
             "rl",
@@ -8976,7 +9039,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.3049,
+          "score": 0.305,
           "shared": [
             "manipulation",
             "rl",
@@ -8999,7 +9062,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.2784,
+          "score": 0.2783,
           "shared": [
             "manipulation",
             "rl",
@@ -9021,7 +9084,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.2649,
+          "score": 0.2648,
           "shared": [
             "manipulation",
             "rl",
@@ -9085,7 +9148,7 @@
       "related": [
         {
           "id": "bad19f81c263",
-          "score": 0.255,
+          "score": 0.2543,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -9094,7 +9157,7 @@
         },
         {
           "id": "d75c9c36c685",
-          "score": 0.2098,
+          "score": 0.2096,
           "shared": [
             "generative_policy",
             "human_video"
@@ -9102,14 +9165,14 @@
         },
         {
           "id": "6075bb29a07b",
-          "score": 0.1885,
+          "score": 0.1886,
           "shared": [
             "manipulation"
           ]
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.1847,
+          "score": 0.1844,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -9118,7 +9181,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.1557,
+          "score": 0.1554,
           "shared": [
             "manipulation",
             "human_video",
@@ -9193,7 +9256,7 @@
       "related": [
         {
           "id": "ab7e369d0b64",
-          "score": 0.2908,
+          "score": 0.2906,
           "shared": [
             "imitation",
             "human_video"
@@ -9201,7 +9264,7 @@
         },
         {
           "id": "e8a4069565ea",
-          "score": 0.2098,
+          "score": 0.2096,
           "shared": [
             "generative_policy",
             "human_video"
@@ -9209,7 +9272,7 @@
         },
         {
           "id": "b6fa1984302b",
-          "score": 0.2072,
+          "score": 0.207,
           "shared": [
             "grasp",
             "generative_policy",
@@ -9227,7 +9290,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.1821,
+          "score": 0.1819,
           "shared": [
             "generative_policy",
             "human_video"
@@ -9235,7 +9298,7 @@
         },
         {
           "id": "cbe6293c4453",
-          "score": 0.1804,
+          "score": 0.1803,
           "shared": [
             "imitation",
             "human_video"
@@ -9284,29 +9347,37 @@
       ],
       "related": [
         {
+          "id": "15a299f17498",
+          "score": 0.2247,
+          "shared": [
+            "representation",
+            "human_video"
+          ]
+        },
+        {
           "id": "ab7e369d0b64",
-          "score": 0.198,
+          "score": 0.1977,
           "shared": [
             "human_video"
           ]
         },
         {
           "id": "88664654e0d0",
-          "score": 0.1904,
+          "score": 0.1901,
           "shared": [
             "human_video"
           ]
         },
         {
           "id": "b1e094aac4a1",
-          "score": 0.1758,
+          "score": 0.1755,
           "shared": [
             "human_video"
           ]
         },
         {
           "id": "77ce0c8a046f",
-          "score": 0.1737,
+          "score": 0.1734,
           "shared": [
             "human_video"
           ]
@@ -9315,13 +9386,6 @@
           "id": "9b99eec315a2",
           "score": 0.1729,
           "shared": []
-        },
-        {
-          "id": "582046ec1d77",
-          "score": 0.1698,
-          "shared": [
-            "representation"
-          ]
         }
       ]
     },
@@ -9384,7 +9448,7 @@
       "related": [
         {
           "id": "264a1bb5dfbe",
-          "score": 0.3287,
+          "score": 0.3285,
           "shared": [
             "in_hand",
             "rl",
@@ -9394,7 +9458,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2868,
+          "score": 0.287,
           "shared": [
             "grasp",
             "in_hand",
@@ -9435,7 +9499,7 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.241,
+          "score": 0.2406,
           "shared": [
             "in_hand",
             "rl",
@@ -9512,7 +9576,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2281,
+          "score": 0.228,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -9538,7 +9602,7 @@
         },
         {
           "id": "6520d6da73d4",
-          "score": 0.2097,
+          "score": 0.2096,
           "shared": [
             "manipulation",
             "representation",
@@ -9641,7 +9705,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.284,
+          "score": 0.2842,
           "shared": [
             "manipulation",
             "rl",
@@ -9664,7 +9728,7 @@
         },
         {
           "id": "f9c7934d7547",
-          "score": 0.2787,
+          "score": 0.2786,
           "shared": [
             "rl",
             "sim2real",
@@ -9748,7 +9812,7 @@
       "related": [
         {
           "id": "9d7596e57dc0",
-          "score": 0.2734,
+          "score": 0.2733,
           "shared": [
             "manipulation",
             "vla",
@@ -9781,7 +9845,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.2407,
+          "score": 0.2406,
           "shared": [
             "manipulation",
             "vla",
@@ -9802,7 +9866,7 @@
         },
         {
           "id": "54252546ee7a",
-          "score": 0.2305,
+          "score": 0.2304,
           "shared": [
             "manipulation",
             "vla",
@@ -9854,7 +9918,7 @@
       "related": [
         {
           "id": "64e5ac14880b",
-          "score": 0.2277,
+          "score": 0.2276,
           "shared": [
             "deformable",
             "tactile"
@@ -9946,7 +10010,7 @@
       "related": [
         {
           "id": "bedcbb2393a5",
-          "score": 0.2881,
+          "score": 0.2879,
           "shared": [
             "manipulation",
             "vla",
@@ -9959,7 +10023,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.2833,
+          "score": 0.2831,
           "shared": [
             "manipulation",
             "vla",
@@ -9984,7 +10048,7 @@
         },
         {
           "id": "75c75b12ca45",
-          "score": 0.2755,
+          "score": 0.2753,
           "shared": [
             "manipulation",
             "vla",
@@ -9996,7 +10060,7 @@
         },
         {
           "id": "c57e481f3b43",
-          "score": 0.2682,
+          "score": 0.2678,
           "shared": [
             "manipulation",
             "vla",
@@ -10008,7 +10072,7 @@
         },
         {
           "id": "f54f7c6bffb4",
-          "score": 0.2496,
+          "score": 0.2495,
           "shared": [
             "manipulation",
             "imitation",
@@ -10089,7 +10153,7 @@
       "related": [
         {
           "id": "f656acde39fc",
-          "score": 0.3038,
+          "score": 0.3037,
           "shared": [
             "in_hand",
             "assembly",
@@ -10124,7 +10188,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2857,
+          "score": 0.286,
           "shared": [
             "grasp",
             "in_hand",
@@ -10147,7 +10211,7 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.256,
+          "score": 0.2556,
           "shared": [
             "in_hand",
             "rl",
@@ -10216,7 +10280,7 @@
       "related": [
         {
           "id": "1788c6c5b5f4",
-          "score": 0.2668,
+          "score": 0.2669,
           "shared": [
             "manipulation",
             "rl",
@@ -10227,7 +10291,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2648,
+          "score": 0.2647,
           "shared": [
             "manipulation",
             "rl",
@@ -10238,7 +10302,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.2465,
+          "score": 0.2464,
           "shared": [
             "manipulation",
             "rl",
@@ -10381,7 +10445,7 @@
         },
         {
           "id": "5ba5e325bfdd",
-          "score": 0.265,
+          "score": 0.2649,
           "shared": [
             "manipulation",
             "rl",
@@ -10392,7 +10456,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.2609,
+          "score": 0.2608,
           "shared": [
             "manipulation",
             "imitation",
@@ -10513,7 +10577,7 @@
         },
         {
           "id": "babdebe00204",
-          "score": 0.2298,
+          "score": 0.2297,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -10523,7 +10587,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2297,
+          "score": 0.2296,
           "shared": [
             "manipulation",
             "imitation",
@@ -10535,7 +10599,7 @@
         },
         {
           "id": "2c9be4d44b9c",
-          "score": 0.2288,
+          "score": 0.2287,
           "shared": [
             "manipulation",
             "imitation",
@@ -10606,7 +10670,7 @@
         },
         {
           "id": "2b9a2ebdf89f",
-          "score": 0.2945,
+          "score": 0.2946,
           "shared": [
             "locomotion",
             "rl",
@@ -10615,7 +10679,7 @@
         },
         {
           "id": "334bde1459ae",
-          "score": 0.2688,
+          "score": 0.2689,
           "shared": [
             "locomotion",
             "rl",
@@ -10624,7 +10688,7 @@
         },
         {
           "id": "7aa75ea358b8",
-          "score": 0.2656,
+          "score": 0.2655,
           "shared": [
             "long_horizon",
             "rl",
@@ -10633,7 +10697,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.2419,
+          "score": 0.2418,
           "shared": [
             "locomotion",
             "rl",
@@ -10712,7 +10776,7 @@
         },
         {
           "id": "522c3da19f23",
-          "score": 0.281,
+          "score": 0.2809,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -10721,7 +10785,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2568,
+          "score": 0.2567,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -10731,7 +10795,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.253,
+          "score": 0.2529,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -10740,7 +10804,7 @@
         },
         {
           "id": "3c7ecd104f87",
-          "score": 0.2368,
+          "score": 0.2365,
           "shared": [
             "manipulation",
             "tactile",
@@ -10749,7 +10813,7 @@
         },
         {
           "id": "f96255a2098b",
-          "score": 0.2268,
+          "score": 0.2267,
           "shared": [
             "dexterous_hand",
             "tactile",
@@ -10786,7 +10850,7 @@
       "related": [
         {
           "id": "ebdcfb5e9474",
-          "score": 0.1526,
+          "score": 0.1525,
           "shared": []
         }
       ]
@@ -10843,7 +10907,7 @@
       "related": [
         {
           "id": "5154f13a5390",
-          "score": 0.2504,
+          "score": 0.2503,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -10851,7 +10915,7 @@
         },
         {
           "id": "52f408326cda",
-          "score": 0.242,
+          "score": 0.2419,
           "shared": [
             "grasp",
             "generative_policy",
@@ -10860,7 +10924,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2312,
+          "score": 0.2309,
           "shared": [
             "grasp",
             "rl",
@@ -10869,7 +10933,7 @@
         },
         {
           "id": "c2d20ab65ee2",
-          "score": 0.2264,
+          "score": 0.2263,
           "shared": [
             "grasp",
             "rl",
@@ -10888,7 +10952,7 @@
         },
         {
           "id": "dfa7e060e038",
-          "score": 0.2145,
+          "score": 0.2144,
           "shared": [
             "grasp",
             "rl",
@@ -10949,7 +11013,7 @@
       "related": [
         {
           "id": "dc4519f9f5de",
-          "score": 0.2502,
+          "score": 0.25,
           "shared": [
             "manipulation",
             "vla",
@@ -10958,7 +11022,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2417,
+          "score": 0.2415,
           "shared": [
             "manipulation",
             "vla",
@@ -10977,7 +11041,7 @@
         },
         {
           "id": "54252546ee7a",
-          "score": 0.2108,
+          "score": 0.2107,
           "shared": [
             "manipulation",
             "vla",
@@ -10986,7 +11050,7 @@
         },
         {
           "id": "828fca0794c2",
-          "score": 0.2097,
+          "score": 0.2096,
           "shared": [
             "manipulation",
             "representation",
@@ -10995,7 +11059,7 @@
         },
         {
           "id": "f3fb46945019",
-          "score": 0.2082,
+          "score": 0.2081,
           "shared": [
             "dexterous_hand"
           ]
@@ -11049,7 +11113,7 @@
       "related": [
         {
           "id": "2b9a2ebdf89f",
-          "score": 0.3194,
+          "score": 0.3195,
           "shared": [
             "locomotion",
             "rl",
@@ -11058,7 +11122,7 @@
         },
         {
           "id": "c99095f2c788",
-          "score": 0.2997,
+          "score": 0.2996,
           "shared": [
             "locomotion",
             "rl",
@@ -11170,7 +11234,7 @@
       "related": [
         {
           "id": "2910b38ffdef",
-          "score": 0.3253,
+          "score": 0.3249,
           "shared": [
             "manipulation",
             "vla",
@@ -11181,7 +11245,7 @@
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.2789,
+          "score": 0.2787,
           "shared": [
             "manipulation",
             "vla",
@@ -11191,7 +11255,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.2758,
+          "score": 0.276,
           "shared": [
             "vla",
             "world_model",
@@ -11201,7 +11265,7 @@
         },
         {
           "id": "5e11d4d20de4",
-          "score": 0.2734,
+          "score": 0.2733,
           "shared": [
             "manipulation",
             "vla",
@@ -11213,7 +11277,7 @@
         },
         {
           "id": "d9cb767c9ad0",
-          "score": 0.2513,
+          "score": 0.2512,
           "shared": [
             "manipulation",
             "vla",
@@ -11224,7 +11288,7 @@
         },
         {
           "id": "a469969fe36c",
-          "score": 0.2469,
+          "score": 0.2468,
           "shared": [
             "world_model",
             "vision"
@@ -11280,7 +11344,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.2145,
+          "score": 0.2144,
           "shared": [
             "rl",
             "world_model"
@@ -11288,21 +11352,21 @@
         },
         {
           "id": "20f950ab618e",
-          "score": 0.2046,
+          "score": 0.2048,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "7ca3d83d3b70",
-          "score": 0.2013,
+          "score": 0.2015,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "22d267a3875c",
-          "score": 0.1932,
+          "score": 0.1931,
           "shared": [
             "world_model"
           ]
@@ -11377,7 +11441,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.2898,
+          "score": 0.2897,
           "shared": [
             "vla",
             "world_model",
@@ -11396,7 +11460,7 @@
         },
         {
           "id": "9d7596e57dc0",
-          "score": 0.2758,
+          "score": 0.276,
           "shared": [
             "vla",
             "world_model",
@@ -11476,7 +11540,7 @@
       "related": [
         {
           "id": "2b9a2ebdf89f",
-          "score": 0.233,
+          "score": 0.2329,
           "shared": [
             "locomotion",
             "humanoid"
@@ -11484,7 +11548,7 @@
         },
         {
           "id": "4781a9441172",
-          "score": 0.2291,
+          "score": 0.229,
           "shared": [
             "locomotion",
             "imitation",
@@ -11493,7 +11557,7 @@
         },
         {
           "id": "334bde1459ae",
-          "score": 0.2265,
+          "score": 0.2264,
           "shared": [
             "locomotion",
             "imitation",
@@ -11503,7 +11567,7 @@
         },
         {
           "id": "d271b9594227",
-          "score": 0.226,
+          "score": 0.2259,
           "shared": [
             "locomotion",
             "retargeting",
@@ -11512,7 +11576,7 @@
         },
         {
           "id": "d9bca3c01248",
-          "score": 0.2082,
+          "score": 0.2081,
           "shared": [
             "locomotion",
             "retargeting",
@@ -11521,7 +11585,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.1875,
+          "score": 0.1873,
           "shared": [
             "locomotion",
             "humanoid"
@@ -11576,7 +11640,7 @@
       "related": [
         {
           "id": "8b313c23aeae",
-          "score": 0.2617,
+          "score": 0.2615,
           "shared": [
             "dexterous_hand",
             "tactile"
@@ -11617,7 +11681,7 @@
         },
         {
           "id": "80baa8a5ed7e",
-          "score": 0.2236,
+          "score": 0.2235,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -11699,7 +11763,7 @@
         },
         {
           "id": "5ba5e325bfdd",
-          "score": 0.2888,
+          "score": 0.2885,
           "shared": [
             "manipulation",
             "rl",
@@ -11710,7 +11774,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.2784,
+          "score": 0.2783,
           "shared": [
             "manipulation",
             "rl",
@@ -11721,7 +11785,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.276,
+          "score": 0.2757,
           "shared": [
             "manipulation",
             "rl",
@@ -11732,7 +11796,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.272,
+          "score": 0.2721,
           "shared": [
             "manipulation",
             "rl",
@@ -11817,7 +11881,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.3248,
+          "score": 0.3247,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -11856,7 +11920,7 @@
         },
         {
           "id": "8b313c23aeae",
-          "score": 0.2846,
+          "score": 0.2845,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -11907,7 +11971,7 @@
       "related": [
         {
           "id": "fab90a023fc0",
-          "score": 0.341,
+          "score": 0.3408,
           "shared": [
             "design",
             "rl"
@@ -11915,7 +11979,7 @@
         },
         {
           "id": "e304cc9f6f98",
-          "score": 0.2732,
+          "score": 0.273,
           "shared": [
             "design",
             "rl"
@@ -11923,28 +11987,28 @@
         },
         {
           "id": "199d513c1e2f",
-          "score": 0.2002,
+          "score": 0.2001,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "20f950ab618e",
-          "score": 0.1901,
+          "score": 0.1903,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "6a4b8cab99a2",
-          "score": 0.1671,
+          "score": 0.1674,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "8811c4a07404",
-          "score": 0.1553,
+          "score": 0.1555,
           "shared": [
             "rl"
           ]
@@ -12009,7 +12073,7 @@
       "related": [
         {
           "id": "11fbdc4c86ca",
-          "score": 0.3222,
+          "score": 0.3227,
           "shared": [
             "grasp",
             "sim2real",
@@ -12030,7 +12094,7 @@
         },
         {
           "id": "fe54b19cbd14",
-          "score": 0.261,
+          "score": 0.2611,
           "shared": [
             "grasp",
             "sim2real",
@@ -12040,7 +12104,7 @@
         },
         {
           "id": "b6fa1984302b",
-          "score": 0.2535,
+          "score": 0.2536,
           "shared": [
             "grasp",
             "generative_policy",
@@ -12051,7 +12115,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.2487,
+          "score": 0.2488,
           "shared": [
             "sim2real",
             "dexterous_hand",
@@ -12142,7 +12206,7 @@
         },
         {
           "id": "7ca3d83d3b70",
-          "score": 0.1704,
+          "score": 0.1702,
           "shared": [
             "rl"
           ]
@@ -12329,7 +12393,7 @@
       "related": [
         {
           "id": "a199e45d177b",
-          "score": 0.3019,
+          "score": 0.3021,
           "shared": [
             "manipulation",
             "sim2real",
@@ -12340,7 +12404,7 @@
         },
         {
           "id": "b6fa1984302b",
-          "score": 0.2441,
+          "score": 0.2442,
           "shared": [
             "sim2real",
             "dexterous_hand",
@@ -12350,7 +12414,7 @@
         },
         {
           "id": "cbe6293c4453",
-          "score": 0.2303,
+          "score": 0.2304,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -12360,7 +12424,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2255,
+          "score": 0.2258,
           "shared": [
             "manipulation",
             "sim2real",
@@ -12370,7 +12434,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2232,
+          "score": 0.2234,
           "shared": [
             "manipulation",
             "sim2real",
@@ -12380,7 +12444,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.2178,
+          "score": 0.2181,
           "shared": [
             "manipulation",
             "sim2real",
@@ -12446,7 +12510,7 @@
       "related": [
         {
           "id": "4ac9027be283",
-          "score": 0.3365,
+          "score": 0.3364,
           "shared": [
             "manipulation",
             "imitation",
@@ -12467,7 +12531,7 @@
         },
         {
           "id": "2eea4fdfcb3f",
-          "score": 0.2965,
+          "score": 0.2962,
           "shared": [
             "imitation",
             "vla",
@@ -12488,7 +12552,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2885,
+          "score": 0.2886,
           "shared": [
             "manipulation",
             "vla",
@@ -12498,7 +12562,7 @@
         },
         {
           "id": "6bb14bb5ffda",
-          "score": 0.2876,
+          "score": 0.2873,
           "shared": [
             "manipulation",
             "vla",
@@ -12572,7 +12636,7 @@
       "related": [
         {
           "id": "f54f7c6bffb4",
-          "score": 0.2954,
+          "score": 0.2952,
           "shared": [
             "manipulation",
             "vla",
@@ -12584,7 +12648,7 @@
         },
         {
           "id": "09cd71c6767d",
-          "score": 0.2586,
+          "score": 0.2587,
           "shared": [
             "manipulation",
             "vla",
@@ -12608,7 +12672,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.2405,
+          "score": 0.2404,
           "shared": [
             "manipulation",
             "vla",
@@ -12619,7 +12683,7 @@
         },
         {
           "id": "dbf87959b93b",
-          "score": 0.2386,
+          "score": 0.2385,
           "shared": [
             "manipulation",
             "vla",
@@ -12710,7 +12774,7 @@
       "related": [
         {
           "id": "16b4cd88127b",
-          "score": 0.3405,
+          "score": 0.3402,
           "shared": [
             "manipulation",
             "retargeting",
@@ -12723,7 +12787,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.3102,
+          "score": 0.3103,
           "shared": [
             "manipulation",
             "retargeting",
@@ -12735,7 +12799,7 @@
         },
         {
           "id": "b6fa1984302b",
-          "score": 0.3072,
+          "score": 0.3069,
           "shared": [
             "sim2real",
             "dexterous_hand",
@@ -12746,7 +12810,7 @@
         },
         {
           "id": "8fcb2d661e6d",
-          "score": 0.3052,
+          "score": 0.3051,
           "shared": [
             "manipulation",
             "retargeting",
@@ -12756,7 +12820,7 @@
         },
         {
           "id": "e7d6900606dc",
-          "score": 0.3019,
+          "score": 0.3021,
           "shared": [
             "manipulation",
             "sim2real",
@@ -12825,7 +12889,7 @@
       "related": [
         {
           "id": "b38eb62e913e",
-          "score": 0.218,
+          "score": 0.2176,
           "shared": [
             "deformable",
             "simulation"
@@ -12909,7 +12973,7 @@
         },
         {
           "id": "4e1addd18ce2",
-          "score": 0.2796,
+          "score": 0.2793,
           "shared": [
             "vla",
             "vision",
@@ -12918,7 +12982,7 @@
         },
         {
           "id": "3fa9c0e3af2d",
-          "score": 0.2634,
+          "score": 0.2633,
           "shared": [
             "rl",
             "vla",
@@ -12937,7 +13001,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2461,
+          "score": 0.2459,
           "shared": [
             "vla",
             "vision",
@@ -12946,7 +13010,7 @@
         },
         {
           "id": "d3b9962d1603",
-          "score": 0.2271,
+          "score": 0.227,
           "shared": [
             "rl",
             "vision",
@@ -13002,7 +13066,7 @@
       "related": [
         {
           "id": "5425cba54dd6",
-          "score": 0.3194,
+          "score": 0.3195,
           "shared": [
             "locomotion",
             "rl",
@@ -13020,7 +13084,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.2945,
+          "score": 0.2946,
           "shared": [
             "locomotion",
             "rl",
@@ -13029,7 +13093,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.2836,
+          "score": 0.2837,
           "shared": [
             "locomotion",
             "rl",
@@ -13038,7 +13102,7 @@
         },
         {
           "id": "d271b9594227",
-          "score": 0.2469,
+          "score": 0.247,
           "shared": [
             "locomotion",
             "rl",
@@ -13047,7 +13111,7 @@
         },
         {
           "id": "a5c9a400ee08",
-          "score": 0.2405,
+          "score": 0.2404,
           "shared": [
             "locomotion",
             "rl",
@@ -13123,7 +13187,7 @@
       "related": [
         {
           "id": "dbf87959b93b",
-          "score": 0.3192,
+          "score": 0.3191,
           "shared": [
             "manipulation",
             "vla",
@@ -13148,7 +13212,7 @@
         },
         {
           "id": "f54f7c6bffb4",
-          "score": 0.2798,
+          "score": 0.2799,
           "shared": [
             "manipulation",
             "vla",
@@ -13171,7 +13235,7 @@
         },
         {
           "id": "babdebe00204",
-          "score": 0.2669,
+          "score": 0.2668,
           "shared": [
             "dexterous_hand",
             "vision",
@@ -13180,7 +13244,7 @@
         },
         {
           "id": "cd6a943ab35b",
-          "score": 0.2586,
+          "score": 0.2587,
           "shared": [
             "manipulation",
             "vla",
@@ -13255,7 +13319,7 @@
       "related": [
         {
           "id": "ad6416c562fc",
-          "score": 0.4039,
+          "score": 0.4034,
           "shared": [
             "in_hand",
             "rl",
@@ -13267,7 +13331,7 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.3075,
+          "score": 0.3074,
           "shared": [
             "in_hand",
             "rl",
@@ -13278,7 +13342,7 @@
         },
         {
           "id": "fc24470329b8",
-          "score": 0.3063,
+          "score": 0.3062,
           "shared": [
             "in_hand",
             "rl",
@@ -13290,7 +13354,7 @@
         },
         {
           "id": "9e6b717cf17a",
-          "score": 0.2933,
+          "score": 0.2935,
           "shared": [
             "in_hand",
             "rl",
@@ -13302,7 +13366,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2799,
+          "score": 0.2802,
           "shared": [
             "in_hand",
             "rl",
@@ -13377,7 +13441,7 @@
       "related": [
         {
           "id": "a199e45d177b",
-          "score": 0.3052,
+          "score": 0.3051,
           "shared": [
             "manipulation",
             "retargeting",
@@ -13387,7 +13451,7 @@
         },
         {
           "id": "ab7e369d0b64",
-          "score": 0.2267,
+          "score": 0.2266,
           "shared": [
             "manipulation",
             "human_video"
@@ -13395,7 +13459,7 @@
         },
         {
           "id": "cbe6293c4453",
-          "score": 0.2259,
+          "score": 0.2257,
           "shared": [
             "manipulation",
             "vision",
@@ -13404,7 +13468,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2228,
+          "score": 0.2226,
           "shared": [
             "manipulation",
             "retargeting",
@@ -13414,7 +13478,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.2181,
+          "score": 0.2182,
           "shared": [
             "manipulation",
             "retargeting",
@@ -13423,7 +13487,7 @@
         },
         {
           "id": "75c75b12ca45",
-          "score": 0.2137,
+          "score": 0.2135,
           "shared": [
             "manipulation",
             "vision",
@@ -13485,7 +13549,7 @@
       "related": [
         {
           "id": "199d513c1e2f",
-          "score": 0.2193,
+          "score": 0.2194,
           "shared": [
             "locomotion",
             "rl"
@@ -13609,7 +13673,7 @@
       "related": [
         {
           "id": "023d509ab1fb",
-          "score": 0.2849,
+          "score": 0.2848,
           "shared": [
             "manipulation",
             "vla",
@@ -13643,7 +13707,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2684,
+          "score": 0.2683,
           "shared": [
             "manipulation",
             "vla",
@@ -13655,7 +13719,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.2648,
+          "score": 0.2647,
           "shared": [
             "manipulation",
             "vla",
@@ -13745,7 +13809,7 @@
       "related": [
         {
           "id": "a199e45d177b",
-          "score": 0.3072,
+          "score": 0.3069,
           "shared": [
             "sim2real",
             "dexterous_hand",
@@ -13756,7 +13820,7 @@
         },
         {
           "id": "52f408326cda",
-          "score": 0.2535,
+          "score": 0.2536,
           "shared": [
             "grasp",
             "generative_policy",
@@ -13767,7 +13831,7 @@
         },
         {
           "id": "e7d6900606dc",
-          "score": 0.2441,
+          "score": 0.2442,
           "shared": [
             "sim2real",
             "dexterous_hand",
@@ -13777,7 +13841,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.2345,
+          "score": 0.2346,
           "shared": [
             "generative_policy",
             "sim2real",
@@ -13798,7 +13862,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2331,
+          "score": 0.2332,
           "shared": [
             "grasp",
             "sim2real",
@@ -13877,7 +13941,7 @@
       "related": [
         {
           "id": "ef68f512c4df",
-          "score": 0.3727,
+          "score": 0.3726,
           "shared": [
             "manipulation",
             "rl",
@@ -13889,7 +13953,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.3122,
+          "score": 0.3121,
           "shared": [
             "manipulation",
             "rl",
@@ -13901,7 +13965,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.2888,
+          "score": 0.2885,
           "shared": [
             "manipulation",
             "rl",
@@ -13912,7 +13976,7 @@
         },
         {
           "id": "b1f186f47428",
-          "score": 0.2834,
+          "score": 0.2833,
           "shared": [
             "manipulation",
             "rl",
@@ -13923,7 +13987,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.2696,
+          "score": 0.2694,
           "shared": [
             "manipulation",
             "rl",
@@ -13934,7 +13998,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.265,
+          "score": 0.2649,
           "shared": [
             "manipulation",
             "rl",
@@ -14008,7 +14072,7 @@
       "related": [
         {
           "id": "18f622aafe72",
-          "score": 0.3068,
+          "score": 0.3067,
           "shared": [
             "manipulation",
             "imitation",
@@ -14019,7 +14083,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2886,
+          "score": 0.2885,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -14030,7 +14094,7 @@
         },
         {
           "id": "e7543107d325",
-          "score": 0.2677,
+          "score": 0.2681,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -14040,7 +14104,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2643,
+          "score": 0.2641,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -14050,7 +14114,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2602,
+          "score": 0.2601,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -14060,7 +14124,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.25,
+          "score": 0.2499,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -14134,7 +14198,7 @@
       "related": [
         {
           "id": "bedcbb2393a5",
-          "score": 0.3331,
+          "score": 0.333,
           "shared": [
             "manipulation",
             "vla",
@@ -14156,7 +14220,7 @@
         },
         {
           "id": "9d7596e57dc0",
-          "score": 0.3253,
+          "score": 0.3249,
           "shared": [
             "manipulation",
             "vla",
@@ -14167,7 +14231,7 @@
         },
         {
           "id": "987604419da0",
-          "score": 0.3105,
+          "score": 0.3104,
           "shared": [
             "vla",
             "world_model",
@@ -14177,7 +14241,7 @@
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.2907,
+          "score": 0.2906,
           "shared": [
             "manipulation",
             "vla",
@@ -14187,7 +14251,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.2898,
+          "score": 0.2897,
           "shared": [
             "vla",
             "world_model",
@@ -14266,7 +14330,7 @@
       "related": [
         {
           "id": "cd6a943ab35b",
-          "score": 0.2954,
+          "score": 0.2952,
           "shared": [
             "manipulation",
             "vla",
@@ -14278,25 +14342,13 @@
         },
         {
           "id": "09cd71c6767d",
-          "score": 0.2798,
+          "score": 0.2799,
           "shared": [
             "manipulation",
             "vla",
             "dexterous_hand",
             "vision",
             "teleop",
-            "language"
-          ]
-        },
-        {
-          "id": "d3317ae52ef2",
-          "score": 0.2592,
-          "shared": [
-            "manipulation",
-            "imitation",
-            "vla",
-            "dexterous_hand",
-            "vision",
             "language"
           ]
         },
@@ -14312,8 +14364,20 @@
           ]
         },
         {
+          "id": "d3317ae52ef2",
+          "score": 0.2591,
+          "shared": [
+            "manipulation",
+            "imitation",
+            "vla",
+            "dexterous_hand",
+            "vision",
+            "language"
+          ]
+        },
+        {
           "id": "c3963efd3d9b",
-          "score": 0.2566,
+          "score": 0.2564,
           "shared": [
             "manipulation",
             "imitation",
@@ -14325,7 +14389,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2496,
+          "score": 0.2495,
           "shared": [
             "manipulation",
             "imitation",
@@ -14400,7 +14464,7 @@
       "related": [
         {
           "id": "f96255a2098b",
-          "score": 0.2571,
+          "score": 0.257,
           "shared": [
             "rl",
             "sim2real",
@@ -14421,7 +14485,7 @@
         },
         {
           "id": "fc24470329b8",
-          "score": 0.2281,
+          "score": 0.228,
           "shared": [
             "rl",
             "sim2real",
@@ -14432,7 +14496,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.2201,
+          "score": 0.22,
           "shared": [
             "manipulation",
             "rl",
@@ -14514,7 +14578,7 @@
       "related": [
         {
           "id": "885d0761c5aa",
-          "score": 0.2244,
+          "score": 0.2246,
           "shared": [
             "imitation",
             "vla"
@@ -14522,7 +14586,7 @@
         },
         {
           "id": "428b1a10df2e",
-          "score": 0.1816,
+          "score": 0.1815,
           "shared": [
             "long_horizon",
             "imitation",
@@ -14539,7 +14603,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.16,
+          "score": 0.1599,
           "shared": [
             "imitation",
             "vla"
@@ -14547,14 +14611,14 @@
         },
         {
           "id": "22d267a3875c",
-          "score": 0.1576,
+          "score": 0.1572,
           "shared": [
             "representation"
           ]
         },
         {
           "id": "7aa75ea358b8",
-          "score": 0.1521,
+          "score": 0.152,
           "shared": [
             "long_horizon"
           ]
@@ -14608,7 +14672,7 @@
       "related": [
         {
           "id": "0185a87289d0",
-          "score": 0.284,
+          "score": 0.2839,
           "shared": [
             "manipulation",
             "rl",
@@ -14635,7 +14699,7 @@
         },
         {
           "id": "b1f186f47428",
-          "score": 0.2309,
+          "score": 0.2308,
           "shared": [
             "manipulation",
             "rl",
@@ -14644,7 +14708,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2189,
+          "score": 0.2188,
           "shared": [
             "manipulation",
             "rl",
@@ -14724,7 +14788,7 @@
       "related": [
         {
           "id": "ab7e369d0b64",
-          "score": 0.3225,
+          "score": 0.3224,
           "shared": [
             "manipulation",
             "imitation",
@@ -14734,7 +14798,7 @@
         },
         {
           "id": "a199e45d177b",
-          "score": 0.2703,
+          "score": 0.2701,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -14755,7 +14819,7 @@
         },
         {
           "id": "77ce0c8a046f",
-          "score": 0.2382,
+          "score": 0.2379,
           "shared": [
             "manipulation",
             "imitation",
@@ -14765,7 +14829,7 @@
         },
         {
           "id": "e7d6900606dc",
-          "score": 0.2303,
+          "score": 0.2304,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -14775,7 +14839,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2299,
+          "score": 0.2296,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -14848,7 +14912,7 @@
       "related": [
         {
           "id": "1534583203f2",
-          "score": 0.2673,
+          "score": 0.2675,
           "shared": [
             "vla",
             "generative_policy",
@@ -14867,17 +14931,6 @@
           ]
         },
         {
-          "id": "429f0851e898",
-          "score": 0.2489,
-          "shared": [
-            "vla",
-            "generative_policy",
-            "vision",
-            "human_video",
-            "language"
-          ]
-        },
-        {
           "id": "512a614d1366",
           "score": 0.2488,
           "shared": [
@@ -14887,8 +14940,19 @@
           ]
         },
         {
+          "id": "429f0851e898",
+          "score": 0.2487,
+          "shared": [
+            "vla",
+            "generative_policy",
+            "vision",
+            "human_video",
+            "language"
+          ]
+        },
+        {
           "id": "3bef8fac9164",
-          "score": 0.2427,
+          "score": 0.2424,
           "shared": [
             "vla",
             "generative_policy",
@@ -14899,7 +14963,7 @@
         },
         {
           "id": "c57e481f3b43",
-          "score": 0.2409,
+          "score": 0.2404,
           "shared": [
             "vla",
             "vision",
@@ -14967,7 +15031,7 @@
       "related": [
         {
           "id": "cbe6293c4453",
-          "score": 0.3225,
+          "score": 0.3224,
           "shared": [
             "manipulation",
             "imitation",
@@ -14977,7 +15041,7 @@
         },
         {
           "id": "d75c9c36c685",
-          "score": 0.2908,
+          "score": 0.2906,
           "shared": [
             "imitation",
             "human_video"
@@ -14985,7 +15049,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.2348,
+          "score": 0.2347,
           "shared": [
             "manipulation",
             "imitation",
@@ -14993,8 +15057,16 @@
           ]
         },
         {
+          "id": "8fcb2d661e6d",
+          "score": 0.2266,
+          "shared": [
+            "manipulation",
+            "human_video"
+          ]
+        },
+        {
           "id": "429f0851e898",
-          "score": 0.2268,
+          "score": 0.2265,
           "shared": [
             "manipulation",
             "imitation",
@@ -15003,16 +15075,8 @@
           ]
         },
         {
-          "id": "8fcb2d661e6d",
-          "score": 0.2267,
-          "shared": [
-            "manipulation",
-            "human_video"
-          ]
-        },
-        {
           "id": "a199e45d177b",
-          "score": 0.2186,
+          "score": 0.2183,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -15079,7 +15143,7 @@
       "related": [
         {
           "id": "d6bc21f6140c",
-          "score": 0.3096,
+          "score": 0.3095,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -15089,7 +15153,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2846,
+          "score": 0.2845,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -15099,18 +15163,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.281,
-          "shared": [
-            "manipulation",
-            "vla",
-            "dexterous_hand",
-            "vision",
-            "tactile"
-          ]
-        },
-        {
-          "id": "09cd71c6767d",
-          "score": 0.2685,
+          "score": 0.2808,
           "shared": [
             "manipulation",
             "vla",
@@ -15129,8 +15182,19 @@
           ]
         },
         {
+          "id": "09cd71c6767d",
+          "score": 0.2685,
+          "shared": [
+            "manipulation",
+            "vla",
+            "dexterous_hand",
+            "vision",
+            "tactile"
+          ]
+        },
+        {
           "id": "1a0cb1f79f9a",
-          "score": 0.2617,
+          "score": 0.2615,
           "shared": [
             "dexterous_hand",
             "tactile"
@@ -15190,7 +15254,7 @@
       "related": [
         {
           "id": "fe54b19cbd14",
-          "score": 0.3757,
+          "score": 0.3756,
           "shared": [
             "grasp",
             "bimanual",
@@ -15200,7 +15264,7 @@
         },
         {
           "id": "634fd2a6460c",
-          "score": 0.2504,
+          "score": 0.2503,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -15208,7 +15272,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2293,
+          "score": 0.229,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -15235,7 +15299,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2075,
+          "score": 0.2078,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -15302,7 +15366,7 @@
       "related": [
         {
           "id": "e7543107d325",
-          "score": 0.3192,
+          "score": 0.319,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -15322,7 +15386,7 @@
         },
         {
           "id": "3daf785bdf27",
-          "score": 0.2886,
+          "score": 0.2885,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -15333,7 +15397,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2884,
+          "score": 0.2882,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -15354,7 +15418,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.2798,
+          "score": 0.2795,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -15412,7 +15476,7 @@
       "related": [
         {
           "id": "ad6416c562fc",
-          "score": 0.2391,
+          "score": 0.2386,
           "shared": [
             "in_hand",
             "dexterous_hand",
@@ -15421,7 +15485,7 @@
         },
         {
           "id": "234a0f375dca",
-          "score": 0.2136,
+          "score": 0.2134,
           "shared": [
             "in_hand",
             "dexterous_hand",
@@ -15430,7 +15494,7 @@
         },
         {
           "id": "f656acde39fc",
-          "score": 0.175,
+          "score": 0.176,
           "shared": [
             "in_hand",
             "dexterous_hand",
@@ -15448,7 +15512,7 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.1658,
+          "score": 0.1657,
           "shared": [
             "in_hand",
             "dexterous_hand"
@@ -15533,7 +15597,7 @@
       "related": [
         {
           "id": "a469969fe36c",
-          "score": 0.3175,
+          "score": 0.3174,
           "shared": [
             "world_model",
             "vision"
@@ -15541,7 +15605,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.1967,
+          "score": 0.1966,
           "shared": [
             "world_model",
             "vision"
@@ -15549,21 +15613,21 @@
         },
         {
           "id": "9e9870f60f52",
-          "score": 0.1953,
+          "score": 0.1952,
           "shared": [
             "world_model"
           ]
         },
         {
           "id": "352d407f8baa",
-          "score": 0.1697,
+          "score": 0.1695,
           "shared": [
             "world_model"
           ]
         },
         {
           "id": "987604419da0",
-          "score": 0.1671,
+          "score": 0.167,
           "shared": [
             "world_model",
             "vision"
@@ -15571,7 +15635,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.1665,
+          "score": 0.1664,
           "shared": [
             "world_model",
             "vision"
@@ -15607,7 +15671,7 @@
       "related": [
         {
           "id": "7825ffb9cfe5",
-          "score": 0.1439,
+          "score": 0.1437,
           "shared": []
         }
       ]
@@ -15718,7 +15782,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.1964,
+          "score": 0.1965,
           "shared": [
             "manipulation",
             "rl",
@@ -15791,7 +15855,7 @@
       "related": [
         {
           "id": "babdebe00204",
-          "score": 0.2411,
+          "score": 0.241,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -15801,7 +15865,7 @@
         },
         {
           "id": "48ecea43c425",
-          "score": 0.2291,
+          "score": 0.229,
           "shared": [
             "locomotion",
             "imitation",
@@ -15820,7 +15884,7 @@
         },
         {
           "id": "f54f7c6bffb4",
-          "score": 0.2115,
+          "score": 0.2114,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -15938,7 +16002,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.1709,
+          "score": 0.1708,
           "shared": [
             "manipulation",
             "imitation",
@@ -15989,7 +16053,7 @@
       "related": [
         {
           "id": "90deee6438be",
-          "score": 0.3175,
+          "score": 0.3174,
           "shared": [
             "world_model",
             "vision"
@@ -16005,7 +16069,7 @@
         },
         {
           "id": "9d7596e57dc0",
-          "score": 0.2469,
+          "score": 0.2468,
           "shared": [
             "world_model",
             "vision"
@@ -16098,7 +16162,7 @@
       "related": [
         {
           "id": "c57e481f3b43",
-          "score": 0.3511,
+          "score": 0.3508,
           "shared": [
             "manipulation",
             "vla",
@@ -16110,7 +16174,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.3391,
+          "score": 0.3388,
           "shared": [
             "manipulation",
             "vla",
@@ -16122,7 +16186,7 @@
         },
         {
           "id": "435c28d7118d",
-          "score": 0.3247,
+          "score": 0.3244,
           "shared": [
             "manipulation",
             "vla",
@@ -16145,7 +16209,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2755,
+          "score": 0.2753,
           "shared": [
             "manipulation",
             "vla",
@@ -16225,7 +16289,7 @@
       "related": [
         {
           "id": "b7b0e6ae2885",
-          "score": 0.2806,
+          "score": 0.2805,
           "shared": [
             "manipulation",
             "vla",
@@ -16245,7 +16309,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2724,
+          "score": 0.2723,
           "shared": [
             "manipulation",
             "vla",
@@ -16275,7 +16339,7 @@
         },
         {
           "id": "9d7596e57dc0",
-          "score": 0.2513,
+          "score": 0.2512,
           "shared": [
             "manipulation",
             "vla",
@@ -16417,7 +16481,7 @@
         },
         {
           "id": "d9cb767c9ad0",
-          "score": 0.2806,
+          "score": 0.2805,
           "shared": [
             "manipulation",
             "vla",
@@ -16438,7 +16502,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2577,
+          "score": 0.2576,
           "shared": [
             "manipulation",
             "vla",
@@ -16457,7 +16521,7 @@
         },
         {
           "id": "c3963efd3d9b",
-          "score": 0.2321,
+          "score": 0.232,
           "shared": [
             "manipulation",
             "imitation",
@@ -16520,7 +16584,7 @@
       "related": [
         {
           "id": "bf5964cc5cf2",
-          "score": 0.1954,
+          "score": 0.1953,
           "shared": [
             "rl",
             "world_model"
@@ -16528,7 +16592,7 @@
         },
         {
           "id": "22d267a3875c",
-          "score": 0.1915,
+          "score": 0.1914,
           "shared": [
             "world_model",
             "representation"
@@ -16536,7 +16600,7 @@
         },
         {
           "id": "ad096e4dc5cb",
-          "score": 0.1735,
+          "score": 0.1749,
           "shared": [
             "rl",
             "world_model"
@@ -16620,7 +16684,7 @@
       "related": [
         {
           "id": "c57e481f3b43",
-          "score": 0.2614,
+          "score": 0.2609,
           "shared": [
             "manipulation",
             "vision",
@@ -16629,7 +16693,7 @@
         },
         {
           "id": "cbe6293c4453",
-          "score": 0.2382,
+          "score": 0.2379,
           "shared": [
             "manipulation",
             "imitation",
@@ -16639,7 +16703,7 @@
         },
         {
           "id": "435c28d7118d",
-          "score": 0.2127,
+          "score": 0.2125,
           "shared": [
             "manipulation",
             "vision",
@@ -16648,7 +16712,7 @@
         },
         {
           "id": "8fcb2d661e6d",
-          "score": 0.2019,
+          "score": 0.2016,
           "shared": [
             "manipulation",
             "vision",
@@ -16657,7 +16721,7 @@
         },
         {
           "id": "ab7e369d0b64",
-          "score": 0.2006,
+          "score": 0.2003,
           "shared": [
             "manipulation",
             "imitation",
@@ -16666,7 +16730,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.1974,
+          "score": 0.1968,
           "shared": [
             "manipulation",
             "vision",
@@ -16738,7 +16802,7 @@
       "related": [
         {
           "id": "c57e481f3b43",
-          "score": 0.3891,
+          "score": 0.3888,
           "shared": [
             "manipulation",
             "vla",
@@ -16750,7 +16814,7 @@
         },
         {
           "id": "75c75b12ca45",
-          "score": 0.3247,
+          "score": 0.3244,
           "shared": [
             "manipulation",
             "vla",
@@ -16762,7 +16826,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.3237,
+          "score": 0.3234,
           "shared": [
             "manipulation",
             "vla",
@@ -16774,7 +16838,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.3163,
+          "score": 0.3162,
           "shared": [
             "manipulation",
             "vla",
@@ -16785,7 +16849,7 @@
         },
         {
           "id": "54252546ee7a",
-          "score": 0.2954,
+          "score": 0.2953,
           "shared": [
             "manipulation",
             "vla",
@@ -16796,7 +16860,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2479,
+          "score": 0.2476,
           "shared": [
             "manipulation",
             "vla",
@@ -16860,7 +16924,7 @@
         },
         {
           "id": "1534583203f2",
-          "score": 0.2263,
+          "score": 0.2259,
           "shared": [
             "vla",
             "generative_policy"
@@ -16868,7 +16932,7 @@
         },
         {
           "id": "b09aa5b8a9b3",
-          "score": 0.2108,
+          "score": 0.2107,
           "shared": [
             "vla",
             "generative_policy"
@@ -16884,7 +16948,7 @@
         },
         {
           "id": "a025156ff12e",
-          "score": 0.182,
+          "score": 0.1823,
           "shared": [
             "vla",
             "generative_policy"
@@ -16892,7 +16956,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.1675,
+          "score": 0.1674,
           "shared": [
             "vla",
             "generative_policy"
@@ -16951,7 +17015,7 @@
       "related": [
         {
           "id": "a025156ff12e",
-          "score": 0.28,
+          "score": 0.2801,
           "shared": [
             "vla",
             "generative_policy",
@@ -16961,7 +17025,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.2768,
+          "score": 0.2766,
           "shared": [
             "vla",
             "generative_policy",
@@ -16971,7 +17035,7 @@
         },
         {
           "id": "b1e094aac4a1",
-          "score": 0.2673,
+          "score": 0.2675,
           "shared": [
             "vla",
             "generative_policy",
@@ -16981,7 +17045,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.254,
+          "score": 0.2541,
           "shared": [
             "vla",
             "vision",
@@ -16990,7 +17054,7 @@
         },
         {
           "id": "7825ffb9cfe5",
-          "score": 0.2506,
+          "score": 0.2504,
           "shared": [
             "vla",
             "vision",
@@ -16999,7 +17063,7 @@
         },
         {
           "id": "4e1addd18ce2",
-          "score": 0.2418,
+          "score": 0.2415,
           "shared": [
             "vla",
             "vision",
@@ -17059,7 +17123,7 @@
       "related": [
         {
           "id": "2910b38ffdef",
-          "score": 0.3105,
+          "score": 0.3104,
           "shared": [
             "vla",
             "world_model",
@@ -17069,7 +17133,7 @@
         },
         {
           "id": "d17075d4d331",
-          "score": 0.3052,
+          "score": 0.3051,
           "shared": [
             "world_model",
             "language"
@@ -17097,7 +17161,7 @@
         },
         {
           "id": "4e1addd18ce2",
-          "score": 0.2414,
+          "score": 0.2411,
           "shared": [
             "vla",
             "vision",
@@ -17106,7 +17170,7 @@
         },
         {
           "id": "1534583203f2",
-          "score": 0.2359,
+          "score": 0.2357,
           "shared": [
             "vla",
             "vision",
@@ -17166,7 +17230,7 @@
       "related": [
         {
           "id": "512a614d1366",
-          "score": 0.2634,
+          "score": 0.2633,
           "shared": [
             "rl",
             "vla",
@@ -17176,7 +17240,7 @@
         },
         {
           "id": "7825ffb9cfe5",
-          "score": 0.2488,
+          "score": 0.2487,
           "shared": [
             "vla",
             "vision",
@@ -17185,7 +17249,7 @@
         },
         {
           "id": "1534583203f2",
-          "score": 0.22,
+          "score": 0.2196,
           "shared": [
             "vla",
             "vision",
@@ -17203,7 +17267,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.2129,
+          "score": 0.2128,
           "shared": [
             "vla",
             "vision",
@@ -17212,7 +17276,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.2086,
+          "score": 0.2085,
           "shared": [
             "vla",
             "vision",
@@ -17256,28 +17320,28 @@
       "related": [
         {
           "id": "7ca3d83d3b70",
-          "score": 0.2627,
+          "score": 0.2628,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "6a4b8cab99a2",
-          "score": 0.2046,
+          "score": 0.2048,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "8360ceead094",
-          "score": 0.1901,
+          "score": 0.1903,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "8811c4a07404",
-          "score": 0.1848,
+          "score": 0.1849,
           "shared": [
             "rl"
           ]
@@ -17340,7 +17404,7 @@
       "related": [
         {
           "id": "987604419da0",
-          "score": 0.3052,
+          "score": 0.3051,
           "shared": [
             "world_model",
             "language"
@@ -17355,7 +17419,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.2659,
+          "score": 0.2658,
           "shared": [
             "world_model",
             "language"
@@ -17363,7 +17427,7 @@
         },
         {
           "id": "a025156ff12e",
-          "score": 0.226,
+          "score": 0.2261,
           "shared": [
             "language"
           ]
@@ -17378,7 +17442,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.2223,
+          "score": 0.2224,
           "shared": [
             "world_model",
             "language"
@@ -17442,7 +17506,7 @@
         },
         {
           "id": "08a969bc2e7a",
-          "score": 0.2108,
+          "score": 0.2107,
           "shared": [
             "vla",
             "generative_policy"
@@ -17466,14 +17530,14 @@
         },
         {
           "id": "8811c4a07404",
-          "score": 0.1838,
+          "score": 0.1837,
           "shared": [
             "generative_policy"
           ]
         },
         {
           "id": "a025156ff12e",
-          "score": 0.1755,
+          "score": 0.1756,
           "shared": [
             "vla",
             "generative_policy"
@@ -17537,28 +17601,28 @@
         },
         {
           "id": "77ce0c8a046f",
-          "score": 0.1918,
+          "score": 0.1915,
           "shared": [
             "human_video"
           ]
         },
         {
           "id": "285ca34f7bce",
-          "score": 0.1904,
+          "score": 0.1901,
           "shared": [
             "human_video"
           ]
         },
         {
           "id": "435c28d7118d",
-          "score": 0.1869,
+          "score": 0.1866,
           "shared": [
             "human_video"
           ]
         },
         {
           "id": "c57e481f3b43",
-          "score": 0.1806,
+          "score": 0.1802,
           "shared": [
             "human_video"
           ]
@@ -17605,14 +17669,14 @@
       "related": [
         {
           "id": "20f950ab618e",
-          "score": 0.1848,
+          "score": 0.1849,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "b09aa5b8a9b3",
-          "score": 0.1838,
+          "score": 0.1837,
           "shared": [
             "generative_policy"
           ]
@@ -17626,7 +17690,7 @@
         },
         {
           "id": "634fd2a6460c",
-          "score": 0.1675,
+          "score": 0.1676,
           "shared": [
             "rl",
             "generative_policy"
@@ -17634,14 +17698,14 @@
         },
         {
           "id": "8360ceead094",
-          "score": 0.1553,
+          "score": 0.1555,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "7ca3d83d3b70",
-          "score": 0.1463,
+          "score": 0.1465,
           "shared": [
             "rl"
           ]
@@ -17683,28 +17747,28 @@
       "related": [
         {
           "id": "20f950ab618e",
-          "score": 0.2627,
+          "score": 0.2628,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "6a4b8cab99a2",
-          "score": 0.2013,
+          "score": 0.2015,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "4cf2ed2f4478",
-          "score": 0.1915,
+          "score": 0.1913,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "15001aab0ec5",
-          "score": 0.1704,
+          "score": 0.1702,
           "shared": [
             "rl"
           ]
@@ -17718,7 +17782,7 @@
         },
         {
           "id": "8360ceead094",
-          "score": 0.1464,
+          "score": 0.1467,
           "shared": [
             "rl"
           ]
@@ -17788,7 +17852,7 @@
       "related": [
         {
           "id": "ad6416c562fc",
-          "score": 0.2706,
+          "score": 0.2702,
           "shared": [
             "in_hand",
             "rl",
@@ -17799,7 +17863,7 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.2621,
+          "score": 0.262,
           "shared": [
             "in_hand",
             "rl",
@@ -17810,7 +17874,7 @@
         },
         {
           "id": "e6274122d26c",
-          "score": 0.2571,
+          "score": 0.257,
           "shared": [
             "rl",
             "sim2real",
@@ -17820,7 +17884,7 @@
         },
         {
           "id": "234a0f375dca",
-          "score": 0.2525,
+          "score": 0.2524,
           "shared": [
             "in_hand",
             "rl",
@@ -17831,7 +17895,7 @@
         },
         {
           "id": "fc24470329b8",
-          "score": 0.2489,
+          "score": 0.2488,
           "shared": [
             "in_hand",
             "rl",
@@ -17843,7 +17907,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2355,
+          "score": 0.2354,
           "shared": [
             "rl",
             "sim2real",
@@ -17944,7 +18008,7 @@
         },
         {
           "id": "e8a4069565ea",
-          "score": 0.1885,
+          "score": 0.1886,
           "shared": [
             "manipulation"
           ]
@@ -18013,7 +18077,7 @@
       "related": [
         {
           "id": "3daf785bdf27",
-          "score": 0.3068,
+          "score": 0.3067,
           "shared": [
             "manipulation",
             "imitation",
@@ -18036,7 +18100,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.2494,
+          "score": 0.2493,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -18046,7 +18110,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2461,
+          "score": 0.246,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -18056,7 +18120,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2445,
+          "score": 0.2444,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -18066,7 +18130,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2251,
+          "score": 0.225,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -18134,7 +18198,7 @@
       "related": [
         {
           "id": "54252546ee7a",
-          "score": 0.3402,
+          "score": 0.3401,
           "shared": [
             "manipulation",
             "vla",
@@ -18145,7 +18209,7 @@
         },
         {
           "id": "435c28d7118d",
-          "score": 0.3163,
+          "score": 0.3162,
           "shared": [
             "manipulation",
             "vla",
@@ -18156,7 +18220,7 @@
         },
         {
           "id": "c57e481f3b43",
-          "score": 0.3161,
+          "score": 0.3159,
           "shared": [
             "manipulation",
             "vla",
@@ -18167,7 +18231,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.3007,
+          "score": 0.3006,
           "shared": [
             "manipulation",
             "vla",
@@ -18188,7 +18252,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2827,
+          "score": 0.2825,
           "shared": [
             "manipulation",
             "vla",
@@ -18262,7 +18326,7 @@
       "related": [
         {
           "id": "234a0f375dca",
-          "score": 0.4039,
+          "score": 0.4034,
           "shared": [
             "in_hand",
             "rl",
@@ -18274,7 +18338,7 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.3045,
+          "score": 0.304,
           "shared": [
             "in_hand",
             "rl",
@@ -18285,7 +18349,7 @@
         },
         {
           "id": "9e6b717cf17a",
-          "score": 0.2791,
+          "score": 0.2788,
           "shared": [
             "in_hand",
             "rl",
@@ -18297,7 +18361,7 @@
         },
         {
           "id": "f656acde39fc",
-          "score": 0.2773,
+          "score": 0.2769,
           "shared": [
             "in_hand",
             "rl",
@@ -18309,7 +18373,7 @@
         },
         {
           "id": "f96255a2098b",
-          "score": 0.2706,
+          "score": 0.2702,
           "shared": [
             "in_hand",
             "rl",
@@ -18320,7 +18384,7 @@
         },
         {
           "id": "fc24470329b8",
-          "score": 0.2702,
+          "score": 0.2697,
           "shared": [
             "in_hand",
             "rl",
@@ -18399,7 +18463,7 @@
         },
         {
           "id": "1534583203f2",
-          "score": 0.28,
+          "score": 0.2801,
           "shared": [
             "vla",
             "generative_policy",
@@ -18409,7 +18473,7 @@
         },
         {
           "id": "4e1addd18ce2",
-          "score": 0.2678,
+          "score": 0.2675,
           "shared": [
             "vla",
             "vision",
@@ -18418,7 +18482,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.2532,
+          "score": 0.2527,
           "shared": [
             "vla",
             "vision",
@@ -18427,7 +18491,7 @@
         },
         {
           "id": "9d7596e57dc0",
-          "score": 0.2416,
+          "score": 0.2415,
           "shared": [
             "vla",
             "vision",
@@ -18436,7 +18500,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2396,
+          "score": 0.2395,
           "shared": [
             "vla",
             "generative_policy",
@@ -18507,7 +18571,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2029,
+          "score": 0.2028,
           "shared": [
             "manipulation",
             "vision",
@@ -18525,7 +18589,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.1958,
+          "score": 0.1957,
           "shared": [
             "manipulation",
             "vision",
@@ -18534,7 +18598,7 @@
         },
         {
           "id": "512a614d1366",
-          "score": 0.1954,
+          "score": 0.1953,
           "shared": [
             "vision",
             "language"
@@ -18542,7 +18606,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.1893,
+          "score": 0.1892,
           "shared": [
             "manipulation",
             "vision",
@@ -18591,29 +18655,29 @@
       "related": [
         {
           "id": "6a4b8cab99a2",
-          "score": 0.1932,
-          "shared": [
-            "world_model"
-          ]
-        },
-        {
-          "id": "9e9870f60f52",
-          "score": 0.1916,
+          "score": 0.1931,
           "shared": [
             "world_model"
           ]
         },
         {
           "id": "8e4e20962d11",
-          "score": 0.1915,
+          "score": 0.1914,
           "shared": [
             "world_model",
             "representation"
           ]
         },
         {
+          "id": "9e9870f60f52",
+          "score": 0.1914,
+          "shared": [
+            "world_model"
+          ]
+        },
+        {
           "id": "d17075d4d331",
-          "score": 0.1805,
+          "score": 0.1806,
           "shared": [
             "world_model"
           ]
@@ -18627,7 +18691,7 @@
         },
         {
           "id": "285ca34f7bce",
-          "score": 0.1595,
+          "score": 0.1594,
           "shared": [
             "representation"
           ]
@@ -18714,7 +18778,7 @@
       "related": [
         {
           "id": "09cd71c6767d",
-          "score": 0.3192,
+          "score": 0.3191,
           "shared": [
             "manipulation",
             "vla",
@@ -18740,7 +18804,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2485,
+          "score": 0.2484,
           "shared": [
             "manipulation",
             "vla",
@@ -18774,7 +18838,7 @@
         },
         {
           "id": "cd6a943ab35b",
-          "score": 0.2386,
+          "score": 0.2385,
           "shared": [
             "manipulation",
             "vla",
@@ -18827,7 +18891,7 @@
       "related": [
         {
           "id": "b38eb62e913e",
-          "score": 0.2249,
+          "score": 0.2247,
           "shared": [
             "vision",
             "simulation"
@@ -18849,7 +18913,7 @@
         },
         {
           "id": "a199e45d177b",
-          "score": 0.1544,
+          "score": 0.1543,
           "shared": [
             "vision",
             "simulation"
@@ -18857,7 +18921,7 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.1493,
+          "score": 0.149,
           "shared": [
             "vision",
             "simulation"
@@ -18865,7 +18929,7 @@
         },
         {
           "id": "d9cb767c9ad0",
-          "score": 0.1471,
+          "score": 0.147,
           "shared": [
             "vision"
           ]
@@ -18931,7 +18995,7 @@
       "related": [
         {
           "id": "5154f13a5390",
-          "score": 0.3757,
+          "score": 0.3756,
           "shared": [
             "grasp",
             "bimanual",
@@ -18941,7 +19005,7 @@
         },
         {
           "id": "f3fb46945019",
-          "score": 0.2716,
+          "score": 0.2717,
           "shared": [
             "grasp",
             "sim2real",
@@ -18951,7 +19015,7 @@
         },
         {
           "id": "52f408326cda",
-          "score": 0.261,
+          "score": 0.2611,
           "shared": [
             "grasp",
             "sim2real",
@@ -18971,7 +19035,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2383,
+          "score": 0.2384,
           "shared": [
             "grasp",
             "sim2real",
@@ -19054,7 +19118,7 @@
         },
         {
           "id": "fe54b19cbd14",
-          "score": 0.2716,
+          "score": 0.2717,
           "shared": [
             "grasp",
             "sim2real",
@@ -19202,7 +19266,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2265,
+          "score": 0.2268,
           "shared": [
             "grasp",
             "sim2real",
@@ -19212,7 +19276,7 @@
         },
         {
           "id": "234a0f375dca",
-          "score": 0.2259,
+          "score": 0.226,
           "shared": [
             "sim2real",
             "dexterous_hand",
@@ -19280,7 +19344,7 @@
       "related": [
         {
           "id": "ae7dfcd3078c",
-          "score": 0.3161,
+          "score": 0.316,
           "shared": [
             "rl",
             "sim2real",
@@ -19290,7 +19354,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.2656,
+          "score": 0.2655,
           "shared": [
             "long_horizon",
             "rl",
@@ -19299,7 +19363,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.2286,
+          "score": 0.2285,
           "shared": [
             "rl",
             "sim2real",
@@ -19328,7 +19392,7 @@
         },
         {
           "id": "334bde1459ae",
-          "score": 0.2028,
+          "score": 0.2027,
           "shared": [
             "rl",
             "sim2real",
@@ -19391,7 +19455,7 @@
       "related": [
         {
           "id": "428b1a10df2e",
-          "score": 0.3642,
+          "score": 0.3641,
           "shared": [
             "long_horizon",
             "vla",
@@ -19401,7 +19465,7 @@
         },
         {
           "id": "2eea4fdfcb3f",
-          "score": 0.2718,
+          "score": 0.2716,
           "shared": [
             "vla",
             "vision",
@@ -19410,7 +19474,7 @@
         },
         {
           "id": "1534583203f2",
-          "score": 0.2506,
+          "score": 0.2504,
           "shared": [
             "vla",
             "vision",
@@ -19419,7 +19483,7 @@
         },
         {
           "id": "3fa9c0e3af2d",
-          "score": 0.2488,
+          "score": 0.2487,
           "shared": [
             "vla",
             "vision",
@@ -19428,7 +19492,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.2457,
+          "score": 0.2456,
           "shared": [
             "vla",
             "vision",
@@ -19510,7 +19574,7 @@
       "related": [
         {
           "id": "435c28d7118d",
-          "score": 0.3891,
+          "score": 0.3888,
           "shared": [
             "manipulation",
             "vla",
@@ -19522,7 +19586,7 @@
         },
         {
           "id": "75c75b12ca45",
-          "score": 0.3511,
+          "score": 0.3508,
           "shared": [
             "manipulation",
             "vla",
@@ -19534,7 +19598,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.3169,
+          "score": 0.3166,
           "shared": [
             "manipulation",
             "vla",
@@ -19546,7 +19610,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.3161,
+          "score": 0.3159,
           "shared": [
             "manipulation",
             "vla",
@@ -19568,7 +19632,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2682,
+          "score": 0.2678,
           "shared": [
             "manipulation",
             "vla",
@@ -19639,7 +19703,7 @@
       "related": [
         {
           "id": "c538063d4e18",
-          "score": 0.3248,
+          "score": 0.3247,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -19649,7 +19713,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2955,
+          "score": 0.2953,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -19659,7 +19723,7 @@
         },
         {
           "id": "ad096e4dc5cb",
-          "score": 0.2715,
+          "score": 0.2726,
           "shared": [
             "manipulation",
             "rl",
@@ -19680,7 +19744,7 @@
         },
         {
           "id": "18f622aafe72",
-          "score": 0.2494,
+          "score": 0.2493,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -19690,7 +19754,7 @@
         },
         {
           "id": "522c3da19f23",
-          "score": 0.2447,
+          "score": 0.2449,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -19747,14 +19811,14 @@
         },
         {
           "id": "90deee6438be",
-          "score": 0.1953,
+          "score": 0.1952,
           "shared": [
             "world_model"
           ]
         },
         {
           "id": "ad096e4dc5cb",
-          "score": 0.1928,
+          "score": 0.1942,
           "shared": [
             "manipulation",
             "world_model"
@@ -19762,14 +19826,14 @@
         },
         {
           "id": "22d267a3875c",
-          "score": 0.1916,
+          "score": 0.1914,
           "shared": [
             "world_model"
           ]
         },
         {
           "id": "9d7596e57dc0",
-          "score": 0.1792,
+          "score": 0.1791,
           "shared": [
             "manipulation",
             "world_model"
@@ -19777,7 +19841,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.1775,
+          "score": 0.1773,
           "shared": [
             "manipulation"
           ]
@@ -19862,7 +19926,7 @@
       "related": [
         {
           "id": "7aa75ea358b8",
-          "score": 0.3161,
+          "score": 0.316,
           "shared": [
             "rl",
             "sim2real",
@@ -19910,7 +19974,7 @@
         },
         {
           "id": "334bde1459ae",
-          "score": 0.2143,
+          "score": 0.2144,
           "shared": [
             "rl",
             "sim2real",
@@ -19965,7 +20029,7 @@
       "related": [
         {
           "id": "d17f1ef156c9",
-          "score": 0.2244,
+          "score": 0.2246,
           "shared": [
             "imitation",
             "vla"
@@ -19973,7 +20037,7 @@
         },
         {
           "id": "d52d9313e9ff",
-          "score": 0.2216,
+          "score": 0.2217,
           "shared": [
             "manipulation",
             "imitation",
@@ -19982,7 +20046,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.2107,
+          "score": 0.2106,
           "shared": [
             "manipulation",
             "imitation",
@@ -19991,7 +20055,7 @@
         },
         {
           "id": "b7b0e6ae2885",
-          "score": 0.1922,
+          "score": 0.1923,
           "shared": [
             "manipulation",
             "imitation",
@@ -20008,7 +20072,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.1858,
+          "score": 0.186,
           "shared": [
             "manipulation",
             "imitation",
@@ -20057,7 +20121,7 @@
       "related": [
         {
           "id": "7ca3d83d3b70",
-          "score": 0.1915,
+          "score": 0.1913,
           "shared": [
             "rl"
           ]
@@ -20087,7 +20151,7 @@
         },
         {
           "id": "885d0761c5aa",
-          "score": 0.1472,
+          "score": 0.1471,
           "shared": [
             "vla"
           ]
@@ -20156,7 +20220,7 @@
         },
         {
           "id": "f96255a2098b",
-          "score": 0.2121,
+          "score": 0.2122,
           "shared": [
             "rl",
             "sim2real",
@@ -20245,7 +20309,7 @@
         },
         {
           "id": "8e4e20962d11",
-          "score": 0.1954,
+          "score": 0.1953,
           "shared": [
             "rl",
             "world_model"
@@ -20253,14 +20317,14 @@
         },
         {
           "id": "352d407f8baa",
-          "score": 0.1859,
+          "score": 0.186,
           "shared": [
             "world_model"
           ]
         },
         {
           "id": "fc24470329b8",
-          "score": 0.1642,
+          "score": 0.1643,
           "shared": [
             "rl",
             "world_model"
