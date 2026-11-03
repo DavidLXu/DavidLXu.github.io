@@ -1,0 +1,524 @@
+{
+  "kind": "static_scene",
+  "date": "2026-11-03",
+  "robot_profile": "revotron_mt_fisheye_56d_v1",
+  "robot_joints": 56,
+  "robot_usd_sha256": "139502ac79520c784404cd0d0b900a3a4f64918594ca78e2f6ac2792e501d7d7",
+  "task_physics_steps": 0,
+  "trajectories": 0,
+  "images": [
+    {
+      "id": "assemble_gears",
+      "url": "./media/scene-previews/assemble_gears--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "deb993cb1b042354672eaa3830596cc6514f6a48db90e1136e967f6d3229b395",
+      "layout_sha256": "3375cb396ac97a07f06ec7f2f9b523ceb721497caa99503a760a193a99991787",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "open_bench2dex_stapler",
+      "url": "./media/scene-previews/open_bench2dex_stapler--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "e1550dd4d091323056fa8a524d1f8a11ee6f67d3a2935174bfcf14369d5b2d44",
+      "layout_sha256": "688537d6e8983e3e934ee24de2b00e5041000d6ab6466658d13097898ef81c44",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "operate_scissors",
+      "url": "./media/scene-previews/operate_scissors--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "7f6f0741e23fb9a0853a3d73be57ca5440e662d5e01b2fc9ba1fa50081709ede",
+      "layout_sha256": "928b3902c4a9a46f30994616c9e55c4b280a4a3965f53a425fc1e54763282cf3",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "press_spring_button",
+      "url": "./media/scene-previews/press_spring_button--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "1b69daf51397fe4c75f86ef1c59eaa8a294f7d4aa56dc6562396b125b0860837",
+      "layout_sha256": "f14ca000ef2020c9b6980ac0d65f34e26e77f527bd7b2595a62ff62c8e2e8d39",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_01_spatula_bread",
+      "url": "./media/scene-previews/proposal_01_spatula_bread--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "926accb605948185882400023e94a92468f3f5126f83d964e5a95020476ff4fa",
+      "layout_sha256": "c9a312fcef374d98a5b4c1b693d19191b8bba9e7dff8828659a8a6d574367823",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_02_spoon_ball",
+      "url": "./media/scene-previews/proposal_02_spoon_ball--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "28da97b65a0db8d71b28468e4a4141e35e763107069fea3b4cfe971db2124ee0",
+      "layout_sha256": "cb3d6dc554bf99e6723a55a9ed003660b7aca1736aac4398e37af41b3c904457",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_03_pliers_nut",
+      "url": "./media/scene-previews/proposal_03_pliers_nut--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "2d75611c06f9b2b341d14579fb778170b059238f4e507d1fcb40d7f1bf922f28",
+      "layout_sha256": "a176b707800dbe9890f33d65e5db8c3d6c32c0d9e7a0e77b5295e602f86d7694",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_04_brush_dustpan",
+      "url": "./media/scene-previews/proposal_04_brush_dustpan--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "6be5ff65f8d722e7b181710963ba92f8a06d5fdb6157bf086a3ef7d2a53a5725",
+      "layout_sha256": "24a28d1248d071f1bdbee723b0e0ecf0f48f9ee6c27534fefe8ded352a7d1ca5",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_05_erase_board",
+      "url": "./media/scene-previews/proposal_05_erase_board--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "ef465a6b370c60afb8b30c8773c30669eb106de24d20768f868fbbd41c24c622",
+      "layout_sha256": "b6e33305d2a660d0bf2a25b69176fbca5dfed63f77b0aa93c363ada59d671087",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_06_lever_book",
+      "url": "./media/scene-previews/proposal_06_lever_book--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "c74f5a4393edf463fbe2ccc6304b2238c1f78ea2d9c96a39976d2885c32ace53",
+      "layout_sha256": "439b2cf6178a44c6b1048704981123b58b4a786b22dbf84781f87e9c71f1ea7a",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_07_turn_bread",
+      "url": "./media/scene-previews/proposal_07_turn_bread--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "964114d48765976b688fe517baefd1d790f5072ed34499117acfcfeb74b5b772",
+      "layout_sha256": "6cc0501bce77e0a7ade594d4bcb005c6c13fc77b1384815561f7060313ad9f88",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_08_balance_spoon",
+      "url": "./media/scene-previews/proposal_08_balance_spoon--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "0ef6ab4df89dd0400c208ff14cd50d7d3c728d007c60803ddfaaec05f225d201",
+      "layout_sha256": "d409161d4a1c2e952801d58193a319e16caa52eb90807e79056b7ca0bc3bf79d",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_09_wipe_bottle",
+      "url": "./media/scene-previews/proposal_09_wipe_bottle--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "dda7ebe11e5ddd6e58620e12149aa9356bd16982adf07940dcdcaa724cbb6ca2",
+      "layout_sha256": "a89b6398091deaf374e06f065620245d2f120705f9e967193b0bfd5585b02161",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_10_brush_keyboard",
+      "url": "./media/scene-previews/proposal_10_brush_keyboard--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "a41ce0c2f7cbf51a0b47ed4a4975b3248e6a96d73038707b0d91f7d69b2f1a96",
+      "layout_sha256": "20ba235d9cd4f45dbf2b6d9209afe482444982fa1108a49216c9e0e2dc2b3b28",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_11_dock_phone",
+      "url": "./media/scene-previews/proposal_11_dock_phone--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "db90b529fbd7a6e9021877c746accaf13187552e19d01bdd6da8c71fac3deb0e",
+      "layout_sha256": "ab4a5e1a93d56edb67cc75069196e83f3a6ff8f01ead62e3629982b41ec50014",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_12_aim_camera",
+      "url": "./media/scene-previews/proposal_12_aim_camera--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "c54938642704eff1c3df19f7d538504449e0a9281b5bc0ce56582cbb24238ede",
+      "layout_sha256": "06478f9d0f1bcb4cc0cf13df8fb2ee3c9139f818daf3a46ba0ceabe5015ca327",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_13_aim_lamp",
+      "url": "./media/scene-previews/proposal_13_aim_lamp--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "4708f904b2957a12a8f4e39d2b84cb8f7c670adaa935a67a770ae8f050286917",
+      "layout_sha256": "ae52961e12c808f305e442a0eb0e53021d68d781efc5d165358c7be3bc92e7c2",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_14_lift_keyboard_retrieve",
+      "url": "./media/scene-previews/proposal_14_lift_keyboard_retrieve--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "2e5865127dc5007ac1417126625a2139b3c02d48af2e508006aba7d0ed6234cb",
+      "layout_sha256": "2f105bc35b6ad4ee633e4e2db1e6a28fe561ee92f125776cc3f244ae26838cc0",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_15_remote_regrasp",
+      "url": "./media/scene-previews/proposal_15_remote_regrasp--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "34b2567d4b68ba23788c1da0ece00232c33117ebf3cba8077b0088aeea0737bf",
+      "layout_sha256": "1dfc72498ea8837aa9440c6df19d892b58bacb9c27084643cea4c473e7208353",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_16_extract_brushpen",
+      "url": "./media/scene-previews/proposal_16_extract_brushpen--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "c60f8a04bb32a93a9e22ac61395b5d8b03047582751dce4b7bd0b1d6e8c656da",
+      "layout_sha256": "6d310b9f55abf7dc00a75f974010a74e06d76f1c4a3e3b0e31fb4509da6a8859",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_17_invert_hourglass",
+      "url": "./media/scene-previews/proposal_17_invert_hourglass--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "0ddf893d1207fa7b02f02d2dd4bbe783808757eb5346cd0df94c08d26de06ff2",
+      "layout_sha256": "2eee5cd9970f18eaf18017abc0217d09c6d63fe2574dd008f6199136fed8f8a7",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_18_orient_die",
+      "url": "./media/scene-previews/proposal_18_orient_die--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "82d90bc67cb16b6ca17fdc73a64cc0614fcdbb9f6cac59368fbca9e652481110",
+      "layout_sha256": "d8ecb9be7c1d728a27dc02cc67cf79ceb438f397e100e8449ac10550a9e3423e",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_19_align_shoes",
+      "url": "./media/scene-previews/proposal_19_align_shoes--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "1022fe4c2b7a0cb056e4c4f14f4e2f11499b43aff80464ad3aae74f7890eea58",
+      "layout_sha256": "058c22ebd70f59c8be23bb1dd456ff827281a0eb0a5a1b49ff9bf43a6e6066f9",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_20_helmet_catch",
+      "url": "./media/scene-previews/proposal_20_helmet_catch--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "d5e77c73e63ea113e45fc938f42c2b582a5c73910256d8873ff46dc567bc007a",
+      "layout_sha256": "0a71b3040d13d5cec11df129071cc9a36037f723bbac5bb5e95f3763896e7baf",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_21_separate_nested_cups",
+      "url": "./media/scene-previews/proposal_21_separate_nested_cups--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "5f54d8c66691536fd1d89fdfa4f92fcf190a88a8edd6f693771e693aa1b86155",
+      "layout_sha256": "cafcf2df3f4ec363c5b72ca84a95d5e910ad4ac5bb631c0f17a51a1aba4f96c5",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_22_middle_plate",
+      "url": "./media/scene-previews/proposal_22_middle_plate--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "25bd91278660c01fffaccee6df488e40812b27acd5be9429b8e26ad87105e75e",
+      "layout_sha256": "f91727dd310e0e3313a84140d6a7172d622931145267b6723584ccbf2d86028d",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_23_join_jigsaw",
+      "url": "./media/scene-previews/proposal_23_join_jigsaw--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "10b76d08591f4cad174ff5377ec06572b1909094759e45e81df7fc6815ead771",
+      "layout_sha256": "17c14134a488af83b996893d48b99bf0ece3132b6f00fb25fa9dbe410e6aafa6",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_24_pack_tetris",
+      "url": "./media/scene-previews/proposal_24_pack_tetris--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "cf3a5cd128dd4bde45b2944ec76e22618276b24b303fdd69bde68494b8054a9a",
+      "layout_sha256": "3abcb51cdae1fd8472a36dceefc8b50b757a1e09ffcd5ccecc609a23b41d16b6",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_25_thread_nut",
+      "url": "./media/scene-previews/proposal_25_thread_nut--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "890f9838a27584298fd2de276ea169d77b427771d681320545c24ddaf73c0932",
+      "layout_sha256": "194f13ad891e87fc6a022237b4aa98beac8f383505b55028237bec26e7b57864",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_26_sort_fasteners",
+      "url": "./media/scene-previews/proposal_26_sort_fasteners--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "f712e40eb7931b3d12fc92ca792ff8142d5bc8feb507f2c94f7bc2f75acbf0e3",
+      "layout_sha256": "d086dac2b76dfff12cbe30ef007c1f02a45faa164b00206ab75811d4c36774bd",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_27_reindex_tubes",
+      "url": "./media/scene-previews/proposal_27_reindex_tubes--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "81effe379f307294dd00540100db4194651ca0724b1b1ee8a80f01a6932e3bab",
+      "layout_sha256": "ec25b3a58931752017192afc4aeb7ebb044126fa72334ebc928fddc09a0a0659",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_28_extract_l_piece",
+      "url": "./media/scene-previews/proposal_28_extract_l_piece--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "fdf9082550a6dd1c80702685da30ebc831b9f6d9dba26c4f76717b9ef4bdd542",
+      "layout_sha256": "202b58cae08483389b6beab325aed8c7fa88fbc494893f1e294b13f173b620c6",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_29_reveal_ball",
+      "url": "./media/scene-previews/proposal_29_reveal_ball--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "4b6f814986c2a18451833a69ba59f6e710f4f7a373b3454bc1c7a4f66161e680",
+      "layout_sha256": "191f4b839ffb904d51c082d7f98c3100d42554cca3ab7dfb8f280e840dab99cc",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_30_medicine_box",
+      "url": "./media/scene-previews/proposal_30_medicine_box--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "614d03a1542412ef79ba41660f4ad5ed263c9a6bc57cfe1a30ad7d7ecbf74756",
+      "layout_sha256": "776e18f024acd4360b0bc08a855127b21c03935ee1c0bfe96e505e701247c54f",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_31_bottom_book",
+      "url": "./media/scene-previews/proposal_31_bottom_book--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "b0c4c165032fa50ad13ef4d88c2f8caf817bddc67aa66aeac010ef7fa2e9c4c2",
+      "layout_sha256": "72f2d91b922e20662d8b5b81c2b0ecbd592aef2abd7ce1f5a48024fad75b940a",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_32_remove_coaster",
+      "url": "./media/scene-previews/proposal_32_remove_coaster--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "ce0383489130096b08fee04ad61f5e2c4cfc1b1d625561a1812d984e746fcb25",
+      "layout_sha256": "f74b8ae976d3de75f598ed0786c4280b83fda587c143ed0f58f2374607c2ed5b",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_33_battery_gap",
+      "url": "./media/scene-previews/proposal_33_battery_gap--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "a5deb9c09f464fa58df6d3ad3ce73898a1f21a01d542d5e8209f68bf2d7ac914",
+      "layout_sha256": "a82f9cb7bf08cc363d5cfdc3e118629b550c0d7ee60fa14b78dee223cdae27df",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_34_baguette_passage",
+      "url": "./media/scene-previews/proposal_34_baguette_passage--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "33d237e12f1daa1f81338a2b1f531b1c15daf87b616884c18b745ad7ca92e299",
+      "layout_sha256": "8d2c3e838cc45c7762bc0c9c0d331991ccbdf5dfd77615f4252d3ba60bbf0929",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_35_compact_food_pack",
+      "url": "./media/scene-previews/proposal_35_compact_food_pack--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "d189830ef8d8bc322793dbc5fc124913399a90b9606efd422050f84a9c0c2f4d",
+      "layout_sha256": "1f2c2a1cceda85251479a625cd046e985ad2ee702e4bd211847453faa28ec783",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_36_occluded_snack",
+      "url": "./media/scene-previews/proposal_36_occluded_snack--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "88c9c7bbdf105e56a67ab16bba6802b084d62a2389ba1fc92550f7eabfd2538b",
+      "layout_sha256": "eef0dfe5de0a8bd0c6283a30baf798a1dfa6403dad32a2a7b3329c8697e3945f",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_37_bimanual_swap",
+      "url": "./media/scene-previews/proposal_37_bimanual_swap--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "90aca186a68ecb8e51e66cf98450b9ce7d02fc41ac2ae82a1eac2959af04ef2f",
+      "layout_sha256": "ced088c0eeaefa738c89c5c6d84f79678527b29e2e17a93a644ba2772c72aaca",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_38_two_bottles_one_grasp",
+      "url": "./media/scene-previews/proposal_38_two_bottles_one_grasp--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "27399af299d6d113bcf30c13b379f1ad509dd419954f9ee1c3471e469db747d7",
+      "layout_sha256": "294a6b5e07feefbb9f2d94b2e5a8186d513cbc66a7a3b9117c1f5e79922a3ff9",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_39_handoff_dumbbell",
+      "url": "./media/scene-previews/proposal_39_handoff_dumbbell--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "0539dd98b4f1251fa8dcc7b22b12eaf8faf4cdfa414b0e691d570e11cebae15b",
+      "layout_sha256": "c2d251f2311d8d00d8ccc5681ce1b7c53562256c291849684bdca9a5763baec2",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_40_hat_brim",
+      "url": "./media/scene-previews/proposal_40_hat_brim--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "53a6bbbbb02996af6bc307bce1b845b97b10601437fe1edb435b7f1f80795e3d",
+      "layout_sha256": "8ef82c8aa10aabfebe4d066e6b2145eb553c1b96a8038e3f562ef17f07ad3a7c",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_41_table_bowling",
+      "url": "./media/scene-previews/proposal_41_table_bowling--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "9905bd5800bdc7995b1895e075f7253636d56e0c748e8e972b1ce0212d565fb2",
+      "layout_sha256": "a7dcbc83acfa65457128a863e04846f40cfec2f0220371411b45e22246a191c6",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_42_toycar_slalom",
+      "url": "./media/scene-previews/proposal_42_toycar_slalom--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "54f4e07476f76be2340288421946d7906252b103298f40c86b4070fea458313c",
+      "layout_sha256": "3d68d28eab19438104e2aed53aeabab51232c4037329779eaa335a3825699d20",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_43_roll_and_catch",
+      "url": "./media/scene-previews/proposal_43_roll_and_catch--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "789e914f1aad480f1bd4598dd3fe1dbbed6eb1983914fc892b2a512fd2d0ec44",
+      "layout_sha256": "faa5cb016d07469865a0d0caeeec3639a2b704a2685ca24a9a5c808bfb2ab059",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_44_cover_soap",
+      "url": "./media/scene-previews/proposal_44_cover_soap--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "c4d0d681de7290c2dec02f112fe565e9827e1ae8bae2fdb2e53fb44b91955186",
+      "layout_sha256": "03c74c307730584ddad338d989e538346a98dba7b1ff8f9f72f7473145b5f196",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_45_bridge_brushpen",
+      "url": "./media/scene-previews/proposal_45_bridge_brushpen--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "405d0d93dbfce8d038039b8011b528b5f742b4db54ac314dbefc95a5496ff0a2",
+      "layout_sha256": "408433b93f35ecae89b81963cf87b035181c95f31ff81e486a152111abadb79f",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_46_sleeve_paper_roll",
+      "url": "./media/scene-previews/proposal_46_sleeve_paper_roll--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "6f6684be3fc9e057bcc80d98fb73235264f74c42d75fe559fda09a8b8efc5089",
+      "layout_sha256": "f5fe7edc8cccc787ca1b6a829048309db61af54e1f00a13226d967188096eb23",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_47_extract_baguette",
+      "url": "./media/scene-previews/proposal_47_extract_baguette--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "e29f321d52723fe71afdeabbff544c21774de8eedea214ff87aa95ec09fffae2",
+      "layout_sha256": "d2d8be053f821f2b71354e07aa4eaa876b2fcea7129ac34e52601dfe64bbcb38",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_48_invert_stemglass",
+      "url": "./media/scene-previews/proposal_48_invert_stemglass--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "021bd23f98cf62dbdf1c8d084012df81c5592c24f2b1de27ddfd1f17338c954e",
+      "layout_sha256": "df6ab349dc5f988692e19a26d1bb88cfdd5789a4d34f1285f8f9cb335d101258",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_49_microphone_scan",
+      "url": "./media/scene-previews/proposal_49_microphone_scan--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "0dd9231d4fb46b7de71b3b715e86081fbf9a2b67e7ab67038ebc58ecfcd42efe",
+      "layout_sha256": "f49bff51961541301a50d52771919ecfe4b4d60111a1c20936e88a2e34b7fa2f",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "proposal_50_stamp_notebook",
+      "url": "./media/scene-previews/proposal_50_stamp_notebook--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "3815c2c827fa5160e4ec9c78ee799bc4fc92d548d345757a3cc507789b7dc464",
+      "layout_sha256": "63922e09ddf5ba812c245a72e202361b71aa9ccd018a1fd761ef37dbe39d77a8",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "rotate_tube_cap",
+      "url": "./media/scene-previews/rotate_tube_cap--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "7437db5bcfd86ad3d56e935e00b13d8a465dab28d10ef31ecf38cea446129558",
+      "layout_sha256": "bfd7bfed1e99a6d82e8c090abc45599fc7781212c9715ce3470c1c3dbc2a0f0d",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "slide_utility_knife",
+      "url": "./media/scene-previews/slide_utility_knife--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "6f9516af9a7090b9efb56182f322dea8584d5ac24f020139fb1e91812d3471f2",
+      "layout_sha256": "02e1ea2cdebcba047901e9246151d155abe5032b2002e44a3a94728c2bba0636",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    },
+    {
+      "id": "solve_hanoi",
+      "url": "./media/scene-previews/solve_hanoi--revotron-static.jpg",
+      "kind": "static_scene",
+      "label": "RevoTron · 静态初态",
+      "image_sha256": "a34bb83b551173de52ca039c7468fdd535bd5c7e0cf7cfca48431013367c728d",
+      "layout_sha256": "1b06699aa23822944395842c1f6f38f8a5ce5afb788de2681b1d352569a5342b",
+      "robot_profile": "revotron_mt_fisheye_56d_v1"
+    }
+  ]
+}
