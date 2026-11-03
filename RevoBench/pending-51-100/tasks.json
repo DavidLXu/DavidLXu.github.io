@@ -1,0 +1,3281 @@
+{
+  "schema_version": 1,
+  "title": "桌面组合任务 51–100",
+  "scope": "static_initial_scene",
+  "batch": "tabletop100",
+  "status": "not_started",
+  "coordinate_frame": "table_top; meters",
+  "common_acceptance": [
+    "机器人从默认姿态出发，结束后通过真实运动回到默认姿态。",
+    "阶段连续，避免跳变、突兀加减速和无意义停顿；任务规定的观察或释放停顿除外。",
+    "肩肘腕协调，避免异常抬肘、腕部反折和绕远。",
+    "以手指内侧形成合理抓持，无明显穿透、撞击或滑脱。",
+    "物体运动由真实接触产生；禁用瞬移、隐藏附件和把静态摆放算作完成。"
+  ],
+  "assets": {
+    "apple": {
+      "name": "苹果",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/013_apple/textured.obj",
+      "source_sha256": "816edf421ba6341d3d1d0e4c6082f90c4bb6e044b51e5b741169d8f00cc08228",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.9940621355105502,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.apple@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.apple/scene_v1/model.usdc"
+    },
+    "banana": {
+      "name": "香蕉",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/011_banana/textured.obj",
+      "source_sha256": "0219dbcac0936b588a6f1da3d1d3ba4d23a2e9080b2f65c0aa72bb3645ebbd27",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.banana@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.banana/scene_v1/model.usdc"
+    },
+    "book": {
+      "name": "书",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/155_book/base1.glb",
+      "source_sha256": "8b96c038ecece30d00c35692a43ce7e4256fb2b5531b1e6eefea00e53301dd85",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.07298652744431243,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.book@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.book/scene_v1/model.usdc"
+    },
+    "bowl": {
+      "name": "碗",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/024_bowl/textured.obj",
+      "source_sha256": "adc2a12a68279b318d5efc108f7b629b81532ae1679158326980e2d929b8cdd0",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0528727943863299,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.bowl@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.bowl/scene_v1/model.usdc"
+    },
+    "bread": {
+      "name": "面包片",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/222_bread_slice/uploads_files_2384335_pan.obj",
+      "source_sha256": "78861e2e9a2f8f96097d719565040a789b11cdd834bec97831c9659b9d014bae",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.563570784490532,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.bread@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.bread/scene_v1/model.usdc"
+    },
+    "brush": {
+      "name": "刷子",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/189_brush/base3.glb",
+      "source_sha256": "81db3f18cd28a641268492ca967268c59ecee5b0698f5cc578e9cbe76bb930a8",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.13616464274143125,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.brush@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.brush/scene_v1/model.usdc"
+    },
+    "brushpen": {
+      "name": "毛笔",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/197_brush-pen/base5.glb",
+      "source_sha256": "6b498690afb118c4aa171fcc12bb6b6985c7053e102549c9c02858aa071bf6f8",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.11602647311210207,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.brushpen@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.brushpen/scene_v1/model.usdc"
+    },
+    "calculator": {
+      "name": "计算器",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/135_calculator/base5.glb",
+      "source_sha256": "63c5d3a99f6e0d4b240e0bf831082fe6ed436a2c11ed2c912a986ebfbe9238f5",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.08950632987504442,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.calculator@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.calculator/scene_v1/model.usdc"
+    },
+    "callbell": {
+      "name": "手摇铃",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/213_callbell/base5.glb",
+      "source_sha256": "385da4b0307d03b67a4aee372b17e162b56290142f30e4b82a0cbd1f16ae2d88",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.052652530474334915,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.callbell@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.callbell/scene_v1/model.usdc"
+    },
+    "camera": {
+      "name": "相机",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/083_camera/02_camera/01/mobility.urdf",
+      "source_sha256": "ef70a1e7a3acbd03b127a818438dc7c6462b5ee8acfa45a19e0358e93abc668b",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.10232342387819418,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.camera@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.camera/scene_v1/model.usdc"
+    },
+    "cleanser": {
+      "name": "清洁剂瓶",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/021_bleach_cleanser/textured.obj",
+      "source_sha256": "6429babb535e684f2ca680df5fd96bc2fc671a1866df18cb89a100138bd2e58f",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.cleanser@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.cleanser/scene_v1/model.usdc"
+    },
+    "coaster": {
+      "name": "杯垫",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/137_coaster/base0.glb",
+      "source_sha256": "982bb9441fa9296c183b952004069161a833a5031ec67e3229114dc430b4a382",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.05792659677644203,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.coaster@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.coaster/scene_v1/model.usdc"
+    },
+    "coffee": {
+      "name": "咖啡盒",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/215_coffee-box/base6.glb",
+      "source_sha256": "278cab20457e0fd96c0fe31753293f3701b2b300e1c2dd5807995c3d5d8e423f",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.08419422032210135,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.coffee@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.coffee/scene_v1/model.usdc"
+    },
+    "cracker": {
+      "name": "饼干盒",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/003_cracker_box/textured.obj",
+      "source_sha256": "a5ddcc7420390d14e8af97e8587d771d96fa78b37f2762c01b3c37c536a29b97",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.9838968876061789,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.cracker@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.cracker/scene_v1/model.usdc"
+    },
+    "cup_a": {
+      "name": "套杯 A",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/065-a_cups/google_16k/textured.obj",
+      "source_sha256": "2fb9f42942543eddede387ce25400fd3c3efa9a15fa1d6ed6c76caa7fee9b3cb",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.4,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.cup_a@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.cup_a/scene_v1/model.usdc"
+    },
+    "cup_b": {
+      "name": "套杯 B",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/065-b_cups/google_16k/textured.obj",
+      "source_sha256": "69ddd5f6382342aa44dfad22d8afcddc6107f970aef9f107c9bfad4b7b3b5f6b",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.4,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.cup_b@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.cup_b/scene_v1/model.usdc"
+    },
+    "dice": {
+      "name": "骰子",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/062_dice/textured.obj",
+      "source_sha256": "21b70dc584d09e94da6df24d086060dad164aeb8a6f5b9b5adb40cd202ca6cea",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.4241768257946907,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.dice@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.dice/scene_v1/model.usdc"
+    },
+    "driver": {
+      "name": "一字螺丝刀",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/044_flat_screwdriver/textured.obj",
+      "source_sha256": "ecd7205a1c9252ab59e6a52db2643d3aac95346405ccbb05b6dc8c52c3a842dc",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.2355517665301383,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.driver@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.driver/scene_v1/model.usdc"
+    },
+    "fastener_9": {
+      "name": "薄六角螺母",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/327_bolt_nuts/01_bolt_nuts/01/nuts_and_bolts_Object_9.glb",
+      "source_sha256": "fbdf330179cf58931cb8974a61667507f8a2afce81a2dcea62ffbb37936884c7",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.007,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.fastener_9@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.fastener_9/scene_v1/model.usdc"
+    },
+    "fork": {
+      "name": "餐叉",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/030_fork/textured.obj",
+      "source_sha256": "8f39949b37ba22b15349fe42a601bb95a706a229a398d5e9b4442f2e9bfd3ee5",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.9617526169794893,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.fork@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.fork/scene_v1/model.usdc"
+    },
+    "golf": {
+      "name": "高尔夫球",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/058_golf_ball/textured.obj",
+      "source_sha256": "3ad35c9f456a3cc1af204175ce92ca382587c7adb535aed9fe38f45a7e9e8693",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0065307460031367,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.golf@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.golf/scene_v1/model.usdc"
+    },
+    "knife": {
+      "name": "餐刀",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/032_knife/textured.obj",
+      "source_sha256": "5e9cfd362fb6841a91bf85b73d317e8462b87f02d3191b1bb224a8c1a8039537",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.knife@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.knife/scene_v1/model.usdc"
+    },
+    "lemon": {
+      "name": "柠檬",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/014_lemon/textured.obj",
+      "source_sha256": "75612e60a41fb3d5339d6feb1c0826f515b67ad5a35bd84c5dd6276cb22a969a",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.lemon@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.lemon/scene_v1/model.usdc"
+    },
+    "lotion": {
+      "name": "护肤油瓶",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/211_hydrating-oil/base5.glb",
+      "source_sha256": "71b565870357296f673c5fcdcff33bd65aacd1b598a0773bf2415eb538f54ad3",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.0894546644332013,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.lotion@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.lotion/scene_v1/model.usdc"
+    },
+    "marker": {
+      "name": "粗记号笔",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/040_large_marker/textured.obj",
+      "source_sha256": "a5484a8faf911007490e536ee6222c60470d9255296c2d7cbdc6ec8f3a2754d1",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.marker@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.marker/scene_v1/model.usdc"
+    },
+    "meatcan": {
+      "name": "午餐肉罐",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/010_potted_meat_can/textured.obj",
+      "source_sha256": "d695581ea28e8c9c3a1ef775c80b3aa08a7c6998dfc9e4f06efecaa9e89e2c1c",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.meatcan@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.meatcan/scene_v1/model.usdc"
+    },
+    "mug": {
+      "name": "带柄马克杯",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/025_mug/textured.obj",
+      "source_sha256": "bd071d4eaa7bfbdee6a668793ae384c614decdbf21149303542ae54cb6a30f9d",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.mug@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.mug/scene_v1/model.usdc"
+    },
+    "notebook": {
+      "name": "笔记本",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/196_notebook/base2.glb",
+      "source_sha256": "8c3c3fd230faa46a8812c4c39a78cbc7b39c2d746d0c41b49944e6d28a8ab06d",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.1106842425306369,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.notebook@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.notebook/scene_v1/model.usdc"
+    },
+    "orange": {
+      "name": "橙子",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/017_orange/textured.obj",
+      "source_sha256": "f36d14122800f0075b9c05bc0f24034271a2dff3a45e98ddc20b2f5bfe33fd6e",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.orange@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.orange/scene_v1/model.usdc"
+    },
+    "pitcher": {
+      "name": "带柄量壶",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/019_pitcher_base/textured.obj",
+      "source_sha256": "9944947cc7eb98f30b9cb273837c82b0753f5e8917825e261de66faffbc4a52a",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.pitcher@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.pitcher/scene_v1/model.usdc"
+    },
+    "plate": {
+      "name": "餐盘",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/029_plate/textured.obj",
+      "source_sha256": "bbf0a5d5ff0b2c2c19207246cb47dc253f14903e443477173c08ec3a0feb2502",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.9574802184586867,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.plate@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.plate/scene_v1/model.usdc"
+    },
+    "roller": {
+      "name": "擀面杖",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/205_roller/base2.glb",
+      "source_sha256": "30918d63fc00b6b9ab326f3eb0093b53484837bace42e68c4a7b1a12a05507b4",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.14740822445565713,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.roller@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.roller/scene_v1/model.usdc"
+    },
+    "scale": {
+      "name": "电子秤",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/179_electronicscale/base6.glb",
+      "source_sha256": "02f285f393ee3b3c0618f78d674e4abdea7a236c98a9ced40650e2f6a86174c8",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.10528526876171007,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.scale@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.scale/scene_v1/model.usdc"
+    },
+    "shoe": {
+      "name": "鞋",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/153_shoe/base9.glb",
+      "source_sha256": "20d088cdd2da251fc288e1b183538551c10cb7d5273056c13f409dcd31081ebf",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.13185480549839326,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.shoe@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.shoe/scene_v1/model.usdc"
+    },
+    "skillet": {
+      "name": "带柄煎锅",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/027-a_skillet/google_16k/textured.obj",
+      "source_sha256": "8e0dfe62b3d96f8f7ce46b26426170f0a7de3f3aa0387de41ebfd78767d924a6",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.skillet@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.skillet/scene_v1/model.usdc"
+    },
+    "soap": {
+      "name": "香皂",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/209_soap/base3.glb",
+      "source_sha256": "740fca0e15820d097d5753b5626e5454e30e986167db09e6eded6689305d51a3",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.04473830228509707,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.soap@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.soap/scene_v1/model.usdc"
+    },
+    "soupcan": {
+      "name": "汤罐",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/005_tomato_soup_can/textured.obj",
+      "source_sha256": "c14d31782bc69de23b572756f9bbcaa86d55bb4e724e0b8af80737da4b6e34f5",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.soupcan@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.soupcan/scene_v1/model.usdc"
+    },
+    "spatula": {
+      "name": "锅铲",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/033_spatula/textured.obj",
+      "source_sha256": "d3e49a75647999e5f80b06d0b8b5bfff5e4224d2facf42c77af6445d18baf8c5",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.883733413633061,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.spatula@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.spatula/scene_v1/model.usdc"
+    },
+    "sponge": {
+      "name": "海绵",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/026_sponge/textured.obj",
+      "source_sha256": "1af5c8a8da382ee1f437320c9717e0b27ecf31a5354a578206e5dd10da172867",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.8919572217316457,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.sponge@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.sponge/scene_v1/model.usdc"
+    },
+    "spoon": {
+      "name": "金属勺",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/031_spoon/textured.obj",
+      "source_sha256": "bc86a0736bf2a060fa4357b91ef55f7f41c0d4debfbd0b5a1918e2418f82f8ef",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.9679500967950095,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.spoon@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.spoon/scene_v1/model.usdc"
+    },
+    "spray": {
+      "name": "喷雾瓶",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/022_windex_bottle/textured.obj",
+      "source_sha256": "52e256499a169140da99fbb4061fdb377d5ddc9f3857c599843f6b4c21c9a3d5",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.spray@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.spray/scene_v1/model.usdc"
+    },
+    "strawberry": {
+      "name": "草莓",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/012_strawberry/textured.obj",
+      "source_sha256": "f2a3b1e313b1d97c91673001b7810d3b2131c208f94043e7a4794c1c29d9f7e4",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.9852216748768472,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.strawberry@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.strawberry/scene_v1/model.usdc"
+    },
+    "sugar": {
+      "name": "糖盒",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/004_sugar_box/textured.obj",
+      "source_sha256": "693f878b132de63adb21ffa96d7f1ef30d83a3460806e2b58e3cc841225400ad",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.sugar@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.sugar/scene_v1/model.usdc"
+    },
+    "tea": {
+      "name": "茶叶盒",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/214_tea-box/base5.glb",
+      "source_sha256": "3197a01ec7e39b00e47e2d0dbaaf5d4c306ff50290016aef3f0e7bb0f4276705",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.07346428213639382,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.tea@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.tea/scene_v1/model.usdc"
+    },
+    "toothpaste": {
+      "name": "牙膏管",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/218_tooth-paste/base0.glb",
+      "source_sha256": "2bbb928a99069b1fa6d919598a0753e7b87ab8642f7927047be3fbfc08438bf0",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.07891874974716408,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.toothpaste@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.toothpaste/scene_v1/model.usdc"
+    },
+    "toycar": {
+      "name": "玩具车",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/165_toycar/base5.glb",
+      "source_sha256": "7f14248ba2b298cd7e22caaafdd43da58741a3ae35f3503d1c79f83b7192034f",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.0684922493784068,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.toycar@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.toycar/scene_v1/model.usdc"
+    },
+    "tray": {
+      "name": "长方托盘",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/130_tray/base3.glb",
+      "source_sha256": "95d73e9272dfc7b2065aa1ba099ec7fe3c18b3f37d78a96379239ef6a1e2247a",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.18943201081002992,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.tray@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.tray/scene_v1/model.usdc"
+    },
+    "tuna": {
+      "name": "金枪鱼罐",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/007_tuna_fish_can/textured.obj",
+      "source_sha256": "598f3f78f22cde8ebc5bd57cdba697c8575e9144ca15b5555f8ab89074152f09",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 0.9934664968033755,
+      "joint_positions": {},
+      "changes": [],
+      "asset_id": "obj.tabletop50.tuna@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop50.tuna/scene_v1/model.usdc"
+    },
+    "wateringcan": {
+      "name": "浇水壶",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/193_waterer/base7.glb",
+      "source_sha256": "5a996157ad8446c2b910c937bf02e3181080bc4a734464bd6313868fb121db3c",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "uniform_scale": 0.13194993300266866,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.wateringcan@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.wateringcan/scene_v1/model.usdc"
+    },
+    "wrench": {
+      "name": "活动扳手",
+      "source": "library/external/bench2dex/bf65215f844d/Objects/042_adjustable_wrench/textured.obj",
+      "source_sha256": "eadbf34bd1a621271cec23e64902e33fb98efa42adc6ca1b36a8b54fe17c8b02",
+      "provider": "Bench2Dex",
+      "source_revision": "bf65215f844d1fca30750e4cc70d7266650abf0a",
+      "upstream_repository": "https://huggingface.co/datasets/Bench2Dex/Assets",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "uniform_scale": 1.0,
+      "joint_positions": {},
+      "changes": [
+        "Static scene selection; no functional electronics, fluids, ink, deformation or articulated actuation inferred."
+      ],
+      "asset_id": "obj.tabletop100.wrench@scene_v1",
+      "prepared_path": "assets/library/prepared/obj.tabletop100.wrench/scene_v1/model.usdc"
+    }
+  },
+  "tasks": [
+    {
+      "number": 51,
+      "id": "proposal_51_wrench_nut_turn",
+      "title": "用扳手端部拨转螺母",
+      "category": "工具操作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "wrench",
+          "x": 0.22,
+          "y": -0.1
+        },
+        {
+          "asset": "fastener_9",
+          "x": -0.07,
+          "y": 0
+        }
+      ],
+      "initial_setup": "扳手与六角螺母分开放在桌面，螺母平放。",
+      "steps": [
+        "抓住扳手柄，用端部接触螺母外侧。",
+        "沿切向连续拨动，必要时换接触边，使螺母转过四分之一圈。",
+        "退出扳手并回位。"
+      ],
+      "acceptance": [
+        "螺母绕桌面法向转动 90°±10°，中心平移不超过 3 cm。",
+        "主要接触来自扳手端部外表面，手不直接拨动螺母。",
+        "工具退出后螺母静止 2 s。"
+      ],
+      "difference": "使用工具传递平面转矩，不是双手直接旋合螺纹。",
+      "related_existing_tasks": [
+        "proposal_25_thread_nut"
+      ],
+      "preflight": [
+        "该固定扳手开口尚未证明能套住当前螺母，因此只用端部切向拨转；不得伪造钳口配合。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 52,
+      "id": "proposal_52_two_tools_apple",
+      "title": "锅铲和勺子协作托住苹果",
+      "category": "双工具协作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "apple",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "asset": "spatula",
+          "x": 0.24,
+          "y": -0.12
+        },
+        {
+          "asset": "spoon",
+          "x": -0.23,
+          "y": -0.1
+        },
+        {
+          "asset": "plate",
+          "x": 0,
+          "y": 0.23
+        }
+      ],
+      "initial_setup": "苹果在中央，两种工具在两侧，空盘在后方。",
+      "steps": [
+        "一手握铲，另一手握勺。",
+        "铲面托起苹果，勺面从侧面阻止滚落。",
+        "把苹果放入盘中后依次撤出工具。"
+      ],
+      "acceptance": [
+        "苹果离桌至少 3 cm，转移至少 15 cm。",
+        "运输时由两件工具共同约束，手不接触苹果。",
+        "苹果留在盘内稳定 2 s，两工具均撤离。"
+      ],
+      "difference": "增加双工具相互配合和曲面物体防滚约束。",
+      "related_existing_tasks": [
+        "proposal_01_spatula_bread",
+        "proposal_08_balance_spoon"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 53,
+      "id": "proposal_53_fork_mug_drag",
+      "title": "用叉柄穿过杯把牵引杯子",
+      "category": "工具操作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "mug",
+          "x": -0.1,
+          "y": 0,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "asset": "fork",
+          "x": 0.2,
+          "y": -0.12
+        }
+      ],
+      "initial_setup": "杯子直立，杯把朝侧面，叉子横放在前方。",
+      "steps": [
+        "将叉柄穿过杯把。",
+        "保持杯底接触桌面，用叉柄牵引杯子到旁侧目标。",
+        "退回叉柄并放下。"
+      ],
+      "acceptance": [
+        "杯子平移 12–18 cm，倾角始终小于 15°。",
+        "牵引阶段只允许叉柄内穿杯把接触，不能直接抓杯。",
+        "杯把无穿透，杯子释放后稳定 2 s。"
+      ],
+      "difference": "用杯把形成工具约束，区别于抓杯放杯或挂杯。",
+      "related_existing_tasks": [
+        "cup_hang",
+        "set_table"
+      ],
+      "preflight": [
+        "先测量叉柄截面与杯把孔径，验证完整插入及退出路径。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 54,
+      "id": "proposal_54_marker_zigzag",
+      "title": "持记号笔沿笔记本折线路径移动",
+      "category": "接触轨迹",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "notebook",
+          "x": -0.05,
+          "y": 0
+        },
+        {
+          "asset": "marker",
+          "x": 0.23,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "笔记本平放，记号笔在右侧；路径由笔记本表面坐标定义，不添加实体标记。",
+      "steps": [
+        "握笔并把笔端移到路径起点。",
+        "连续经过笔记本表面四个折线点。",
+        "抬笔，放回桌面。"
+      ],
+      "acceptance": [
+        "笔端按顺序经过四个目标点，每点误差小于 5 mm。",
+        "段内笔端到表面距离在 0–3 mm，不能穿透纸面。",
+        "折线转角处连续减速，笔记本位移不超过 2 cm。"
+      ],
+      "difference": "评估连续笔端接触轨迹，不生成笔迹，也不同于一次盖印。",
+      "related_existing_tasks": [
+        "proposal_50_stamp_notebook"
+      ],
+      "preflight": [
+        "资产为整体记号笔；先标定端部坐标，不假设笔盖可拆或存在墨水模型。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 55,
+      "id": "proposal_55_roller_sponge",
+      "title": "双手用擀面杖沿海绵往返滚动",
+      "category": "接触轨迹",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "sponge",
+          "x": -0.05,
+          "y": 0
+        },
+        {
+          "asset": "roller",
+          "x": 0.22,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "海绵平放，擀面杖在右前方。",
+      "steps": [
+        "双手扶住擀面杖两端，将圆柱曲面贴到海绵一端。",
+        "保持曲面接触，让擀面杖整体转动，完成一次前进和返回。",
+        "抬起工具并放下。"
+      ],
+      "acceptance": [
+        "接触覆盖海绵长度至少 80%，往返各一次，擀面杖绕自身长轴转动。",
+        "接触使用擀面杖曲面，海绵平移不超过 2 cm。",
+        "曲面不穿透海绵；不能只平移而不转动。"
+      ],
+      "difference": "考察滚动接触和工具朝向，不把刚体海绵当成可压缩材料。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "源模型为整根刚体擀面杖，滚动由整体姿态变化实现；不假设独立轮轴。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 56,
+      "id": "proposal_56_spoon_bowl_wall",
+      "title": "勺子沿碗内壁绕一圈",
+      "category": "接触轨迹",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "bowl",
+          "x": -0.05,
+          "y": 0
+        },
+        {
+          "asset": "spoon",
+          "x": 0.23,
+          "y": -0.12
+        }
+      ],
+      "initial_setup": "空碗在中央，勺子在右侧。",
+      "steps": [
+        "一手扶住碗外壁，另一手握勺。",
+        "勺面沿碗内壁连续绕行一周。",
+        "退出勺子并松开碗。"
+      ],
+      "acceptance": [
+        "接触点绕碗轴累计至少 330°。",
+        "勺面与碗内壁保持非穿透接触，不能从碗外绕过。",
+        "碗位移不超过 2 cm，勺子顺利退出。"
+      ],
+      "difference": "沿凹面保持接触，不是从碗内舀取物体。",
+      "related_existing_tasks": [
+        "proposal_02_spoon_ball"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 57,
+      "id": "proposal_57_brush_shoe_sole",
+      "title": "翻起鞋子后刷扫鞋底",
+      "category": "双手清洁",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "shoe",
+          "x": -0.13,
+          "y": 0,
+          "rpy": [
+            0,
+            90,
+            0
+          ]
+        },
+        {
+          "asset": "brush",
+          "x": 0.22,
+          "y": -0.12
+        }
+      ],
+      "initial_setup": "鞋子侧放，刷子在右侧。",
+      "steps": [
+        "一手抓住鞋面，把鞋底转向刷子。",
+        "另一手沿鞋底纵向刷三次。",
+        "将鞋放正，再放下刷子。"
+      ],
+      "acceptance": [
+        "刷毛接触覆盖鞋底长度至少 70%。",
+        "三次刷扫期间鞋子由另一手持续支撑。",
+        "鞋底最终朝桌面，鞋与工具均稳定 2 s。"
+      ],
+      "difference": "被清洁物体也在手中，需要双手持续相对定位。",
+      "related_existing_tasks": [
+        "proposal_10_brush_keyboard"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 58,
+      "id": "proposal_58_wipe_plate_faces",
+      "title": "持盘擦拭正反两面",
+      "category": "双手清洁",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "plate",
+          "x": -0.12,
+          "y": 0
+        },
+        {
+          "asset": "sponge",
+          "x": 0.21,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "餐盘平放，海绵在右侧。",
+      "steps": [
+        "一手抓住盘沿，另一手持海绵擦盘内面。",
+        "重新调整盘子握持，翻转后擦外底面。",
+        "将盘子放正，放回海绵。"
+      ],
+      "acceptance": [
+        "内面和外底面分别覆盖预先定义的三个接触区。",
+        "翻面时盘子全程有真实手部支撑。",
+        "盘子不撞桌，最终正放并稳定 2 s。"
+      ],
+      "difference": "增加持物翻面与双面接触，区别于扶直瓶子擦外壁。",
+      "related_existing_tasks": [
+        "proposal_09_wipe_bottle"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 59,
+      "id": "proposal_59_knife_can_edge",
+      "title": "用餐刀辅助捏起薄罐头",
+      "category": "工具操作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "tuna",
+          "x": -0.05,
+          "y": 0
+        },
+        {
+          "asset": "knife",
+          "x": 0.23,
+          "y": -0.12
+        }
+      ],
+      "initial_setup": "薄金枪鱼罐平放，餐刀在旁。",
+      "steps": [
+        "将餐刀薄边伸到罐体底缘，轻抬一侧。",
+        "另一只手利用新增间隙捏住罐沿。",
+        "撤刀后把罐头放到旁侧。"
+      ],
+      "acceptance": [
+        "先由工具抬起罐体一侧至少 8 mm，再由手接管。",
+        "手接管前刀具不能穿透罐底；不能切割罐体。",
+        "罐头移开至少 12 cm，放稳 2 s。"
+      ],
+      "difference": "工具创造手指抓取间隙，并完成工具到手的支撑交接。",
+      "related_existing_tasks": [
+        "proposal_06_lever_book"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 60,
+      "id": "proposal_60_driver_key_targets",
+      "title": "用螺丝刀柄端依次触碰计算器按键",
+      "category": "接触轨迹",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "calculator",
+          "x": -0.06,
+          "y": 0
+        },
+        {
+          "asset": "driver",
+          "x": 0.23,
+          "y": -0.12
+        }
+      ],
+      "initial_setup": "计算器朝上，螺丝刀在右侧；选定三个不同按键表面。",
+      "steps": [
+        "握住螺丝刀杆，让钝柄端朝下。",
+        "按顺序轻触三个按键表面，每次离开后再到下一键。",
+        "放回工具。"
+      ],
+      "acceptance": [
+        "柄端按序进入三个按键中心半径 4 mm 范围。",
+        "每次触碰持续 0.1–0.5 s，间隔有可观测离面。",
+        "计算器位移小于 1 cm；不要求数字显示或电子功能变化。"
+      ],
+      "difference": "考察工具端点定位及接触顺序，不宣称静态网格有按键电路。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "标定柄端及三个按键表面；后续若要求按键行程需另接真实关节。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 61,
+      "id": "proposal_61_plate_orange_chute",
+      "title": "倾斜餐盘让橙子滚入碗",
+      "category": "非抓取操作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "plate",
+          "x": -0.18,
+          "y": 0,
+          "name": "plate"
+        },
+        {
+          "asset": "orange",
+          "x": -0.18,
+          "y": 0,
+          "supports": [
+            "plate"
+          ]
+        },
+        {
+          "asset": "bowl",
+          "x": 0.19,
+          "y": 0
+        }
+      ],
+      "initial_setup": "橙子在盘中央，空碗在旁侧。",
+      "steps": [
+        "双手拿稳盘子并把低侧盘沿靠近碗口。",
+        "逐渐倾盘，使橙子滚入碗。",
+        "把空盘放回。"
+      ],
+      "acceptance": [
+        "橙子通过重力及盘面接触进入碗，手不直接接触橙子。",
+        "滚落高度小于 5 cm，盘子不击打碗沿。",
+        "橙子留在碗内稳定 2 s。"
+      ],
+      "difference": "开放盘面的倾角控制与球形物滚动，区别于罐中倒料。",
+      "related_existing_tasks": [
+        "pour_can"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 62,
+      "id": "proposal_62_loaded_tray_curve",
+      "title": "端着杯与罐头绕过高瓶",
+      "category": "平衡搬运",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "tray",
+          "x": -0.19,
+          "y": -0.06,
+          "name": "tray"
+        },
+        {
+          "asset": "mug",
+          "x": -0.24,
+          "y": -0.06,
+          "supports": [
+            "tray"
+          ]
+        },
+        {
+          "asset": "meatcan",
+          "x": -0.1,
+          "y": -0.05,
+          "supports": [
+            "tray"
+          ]
+        },
+        {
+          "asset": "cleanser",
+          "x": 0.2,
+          "y": 0.1
+        }
+      ],
+      "initial_setup": "杯与罐头分放托盘两端，清洁剂瓶在运输路径旁。",
+      "steps": [
+        "双手端起托盘。",
+        "绕过高瓶移动到桌面另一侧。",
+        "平稳放下，松手。"
+      ],
+      "acceptance": [
+        "托盘移动至少 25 cm，与瓶子保持至少 2 cm 几何间隙。",
+        "杯和罐头始终受托盘支撑，相对滑移各不超过 2 cm。",
+        "高瓶位移小于 1 cm，载荷不倾倒。"
+      ],
+      "difference": "非对称真实载荷加绕障，不只是空托盘搬运。",
+      "related_existing_tasks": [
+        "tray_carry"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 63,
+      "id": "proposal_63_ball_plate_level",
+      "title": "端盘移动时让球留在中央",
+      "category": "平衡搬运",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "plate",
+          "x": -0.1,
+          "y": 0,
+          "name": "plate"
+        },
+        {
+          "asset": "golf",
+          "x": -0.1,
+          "y": 0,
+          "supports": [
+            "plate"
+          ]
+        },
+        {
+          "asset": "coaster",
+          "x": 0.25,
+          "y": 0
+        }
+      ],
+      "initial_setup": "高尔夫球在盘中央，杯垫标示目标区域旁边。",
+      "steps": [
+        "双手抬盘。",
+        "把盘平移到杯垫旁并停稳。",
+        "放下盘子，保持球不滚出。"
+      ],
+      "acceptance": [
+        "盘子离桌至少 4 cm、平移至少 20 cm。",
+        "球与盘中心距离不超过盘有效半径的 50%。",
+        "手不能按住球，放下后球稳定 2 s。"
+      ],
+      "difference": "控制自由滚动物相对位置，比勺托草莓更强调姿态反馈。",
+      "related_existing_tasks": [
+        "proposal_08_balance_spoon"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 64,
+      "id": "proposal_64_pitcher_gate",
+      "title": "转动量壶通过两盒之间",
+      "category": "受限空间",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "pitcher",
+          "x": 0,
+          "y": -0.19,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "asset": "sugar",
+          "x": -0.18,
+          "y": 0.12
+        },
+        {
+          "asset": "cracker",
+          "x": 0.18,
+          "y": 0.12
+        }
+      ],
+      "initial_setup": "量壶在前方，两只高包装盒形成通道；壶把初始横向。",
+      "steps": [
+        "握住壶把与壶身，抬起。",
+        "把量壶转到窄侧朝向通道，低位通过。",
+        "通道后方放下并恢复壶嘴朝向。"
+      ],
+      "acceptance": [
+        "完整壶体含把手从两盒之间通过，最低点离桌不高于 8 cm。",
+        "途中与盒子无接触，盒子位移小于 1 cm。",
+        "量壶最终直立，壶嘴朝向误差小于 10°。"
+      ],
+      "difference": "不对称带柄容器的全物体避障，不是长法棍的轴向穿越。",
+      "related_existing_tasks": [
+        "proposal_34_baguette_passage"
+      ],
+      "preflight": [
+        "根据完整壶体凸包核对通道窄向可通过、宽向需转动；不可只检查壶身。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 65,
+      "id": "proposal_65_book_ramp_ball",
+      "title": "搭出书本斜坡让球滚入托盘",
+      "category": "搭建与引导",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "book",
+          "x": -0.05,
+          "y": -0.12
+        },
+        {
+          "asset": "soupcan",
+          "x": -0.23,
+          "y": 0.13
+        },
+        {
+          "asset": "tray",
+          "x": 0.25,
+          "y": 0.1
+        },
+        {
+          "asset": "golf",
+          "x": -0.3,
+          "y": -0.14
+        }
+      ],
+      "initial_setup": "书、罐头、托盘和球分开放置。",
+      "steps": [
+        "用罐头支撑书本一端，另一端接近托盘。",
+        "把球放在坡顶后松手。",
+        "等待球滚入托盘。"
+      ],
+      "acceptance": [
+        "书本形成 10°–35°斜坡，两个支撑接触真实。",
+        "球释放后靠重力滚过书面并进入托盘，手不再推球。",
+        "搭建物不塌落，球留在托盘内 2 s。"
+      ],
+      "difference": "先建立几何关系再利用重力输送；区别于直接滚球交接。",
+      "related_existing_tasks": [
+        "proposal_43_roll_and_catch"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 66,
+      "id": "proposal_66_build_car_bridge",
+      "title": "用书和罐头搭桥让小车穿过",
+      "category": "搭建与引导",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "book",
+          "x": 0,
+          "y": -0.18
+        },
+        {
+          "asset": "soupcan",
+          "x": -0.24,
+          "y": 0.12
+        },
+        {
+          "asset": "soupcan",
+          "x": 0.23,
+          "y": 0.12
+        },
+        {
+          "asset": "toycar",
+          "x": 0.26,
+          "y": -0.18
+        }
+      ],
+      "initial_setup": "书本、两只汤罐和小车分开放置。",
+      "steps": [
+        "把两罐间隔摆好，用书本横搭桥面。",
+        "扶住桥面，另一手让小车从桥下经过。",
+        "撤手检查桥是否稳定。"
+      ],
+      "acceptance": [
+        "桥下净空大于小车外形，书本同时支撑在两罐上。",
+        "小车完整从桥下穿过，未推倒支撑罐。",
+        "撤手后桥保持 2 s。"
+      ],
+      "difference": "搭建必须满足另一物体的通行需求，不只是横放毛笔。",
+      "related_existing_tasks": [
+        "proposal_45_bridge_brushpen"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 67,
+      "id": "proposal_67_insert_coaster_mug",
+      "title": "抬杯后把杯垫送到杯底",
+      "category": "双手协作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "mug",
+          "x": -0.08,
+          "y": 0
+        },
+        {
+          "asset": "coaster",
+          "x": 0.19,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "杯子直立在桌上，杯垫在右前方。",
+      "steps": [
+        "一手握杯把，只把杯子抬起少量。",
+        "另一手把杯垫平移到杯底正下方。",
+        "把杯子落到杯垫并依次松手。"
+      ],
+      "acceptance": [
+        "杯子抬起高度为 2–6 cm，杯垫不撞杯底。",
+        "杯底投影完全落在杯垫有效支撑范围内。",
+        "双手释放后杯子直立稳定 2 s。"
+      ],
+      "difference": "在持杯期间插入支撑物，时序与抽走杯垫相反。",
+      "related_existing_tasks": [
+        "proposal_32_remove_coaster"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 68,
+      "id": "proposal_68_invert_bowl_plate",
+      "title": "用盘盖住碗后夹持翻转",
+      "category": "双手协作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "bowl",
+          "x": -0.18,
+          "y": 0,
+          "name": "bowl"
+        },
+        {
+          "asset": "golf",
+          "x": -0.18,
+          "y": 0,
+          "supports": [
+            "bowl"
+          ]
+        },
+        {
+          "asset": "plate",
+          "x": 0.2,
+          "y": 0
+        }
+      ],
+      "initial_setup": "球在碗内，餐盘在旁侧。",
+      "steps": [
+        "用餐盘覆盖碗口。",
+        "双手夹持盘碗组合，连续翻转 180°。",
+        "盘朝下放到桌面，拿走倒扣的碗。"
+      ],
+      "acceptance": [
+        "翻转期间球一直被盘碗围住，没有逃逸。",
+        "盘和碗始终有真实接触与手部夹持，不能绑定成一体。",
+        "移走碗后球留在盘内并稳定 2 s。"
+      ],
+      "difference": "两容器协同封闭和整体翻面，不是单独倒扣杯子。",
+      "related_existing_tasks": [
+        "proposal_48_invert_stemglass"
+      ],
+      "preflight": [
+        "核对盘径覆盖整个碗口，碰撞网格必须保留真实内腔。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 69,
+      "id": "proposal_69_clamp_bread_plates",
+      "title": "用两只盘子夹住面包搬运",
+      "category": "双手协作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "plate",
+          "x": -0.27,
+          "y": 0
+        },
+        {
+          "asset": "bread",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "asset": "plate",
+          "x": 0.27,
+          "y": 0
+        }
+      ],
+      "initial_setup": "面包在中央，两只盘子分别放在两侧。",
+      "steps": [
+        "用两盘的平面从两侧夹住面包。",
+        "保持夹持将面包抬起并移动。",
+        "把面包放回桌面后分开盘子。"
+      ],
+      "acceptance": [
+        "面包离桌至少 3 cm、平移至少 15 cm。",
+        "手不直接触碰面包，支撑来自两盘的真实摩擦接触。",
+        "面包无穿透，释放后两盘分离至少 5 cm。"
+      ],
+      "difference": "以两块现有餐具构成夹具，区别于叉铲翻面。",
+      "related_existing_tasks": [
+        "proposal_07_turn_bread"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 70,
+      "id": "proposal_70_spoon_rest_mug",
+      "title": "把勺子横搭在杯口",
+      "category": "平衡放置",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "mug",
+          "x": -0.08,
+          "y": 0
+        },
+        {
+          "asset": "spoon",
+          "x": 0.22,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "空杯直立，勺子平放在右侧。",
+      "steps": [
+        "抓起勺柄，调整勺子重心。",
+        "把勺子横放杯口，形成两侧接触。",
+        "缓慢释放并撤手。"
+      ],
+      "acceptance": [
+        "勺子跨过杯口且接触杯沿至少两处。",
+        "勺子未掉入杯中，杯子未倾倒。",
+        "双手离开 3 cm 后保持 3 s。"
+      ],
+      "difference": "将不对称餐具平衡在曲面窄支撑上，区别于毛笔搭两盒。",
+      "related_existing_tasks": [
+        "proposal_45_bridge_brushpen"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 71,
+      "id": "proposal_71_meter_dice_cup",
+      "title": "从杯中逐个倒出三颗骰子",
+      "category": "定量释放",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "cup_b",
+          "x": -0.17,
+          "y": 0.07
+        },
+        {
+          "asset": "dice",
+          "x": -0.25,
+          "y": -0.14
+        },
+        {
+          "asset": "dice",
+          "x": -0.16,
+          "y": -0.14
+        },
+        {
+          "asset": "dice",
+          "x": -0.07,
+          "y": -0.14
+        },
+        {
+          "asset": "plate",
+          "x": 0.2,
+          "y": 0.07
+        }
+      ],
+      "initial_setup": "三颗骰子在杯前分开放置，空盘在右侧。",
+      "steps": [
+        "先把三颗骰子放入杯中，再拿起杯子把杯口移到盘上方。",
+        "控制倾角，一次只释放一颗，间隔停留。",
+        "三颗倒完后把空杯放正。"
+      ],
+      "acceptance": [
+        "三次出杯事件各只有一颗骰子，事件间隔至少 0.3 s。",
+        "三颗都留在盘内，无手指伸进杯中取物。",
+        "杯子最终直立，骰子静止 2 s。"
+      ],
+      "difference": "验收离散释放次数和节奏，不是一次倒空。",
+      "related_existing_tasks": [
+        "pour_can"
+      ],
+      "preflight": [
+        "检查三颗骰子的初始不穿插，以及杯口允许分次释放；该有意义停顿不视为无意义停顿。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 72,
+      "id": "proposal_72_cup_to_cup_ball",
+      "title": "双手在两只杯间转移球",
+      "category": "双手协作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "cup_b",
+          "x": -0.19,
+          "y": 0,
+          "name": "source"
+        },
+        {
+          "asset": "golf",
+          "x": -0.19,
+          "y": 0,
+          "supports": [
+            "source"
+          ]
+        },
+        {
+          "asset": "cup_a",
+          "x": 0.19,
+          "y": 0
+        }
+      ],
+      "initial_setup": "球在左杯，右杯为空。",
+      "steps": [
+        "双手分别拿起一只杯。",
+        "对齐杯口并倾斜左杯，把球转入右杯。",
+        "分开杯子并放回。"
+      ],
+      "acceptance": [
+        "球从左杯进入右杯，全程不接触手和桌面。",
+        "接收时两杯口最短距离小于 3 cm，不能用杯体穿透传球。",
+        "两杯放稳，球留在右杯 2 s。"
+      ],
+      "difference": "两个运动容器相对对准与接收，不是固定碗接料。",
+      "related_existing_tasks": [
+        "pour_can"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 73,
+      "id": "proposal_73_thread_marker_handle",
+      "title": "把毛笔穿过杯把",
+      "category": "插装与对准",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "mug",
+          "x": -0.1,
+          "y": 0,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "asset": "brushpen",
+          "x": 0.21,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "杯把向侧面，细毛笔平放在右前方。",
+      "steps": [
+        "一手稳住杯身，另一手抓笔。",
+        "将细毛笔沿杯把孔轴穿过。",
+        "再沿原方向抽出并放下。"
+      ],
+      "acceptance": [
+        "笔穿过杯把孔并在另一侧露出至少 2 cm。",
+        "穿入和抽出均沿真实孔道，无穿透杯把。",
+        "杯子中心位移小于 2 cm。"
+      ],
+      "difference": "侧向环孔插入和退出，不是向竖直笔筒落笔。",
+      "related_existing_tasks": [
+        "insert_pen"
+      ],
+      "preflight": [
+        "核对笔径与杯把最小孔径；仅使用现有尺寸，不为配合拉伸物体。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 74,
+      "id": "proposal_74_scale_single_fruit",
+      "title": "逐件把水果放到秤面再取下",
+      "category": "顺序操作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "scale",
+          "x": 0,
+          "y": 0.13
+        },
+        {
+          "asset": "apple",
+          "x": -0.24,
+          "y": -0.1
+        },
+        {
+          "asset": "lemon",
+          "x": 0,
+          "y": -0.13
+        },
+        {
+          "asset": "orange",
+          "x": 0.24,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "电子秤在后方，三种水果在前方分开放置。",
+      "steps": [
+        "按苹果、柠檬、橙子的顺序逐个放到秤面中央。",
+        "每次停稳后取下，再放下一件。",
+        "把三件放回各自初始区域。"
+      ],
+      "acceptance": [
+        "秤面同时最多只有一件水果，每件独立停稳至少 1 s。",
+        "果体完全由秤面支撑，不能仍握在手里假称放置完成。",
+        "顺序正确，秤不移动超过 1 cm；不要求电子读数。"
+      ],
+      "difference": "单件占用约束与循环取放，使用真实秤面而不模拟未接入的称重电路。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "标定秤台有效支撑区域；禁止把纹理数字当作测量质量。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 75,
+      "id": "proposal_75_can_pyramid",
+      "title": "把三只罐头搭成小拱堆",
+      "category": "平衡放置",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "soupcan",
+          "x": -0.24,
+          "y": 0,
+          "rpy": [
+            0,
+            90,
+            0
+          ]
+        },
+        {
+          "asset": "soupcan",
+          "x": 0,
+          "y": 0,
+          "rpy": [
+            0,
+            90,
+            0
+          ]
+        },
+        {
+          "asset": "soupcan",
+          "x": 0.24,
+          "y": 0,
+          "rpy": [
+            0,
+            90,
+            0
+          ]
+        }
+      ],
+      "initial_setup": "三只同款汤罐横放且彼此分离。",
+      "steps": [
+        "将两只罐并排横放作为底层。",
+        "把第三只横放在两罐形成的槽中。",
+        "依次撤手，检查稳定。"
+      ],
+      "acceptance": [
+        "上罐同时接触两只下罐，轴线夹角各小于 10°。",
+        "上罐离桌，三罐没有隐藏固定或穿透。",
+        "完全松手后结构保持 3 s。"
+      ],
+      "difference": "圆柱曲面的多点稳定堆叠，不是方块单面堆高。",
+      "related_existing_tasks": [
+        "stack_blocks"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 76,
+      "id": "proposal_76_utensil_safe_handover",
+      "title": "把餐刀调整成刀柄朝向接收手",
+      "category": "安全交接",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "knife",
+          "x": -0.12,
+          "y": 0,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "asset": "tray",
+          "x": 0.24,
+          "y": 0.08
+        }
+      ],
+      "initial_setup": "餐刀平放在左侧，空托盘在右侧。",
+      "steps": [
+        "抓住刀柄并调整朝向，把可握持的柄端送向另一手。",
+        "接收手确认握住刀柄后，交出手松开。",
+        "接收手把餐刀放入托盘。"
+      ],
+      "acceptance": [
+        "交接期间至少一只手持续握持刀柄。",
+        "任何手指都不能把刀刃作为主握持面。",
+        "刀进入托盘，刀尖朝向托盘内部并稳定 2 s。"
+      ],
+      "difference": "交接有明确禁止接触区域及可握持端方向，区别于对称哑铃换手。",
+      "related_existing_tasks": [
+        "proposal_39_handoff_dumbbell"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 77,
+      "id": "proposal_77_separate_food_cleaners",
+      "title": "把食品与清洁用品分区摆开",
+      "category": "语义与空间",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "cleanser",
+          "x": -0.28,
+          "y": 0.1
+        },
+        {
+          "asset": "sugar",
+          "x": -0.09,
+          "y": -0.1
+        },
+        {
+          "asset": "spray",
+          "x": 0.12,
+          "y": 0.1
+        },
+        {
+          "asset": "soupcan",
+          "x": 0.29,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "两件食品和两件清洁用品交错摆放。",
+      "steps": [
+        "把食品移到桌面左侧，清洁用品移到右侧。",
+        "调整两组内部间距，保证直立。",
+        "双手回位。"
+      ],
+      "acceptance": [
+        "食品中心 x 小于 -0.12 m，清洁用品中心 x 大于 0.12 m。",
+        "两组完整物体表面距离至少 10 cm。",
+        "所有物体直立且不互相支撑，稳定 2 s。"
+      ],
+      "difference": "按用途分区并满足隔离间距，区别于紧固件结构分类。",
+      "related_existing_tasks": [
+        "proposal_26_sort_fasteners"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 78,
+      "id": "proposal_78_breakfast_tray",
+      "title": "按餐具关系摆一份早餐托盘",
+      "category": "语义与空间",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "tray",
+          "x": 0,
+          "y": 0.14
+        },
+        {
+          "asset": "mug",
+          "x": -0.28,
+          "y": -0.12
+        },
+        {
+          "asset": "banana",
+          "x": 0,
+          "y": -0.16
+        },
+        {
+          "asset": "spoon",
+          "x": 0.26,
+          "y": -0.12
+        }
+      ],
+      "initial_setup": "托盘为空，杯、香蕉和勺子在托盘外。",
+      "steps": [
+        "将杯放在托盘后侧，杯把朝外便于拿取。",
+        "把香蕉放前侧，勺柄朝机器人。",
+        "检查物体间有取物间隙。"
+      ],
+      "acceptance": [
+        "三件完整落在托盘内，不互相接触。",
+        "杯把朝外误差小于 15°，勺柄朝前误差小于 15°。",
+        "杯和香蕉之间有至少 1 cm 间隙，释放后稳定 2 s。"
+      ],
+      "difference": "验收成组摆放的用途关系和后续可抓取性，区别于装满篮筐。",
+      "related_existing_tasks": [
+        "pack_groceries",
+        "set_table"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 79,
+      "id": "proposal_79_bowl_scale_center",
+      "title": "把碗居中放上电子秤",
+      "category": "精确放置",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "bowl",
+          "x": -0.22,
+          "y": 0
+        },
+        {
+          "asset": "scale",
+          "x": 0.15,
+          "y": 0
+        },
+        {
+          "asset": "spoon",
+          "x": 0,
+          "y": -0.18
+        }
+      ],
+      "initial_setup": "碗、秤和勺子分开放置。",
+      "steps": [
+        "双手把碗放到秤面中央。",
+        "将勺子放到秤旁，勺柄朝前。",
+        "撤手等待稳定。"
+      ],
+      "acceptance": [
+        "碗底中心距秤面中心小于 8 mm，碗底在有效支撑区内。",
+        "勺子不搭在秤或碗上，最近间隙至少 1 cm。",
+        "碗只受秤面支撑并稳定 2 s，不要求去皮或读数。"
+      ],
+      "difference": "小支撑平台上的精准落底和物体接触关系，区别于直接桌面摆杯。",
+      "related_existing_tasks": [
+        "set_table"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 80,
+      "id": "proposal_80_fan_tools",
+      "title": "把三件长工具摆成可抓取扇形",
+      "category": "语义与空间",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "wrench",
+          "x": -0.24,
+          "y": -0.06
+        },
+        {
+          "asset": "driver",
+          "x": 0,
+          "y": -0.06
+        },
+        {
+          "asset": "marker",
+          "x": 0.24,
+          "y": -0.06
+        }
+      ],
+      "initial_setup": "扳手、螺丝刀、记号笔平行放置。",
+      "steps": [
+        "逐件旋转并移动，使工作端朝后、握持端朝前。",
+        "工具轴线依次朝向 -30°、0°、30°目标方向。",
+        "保持各握持区相互分离。"
+      ],
+      "acceptance": [
+        "轴向相对各自目标误差小于 10°，工作端方向正确。",
+        "工具网格互不相交，握持区两两间距至少 3 cm。",
+        "三件均由桌面支撑且稳定 2 s。"
+      ],
+      "difference": "异形工具按功能端和抓取间距组织，不是只把物体排成一行。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "为每件工具标定工作端、握持区与轴向，目标角度用同一桌面坐标系。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 81,
+      "id": "proposal_81_park_car_tray",
+      "title": "让小车倒退进入托盘停车位",
+      "category": "受限空间",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "toycar",
+          "x": 0,
+          "y": -0.17
+        },
+        {
+          "asset": "tray",
+          "x": 0,
+          "y": 0.15
+        },
+        {
+          "asset": "sugar",
+          "x": -0.3,
+          "y": 0.06
+        },
+        {
+          "asset": "tea",
+          "x": 0.3,
+          "y": 0.06
+        }
+      ],
+      "initial_setup": "托盘在后方，两盒限定入口两侧，小车在前方。",
+      "steps": [
+        "抓控小车调整车尾朝向入口。",
+        "低位越过托盘边缘，倒向进入托盘。",
+        "把车轮落到盘底并释放。"
+      ],
+      "acceptance": [
+        "小车以车尾先进入，完整停在托盘内。",
+        "入位过程中不接触两侧包装盒。",
+        "车轮落底，最终航向误差小于 10°并稳定 2 s。"
+      ],
+      "difference": "有方向约束的容器入位，区别于平面绕障。",
+      "related_existing_tasks": [
+        "proposal_42_toycar_slalom"
+      ],
+      "preflight": [
+        "托盘有凸沿，不假装模型可以自行开过；允许手持低位跨沿再落轮。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 82,
+      "id": "proposal_82_ramp_car_tray",
+      "title": "铺好书本坡道再让小车上托盘",
+      "category": "搭建与引导",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "book",
+          "x": -0.21,
+          "y": 0
+        },
+        {
+          "asset": "tray",
+          "x": 0.17,
+          "y": 0.12
+        },
+        {
+          "asset": "toycar",
+          "x": 0.12,
+          "y": -0.17
+        }
+      ],
+      "initial_setup": "书本平放在托盘旁，小车在前方。",
+      "steps": [
+        "把书的一端搭在托盘沿，另一端接地。",
+        "推控小车沿书面进入托盘。",
+        "车轮落底后移走坡道。"
+      ],
+      "acceptance": [
+        "车轮沿坡面连续经过，不允许抬车越过坡道。",
+        "书本没有滑脱，车身未穿过盘沿。",
+        "小车停在盘内，书本最终回到桌面。"
+      ],
+      "difference": "先搭建可行走通路，再进行轮式接触转移。",
+      "related_existing_tasks": [
+        "proposal_42_toycar_slalom"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 83,
+      "id": "proposal_83_right_pitcher",
+      "title": "扶正侧倒的带柄量壶",
+      "category": "姿态恢复",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "pitcher",
+          "x": -0.08,
+          "y": 0,
+          "rpy": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "asset": "coaster",
+          "x": 0.26,
+          "y": 0.12
+        }
+      ],
+      "initial_setup": "量壶侧倒，杯垫在旁侧作为避让物。",
+      "steps": [
+        "一手抓壶把，另一手支撑壶身。",
+        "抬离桌面并把壶底转向下方。",
+        "把壶放正，松手。"
+      ],
+      "acceptance": [
+        "翻正过程中壶嘴不刮桌，壶把无穿透。",
+        "壶轴相对竖直误差小于 5°，杯垫位移小于 1 cm。",
+        "放下后稳定 2 s，双手回位。"
+      ],
+      "difference": "带柄偏心容器的双手恢复姿态，区别于扶正鞋或单手翻沙漏。",
+      "related_existing_tasks": [
+        "proposal_19_align_shoes"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 84,
+      "id": "proposal_84_aim_wateringcan",
+      "title": "让浇水壶嘴依次对准两个杯口",
+      "category": "端点对准",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "wateringcan",
+          "x": 0,
+          "y": -0.1
+        },
+        {
+          "asset": "cup_a",
+          "x": -0.23,
+          "y": 0.15
+        },
+        {
+          "asset": "cup_b",
+          "x": 0.23,
+          "y": 0.15
+        }
+      ],
+      "initial_setup": "浇水壶在前方，两只杯在后方分开摆放。",
+      "steps": [
+        "抓住壶把并托住壶身。",
+        "依次将壶嘴移到两个杯口上方，做小幅倾斜。",
+        "回正放下。"
+      ],
+      "acceptance": [
+        "壶嘴投影依次进入两杯口中心 1 cm 范围。",
+        "嘴端距杯口高度 2–5 cm，壶体不碰杯。",
+        "顺序正确，每处保持 0.5 s；不宣称实际出水。"
+      ],
+      "difference": "长偏置端点在多个目标间连续对准，不是液体倾倒。",
+      "related_existing_tasks": [
+        "kettle_pour"
+      ],
+      "preflight": [
+        "源资产无液体；标定壶嘴坐标，只验收姿态与相对位置。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 85,
+      "id": "proposal_85_inspect_can_label",
+      "title": "转动罐头让标签依次朝向两个观察方向",
+      "category": "视觉朝向",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "soupcan",
+          "x": -0.05,
+          "y": 0
+        },
+        {
+          "asset": "camera",
+          "x": 0.24,
+          "y": 0.14,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        }
+      ],
+      "initial_setup": "带纹理汤罐在中央，相机作为第二观察方位参照。",
+      "steps": [
+        "抓起罐头，让正面标签朝向机器人。",
+        "继续转动，使标签朝向相机参考点。",
+        "保持最后朝向放回桌面。"
+      ],
+      "acceptance": [
+        "两阶段标签法向与各自视线夹角均小于 15°，保持各 0.5 s。",
+        "标签面不能被手完全遮挡。",
+        "罐头直立放稳 2 s，不能只移动相机代替转罐。"
+      ],
+      "difference": "连续多视点展示带语义正面的物体，不是骰子面朝上。",
+      "related_existing_tasks": [
+        "proposal_18_orient_die"
+      ],
+      "preflight": [
+        "在纹理网格上标定标签正面法向；相机道具本身不假定有传感器。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 86,
+      "id": "proposal_86_fruit_size_order",
+      "title": "按最长尺寸排列三种水果",
+      "category": "语义与空间",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "banana",
+          "x": 0.21,
+          "y": -0.08
+        },
+        {
+          "asset": "lemon",
+          "x": -0.2,
+          "y": 0.08
+        },
+        {
+          "asset": "orange",
+          "x": 0.02,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "香蕉、柠檬和橙子在桌面分散放置。",
+      "steps": [
+        "比较固定资产网格的实际最长尺寸。",
+        "从左到右按长到短排列，并让长轴方向一致。",
+        "保留取物间隙。"
+      ],
+      "acceptance": [
+        "排序依据固定缩放后的网格尺寸，不凭类别猜测。",
+        "三个物体中心到同一 y 线距离小于 1 cm。",
+        "相邻完整网格间距 2–4 cm，稳定 2 s。"
+      ],
+      "difference": "连续尺寸排序加长轴约束，区别于按紧固件类别分箱。",
+      "related_existing_tasks": [
+        "proposal_26_sort_fasteners"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 87,
+      "id": "proposal_87_banana_cup_curve",
+      "title": "把草莓放在香蕉弯曲内侧",
+      "category": "形状配合",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "banana",
+          "x": -0.19,
+          "y": 0
+        },
+        {
+          "asset": "strawberry",
+          "x": 0.17,
+          "y": 0
+        }
+      ],
+      "initial_setup": "香蕉与草莓分开放在桌面。",
+      "steps": [
+        "调整香蕉朝向，让弯曲内侧朝机器人。",
+        "拿起草莓，放到香蕉弯曲内侧。",
+        "轻放草莓并撤手。"
+      ],
+      "acceptance": [
+        "草莓中心落在香蕉两端连线与内弧围成的凹侧区域。",
+        "香蕉与草莓至少留 3 mm 间隙，二者不互相支撑。",
+        "香蕉落桌并稳定 2 s。"
+      ],
+      "difference": "利用不规则曲率建立空间关系，而不是把水果直接装盘。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "先从网格核对草莓与香蕉内弧关系；目标为空间配合，不要求紧嵌或形变。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 88,
+      "id": "proposal_88_edge_plate_retrieve",
+      "title": "利用桌边露出的盘沿抓起餐盘",
+      "category": "抓取策略",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "plate",
+          "x": 0,
+          "y": -0.26
+        },
+        {
+          "asset": "mug",
+          "x": 0.26,
+          "y": 0.08
+        }
+      ],
+      "initial_setup": "餐盘靠近桌前沿，但完整网格仍在桌面范围内；杯子在后侧。",
+      "steps": [
+        "先沿桌面把盘沿送出桌边 2–3 cm。",
+        "用露出的下缘完成上下对捏。",
+        "抬盘，移动回桌面内部并放下。"
+      ],
+      "acceptance": [
+        "对捏前盘沿确实越过桌边，盘重心仍在支撑域内。",
+        "抓取时下指从桌边外侧进入，不能穿过桌面。",
+        "餐盘最终完整落回桌面，杯子无碰撞。"
+      ],
+      "difference": "主动创造桌边抓取空间，与使用工具铲入或直接抓盘不同。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "运行时先核对真实桌沿坐标；静态初态不把物体悬空预摆成功。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 89,
+      "id": "proposal_89_nozzle_sponge_alignment",
+      "title": "喷雾瓶喷嘴沿海绵三个位置对准",
+      "category": "端点对准",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "spray",
+          "x": -0.2,
+          "y": 0.07
+        },
+        {
+          "asset": "sponge",
+          "x": 0.15,
+          "y": 0
+        }
+      ],
+      "initial_setup": "喷雾瓶直立，海绵平放。",
+      "steps": [
+        "拿起喷雾瓶并把喷嘴朝向海绵。",
+        "依次对准海绵近端、中央和远端。",
+        "放回喷雾瓶。"
+      ],
+      "acceptance": [
+        "喷嘴轴线依次与三个表面目标相交，横向误差小于 8 mm。",
+        "喷嘴距表面 8–12 cm，不能撞击海绵。",
+        "瓶子放正；不要求扳机动作或喷出液体。"
+      ],
+      "difference": "有射线方向及距离约束的工具姿态控制，不是擦拭或持麦巡检。",
+      "related_existing_tasks": [
+        "proposal_49_microphone_scan"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 90,
+      "id": "proposal_90_toothpaste_cap_stand",
+      "title": "把牙膏管倒立在盖端",
+      "category": "平衡放置",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "toothpaste",
+          "x": -0.07,
+          "y": 0,
+          "rpy": [
+            0,
+            90,
+            0
+          ]
+        },
+        {
+          "asset": "soap",
+          "x": 0.2,
+          "y": 0.1
+        }
+      ],
+      "initial_setup": "牙膏管横放，香皂在后侧作为避让物。",
+      "steps": [
+        "夹住管身并识别盖端。",
+        "翻转到盖端向下，缓慢放到桌面。",
+        "撤手，检查自立。"
+      ],
+      "acceptance": [
+        "由盖端实际支撑，管身不接触其他物体。",
+        "主轴相对竖直误差小于 8°，稳定 3 s。",
+        "无挤压变形或牙膏挤出声明。"
+      ],
+      "difference": "不对称软包装外形的窄底自立；本阶段使用源刚体外形。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "先检查该源盖端是否有足够平面支撑；不能用隐藏固定使其站立。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 91,
+      "id": "proposal_91_loaded_skillet_support",
+      "title": "托住锅柄与锅底搬运带载煎锅",
+      "category": "双手协作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "skillet",
+          "x": -0.1,
+          "y": 0,
+          "name": "pan"
+        },
+        {
+          "asset": "lemon",
+          "x": -0.2,
+          "y": 0,
+          "supports": [
+            "pan"
+          ]
+        },
+        {
+          "asset": "coaster",
+          "x": 0.29,
+          "y": 0.17
+        }
+      ],
+      "initial_setup": "柠檬在煎锅内，杯垫在目标区域旁。",
+      "steps": [
+        "一手握长柄，另一手从锅底侧托住。",
+        "把带载锅移到目标区域，保持锅面水平。",
+        "先落锅底再释放。"
+      ],
+      "acceptance": [
+        "锅平移至少 20 cm，柠檬始终留在锅内。",
+        "运输阶段同时存在柄部抓握和锅底支撑。",
+        "锅最终落稳，柠檬相对位移不超过锅内半径一半。"
+      ],
+      "difference": "长柄负载力矩下的非对称双手分工，不是放空锅到炉上。",
+      "related_existing_tasks": [
+        "pan_to_stove",
+        "carry_dutch_oven"
+      ],
+      "preflight": [
+        "源扫描的锅壁有局部缺口；当前只考察锅底托物，不能宣称密闭盛放。动态版本需核对缺口与碰撞边界，保持载荷远离缺口。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 92,
+      "id": "proposal_92_spoon_under_bridge",
+      "title": "用勺子从书本桥下取出球",
+      "category": "工具避障",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "soupcan",
+          "x": -0.1,
+          "y": 0.04,
+          "name": "left"
+        },
+        {
+          "asset": "soupcan",
+          "x": 0.1,
+          "y": 0.04,
+          "name": "right"
+        },
+        {
+          "asset": "book",
+          "x": 0,
+          "y": 0.04,
+          "supports": [
+            "left",
+            "right"
+          ]
+        },
+        {
+          "asset": "golf",
+          "x": 0,
+          "y": 0.04
+        },
+        {
+          "asset": "spoon",
+          "x": 0.25,
+          "y": -0.16
+        }
+      ],
+      "initial_setup": "书本横搭两罐形成桥，球在桥下，勺子在右前方。",
+      "steps": [
+        "从桥下前方伸入勺面。",
+        "沿桌面把球带出桥下。",
+        "球到空旷区后用勺托起再放下。"
+      ],
+      "acceptance": [
+        "球从桥下移出至少 12 cm，主要接触来自勺子。",
+        "书和罐头位移均小于 1 cm，不能先拆桥。",
+        "球有一次离桌至少 2 cm 的勺托阶段。"
+      ],
+      "difference": "工具在受限高度内接近目标，不是开阔空间舀球。",
+      "related_existing_tasks": [
+        "proposal_02_spoon_ball"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 93,
+      "id": "proposal_93_book_domino_chain",
+      "title": "排好包装盒后触发顺序倒下",
+      "category": "顺序接触",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "tea",
+          "x": -0.24,
+          "y": 0
+        },
+        {
+          "asset": "coffee",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "asset": "sugar",
+          "x": 0.24,
+          "y": 0
+        },
+        {
+          "asset": "sponge",
+          "x": 0,
+          "y": 0.22
+        }
+      ],
+      "initial_setup": "三只直立包装盒分开放，海绵在旁。",
+      "steps": [
+        "将包装盒排成能依次触碰的队列。",
+        "只推动第一只，使其触发后续两只倒下。",
+        "等待全部静止。"
+      ],
+      "acceptance": [
+        "后两只开始倾倒的时刻严格晚于前一只，且由物体接触触发。",
+        "手只触碰第一只；不能直接推倒其他盒。",
+        "三只都最终侧躺在桌面，无掉桌。"
+      ],
+      "difference": "先布置接触链再单次触发，区别于用球直接撞一个瓶。",
+      "related_existing_tasks": [
+        "proposal_41_table_bowling"
+      ],
+      "preflight": [
+        "根据各包装盒高度、重心及间距计算可触及关系，动态摩擦需单独测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 94,
+      "id": "proposal_94_bookend_upright",
+      "title": "用两只罐头支住竖放的书",
+      "category": "搭建与支撑",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "book",
+          "x": 0,
+          "y": -0.12
+        },
+        {
+          "asset": "soupcan",
+          "x": -0.22,
+          "y": 0.1
+        },
+        {
+          "asset": "meatcan",
+          "x": 0.22,
+          "y": 0.1
+        }
+      ],
+      "initial_setup": "书本平放，两罐分开放置。",
+      "steps": [
+        "把书立在窄边上并用一手扶住。",
+        "另一手把两罐分别放到书的两侧抵住。",
+        "缓慢松开扶书的手。"
+      ],
+      "acceptance": [
+        "书本主平面与桌面夹角 85°–95°。",
+        "两罐分别在书两侧提供真实支撑，不能使用固定关节。",
+        "所有手撤离后书保持 3 s。"
+      ],
+      "difference": "边立薄物体并建立外部支撑，区别于平放书或堆叠物体。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "根据网格确定书脊窄边与两侧罐头接触高度。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 95,
+      "id": "proposal_95_can_roll_rails",
+      "title": "让横放罐头沿两本书之间滚动",
+      "category": "非抓取操作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "book",
+          "x": -0.15,
+          "y": 0.04,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "asset": "book",
+          "x": 0.15,
+          "y": 0.04,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "asset": "soupcan",
+          "x": 0,
+          "y": -0.19,
+          "rpy": [
+            0,
+            90,
+            0
+          ]
+        }
+      ],
+      "initial_setup": "两本书分开平放形成长通道，汤罐横放在入口。",
+      "steps": [
+        "把罐轴调整到与通道前进方向垂直。",
+        "手掌轻推使罐头沿通道滚动。",
+        "在出口阻停，避免继续滚出桌面。"
+      ],
+      "acceptance": [
+        "罐头前进至少 15 cm，并绕自身轴转动至少 90°。",
+        "罐体未越过书本上方，不能提起代替滚动。",
+        "书本位移小于 1 cm，罐头最终静止 2 s。"
+      ],
+      "difference": "受通道约束的圆柱滚动和阻停，区别于球的双手接传。",
+      "related_existing_tasks": [
+        "proposal_43_roll_and_catch"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 96,
+      "id": "proposal_96_marker_two_handles",
+      "title": "让毛笔同时穿过两个杯把",
+      "category": "插装与对准",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "mug",
+          "x": -0.18,
+          "y": 0,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "asset": "mug",
+          "x": 0.18,
+          "y": 0,
+          "rpy": [
+            0,
+            0,
+            90
+          ]
+        },
+        {
+          "asset": "brushpen",
+          "x": 0,
+          "y": -0.18
+        }
+      ],
+      "initial_setup": "两只杯子分开直立，杯把方向一致，毛笔在前方。",
+      "steps": [
+        "调整两杯的位置，使杯把孔轴近似共线。",
+        "一手稳定杯子，另一手把笔依次穿过两个孔。",
+        "保持笔贯穿两孔后松手。"
+      ],
+      "acceptance": [
+        "同一支笔连续穿过两个真实孔道。",
+        "两杯均直立，笔最终仅由杯把支撑并保持 2 s。",
+        "不能将杯体互相穿插来缩短孔距。"
+      ],
+      "difference": "先装配目标孔轴，再完成多孔约束插入；区别于单孔插杆。",
+      "related_existing_tasks": [
+        "insert_peg"
+      ],
+      "preflight": [
+        "先用真实笔长与杯把位置验证可形成同轴双孔；必要时转动杯把相向摆放，不能改变资产尺寸。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 97,
+      "id": "proposal_97_tray_bottle_gate",
+      "title": "把托盘侧转后送过两只高瓶",
+      "category": "受限空间",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "cleanser",
+          "x": -0.21,
+          "y": 0
+        },
+        {
+          "asset": "cleanser",
+          "x": 0.21,
+          "y": 0
+        },
+        {
+          "asset": "tray",
+          "x": 0,
+          "y": -0.22
+        }
+      ],
+      "initial_setup": "两只高瓶形成通道，托盘长边横向摆在通道前。",
+      "steps": [
+        "双手端起托盘，在水平面内旋转 90°。",
+        "让窄边朝向通道，低位送过两瓶。",
+        "在通道后方平放。"
+      ],
+      "acceptance": [
+        "托盘完整从两瓶之间经过，底面高度小于瓶高的一半。",
+        "托盘与瓶子最小间隙至少 5 mm，瓶位移小于 1 cm。",
+        "最终托盘长轴朝前后，释放后稳定 2 s。"
+      ],
+      "difference": "大面积扁平物体需要改变平面朝向才能通过，比长杆穿缝增加双手同步约束。",
+      "related_existing_tasks": [
+        "proposal_34_baguette_passage"
+      ],
+      "preflight": [
+        "以固定模型实际尺寸核对：托盘窄边约 27.4 cm，通道约 31.8 cm，长边 36 cm 不能直接横向通过。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 98,
+      "id": "proposal_98_fork_sponge_detour",
+      "title": "用叉柄推海绵绕开瓶子",
+      "category": "工具避障",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "sponge",
+          "x": -0.24,
+          "y": -0.1
+        },
+        {
+          "asset": "lotion",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "asset": "fork",
+          "x": 0.24,
+          "y": -0.15
+        }
+      ],
+      "initial_setup": "海绵在左前方，乳液瓶在中央，叉子在右侧。",
+      "steps": [
+        "握叉并用钝柄端接触海绵侧面。",
+        "分段改变接触边，把海绵推到瓶子另一侧。",
+        "撤回工具。"
+      ],
+      "acceptance": [
+        "海绵从 x<-0.15 m 移到 x>0.15 m，路线绕过瓶身。",
+        "手不直接抓海绵，工具不能扎入海绵。",
+        "瓶子位移小于 1 cm，始终直立。"
+      ],
+      "difference": "通过切换工具接触面规划非抓取绕障，不是抓控小车移动。",
+      "related_existing_tasks": [
+        "proposal_42_toycar_slalom"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 99,
+      "id": "proposal_99_handbell_oscillation",
+      "title": "握住手摇铃完成三次往复摆动",
+      "category": "姿态轨迹",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "callbell",
+          "x": -0.07,
+          "y": 0
+        },
+        {
+          "asset": "coaster",
+          "x": 0.23,
+          "y": -0.1
+        }
+      ],
+      "initial_setup": "手摇铃直立，杯垫在右侧作为回放位置。",
+      "steps": [
+        "握住铃柄并抬离桌面。",
+        "让铃体连续完成三次左右往复摆动。",
+        "停止摆动后把铃底放到杯垫中央。"
+      ],
+      "acceptance": [
+        "铃体绕指定横轴完成三次往复，每侧幅度 20°–35°。",
+        "握持只在铃柄，铃体无撞桌或脱手，转向时角速度连续。",
+        "铃底落在杯垫内且稳定 2 s，不要求声音或内部铃舌运动。"
+      ],
+      "difference": "有周期、振幅和停止姿态要求的连续摆动，不是抓起后直接移位。",
+      "related_existing_tasks": [],
+      "preflight": [
+        "源模型为手摇铃外形，按整体刚体评估，未接入声学及内部铃舌。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    },
+    {
+      "number": 100,
+      "id": "proposal_100_balanced_tray_exchange",
+      "title": "扶稳托盘同时交换两侧载荷",
+      "category": "双手协作",
+      "status": "not_started",
+      "objects": [
+        {
+          "asset": "tray",
+          "x": 0,
+          "y": 0,
+          "name": "tray"
+        },
+        {
+          "asset": "soupcan",
+          "x": -0.11,
+          "y": 0,
+          "supports": [
+            "tray"
+          ]
+        },
+        {
+          "asset": "meatcan",
+          "x": 0.07,
+          "y": 0,
+          "supports": [
+            "tray"
+          ]
+        }
+      ],
+      "initial_setup": "两种罐头分放托盘两端，托盘平放桌面。",
+      "steps": [
+        "一手端起托盘一侧并保持可控姿态。",
+        "另一手依次把两罐交换到对侧，中间允许临时落桌。",
+        "托盘放平，确认载荷已交换。"
+      ],
+      "acceptance": [
+        "至少一只手在交换期间持续稳住离桌的托盘，盘面倾角小于 10°。",
+        "两罐最终分别到达对侧初始区域，误差小于 2 cm。",
+        "非操作中的载荷相对滑移不超过 2 cm，无掉落。"
+      ],
+      "difference": "移动支撑面与载荷重新分布同时发生，区别于桌面双手交换盒子。",
+      "related_existing_tasks": [
+        "proposal_37_bimanual_swap",
+        "tray_carry"
+      ],
+      "preflight": [
+        "使用实际网格核对抓取空间、支撑面与机器人可达性；转成动态资产后再测试。"
+      ],
+      "runtime_implemented": true,
+      "physics_validated": false,
+      "trajectory_implemented": false
+    }
+  ]
+}

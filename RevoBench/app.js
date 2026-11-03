@@ -2,7 +2,7 @@
 const $ = (selector) => document.querySelector(selector);
 const labels = { accepted: '已验收', in_progress: '开发中', not_started: '未开始' };
 const kindLabels = { accepted: '验收参考', diagnostic: '调试录像', development: '开发演示' };
-let tasks = [], status = 'all', previousFocus = null;
+let tasks = [], status = 'all', batch = null, previousFocus = null;
 const esc = (value) => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const duration = (seconds) => `${Math.floor(Math.round(seconds) / 60)}:${String(Math.round(seconds) % 60).padStart(2, '0')}`;
 const placeholder = `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="m32 7 23 13v25L32 58 9 45V20Z M9 20l23 13 23-13 M32 33v25 M20 13l23 13v14"/></svg><span>等待动作录制</span><small>尚无演示视频</small>`;
@@ -20,8 +20,8 @@ motionPreference.addEventListener('change', e => { if (e.matches) hero.pause(); 
 new IntersectionObserver(entries => { if (!entries[0].isIntersecting) hero.pause(); }, { threshold: 0.05 }).observe(hero);
 function render() {
   const query = $('#search').value.trim().toLowerCase();
-  const visible = tasks.filter(t => (status === 'all' || t.status === status) && `${t.title} ${t.id} ${t.category} ${t.description}`.toLowerCase().includes(query));
-  $('#result-count').textContent = `${visible.length} 项任务`;
+  const visible = tasks.filter(t => (status === 'all' || t.status === status) && (!batch || t.batch === batch) && `${t.title} ${t.id} ${t.category} ${t.description}`.toLowerCase().includes(query));
+  $('#result-count').textContent = `${visible.length} 项任务${batch ? ' · 第二批组合任务（51–100）' : ''}`;
   $('#empty').hidden = visible.length > 0;
   $('#grid').innerHTML = visible.map(t => {
     const v = t.videos[0];
@@ -65,10 +65,10 @@ function clipNotice(v) {
 function closeDetail() { $('#detail').close(); }
 $('#close').addEventListener('click', closeDetail);
 $('#detail').addEventListener('click', e => { if (e.target === $('#detail')) { const r = $('#detail').getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeDetail(); } });
-$('#detail').addEventListener('close', () => { $('#task-video')?.pause(); if (location.hash.startsWith('#task=')) history.replaceState(null, '', '#tasks'); previousFocus?.focus({ preventScroll: true }); });
+$('#detail').addEventListener('close', () => { $('#task-video')?.pause(); if (location.hash.startsWith('#task=')) history.replaceState(null, '', batch ? '#batch=' + batch : status === 'not_started' ? '#not-started' : '#tasks'); previousFocus?.focus({ preventScroll: true }); });
 document.addEventListener('click', e => { const button = e.target.closest('[data-task]'); if (button) openTask(button.dataset.task); });
-function setStatus(next) {
-  status = next;
+function setStatus(next, selectedBatch = null) {
+  status = next; batch = selectedBatch;
   document.querySelectorAll('[data-status]').forEach(b => { const active = b.dataset.status === next; b.classList.toggle('active', active); b.setAttribute('aria-pressed', String(active)); });
   render();
 }
@@ -80,15 +80,20 @@ document.querySelectorAll('[data-task-status]').forEach(link => link.addEventLis
   e.preventDefault(); setStatus(link.dataset.taskStatus);
   history.replaceState(null, '', '#not-started'); $('#tasks').scrollIntoView();
 }));
+document.querySelectorAll('[data-task-batch]').forEach(link => link.addEventListener('click', e => {
+  e.preventDefault(); setStatus('not_started', link.dataset.taskBatch);
+  history.replaceState(null, '', '#batch=' + batch); $('#tasks').scrollIntoView();
+}));
 $('#search').addEventListener('input', render);
-fetch('./snapshot.json?v=20261103-revotron').then(r => { if (!r.ok) throw Error('Task collection unavailable'); return r.json(); }).then(data => {
+fetch('./snapshot.json?v=20261103-second50').then(r => { if (!r.ok) throw Error('Task collection unavailable'); return r.json(); }).then(data => {
   tasks = data.tasks;
   const order = { accepted: 0, in_progress: 1, not_started: 2 };
   tasks.sort((a,b) => order[a.status] - order[b.status]);
   document.querySelectorAll('[data-status]').forEach(b => { b.querySelector('span').textContent = b.dataset.status === 'all' ? tasks.length : tasks.filter(t => t.status === b.dataset.status).length; });
   $('#hero-meta').innerHTML = `<span>${tasks.length} 项操作任务</span><span>${tasks.reduce((n,t) => n+t.videos.length,0)} 段仿真视频</span><span>${tasks.reduce((n,t) => n+t.trajectory_count,0)} 条验收参考轨迹</span>`;
   $('#snapshot-date').textContent = data.snapshot_date.replaceAll('-', '.');
-  setStatus(location.hash === '#not-started' ? 'not_started' : 'all');
-  if (location.hash === '#not-started') $('#tasks').scrollIntoView();
+  const selectedBatch = location.hash === '#batch=tabletop100' ? 'tabletop100' : null;
+  setStatus(location.hash === '#not-started' || selectedBatch ? 'not_started' : 'all', selectedBatch);
+  if (location.hash === '#not-started' || selectedBatch) $('#tasks').scrollIntoView();
   if (location.hash.startsWith('#task=')) openTask(decodeURIComponent(location.hash.slice(6)));
 }).catch(() => { $('#error').hidden = false; $('#result-count').textContent = '列表加载失败'; });

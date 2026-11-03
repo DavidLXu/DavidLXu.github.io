@@ -1580,8 +1580,958 @@
         "layout_sha256": "63922e09ddf5ba812c245a72e202361b71aa9ccd018a1fd761ef37dbe39d77a8",
         "robot_profile": "revotron_mt_fisheye_56d_v1"
       }
+    },
+    {
+      "id": "proposal_51_wrench_nut_turn",
+      "title": "用扳手端部拨转螺母",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "工具操作",
+      "description": "扳手与六角螺母分开放在桌面，螺母平放。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_51_wrench_nut_turn",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_51_wrench_nut_turn--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "f026353c703880d6d24aedc459178c21f1f3998ea60f87ce41707c0254fe9f26",
+        "layout_sha256": "a551c41549f3e13cbdaa555ac7dee093b5722ad3c384a2fbe62bbf8b1d3b9c80",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_52_two_tools_apple",
+      "title": "锅铲和勺子协作托住苹果",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双工具协作",
+      "description": "苹果在中央，两种工具在两侧，空盘在后方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_52_two_tools_apple",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_52_two_tools_apple--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "c9e3b9df180b14e0ff422f80313ed53fe3abb2e51536b4c2ad06ab95acc11d39",
+        "layout_sha256": "b9156d15bc8e5a385cef9a4f2d35c2e81fb64467b3ed6536bc8f9abca3d34bb0",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_53_fork_mug_drag",
+      "title": "用叉柄穿过杯把牵引杯子",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "工具操作",
+      "description": "杯子直立，杯把朝侧面，叉子横放在前方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_53_fork_mug_drag",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_53_fork_mug_drag--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "95a15354b249acabfc6e215ec39256e92538643f758e86858e08e3e46aa4570a",
+        "layout_sha256": "1b068b4520be09d9f437f19a801c9db57152719e445dfd0fe5b26668cb827246",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_54_marker_zigzag",
+      "title": "持记号笔沿笔记本折线路径移动",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "接触轨迹",
+      "description": "笔记本平放，记号笔在右侧；路径由笔记本表面坐标定义，不添加实体标记。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_54_marker_zigzag",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_54_marker_zigzag--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "dc1029a335681432d3a98a46f7ffd14a808ad04cc368cf5a3e125c076feccd23",
+        "layout_sha256": "35dcebf3dcb3d6fbbf62399cd1b5a62cbcfbdf680c9f06b158c4f1028ca73869",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_55_roller_sponge",
+      "title": "双手用擀面杖沿海绵往返滚动",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "接触轨迹",
+      "description": "海绵平放，擀面杖在右前方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_55_roller_sponge",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_55_roller_sponge--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "681c58ad5b94040b6656be4030762ff6d1765eed5dfc5c2413037f23faae3db1",
+        "layout_sha256": "f09f440c3a96ccc14e81db6f3db37bd81fae72670d0d3f5c2c48463e9908769d",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_56_spoon_bowl_wall",
+      "title": "勺子沿碗内壁绕一圈",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "接触轨迹",
+      "description": "空碗在中央，勺子在右侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_56_spoon_bowl_wall",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_56_spoon_bowl_wall--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "e4ac2cc7c9b482dd0ea2e49c278aa7a6da0e69af0dc1b512f5fa0b4101fce14e",
+        "layout_sha256": "bdeccfebe711b1f3e6139e68082239a2e621214f2d3dcf49685833d019417c78",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_57_brush_shoe_sole",
+      "title": "翻起鞋子后刷扫鞋底",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双手清洁",
+      "description": "鞋子侧放，刷子在右侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_57_brush_shoe_sole",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_57_brush_shoe_sole--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "394bc2fdf9e5df673bc2146edaef65f4cab654974c4cab0db0215c3d257b42f9",
+        "layout_sha256": "528e3b4495871e670724d08f7e3c28f500c43edafb92c066eec754575b5b187f",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_58_wipe_plate_faces",
+      "title": "持盘擦拭正反两面",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双手清洁",
+      "description": "餐盘平放，海绵在右侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_58_wipe_plate_faces",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_58_wipe_plate_faces--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "4933cf7f78b7762d4d24baf45bd52d0fa92f0ab0f4fda4c21d195a54c6ab6588",
+        "layout_sha256": "c5f65b0f12950ae4006e69d569ae1f317011546ddf5babbb47f257b83ffff065",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_59_knife_can_edge",
+      "title": "用餐刀辅助捏起薄罐头",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "工具操作",
+      "description": "薄金枪鱼罐平放，餐刀在旁。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_59_knife_can_edge",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_59_knife_can_edge--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "f95a8d2d83f00b512514ce28029b26ac4bb433046aef9299b23f7990cecfc73f",
+        "layout_sha256": "0a2529a09c436b1e57c05c7e21c6a8f9ec36a84d93a0d2edef38228d001f492b",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_60_driver_key_targets",
+      "title": "用螺丝刀柄端依次触碰计算器按键",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "接触轨迹",
+      "description": "计算器朝上，螺丝刀在右侧；选定三个不同按键表面。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_60_driver_key_targets",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_60_driver_key_targets--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "06c5c0c410319f8502e25ca1d71dc9654cc85ed0c943bc211446411cae7e3cbb",
+        "layout_sha256": "60a89be8fcf60c9b931cab3b4736ee1802cbbc72c16438020308e4ae170dbec9",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_61_plate_orange_chute",
+      "title": "倾斜餐盘让橙子滚入碗",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "非抓取操作",
+      "description": "橙子在盘中央，空碗在旁侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_61_plate_orange_chute",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_61_plate_orange_chute--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "4797424408a3de121913b7154b36bdea12464097dfee048b531d182edcb4f80b",
+        "layout_sha256": "699134dc8732f3e9b7a1edd9495c65c7ad64c9334a9a82635598395a97171fd3",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_62_loaded_tray_curve",
+      "title": "端着杯与罐头绕过高瓶",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "平衡搬运",
+      "description": "杯与罐头分放托盘两端，清洁剂瓶在运输路径旁。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_62_loaded_tray_curve",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_62_loaded_tray_curve--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "0bd37ac4ff805ceaf1b49a82bbeb6083516d278465f587e89b0c378d48ac9cf6",
+        "layout_sha256": "e8cdba95b447907578ba19d1e1a4e8a2afd2e68e8d9994a6d6980a137a7dab04",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_63_ball_plate_level",
+      "title": "端盘移动时让球留在中央",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "平衡搬运",
+      "description": "高尔夫球在盘中央，杯垫标示目标区域旁边。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_63_ball_plate_level",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_63_ball_plate_level--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "2d208a2f088e34043e8ba24dca0e5c9005ca51d61a8b546a25622bf2cc6afe53",
+        "layout_sha256": "f17950346ffb2514f9dd26111881b5eda90ab2e68e4439120ab45561fcf80cf9",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_64_pitcher_gate",
+      "title": "转动量壶通过两盒之间",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "受限空间",
+      "description": "量壶在前方，两只高包装盒形成通道；壶把初始横向。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_64_pitcher_gate",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_64_pitcher_gate--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "a91790014927f88f93382cb7b82037454e2822952df6581d27170c141ce9620d",
+        "layout_sha256": "02f3f3e6f79054f04f07404fbd280fc12e1febf40cbe3766b4bc0a2763259b84",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_65_book_ramp_ball",
+      "title": "搭出书本斜坡让球滚入托盘",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "搭建与引导",
+      "description": "书、罐头、托盘和球分开放置。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_65_book_ramp_ball",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_65_book_ramp_ball--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "bece269ed31baf51291165ea02a9d9ea9df0803ea7f9688264058334415aea95",
+        "layout_sha256": "92c29f6c33fd86d5ba9ffb13b054246e89f0a485502acd9bfacc7784ad8b5b1d",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_66_build_car_bridge",
+      "title": "用书和罐头搭桥让小车穿过",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "搭建与引导",
+      "description": "书本、两只汤罐和小车分开放置。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_66_build_car_bridge",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_66_build_car_bridge--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "d795fe622f0b9177105fc942459635759f43620a056b901e0ce54247d6bc2d3c",
+        "layout_sha256": "83da026622723a0ada73fe5830ccb66c6f60c8f75ee4ab2e3d7fe7c5355092ba",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_67_insert_coaster_mug",
+      "title": "抬杯后把杯垫送到杯底",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双手协作",
+      "description": "杯子直立在桌上，杯垫在右前方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_67_insert_coaster_mug",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_67_insert_coaster_mug--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "4c325eeb6adadf558d6a64a92960f14a0206c97fdbf9165e2d6a7eaa9734946c",
+        "layout_sha256": "3541f956b22a39e20c1d7bfa0f1ac50c8313d7434dd11ab60f27e8422c9b3f99",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_68_invert_bowl_plate",
+      "title": "用盘盖住碗后夹持翻转",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双手协作",
+      "description": "球在碗内，餐盘在旁侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_68_invert_bowl_plate",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_68_invert_bowl_plate--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "17a700e93793efd12b104ec04959a905bc191cdab1f840a190d5c132fd65991d",
+        "layout_sha256": "9c3531d022af107381ffb4fb66256a2c6a7889c8ee3afbfb30624c044d9ecf52",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_69_clamp_bread_plates",
+      "title": "用两只盘子夹住面包搬运",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双手协作",
+      "description": "面包在中央，两只盘子分别放在两侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_69_clamp_bread_plates",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_69_clamp_bread_plates--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "ddfebb60e55212bd7fb3290535ce737b6ed67618b939ec8406e54518a57feb87",
+        "layout_sha256": "0687a5ea8438997d684cf4cbf4e111c57ccf5ca3600243ded9b91bccdcffa8e3",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_70_spoon_rest_mug",
+      "title": "把勺子横搭在杯口",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "平衡放置",
+      "description": "空杯直立，勺子平放在右侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_70_spoon_rest_mug",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_70_spoon_rest_mug--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "741c4e8b216630da9460ac485df8196617b301fe93e1795f36a30323346adafc",
+        "layout_sha256": "97045e6d81572559db8c8defc608fcc455e0b6505cc07d49e07b01368a2689d8",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_71_meter_dice_cup",
+      "title": "从杯中逐个倒出三颗骰子",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "定量释放",
+      "description": "三颗骰子在杯前分开放置，空盘在右侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_71_meter_dice_cup",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_71_meter_dice_cup--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "c9a45fc2183256408ab845ef757732d1922a759451ad290cfbbb5a7401231bc2",
+        "layout_sha256": "7726970ae0ee5c4909e4aeb44f0d9ecb0d3d10c05d6f4f1c9757c313074890a0",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_72_cup_to_cup_ball",
+      "title": "双手在两只杯间转移球",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双手协作",
+      "description": "球在左杯，右杯为空。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_72_cup_to_cup_ball",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_72_cup_to_cup_ball--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "612d1d3dff97778f29391a8a76d25438d8ab09a7bbaa7583d250c34c97ab347d",
+        "layout_sha256": "f1024a70a0ea90352100bd7acc721a55f3bdeeb2febd9973e2a51a77f02905fe",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_73_thread_marker_handle",
+      "title": "把毛笔穿过杯把",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "插装与对准",
+      "description": "杯把向侧面，细毛笔平放在右前方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_73_thread_marker_handle",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_73_thread_marker_handle--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "9a2bcd12ecd6d0bae4175abee5552723e2bb24c41a447fbaf73ceaa193ad0995",
+        "layout_sha256": "670852fdb8a8568078b4e015bab638d96642f2a3354de3a27e9df72f165eeb69",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_74_scale_single_fruit",
+      "title": "逐件把水果放到秤面再取下",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "顺序操作",
+      "description": "电子秤在后方，三种水果在前方分开放置。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_74_scale_single_fruit",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_74_scale_single_fruit--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "6e5d1ef36f05bc8dd393b4ac3f2d63bea27525e7ae627bb5f5321ec1ffb80c31",
+        "layout_sha256": "5e34abcb38480b5256e64b98508984beb72082a2bbbc75be25471b5b0c7569b1",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_75_can_pyramid",
+      "title": "把三只罐头搭成小拱堆",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "平衡放置",
+      "description": "三只同款汤罐横放且彼此分离。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_75_can_pyramid",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_75_can_pyramid--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "58bfe26391babedc006d9107110bfbb6134094ce3c8d8a67bfbb1a83c2eaf30f",
+        "layout_sha256": "91bee651e786760c36ee4634524a84199a08136ad0c7c61989bb6d607db616fd",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_76_utensil_safe_handover",
+      "title": "把餐刀调整成刀柄朝向接收手",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "安全交接",
+      "description": "餐刀平放在左侧，空托盘在右侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_76_utensil_safe_handover",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_76_utensil_safe_handover--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "ea96a0260524e9aade6c6b2c844b8eaa7367dcbf4a176e4c3b13d0f4d603ccab",
+        "layout_sha256": "934e35094f2852e8f6d0e28b1d147739f5d21528f38602e153c5842c5d46a228",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_77_separate_food_cleaners",
+      "title": "把食品与清洁用品分区摆开",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "语义与空间",
+      "description": "两件食品和两件清洁用品交错摆放。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_77_separate_food_cleaners",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_77_separate_food_cleaners--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "1beb4174a89c76533784c30bba536d6e80e2f1fa9154af6c66a929160cfbbf00",
+        "layout_sha256": "fe8ef1233ddd0a935882680d122c1eb3ec68fbc98103224513cc0b1d9c97e4f7",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_78_breakfast_tray",
+      "title": "按餐具关系摆一份早餐托盘",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "语义与空间",
+      "description": "托盘为空，杯、香蕉和勺子在托盘外。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_78_breakfast_tray",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_78_breakfast_tray--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "afd3042e57c427843823fd796d4bcef9ba0bf207f85b7789b49be31986f4beb1",
+        "layout_sha256": "cc0f0729469dd9be811873cc570728d3649632f94a5ec6b9b2081ef87fff3c23",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_79_bowl_scale_center",
+      "title": "把碗居中放上电子秤",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "精确放置",
+      "description": "碗、秤和勺子分开放置。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_79_bowl_scale_center",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_79_bowl_scale_center--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "2fda0b76d685d230e26601cb31daaffa1f25a1c05817b10143ee2c07f74c4f82",
+        "layout_sha256": "2f7f32d1030361fc3561aca0f443e117134b544871a393d3715e21ad102b3e5b",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_80_fan_tools",
+      "title": "把三件长工具摆成可抓取扇形",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "语义与空间",
+      "description": "扳手、螺丝刀、记号笔平行放置。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_80_fan_tools",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_80_fan_tools--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "531f933a9b9295a730beca213efb501bd418d604292925a40e382e3a3066bf89",
+        "layout_sha256": "74e18b058f0726ca2790c26cab874d908ad1c7d780a369f10b7bd0d3b76b3fdc",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_81_park_car_tray",
+      "title": "让小车倒退进入托盘停车位",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "受限空间",
+      "description": "托盘在后方，两盒限定入口两侧，小车在前方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_81_park_car_tray",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_81_park_car_tray--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "0a9d7bc00b5b082ce747bde6f0a034f88a9a9625051a0ac1c47acc0dfb83675d",
+        "layout_sha256": "e7fea2c07e4304b2f35320fb1d69fc305844ae6903f600044d4a51e53c6786a8",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_82_ramp_car_tray",
+      "title": "铺好书本坡道再让小车上托盘",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "搭建与引导",
+      "description": "书本平放在托盘旁，小车在前方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_82_ramp_car_tray",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_82_ramp_car_tray--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "73e2affa8bd2029ab644054e722bf321099d43c0c88a2d8c9b7e132f219bc6ee",
+        "layout_sha256": "dcf4f6e62b5421c1a861148a6a8066a1aaa434cdb204d3a9f4918a4f5c0cf4af",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_83_right_pitcher",
+      "title": "扶正侧倒的带柄量壶",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "姿态恢复",
+      "description": "量壶侧倒，杯垫在旁侧作为避让物。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_83_right_pitcher",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_83_right_pitcher--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "aba58c9898494d2b826b811bcf5797a789d7981bf09e36f0ff10630e52b2277f",
+        "layout_sha256": "ac69e06a820bb05e0ccc629138954df1608cac8ef87debaeeb525485a7a6b7dc",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_84_aim_wateringcan",
+      "title": "让浇水壶嘴依次对准两个杯口",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "端点对准",
+      "description": "浇水壶在前方，两只杯在后方分开摆放。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_84_aim_wateringcan",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_84_aim_wateringcan--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "b6285e2de779d0d0edca8a383b5baec60f30413e15e02e46f39aa093fae275da",
+        "layout_sha256": "e99add42ec1e2fa0f962583f5a209305a8917e2b926f2957c82117f671172cad",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_85_inspect_can_label",
+      "title": "转动罐头让标签依次朝向两个观察方向",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "视觉朝向",
+      "description": "带纹理汤罐在中央，相机作为第二观察方位参照。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_85_inspect_can_label",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_85_inspect_can_label--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "51a9b2c4cf55e151cd7a184dc1f135266fb4aa232f1ed5a248d5b4d205661d38",
+        "layout_sha256": "5ebe5ce8e5c2835a00488061a077cb4c25b8b1a6970e2c8bfb014c5f47555cc0",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_86_fruit_size_order",
+      "title": "按最长尺寸排列三种水果",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "语义与空间",
+      "description": "香蕉、柠檬和橙子在桌面分散放置。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_86_fruit_size_order",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_86_fruit_size_order--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "7afd9b5ffce2780a08147761791f6beacfad35ec3c0bbfdcaeb7565a2ba201d4",
+        "layout_sha256": "19ce47dd32d67e687f5536360814a57747ab2b93c6f2ea0df5827360ed9ddef0",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_87_banana_cup_curve",
+      "title": "把草莓放在香蕉弯曲内侧",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "形状配合",
+      "description": "香蕉与草莓分开放在桌面。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_87_banana_cup_curve",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_87_banana_cup_curve--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "b31cf40d7e9b0a0cb9ca9904cd375124ebd01244d5fb9b03b877372e15f569a3",
+        "layout_sha256": "82a5054e80c4cb92f3b8d318ea1bc95f96366c691910a17921a83088634bfb89",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_88_edge_plate_retrieve",
+      "title": "利用桌边露出的盘沿抓起餐盘",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "抓取策略",
+      "description": "餐盘靠近桌前沿，但完整网格仍在桌面范围内；杯子在后侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_88_edge_plate_retrieve",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_88_edge_plate_retrieve--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "b836416d255f77f4edf0132e5a0d85fcd59a49d3f8c18528a539d55bf8e5eb0b",
+        "layout_sha256": "d1a8e69304b2dbacc45a290781d86e8f646990933570d57eeff16d54b356ae26",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_89_nozzle_sponge_alignment",
+      "title": "喷雾瓶喷嘴沿海绵三个位置对准",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "端点对准",
+      "description": "喷雾瓶直立，海绵平放。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_89_nozzle_sponge_alignment",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_89_nozzle_sponge_alignment--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "fb9edfdcd2e526de75987b01e6deacedacd82f1100c939c201adb4f959d95243",
+        "layout_sha256": "8e8dda00a93f280f624aadbdef96b447affb3a96006b5322f42e7fb9c15f0699",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_90_toothpaste_cap_stand",
+      "title": "把牙膏管倒立在盖端",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "平衡放置",
+      "description": "牙膏管横放，香皂在后侧作为避让物。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_90_toothpaste_cap_stand",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_90_toothpaste_cap_stand--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "d41d2c94701dea8306050aff6e5e552d413933619d99ba810d23587dbf87c8bd",
+        "layout_sha256": "7d362cfaf576b07374d5753dcfa667943a0dbce8f132bf2a4fff4f4b1baacbc7",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_91_loaded_skillet_support",
+      "title": "托住锅柄与锅底搬运带载煎锅",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双手协作",
+      "description": "柠檬在煎锅内，杯垫在目标区域旁。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_91_loaded_skillet_support",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_91_loaded_skillet_support--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "c76fab3509568d08ddddf4c254fdae24f14f06767bfcf4bf4d5d0deb8707f6a5",
+        "layout_sha256": "0d2f2545f0dbdac6753915fcbdc300b013250bb0a3a4cf5e259f3a7638b58af6",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_92_spoon_under_bridge",
+      "title": "用勺子从书本桥下取出球",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "工具避障",
+      "description": "书本横搭两罐形成桥，球在桥下，勺子在右前方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_92_spoon_under_bridge",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_92_spoon_under_bridge--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "bfdad992f63c05d7a37830c73d5b064294a8b39d18b4f4e66392418a98b05c52",
+        "layout_sha256": "5582faff7319e1d9fd8a5c1066d7b5ed6f9c870873f4aa834af16af75f97fa66",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_93_book_domino_chain",
+      "title": "排好包装盒后触发顺序倒下",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "顺序接触",
+      "description": "三只直立包装盒分开放，海绵在旁。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_93_book_domino_chain",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_93_book_domino_chain--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "27c7b67854fc58266dda06367aff773e10df340d2a6cc1a72a64210a7b430011",
+        "layout_sha256": "65fcb1a989cf1383dc348fbc62235853d31d0512b6c8c5ffd61bed3f64da3355",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_94_bookend_upright",
+      "title": "用两只罐头支住竖放的书",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "搭建与支撑",
+      "description": "书本平放，两罐分开放置。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_94_bookend_upright",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_94_bookend_upright--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "fa11480a1b8f829c1bb653dbc78fd117986048c6c06706c93d017e387cbcea8f",
+        "layout_sha256": "24f53e9afee5f986dfd53e99f53cd97273846f00c4213494e2d8f3c44cca51fd",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_95_can_roll_rails",
+      "title": "让横放罐头沿两本书之间滚动",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "非抓取操作",
+      "description": "两本书分开平放形成长通道，汤罐横放在入口。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_95_can_roll_rails",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_95_can_roll_rails--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "dc4f2632a16df1df478c3ddd4a396fd56534e5f0a280b6812cc01f33c9dc0ba5",
+        "layout_sha256": "1fa1cfb620c1fd4348358ffa9275eea65bf784bae01d4bb1a4d77c680e04874d",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_96_marker_two_handles",
+      "title": "让毛笔同时穿过两个杯把",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "插装与对准",
+      "description": "两只杯子分开直立，杯把方向一致，毛笔在前方。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_96_marker_two_handles",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_96_marker_two_handles--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "04a93f1261af8ee2c26e0b0e36c62da290faa92edbfa818f4f6c24052ab07463",
+        "layout_sha256": "a04524d2dd503a867232711aa00feda7522c5d5be75dce0fae7ffcf243bd2ce1",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_97_tray_bottle_gate",
+      "title": "把托盘侧转后送过两只高瓶",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "受限空间",
+      "description": "两只高瓶形成通道，托盘长边横向摆在通道前。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_97_tray_bottle_gate",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_97_tray_bottle_gate--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "b43554d56f259915c161914aed34479105787d23ac440bde7c599514d651703a",
+        "layout_sha256": "a8a7b976964b6eb4cff6e4775ef8f58a9d9eab2efb9d1eede8dc7d0e73e807f5",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_98_fork_sponge_detour",
+      "title": "用叉柄推海绵绕开瓶子",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "工具避障",
+      "description": "海绵在左前方，乳液瓶在中央，叉子在右侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_98_fork_sponge_detour",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_98_fork_sponge_detour--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "269ea3fd898c28a050c7d6af09bc3881ada75a594aeceeeb123049c9120560ee",
+        "layout_sha256": "8b31c92fcbfb0135b6e47026697c9fbfeb9d595bde3027d0d751bf81f3bcb863",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_99_handbell_oscillation",
+      "title": "握住手摇铃完成三次往复摆动",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "姿态轨迹",
+      "description": "手摇铃直立，杯垫在右侧作为回放位置。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_99_handbell_oscillation",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_99_handbell_oscillation--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "5d5bcd13f9da7fefec4b69977f4fb0c41b65540f882240162d1b0c2b71d88c1c",
+        "layout_sha256": "4a4929ef17b46f9fb50b9a0f874541194ed172c5651aaad40865c5f33379f285",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "proposal_100_balanced_tray_exchange",
+      "title": "扶稳托盘同时交换两侧载荷",
+      "status": "not_started",
+      "batch": "tabletop100",
+      "category": "双手协作",
+      "description": "两种罐头分放托盘两端，托盘平放桌面。",
+      "trajectory_count": 0,
+      "videos": [],
+      "task_spec_url": "./pending-51-100/#proposal_100_balanced_tray_exchange",
+      "scene_preview": {
+        "url": "./media/scene-previews/proposal_100_balanced_tray_exchange--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "f42fec617d78129a6c64cb7b9b0deca287965cfb99ffaa522fa7161f0724b589",
+        "layout_sha256": "c0b1685d4e7111246ccdee5cdf121d1e47db31e02891b85d10be01151ea62f17",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
     }
   ],
   "source_repository": "https://github.com/BrainCoTech/RevoBench",
-  "static_scene_count": 57
+  "static_scene_count": 107
 }
