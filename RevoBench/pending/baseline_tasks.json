@@ -1,0 +1,182 @@
+[
+  {
+    "id": "arrange_condiments",
+    "title": "盐和胡椒瓶归位",
+    "status": "accepted"
+  },
+  {
+    "id": "assemble_gears",
+    "title": "齿轮装配",
+    "status": "not_started"
+  },
+  {
+    "id": "carry_dutch_oven",
+    "title": "双手搬双耳锅",
+    "status": "accepted"
+  },
+  {
+    "id": "coffee_handle_turn",
+    "title": "旋转咖啡机手柄",
+    "status": "accepted"
+  },
+  {
+    "id": "cup_hang",
+    "title": "挂杯",
+    "status": "accepted"
+  },
+  {
+    "id": "fold_glasses",
+    "title": "双手折叠眼镜",
+    "status": "in_progress"
+  },
+  {
+    "id": "fold_phone",
+    "title": "展开折叠手机",
+    "status": "in_progress"
+  },
+  {
+    "id": "folder_store_pen",
+    "title": "文件夹收纳笔",
+    "status": "in_progress"
+  },
+  {
+    "id": "hammer",
+    "title": "锤子敲钉子",
+    "status": "accepted"
+  },
+  {
+    "id": "insert_peg",
+    "title": "插杆",
+    "status": "accepted"
+  },
+  {
+    "id": "insert_pen",
+    "title": "把笔插入笔筒",
+    "status": "accepted"
+  },
+  {
+    "id": "insert_pipette",
+    "title": "插移液管",
+    "status": "accepted"
+  },
+  {
+    "id": "kettle_pour",
+    "title": "茶壶向杯中倾倒",
+    "status": "accepted"
+  },
+  {
+    "id": "kitchen",
+    "title": "厨房食材转移",
+    "status": "accepted"
+  },
+  {
+    "id": "lift_basket",
+    "title": "翻起提手搬篮筐",
+    "status": "in_progress"
+  },
+  {
+    "id": "lift_bucket",
+    "title": "翻起桶把并提桶",
+    "status": "in_progress"
+  },
+  {
+    "id": "lift_carton",
+    "title": "双手搬纸箱",
+    "status": "accepted"
+  },
+  {
+    "id": "lift_kettle_lid",
+    "title": "提壶盖再盖回",
+    "status": "accepted"
+  },
+  {
+    "id": "lift_pot_lid",
+    "title": "提锅盖再盖回",
+    "status": "in_progress"
+  },
+  {
+    "id": "open_bench2dex_stapler",
+    "title": "订书机开合 · Bench2Dex",
+    "status": "not_started"
+  },
+  {
+    "id": "open_laptop",
+    "title": "打开笔记本电脑",
+    "status": "in_progress"
+  },
+  {
+    "id": "open_stapler",
+    "title": "打开并合上订书机",
+    "status": "accepted"
+  },
+  {
+    "id": "operate_scissors",
+    "title": "抓持剪刀开合",
+    "status": "not_started"
+  },
+  {
+    "id": "pack_groceries",
+    "title": "把日用品装入篮筐",
+    "status": "accepted"
+  },
+  {
+    "id": "pan_to_stove",
+    "title": "平底锅放到炉上",
+    "status": "accepted"
+  },
+  {
+    "id": "plug_charger",
+    "title": "插充电器",
+    "status": "accepted"
+  },
+  {
+    "id": "pour_can",
+    "title": "罐头向碗倾倒",
+    "status": "accepted"
+  },
+  {
+    "id": "power_drill",
+    "title": "电钻",
+    "status": "accepted"
+  },
+  {
+    "id": "press_spring_button",
+    "title": "弹簧按钮按压",
+    "status": "not_started"
+  },
+  {
+    "id": "rotate_knob",
+    "title": "旋转旋钮",
+    "status": "accepted"
+  },
+  {
+    "id": "rotate_tube_cap",
+    "title": "双手旋转离心管盖",
+    "status": "not_started"
+  },
+  {
+    "id": "set_table",
+    "title": "杯具摆放",
+    "status": "accepted"
+  },
+  {
+    "id": "slide_utility_knife",
+    "title": "推出与收回刀片",
+    "status": "not_started"
+  },
+  {
+    "id": "solve_hanoi",
+    "title": "三层汉诺塔",
+    "status": "not_started"
+  },
+  {
+    "id": "stack_blocks",
+    "title": "叠放方块和圆柱",
+    "status": "accepted"
+  },
+  {
+    "id": "tray_carry",
+    "title": "双手端托盘",
+    "status": "accepted"
+  }
+]

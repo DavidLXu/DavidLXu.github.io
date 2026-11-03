@@ -1,0 +1,2438 @@
+{
+  "spatula": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/033_spatula/textured.obj",
+    "source_sha256": "d3e49a75647999e5f80b06d0b8b5bfff5e4224d2facf42c77af6445d18baf8c5",
+    "source_extent_after_orientation": [
+      0.30552199999999996,
+      0.12459399999999998,
+      0.032933000000000004
+    ],
+    "preview_uniform_scale": 0.883733413633061,
+    "source_center_offset_after_orientation": [
+      -0.027177999999999994,
+      -0.097023,
+      -0.000688
+    ],
+    "preview_extent_m": [
+      0.27,
+      0.1101078809381976,
+      0.029103992511177602
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "bread": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/222_bread_slice/uploads_files_2384335_pan.obj",
+    "source_sha256": "78861e2e9a2f8f96097d719565040a789b11cdd834bec97831c9659b9d014bae",
+    "source_extent_after_orientation": [
+      0.19113600000000003,
+      0.21292799999999998,
+      0.07966400000000817
+    ],
+    "preview_uniform_scale": 0.563570784490532,
+    "source_center_offset_after_orientation": [
+      0.165832,
+      0.276479,
+      136.661709
+    ],
+    "preview_extent_m": [
+      0.10771866546438234,
+      0.11999999999999998,
+      0.044896302975658345
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 14234,
+    "physics_validated": false
+  },
+  "plate": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/029_plate/textured.obj",
+    "source_sha256": "bbf0a5d5ff0b2c2c19207246cb47dc253f14903e443477173c08ec3a0feb2502",
+    "source_extent_after_orientation": [
+      0.26015,
+      0.261102,
+      0.026723
+    ],
+    "preview_uniform_scale": 0.9574802184586867,
+    "source_center_offset_after_orientation": [
+      -0.011620999999999992,
+      1.5999999999988246e-05,
+      -0.003109
+    ],
+    "preview_extent_m": [
+      0.24908847883202734,
+      0.25,
+      0.025586743877871486
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "spoon": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/031_spoon/textured.obj",
+    "source_sha256": "bc86a0736bf2a060fa4357b91ef55f7f41c0d4debfbd0b5a1918e2418f82f8ef",
+    "source_extent_after_orientation": [
+      0.18596000000000001,
+      0.082929,
+      0.020891999999999997
+    ],
+    "preview_uniform_scale": 0.9679500967950095,
+    "source_center_offset_after_orientation": [
+      -0.027132999999999997,
+      -0.0050494999999999984,
+      -0.000613
+    ],
+    "preview_extent_m": [
+      0.18,
+      0.08027113357711335,
+      0.020222413422241337
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "bowl": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/024_bowl/textured.obj",
+    "source_sha256": "adc2a12a68279b318d5efc108f7b629b81532ae1679158326980e2d929b8cdd0",
+    "source_extent_after_orientation": [
+      0.16146300000000002,
+      0.161164,
+      0.055009
+    ],
+    "preview_uniform_scale": 1.0528727943863299,
+    "source_center_offset_after_orientation": [
+      -0.014839499999999999,
+      -0.043689000000000006,
+      -0.00053
+    ],
+    "preview_extent_m": [
+      0.17,
+      0.1696851910344785,
+      0.05791747954639762
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "strawberry": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/012_strawberry/textured.obj",
+    "source_sha256": "f2a3b1e313b1d97c91673001b7810d3b2131c208f94043e7a4794c1c29d9f7e4",
+    "source_extent_after_orientation": [
+      0.045224,
+      0.045286,
+      0.045675
+    ],
+    "preview_uniform_scale": 0.9852216748768472,
+    "source_center_offset_after_orientation": [
+      -0.0008629999999999992,
+      0.015777000000000003,
+      -0.000217
+    ],
+    "preview_extent_m": [
+      0.044555665024630535,
+      0.04461674876847291,
+      0.045
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "shovel": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/188_smallshovel/base3.glb",
+    "source_sha256": "c53c4dd1cfa855c1f18ad8f2e05c135751edcf4a98639ecbed4ffe834335cc9b",
+    "source_extent_after_orientation": [
+      1.1972650289535522,
+      1.6161410808563232,
+      0.49952501058578475
+    ],
+    "preview_uniform_scale": 0.13612672965619532,
+    "source_center_offset_after_orientation": [
+      0.0,
+      5.551115123125783e-17,
+      -1.509314773822637e-17
+    ],
+    "preview_extent_m": [
+      0.16297977292317709,
+      0.22000000000000003,
+      0.06799870607251923
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 19508,
+    "physics_validated": false
+  },
+  "brush": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/189_brush/base3.glb",
+    "source_sha256": "81db3f18cd28a641268492ca967268c59ecee5b0698f5cc578e9cbe76bb930a8",
+    "source_extent_after_orientation": [
+      0.14150799810886383,
+      0.48368299007415755,
+      1.4688100814819336
+    ],
+    "preview_uniform_scale": 0.13616464274143125,
+    "source_center_offset_after_orientation": [
+      0.0,
+      1.1102230246251565e-16,
+      -3.865163539554082e-17
+    ],
+    "preview_extent_m": [
+      0.01926838600754857,
+      0.0658605215435549,
+      0.2
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 20258,
+    "physics_validated": false
+  },
+  "eraser": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/217_whiteboard-eraser/base0.glb",
+    "source_sha256": "e833d4f786fa24dda67011dbfc4ef31e223376f8955733db25393bb2542119d9",
+    "source_extent_after_orientation": [
+      1.9006800055503845,
+      0.978875994682312,
+      0.7059760093688965
+    ],
+    "preview_uniform_scale": 0.0578740238644995,
+    "source_center_offset_after_orientation": [
+      2.2977590560913086e-05,
+      4.1991472244318206e-05,
+      1.3219203147711987e-17
+    ],
+    "preview_extent_m": [
+      0.11,
+      0.05665149267662981,
+      0.04085767241397964
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 60000,
+    "physics_validated": false
+  },
+  "chalkboard": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/219_mini-chalkboard/base0.glb",
+    "source_sha256": "3ed48d4da7a559813502ec78d1e798cdf291cd671615ab7b02baa556eb38947a",
+    "source_extent_after_orientation": [
+      1.428961992263794,
+      0.6076729893684383,
+      1.9017829895019531
+    ],
+    "preview_uniform_scale": 0.157746704884854,
+    "source_center_offset_after_orientation": [
+      -2.4020671844482422e-05,
+      0.0006164908409120595,
+      -4.493627575703291e-17
+    ],
+    "preview_extent_m": [
+      0.22541404568530973,
+      0.09585841172040006,
+      0.3
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 60000,
+    "physics_validated": false
+  },
+  "driver": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/044_flat_screwdriver/textured.obj",
+    "source_sha256": "ecd7205a1c9252ab59e6a52db2643d3aac95346405ccbb05b6dc8c52c3a842dc",
+    "source_extent_after_orientation": [
+      0.161871,
+      0.156885,
+      0.035040999999999996
+    ],
+    "preview_uniform_scale": 1.2355517665301383,
+    "source_center_offset_after_orientation": [
+      -0.012492499999999997,
+      0.011665499999999995,
+      -0.000407
+    ],
+    "preview_extent_m": [
+      0.2,
+      0.19383953889208075,
+      0.04329496945098257
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "book": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/155_book/base1.glb",
+    "source_sha256": "8b96c038ecece30d00c35692a43ce7e4256fb2b5531b1e6eefea00e53301dd85",
+    "source_extent_after_orientation": [
+      3.014254927635193,
+      2.0154019594192505,
+      0.3000000119209292
+    ],
+    "preview_uniform_scale": 0.07298652744431243,
+    "source_center_offset_after_orientation": [
+      0.0002765059471130371,
+      0.0011649727821350098,
+      -1.8842704928960347e-18
+    ],
+    "preview_extent_m": [
+      0.21999999999999997,
+      0.14709719042247418,
+      0.021895959103360955
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 39140,
+    "physics_validated": false
+  },
+  "fork": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/030_fork/textured.obj",
+    "source_sha256": "8f39949b37ba22b15349fe42a601bb95a706a229a398d5e9b4442f2e9bfd3ee5",
+    "source_extent_after_orientation": [
+      0.197556,
+      0.027110000000000002,
+      0.015884000000000002
+    ],
+    "preview_uniform_scale": 0.9617526169794893,
+    "source_center_offset_after_orientation": [
+      -0.025410000000000002,
+      -0.022295,
+      -0.0009
+    ],
+    "preview_extent_m": [
+      0.19,
+      0.026073113446313953,
+      0.01527647856810221
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "sponge": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/026_sponge/textured.obj",
+    "source_sha256": "1af5c8a8da382ee1f437320c9717e0b27ecf31a5354a578206e5dd10da172867",
+    "source_extent_after_orientation": [
+      0.079147,
+      0.112113,
+      0.019007
+    ],
+    "preview_uniform_scale": 0.8919572217316457,
+    "source_center_offset_after_orientation": [
+      -0.0153445,
+      0.0137445,
+      0.000116
+    ],
+    "preview_extent_m": [
+      0.07059573822839456,
+      0.1,
+      0.01695343091345339
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "soap": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/209_soap/base3.glb",
+    "source_sha256": "740fca0e15820d097d5753b5626e5454e30e986167db09e6eded6689305d51a3",
+    "source_extent_after_orientation": [
+      1.8999379873275757,
+      1.0842249989509583,
+      0.6988059878349304
+    ],
+    "preview_uniform_scale": 0.04473830228509707,
+    "source_center_offset_after_orientation": [
+      1.5020370483398438e-05,
+      0.00013449788093577997,
+      3.1352699135901006e-19
+    ],
+    "preview_extent_m": [
+      0.085,
+      0.048506385748127025,
+      0.03126339352239498
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 34360,
+    "physics_validated": false
+  },
+  "tennis": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/056_tennis_ball/textured.obj",
+    "source_sha256": "eefa753ae23414d0657894933bac1fdff2cd4a7edb4b1b161246e5b4d736178d",
+    "source_extent_after_orientation": [
+      0.066975,
+      0.06703,
+      0.066457
+    ],
+    "preview_uniform_scale": 0.9995524392063255,
+    "source_center_offset_after_orientation": [
+      0.0082115,
+      -0.044278,
+      -9.7e-05
+    ],
+    "preview_extent_m": [
+      0.06694502461584366,
+      0.067,
+      0.06642725645233477
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "golf": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/058_golf_ball/textured.obj",
+    "source_sha256": "3ad35c9f456a3cc1af204175ce92ca382587c7adb535aed9fe38f45a7e9e8693",
+    "source_extent_after_orientation": [
+      0.042679,
+      0.042720999999999995,
+      0.042375
+    ],
+    "preview_uniform_scale": 1.0065307460031367,
+    "source_center_offset_after_orientation": [
+      -0.0065395,
+      -0.0304375,
+      -0.000244
+    ],
+    "preview_extent_m": [
+      0.04295772570866788,
+      0.043,
+      0.04265174036188292
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "baseball": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/055_baseball/textured.obj",
+    "source_sha256": "6d544428ab3988df2e43415f397e9bf8bfe27dc7a6b2d7450902895860baaa92",
+    "source_extent_after_orientation": [
+      0.073078,
+      0.073712,
+      0.072563
+    ],
+    "preview_uniform_scale": 0.9903407857607988,
+    "source_center_offset_after_orientation": [
+      -0.010081000000000001,
+      -0.048244999999999996,
+      -0.000205
+    ],
+    "preview_extent_m": [
+      0.07237212394182765,
+      0.073,
+      0.07186209843716085
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "racquetball": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/057_racquetball/textured.obj",
+    "source_sha256": "c8878df3ec9ef1c6339a94ffee78ff2f0b3d55dc07008447671130517577e167",
+    "source_extent_after_orientation": [
+      0.055778,
+      0.05605600000000001,
+      0.055574
+    ],
+    "preview_uniform_scale": 1.0168403025545882,
+    "source_center_offset_after_orientation": [
+      -0.009053000000000002,
+      -0.12223200000000001,
+      -0.000191
+    ],
+    "preview_extent_m": [
+      0.056717318395889824,
+      0.05700000000000001,
+      0.05650988297416869
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "dice": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/062_dice/textured.obj",
+    "source_sha256": "21b70dc584d09e94da6df24d086060dad164aeb8a6f5b9b5adb40cd202ca6cea",
+    "source_extent_after_orientation": [
+      0.017158,
+      0.017079,
+      0.017554
+    ],
+    "preview_uniform_scale": 1.4241768257946907,
+    "source_center_offset_after_orientation": [
+      -0.011127000000000001,
+      0.009130500000000001,
+      -0.000305
+    ],
+    "preview_extent_m": [
+      0.024436025976985305,
+      0.024323516007747528,
+      0.025
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "apple": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/013_apple/textured.obj",
+    "source_sha256": "816edf421ba6341d3d1d0e4c6082f90c4bb6e044b51e5b741169d8f00cc08228",
+    "source_extent_after_orientation": [
+      0.075448,
+      0.074871,
+      0.07188900000000001
+    ],
+    "preview_uniform_scale": 0.9940621355105502,
+    "source_center_offset_after_orientation": [
+      0.0008589999999999987,
+      -0.0037844999999999997,
+      -0.000393
+    ],
+    "preview_extent_m": [
+      0.075,
+      0.07442642614781039,
+      0.07146213285971795
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "pear": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/016_pear/textured.obj",
+    "source_sha256": "176fdee5b26da864501b358d8eb85a4bd7c726b3013b7675dc1c1f52afed88b7",
+    "source_extent_after_orientation": [
+      0.066546,
+      0.100455,
+      0.065663
+    ],
+    "preview_uniform_scale": 0.9456970782937634,
+    "source_center_offset_after_orientation": [
+      -0.03332,
+      0.017994500000000004,
+      -0.000179
+    ],
+    "preview_extent_m": [
+      0.06293235777213677,
+      0.095,
+      0.06209730725200338
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "burger": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/128_hamburg/base5.glb",
+    "source_sha256": "d2c553a2f41b0d749997bea3a274c0110099bad6a66cc2abdbb3ea08a5dc624c",
+    "source_extent_after_orientation": [
+      1.1704099774360657,
+      1.9002129435539246,
+      0.5998529791831968
+    ],
+    "preview_uniform_scale": 0.05788824898448988,
+    "source_center_offset_after_orientation": [
+      3.0100345611572266e-06,
+      0.00019749999046325684,
+      6.078982085387722e-17
+    ],
+    "preview_extent_m": [
+      0.06775298418775015,
+      0.11,
+      0.034724438613044924
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 60000,
+    "physics_validated": false
+  },
+  "fries": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/127_french-fries/base3.glb",
+    "source_sha256": "7e77298a6f6705918598447b8a225a9b05415c397e2dd3a308effaf0bab144c6",
+    "source_extent_after_orientation": [
+      1.6611639857292175,
+      0.730864018201828,
+      1.898393988609314
+    ],
+    "preview_uniform_scale": 0.0684789357636097,
+    "source_center_offset_after_orientation": [
+      -3.7997961044311523e-05,
+      0.03506399691104922,
+      1.3423928694957636e-17
+    ],
+    "preview_extent_m": [
+      0.11375474187157293,
+      0.050048790154376646,
+      0.13
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 59999,
+    "physics_validated": false
+  },
+  "chips": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/142_chips-tub/base3.glb",
+    "source_sha256": "cf71da4a8eee0c76853e59ff4a48687d2afb59d876a33fce4564380b2010d467",
+    "source_extent_after_orientation": [
+      0.6245889961719513,
+      0.6249779760837555,
+      1.9008580446243286
+    ],
+    "preview_uniform_scale": 0.12625877070553776,
+    "source_center_offset_after_orientation": [
+      3.750622272491455e-05,
+      9.100139141121621e-05,
+      7.542411496270818e-18
+    ],
+    "preview_extent_m": [
+      0.0788598388528764,
+      0.07890895097836995,
+      0.23999999999999996
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 35710,
+    "physics_validated": false
+  },
+  "oil": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/146_olive-oil/base4.glb",
+    "source_sha256": "59546d06b48b88630b414d800ad0560ad13e86a4f14100b62eaf51d33f923007",
+    "source_extent_after_orientation": [
+      0.07636800035834312,
+      0.07632400095462799,
+      0.30000001192092896
+    ],
+    "preview_uniform_scale": 0.8333333002196431,
+    "source_center_offset_after_orientation": [
+      -1.998618245124817e-06,
+      2.0004808903156812e-06,
+      -8.282485854418949e-18
+    ],
+    "preview_extent_m": [
+      0.06363999776979297,
+      0.06360333160148733,
+      0.25
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 35304,
+    "physics_validated": false
+  },
+  "drink": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/175_boxdrink/base3.glb",
+    "source_sha256": "8c573655381c80c5997f352096871fa6093789cb23fd612852b37ab576c34e43",
+    "source_extent_after_orientation": [
+      0.07485799863934517,
+      0.05777000077068806,
+      0.25
+    ],
+    "preview_uniform_scale": 0.56,
+    "source_center_offset_after_orientation": [
+      3.999099135398865e-06,
+      5.6999735534229296e-05,
+      6.053380100966655e-18
+    ],
+    "preview_extent_m": [
+      0.0419204792380333,
+      0.03235120043158531,
+      0.14
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 36144,
+    "physics_validated": false
+  },
+  "tea": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/214_tea-box/base5.glb",
+    "source_sha256": "3197a01ec7e39b00e47e2d0dbaaf5d4c306ff50290016aef3f0e7bb0f4276705",
+    "source_extent_after_orientation": [
+      1.905070960521698,
+      1.9056879878044128,
+      1.8496899604797363
+    ],
+    "preview_uniform_scale": 0.07346428213639382,
+    "source_center_offset_after_orientation": [
+      -0.0011304914951324463,
+      0.00018897652626059802,
+      2.1616042999503636e-18
+    ],
+    "preview_extent_m": [
+      0.1399546705336168,
+      0.14,
+      0.1358861451215385
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 42222,
+    "physics_validated": false
+  },
+  "coffee": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/215_coffee-box/base6.glb",
+    "source_sha256": "278cab20457e0fd96c0fe31753293f3701b2b300e1c2dd5807995c3d5d8e423f",
+    "source_extent_after_orientation": [
+      1.1616389751434326,
+      1.3138090372085571,
+      1.9003679752349854
+    ],
+    "preview_uniform_scale": 0.08419422032210135,
+    "source_center_offset_after_orientation": [
+      5.4836273193359375e-06,
+      2.950429916392938e-05,
+      4.983458126422082e-17
+    ],
+    "preview_extent_m": [
+      0.09780328780796617,
+      0.1106151275399051,
+      0.16
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 38776,
+    "physics_validated": false
+  },
+  "perfume": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/216_perfume/base3.glb",
+    "source_sha256": "80c33fc38aab86fcfa1a6a75bd206085b694f6d853551a2a456baddbcdf592ea",
+    "source_extent_after_orientation": [
+      1.2530869841575623,
+      1.1180199980735779,
+      1.8978949785232544
+    ],
+    "preview_uniform_scale": 0.06322794535942741,
+    "source_center_offset_after_orientation": [
+      0.0029664933681488037,
+      0.0035149753093721148,
+      -7.251377593039141e-17
+    ],
+    "preview_extent_m": [
+      0.07923011536492403,
+      0.07069010734894332,
+      0.12
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 120000,
+    "physics_validated": false
+  },
+  "lotion": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/211_hydrating-oil/base5.glb",
+    "source_sha256": "71b565870357296f673c5fcdcff33bd65aacd1b598a0773bf2415eb538f54ad3",
+    "source_extent_after_orientation": [
+      0.6864640116691589,
+      0.4615119993686676,
+      1.9004039764404297
+    ],
+    "preview_uniform_scale": 0.0894546644332013,
+    "source_center_offset_after_orientation": [
+      -3.993511199951172e-06,
+      2.9996037483520643e-05,
+      -4.356515234060328e-19
+    ],
+    "preview_extent_m": [
+      0.06140740780933379,
+      0.04128440103541997,
+      0.17
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 37644,
+    "physics_validated": false
+  },
+  "pill": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/186_pillbottle/base5.glb",
+    "source_sha256": "48cc48b619b8079c0cb9bf5440ad14992a815e62d99e932bf9922997193a06b9",
+    "source_extent_after_orientation": [
+      0.733815997838974,
+      0.7367910146713257,
+      1.9004590511322021
+    ],
+    "preview_uniform_scale": 0.04735697932895861,
+    "source_center_offset_after_orientation": [
+      -3.5002827644348145e-05,
+      2.4497509002741058e-05,
+      4.131028983723731e-17
+    ],
+    "preview_extent_m": [
+      0.03475130904091943,
+      0.03489219685155241,
+      0.09
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 34300,
+    "physics_validated": false
+  },
+  "battery": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/168_battery/base5.glb",
+    "source_sha256": "0dfd3aa941bd71f0d3059f69c396712e4e1b6faa8a428fdfc4833ba2e10a7482",
+    "source_extent_after_orientation": [
+      1.9001179933547974,
+      0.7156489789485931,
+      0.7051349878311157
+    ],
+    "preview_uniform_scale": 0.0263141553181765,
+    "source_center_offset_after_orientation": [
+      2.9981136322021484e-05,
+      -3.501772880498688e-06,
+      -3.790301315973772e-19
+    ],
+    "preview_extent_m": [
+      0.05,
+      0.018831698385347706,
+      0.018555031590068476
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 32248,
+    "physics_validated": false
+  },
+  "stand": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/184_phonestand/base6.glb",
+    "source_sha256": "9974711f81c07e43be641f1c27acf47238940831d302467135cafff13cb997f7",
+    "source_extent_after_orientation": [
+      1.0637959837913513,
+      1.4126459956169128,
+      1.9012310504913332
+    ],
+    "preview_uniform_scale": 0.08941574984064514,
+    "source_center_offset_after_orientation": [
+      -8.299946784973145e-05,
+      8.800625801086426e-05,
+      -1.1201928671121357e-16
+    ],
+    "preview_extent_m": [
+      0.09512011556817046,
+      0.12631280095747097,
+      0.17
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 37262,
+    "physics_validated": false
+  },
+  "remote": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/185_remotecontrol/base6.glb",
+    "source_sha256": "eea53377fdf1b77a9cbb0530f86d556d1e99fdd0b6585dc4159e6e591b01ca21",
+    "source_extent_after_orientation": [
+      0.6030300259590149,
+      1.8993949890136719,
+      0.3567779958248136
+    ],
+    "preview_uniform_scale": 0.10003185282628561,
+    "source_center_offset_after_orientation": [
+      0.0,
+      6.449222564697266e-05,
+      1.8638468989919267e-16
+    ],
+    "preview_extent_m": [
+      0.06032221080656337,
+      0.19,
+      0.0356891639700049
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 35998,
+    "physics_validated": false
+  },
+  "calculator": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/135_calculator/base5.glb",
+    "source_sha256": "63c5d3a99f6e0d4b240e0bf831082fe6ed436a2c11ed2c912a986ebfbe9238f5",
+    "source_extent_after_orientation": [
+      1.8993070125579834,
+      1.0467610359191895,
+      0.1899340003728865
+    ],
+    "preview_uniform_scale": 0.08950632987504442,
+    "source_center_offset_after_orientation": [
+      -0.0002675056457519531,
+      3.8504600524902344e-05,
+      1.0851541581088795e-16
+    ],
+    "preview_extent_m": [
+      0.17,
+      0.09369173858132619,
+      0.017000295291862387
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 40779,
+    "physics_validated": false
+  },
+  "microphone": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/136_microphone/base5.glb",
+    "source_sha256": "c0ed3411cb7886b3eaa074c28d4518b74a89d1db1f0c537e5945e140350f0741",
+    "source_extent_after_orientation": [
+      0.4310211151486387,
+      1.898711334778998,
+      0.4302609890677479
+    ],
+    "preview_uniform_scale": 0.11586806059995797,
+    "source_center_offset_after_orientation": [
+      0.00823666425972823,
+      -0.0003932922391313709,
+      5.324758793471321e-08
+    ],
+    "preview_extent_m": [
+      0.04994158068990393,
+      0.22,
+      0.049853506355099664
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 35524,
+    "physics_validated": false
+  },
+  "clock": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/157_alarm-clock/base5.glb",
+    "source_sha256": "1e77f0aa16b73d8711a87974e396e37365b7fc82d10894acbee180006a9df74b",
+    "source_extent_after_orientation": [
+      1.678905963897705,
+      1.0785639882087712,
+      1.9002419710159302
+    ],
+    "preview_uniform_scale": 0.07893731550398563,
+    "source_center_offset_after_orientation": [
+      0.0025320053100585938,
+      0.0007639825344087914,
+      -8.607847918507699e-17
+    ],
+    "preview_extent_m": [
+      0.13252832977371626,
+      0.0851389458284728,
+      0.15
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 37686,
+    "physics_validated": false
+  },
+  "hourglass": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/156_sand-clock/base3.glb",
+    "source_sha256": "d13ad318706533b6ea500103d3a9e68ceda3257ba6a084248d2a2213574e606e",
+    "source_extent_after_orientation": [
+      0.8677210211753845,
+      0.8664070069789886,
+      1.9002360105514526
+    ],
+    "preview_uniform_scale": 0.10525008414189539,
+    "source_center_offset_after_orientation": [
+      5.14984130859375e-05,
+      -7.151067256885857e-05,
+      -5.912825984871951e-18
+    ],
+    "preview_extent_m": [
+      0.09132771049040062,
+      0.0911894103856663,
+      0.2
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 34662,
+    "physics_validated": false
+  },
+  "dumbbell": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/161_dumbbell/base6.glb",
+    "source_sha256": "156fd8aff71e92e630db12376fb7e782ff255ab9c4f8cdb3bd7d360e7547b75d",
+    "source_extent_after_orientation": [
+      1.904316008090973,
+      0.5792070031166077,
+      0.5560190081596375
+    ],
+    "preview_uniform_scale": 0.13128073226177334,
+    "source_center_offset_after_orientation": [
+      0.00041100382804870605,
+      -3.1501054763738434e-05,
+      2.1857848985658506e-17
+    ],
+    "preview_extent_m": [
+      0.25,
+      0.07603871950029549,
+      0.07299458254266213
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 32932,
+    "physics_validated": false
+  },
+  "toycar": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/165_toycar/base5.glb",
+    "source_sha256": "7f14248ba2b298cd7e22caaafdd43da58741a3ae35f3503d1c79f83b7192034f",
+    "source_extent_after_orientation": [
+      1.00423002243042,
+      1.8980249762535095,
+      0.8176599740982056
+    ],
+    "preview_uniform_scale": 0.0684922493784068,
+    "source_center_offset_after_orientation": [
+      -8.499622344970703e-05,
+      0.0009334981441497803,
+      -1.3153189502618825e-16
+    ],
+    "preview_extent_m": [
+      0.06878197312958738,
+      0.13,
+      0.05600337085267594
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 37728,
+    "physics_validated": false
+  },
+  "shoe": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/153_shoe/base9.glb",
+    "source_sha256": "20d088cdd2da251fc288e1b183538551c10cb7d5273056c13f409dcd31081ebf",
+    "source_extent_after_orientation": [
+      0.6999980211257935,
+      1.8960249423980713,
+      0.8002209663391113
+    ],
+    "preview_uniform_scale": 0.13185480549839326,
+    "source_center_offset_after_orientation": [
+      0.0,
+      0.0,
+      -1.339582870780472e-16
+    ],
+    "preview_extent_m": [
+      0.09229810292480167,
+      0.24999999999999997,
+      0.10551297987237983
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 19674,
+    "physics_validated": false
+  },
+  "speaker": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/164_small-speaker/base3.glb",
+    "source_sha256": "ccced97bfebb93535953c231734c9a12525f58b91060c4b39cde0bb63ba891a3",
+    "source_extent_after_orientation": [
+      0.1623380035161972,
+      0.08138500154018402,
+      0.10000000149011612
+    ],
+    "preview_uniform_scale": 0.9239980580704493,
+    "source_center_offset_after_orientation": [
+      4.999339580535889e-06,
+      4.849955439568954e-05,
+      1.86517466656373e-20
+    ],
+    "preview_extent_m": [
+      0.15,
+      0.07519958337919057,
+      0.09239980718390933
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 35552,
+    "physics_validated": false
+  },
+  "tissue": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/140_tissue-box/base6.glb",
+    "source_sha256": "62ee51c9b2f2f42453114867c75a7442db7723dd4ed6e9c4df51143b13ba6eec",
+    "source_extent_after_orientation": [
+      1.4440360069274902,
+      1.9062389731407166,
+      1.147568941116333
+    ],
+    "preview_uniform_scale": 0.11541050366708656,
+    "source_center_offset_after_orientation": [
+      -6.097555160522461e-05,
+      0.00026050209999090024,
+      8.719958023032726e-17
+    ],
+    "preview_extent_m": [
+      0.16665692287291015,
+      0.22,
+      0.1324415094869412
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 37702,
+    "physics_validated": false
+  },
+  "paper_roll": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/145_roll-paper/base3.glb",
+    "source_sha256": "8d23164a7c9e9d8ed4a27cfba7e4b00b4d75e4307cf76945bb0069fe323020b6",
+    "source_extent_after_orientation": [
+      1.9055410027503967,
+      1.9059190154075623,
+      1.8125460147857666
+    ],
+    "preview_uniform_scale": 0.06296175180052924,
+    "source_center_offset_after_orientation": [
+      1.2487173080444336e-05,
+      7.480382919367035e-06,
+      4.327160786149444e-17
+    ],
+    "preview_extent_m": [
+      0.11997619966090207,
+      0.12,
+      0.11412107230997984
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 29204,
+    "physics_validated": false
+  },
+  "stamp": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/203_seal/base6.glb",
+    "source_sha256": "b2964d17f4ae8c4252a586309b4870e9b0ab302eade19f6c8989a6161fd418a7",
+    "source_extent_after_orientation": [
+      1.1972249746322632,
+      1.1756240129470825,
+      1.8997609615325928
+    ],
+    "preview_uniform_scale": 0.04474247114301581,
+    "source_center_offset_after_orientation": [
+      5.9485435485839844e-05,
+      2.0980834961048522e-05,
+      4.170397486925335e-17
+    ],
+    "preview_extent_m": [
+      0.053566803879181876,
+      0.05260032347432129,
+      0.085
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 29524,
+    "physics_validated": false
+  },
+  "glue": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/199_glue/base6.glb",
+    "source_sha256": "9fa60e4d9fa8ca0e3a350f12b34efcb373d7c161379bba31f7d78966e8ae518c",
+    "source_extent_after_orientation": [
+      0.4442320019006729,
+      0.4435670077800751,
+      1.9009560346603394
+    ],
+    "preview_uniform_scale": 0.06838664210518065,
+    "source_center_offset_after_orientation": [
+      6.099790334701538e-05,
+      6.949901580813322e-05,
+      1.6686652458486286e-18
+    ],
+    "preview_extent_m": [
+      0.03037953492564925,
+      0.030334058210721878,
+      0.13
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 36318,
+    "physics_validated": false
+  },
+  "notebook": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/196_notebook/base2.glb",
+    "source_sha256": "8c3c3fd230faa46a8812c4c39a78cbc7b39c2d746d0c41b49944e6d28a8ab06d",
+    "source_extent_after_orientation": [
+      1.8972890377044678,
+      1.2613550424575806,
+      0.16889899969100966
+    ],
+    "preview_uniform_scale": 0.1106842425306369,
+    "source_center_offset_after_orientation": [
+      0.001721501350402832,
+      -0.0020045042037963867,
+      -8.219380741795646e-17
+    ],
+    "preview_extent_m": [
+      0.21,
+      0.13961212743661666,
+      0.01869445784498168
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 39138,
+    "physics_validated": false
+  },
+  "brushpen": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/197_brush-pen/base5.glb",
+    "source_sha256": "6b498690afb118c4aa171fcc12bb6b6985c7053e102549c9c02858aa071bf6f8",
+    "source_extent_after_orientation": [
+      1.8961189985275269,
+      0.07014399766921997,
+      0.06755699962377548
+    ],
+    "preview_uniform_scale": 0.11602647311210207,
+    "source_center_offset_after_orientation": [
+      0.00015848875045776367,
+      -0.0015730001032352378,
+      5.724310075705044e-19
+    ],
+    "preview_extent_m": [
+      0.22,
+      0.008138560659543102,
+      0.007838400400382275
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 35888,
+    "physics_validated": false
+  },
+  "wineglass": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/194_wineglass/base4.glb",
+    "source_sha256": "f7309453dedc60d6cd344ccdf568d8b48af32829cc39496482abff85dc4ed1b9",
+    "source_extent_after_orientation": [
+      0.09733099862933159,
+      0.09738799929618835,
+      0.25
+    ],
+    "preview_uniform_scale": 0.8,
+    "source_center_offset_after_orientation": [
+      -1.4994293451309204e-06,
+      -1.399964094157824e-05,
+      -2.141620236736542e-18
+    ],
+    "preview_extent_m": [
+      0.07786479890346527,
+      0.07791039943695069,
+      0.2
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 26912,
+    "physics_validated": false
+  },
+  "basket": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/183_breadbasket/base4.glb",
+    "source_sha256": "185abf2d6f7f08455265274d31a5e4fccfd7619095b7e102b3307697982e63e3",
+    "source_extent_after_orientation": [
+      1.8933149576187134,
+      1.8684409856796265,
+      0.7457519769668577
+    ],
+    "preview_uniform_scale": 0.15317050067820878,
+    "source_center_offset_after_orientation": [
+      0.00010150671005249023,
+      -0.0026854872703551136,
+      -5.355604698776219e-17
+    ],
+    "preview_extent_m": [
+      0.29,
+      0.2861900412642343,
+      0.11422720369377762
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 33302,
+    "physics_validated": false
+  },
+  "plasticbox": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/169_plasticbox/base10.glb",
+    "source_sha256": "252bea0e5053ede3ebc6da8e7eb899a62a945d555b1c5cc956c707aee5068481",
+    "source_extent_after_orientation": [
+      1.9046260118484497,
+      1.4086040258407593,
+      0.8219259977340698
+    ],
+    "preview_uniform_scale": 0.11550824079446906,
+    "source_center_offset_after_orientation": [
+      -6.002187728881836e-05,
+      0.00028401613235490286,
+      -8.743206430456897e-17
+    ],
+    "preview_extent_m": [
+      0.22,
+      0.16270537300087293,
+      0.09493922606150117
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 47654,
+    "physics_validated": false
+  },
+  "woodbox": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/154_wooden_box/base0.glb",
+    "source_sha256": "8467f1844fd9443ef97f4e1d49667dab65ec1aa38bfcf64a21f4cf12c4081777",
+    "source_extent_after_orientation": [
+      2.3779900074005127,
+      1.7509440183639526,
+      1.0
+    ],
+    "preview_uniform_scale": 0.10092557128209076,
+    "source_center_offset_after_orientation": [
+      0.0,
+      2.220446049250313e-16,
+      1.6964652476805965e-16
+    ],
+    "preview_extent_m": [
+      0.23999999999999996,
+      0.17671502533634154,
+      0.10092557128209076
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 20220,
+    "physics_validated": false
+  },
+  "tuna": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/007_tuna_fish_can/textured.obj",
+    "source_sha256": "598f3f78f22cde8ebc5bd57cdba697c8575e9144ca15b5555f8ab89074152f09",
+    "source_extent_after_orientation": [
+      0.085559,
+      0.08554,
+      0.033538
+    ],
+    "preview_uniform_scale": 0.9934664968033755,
+    "source_center_offset_after_orientation": [
+      -0.026048500000000002,
+      -0.022132,
+      -0.003218
+    ],
+    "preview_extent_m": [
+      0.085,
+      0.08498112413656074,
+      0.0333188793697916
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "cracker": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/003_cracker_box/textured.obj",
+    "source_sha256": "a5ddcc7420390d14e8af97e8587d771d96fa78b37f2762c01b3c37c536a29b97",
+    "source_extent_after_orientation": [
+      0.0718,
+      0.16403600000000002,
+      0.213437
+    ],
+    "preview_uniform_scale": 0.9838968876061789,
+    "source_center_offset_after_orientation": [
+      -0.012885,
+      -0.014141999999999995,
+      -0.003243
+    ],
+    "preview_extent_m": [
+      0.07064379653012365,
+      0.16139450985536719,
+      0.21
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "pudding": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/008_pudding_box/textured.obj",
+    "source_sha256": "5f4efb1cb3b0fac13caa4e3040e61c57fb153887d7afafad060d8068320683c0",
+    "source_extent_after_orientation": [
+      0.137938,
+      0.128756,
+      0.038889
+    ],
+    "preview_uniform_scale": 0.7249633893488379,
+    "source_center_offset_after_orientation": [
+      0.0005049999999999985,
+      0.019123000000000005,
+      -0.000497
+    ],
+    "preview_extent_m": [
+      0.1,
+      0.09334338615899898,
+      0.028193101248386955
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "gelatin": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/009_gelatin_box/textured.obj",
+    "source_sha256": "e978b7db27afb38549ae6df362909af01f5fe37fbf7cc8bb944efa1e687080d1",
+    "source_extent_after_orientation": [
+      0.089404,
+      0.101108,
+      0.030074
+    ],
+    "preview_uniform_scale": 0.8901372789492423,
+    "source_center_offset_after_orientation": [
+      -0.022774999999999997,
+      -0.008244999999999999,
+      -0.000545
+    ],
+    "preview_extent_m": [
+      0.07958183328717805,
+      0.09,
+      0.026769988527119513
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "mustard": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/006_mustard_bottle/textured.obj",
+    "source_sha256": "107f4b14e388f7132150fe9a7f810cf731380d128e0734eff1453cbf8541fde5",
+    "source_extent_after_orientation": [
+      0.09719799999999999,
+      0.066621,
+      0.191301
+    ],
+    "preview_uniform_scale": 0.9931991991678036,
+    "source_center_offset_after_orientation": [
+      -0.015338999999999998,
+      -0.0234985,
+      -0.003153
+    ],
+    "preview_extent_m": [
+      0.09653697576071217,
+      0.06616792384775824,
+      0.19
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "coaster": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/137_coaster/base0.glb",
+    "source_sha256": "982bb9441fa9296c183b952004069161a833a5031ec67e3229114dc430b4a382",
+    "source_extent_after_orientation": [
+      1.8953160047531128,
+      1.8989549899595606,
+      0.11700378001176644
+    ],
+    "preview_uniform_scale": 0.05792659677644203,
+    "source_center_offset_after_orientation": [
+      0.0,
+      -2.9530485390338868e-08,
+      1.0863366094196217e-07
+    ],
+    "preview_extent_m": [
+      0.10978920597127066,
+      0.11,
+      0.006777630786061122
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 17984,
+    "physics_validated": false
+  },
+  "baguette": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/163_baguette/base3.glb",
+    "source_sha256": "52c5c87c9314cf3123a6c4e1979f7ed26eddea2ecee037dffd16a96689cfd343",
+    "source_extent_after_orientation": [
+      0.11860499903559685,
+      0.39419499039649963,
+      0.10000000149011613
+    ],
+    "preview_uniform_scale": 0.7610446791783073,
+    "source_center_offset_after_orientation": [
+      8.150003850460052e-05,
+      4.500150680541992e-06,
+      -1.337485703229854e-17
+    ],
+    "preview_extent_m": [
+      0.09026370343998925,
+      0.3,
+      0.07610446905187569
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 37796,
+    "physics_validated": false
+  },
+  "trophy": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/195_trophy/base4.glb",
+    "source_sha256": "fac86ad4fa8c9b97e7aabf41027a71f8f27660c3a03a4490bd3f41192a90e088",
+    "source_extent_after_orientation": [
+      1.1704570055007935,
+      0.6547879874706268,
+      1.8989650011062622
+    ],
+    "preview_uniform_scale": 0.1211186092771647,
+    "source_center_offset_after_orientation": [
+      -4.649162292480469e-05,
+      -0.00031499564647641254,
+      6.596901042730854e-17
+    ],
+    "preview_extent_m": [
+      0.14176412472497082,
+      0.07930701041383587,
+      0.23
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 32756,
+    "physics_validated": false
+  },
+  "hat": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/334_baseball_cap/01_baseball_cap/01/baseball_cap.glb",
+    "source_sha256": "f799ad0496949225cca4e7dca80e50863000b248accd64e3720f747b910cef25",
+    "source_extent_after_orientation": [
+      14.834059238433838,
+      22.858705520629883,
+      10.768462538719177
+    ],
+    "preview_uniform_scale": 0.010936752292223026,
+    "source_center_offset_after_orientation": [
+      0.41767144203186035,
+      -0.5319309234619141,
+      0.3022400140762329
+    ],
+    "preview_extent_m": [
+      0.16223643137891344,
+      0.25,
+      0.11777200735405476
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 3,
+    "triangles": 134830,
+    "physics_validated": false
+  },
+  "hardhat": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/362_hard_hat/01_hard_hat/01/hard_hat.glb",
+    "source_sha256": "083a7500d272f45ede4925f6662354c7cd14b2865b0a8fb6569c9a6508842c65",
+    "source_extent_after_orientation": [
+      43.0557918548584,
+      57.87397766113281,
+      32.74252223968506
+    ],
+    "preview_uniform_scale": 0.004665309192689679,
+    "source_center_offset_after_orientation": [
+      -9.5367431640625e-07,
+      -0.5086898803710938,
+      8.185009956359863
+    ],
+    "preview_extent_m": [
+      0.20086858153900428,
+      0.27,
+      0.15275398999664896
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 2,
+    "triangles": 2750,
+    "physics_validated": false
+  },
+  "cup_a": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/065-a_cups/google_16k/textured.obj",
+    "source_sha256": "2fb9f42942543eddede387ce25400fd3c3efa9a15fa1d6ed6c76caa7fee9b3cb",
+    "source_extent_after_orientation": [
+      0.057086000000000005,
+      0.057425,
+      0.061515999999999994
+    ],
+    "preview_uniform_scale": 1.4,
+    "source_center_offset_after_orientation": [
+      -0.031891,
+      -0.045398499999999994,
+      -0.000753
+    ],
+    "preview_extent_m": [
+      0.0799204,
+      0.080395,
+      0.08612239999999999
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "cup_b": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/065-b_cups/google_16k/textured.obj",
+    "source_sha256": "69ddd5f6382342aa44dfad22d8afcddc6107f970aef9f107c9bfad4b7b3b5f6b",
+    "source_extent_after_orientation": [
+      0.060959,
+      0.060944000000000005,
+      0.063965
+    ],
+    "preview_uniform_scale": 1.4,
+    "source_center_offset_after_orientation": [
+      -0.0277805,
+      -0.056372000000000005,
+      -0.000624
+    ],
+    "preview_extent_m": [
+      0.08534259999999999,
+      0.0853216,
+      0.08955099999999999
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 16384,
+    "physics_validated": false
+  },
+  "phone": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/108_phone/01_phone/01/mobility.urdf",
+    "source_sha256": "b656e800ff24a6286748a037141f7ed19e9846cf79f46872f2db69b21a980987",
+    "source_extent_after_orientation": [
+      1.84503,
+      0.729812,
+      0.10267600000000045
+    ],
+    "preview_uniform_scale": 0.08671945713619833,
+    "source_center_offset_after_orientation": [
+      -0.03703200000000001,
+      -0.012554999999999983,
+      -0.05138900000000058
+    ],
+    "preview_extent_m": [
+      0.16,
+      0.06328890045148318,
+      0.008904006980916339
+    ],
+    "source_rotation_deg": [
+      0,
+      90,
+      0
+    ],
+    "parts": 221,
+    "triangles": 16236,
+    "physics_validated": false
+  },
+  "pliers": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/109_pliers/01_pliers/01/mobility.urdf",
+    "source_sha256": "c1738adde130a305c1b74609df4c91eadb484a3b00e5c39893518495895b6d03",
+    "source_extent_after_orientation": [
+      1.889217,
+      0.9215815951757682,
+      0.18545100000000003
+    ],
+    "preview_uniform_scale": 0.11645036012273868,
+    "source_center_offset_after_orientation": [
+      -0.05533450000000001,
+      0.1828277975878838,
+      -0.09199900000000007
+    ],
+    "preview_extent_m": [
+      0.22,
+      0.10731850864070619,
+      0.021595835735122016
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 4,
+    "triangles": 2168,
+    "physics_validated": false
+  },
+  "lamp": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/101_lamp/01_lamp/01/mobility.urdf",
+    "source_sha256": "b23fff8a555a87c26d7eb1f2d252ff9931328c1d81bc0c8bc907e0a942ce2a47",
+    "source_extent_after_orientation": [
+      1.7093420000000004,
+      0.444584,
+      1.2565869999999995
+    ],
+    "preview_uniform_scale": 0.18720653912441157,
+    "source_center_offset_after_orientation": [
+      -0.09548099999999998,
+      0.0022849999999997456,
+      -0.6076569999999999
+    ],
+    "preview_extent_m": [
+      0.32,
+      0.0832290319900874,
+      0.23524130337872687
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 20,
+    "triangles": 50896,
+    "physics_validated": false
+  },
+  "camera": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/083_camera/02_camera/01/mobility.urdf",
+    "source_sha256": "ef70a1e7a3acbd03b127a818438dc7c6462b5ee8acfa45a19e0358e93abc668b",
+    "source_extent_after_orientation": [
+      1.4659400000000002,
+      1.405678,
+      1.0362920000000004
+    ],
+    "preview_uniform_scale": 0.10232342387819418,
+    "source_center_offset_after_orientation": [
+      -0.186019,
+      0.043265999999999916,
+      -0.4759880000000003
+    ],
+    "preview_extent_m": [
+      0.15,
+      0.14383378583025225,
+      0.10603694557758164
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 476,
+    "triangles": 27136,
+    "physics_validated": false
+  },
+  "keyboard": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/098_keyboard/01_keyboard/01/mobility.urdf",
+    "source_sha256": "506521d11597414315fea400c3ca876721d9990298289c61b514d9732dacac50",
+    "source_extent_after_orientation": [
+      0.7094950000000009,
+      1.8690830000000003,
+      0.18551500000000026
+    ],
+    "preview_uniform_scale": 0.17120695014614115,
+    "source_center_offset_after_orientation": [
+      -0.01530750000000003,
+      -0.02122649999999998,
+      -0.07719500000000014
+    ],
+    "preview_extent_m": [
+      0.12147047509393656,
+      0.32,
+      0.03176145735636142
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 311,
+    "triangles": 39180,
+    "physics_validated": false
+  },
+  "mouse": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/105_mouse/01_mouse/01/mobility.urdf",
+    "source_sha256": "b64c0e2028dfbc945fcb3d3e026d94eb4531ef5f0b399663adb97656e4f4114c",
+    "source_extent_after_orientation": [
+      1.928458,
+      1.058488,
+      0.6926570000000005
+    ],
+    "preview_uniform_scale": 0.05704039185712108,
+    "source_center_offset_after_orientation": [
+      -0.02278499999999989,
+      0.008085999999999982,
+      -0.2724480000000004
+    ],
+    "preview_extent_m": [
+      0.11,
+      0.06037657029606038,
+      0.03950942670257795
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 8,
+    "triangles": 8057,
+    "physics_validated": false
+  },
+  "hinged_box": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/081_box/01_box/01/mobility.urdf",
+    "source_sha256": "16c795b45b003b0ca880ddec9a4c5375f359da0a82953cc39094e47b19beba7c",
+    "source_extent_after_orientation": [
+      0.7824397030603634,
+      1.5979470000000002,
+      1.5016542262654968
+    ],
+    "preview_uniform_scale": 0.17522483536688013,
+    "source_center_offset_after_orientation": [
+      0.0025948515301812414,
+      -0.04687549999999996,
+      -0.5087760000000002
+    ],
+    "preview_extent_m": [
+      0.13710286815326275,
+      0.28,
+      0.26312711457535143
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 26,
+    "triangles": 6544,
+    "physics_validated": false
+  },
+  "tube_rack": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/367_test_tube/test_tube_holder.glb",
+    "source_sha256": "b290b58ace76fd2eef01d0f48feef07bacc7aba0d4c4edc63ac411a435f9bb81",
+    "source_extent_after_orientation": [
+      30.035558700561523,
+      10.071117877960205,
+      5.8206552267074585
+    ],
+    "preview_uniform_scale": 0.007324651497023328,
+    "source_center_offset_after_orientation": [
+      0.16380691528320312,
+      1.9222238063812251,
+      -0.038519740104675404
+    ],
+    "preview_extent_m": [
+      0.22,
+      0.07376742864149961,
+      0.042634271019959445
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 2,
+    "triangles": 16908,
+    "physics_validated": false
+  },
+  "tube": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/367_test_tube/test_tube1.glb",
+    "source_sha256": "513340fb14741df97f41b33d1810f70e436066b724d35a495d93c929760a7454",
+    "source_extent_after_orientation": [
+      0.04129709130741257,
+      0.06778627626960804,
+      0.12780965152544882
+    ],
+    "preview_uniform_scale": 0.9388962301967172,
+    "source_center_offset_after_orientation": [
+      -0.00863159424583913,
+      0.020061204414991422,
+      -0.11305473695198603
+    ],
+    "preview_extent_m": [
+      0.03877368334661928,
+      0.06364427924860817,
+      0.12
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 3,
+    "triangles": 37648,
+    "physics_validated": false
+  },
+  "fastener_0": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/327_bolt_nuts/01_bolt_nuts/01/nuts_and_bolts_Object_0.glb",
+    "source_sha256": "385f31efe9eb9fb68ac1c35621534e0388d954b737e4dbabcb0235e2faef4e9e",
+    "source_extent_after_orientation": [
+      6.350852966308594,
+      5.500000238418579,
+      7.250000000000001
+    ],
+    "preview_uniform_scale": 0.007,
+    "source_center_offset_after_orientation": [
+      0.0,
+      -1.1920928799646902e-07,
+      -2.553512903698301e-16
+    ],
+    "preview_extent_m": [
+      0.044455970764160156,
+      0.038500001668930056,
+      0.05075000000000001
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 4970,
+    "physics_validated": false
+  },
+  "fastener_2": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/327_bolt_nuts/01_bolt_nuts/01/nuts_and_bolts_Object_2.glb",
+    "source_sha256": "229bbcb2fbfa20b6f583971e01fcc8e53c150b275ea6857e2111ccd21fd414c0",
+    "source_extent_after_orientation": [
+      6.300000190734863,
+      6.300000190734863,
+      8.10788345336914
+    ],
+    "preview_uniform_scale": 0.007,
+    "source_center_offset_after_orientation": [
+      0.0,
+      1.7763568394002505e-15,
+      -2.553512903698301e-16
+    ],
+    "preview_extent_m": [
+      0.044100001335144044,
+      0.044100001335144044,
+      0.05675518417358399
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 5272,
+    "physics_validated": false
+  },
+  "fastener_7": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/327_bolt_nuts/01_bolt_nuts/01/nuts_and_bolts_Object_7.glb",
+    "source_sha256": "d252d10f08cd315ce1b2985ec114c89e7bc61f6b4fb7997c759f65c7a7a9b5ab",
+    "source_extent_after_orientation": [
+      6.350852966308594,
+      5.500000238418579,
+      3.586842056638317
+    ],
+    "preview_uniform_scale": 0.007,
+    "source_center_offset_after_orientation": [
+      0.0,
+      -1.1920928888464744e-07,
+      3.4507946687269163e-09
+    ],
+    "preview_extent_m": [
+      0.044455970764160156,
+      0.038500001668930056,
+      0.025107894396468218
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 3838,
+    "physics_validated": false
+  },
+  "fastener_8": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/327_bolt_nuts/01_bolt_nuts/01/nuts_and_bolts_Object_8.glb",
+    "source_sha256": "ae390cd2a766da43fa7b6a6f1f0d05068ec6c92ab45e0490d807e4b65af62b5d",
+    "source_extent_after_orientation": [
+      5.71999979019165,
+      5.71999979019165,
+      3.1499998569488534
+    ],
+    "preview_uniform_scale": 0.007,
+    "source_center_offset_after_orientation": [
+      0.0,
+      0.0,
+      -3.3314785197356895e-16
+    ],
+    "preview_extent_m": [
+      0.040039998531341554,
+      0.040039998531341554,
+      0.022049998998641976
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 3610,
+    "physics_validated": false
+  },
+  "fastener_9": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/327_bolt_nuts/01_bolt_nuts/01/nuts_and_bolts_Object_9.glb",
+    "source_sha256": "fbdf330179cf58931cb8974a61667507f8a2afce81a2dcea62ffbb37936884c7",
+    "source_extent_after_orientation": [
+      6.350852966308594,
+      5.500000238418579,
+      1.3999999761581434
+    ],
+    "preview_uniform_scale": 0.007,
+    "source_center_offset_after_orientation": [
+      0.0,
+      -1.1920928932873665e-07,
+      -5.995204438854964e-16
+    ],
+    "preview_extent_m": [
+      0.044455970764160156,
+      0.038500001668930056,
+      0.009799999833107004
+    ],
+    "source_rotation_deg": [
+      90,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 1894,
+    "physics_validated": false
+  },
+  "jigsaw_yellow": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/326_jigsaw_puzzle/01_jigsaw_puzzle/01/low_poly_jigsaw_puzzle_pieces_Puzzle_Piece_5_FFC107_0.glb",
+    "source_sha256": "4bb4fe89feaf90d6f5bb862ec519a10fe30996f67a7f9f1942515b55ef429ca8",
+    "source_extent_after_orientation": [
+      199.98548889160156,
+      199.98548126220703,
+      17.12256908416748
+    ],
+    "preview_uniform_scale": 0.0004,
+    "source_center_offset_after_orientation": [
+      -0.00725555419921875,
+      -0.007259368896484375,
+      -8.561249732971191
+    ],
+    "preview_extent_m": [
+      0.07999419555664063,
+      0.07999419250488282,
+      0.006849027633666993
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 715,
+    "physics_validated": false
+  },
+  "jigsaw_blue": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/326_jigsaw_puzzle/01_jigsaw_puzzle/01/low_poly_jigsaw_puzzle_pieces_Puzzle_Piece_4_1E5AD8_0.glb",
+    "source_sha256": "823cc5ba644801e0f4121e4e35cc2ecd35fe484e707a2ee66d1ed19cd8133ed8",
+    "source_extent_after_orientation": [
+      199.98548889160156,
+      199.98548126220703,
+      17.12256908416748
+    ],
+    "preview_uniform_scale": 0.0004,
+    "source_center_offset_after_orientation": [
+      -0.00725555419921875,
+      -0.007259368896484375,
+      -8.561249732971191
+    ],
+    "preview_extent_m": [
+      0.07999419555664063,
+      0.07999419250488282,
+      0.006849027633666993
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 715,
+    "physics_validated": false
+  },
+  "jigsaw_red": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/326_jigsaw_puzzle/01_jigsaw_puzzle/01/low_poly_jigsaw_puzzle_pieces_Puzzle_Piece_3_D31E29_0.glb",
+    "source_sha256": "7426eedba67f4b283ec0c8ef621aef3ce08969d0190ff6bf8af2819b41cc129e",
+    "source_extent_after_orientation": [
+      199.98548889160156,
+      199.98548126220703,
+      17.12256908416748
+    ],
+    "preview_uniform_scale": 0.0004,
+    "source_center_offset_after_orientation": [
+      -0.00725555419921875,
+      -0.007259368896484375,
+      -8.561249732971191
+    ],
+    "preview_extent_m": [
+      0.07999419555664063,
+      0.07999419250488282,
+      0.006849027633666993
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 715,
+    "physics_validated": false
+  },
+  "tetris_l": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/338_tetris_animation/01_tetris_animation/01/tetris_pCube1_L_0.glb",
+    "source_sha256": "ef6ea36d8011c143099b4b591c9c614eaf907ee03a87df01d327b9fcfb139aff",
+    "source_extent_after_orientation": [
+      2.0,
+      3.0,
+      1.0
+    ],
+    "preview_uniform_scale": 0.025,
+    "source_center_offset_after_orientation": [
+      -8.455735206604004,
+      1.5,
+      7.5
+    ],
+    "preview_extent_m": [
+      0.05,
+      0.07500000000000001,
+      0.025
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 36,
+    "physics_validated": false
+  },
+  "tetris_t": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/338_tetris_animation/01_tetris_animation/01/tetris_pCube2_T_0.glb",
+    "source_sha256": "34d96af9149f1fb933bb02a612fed1a8e47182693f54ae93a1ec3239c2cc9e4e",
+    "source_extent_after_orientation": [
+      3.000000238418579,
+      1.9999999701976776,
+      1.0
+    ],
+    "preview_uniform_scale": 0.025,
+    "source_center_offset_after_orientation": [
+      -2.9557360410690308,
+      0.9999998956918716,
+      7.5
+    ],
+    "preview_extent_m": [
+      0.07500000596046448,
+      0.049999999254941946,
+      0.025
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 36,
+    "physics_validated": false
+  },
+  "tetris_i": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/338_tetris_animation/01_tetris_animation/01/tetris_pCube6_Straight_0.glb",
+    "source_sha256": "2db0d613ae73bad038ccdf5555e74e70f300774a89adf7f34e8ba71a16522a44",
+    "source_extent_after_orientation": [
+      1.0,
+      4.0,
+      1.0
+    ],
+    "preview_uniform_scale": 0.025,
+    "source_center_offset_after_orientation": [
+      0.0,
+      0.0,
+      -0.5
+    ],
+    "preview_extent_m": [
+      0.025,
+      0.1,
+      0.025
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 36,
+    "physics_validated": false
+  },
+  "tetris_z": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/338_tetris_animation/01_tetris_animation/01/tetris_pCube9_Z_0.glb",
+    "source_sha256": "dc789d2f0649f708e3642aa36168fb979765afc09a1e3e07341c6a5ba3130f9e",
+    "source_extent_after_orientation": [
+      3.0,
+      2.0,
+      1.0
+    ],
+    "preview_uniform_scale": 0.025,
+    "source_center_offset_after_orientation": [
+      0.0,
+      0.0,
+      -0.5
+    ],
+    "preview_extent_m": [
+      0.07500000000000001,
+      0.05,
+      0.025
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 36,
+    "physics_validated": false
+  },
+  "tetris_frame": {
+    "source": "library/external/bench2dex/bf65215f844d/Objects/338_tetris_animation/01_tetris_animation/01/tetris_pCube4_Frame_0.glb",
+    "source_sha256": "a5071cbdc72700a4277d5bb4de1661c3b2a3dc304934470aa13e05b4bcbbeda4",
+    "source_extent_after_orientation": [
+      10.0,
+      7.0,
+      1.0
+    ],
+    "preview_uniform_scale": 0.025,
+    "source_center_offset_after_orientation": [
+      0.0,
+      3.5,
+      -0.5
+    ],
+    "preview_extent_m": [
+      0.25,
+      0.17500000000000002,
+      0.025
+    ],
+    "source_rotation_deg": [
+      0,
+      0,
+      0
+    ],
+    "parts": 1,
+    "triangles": 180,
+    "physics_validated": false
+  }
+}

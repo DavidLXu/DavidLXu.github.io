@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-11-03",
+  "scope": "proposal assets, metadata, renders, display bounds; NOT physics",
+  "passed": true,
+  "tasks": 50,
+  "unique_source_assets": 87,
+  "source_sha256_checked": 87,
+  "task_previews": 50,
+  "asset_previews": 87,
+  "baseline_task_count": 36,
+  "baseline_status_counts": {
+    "accepted": 22,
+    "not_started": 7,
+    "in_progress": 7
+  },
+  "category_counts": {
+    "工具操作": 11,
+    "设备操作": 4,
+    "受约束取物": 9,
+    "手内调整": 5,
+    "动态接物": 3,
+    "套叠与拼装": 7,
+    "识别与整理": 4,
+    "组合流程": 1,
+    "双手协调": 3,
+    "多物体抓握": 1,
+    "精细支撑": 2
+  },
+  "novelty_counts": {
+    "新交互": 41,
+    "新约束": 8,
+    "组合流程": 1
+  },
+  "source_asset_root": "/Users/xulixin/RevoBench-refactor/assets",
+  "source_files_modified": false,
+  "new_procedural_props": 0,
+  "physics_trials_run": 0,
+  "accepted_new_tasks": 0,
+  "errors": [],
+  "warnings": [
+    "bread: 原始 OBJ 未附材质文件；预览使用中性灰色，不伪造面包纹理。"
+  ],
+  "limitations": [
+    "静态道具陈列不验证实际接触初态。",
+    "依赖纹理由模型加载器读取，但本检查不宣称所有原始 USD 引用可解析。",
+    "源素材已经核实和渲染，不代表关节、质量、摩擦、配合尺寸已在 Isaac 中验证。",
+    "原任务36项状态是登记快照，不是实时进程状态。"
+  ]
+}

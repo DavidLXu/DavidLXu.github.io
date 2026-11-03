@@ -20,3 +20,12 @@
 ## 检查
 
 运行 `node --check RevoBench/app.js`；预览时检查状态筛选、搜索、视频播放、弹窗关闭、手机布局。视频保留原始帧序列和时间，页面不改变播放速度；尊重减少动态效果偏好。
+
+## 独立待开发任务图册
+
+- 地址：https://davidlxu.github.io/RevoBench/pending/ 。首页导航与独立入口链接到该页面。
+- 50 项待开发提案与原有 36 项历史展示分开，不改变已有验收或轨迹数量。
+- `pending/` 是静态发布副本，包含 50 张桌面陈列图、87 张资产预览、任务 JSON 和检查记录。
+- 主源码和完整文档：https://github.com/BrainCoTech/RevoBench/tree/main/docs/tabletop_task_proposals_50_20261103 。
+- 在主仓库提案目录修改并运行 `python write_documents.py`，再运行 `python export_site.py --site-root /本网站仓库路径`，将导出结果提交到本仓库 main。不要直接修改网站副本中的任务定义。
+- 每项任务支持深链接、复制任务链接与复制交接说明；静态图片不代表仿真验收。

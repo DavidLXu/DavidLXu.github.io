@@ -5,10 +5,10 @@
 <title>RevoBench: An Agent-Native Framework for Dexterous Manipulation Benchmarking</title>
 <meta name="description" content="RevoBench 基于高保真数字资产，由 Agent 构建灵巧操作环境并生成示例轨迹，用于任务验证与动作诊断。">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="./style.css?v=20261101-copy"><script src="./app.js?v=20261101-copy" defer></script>
+<link rel="stylesheet" href="./style.css?v=20261103-pending"><script src="./app.js?v=20261101-copy" defer></script>
 </head>
 <body>
-<header class="nav-shell"><nav class="nav" aria-label="主导航"><a class="brand" href="#top">RevoBench<span class="brand-dot">.</span></a><div class="nav-links"><a href="#about">项目介绍</a><a class="pill primary" href="#tasks">场景任务集 <span aria-hidden="true">↗</span></a></div></nav></header>
+<header class="nav-shell"><nav class="nav" aria-label="主导航"><a class="brand" href="#top">RevoBench<span class="brand-dot">.</span></a><div class="nav-links"><a href="#about">项目介绍</a><a class="pending-nav" href="./pending/">待开发任务（50）</a><a class="pill primary" href="#tasks">场景任务集 <span aria-hidden="true">↗</span></a></div></nav></header>
 <main id="top">
 <section class="hero wrap">
 <h1 class="project-title"><span class="project-name">RevoBench:</span> <span class="project-subtitle">An Agent-Native Framework for Dexterous Manipulation Benchmarking</span></h1>
@@ -16,6 +16,7 @@
 <div class="hero-stage"><video id="hero-video" muted loop playsinline preload="metadata" poster="./media/carry_dutch_oven--v060-pot_full.jpg" aria-label="双手搬双耳锅仿真演示"><source src="./media/carry_dutch_oven--v060-pot_full.mp4" type="video/mp4"></video><div class="hero-caption"><div><span class="tiny-label">示例轨迹</span><strong>双手搬双耳锅</strong><span>仿真录制</span></div><button class="round-button" id="hero-toggle" aria-label="播放首页演示"><span aria-hidden="true">▶</span></button></div></div>
 <div class="hero-meta" id="hero-meta"><span>36 项操作任务</span><span>29 段仿真视频</span><span>21 条验收参考轨迹</span></div>
 </section>
+<section class="proposal-entry wrap" aria-labelledby="pending-title"><div class="proposal-panel"><div><h2 id="pending-title">待开发任务</h2><p>50 个桌面任务方案，复用 87 个现有资产。查看道具预览、资产路径、操作步骤与验收标准。</p><p class="proposal-note">任务设计与静态陈列已完成，动作开发与物理验收尚未开始。</p></div><a class="pill primary" href="./pending/">查看 50 项图册 ↗</a></div></section>
 <section class="catalog wrap section-space" id="tasks"><div class="section-heading"><h2>场景任务集</h2></div>
 <div class="catalog-tools"><div class="filter-tabs" role="group" aria-label="按任务状态筛选"><button class="active" data-status="all" aria-pressed="true">全部 <span>36</span></button><button data-status="accepted" aria-pressed="false">已验收 <span>21</span></button><button data-status="in_progress" aria-pressed="false">开发中 <span>8</span></button><button data-status="not_started" aria-pressed="false">未开始 <span>7</span></button></div><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="搜索任务" aria-label="搜索任务"></label></div>
 <div class="catalog-note"><span id="result-count" role="status">36 项任务</span><span>展示快照 · <time id="snapshot-date">2026.10.27</time></span></div>
@@ -30,7 +31,7 @@
 <p>后续将由 Agent 参与构建评测程序，在固定的任务条件下比较不同 agent-based policy。环境、示例轨迹和评测接口将整理为统一的任务包，方便新的 Agent 独立运行和复现结果。</p>
 </div></div></section>
 </main>
-<footer class="wrap footer"><a class="brand" href="#top">RevoBench<span class="brand-dot">.</span></a><p>灵巧操作任务集 · 静态展示</p><a href="https://github.com/DavidLXu/RevoBench-Refactor">项目代码 ↗</a></footer>
+<footer class="wrap footer"><a class="brand" href="#top">RevoBench<span class="brand-dot">.</span></a><p>灵巧操作任务集 · 静态展示</p><a href="https://github.com/BrainCoTech/RevoBench">项目代码 ↗</a></footer>
 <dialog id="detail" aria-labelledby="detail-title"><button class="close-button" id="close" aria-label="关闭任务详情">✕</button><div id="detail-body"></div></dialog>
 <noscript><p class="wrap">请启用 JavaScript 以浏览任务列表和播放视频。</p></noscript>
 </body>
