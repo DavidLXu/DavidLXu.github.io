@@ -10,4 +10,10 @@
 #     data: [tactile]
 #   reason: "Checked the method and experimental setup in the paper."
 #   summary: "Optional reviewed one-sentence contribution."
-{}
+/posts/2026/11/3d-world-simulator-paper-notes/:
+  facets:
+    task: [deformable, assembly]
+    method: [world_model, planning]
+    embodiment: [bimanual, single_arm]
+    data: [vision, tactile, teleop, simulation]
+  reason: "Sections 4.1, 4.3, and 4.5: teleoperated bimanual ALOHA RGB-D and FlexiTac data, cloth and part assembly tasks, simulator-generated policy data, and MPPI planning on a single-arm ALOHA."
