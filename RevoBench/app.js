@@ -1,6 +1,7 @@
 'use strict';
 const $ = (selector) => document.querySelector(selector);
 const labels = { accepted: '已验收', in_progress: '开发中', not_started: '未开始' };
+const batchLabels = { tabletop100: '第二批组合任务（51–100）', daily_tabletop: '日常桌面任务' };
 const kindLabels = { accepted: '验收参考', diagnostic: '调试录像', development: '开发演示' };
 let tasks = [], status = 'all', batch = null, previousFocus = null;
 const esc = (value) => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -21,7 +22,7 @@ new IntersectionObserver(entries => { if (!entries[0].isIntersecting) hero.pause
 function render() {
   const query = $('#search').value.trim().toLowerCase();
   const visible = tasks.filter(t => (status === 'all' || t.status === status) && (!batch || t.batch === batch) && `${t.title} ${t.id} ${t.category} ${t.description}`.toLowerCase().includes(query));
-  $('#result-count').textContent = `${visible.length} 项任务${batch ? ' · 第二批组合任务（51–100）' : ''}`;
+  $('#result-count').textContent = `${visible.length} 项任务${batch ? ' · ' + batchLabels[batch] : ''}`;
   $('#empty').hidden = visible.length > 0;
   $('#grid').innerHTML = visible.map(t => {
     const v = t.videos[0];
@@ -85,14 +86,14 @@ document.querySelectorAll('[data-task-batch]').forEach(link => link.addEventList
   history.replaceState(null, '', '#batch=' + batch); $('#tasks').scrollIntoView();
 }));
 $('#search').addEventListener('input', render);
-fetch('./snapshot.json?v=20261103-second50').then(r => { if (!r.ok) throw Error('Task collection unavailable'); return r.json(); }).then(data => {
+fetch('./snapshot.json?v=20261106-daily').then(r => { if (!r.ok) throw Error('Task collection unavailable'); return r.json(); }).then(data => {
   tasks = data.tasks;
   const order = { accepted: 0, in_progress: 1, not_started: 2 };
   tasks.sort((a,b) => order[a.status] - order[b.status]);
   document.querySelectorAll('[data-status]').forEach(b => { b.querySelector('span').textContent = b.dataset.status === 'all' ? tasks.length : tasks.filter(t => t.status === b.dataset.status).length; });
   $('#hero-meta').innerHTML = `<span>${tasks.length} 项操作任务</span><span>${tasks.reduce((n,t) => n+t.videos.length,0)} 段仿真视频</span><span>${tasks.reduce((n,t) => n+t.trajectory_count,0)} 条验收参考轨迹</span>`;
   $('#snapshot-date').textContent = data.snapshot_date.replaceAll('-', '.');
-  const selectedBatch = location.hash === '#batch=tabletop100' ? 'tabletop100' : null;
+  const selectedBatch = Object.keys(batchLabels).find(key => location.hash === '#batch=' + key) || null;
   setStatus(location.hash === '#not-started' || selectedBatch ? 'not_started' : 'all', selectedBatch);
   if (location.hash === '#not-started' || selectedBatch) $('#tasks').scrollIntoView();
   if (location.hash.startsWith('#task=')) openTask(decodeURIComponent(location.hash.slice(6)));

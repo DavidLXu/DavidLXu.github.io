@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-11-03",
+  "snapshot_date": "2026-11-06",
   "note": "静态展示快照；静态场景图不计入轨迹或视频。验收状态指物理与数据验收，仿人动作质量另审。",
   "tasks": [
     {
@@ -2530,8 +2530,710 @@
         "layout_sha256": "c0b1685d4e7111246ccdee5cdf121d1e47db31e02891b85d10be01151ea62f17",
         "robot_profile": "revotron_mt_fisheye_56d_v1"
       }
+    },
+    {
+      "id": "daily_tabletop_scrub_cup_interior",
+      "title": "刷洗杯子内壁",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "杯子直立，手刷平放在右侧。 扶杯，将刷头送入杯口并刷洗内壁。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_scrub_cup_interior--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "3356b5c5c61dda1ff3d658ebcd2483edb7ae9ef7b1b7a618f4723133a7d52bc3",
+        "layout_sha256": "594bffda59c3a1702d9b9f7da56e32298b33656150defa3cfb70d6d6d6630eba",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_clean_plate_with_eraser",
+      "title": "用板擦擦去盘上污迹",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "盘面中央有两处深色污迹，板擦与盘分开。 扶住盘子，用板擦擦净标记。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_clean_plate_with_eraser--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "5124e17f60fbc9dee68132dbea09a1c774d27d8ceeda25bc79cea9c33582bcf0",
+        "layout_sha256": "b09786b06b61977d672714884232018470aa46efabfa80bb28ac36b361d0a53e",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_tighten_bottle_cap",
+      "title": "装上并拧紧瓶盖",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "同一瓶型的瓶身直立，配套盖子单独摆在一旁。 扶稳瓶身，装上瓶盖并拧紧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_tighten_bottle_cap--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "01a0b21b0cdfe9c1abc8bc24600eca0b65f6dae489d1b3fd0dab7120ddbeb685",
+        "layout_sha256": "a3e71ef2147d64eb0c6096b02a24deb3edbc46c3c71f532cb71af9c11d526511",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_collect_waste_into_bin",
+      "title": "将桌面垃圾投入桶内",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "三个纸团散放在桌上，垃圾桶在左后方。 逐个拾起纸团，投入垃圾桶。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_collect_waste_into_bin--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "9bc470767300c1a1fa9f59c3aec980d61c592460ecc4e45092e6a13eb7a5e94b",
+        "layout_sha256": "8673eb9abce67fc68a61147263ea6b7bd4b08cf69c96915f66e026542519e3d2",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_deal_playing_cards",
+      "title": "分发五张扑克牌",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "牌叠上有六张独立牌片，右侧有一只空牌托。 逐张发出五张，再把余牌放进牌托。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_deal_playing_cards--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "365621966f67a6aaceb93b2c562547e8cb5efecdb35924c1026ca46bf1b3d2b3",
+        "layout_sha256": "f50560bb8613152727900fb5957978aaa5c8cbe2630254d2949ee3ae4b5e38c6",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_empty_dustpan_into_bin",
+      "title": "把簸箕里的垃圾倒入桶",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "两个纸团放在簸箕盘面上，旁边是垃圾桶。 拿起簸箕，将纸团倒进桶内。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_empty_dustpan_into_bin--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "ad98adb4b8c6e35e58623cbd5bce5964a23c6057c15895b99b7ba9492d0e1cc3",
+        "layout_sha256": "da3bafd36071c6792dfd2d13c598627921617fb30a2c966558e619da7f2e8f11",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_cover_ball_with_cup",
+      "title": "用杯子罩住球",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "杯和高尔夫球分开，杯口朝上。 翻转杯子，完整罩住球。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_cover_ball_with_cup--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "742da21de025fb36010fa73bd5fe9b893415b65808f18ab02860afd16868157f",
+        "layout_sha256": "fc60c81fe9b97f42be4f47e99eb535e030f47bcfec4a97c1ac0026801320cbfe",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_insert_knife_into_cutlery_bin",
+      "title": "将餐刀插入餐具筒",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "餐刀平放在右侧，左侧立着一个空筒。 将刀刃朝下放入筒内。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_insert_knife_into_cutlery_bin--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "6b00244681670e2599441c938d182bc58cdb6ac07e057e2d8f24fe0dff93e11b",
+        "layout_sha256": "06b225aca5c16eaea38d9bd98a0dd05b8b8fa7d39043b427c456391cbab0705d",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_place_ball_in_box",
+      "title": "将球放入盒中",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "空盒开口朝上，球在盒外。 拾球并放进盒内。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_place_ball_in_box--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "2d27648b4bfa32aeb8ca114b29015bde72ad8b38a46bf283014017112c42ff0a",
+        "layout_sha256": "de70dde4678faf217c86bae36dd2ae10e65ad5a6872077ceb7b7c918392f752e",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_place_ball_in_cup_then_cup_in_box",
+      "title": "先放球入杯，再放杯入盒",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "球、杯和空盒分别摆放，容器开口朝上。 将球放进杯子，再把装球的杯子放进盒内。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_place_ball_in_cup_then_cup_in_box--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "08a0d7e509209664423ebb66cbfff2e692e656164219fde9ef277595755a244b",
+        "layout_sha256": "c0d3f491469cabd496b0d6b36b2c9502115e16035251cca1ae8dc2d671978daa",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_place_cup_on_plate",
+      "title": "将杯子放到盘子上",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "杯子和盘子分开摆放。 将杯子直立放到盘面。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_place_cup_on_plate--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "7362b5406eed12bad1898c1fd116e3efcf697f119589a9bb7623bdcb7432a948",
+        "layout_sha256": "65458cf98f0ed23903a05a4236339a9b85d825eb9aad1c01dc3c716e3e089f50",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_place_knife_and_fork_on_plate",
+      "title": "将刀叉摆入餐盘",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "餐盘左后方留空，餐刀和餐叉分开放在盘外。 将刀叉分别拿起并放入餐盘。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_place_knife_and_fork_on_plate--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "ff1ba037e0ff01bf8d7027d70b804b0b723d68c3df863eb539b05952ae9fe6f7",
+        "layout_sha256": "1eb28efca3b34011924a783edc3a113fc69b7813059890221fcb167236aeba5d",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_stack_two_plates",
+      "title": "叠放两个餐盘",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "两个等大的盘子独立平放。 将一个盘子端起并与另一个对齐叠放。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_stack_two_plates--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "2e81c37a7adb0c97b8c45829ee49b9b0ffa1b628c1b4016684cf197717f24c0b",
+        "layout_sha256": "ec106abf0e95f130cd45d7d11d9b689173de02ac609524ef5fedd0399e51f9a8",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_remove_block_from_box",
+      "title": "从盒内取出积木",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "小木块落在开口盒内部的底面。 将木块取出，放到盒外桌面。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_remove_block_from_box--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "82eb36e9f4cf17268b168c23534e36d7334fa31fdd66b08ee77d8194e5c5800a",
+        "layout_sha256": "c5e49ada57b572607a0511b54958b3f3240765f9168579e9cfa3305074d65599",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_reorient_cup_upright",
+      "title": "扶正侧倒的杯子",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "杯子侧卧，杯轴平行于桌面。 将杯子扶正，以杯底支撑。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_reorient_cup_upright--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "4495ff5b7d1b65c2be0516fb408add53092c784335f21ecd07bc9190f460af77",
+        "layout_sha256": "928976711726d35c6f2877cb6af0102841475678a5a6e795229b7a26ddddb786",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_turn_book_pages",
+      "title": "翻开两页书",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "一本张开的书平放在桌上。 依次翻过两页。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_turn_book_pages--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "2e0bc784ec2d6126bbba4b13c7978acd040d7bb4852899c7b08331338b8df805",
+        "layout_sha256": "e0013739d26664b1053ca4634e9b2d005effca6b1f714b42bc4fdb99c5b8ff46",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_fold_towel",
+      "title": "对折桌上的方巾",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "桌面上铺有一块展开的方形清洁布，旁边留有折后放置区。 连续对折两次，再放到一旁。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_fold_towel--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "71d3e73e1d923741d81d010eca3ba7d90ce02d411c18b7bcc6b9dcae8d62a189",
+        "layout_sha256": "83a08f239760871f9e844fe680e974203b492c0313f12707790232973f49015f",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_hammer_nails",
+      "title": "依次锤下两枚钉子",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "两枚钉子分别立在原任务的小固定座内，锤子位于右侧。 依次敲下两枚钉子，再放回锤子。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_hammer_nails--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "05ce60858aeb1189a382619403ff1ddf383d8f35d46173c07634973fa473d08d",
+        "layout_sha256": "d917adfe995f69d487a80c01d4fb3d956c1f8a262b6754aaaf156122c3ff9ec4",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_iron_garment",
+      "title": "熨烫桌上的衣物",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "牛仔裤放在左侧，熨斗单独立放在右侧。 扶住衣物，用熨斗沿面往复移动。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_iron_garment--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "e9b74f5de0a25dd67fd7f2d1e590f79a4aec428f399bda67c9e07e10e6dc83c3",
+        "layout_sha256": "8152944f6d572c81038c0a8d0fa085a61eef58cee8306b34c9ab21e7da40b271",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_nest_cups",
+      "title": "依尺寸嵌套五只杯子",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "同系列五只套杯分别直立，大杯留在左侧。 按尺寸将四只杯子逐一嵌入底杯。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_nest_cups--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "b4cf181e2217f5c73826585a30e6da0be17aa42b619b1e536da319c607a31a8d",
+        "layout_sha256": "7e820ad944b6b3e314a8bec798e76dc3f48d1c204d930056bf0ca539ee514e73",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_organize_objects_in_drawer",
+      "title": "将三件物品收入抽屉",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "桌面抽屉柜旁散放着橡皮、骰子和积木。 拉开抽屉，将三件物品放入后关好。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_organize_objects_in_drawer--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "50cc19e23d8d48a01ee34fad9575e523474894a1fc0011a3965ce77e9d7fbb2f",
+        "layout_sha256": "c22deef5b8302c5c7717afb62862e5bc1187b5c3ceb6a6837a0848dd25bc62a1",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_staple_paper",
+      "title": "用订书机装订 A4 纸",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "桌面是独立的一张 A4 纸和一台订书机。 将订书机移到纸边，装订后放回纸张。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_staple_paper--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "0611c27eb13d42768b46870c510ed63046e6b8554550526eee05ba71e4d24a5d",
+        "layout_sha256": "6ae6653338dc9c9fa773e760116f9d3c76a4f0699403b50301e5b313da0d693c",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_relocate_tennis_ball",
+      "title": "把网球移到桌面另一侧",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "网球独自放在桌面左侧。 将网球从左侧移到右侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_relocate_tennis_ball--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "be9cb98ea52075faa06f413f3191c33c04dbb0141527c8730cdba6a27588928f",
+        "layout_sha256": "a5559e398cf511a96aebf459cd2fab1080f73a518018387bc90af130f462b95c",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_place_fruits_in_basket",
+      "title": "将四个水果收入篮中",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "空篮在左后方，四种水果散放在篮外。 逐个拾起四个水果并放入篮中。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_place_fruits_in_basket--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "4ad8ae4bf2b56a2089505ecb4a70a6d426443080f47aa1f60f2c1e7b96d5b5e3",
+        "layout_sha256": "c2c8d03b96095762bfd7d305a3fa4a2843e2ae822c5eb8231071e67a4cbfe6a2",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_place_pens_in_holder",
+      "title": "将四支笔插入笔筒",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "四支笔平放在筒外，分别为独立实例。 顺次拿起四支笔，插入笔筒。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_place_pens_in_holder--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "fe12d7226d12945e99b398d941b22bdca1bd005e6d14f4be34339e526cdb964e",
+        "layout_sha256": "63a373c4010b309f5dc2b878cc88f71fdf9286fd65753c9b6d3159ddbec0bda4",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_reorient_and_relocate_carton",
+      "title": "翻正并移动纸箱",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "纸箱侧放在桌面中央，箱顶封口朝侧面。 将箱顶翻到上方，再把纸箱推向一侧。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_reorient_and_relocate_carton--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "32809689693062eb1bd86d31618c0cb6bfff460dc749b72ee9fb8712f18c9ba6",
+        "layout_sha256": "ed8f4bbdf39a08c31efda07a5b7f106874a66a17e7b5e783bbb61fa62ab4c467",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_transfer_liquid_with_dropper",
+      "title": "用滴管转移液体",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "一支试管插在架孔中，移液器和接液器皿单独摆放。 用滴管吸取液体并在器皿间转移。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_transfer_liquid_with_dropper--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "24fc101a08a6dced78bbeff23112ada39565cda3c67f8ff3739341d64722ebf1",
+        "layout_sha256": "b990775113688b27c6482debdf538d968079fedc36efd8fa3f7313f6f28bea2f",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_transfer_salt_between_cups_with_spoon",
+      "title": "用勺把盐从右杯转移到左杯",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "右杯有可见的白盐，左杯为空，勺子在两杯前方。 从右杯舀一勺盐，转移到左杯。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_transfer_salt_between_cups_with_spoon--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "8bc1c31230375b9363ec9ba5276255d5278bb4ad9de4299cca94dc2478aa650c",
+        "layout_sha256": "fd2cb8911a0a1e223f43ad99894a780cd2c456ef090919608f05b0f3ddb831e8",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_scoop_salt_from_jar_into_cup",
+      "title": "从盐罐中舀盐入杯",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "盛盐的罐体敞口，空杯和勺子分开放置。 用勺子将盐从罐中舀入空杯。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_scoop_salt_from_jar_into_cup--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "36af7cb949fbaa7a9a3084f88204ac3e6b2fe67a4678eddfef7f19bd19ea5ba9",
+        "layout_sha256": "18655032390367dda9742456182829622b4cc7d5c65832ab3dbff41b72fecbe3",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_sort_utensils",
+      "title": "按种类分拣两勺两叉",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "两只收纳盒左右分开，两勺两叉在中间。 将勺放入左盒、叉放入右盒。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_sort_utensils--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "295d86594392763ae3660cf0cc4d56c3f418863cab29026cc144e5baef9baf1c",
+        "layout_sha256": "9cac4f42a3d589ef25d11e5311d2416ef8a59bd56de380b9034321104d000862",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_reposition_and_stack_blocks",
+      "title": "移动并叠放两块积木",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "两个独立木块分开摆放。 将两个木块移到目标侧并上下叠放。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_reposition_and_stack_blocks--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "62fc466a3d541600840f060926ff23256251db6e6d7a9eee593a48dacbb94457",
+        "layout_sha256": "c8b6167e13cdb692391e296bb3d2b5cf96e16d7b263e9d7c13d4ab9895bf940e",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_sweep_waste_into_dustpan",
+      "title": "把桌面垃圾扫入簸箕",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "桌刷和簸箕分别平放，三个纸团散落在两者之间。 用桌刷将全部纸团扫入簸箕。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_sweep_waste_into_dustpan--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "5a17e9d37206939c64704dfc6259c07814d184afb601fbb5fd0ccaffac5c4502",
+        "layout_sha256": "8f74c6bca1b3faea04bf8465a42d704d16fe709ea2305e1227cd987c7340d8e8",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_seal_box_with_tape",
+      "title": "用胶带封箱",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "纸箱顶面朝上，带切割端的胶带座单独置于右侧。 沿箱顶接缝贴上胶带，压平并切断。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_seal_box_with_tape--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "bc4d6ae3f72fbfd29c4c3e67b1a01f61a129de87b2a8c3697c871b1b334672b7",
+        "layout_sha256": "7ba705ee5789fe10a05e768c3abc182e702c366db1bb0419a27925b226d6a990",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_place_books_on_shelf",
+      "title": "把两本书摆入书架",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "桌面书架前散放三本小书，中间及右侧两本为目标。 将两本目标书依次摆入架内。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_place_books_on_shelf--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "fa1dc505c728257522b873a7bc82f1cd4a6cdfab6930b8faf696f1fde33a19e7",
+        "layout_sha256": "0eb107489ae3947e60dbfa91cdf246aebe1e4328c6673e9d696c781d0736b022",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_collect_toys_into_basket",
+      "title": "将四件玩具收入篮中",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "篮外放着玩具车、骰子和两块拼图。 用不同手指抓取四件玩具并收入篮中。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_collect_toys_into_basket--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "092109622e2bf9fdcefa122ed9043a19a866eec8d6329fa293d2eed40fab1dc9",
+        "layout_sha256": "9ba8bc83997a8eda3c3d7c841562a8e8c07e9726e92df8f7df035bae94334858",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_rotate_bottle_cap",
+      "title": "旋下并放置瓶盖",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "配套盖子坐在瓶颈上，瓶身直立。 稳定瓶身，旋开盖子，并将盖子放到一旁。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_rotate_bottle_cap--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "619ba0e95fbd76f4f56812c5163a56fb20c1aae2f21e4ca869004fe06c5cbd0b",
+        "layout_sha256": "d2873ad4a857cee13c915087ed76e772b79675cf6f3fe071c84058a4c3285dee",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_unscrew_bottle_cap",
+      "title": "拧下饮料瓶盖",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "配套盖子坐在瓶颈上，瓶身直立。 稳定瓶身，旋开盖子，并将盖子放到一旁。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_unscrew_bottle_cap--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "65f7702dd982934acbce5d8bed643e6099f82040509c023b3542024f8e50a76d",
+        "layout_sha256": "f2c7d80db0c694a219a0eb8cc9c8e1f1001f5af080d7b068c31fc85cb308fa97",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_clean_knife_with_cloth",
+      "title": "用布擦去餐刀上的污迹",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "带有深色标记的餐刀与展开的清洁布分开摆放。 扶稳餐刀，用布擦除刀身标记。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_clean_knife_with_cloth--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "be0215cb07e07fd50ea335a3805b8373e920e80658a70cf84801b0ab208741a0",
+        "layout_sha256": "087eee19f0d2a6ecbbf88550f9bc47869146eea13ceaddad81f61349202f5f60",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
+    },
+    {
+      "id": "daily_tabletop_play_tic_tac_toe",
+      "title": "将带孔棋子套上立柱",
+      "category": "日常桌面操作",
+      "status": "not_started",
+      "batch": "daily_tabletop",
+      "description": "三根立柱旁散放三块有通孔的方环。 将每块带孔棋子放上各自的立柱。",
+      "trajectory_count": 0,
+      "videos": [],
+      "scene_preview": {
+        "url": "./media/scene-previews/daily_tabletop_play_tic_tac_toe--revotron-static.jpg",
+        "kind": "static_scene",
+        "label": "RevoTron · 静态初态",
+        "image_sha256": "8eb0dcd18c0b7cd149b20492c574bc90c3879e2b57ff426b5821d05ddd552024",
+        "layout_sha256": "2f7b82a97f5ef5ddcc78ed0e0b5befd3f4f490a4a7bd1bb1d9ed39996f675253",
+        "robot_profile": "revotron_mt_fisheye_56d_v1"
+      }
     }
   ],
   "source_repository": "https://github.com/BrainCoTech/RevoBench",
-  "static_scene_count": 107
+  "static_scene_count": 146
 }
