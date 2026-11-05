@@ -17,3 +17,10 @@
     embodiment: [bimanual, single_arm]
     data: [vision, tactile, teleop, simulation]
   reason: "Sections 4.1, 4.3, and 4.5: teleoperated bimanual ALOHA RGB-D and FlexiTac data, cloth and part assembly tasks, simulator-generated policy data, and MPPI planning on a single-arm ALOHA."
+/posts/2026/11/flowcritic-paper-notes/:
+  facets:
+    task: [locomotion, in_hand, manipulation]
+    method: [rl]
+    embodiment: [single_arm, dexterous_hand, humanoid]
+    data: [simulation]
+  reason: "Section IV uses flow matching for the state-value critic in PPO. Table II includes Isaac Gym locomotion, dexterous hand and Franka manipulation benchmarks. Section VI-E evaluates locomotion on a Unitree Go2."
