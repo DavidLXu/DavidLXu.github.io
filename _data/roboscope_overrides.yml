@@ -24,3 +24,10 @@
     embodiment: [single_arm, dexterous_hand, humanoid]
     data: [simulation]
   reason: "Section IV uses flow matching for the state-value critic in PPO. Table II includes Isaac Gym locomotion, dexterous hand and Franka manipulation benchmarks. Section VI-E evaluates locomotion on a Unitree Go2."
+/posts/2026/11/omnitactune-paper-notes/:
+  facets:
+    task: [manipulation, assembly]
+    method: [rl]
+    embodiment: [single_arm]
+    data: [vision, tactile, human_video, teleop]
+  reason: "Sections 3 and 4 describe tactile residual RL on a single xArm7, insertion and tool use, and visual base policies trained from human videos or teleoperated demonstrations."
