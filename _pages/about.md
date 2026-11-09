@@ -91,8 +91,7 @@ redirect_from:
   <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
     <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;"><span data-i18n-en="2026 · Project" data-i18n-zh="2026 · 项目">2026 · Project</span></div>
     <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">DexFormer 2.0: Towards a Cross-Embodiment Foundation Policy for Dexterous Grasping</h3>
-    <p style="margin: 0 0 0.35rem; font-size: 0.92rem;"><strong>Lixin Xu*</strong>, Ke Zhang*, Xinyu Liu*, Jie Tan, Senming Tan, Jiaju Yin, Yating Feng, Xiyue Dong, Renjing Xu</p>
-    <p style="margin: 0 0 0.55rem; font-size: 0.8rem; color: #6b7280;"><span data-i18n-en="* Equal contribution" data-i18n-zh="* 共同第一作者">* Equal contribution</span></p>
+    <p style="margin: 0 0 0.55rem; font-size: 0.92rem;"><strong>Lixin Xu</strong>, Ke Zhang, Xinyu Liu, Jie Tan, Senming Tan, Jiaju Yin, Yating Feng, Xiyue Dong, Renjing Xu</p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 8px; margin-bottom: 0.6rem;">
       <a href="https://davidlxu.github.io/dexformer2/#films"><img src="{{ '/images/dexformer2-grasp.png' | relative_url }}" alt="DexFormer 2.0 dexterous grasping demonstration" loading="lazy" style="display: block; width: 100%; height: 190px; object-fit: contain; border-radius: 8px;" /></a>
       <a href="https://davidlxu.github.io/dexformer2/#cases"><img src="{{ '/images/dexformer2-real-world.png' | relative_url }}" alt="DexFormer 2.0 real-world grasping with a Flexiv arm and Revo3 hand" loading="lazy" style="display: block; width: 100%; height: 190px; object-fit: contain; border-radius: 8px;" /></a>
