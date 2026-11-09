@@ -1,6 +1,8 @@
 ---
 title: "[Paper Notes] Learning In-Hand Object Reaching to General 6D Poses"
 date: 2026-09-15
+last_modified_at: 2026-11-10
+excerpt: "POISE learns palm-relative 6D in-hand reaching with diverse grasp resets, an adaptive goal curriculum, and wrench-based grasp preservation."
 permalink: /posts/2026/09/poise-in-hand-6d-pose-reaching-paper-notes/
 tags:
   - Dexterous Manipulation
@@ -27,7 +29,7 @@ The strongest evidence concerns recovery and continued operation. Diverse initia
 
 **“Learning In-Hand Object Reaching to General 6D Poses”** is by **Junxiao Lin, Tianyue Wu, Jie Yin, Jia Pan, Kaifeng Zhang, and Weiming Zhi**, with affiliations at the University of Sydney, Sharpa, and the University of Hong Kong. These notes cover the eight-page [arXiv:2609.13761v1](https://arxiv.org/abs/2609.13761v1), submitted on September 12, 2026.
 
-The [project page](https://junxiaolin.github.io/poise-website/) provides the [paper PDF](https://junxiaolin.github.io/poise-website/assets/papers/poise.pdf), hardware videos, a [browser-based MuJoCo demo](https://junxiaolin.github.io/poise-website/demo.html), and an [overview video](https://www.youtube.com/watch?v=PfWY5IXfj1Q). As of September 15, 2026, the project page marks the code as coming soon.
+The [project page](https://junxiaolin.github.io/poise-website/) provides the [paper PDF](https://junxiaolin.github.io/poise-website/assets/papers/poise.pdf), hardware videos, a [browser-based MuJoCo demo](https://junxiaolin.github.io/poise-website/demo.html), and an [overview video](https://www.youtube.com/watch?v=PfWY5IXfj1Q). As of November 10, 2026, the [official code repository](https://github.com/junxiaolin/Poise) is public, with training, grasp-generation, and real-robot deployment interfaces. This update checks the supplied eight-page PDF and retains the original post URL.
 
 ## 1. The target lives in the palm frame
 
@@ -117,7 +119,15 @@ r_t^{\mathrm{grasp}}
 \right)^2.
 $$
 
-The complete reward adds pose, verified completion, and $0.05r_t^{\mathrm{grasp}}$, then penalizes drops, joint torque, and instantaneous mechanical power. In simulation, the grasp term raises $Q$ by about 41%, the weakest force margin by 39%, and the weakest torque margin by 31%. Episode success also moves from 53.7% to 59.1%, so the extra contact objective does not merely trade reaching for static grasp quality.
+The full training reward (paper Eq. 10) makes the actuation costs explicit:
+
+$$
+r_t=r_t^{\mathrm{pose}}+r_t^{\mathrm{goal}}+0.05r_t^{\mathrm{grasp}}
+-80d_t-0.10\lVert\tau_t\rVert_2^2
+-0.15(\tau_t^\top\dot q_t)^2.
+$$
+
+Here $d_t$ indicates a drop, $\tau_t$ is joint torque, and $\dot q_t$ is joint velocity. The last term penalizes squared instantaneous mechanical power. In simulation, the grasp term raises $Q$ by about 41%, the weakest force margin by 39%, and the weakest torque margin by 31%. Episode success also moves from 53.7% to 59.1%, so the extra contact objective does not merely trade reaching for static grasp quality.
 
 ## 5. Sim-to-real depends on explicit pose tracking
 
@@ -138,6 +148,8 @@ Calling the system vision-based needs that context. The actor does not infer obj
 | Goal curriculum | Full-range sampling vs. curriculum | 6.2% → **59.5%** |
 | Grasp reward | Without vs. with, simulation episode success | 53.7% → **59.1%** |
 | Grasp reward | Without vs. with, real three-target sequences | 2/10 → **8/10** |
+
+These percentages use different denominators. The reset and curriculum experiments report first-target success. In Table III, episode success means reaching at least one goal during a completed training episode; the values are **53.7 ± 2.5%** and **59.1 ± 2.5%** (mean and sample standard deviation over three independent runs). Metrics are averaged over equal-length training windows after both policies reach the full goal range. Standard simulation episodes last 400 policy steps, or 20 s, and end early on a drop. Hardware sequence success requires all three targets. Keeping these definitions separate prevents reading the table as one shared benchmark.
 
 The hardware ablation deserves a closer read. Ten trials per policy use the same initial grasp and three-target sequence. The grasp reward raises completed targets from **8/30 to 27/30** and cuts median reach time over reached targets from 6.8 s to 4.9 s. Median steady-state errors are slightly larger with the reward: position changes from 4.8 mm to 6.4 mm and orientation from $4.7^\circ$ to $5.9^\circ$. The useful gain is continuity. Distributed contacts prevent progressive contact loss across the sequence; the ablation does not claim better final pose accuracy.
 
@@ -175,7 +187,7 @@ My main takeaway is that **initial-state design is part of the controller**. The
 
 论文题目为 **“Learning In-Hand Object Reaching to General 6D Poses”**，作者包括 **Junxiao Lin、Tianyue Wu、Jie Yin、Jia Pan、Kaifeng Zhang 和 Weiming Zhi**，来自悉尼大学、Sharpa 与香港大学。本文依据 2026 年 9 月 12 日提交的八页版本 [arXiv:2609.13761v1](https://arxiv.org/abs/2609.13761v1)。
 
-[项目主页](https://junxiaolin.github.io/poise-website/) 提供[论文 PDF](https://junxiaolin.github.io/poise-website/assets/papers/poise.pdf)、实机视频、[浏览器 MuJoCo demo](https://junxiaolin.github.io/poise-website/demo.html) 和[概览视频](https://www.youtube.com/watch?v=PfWY5IXfj1Q)。截至 2026 年 9 月 15 日，项目主页仍将代码标为即将发布。
+[项目主页](https://junxiaolin.github.io/poise-website/) 提供[论文 PDF](https://junxiaolin.github.io/poise-website/assets/papers/poise.pdf)、实机视频、[浏览器 MuJoCo demo](https://junxiaolin.github.io/poise-website/demo.html) 和[概览视频](https://www.youtube.com/watch?v=PfWY5IXfj1Q)。截至 2026 年 11 月 10 日，[官方代码仓库](https://github.com/junxiaolin/Poise) 已公开，提供训练、抓持生成和实机部署接口。本次更新依据所提供的八页 PDF 核对内容，并保留原文链接。
 
 ## 1. 在手掌坐标系中定义目标
 
@@ -265,7 +277,15 @@ r_t^{\mathrm{grasp}}
 \right)^2.
 $$
 
-完整 reward 由位姿、验证完成项和 $0.05r_t^{\mathrm{grasp}}$ 构成，同时惩罚掉落、关节力矩与瞬时机械功率。仿真中，抓持项把 $Q$ 提高约 41%，最弱力 margin 提高 39%，最弱力矩 margin 提高 31%；episode success 也从 53.7% 升到 59.1%。额外接触目标没有以牺牲位姿到达为代价来追求静态抓持质量。
+完整训练奖励（论文式 10）为：
+
+$$
+r_t=r_t^{\mathrm{pose}}+r_t^{\mathrm{goal}}+0.05r_t^{\mathrm{grasp}}
+-80d_t-0.10\lVert\tau_t\rVert_2^2
+-0.15(\tau_t^\top\dot q_t)^2.
+$$
+
+其中 $d_t$ 表示掉落，$\tau_t$ 为关节力矩，$\dot q_t$ 为关节速度。最后一项惩罚瞬时机械功率的平方。仿真中，抓持项把 $Q$ 提高约 41%，最弱力 margin 提高 39%，最弱力矩 margin 提高 31%；episode success 也从 53.7% 升到 59.1%。额外接触目标没有以牺牲位姿到达为代价来追求静态抓持质量。
 
 ## 5. Sim-to-real 依赖显式位姿跟踪
 
@@ -286,6 +306,8 @@ $$
 | 目标课程 | 全范围直接采样 vs. curriculum | 6.2% → **59.5%** |
 | 抓持奖励 | 无 vs. 有，仿真 episode success | 53.7% → **59.1%** |
 | 抓持奖励 | 无 vs. 有，实机三目标序列 | 2/10 → **8/10** |
+
+这些百分比的分母不同。初始化与课程实验报告首目标成功率；表 III 的 episode success 指已经结束的训练回合中至少到达一个目标的比例。两组结果为 **53.7 ± 2.5%** 与 **59.1 ± 2.5%**，数值是三次独立训练的均值与样本标准差；每次比较都在两种策略达到完整目标范围后，取等长训练窗口计算指标。标准仿真回合包含 400 个策略步，即 20 秒，掉落时提前终止。实机序列成功则要求三个目标全部完成。阅读结果时需要保留这些口径，避免把它们当成同一测试集上的成功率。
 
 实机消融值得细看。每个策略测试十次，使用相同初始抓持和三个目标组成的序列。抓持奖励把完成目标数从 **8/30 提高到 27/30**，已完成目标的中位到达时间从 6.8 秒降至 4.9 秒。加入奖励后的稳态误差略大：位置从 4.8 mm 变为 6.4 mm，方向从 $4.7^\circ$ 变为 $5.9^\circ$。真正改善的是连续性。分散的多指接触减少了序列执行中的渐进式接触丢失；这项消融没有证明最终位姿精度更高。
 

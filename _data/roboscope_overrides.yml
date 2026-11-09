@@ -31,3 +31,8 @@
     embodiment: [single_arm]
     data: [vision, tactile, human_video, teleop]
   reason: "Sections 3 and 4 describe tactile residual RL on a single xArm7, insertion and tool use, and visual base policies trained from human videos or teleoperated demonstrations."
+/posts/2026/09/poise-in-hand-6d-pose-reaching-paper-notes/:
+  facets:
+    task: [in_hand]
+    data: [vision, simulation, force]
+  reason: "Sections III and V-A: fixed-wrist in-hand pose reaching starts after grasp acquisition; the actor uses joint proprioception and FoundationPose RGB-D estimates, with asymmetric PPO trained in Isaac Lab. Force here includes proprioception; tactile feedback is future work."

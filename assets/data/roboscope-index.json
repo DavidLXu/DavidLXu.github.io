@@ -511,7 +511,7 @@
       "related": [
         {
           "id": "a199e45d177b",
-          "score": 0.2784,
+          "score": 0.2783,
           "shared": [
             "retargeting",
             "dexterous_hand",
@@ -532,7 +532,7 @@
         },
         {
           "id": "5154f13a5390",
-          "score": 0.2607,
+          "score": 0.2606,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -552,7 +552,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.2496,
+          "score": 0.2495,
           "shared": [
             "retargeting",
             "dexterous_hand",
@@ -562,7 +562,7 @@
         },
         {
           "id": "fca9f4993c6c",
-          "score": 0.2462,
+          "score": 0.2461,
           "shared": [
             "planning",
             "retargeting",
@@ -668,7 +668,7 @@
         },
         {
           "id": "64e5ac14880b",
-          "score": 0.1713,
+          "score": 0.1712,
           "shared": [
             "deformable",
             "vision",
@@ -795,7 +795,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2052,
+          "score": 0.2051,
           "shared": [
             "manipulation",
             "vision",
@@ -836,7 +836,7 @@
         },
         {
           "id": "2074eedfad72",
-          "score": 0.1976,
+          "score": 0.1975,
           "shared": [
             "manipulation",
             "vision",
@@ -947,7 +947,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.1686,
+          "score": 0.1684,
           "shared": [
             "locomotion",
             "rl",
@@ -1046,7 +1046,7 @@
       "related": [
         {
           "id": "babdebe00204",
-          "score": 0.2793,
+          "score": 0.2792,
           "shared": [
             "grasp",
             "imitation",
@@ -1057,7 +1057,7 @@
         },
         {
           "id": "b12f1cb06751",
-          "score": 0.225,
+          "score": 0.2248,
           "shared": [
             "grasp",
             "imitation",
@@ -1085,21 +1085,22 @@
           ]
         },
         {
-          "id": "66691161d1e4",
-          "score": 0.2075,
+          "id": "264a1bb5dfbe",
+          "score": 0.2101,
           "shared": [
-            "imitation",
+            "in_hand",
             "dexterous_hand",
+            "vision",
             "force"
           ]
         },
         {
-          "id": "c2d20ab65ee2",
-          "score": 0.1969,
+          "id": "66691161d1e4",
+          "score": 0.2074,
           "shared": [
-            "grasp",
-            "in_hand",
-            "dexterous_hand"
+            "imitation",
+            "dexterous_hand",
+            "force"
           ]
         }
       ]
@@ -1173,7 +1174,7 @@
       "related": [
         {
           "id": "195461a7f838",
-          "score": 0.2462,
+          "score": 0.2461,
           "shared": [
             "planning",
             "retargeting",
@@ -1184,7 +1185,7 @@
         },
         {
           "id": "a199e45d177b",
-          "score": 0.2374,
+          "score": 0.2375,
           "shared": [
             "manipulation",
             "retargeting",
@@ -1195,7 +1196,7 @@
         },
         {
           "id": "5ba5e325bfdd",
-          "score": 0.2364,
+          "score": 0.2365,
           "shared": [
             "manipulation",
             "planning",
@@ -1206,7 +1207,7 @@
         },
         {
           "id": "c3ba0846f49e",
-          "score": 0.234,
+          "score": 0.2339,
           "shared": [
             "manipulation",
             "retargeting",
@@ -1295,7 +1296,7 @@
       "related": [
         {
           "id": "fe54b19cbd14",
-          "score": 0.1857,
+          "score": 0.1856,
           "shared": [
             "bimanual",
             "dexterous_hand",
@@ -1304,7 +1305,7 @@
         },
         {
           "id": "5154f13a5390",
-          "score": 0.1753,
+          "score": 0.1751,
           "shared": [
             "bimanual",
             "dexterous_hand",
@@ -1322,7 +1323,7 @@
         },
         {
           "id": "cd6a943ab35b",
-          "score": 0.173,
+          "score": 0.1729,
           "shared": [
             "dexterous_hand"
           ]
@@ -1337,7 +1338,7 @@
         },
         {
           "id": "195461a7f838",
-          "score": 0.1656,
+          "score": 0.1654,
           "shared": [
             "planning",
             "dexterous_hand",
@@ -1409,7 +1410,7 @@
       "related": [
         {
           "id": "16b4cd88127b",
-          "score": 0.2809,
+          "score": 0.2808,
           "shared": [
             "manipulation",
             "retargeting",
@@ -1421,7 +1422,7 @@
         },
         {
           "id": "2c9be4d44b9c",
-          "score": 0.2626,
+          "score": 0.2625,
           "shared": [
             "manipulation",
             "retargeting",
@@ -1431,7 +1432,7 @@
         },
         {
           "id": "66691161d1e4",
-          "score": 0.2598,
+          "score": 0.2597,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -1441,7 +1442,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.254,
+          "score": 0.2538,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -1460,7 +1461,7 @@
         },
         {
           "id": "fca9f4993c6c",
-          "score": 0.234,
+          "score": 0.2339,
           "shared": [
             "manipulation",
             "retargeting",
@@ -1544,7 +1545,7 @@
       "related": [
         {
           "id": "ed3a9f79bb86",
-          "score": 0.3199,
+          "score": 0.32,
           "shared": [
             "locomotion",
             "sim2real",
@@ -1554,7 +1555,7 @@
         },
         {
           "id": "334bde1459ae",
-          "score": 0.2963,
+          "score": 0.2964,
           "shared": [
             "locomotion",
             "imitation",
@@ -1565,7 +1566,7 @@
         },
         {
           "id": "995170b80e81",
-          "score": 0.2014,
+          "score": 0.2015,
           "shared": [
             "imitation",
             "sim2real",
@@ -1574,7 +1575,7 @@
         },
         {
           "id": "d9bca3c01248",
-          "score": 0.1934,
+          "score": 0.1935,
           "shared": [
             "locomotion",
             "humanoid"
@@ -1676,7 +1677,7 @@
       "related": [
         {
           "id": "f223bb245c12",
-          "score": 0.3246,
+          "score": 0.3245,
           "shared": [
             "manipulation",
             "rl",
@@ -1723,7 +1724,7 @@
         },
         {
           "id": "caf7147e5918",
-          "score": 0.2664,
+          "score": 0.2665,
           "shared": [
             "manipulation",
             "rl",
@@ -1790,7 +1791,7 @@
       "related": [
         {
           "id": "88d5026b8a8c",
-          "score": 0.3172,
+          "score": 0.3171,
           "shared": [
             "manipulation",
             "tactile",
@@ -1817,7 +1818,7 @@
         },
         {
           "id": "2074eedfad72",
-          "score": 0.1861,
+          "score": 0.186,
           "shared": [
             "manipulation",
             "tactile"
@@ -1886,7 +1887,7 @@
       "related": [
         {
           "id": "4e1addd18ce2",
-          "score": 0.2542,
+          "score": 0.2541,
           "shared": [
             "vla",
             "vision",
@@ -1904,7 +1905,7 @@
         },
         {
           "id": "2eea4fdfcb3f",
-          "score": 0.2514,
+          "score": 0.2513,
           "shared": [
             "vla",
             "vision",
@@ -1922,7 +1923,7 @@
         },
         {
           "id": "53f65adebea0",
-          "score": 0.2218,
+          "score": 0.2217,
           "shared": [
             "vla",
             "vision",
@@ -1931,7 +1932,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.2144,
+          "score": 0.2143,
           "shared": [
             "vla",
             "vision",
@@ -1990,7 +1991,7 @@
       "related": [
         {
           "id": "76f0dccd769a",
-          "score": 0.3328,
+          "score": 0.3329,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -2010,7 +2011,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.327,
+          "score": 0.3269,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -2040,7 +2041,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2816,
+          "score": 0.2815,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -2124,7 +2125,7 @@
         },
         {
           "id": "76f0dccd769a",
-          "score": 0.2975,
+          "score": 0.2976,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -2134,7 +2135,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2784,
+          "score": 0.2783,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -2156,7 +2157,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2612,
+          "score": 0.2611,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -2166,7 +2167,7 @@
         },
         {
           "id": "c3ba0846f49e",
-          "score": 0.254,
+          "score": 0.2538,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -2220,7 +2221,7 @@
       "related": [
         {
           "id": "3c7ecd104f87",
-          "score": 0.3172,
+          "score": 0.3171,
           "shared": [
             "manipulation",
             "tactile",
@@ -2229,7 +2230,7 @@
         },
         {
           "id": "aeacad3587b1",
-          "score": 0.2911,
+          "score": 0.291,
           "shared": [
             "manipulation",
             "tactile",
@@ -2246,7 +2247,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2071,
+          "score": 0.207,
           "shared": [
             "manipulation",
             "tactile",
@@ -2264,7 +2265,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.1807,
+          "score": 0.1806,
           "shared": [
             "manipulation",
             "tactile"
@@ -2367,7 +2368,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2529,
+          "score": 0.2528,
           "shared": [
             "manipulation",
             "vision",
@@ -2384,7 +2385,7 @@
         },
         {
           "id": "76f0dccd769a",
-          "score": 0.226,
+          "score": 0.2259,
           "shared": [
             "manipulation",
             "vision",
@@ -2462,14 +2463,6 @@
           ]
         },
         {
-          "id": "bad19f81c263",
-          "score": 0.1626,
-          "shared": [
-            "vision",
-            "human_video"
-          ]
-        },
-        {
           "id": "d3b9962d1603",
           "score": 0.1625,
           "shared": [
@@ -2478,6 +2471,14 @@
         },
         {
           "id": "75c75b12ca45",
+          "score": 0.1624,
+          "shared": [
+            "vision",
+            "human_video"
+          ]
+        },
+        {
+          "id": "bad19f81c263",
           "score": 0.1624,
           "shared": [
             "vision",
@@ -2536,7 +2537,7 @@
       "related": [
         {
           "id": "caf7147e5918",
-          "score": 0.3287,
+          "score": 0.3288,
           "shared": [
             "manipulation",
             "rl",
@@ -2565,7 +2566,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2522,
+          "score": 0.2521,
           "shared": [
             "rl",
             "retargeting",
@@ -2574,7 +2575,7 @@
         },
         {
           "id": "5ba5e325bfdd",
-          "score": 0.2353,
+          "score": 0.2355,
           "shared": [
             "manipulation",
             "rl",
@@ -2646,7 +2647,7 @@
       "related": [
         {
           "id": "2b9a2ebdf89f",
-          "score": 0.2814,
+          "score": 0.2815,
           "shared": [
             "locomotion",
             "rl",
@@ -2673,7 +2674,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.2404,
+          "score": 0.2403,
           "shared": [
             "locomotion",
             "rl",
@@ -2691,7 +2692,7 @@
         },
         {
           "id": "6a4b8cab99a2",
-          "score": 0.2142,
+          "score": 0.2141,
           "shared": [
             "rl",
             "world_model"
@@ -2766,7 +2767,7 @@
         },
         {
           "id": "0185a87289d0",
-          "score": 0.3287,
+          "score": 0.3288,
           "shared": [
             "manipulation",
             "rl",
@@ -2776,7 +2777,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.2664,
+          "score": 0.2665,
           "shared": [
             "manipulation",
             "rl",
@@ -2786,7 +2787,7 @@
         },
         {
           "id": "ce889227443f",
-          "score": 0.2521,
+          "score": 0.2522,
           "shared": [
             "manipulation",
             "rl",
@@ -2861,32 +2862,32 @@
       "related": [
         {
           "id": "01f4e6a501a5",
-          "score": 0.2116,
+          "score": 0.2118,
           "shared": [
             "assembly",
+            "rl",
+            "simulation"
+          ]
+        },
+        {
+          "id": "264a1bb5dfbe",
+          "score": 0.2002,
+          "shared": [
             "rl",
             "simulation"
           ]
         },
         {
           "id": "15001aab0ec5",
-          "score": 0.1945,
+          "score": 0.1946,
           "shared": [
             "assembly",
             "rl"
           ]
         },
         {
-          "id": "264a1bb5dfbe",
-          "score": 0.1881,
-          "shared": [
-            "rl",
-            "simulation"
-          ]
-        },
-        {
           "id": "f656acde39fc",
-          "score": 0.1868,
+          "score": 0.1869,
           "shared": [
             "assembly",
             "rl",
@@ -2895,14 +2896,14 @@
         },
         {
           "id": "0185a87289d0",
-          "score": 0.1663,
+          "score": 0.1664,
           "shared": [
             "rl"
           ]
         },
         {
           "id": "e304cc9f6f98",
-          "score": 0.1647,
+          "score": 0.1648,
           "shared": [
             "rl",
             "simulation"
@@ -2973,7 +2974,7 @@
         },
         {
           "id": "a7005a10fea9",
-          "score": 0.1647,
+          "score": 0.1648,
           "shared": [
             "rl",
             "simulation"
@@ -2981,7 +2982,7 @@
         },
         {
           "id": "3a2030aa29c0",
-          "score": 0.163,
+          "score": 0.1631,
           "shared": [
             "rl",
             "simulation"
@@ -3064,7 +3065,7 @@
       "related": [
         {
           "id": "dc4519f9f5de",
-          "score": 0.2823,
+          "score": 0.2824,
           "shared": [
             "manipulation",
             "vla",
@@ -3087,7 +3088,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.272,
+          "score": 0.2719,
           "shared": [
             "manipulation",
             "vla",
@@ -3098,7 +3099,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.2695,
+          "score": 0.2694,
           "shared": [
             "manipulation",
             "vla",
@@ -3122,7 +3123,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2545,
+          "score": 0.2546,
           "shared": [
             "manipulation",
             "vla",
@@ -3193,7 +3194,7 @@
         },
         {
           "id": "3cb655bc0053",
-          "score": 0.2358,
+          "score": 0.2357,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -3219,7 +3220,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2103,
+          "score": 0.2102,
           "shared": [
             "dexterous_hand",
             "vision",
@@ -3228,7 +3229,7 @@
         },
         {
           "id": "634fd2a6460c",
-          "score": 0.2078,
+          "score": 0.2077,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -3302,7 +3303,7 @@
         },
         {
           "id": "ad096e4dc5cb",
-          "score": 0.2297,
+          "score": 0.2298,
           "shared": [
             "manipulation",
             "world_model",
@@ -3311,7 +3312,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2082,
+          "score": 0.2083,
           "shared": [
             "manipulation",
             "imitation",
@@ -3329,7 +3330,7 @@
         },
         {
           "id": "c5f4869725d3",
-          "score": 0.192,
+          "score": 0.1921,
           "shared": [
             "manipulation",
             "imitation",
@@ -3339,7 +3340,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.1914,
+          "score": 0.1913,
           "shared": [
             "manipulation",
             "imitation",
@@ -3401,7 +3402,7 @@
       "related": [
         {
           "id": "d271b9594227",
-          "score": 0.2871,
+          "score": 0.287,
           "shared": [
             "grasp",
             "rl",
@@ -3411,7 +3412,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.2702,
+          "score": 0.2701,
           "shared": [
             "rl",
             "retargeting",
@@ -3429,7 +3430,7 @@
         },
         {
           "id": "0185a87289d0",
-          "score": 0.2522,
+          "score": 0.2521,
           "shared": [
             "rl",
             "retargeting",
@@ -3511,7 +3512,7 @@
         },
         {
           "id": "e7543107d325",
-          "score": 0.176,
+          "score": 0.1759,
           "shared": [
             "generative_policy"
           ]
@@ -3703,7 +3704,7 @@
       "related": [
         {
           "id": "d271b9594227",
-          "score": 0.3506,
+          "score": 0.3507,
           "shared": [
             "locomotion",
             "rl",
@@ -3714,7 +3715,7 @@
         },
         {
           "id": "334bde1459ae",
-          "score": 0.2572,
+          "score": 0.2571,
           "shared": [
             "locomotion",
             "rl",
@@ -3734,7 +3735,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2349,
+          "score": 0.2351,
           "shared": [
             "rl",
             "retargeting",
@@ -3743,7 +3744,7 @@
         },
         {
           "id": "caf7147e5918",
-          "score": 0.2328,
+          "score": 0.2329,
           "shared": [
             "rl",
             "retargeting",
@@ -3807,7 +3808,7 @@
       "related": [
         {
           "id": "920abc919c5a",
-          "score": 0.2235,
+          "score": 0.2236,
           "shared": [
             "vision",
             "simulation"
@@ -3815,7 +3816,7 @@
         },
         {
           "id": "5619cee13687",
-          "score": 0.2157,
+          "score": 0.2156,
           "shared": [
             "deformable",
             "simulation"
@@ -3823,7 +3824,7 @@
         },
         {
           "id": "64e5ac14880b",
-          "score": 0.1512,
+          "score": 0.1511,
           "shared": [
             "deformable",
             "vision"
@@ -3831,7 +3832,7 @@
         },
         {
           "id": "90deee6438be",
-          "score": 0.1429,
+          "score": 0.1428,
           "shared": [
             "vision"
           ]
@@ -3946,7 +3947,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.2532,
+          "score": 0.2533,
           "shared": [
             "manipulation",
             "rl",
@@ -3956,7 +3957,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.2504,
+          "score": 0.2503,
           "shared": [
             "manipulation",
             "rl",
@@ -4025,7 +4026,7 @@
       "related": [
         {
           "id": "babdebe00204",
-          "score": 0.2807,
+          "score": 0.2806,
           "shared": [
             "grasp",
             "imitation",
@@ -4036,7 +4037,7 @@
         },
         {
           "id": "66691161d1e4",
-          "score": 0.2388,
+          "score": 0.2386,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -4045,7 +4046,7 @@
         },
         {
           "id": "356eb18341b1",
-          "score": 0.225,
+          "score": 0.2248,
           "shared": [
             "grasp",
             "imitation",
@@ -4055,7 +4056,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2178,
+          "score": 0.2177,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -4073,7 +4074,7 @@
         },
         {
           "id": "2c9be4d44b9c",
-          "score": 0.2071,
+          "score": 0.207,
           "shared": [
             "imitation",
             "dexterous_hand"
@@ -4149,7 +4150,7 @@
         },
         {
           "id": "c3ba0846f49e",
-          "score": 0.2598,
+          "score": 0.2597,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -4159,7 +4160,7 @@
         },
         {
           "id": "b12f1cb06751",
-          "score": 0.2388,
+          "score": 0.2386,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -4177,7 +4178,7 @@
         },
         {
           "id": "3daf785bdf27",
-          "score": 0.2202,
+          "score": 0.22,
           "shared": [
             "manipulation",
             "imitation",
@@ -4187,7 +4188,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.218,
+          "score": 0.2179,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -4259,7 +4260,7 @@
       "related": [
         {
           "id": "dc4519f9f5de",
-          "score": 0.3393,
+          "score": 0.3394,
           "shared": [
             "manipulation",
             "vla",
@@ -4292,7 +4293,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.2502,
+          "score": 0.2504,
           "shared": [
             "manipulation",
             "vla",
@@ -4303,7 +4304,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.249,
+          "score": 0.2492,
           "shared": [
             "manipulation",
             "vla",
@@ -4377,7 +4378,7 @@
       "related": [
         {
           "id": "4b6829219cd3",
-          "score": 0.2805,
+          "score": 0.2806,
           "shared": [
             "in_hand",
             "rl",
@@ -4396,7 +4397,7 @@
         },
         {
           "id": "9e6b717cf17a",
-          "score": 0.2682,
+          "score": 0.2681,
           "shared": [
             "in_hand",
             "rl",
@@ -4424,8 +4425,8 @@
           ]
         },
         {
-          "id": "264a1bb5dfbe",
-          "score": 0.241,
+          "id": "c2d20ab65ee2",
+          "score": 0.2409,
           "shared": [
             "in_hand",
             "rl",
@@ -4489,7 +4490,7 @@
         },
         {
           "id": "d3b9962d1603",
-          "score": 0.1681,
+          "score": 0.168,
           "shared": [
             "vision",
             "language"
@@ -4497,7 +4498,7 @@
         },
         {
           "id": "4e1addd18ce2",
-          "score": 0.1624,
+          "score": 0.1623,
           "shared": [
             "vision",
             "language"
@@ -4521,7 +4522,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.1595,
+          "score": 0.1594,
           "shared": [
             "vision",
             "language"
@@ -4582,7 +4583,7 @@
       "related": [
         {
           "id": "705b397175d8",
-          "score": 0.2805,
+          "score": 0.2806,
           "shared": [
             "in_hand",
             "rl",
@@ -4601,11 +4602,12 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.2463,
+          "score": 0.2651,
           "shared": [
             "in_hand",
             "rl",
-            "dexterous_hand"
+            "dexterous_hand",
+            "force"
           ]
         },
         {
@@ -4628,7 +4630,7 @@
         },
         {
           "id": "66691161d1e4",
-          "score": 0.1985,
+          "score": 0.1984,
           "shared": [
             "dexterous_hand",
             "force"
@@ -4744,7 +4746,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.267,
+          "score": 0.2669,
           "shared": [
             "manipulation",
             "imitation",
@@ -4817,7 +4819,7 @@
         },
         {
           "id": "6bb14bb5ffda",
-          "score": 0.2937,
+          "score": 0.2936,
           "shared": [
             "manipulation",
             "vla",
@@ -4837,7 +4839,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2832,
+          "score": 0.2831,
           "shared": [
             "manipulation",
             "vla",
@@ -4935,7 +4937,7 @@
       "related": [
         {
           "id": "4ac9027be283",
-          "score": 0.267,
+          "score": 0.2669,
           "shared": [
             "manipulation",
             "imitation",
@@ -4946,7 +4948,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.2665,
+          "score": 0.2667,
           "shared": [
             "manipulation",
             "vla",
@@ -4957,7 +4959,7 @@
         },
         {
           "id": "c57e481f3b43",
-          "score": 0.2587,
+          "score": 0.2586,
           "shared": [
             "manipulation",
             "vla",
@@ -4991,7 +4993,7 @@
         },
         {
           "id": "54252546ee7a",
-          "score": 0.2502,
+          "score": 0.2504,
           "shared": [
             "manipulation",
             "vla",
@@ -5059,7 +5061,7 @@
       "related": [
         {
           "id": "7825ffb9cfe5",
-          "score": 0.3651,
+          "score": 0.365,
           "shared": [
             "long_horizon",
             "vla",
@@ -5079,7 +5081,7 @@
         },
         {
           "id": "4ac9027be283",
-          "score": 0.2537,
+          "score": 0.2536,
           "shared": [
             "imitation",
             "vla",
@@ -5165,7 +5167,7 @@
       "related": [
         {
           "id": "54d78cd9b122",
-          "score": 0.2358,
+          "score": 0.2357,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -5182,7 +5184,7 @@
         },
         {
           "id": "1a0cb1f79f9a",
-          "score": 0.2095,
+          "score": 0.2094,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -5190,7 +5192,7 @@
         },
         {
           "id": "babdebe00204",
-          "score": 0.2088,
+          "score": 0.2087,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -5314,7 +5316,7 @@
         },
         {
           "id": "e5e0ea460833",
-          "score": 0.2514,
+          "score": 0.2513,
           "shared": [
             "vla",
             "vision",
@@ -5364,7 +5366,7 @@
       "related": [
         {
           "id": "3a2030aa29c0",
-          "score": 0.2183,
+          "score": 0.2184,
           "shared": [
             "locomotion",
             "rl"
@@ -5492,7 +5494,7 @@
         },
         {
           "id": "269f5d2a62c3",
-          "score": 0.3246,
+          "score": 0.3245,
           "shared": [
             "manipulation",
             "rl",
@@ -5504,7 +5506,7 @@
         },
         {
           "id": "5ba5e325bfdd",
-          "score": 0.3117,
+          "score": 0.3118,
           "shared": [
             "manipulation",
             "rl",
@@ -5528,7 +5530,7 @@
         },
         {
           "id": "ef68f512c4df",
-          "score": 0.3034,
+          "score": 0.3035,
           "shared": [
             "manipulation",
             "rl",
@@ -5600,14 +5602,14 @@
         },
         {
           "id": "24ca1ef08088",
-          "score": 0.2541,
+          "score": 0.254,
           "shared": [
             "vision"
           ]
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2293,
+          "score": 0.2292,
           "shared": [
             "manipulation",
             "vision"
@@ -5623,7 +5625,7 @@
         },
         {
           "id": "d9cb767c9ad0",
-          "score": 0.1926,
+          "score": 0.1925,
           "shared": [
             "manipulation",
             "vision"
@@ -5631,7 +5633,7 @@
         },
         {
           "id": "e7543107d325",
-          "score": 0.1862,
+          "score": 0.1861,
           "shared": [
             "manipulation",
             "vision"
@@ -5697,7 +5699,7 @@
       "related": [
         {
           "id": "d6bc21f6140c",
-          "score": 0.3328,
+          "score": 0.3329,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -5718,7 +5720,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.2975,
+          "score": 0.2976,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -5739,7 +5741,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2847,
+          "score": 0.2846,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -5749,7 +5751,7 @@
         },
         {
           "id": "522c3da19f23",
-          "score": 0.2791,
+          "score": 0.2792,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -5842,7 +5844,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.234,
+          "score": 0.2339,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -5851,7 +5853,7 @@
         },
         {
           "id": "a199e45d177b",
-          "score": 0.2286,
+          "score": 0.2285,
           "shared": [
             "manipulation",
             "sim2real",
@@ -5862,7 +5864,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.225,
+          "score": 0.2251,
           "shared": [
             "manipulation",
             "sim2real",
@@ -6032,7 +6034,7 @@
       "related": [
         {
           "id": "f99778f21bec",
-          "score": 0.2541,
+          "score": 0.254,
           "shared": [
             "vision"
           ]
@@ -6068,7 +6070,7 @@
         },
         {
           "id": "8fcb2d661e6d",
-          "score": 0.1571,
+          "score": 0.157,
           "shared": [
             "vision",
             "human_video"
@@ -6132,14 +6134,14 @@
         },
         {
           "id": "cbe6293c4453",
-          "score": 0.1547,
+          "score": 0.1546,
           "shared": [
             "vision"
           ]
         },
         {
           "id": "90deee6438be",
-          "score": 0.1532,
+          "score": 0.1531,
           "shared": [
             "vision"
           ]
@@ -6216,7 +6218,7 @@
       "related": [
         {
           "id": "d9bca3c01248",
-          "score": 0.3506,
+          "score": 0.3507,
           "shared": [
             "locomotion",
             "rl",
@@ -6227,7 +6229,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2871,
+          "score": 0.287,
           "shared": [
             "grasp",
             "rl",
@@ -6342,7 +6344,7 @@
       "related": [
         {
           "id": "09cd71c6767d",
-          "score": 0.2864,
+          "score": 0.2863,
           "shared": [
             "manipulation",
             "vla",
@@ -6354,7 +6356,7 @@
         },
         {
           "id": "8b313c23aeae",
-          "score": 0.278,
+          "score": 0.2779,
           "shared": [
             "manipulation",
             "vla",
@@ -6376,7 +6378,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2695,
+          "score": 0.2694,
           "shared": [
             "manipulation",
             "vla",
@@ -6388,7 +6390,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2677,
+          "score": 0.2676,
           "shared": [
             "manipulation",
             "vla",
@@ -6400,7 +6402,7 @@
         },
         {
           "id": "c3963efd3d9b",
-          "score": 0.2639,
+          "score": 0.2637,
           "shared": [
             "manipulation",
             "vla",
@@ -6474,17 +6476,6 @@
       ],
       "related": [
         {
-          "id": "264a1bb5dfbe",
-          "score": 0.3329,
-          "shared": [
-            "in_hand",
-            "rl",
-            "sim2real",
-            "dexterous_hand",
-            "simulation"
-          ]
-        },
-        {
           "id": "52f408326cda",
           "score": 0.3227,
           "shared": [
@@ -6495,8 +6486,19 @@
           ]
         },
         {
+          "id": "264a1bb5dfbe",
+          "score": 0.3115,
+          "shared": [
+            "in_hand",
+            "rl",
+            "sim2real",
+            "dexterous_hand",
+            "simulation"
+          ]
+        },
+        {
           "id": "c2d20ab65ee2",
-          "score": 0.285,
+          "score": 0.2849,
           "shared": [
             "grasp",
             "in_hand",
@@ -6507,7 +6509,7 @@
         },
         {
           "id": "01f4e6a501a5",
-          "score": 0.2848,
+          "score": 0.2847,
           "shared": [
             "grasp",
             "in_hand",
@@ -6530,7 +6532,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2669,
+          "score": 0.267,
           "shared": [
             "grasp",
             "rl",
@@ -6618,8 +6620,21 @@
       ],
       "related": [
         {
+          "id": "264a1bb5dfbe",
+          "score": 0.3064,
+          "shared": [
+            "in_hand",
+            "rl",
+            "sim2real",
+            "dexterous_hand",
+            "vision",
+            "simulation",
+            "force"
+          ]
+        },
+        {
           "id": "234a0f375dca",
-          "score": 0.3041,
+          "score": 0.304,
           "shared": [
             "in_hand",
             "rl",
@@ -6631,7 +6646,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2833,
+          "score": 0.2832,
           "shared": [
             "rl",
             "sim2real",
@@ -6674,17 +6689,6 @@
             "dexterous_hand",
             "vision",
             "tactile",
-            "simulation"
-          ]
-        },
-        {
-          "id": "11fbdc4c86ca",
-          "score": 0.2482,
-          "shared": [
-            "in_hand",
-            "rl",
-            "sim2real",
-            "dexterous_hand",
             "simulation"
           ]
         }
@@ -6779,8 +6783,18 @@
           ]
         },
         {
+          "id": "264a1bb5dfbe",
+          "score": 0.2338,
+          "shared": [
+            "in_hand",
+            "rl",
+            "dexterous_hand",
+            "vision"
+          ]
+        },
+        {
           "id": "f656acde39fc",
-          "score": 0.2332,
+          "score": 0.2331,
           "shared": [
             "in_hand",
             "rl",
@@ -6796,15 +6810,6 @@
             "dexterous_hand",
             "vision",
             "tactile"
-          ]
-        },
-        {
-          "id": "264a1bb5dfbe",
-          "score": 0.2148,
-          "shared": [
-            "in_hand",
-            "rl",
-            "dexterous_hand"
           ]
         }
       ]
@@ -6858,7 +6863,7 @@
         },
         {
           "id": "1a0cb1f79f9a",
-          "score": 0.2199,
+          "score": 0.2201,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -6866,7 +6871,7 @@
         },
         {
           "id": "634fd2a6460c",
-          "score": 0.2075,
+          "score": 0.2076,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -6890,7 +6895,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.1998,
+          "score": 0.1999,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -7007,7 +7012,7 @@
         },
         {
           "id": "fc24470329b8",
-          "score": 0.2833,
+          "score": 0.2832,
           "shared": [
             "rl",
             "sim2real",
@@ -7020,7 +7025,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2813,
+          "score": 0.2812,
           "shared": [
             "manipulation",
             "rl",
@@ -7032,7 +7037,7 @@
         },
         {
           "id": "c3ba0846f49e",
-          "score": 0.2809,
+          "score": 0.2808,
           "shared": [
             "manipulation",
             "retargeting",
@@ -7044,7 +7049,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.27,
+          "score": 0.2699,
           "shared": [
             "manipulation",
             "rl",
@@ -7130,7 +7135,7 @@
       "related": [
         {
           "id": "4bc15c15398b",
-          "score": 0.2963,
+          "score": 0.2964,
           "shared": [
             "locomotion",
             "imitation",
@@ -7170,7 +7175,7 @@
         },
         {
           "id": "d9bca3c01248",
-          "score": 0.2572,
+          "score": 0.2571,
           "shared": [
             "locomotion",
             "rl",
@@ -7203,7 +7208,7 @@
         "Sim-to-Real",
         "SE(3)"
       ],
-      "summary": "A hand that has already grasped a tool may still need to slide it, turn it, or expose a different working surface. POISE treats this adjustment as palm-relative 6D pose reaching: a fixed wrist and 22-DoF hand use finger motion alone to move the held object toward a target position and orientation in .",
+      "summary": "POISE learns palm-relative 6D in-hand reaching with diverse grasp resets, an adaptive goal curriculum, and wrench-based grasp preservation.",
       "facets": {
         "task": [
           "in_hand"
@@ -7216,14 +7221,12 @@
           "dexterous_hand"
         ],
         "data": [
-          "simulation"
+          "vision",
+          "simulation",
+          "force"
         ]
       },
       "evidence": {
-        "in_hand": {
-          "source": "tags",
-          "phrase": "in-hand"
-        },
         "rl": {
           "source": "tags",
           "phrase": "reinforcement learning"
@@ -7236,9 +7239,21 @@
           "source": "tags",
           "phrase": "dexterous"
         },
+        "in_hand": {
+          "source": "reviewed",
+          "phrase": "Sections III and V-A: fixed-wrist in-hand pose reaching starts after grasp acquisition; the actor uses joint proprioception and FoundationPose RGB-D estimates, with asymmetric PPO trained in Isaac Lab. Force here includes proprioception; tactile feedback is future work."
+        },
+        "vision": {
+          "source": "reviewed",
+          "phrase": "Sections III and V-A: fixed-wrist in-hand pose reaching starts after grasp acquisition; the actor uses joint proprioception and FoundationPose RGB-D estimates, with asymmetric PPO trained in Isaac Lab. Force here includes proprioception; tactile feedback is future work."
+        },
         "simulation": {
-          "source": "tags",
-          "phrase": "sim-to-real"
+          "source": "reviewed",
+          "phrase": "Sections III and V-A: fixed-wrist in-hand pose reaching starts after grasp acquisition; the actor uses joint proprioception and FoundationPose RGB-D estimates, with asymmetric PPO trained in Isaac Lab. Force here includes proprioception; tactile feedback is future work."
+        },
+        "force": {
+          "source": "reviewed",
+          "phrase": "Sections III and V-A: fixed-wrist in-hand pose reaching starts after grasp acquisition; the actor uses joint proprioception and FoundationPose RGB-D estimates, with asymmetric PPO trained in Isaac Lab. Force here includes proprioception; tactile feedback is future work."
         }
       },
       "position": [
@@ -7248,40 +7263,32 @@
       ],
       "related": [
         {
-          "id": "11fbdc4c86ca",
-          "score": 0.3329,
-          "shared": [
-            "in_hand",
-            "rl",
-            "sim2real",
-            "dexterous_hand",
-            "simulation"
-          ]
-        },
-        {
-          "id": "c2d20ab65ee2",
-          "score": 0.3269,
-          "shared": [
-            "in_hand",
-            "rl",
-            "dexterous_hand",
-            "simulation"
-          ]
-        },
-        {
           "id": "f656acde39fc",
-          "score": 0.3211,
+          "score": 0.3312,
           "shared": [
             "in_hand",
             "rl",
             "sim2real",
             "dexterous_hand",
+            "vision",
             "simulation"
           ]
         },
         {
           "id": "234a0f375dca",
-          "score": 0.3047,
+          "score": 0.3151,
+          "shared": [
+            "in_hand",
+            "rl",
+            "sim2real",
+            "dexterous_hand",
+            "vision",
+            "simulation"
+          ]
+        },
+        {
+          "id": "11fbdc4c86ca",
+          "score": 0.3115,
           "shared": [
             "in_hand",
             "rl",
@@ -7292,22 +7299,35 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.303,
+          "score": 0.3092,
           "shared": [
             "in_hand",
             "rl",
             "sim2real",
             "dexterous_hand",
+            "vision",
             "simulation"
           ]
         },
         {
-          "id": "01f4e6a501a5",
-          "score": 0.2929,
+          "id": "fc24470329b8",
+          "score": 0.3064,
           "shared": [
             "in_hand",
             "rl",
             "sim2real",
+            "dexterous_hand",
+            "vision",
+            "simulation",
+            "force"
+          ]
+        },
+        {
+          "id": "c2d20ab65ee2",
+          "score": 0.2879,
+          "shared": [
+            "in_hand",
+            "rl",
             "dexterous_hand",
             "simulation"
           ]
@@ -7382,12 +7402,13 @@
       "related": [
         {
           "id": "264a1bb5dfbe",
-          "score": 0.3211,
+          "score": 0.3312,
           "shared": [
             "in_hand",
             "rl",
             "sim2real",
             "dexterous_hand",
+            "vision",
             "simulation"
           ]
         },
@@ -7405,7 +7426,7 @@
         },
         {
           "id": "234a0f375dca",
-          "score": 0.277,
+          "score": 0.2769,
           "shared": [
             "in_hand",
             "rl",
@@ -7440,7 +7461,7 @@
         },
         {
           "id": "fc24470329b8",
-          "score": 0.2471,
+          "score": 0.247,
           "shared": [
             "in_hand",
             "rl",
@@ -7511,17 +7532,7 @@
       "related": [
         {
           "id": "c098af6f9ba2",
-          "score": 0.2739,
-          "shared": [
-            "rl",
-            "sim2real",
-            "dexterous_hand",
-            "simulation"
-          ]
-        },
-        {
-          "id": "264a1bb5dfbe",
-          "score": 0.2735,
+          "score": 0.2741,
           "shared": [
             "rl",
             "sim2real",
@@ -7531,7 +7542,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2677,
+          "score": 0.2678,
           "shared": [
             "rl",
             "sim2real",
@@ -7541,7 +7552,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2669,
+          "score": 0.267,
           "shared": [
             "grasp",
             "rl",
@@ -7562,8 +7573,19 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2614,
+          "score": 0.2615,
           "shared": [
+            "rl",
+            "sim2real",
+            "dexterous_hand",
+            "simulation"
+          ]
+        },
+        {
+          "id": "f9c7934d7547",
+          "score": 0.2582,
+          "shared": [
+            "grasp",
             "rl",
             "sim2real",
             "dexterous_hand",
@@ -7614,14 +7636,14 @@
         },
         {
           "id": "f99778f21bec",
-          "score": 0.1619,
+          "score": 0.1618,
           "shared": [
             "manipulation"
           ]
         },
         {
           "id": "9e9870f60f52",
-          "score": 0.1544,
+          "score": 0.1545,
           "shared": [
             "manipulation"
           ]
@@ -7737,7 +7759,7 @@
         },
         {
           "id": "f3fb46945019",
-          "score": 0.2301,
+          "score": 0.2302,
           "shared": [
             "grasp",
             "sim2real",
@@ -7747,7 +7769,7 @@
         },
         {
           "id": "f96255a2098b",
-          "score": 0.2287,
+          "score": 0.2288,
           "shared": [
             "rl",
             "sim2real",
@@ -7843,7 +7865,7 @@
       "related": [
         {
           "id": "2910b38ffdef",
-          "score": 0.3327,
+          "score": 0.3326,
           "shared": [
             "manipulation",
             "vla",
@@ -7965,7 +7987,7 @@
       "related": [
         {
           "id": "dc4519f9f5de",
-          "score": 0.3005,
+          "score": 0.3004,
           "shared": [
             "manipulation",
             "vla",
@@ -7975,7 +7997,7 @@
         },
         {
           "id": "6bb14bb5ffda",
-          "score": 0.2972,
+          "score": 0.2971,
           "shared": [
             "manipulation",
             "vla",
@@ -7985,7 +8007,7 @@
         },
         {
           "id": "d52d9313e9ff",
-          "score": 0.2883,
+          "score": 0.2882,
           "shared": [
             "manipulation",
             "vla",
@@ -7995,7 +8017,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2832,
+          "score": 0.2831,
           "shared": [
             "manipulation",
             "vla",
@@ -8005,7 +8027,7 @@
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.2751,
+          "score": 0.2749,
           "shared": [
             "manipulation",
             "vla",
@@ -8111,7 +8133,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2451,
+          "score": 0.2452,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -8132,7 +8154,7 @@
         },
         {
           "id": "51b0a39a7bf2",
-          "score": 0.2297,
+          "score": 0.2298,
           "shared": [
             "manipulation",
             "world_model",
@@ -8354,7 +8376,7 @@
         },
         {
           "id": "2b9a2ebdf89f",
-          "score": 0.2342,
+          "score": 0.2341,
           "shared": [
             "locomotion",
             "rl",
@@ -8452,7 +8474,7 @@
         },
         {
           "id": "b7b0e6ae2885",
-          "score": 0.2771,
+          "score": 0.277,
           "shared": [
             "manipulation",
             "vla",
@@ -8463,7 +8485,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2751,
+          "score": 0.2749,
           "shared": [
             "manipulation",
             "vla",
@@ -8473,7 +8495,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2592,
+          "score": 0.2591,
           "shared": [
             "manipulation",
             "vla",
@@ -8483,7 +8505,7 @@
         },
         {
           "id": "6bb14bb5ffda",
-          "score": 0.258,
+          "score": 0.2579,
           "shared": [
             "manipulation",
             "vla",
@@ -8585,7 +8607,7 @@
         },
         {
           "id": "e5e0ea460833",
-          "score": 0.2542,
+          "score": 0.2541,
           "shared": [
             "vla",
             "vision",
@@ -8672,7 +8694,7 @@
       "related": [
         {
           "id": "234a0f375dca",
-          "score": 0.2907,
+          "score": 0.2906,
           "shared": [
             "in_hand",
             "rl",
@@ -8707,16 +8729,6 @@
           ]
         },
         {
-          "id": "705b397175d8",
-          "score": 0.2682,
-          "shared": [
-            "in_hand",
-            "rl",
-            "dexterous_hand",
-            "tactile"
-          ]
-        },
-        {
           "id": "fc24470329b8",
           "score": 0.2682,
           "shared": [
@@ -8730,14 +8742,24 @@
           ]
         },
         {
-          "id": "11fbdc4c86ca",
-          "score": 0.2569,
+          "id": "705b397175d8",
+          "score": 0.2681,
           "shared": [
-            "grasp",
+            "in_hand",
+            "rl",
+            "dexterous_hand",
+            "tactile"
+          ]
+        },
+        {
+          "id": "264a1bb5dfbe",
+          "score": 0.2602,
+          "shared": [
             "in_hand",
             "rl",
             "sim2real",
             "dexterous_hand",
+            "vision",
             "simulation"
           ]
         }
@@ -8795,7 +8817,7 @@
       "related": [
         {
           "id": "ebb918baa301",
-          "score": 0.2972,
+          "score": 0.2971,
           "shared": [
             "manipulation",
             "vla",
@@ -8805,7 +8827,7 @@
         },
         {
           "id": "023d509ab1fb",
-          "score": 0.2937,
+          "score": 0.2936,
           "shared": [
             "manipulation",
             "vla",
@@ -8835,7 +8857,7 @@
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.258,
+          "score": 0.2579,
           "shared": [
             "manipulation",
             "vla",
@@ -8939,7 +8961,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2042,
+          "score": 0.2041,
           "shared": [
             "vision",
             "tactile"
@@ -9002,7 +9024,7 @@
       "related": [
         {
           "id": "512a614d1366",
-          "score": 0.2271,
+          "score": 0.227,
           "shared": [
             "rl",
             "vision",
@@ -9011,7 +9033,7 @@
         },
         {
           "id": "3fa9c0e3af2d",
-          "score": 0.1966,
+          "score": 0.1964,
           "shared": [
             "rl",
             "vision",
@@ -9020,7 +9042,7 @@
         },
         {
           "id": "e5e0ea460833",
-          "score": 0.1748,
+          "score": 0.1747,
           "shared": [
             "vision",
             "language"
@@ -9035,16 +9057,16 @@
           ]
         },
         {
-          "id": "ebb918baa301",
-          "score": 0.1681,
+          "id": "5992229682af",
+          "score": 0.168,
           "shared": [
             "vision",
             "language"
           ]
         },
         {
-          "id": "5992229682af",
-          "score": 0.1681,
+          "id": "ebb918baa301",
+          "score": 0.168,
           "shared": [
             "vision",
             "language"
@@ -9120,7 +9142,7 @@
         },
         {
           "id": "c3ba0846f49e",
-          "score": 0.2626,
+          "score": 0.2625,
           "shared": [
             "manipulation",
             "retargeting",
@@ -9148,7 +9170,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2324,
+          "score": 0.2323,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -9229,7 +9251,7 @@
       "related": [
         {
           "id": "b12f1cb06751",
-          "score": 0.2807,
+          "score": 0.2806,
           "shared": [
             "grasp",
             "imitation",
@@ -9240,7 +9262,7 @@
         },
         {
           "id": "356eb18341b1",
-          "score": 0.2793,
+          "score": 0.2792,
           "shared": [
             "grasp",
             "imitation",
@@ -9251,7 +9273,7 @@
         },
         {
           "id": "09cd71c6767d",
-          "score": 0.2654,
+          "score": 0.2653,
           "shared": [
             "dexterous_hand",
             "vision",
@@ -9270,7 +9292,7 @@
         },
         {
           "id": "c5f4869725d3",
-          "score": 0.2286,
+          "score": 0.2285,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -9346,7 +9368,7 @@
         },
         {
           "id": "80baa8a5ed7e",
-          "score": 0.1968,
+          "score": 0.1969,
           "shared": [
             "dexterous_hand"
           ]
@@ -9463,7 +9485,7 @@
         },
         {
           "id": "a199e45d177b",
-          "score": 0.2442,
+          "score": 0.2443,
           "shared": [
             "manipulation",
             "sim2real",
@@ -9474,7 +9496,7 @@
         },
         {
           "id": "b6fa1984302b",
-          "score": 0.2334,
+          "score": 0.2335,
           "shared": [
             "generative_policy",
             "sim2real",
@@ -9496,7 +9518,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.2272,
+          "score": 0.2273,
           "shared": [
             "manipulation",
             "sim2real",
@@ -9507,7 +9529,7 @@
         },
         {
           "id": "2a8910a4e791",
-          "score": 0.225,
+          "score": 0.2251,
           "shared": [
             "manipulation",
             "sim2real",
@@ -9583,7 +9605,7 @@
         },
         {
           "id": "76f0dccd769a",
-          "score": 0.2791,
+          "score": 0.2792,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -9592,7 +9614,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2779,
+          "score": 0.2778,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -9772,18 +9794,8 @@
           ]
         },
         {
-          "id": "264a1bb5dfbe",
-          "score": 0.2436,
-          "shared": [
-            "rl",
-            "sim2real",
-            "dexterous_hand",
-            "simulation"
-          ]
-        },
-        {
           "id": "c2d20ab65ee2",
-          "score": 0.2323,
+          "score": 0.2322,
           "shared": [
             "rl",
             "dexterous_hand",
@@ -9792,7 +9804,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2312,
+          "score": 0.2313,
           "shared": [
             "rl",
             "sim2real",
@@ -9813,6 +9825,16 @@
         {
           "id": "f96255a2098b",
           "score": 0.2285,
+          "shared": [
+            "rl",
+            "sim2real",
+            "dexterous_hand",
+            "simulation"
+          ]
+        },
+        {
+          "id": "5ba5e325bfdd",
+          "score": 0.2251,
           "shared": [
             "rl",
             "sim2real",
@@ -9891,7 +9913,7 @@
       "related": [
         {
           "id": "75c75b12ca45",
-          "score": 0.3383,
+          "score": 0.3382,
           "shared": [
             "manipulation",
             "vla",
@@ -9903,7 +9925,7 @@
         },
         {
           "id": "435c28d7118d",
-          "score": 0.3224,
+          "score": 0.3223,
           "shared": [
             "manipulation",
             "vla",
@@ -9915,7 +9937,7 @@
         },
         {
           "id": "c57e481f3b43",
-          "score": 0.3164,
+          "score": 0.3163,
           "shared": [
             "manipulation",
             "vla",
@@ -10017,7 +10039,7 @@
         },
         {
           "id": "8360ceead094",
-          "score": 0.1546,
+          "score": 0.1545,
           "shared": [
             "design"
           ]
@@ -10092,7 +10114,7 @@
       "related": [
         {
           "id": "5ba5e325bfdd",
-          "score": 0.3698,
+          "score": 0.3699,
           "shared": [
             "manipulation",
             "rl",
@@ -10104,7 +10126,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.3034,
+          "score": 0.3035,
           "shared": [
             "manipulation",
             "rl",
@@ -10213,7 +10235,7 @@
       "related": [
         {
           "id": "bad19f81c263",
-          "score": 0.2518,
+          "score": 0.2517,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -10222,7 +10244,7 @@
         },
         {
           "id": "c3ba0846f49e",
-          "score": 0.2117,
+          "score": 0.2115,
           "shared": [
             "manipulation",
             "human_video",
@@ -10255,7 +10277,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.1528,
+          "score": 0.1526,
           "shared": [
             "manipulation",
             "human_video",
@@ -10322,7 +10344,7 @@
       "related": [
         {
           "id": "ab7e369d0b64",
-          "score": 0.2892,
+          "score": 0.2891,
           "shared": [
             "imitation",
             "human_video"
@@ -10443,14 +10465,14 @@
         },
         {
           "id": "77ce0c8a046f",
-          "score": 0.1726,
+          "score": 0.1725,
           "shared": [
             "human_video"
           ]
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.1723,
+          "score": 0.1722,
           "shared": []
         }
       ]
@@ -10514,7 +10536,7 @@
       "related": [
         {
           "id": "264a1bb5dfbe",
-          "score": 0.3269,
+          "score": 0.2879,
           "shared": [
             "in_hand",
             "rl",
@@ -10524,7 +10546,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.285,
+          "score": 0.2849,
           "shared": [
             "grasp",
             "in_hand",
@@ -10633,7 +10655,7 @@
       "related": [
         {
           "id": "6075bb29a07b",
-          "score": 0.2353,
+          "score": 0.2354,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -10642,7 +10664,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2259,
+          "score": 0.226,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -10651,7 +10673,7 @@
         },
         {
           "id": "522c3da19f23",
-          "score": 0.217,
+          "score": 0.2169,
           "shared": [
             "manipulation",
             "dexterous_hand"
@@ -10659,7 +10681,7 @@
         },
         {
           "id": "2c9be4d44b9c",
-          "score": 0.2146,
+          "score": 0.2148,
           "shared": [
             "manipulation",
             "retargeting",
@@ -10749,7 +10771,7 @@
       "related": [
         {
           "id": "1788c6c5b5f4",
-          "score": 0.3207,
+          "score": 0.3206,
           "shared": [
             "manipulation",
             "rl",
@@ -10760,7 +10782,7 @@
         },
         {
           "id": "c098af6f9ba2",
-          "score": 0.2866,
+          "score": 0.2865,
           "shared": [
             "manipulation",
             "rl",
@@ -10771,7 +10793,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2813,
+          "score": 0.2812,
           "shared": [
             "manipulation",
             "rl",
@@ -10805,7 +10827,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.2679,
+          "score": 0.268,
           "shared": [
             "manipulation",
             "rl",
@@ -10932,7 +10954,7 @@
         },
         {
           "id": "54252546ee7a",
-          "score": 0.2297,
+          "score": 0.2298,
           "shared": [
             "manipulation",
             "vla",
@@ -11228,17 +11250,6 @@
           ]
         },
         {
-          "id": "264a1bb5dfbe",
-          "score": 0.2929,
-          "shared": [
-            "in_hand",
-            "rl",
-            "sim2real",
-            "dexterous_hand",
-            "simulation"
-          ]
-        },
-        {
           "id": "9e6b717cf17a",
           "score": 0.2862,
           "shared": [
@@ -11252,7 +11263,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2848,
+          "score": 0.2847,
           "shared": [
             "grasp",
             "in_hand",
@@ -11269,6 +11280,17 @@
             "grasp",
             "in_hand",
             "rl",
+            "dexterous_hand",
+            "simulation"
+          ]
+        },
+        {
+          "id": "264a1bb5dfbe",
+          "score": 0.2678,
+          "shared": [
+            "in_hand",
+            "rl",
+            "sim2real",
             "dexterous_hand",
             "simulation"
           ]
@@ -11387,9 +11409,10 @@
           ]
         },
         {
-          "id": "264a1bb5dfbe",
-          "score": 0.2286,
+          "id": "c098af6f9ba2",
+          "score": 0.2259,
           "shared": [
+            "manipulation",
             "rl",
             "sim2real",
             "dexterous_hand",
@@ -11397,10 +11420,9 @@
           ]
         },
         {
-          "id": "c098af6f9ba2",
-          "score": 0.2259,
+          "id": "11fbdc4c86ca",
+          "score": 0.2218,
           "shared": [
-            "manipulation",
             "rl",
             "sim2real",
             "dexterous_hand",
@@ -11477,7 +11499,7 @@
       "related": [
         {
           "id": "17440b2ce07b",
-          "score": 0.2866,
+          "score": 0.2865,
           "shared": [
             "manipulation",
             "rl",
@@ -11488,7 +11510,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2739,
+          "score": 0.2741,
           "shared": [
             "rl",
             "sim2real",
@@ -11498,7 +11520,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.2666,
+          "score": 0.2665,
           "shared": [
             "manipulation",
             "rl",
@@ -11631,7 +11653,7 @@
         },
         {
           "id": "cbe6293c4453",
-          "score": 0.2402,
+          "score": 0.2401,
           "shared": [
             "manipulation",
             "imitation",
@@ -11653,7 +11675,7 @@
         },
         {
           "id": "babdebe00204",
-          "score": 0.2286,
+          "score": 0.2285,
           "shared": [
             "imitation",
             "dexterous_hand",
@@ -11725,7 +11747,7 @@
       "related": [
         {
           "id": "5425cba54dd6",
-          "score": 0.2971,
+          "score": 0.2972,
           "shared": [
             "locomotion",
             "rl",
@@ -11761,7 +11783,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.2404,
+          "score": 0.2403,
           "shared": [
             "locomotion",
             "rl",
@@ -11831,7 +11853,7 @@
       "related": [
         {
           "id": "88d5026b8a8c",
-          "score": 0.2911,
+          "score": 0.291,
           "shared": [
             "manipulation",
             "tactile",
@@ -11849,7 +11871,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.256,
+          "score": 0.2559,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -11914,7 +11936,7 @@
       "related": [
         {
           "id": "ebdcfb5e9474",
-          "score": 0.1531,
+          "score": 0.1532,
           "shared": []
         }
       ]
@@ -11979,7 +12001,7 @@
         },
         {
           "id": "52f408326cda",
-          "score": 0.2396,
+          "score": 0.2395,
           "shared": [
             "grasp",
             "generative_policy",
@@ -11988,7 +12010,7 @@
         },
         {
           "id": "4fb7e1210c47",
-          "score": 0.2293,
+          "score": 0.2292,
           "shared": [
             "grasp",
             "rl",
@@ -12096,7 +12118,7 @@
         },
         {
           "id": "8b313c23aeae",
-          "score": 0.2141,
+          "score": 0.2142,
           "shared": [
             "manipulation",
             "vla",
@@ -12123,7 +12145,7 @@
         },
         {
           "id": "f3fb46945019",
-          "score": 0.2072,
+          "score": 0.2073,
           "shared": [
             "dexterous_hand"
           ]
@@ -12195,7 +12217,7 @@
         },
         {
           "id": "c1f7b12b3017",
-          "score": 0.2971,
+          "score": 0.2972,
           "shared": [
             "locomotion",
             "rl",
@@ -12341,7 +12363,7 @@
         },
         {
           "id": "d9cb767c9ad0",
-          "score": 0.2504,
+          "score": 0.2503,
           "shared": [
             "manipulation",
             "vla",
@@ -12400,7 +12422,7 @@
       "related": [
         {
           "id": "bf5964cc5cf2",
-          "score": 0.3037,
+          "score": 0.3036,
           "shared": [
             "rl",
             "world_model"
@@ -12408,7 +12430,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.2142,
+          "score": 0.2141,
           "shared": [
             "rl",
             "world_model"
@@ -12416,7 +12438,7 @@
         },
         {
           "id": "20f950ab618e",
-          "score": 0.2049,
+          "score": 0.2048,
           "shared": [
             "rl"
           ]
@@ -12437,7 +12459,7 @@
         },
         {
           "id": "8811c4a07404",
-          "score": 0.1729,
+          "score": 0.173,
           "shared": [
             "rl"
           ]
@@ -12612,7 +12634,7 @@
         },
         {
           "id": "4781a9441172",
-          "score": 0.2279,
+          "score": 0.2278,
           "shared": [
             "locomotion",
             "imitation",
@@ -12631,7 +12653,7 @@
         },
         {
           "id": "d271b9594227",
-          "score": 0.2257,
+          "score": 0.2256,
           "shared": [
             "locomotion",
             "retargeting",
@@ -12704,7 +12726,7 @@
       "related": [
         {
           "id": "8b313c23aeae",
-          "score": 0.2528,
+          "score": 0.2527,
           "shared": [
             "dexterous_hand",
             "tactile"
@@ -12737,7 +12759,7 @@
         },
         {
           "id": "17440b2ce07b",
-          "score": 0.2294,
+          "score": 0.2292,
           "shared": [
             "dexterous_hand",
             "tactile"
@@ -12745,7 +12767,7 @@
         },
         {
           "id": "80baa8a5ed7e",
-          "score": 0.2199,
+          "score": 0.2201,
           "shared": [
             "grasp",
             "dexterous_hand"
@@ -12816,7 +12838,7 @@
       "related": [
         {
           "id": "17440b2ce07b",
-          "score": 0.3207,
+          "score": 0.3206,
           "shared": [
             "manipulation",
             "rl",
@@ -12860,7 +12882,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.27,
+          "score": 0.2699,
           "shared": [
             "manipulation",
             "rl",
@@ -12935,7 +12957,7 @@
       "related": [
         {
           "id": "d6bc21f6140c",
-          "score": 0.327,
+          "score": 0.3269,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -12945,7 +12967,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.3247,
+          "score": 0.3246,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -12964,7 +12986,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.287,
+          "score": 0.2869,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -12974,7 +12996,7 @@
         },
         {
           "id": "76f0dccd769a",
-          "score": 0.2847,
+          "score": 0.2846,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -13168,7 +13190,7 @@
         },
         {
           "id": "b6fa1984302b",
-          "score": 0.2526,
+          "score": 0.2527,
           "shared": [
             "grasp",
             "generative_policy",
@@ -13179,7 +13201,7 @@
         },
         {
           "id": "1788c6c5b5f4",
-          "score": 0.2491,
+          "score": 0.249,
           "shared": [
             "sim2real",
             "dexterous_hand",
@@ -13245,7 +13267,7 @@
       "related": [
         {
           "id": "a7005a10fea9",
-          "score": 0.1945,
+          "score": 0.1946,
           "shared": [
             "assembly",
             "rl"
@@ -13346,7 +13368,7 @@
       "related": [
         {
           "id": "4bc15c15398b",
-          "score": 0.3199,
+          "score": 0.32,
           "shared": [
             "locomotion",
             "sim2real",
@@ -13510,7 +13532,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.2174,
+          "score": 0.2175,
           "shared": [
             "manipulation",
             "sim2real",
@@ -13607,7 +13629,7 @@
         },
         {
           "id": "b7b0e6ae2885",
-          "score": 0.294,
+          "score": 0.2939,
           "shared": [
             "manipulation",
             "imitation",
@@ -13618,7 +13640,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2883,
+          "score": 0.2882,
           "shared": [
             "manipulation",
             "vla",
@@ -13876,7 +13898,7 @@
         },
         {
           "id": "8fcb2d661e6d",
-          "score": 0.3032,
+          "score": 0.3031,
           "shared": [
             "manipulation",
             "retargeting",
@@ -13897,7 +13919,7 @@
         },
         {
           "id": "195461a7f838",
-          "score": 0.2784,
+          "score": 0.2783,
           "shared": [
             "retargeting",
             "dexterous_hand",
@@ -13955,7 +13977,7 @@
       "related": [
         {
           "id": "b38eb62e913e",
-          "score": 0.2157,
+          "score": 0.2156,
           "shared": [
             "deformable",
             "simulation"
@@ -14075,7 +14097,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.246,
+          "score": 0.2459,
           "shared": [
             "vla",
             "vision",
@@ -14084,7 +14106,7 @@
         },
         {
           "id": "d3b9962d1603",
-          "score": 0.2271,
+          "score": 0.227,
           "shared": [
             "rl",
             "vision",
@@ -14167,7 +14189,7 @@
         },
         {
           "id": "cde72c7bfbbe",
-          "score": 0.2814,
+          "score": 0.2815,
           "shared": [
             "locomotion",
             "rl",
@@ -14185,7 +14207,7 @@
         },
         {
           "id": "a5c9a400ee08",
-          "score": 0.2342,
+          "score": 0.2341,
           "shared": [
             "locomotion",
             "rl",
@@ -14261,7 +14283,7 @@
       "related": [
         {
           "id": "dbf87959b93b",
-          "score": 0.317,
+          "score": 0.3168,
           "shared": [
             "manipulation",
             "vla",
@@ -14274,7 +14296,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.2864,
+          "score": 0.2863,
           "shared": [
             "manipulation",
             "vla",
@@ -14286,7 +14308,7 @@
         },
         {
           "id": "f54f7c6bffb4",
-          "score": 0.2784,
+          "score": 0.2783,
           "shared": [
             "manipulation",
             "vla",
@@ -14298,7 +14320,7 @@
         },
         {
           "id": "8b313c23aeae",
-          "score": 0.2667,
+          "score": 0.2666,
           "shared": [
             "manipulation",
             "vla",
@@ -14309,7 +14331,7 @@
         },
         {
           "id": "babdebe00204",
-          "score": 0.2654,
+          "score": 0.2653,
           "shared": [
             "dexterous_hand",
             "vision",
@@ -14393,7 +14415,7 @@
       "related": [
         {
           "id": "ad6416c562fc",
-          "score": 0.4013,
+          "score": 0.4012,
           "shared": [
             "in_hand",
             "rl",
@@ -14405,18 +14427,19 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.3047,
+          "score": 0.3151,
           "shared": [
             "in_hand",
             "rl",
             "sim2real",
             "dexterous_hand",
+            "vision",
             "simulation"
           ]
         },
         {
           "id": "fc24470329b8",
-          "score": 0.3041,
+          "score": 0.304,
           "shared": [
             "in_hand",
             "rl",
@@ -14428,7 +14451,7 @@
         },
         {
           "id": "9e6b717cf17a",
-          "score": 0.2907,
+          "score": 0.2906,
           "shared": [
             "in_hand",
             "rl",
@@ -14451,7 +14474,7 @@
         },
         {
           "id": "f656acde39fc",
-          "score": 0.277,
+          "score": 0.2769,
           "shared": [
             "in_hand",
             "rl",
@@ -14515,7 +14538,7 @@
       "related": [
         {
           "id": "a199e45d177b",
-          "score": 0.3032,
+          "score": 0.3031,
           "shared": [
             "manipulation",
             "retargeting",
@@ -14525,7 +14548,7 @@
         },
         {
           "id": "ab7e369d0b64",
-          "score": 0.226,
+          "score": 0.2261,
           "shared": [
             "manipulation",
             "human_video"
@@ -14542,7 +14565,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2186,
+          "score": 0.2187,
           "shared": [
             "manipulation",
             "retargeting",
@@ -14552,7 +14575,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.2173,
+          "score": 0.2174,
           "shared": [
             "manipulation",
             "retargeting",
@@ -14623,7 +14646,7 @@
       "related": [
         {
           "id": "199d513c1e2f",
-          "score": 0.2183,
+          "score": 0.2184,
           "shared": [
             "locomotion",
             "rl"
@@ -14650,7 +14673,7 @@
         },
         {
           "id": "234a0f375dca",
-          "score": 0.202,
+          "score": 0.2021,
           "shared": [
             "rl",
             "sim2real",
@@ -14747,7 +14770,7 @@
       "related": [
         {
           "id": "c57e481f3b43",
-          "score": 0.2836,
+          "score": 0.2835,
           "shared": [
             "manipulation",
             "vla",
@@ -14768,7 +14791,7 @@
         },
         {
           "id": "dbf87959b93b",
-          "score": 0.2763,
+          "score": 0.2762,
           "shared": [
             "manipulation",
             "vla",
@@ -14793,7 +14816,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.2639,
+          "score": 0.2637,
           "shared": [
             "manipulation",
             "vla",
@@ -14894,7 +14917,7 @@
         },
         {
           "id": "52f408326cda",
-          "score": 0.2526,
+          "score": 0.2527,
           "shared": [
             "grasp",
             "generative_policy",
@@ -14915,7 +14938,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.2334,
+          "score": 0.2335,
           "shared": [
             "generative_policy",
             "sim2real",
@@ -15015,7 +15038,7 @@
       "related": [
         {
           "id": "ef68f512c4df",
-          "score": 0.3698,
+          "score": 0.3699,
           "shared": [
             "manipulation",
             "rl",
@@ -15027,7 +15050,7 @@
         },
         {
           "id": "f223bb245c12",
-          "score": 0.3117,
+          "score": 0.3118,
           "shared": [
             "manipulation",
             "rl",
@@ -15156,7 +15179,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2872,
+          "score": 0.2871,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -15177,7 +15200,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.2634,
+          "score": 0.2633,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -15197,7 +15220,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.2483,
+          "score": 0.2482,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -15271,7 +15294,7 @@
       "related": [
         {
           "id": "bedcbb2393a5",
-          "score": 0.3327,
+          "score": 0.3326,
           "shared": [
             "manipulation",
             "vla",
@@ -15304,7 +15327,7 @@
         },
         {
           "id": "987604419da0",
-          "score": 0.3116,
+          "score": 0.3115,
           "shared": [
             "vla",
             "world_model",
@@ -15415,7 +15438,7 @@
         },
         {
           "id": "09cd71c6767d",
-          "score": 0.2784,
+          "score": 0.2783,
           "shared": [
             "manipulation",
             "vla",
@@ -15462,7 +15485,7 @@
         },
         {
           "id": "429f0851e898",
-          "score": 0.2479,
+          "score": 0.2478,
           "shared": [
             "manipulation",
             "imitation",
@@ -15569,7 +15592,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.2191,
+          "score": 0.219,
           "shared": [
             "manipulation",
             "rl",
@@ -15579,7 +15602,7 @@
         },
         {
           "id": "285ac43395dc",
-          "score": 0.2169,
+          "score": 0.2168,
           "shared": [
             "manipulation",
             "vision",
@@ -15588,7 +15611,7 @@
         },
         {
           "id": "f9c7934d7547",
-          "score": 0.2155,
+          "score": 0.2154,
           "shared": [
             "rl",
             "sim2real",
@@ -15752,7 +15775,7 @@
         },
         {
           "id": "caf7147e5918",
-          "score": 0.2521,
+          "score": 0.2522,
           "shared": [
             "manipulation",
             "rl",
@@ -15869,7 +15892,7 @@
         },
         {
           "id": "a199e45d177b",
-          "score": 0.2675,
+          "score": 0.2677,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -15880,7 +15903,7 @@
         },
         {
           "id": "c5f4869725d3",
-          "score": 0.2402,
+          "score": 0.2401,
           "shared": [
             "manipulation",
             "imitation",
@@ -15890,7 +15913,7 @@
         },
         {
           "id": "77ce0c8a046f",
-          "score": 0.2365,
+          "score": 0.2364,
           "shared": [
             "manipulation",
             "imitation",
@@ -15910,7 +15933,7 @@
         },
         {
           "id": "16b4cd88127b",
-          "score": 0.2256,
+          "score": 0.2255,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -15983,7 +16006,7 @@
       "related": [
         {
           "id": "1534583203f2",
-          "score": 0.2671,
+          "score": 0.267,
           "shared": [
             "vla",
             "generative_policy",
@@ -16034,7 +16057,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.2402,
+          "score": 0.2401,
           "shared": [
             "vla",
             "vision",
@@ -16111,7 +16134,7 @@
         },
         {
           "id": "d75c9c36c685",
-          "score": 0.2892,
+          "score": 0.2891,
           "shared": [
             "imitation",
             "human_video"
@@ -16128,7 +16151,7 @@
         },
         {
           "id": "8fcb2d661e6d",
-          "score": 0.226,
+          "score": 0.2261,
           "shared": [
             "manipulation",
             "human_video"
@@ -16233,7 +16256,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.278,
+          "score": 0.2779,
           "shared": [
             "manipulation",
             "vla",
@@ -16253,7 +16276,7 @@
         },
         {
           "id": "09cd71c6767d",
-          "score": 0.2667,
+          "score": 0.2666,
           "shared": [
             "manipulation",
             "vla",
@@ -16264,7 +16287,7 @@
         },
         {
           "id": "1a0cb1f79f9a",
-          "score": 0.2528,
+          "score": 0.2527,
           "shared": [
             "dexterous_hand",
             "tactile"
@@ -16324,7 +16347,7 @@
       "related": [
         {
           "id": "fe54b19cbd14",
-          "score": 0.3717,
+          "score": 0.3716,
           "shared": [
             "grasp",
             "bimanual",
@@ -16334,7 +16357,7 @@
         },
         {
           "id": "195461a7f838",
-          "score": 0.2607,
+          "score": 0.2606,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -16351,7 +16374,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.225,
+          "score": 0.2249,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -16369,7 +16392,7 @@
         },
         {
           "id": "52f408326cda",
-          "score": 0.2147,
+          "score": 0.2148,
           "shared": [
             "grasp",
             "dexterous_hand",
@@ -16446,7 +16469,7 @@
         },
         {
           "id": "3daf785bdf27",
-          "score": 0.2872,
+          "score": 0.2871,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -16457,7 +16480,7 @@
         },
         {
           "id": "c538063d4e18",
-          "score": 0.287,
+          "score": 0.2869,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -16478,7 +16501,7 @@
         },
         {
           "id": "d6bc21f6140c",
-          "score": 0.2816,
+          "score": 0.2815,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -16488,7 +16511,7 @@
         },
         {
           "id": "bad19f81c263",
-          "score": 0.2784,
+          "score": 0.2783,
           "shared": [
             "manipulation",
             "generative_policy",
@@ -16563,6 +16586,15 @@
           ]
         },
         {
+          "id": "264a1bb5dfbe",
+          "score": 0.1795,
+          "shared": [
+            "in_hand",
+            "dexterous_hand",
+            "vision"
+          ]
+        },
+        {
           "id": "f656acde39fc",
           "score": 0.1736,
           "shared": [
@@ -16587,14 +16619,6 @@
             "in_hand",
             "dexterous_hand",
             "vision"
-          ]
-        },
-        {
-          "id": "264a1bb5dfbe",
-          "score": 0.1643,
-          "shared": [
-            "in_hand",
-            "dexterous_hand"
           ]
         }
       ]
@@ -16705,7 +16729,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.1666,
+          "score": 0.1665,
           "shared": [
             "world_model",
             "vision"
@@ -16741,7 +16765,7 @@
       "related": [
         {
           "id": "7825ffb9cfe5",
-          "score": 0.1444,
+          "score": 0.1445,
           "shared": []
         }
       ]
@@ -16935,7 +16959,7 @@
         },
         {
           "id": "48ecea43c425",
-          "score": 0.2279,
+          "score": 0.2278,
           "shared": [
             "locomotion",
             "imitation",
@@ -17072,7 +17096,7 @@
         },
         {
           "id": "da55e3bb4e5f",
-          "score": 0.1705,
+          "score": 0.1706,
           "shared": [
             "manipulation",
             "imitation",
@@ -17162,7 +17186,7 @@
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.2136,
+          "score": 0.2135,
           "shared": [
             "vision"
           ]
@@ -17232,7 +17256,7 @@
       "related": [
         {
           "id": "c57e481f3b43",
-          "score": 0.3501,
+          "score": 0.35,
           "shared": [
             "manipulation",
             "vla",
@@ -17244,7 +17268,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.3383,
+          "score": 0.3382,
           "shared": [
             "manipulation",
             "vla",
@@ -17268,7 +17292,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.2848,
+          "score": 0.2847,
           "shared": [
             "manipulation",
             "vla",
@@ -17291,7 +17315,7 @@
         },
         {
           "id": "d3317ae52ef2",
-          "score": 0.2442,
+          "score": 0.2441,
           "shared": [
             "manipulation",
             "vla",
@@ -17409,7 +17433,7 @@
         },
         {
           "id": "9d7596e57dc0",
-          "score": 0.2504,
+          "score": 0.2503,
           "shared": [
             "manipulation",
             "vla",
@@ -17469,7 +17493,7 @@
         },
         {
           "id": "d75c9c36c685",
-          "score": 0.1601,
+          "score": 0.1602,
           "shared": [
             "generative_policy",
             "bimanual"
@@ -17540,7 +17564,7 @@
       "related": [
         {
           "id": "d52d9313e9ff",
-          "score": 0.294,
+          "score": 0.2939,
           "shared": [
             "manipulation",
             "imitation",
@@ -17561,7 +17585,7 @@
         },
         {
           "id": "9b99eec315a2",
-          "score": 0.2771,
+          "score": 0.277,
           "shared": [
             "manipulation",
             "vla",
@@ -17670,7 +17694,7 @@
         },
         {
           "id": "ad096e4dc5cb",
-          "score": 0.1722,
+          "score": 0.1723,
           "shared": [
             "rl",
             "world_model"
@@ -17754,7 +17778,7 @@
       "related": [
         {
           "id": "c57e481f3b43",
-          "score": 0.2596,
+          "score": 0.2595,
           "shared": [
             "manipulation",
             "vision",
@@ -17763,7 +17787,7 @@
         },
         {
           "id": "cbe6293c4453",
-          "score": 0.2365,
+          "score": 0.2364,
           "shared": [
             "manipulation",
             "imitation",
@@ -17782,7 +17806,7 @@
         },
         {
           "id": "8fcb2d661e6d",
-          "score": 0.2007,
+          "score": 0.2006,
           "shared": [
             "manipulation",
             "vision",
@@ -17884,7 +17908,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.3224,
+          "score": 0.3223,
           "shared": [
             "manipulation",
             "vla",
@@ -18095,7 +18119,7 @@
         },
         {
           "id": "2910b38ffdef",
-          "score": 0.2767,
+          "score": 0.2766,
           "shared": [
             "vla",
             "generative_policy",
@@ -18105,7 +18129,7 @@
         },
         {
           "id": "b1e094aac4a1",
-          "score": 0.2671,
+          "score": 0.267,
           "shared": [
             "vla",
             "generative_policy",
@@ -18193,7 +18217,7 @@
       "related": [
         {
           "id": "2910b38ffdef",
-          "score": 0.3116,
+          "score": 0.3115,
           "shared": [
             "vla",
             "world_model",
@@ -18221,7 +18245,7 @@
         },
         {
           "id": "d9cb767c9ad0",
-          "score": 0.2492,
+          "score": 0.2491,
           "shared": [
             "vla",
             "world_model",
@@ -18240,7 +18264,7 @@
         },
         {
           "id": "1534583203f2",
-          "score": 0.2366,
+          "score": 0.2365,
           "shared": [
             "vla",
             "vision",
@@ -18319,7 +18343,7 @@
         },
         {
           "id": "1534583203f2",
-          "score": 0.2202,
+          "score": 0.2201,
           "shared": [
             "vla",
             "vision",
@@ -18328,7 +18352,7 @@
         },
         {
           "id": "2eea4fdfcb3f",
-          "score": 0.218,
+          "score": 0.2179,
           "shared": [
             "vla",
             "vision",
@@ -18397,7 +18421,7 @@
         },
         {
           "id": "6a4b8cab99a2",
-          "score": 0.2049,
+          "score": 0.2048,
           "shared": [
             "rl"
           ]
@@ -18418,7 +18442,7 @@
         },
         {
           "id": "4cf2ed2f4478",
-          "score": 0.1769,
+          "score": 0.1768,
           "shared": [
             "rl"
           ]
@@ -18753,7 +18777,7 @@
         },
         {
           "id": "6a4b8cab99a2",
-          "score": 0.1729,
+          "score": 0.173,
           "shared": [
             "rl"
           ]
@@ -18932,17 +18956,6 @@
           ]
         },
         {
-          "id": "264a1bb5dfbe",
-          "score": 0.2608,
-          "shared": [
-            "in_hand",
-            "rl",
-            "sim2real",
-            "dexterous_hand",
-            "simulation"
-          ]
-        },
-        {
           "id": "e6274122d26c",
           "score": 0.2563,
           "shared": [
@@ -18983,6 +18996,16 @@
             "sim2real",
             "dexterous_hand",
             "tactile",
+            "simulation"
+          ]
+        },
+        {
+          "id": "c2d20ab65ee2",
+          "score": 0.2341,
+          "shared": [
+            "in_hand",
+            "rl",
+            "dexterous_hand",
             "simulation"
           ]
         }
@@ -19034,7 +19057,7 @@
       "related": [
         {
           "id": "828fca0794c2",
-          "score": 0.2353,
+          "score": 0.2354,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -19052,7 +19075,7 @@
         },
         {
           "id": "c5f4869725d3",
-          "score": 0.2121,
+          "score": 0.2122,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -19061,7 +19084,7 @@
         },
         {
           "id": "4781a9441172",
-          "score": 0.1922,
+          "score": 0.1923,
           "shared": [
             "dexterous_hand",
             "teleop"
@@ -19069,7 +19092,7 @@
         },
         {
           "id": "f54f7c6bffb4",
-          "score": 0.1902,
+          "score": 0.1903,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -19170,7 +19193,7 @@
         },
         {
           "id": "f77bbc3febd0",
-          "score": 0.2491,
+          "score": 0.2492,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -19268,7 +19291,7 @@
       "related": [
         {
           "id": "54252546ee7a",
-          "score": 0.3393,
+          "score": 0.3394,
           "shared": [
             "manipulation",
             "vla",
@@ -19301,7 +19324,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.3005,
+          "score": 0.3004,
           "shared": [
             "manipulation",
             "vla",
@@ -19311,7 +19334,7 @@
         },
         {
           "id": "75c75b12ca45",
-          "score": 0.2848,
+          "score": 0.2847,
           "shared": [
             "manipulation",
             "vla",
@@ -19322,7 +19345,7 @@
         },
         {
           "id": "582046ec1d77",
-          "score": 0.2823,
+          "score": 0.2824,
           "shared": [
             "manipulation",
             "vla",
@@ -19396,7 +19419,7 @@
       "related": [
         {
           "id": "234a0f375dca",
-          "score": 0.4013,
+          "score": 0.4012,
           "shared": [
             "in_hand",
             "rl",
@@ -19408,12 +19431,13 @@
         },
         {
           "id": "264a1bb5dfbe",
-          "score": 0.303,
+          "score": 0.3092,
           "shared": [
             "in_hand",
             "rl",
             "sim2real",
             "dexterous_hand",
+            "vision",
             "simulation"
           ]
         },
@@ -19650,7 +19674,7 @@
         },
         {
           "id": "d52d9313e9ff",
-          "score": 0.1965,
+          "score": 0.1964,
           "shared": [
             "manipulation",
             "vision",
@@ -19676,7 +19700,7 @@
         },
         {
           "id": "ebb918baa301",
-          "score": 0.189,
+          "score": 0.1889,
           "shared": [
             "manipulation",
             "vision",
@@ -19848,7 +19872,7 @@
       "related": [
         {
           "id": "09cd71c6767d",
-          "score": 0.317,
+          "score": 0.3168,
           "shared": [
             "manipulation",
             "vla",
@@ -19861,7 +19885,7 @@
         },
         {
           "id": "c3963efd3d9b",
-          "score": 0.2763,
+          "score": 0.2762,
           "shared": [
             "manipulation",
             "vla",
@@ -19874,7 +19898,7 @@
         },
         {
           "id": "bedcbb2393a5",
-          "score": 0.248,
+          "score": 0.2479,
           "shared": [
             "manipulation",
             "vla",
@@ -19886,7 +19910,7 @@
         },
         {
           "id": "58a8deb79124",
-          "score": 0.2442,
+          "score": 0.2441,
           "shared": [
             "manipulation",
             "vla",
@@ -19961,7 +19985,7 @@
       "related": [
         {
           "id": "b38eb62e913e",
-          "score": 0.2235,
+          "score": 0.2236,
           "shared": [
             "vision",
             "simulation"
@@ -19976,14 +20000,14 @@
         },
         {
           "id": "3eee620ee499",
-          "score": 0.1721,
+          "score": 0.172,
           "shared": [
             "vision"
           ]
         },
         {
           "id": "4bc15c15398b",
-          "score": 0.1571,
+          "score": 0.157,
           "shared": [
             "vision",
             "simulation"
@@ -19991,7 +20015,7 @@
         },
         {
           "id": "a199e45d177b",
-          "score": 0.1537,
+          "score": 0.1536,
           "shared": [
             "vision",
             "simulation"
@@ -19999,7 +20023,7 @@
         },
         {
           "id": "ad6416c562fc",
-          "score": 0.1499,
+          "score": 0.1498,
           "shared": [
             "vision",
             "simulation"
@@ -20066,7 +20090,7 @@
       "related": [
         {
           "id": "5154f13a5390",
-          "score": 0.3717,
+          "score": 0.3716,
           "shared": [
             "grasp",
             "bimanual",
@@ -20209,7 +20233,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2424,
+          "score": 0.2425,
           "shared": [
             "grasp",
             "sim2real",
@@ -20228,7 +20252,7 @@
         },
         {
           "id": "52f408326cda",
-          "score": 0.236,
+          "score": 0.2361,
           "shared": [
             "grasp",
             "sim2real",
@@ -20317,7 +20341,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.2522,
+          "score": 0.2521,
           "shared": [
             "grasp",
             "sim2real",
@@ -20337,7 +20361,7 @@
         },
         {
           "id": "11fbdc4c86ca",
-          "score": 0.2268,
+          "score": 0.2267,
           "shared": [
             "grasp",
             "sim2real",
@@ -20526,7 +20550,7 @@
       "related": [
         {
           "id": "428b1a10df2e",
-          "score": 0.3651,
+          "score": 0.365,
           "shared": [
             "long_horizon",
             "vla",
@@ -20572,7 +20596,7 @@
         },
         {
           "id": "dc4519f9f5de",
-          "score": 0.2286,
+          "score": 0.2285,
           "shared": [
             "vla",
             "vision",
@@ -20657,7 +20681,7 @@
         },
         {
           "id": "75c75b12ca45",
-          "score": 0.3501,
+          "score": 0.35,
           "shared": [
             "manipulation",
             "vla",
@@ -20680,7 +20704,7 @@
         },
         {
           "id": "3bef8fac9164",
-          "score": 0.3164,
+          "score": 0.3163,
           "shared": [
             "manipulation",
             "vla",
@@ -20692,7 +20716,7 @@
         },
         {
           "id": "c3963efd3d9b",
-          "score": 0.2836,
+          "score": 0.2835,
           "shared": [
             "manipulation",
             "vla",
@@ -20774,7 +20798,7 @@
       "related": [
         {
           "id": "c538063d4e18",
-          "score": 0.3247,
+          "score": 0.3246,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -20815,7 +20839,7 @@
         },
         {
           "id": "18f622aafe72",
-          "score": 0.2491,
+          "score": 0.2492,
           "shared": [
             "manipulation",
             "dexterous_hand",
@@ -21045,7 +21069,7 @@
         },
         {
           "id": "334bde1459ae",
-          "score": 0.2136,
+          "score": 0.2135,
           "shared": [
             "rl",
             "sim2real",
@@ -21215,7 +21239,7 @@
         },
         {
           "id": "20f950ab618e",
-          "score": 0.1769,
+          "score": 0.1768,
           "shared": [
             "rl"
           ]
@@ -21300,7 +21324,7 @@
         },
         {
           "id": "995170b80e81",
-          "score": 0.2001,
+          "score": 0.2,
           "shared": [
             "sim2real",
             "simulation"
@@ -21317,7 +21341,7 @@
         },
         {
           "id": "de6ef1fffcc0",
-          "score": 0.1883,
+          "score": 0.1882,
           "shared": [
             "rl",
             "sim2real",
@@ -21364,7 +21388,7 @@
       "related": [
         {
           "id": "6a4b8cab99a2",
-          "score": 0.3037,
+          "score": 0.3036,
           "shared": [
             "rl",
             "world_model"
