@@ -89,6 +89,21 @@ redirect_from:
 
 <div style="display: grid; gap: 1rem; margin-top: 0.5rem;">
   <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
+    <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;"><span data-i18n-en="2026 · Project" data-i18n-zh="2026 · 项目">2026 · Project</span></div>
+    <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">DexFormer 2.0: Towards a Cross-Embodiment Foundation Policy for Dexterous Grasping</h3>
+    <p style="margin: 0 0 0.35rem; font-size: 0.92rem;"><strong>Lixin Xu*</strong>, Ke Zhang*, Xinyu Liu*, Jie Tan, Senming Tan, Jiaju Yin, Yating Feng, Xiyue Dong, Renjing Xu</p>
+    <p style="margin: 0 0 0.55rem; font-size: 0.8rem; color: #6b7280;"><span data-i18n-en="* Equal contribution" data-i18n-zh="* 共同第一作者">* Equal contribution</span></p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 8px; margin-bottom: 0.6rem;">
+      <a href="https://davidlxu.github.io/dexformer2/#films"><img src="{{ '/images/dexformer2-grasp.png' | relative_url }}" alt="DexFormer 2.0 dexterous grasping demonstration" loading="lazy" style="display: block; width: 100%; height: 190px; object-fit: contain; border-radius: 8px;" /></a>
+      <a href="https://davidlxu.github.io/dexformer2/#cases"><img src="{{ '/images/dexformer2-real-world.png' | relative_url }}" alt="DexFormer 2.0 real-world grasping with a Flexiv arm and Revo3 hand" loading="lazy" style="display: block; width: 100%; height: 190px; object-fit: contain; border-radius: 8px;" /></a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <a href="https://davidlxu.github.io/dexformer2/" style="padding: 4px 10px; border-radius: 999px; background: #e8eefc; color: #2a4f93; text-decoration: none; font-size: 0.82rem; line-height: 1.2;">Website</a>
+      <a href="https://davidlxu.github.io/dexformer2/#isaac" style="padding: 4px 10px; border-radius: 999px; background: #e7f5ed; color: #1f6f50; text-decoration: none; font-size: 0.82rem; line-height: 1.2;"><span data-i18n-en="Interactive 3D Replay" data-i18n-zh="交互式 3D 回放">Interactive 3D Replay</span></a>
+    </div>
+  </article>
+
+  <article style="border: 1px solid #dde3ea; border-radius: 12px; padding: 0.9rem 1rem;">
     <div style="display: inline-block; font-size: 0.76rem; padding: 0.12rem 0.5rem; border-radius: 999px; background: #eef2f7; margin-bottom: 0.45rem;">CoRL 2026</div>
     <h3 style="margin: 0 0 0.35rem; font-size: 1.04rem;">WHIRL: Intervention-Aware World Models with Real-World RL for Dexterous Manipulation</h3>
     <p style="margin: 0 0 0.55rem; font-size: 0.92rem;">Jiaju Yin, Zhenhui Zhang, <strong>Lixin Xu</strong>, Heng Zhang, Jun Shao, Yating Feng, Arash Ajoudani, Renjing Xu</p>
