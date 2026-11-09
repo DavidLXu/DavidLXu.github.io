@@ -89,7 +89,10 @@ $('#search').addEventListener('input', render);
 fetch('./snapshot.json?v=20261106-daily').then(r => { if (!r.ok) throw Error('Task collection unavailable'); return r.json(); }).then(data => {
   tasks = data.tasks;
   const order = { accepted: 0, in_progress: 1, not_started: 2 };
-  tasks.sort((a,b) => order[a.status] - order[b.status]);
+  tasks.sort((a, b) => {
+    const dailyFirst = Number(b.batch === 'daily_tabletop') - Number(a.batch === 'daily_tabletop');
+    return dailyFirst || order[a.status] - order[b.status];
+  });
   document.querySelectorAll('[data-status]').forEach(b => { b.querySelector('span').textContent = b.dataset.status === 'all' ? tasks.length : tasks.filter(t => t.status === b.dataset.status).length; });
   $('#hero-meta').innerHTML = `<span>${tasks.length} 项操作任务</span><span>${tasks.reduce((n,t) => n+t.videos.length,0)} 段仿真视频</span><span>${tasks.reduce((n,t) => n+t.trajectory_count,0)} 条验收参考轨迹</span>`;
   $('#snapshot-date').textContent = data.snapshot_date.replaceAll('-', '.');
