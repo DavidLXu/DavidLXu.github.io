@@ -64,6 +64,13 @@
     embodiment: [single_arm, dexterous_hand]
     data: [vision, force, teleop, simulation]
   reason: "Sections IV-VII: SAC policies are trained for resource-aware grasps and second subtasks on an xArm7 with a LEAP Hand. Real-world retrieval uses two RGB-D cameras and SAM2, observations include joint state and fingertip poses, and DP3 is trained on teleoperated demonstrations for comparison."
+/posts/2026/11/sala-semantic-latent-actions-paper-notes/:
+  facets:
+    task: [manipulation, assembly]
+    method: [vla, representation]
+    embodiment: [bimanual, dexterous_hand, mobile, humanoid]
+    data: [vision, human_video, teleop, force, simulation, language]
+  reason: "Sections 2-3 and Appendix E: SALA aligns latent actions with atomic-action language, then trains a VLA on human video and robot teleoperation. RoboTwin uses bimanual Aloha-AgileX, and real-world trials use a wheeled Sharpa North humanoid with two 22-DoF hands, three RGB views, language instructions and joint proprioception."
 /posts/2026/09/gpt-policy-in-context-robot-learning-paper-notes/:
   facets:
     task: [manipulation]
