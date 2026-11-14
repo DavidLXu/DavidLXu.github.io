@@ -57,6 +57,13 @@
     embodiment: [single_arm, bimanual, mobile]
     data: [vision, simulation, force, language]
   reason: "Sections 2-3: one coding-agent loop and 14-tool API run on bimanual RoboDojo and RoboTwin, fixed-arm LIBERO-PRO, mobile-arm RoboCasa365 and bimanual real robots. Perceptions use RGB/RGB-D, state includes robot proprioception, and tasks use language instructions; planning refers to closed-loop Python action selection."
+/posts/2026/11/handful-resource-aware-dexterous-manipulation-paper-notes/:
+  facets:
+    task: [grasp, manipulation]
+    method: [rl, sim2real]
+    embodiment: [single_arm, dexterous_hand]
+    data: [vision, force, teleop, simulation]
+  reason: "Sections IV-VII: SAC policies are trained for resource-aware grasps and second subtasks on an xArm7 with a LEAP Hand. Real-world retrieval uses two RGB-D cameras and SAM2, observations include joint state and fingertip poses, and DP3 is trained on teleoperated demonstrations for comparison."
 /posts/2026/09/gpt-policy-in-context-robot-learning-paper-notes/:
   facets:
     task: [manipulation]
