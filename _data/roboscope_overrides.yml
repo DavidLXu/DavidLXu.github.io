@@ -78,3 +78,10 @@
     embodiment: [single_arm, bimanual]
     data: [vision, human_video, teleop, force, language]
   reason: "Sections 3-4: GPT-Policy conditions tool-call planning on human video, robot video and action records, then returns controller feedback. Real-robot tasks use RGB, robot state and language instructions with single- and dual-arm setups; imitation here means deployment-time in-context conditioning without parameter updates."
+/posts/2026/11/robot-use-rl-pear-paper-notes/:
+  facets:
+    task: [grasp, manipulation, long_horizon]
+    method: [rl, sim2real]
+    embodiment: [single_arm, bimanual]
+    data: [vision, language, simulation]
+  reason: "Sections 3–4: multi-round reasoning policies trained with binary-reward RL on single-arm Franka LIBERO tasks and dual-arm ARX RoboDojo pickup and alignment; camera and language inputs; zero-shot deployment on a real dual-arm YAM."
