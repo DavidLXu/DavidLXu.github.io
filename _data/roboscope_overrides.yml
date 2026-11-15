@@ -99,3 +99,10 @@
     embodiment: [mobile, dexterous_hand, single_arm]
     data: [simulation]
   reason: "Sections 4–5: a DDPM behavior policy and Q-trained Gaussian editor are evaluated on simulated Antmaze navigation, Adroit dexterous tasks, and Franka Robomimic/MimicGen manipulation including insertion and threading. Base-policy imitation, off-policy RL and diffusion policy sampling are explicit components."
+/posts/2026/11/power-to-precision-paper-notes/:
+  facets:
+    task: [grasp, manipulation, assembly, design]
+    method: [imitation, sim2real]
+    embodiment: [single_arm, dexterous_hand, humanoid]
+    data: [vision, force, teleop, simulation]
+  reason: "Sections III-IV: parallel thumb-index grasp control and fingertip co-design; DexSimple learns simulated grasps and ACT learns teleoperated manipulation and insertion on xArm-XHand and G1-Inspire. Observations include object point clouds or camera images and joint proprioception (force facet)."
