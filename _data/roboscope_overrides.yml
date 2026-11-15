@@ -92,3 +92,10 @@
     embodiment: [mobile]
     data: [vision, simulation, language]
   reason: "Sections 3.1–3.3 evaluate grasping, physical object interactions, multistage tasks and supported non-rigid behavior; fixed executors include a simulated mobile manipulator. Builders receive posed images and task descriptions. This is an environment-construction benchmark, with no learned policy or world-model training method."
+/posts/2026/11/expo-paper-notes/:
+  facets:
+    task: [navigation, in_hand, manipulation, assembly]
+    method: [imitation, rl, generative_policy]
+    embodiment: [mobile, dexterous_hand, single_arm]
+    data: [simulation]
+  reason: "Sections 4–5: a DDPM behavior policy and Q-trained Gaussian editor are evaluated on simulated Antmaze navigation, Adroit dexterous tasks, and Franka Robomimic/MimicGen manipulation including insertion and threading. Base-policy imitation, off-policy RL and diffusion policy sampling are explicit components."
