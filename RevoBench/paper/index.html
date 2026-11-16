@@ -126,7 +126,11 @@ td b{color:var(--ink)}
 .vid{border-radius:12px;overflow:hidden;background:var(--night);position:relative}
 .vid video{width:100%;aspect-ratio:3/2;object-fit:cover}
 .vid span{position:absolute;left:8px;top:8px;background:rgba(15,25,35,.72);color:#fff;font-size:12.5px;line-height:1;padding:6px 9px;border-radius:999px;pointer-events:none}
-.vid.two{grid-column:span 1}
+.vid em{position:absolute;left:8px;top:36px;background:var(--ours);color:#3D2E05;font-style:normal;font-weight:500;font-size:11.5px;line-height:1;padding:6px 9px;border-radius:999px;pointer-events:none}
+.gal{grid-template-columns:repeat(4,1fr)}.gal .vid video{aspect-ratio:4/3}.gal .vid.hide{display:none}
+.filt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.filt button{border:1px solid #CFD2CC;background:transparent;border-radius:999px;padding:7px 14px;font:500 14px var(--sans);color:var(--body);cursor:pointer}
+.filt button.on{background:var(--ink);border-color:var(--ink);color:#fff}
 
 .eq{font:400 15px var(--mono);background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--ink);overflow-x:auto;white-space:nowrap;margin:0 0 18px}
 
@@ -154,7 +158,7 @@ footer{max-width:var(--col);margin:70px auto 0;padding-top:22px;border-top:1px s
   .hero{aspect-ratio:4/3;min-height:0;border-radius:16px}.hero h1{left:20px;right:20px;bottom:20px}.hero .tag{left:20px;top:18px}
   .tabs a{margin-left:0;width:100%}
   h2{font-size:26px;margin-top:64px}h2 .n{font-size:23px;margin-right:10px}h3{font-size:20px}
-  .stats,.layers{grid-template-columns:1fr}.grid,.vids{grid-template-columns:repeat(2,1fr)}
+  .stats,.layers{grid-template-columns:1fr}.grid,.vids{grid-template-columns:repeat(2,1fr)}.gal{grid-template-columns:1fr}
   .card{padding:14px;overflow-x:auto}.dg{min-width:740px}.toc{width:min(330px,calc(100vw - 32px))}
 }
 </style>
@@ -173,7 +177,7 @@ footer{max-width:var(--col);margin:70px auto 0;padding-top:22px;border-top:1px s
       <a href="#bench"><b>2</b>RevoBench, the platform</a>
       <a href="#loop"><b>3</b>The agent-driven loop</a>
       <a href="#critic"><b>4</b>A critic with four layers</a>
-      <a href="#refs-found"><b>5</b>First verified references</a>
+      <a href="#refs-found"><b>5</b>Verified tasks</a>
       <a href="#tracks"><b>6</b>Three tracks and what we measure</a>
       <a href="#plan"><b>7</b>Experiments</a>
       <a href="#limits"><b>8</b>Limitations</a>
@@ -219,7 +223,7 @@ footer{max-width:var(--col);margin:70px auto 0;padding-top:22px;border-top:1px s
   <p>Frontier generalist models can already work through a manipulation task by trying, looking and trying again. That ability comes at seconds per step and millions of tokens per episode, and so far only on gripper robots with the model inside the control loop.</p>
   <p>We ask how to pay for that deliberation once and keep its result. <b>We treat the frontier model as a teacher to be distilled, not as the controller to be deployed.</b> An agent searches for a good motion in simulation, a critic verifies it, and the verified motion becomes training data for a fast policy that needs no model at run time.</p>
   <p>To study this we propose <b>RevoBench</b>, a platform for testing how generalist agents behave and perform on a robot: 175 everyday tabletop tasks for a dual-arm robot with five-finger tactile hands, one action interface shared by agent-written programs, teleoperation and learned policies, and physical success checks that an agent cannot edit.</p>
-  <p>On RevoBench we build a loop in which generalist models act as scene builder, actor and critic. The critic separates physical success from contact quality, motion quality and humanlikeness. Five tasks now have a reference motion that passed the physical checks and was approved by a person for humanlikeness and smoothness.</p>
+  <p>On RevoBench we build a loop in which generalist models act as scene builder, actor and critic. The critic separates physical success from contact quality, motion quality and humanlikeness. Twenty-two tasks have a physically verified episode, and six of them have a reference motion that a person approved for humanlikeness and smoothness.</p>
   <div class="note"><b>Status.</b> This page describes the method and the evaluation protocol. Policy-learning experiments are in progress and no empirical result is claimed here.</div>
 </section>
 
@@ -346,17 +350,39 @@ footer{max-width:var(--col);margin:70px auto 0;padding-top:22px;border-top:1px s
 </section>
 
 <section id="refs-found">
-  <h2><span class="n">5</span>First verified references</h2>
-  <p>Five tasks now have a warm-start reference. Each is one frozen run that passed the task's physical checks and was then approved for humanlikeness and smoothness by a person watching the video.</p>
+  <h2><span class="n">5</span>Verified tasks</h2>
+  <p>Twenty-two tasks have a complete recorded episode that passed the task's physical checks and the data checks. For six of them, a later run was also approved by a person for humanlikeness and smoothness; those six are the first warm-start references.</p>
   <figure class="wide">
-    <div class="vids">
-      <div class="vid"><span>Hammer a nail</span><video controls muted loop playsinline preload="none" poster="assets/video/hammer.jpg" src="assets/video/hammer.mp4"></video></div>
-      <div class="vid"><span>Carry a Dutch oven</span><video controls muted loop playsinline preload="none" poster="assets/video/carry_dutch_oven.jpg" src="assets/video/carry_dutch_oven.mp4"></video></div>
-      <div class="vid"><span>Lift a carton</span><video controls muted loop playsinline preload="none" poster="assets/video/lift_carton.jpg" src="assets/video/lift_carton.mp4"></video></div>
-      <div class="vid"><span>Insert a pen</span><video controls muted loop playsinline preload="none" poster="assets/video/insert_pen.jpg" src="assets/video/insert_pen.mp4"></video></div>
-      <div class="vid"><span>Arrange condiments</span><video controls muted loop playsinline preload="none" poster="assets/video/arrange_condiments.jpg" src="assets/video/arrange_condiments.mp4"></video></div>
+    <div class="filt" id="filt">
+      <button class="on" data-f="all">All 22 verified</button>
+      <button data-f="1">Human-approved motion &middot; 6</button>
+      <button data-f="0">Physically verified &middot; 16</button>
     </div>
-    <figcaption><b>Figure 5.</b> The five approved runs, shown at 1.5&times; speed. All are simulation.</figcaption>
+    <div class="vids gal" id="gal">
+      <div class="vid" data-h="1"><span>Hammer a nail</span><em>Human-approved motion</em><video controls muted loop playsinline preload="none" poster="assets/video/hammer.jpg" src="assets/video/hammer.mp4"></video></div>
+      <div class="vid" data-h="1"><span>Carry a Dutch oven</span><em>Human-approved motion</em><video controls muted loop playsinline preload="none" poster="assets/video/carry_dutch_oven.jpg" src="assets/video/carry_dutch_oven.mp4"></video></div>
+      <div class="vid" data-h="1"><span>Lift a carton</span><em>Human-approved motion</em><video controls muted loop playsinline preload="none" poster="assets/video/lift_carton.jpg" src="assets/video/lift_carton.mp4"></video></div>
+      <div class="vid" data-h="1"><span>Insert a pen</span><em>Human-approved motion</em><video controls muted loop playsinline preload="none" poster="assets/video/insert_pen.jpg" src="assets/video/insert_pen.mp4"></video></div>
+      <div class="vid" data-h="1"><span>Arrange condiments</span><em>Human-approved motion</em><video controls muted loop playsinline preload="none" poster="assets/video/arrange_condiments.jpg" src="assets/video/arrange_condiments.mp4"></video></div>
+      <div class="vid" data-h="1"><span>Stack blocks</span><em>Human-approved motion</em><video controls muted loop playsinline preload="none" poster="assets/gallery/stack_blocks.jpg" src="assets/gallery/stack_blocks.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Pack groceries</span><video controls muted loop playsinline preload="none" poster="assets/gallery/pack_groceries.jpg" src="assets/gallery/pack_groceries.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Transfer food in a kitchen</span><video controls muted loop playsinline preload="none" poster="assets/gallery/kitchen.jpg" src="assets/gallery/kitchen.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Move a pan to the stove</span><video controls muted loop playsinline preload="none" poster="assets/gallery/pan_to_stove.jpg" src="assets/gallery/pan_to_stove.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Set the table</span><video controls muted loop playsinline preload="none" poster="assets/gallery/set_table.jpg" src="assets/gallery/set_table.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Pour from a kettle</span><video controls muted loop playsinline preload="none" poster="assets/gallery/kettle_pour.jpg" src="assets/gallery/kettle_pour.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Pour from a can</span><video controls muted loop playsinline preload="none" poster="assets/gallery/pour_can.jpg" src="assets/gallery/pour_can.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Carry a tray</span><video controls muted loop playsinline preload="none" poster="assets/gallery/tray_carry.jpg" src="assets/gallery/tray_carry.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Hang a cup</span><video controls muted loop playsinline preload="none" poster="assets/gallery/cup_hang.jpg" src="assets/gallery/cup_hang.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Place a power drill</span><video controls muted loop playsinline preload="none" poster="assets/gallery/power_drill.jpg" src="assets/gallery/power_drill.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Plug in a charger</span><video controls muted loop playsinline preload="none" poster="assets/gallery/plug_charger.jpg" src="assets/gallery/plug_charger.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Insert a peg</span><video controls muted loop playsinline preload="none" poster="assets/gallery/insert_peg.jpg" src="assets/gallery/insert_peg.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Insert a pipette</span><video controls muted loop playsinline preload="none" poster="assets/gallery/insert_pipette.jpg" src="assets/gallery/insert_pipette.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Turn a coffee machine handle</span><video controls muted loop playsinline preload="none" poster="assets/gallery/coffee_handle_turn.jpg" src="assets/gallery/coffee_handle_turn.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Rotate a knob</span><video controls muted loop playsinline preload="none" poster="assets/gallery/rotate_knob.jpg" src="assets/gallery/rotate_knob.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Open and close a stapler</span><video controls muted loop playsinline preload="none" poster="assets/gallery/open_stapler.jpg" src="assets/gallery/open_stapler.mp4"></video></div>
+      <div class="vid" data-h="0"><span>Lift and replace a kettle lid</span><video controls muted loop playsinline preload="none" poster="assets/gallery/lift_kettle_lid.jpg" src="assets/gallery/lift_kettle_lid.mp4"></video></div>
+    </div>
+    <figcaption><b>Figure 5.</b> Every task with a successful recorded episode, shown at 1.5&times; speed. All are simulation. For the six human-approved tasks the clip is the approved run; for the other sixteen it is the verified reference episode, whose motion has not been reviewed for humanlikeness.</figcaption>
   </figure>
   <figure>
     <div class="card scroll">
@@ -368,10 +394,11 @@ footer{max-width:var(--col);margin:70px auto 0;padding-top:22px;border-top:1px s
           <tr><td><b>Hammer a nail</b></td><td>h20</td><td class="num">1218</td><td class="num">20.3 s</td><td>Middle-finger jerk still high during the strike</td></tr>
           <tr><td><b>Arrange condiments</b></td><td>s9</td><td class="num">2645</td><td class="num">44.1 s</td><td>Full-body collision check not completed</td></tr>
           <tr><td><b>Lift a carton</b></td><td>c20</td><td class="num">666</td><td class="num">11.1 s</td><td>Nominal initial state only</td></tr>
+          <tr><td><b>Stack blocks</b></td><td>retry029</td><td class="num">1765</td><td class="num">29.4 s</td><td>Diagnostic recording; full data check still open</td></tr>
         </tbody>
       </table>
     </div>
-    <figcaption><b>Table 1.</b> Approval here is a person's review of the video, not a critic score. Strict numerical audits are not all passed, and each caveat is kept with the run.</figcaption>
+    <figcaption><b>Table 1.</b> The six human-approved runs. Approval here is a person's review of the video, not a critic score. Strict numerical audits are not all passed, and each caveat is kept with the run.</figcaption>
   </figure>
   <p>A reference is the end of a search. The Dutch oven reference is the survivor of 30 candidate versions, 17 of which were physically successful. For the hammer, an earlier physically successful version was rejected in review before the approved one. This is the deliberation the loop is meant to pay for once.</p>
 </section>
@@ -411,7 +438,7 @@ footer{max-width:var(--col);margin:70px auto 0;padding-top:22px;border-top:1px s
         <thead><tr><th>ID</th><th>Question</th><th>Design</th><th>Status</th></tr></thead>
         <tbody>
           <tr><td>E1</td><td>Can agents solve dexterous tasks from nothing?</td><td>30 zero-demo tasks, at least three models, two open harnesses ported as baselines</td><td class="pend">22 of 30 solved</td></tr>
-          <tr><td>E2</td><td>Does a prior buy quality and save cost?</td><td>Same 30 tasks, warm start. Ablate video, text, reference trajectory, and their format and number. Changed-object test for over-imitation</td><td class="pend">5 references</td></tr>
+          <tr><td>E2</td><td>Does a prior buy quality and save cost?</td><td>Same 30 tasks, warm start. Ablate video, text, reference trajectory, and their format and number. Changed-object test for over-imitation</td><td class="pend">6 references</td></tr>
           <tr class="ours"><td><b>E3</b></td><td><b>Is generated data worth as much as teleoperated data?</b></td><td>5 many-demo tasks. 30 generated against 30 teleoperated demos, same policy and budget. Scaling at 5, 10, 30, mixed sets, generated-only to 100+</td><td class="pend">not started</td></tr>
           <tr><td>E4</td><td>Does the loop get cheaper as it runs?</td><td>Grow the skill library, re-run stored skills, test transfer on held-out tasks</td><td class="pend">not started</td></tr>
           <tr><td>E5</td><td>Can the critic be trusted?</td><td>Blind human ratings against each critic layer. Critic with and without touch</td><td class="pend">not started</td></tr>
@@ -475,6 +502,10 @@ document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{
   vids.forEach(v=>{const on=v.dataset.k===b.dataset.k;
     if(on){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.currentTime=0;v.play().catch(()=>{})}else v.pause();
     v.classList.toggle('on',on)});
+});
+document.querySelectorAll('#filt button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#filt button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('#gal .vid').forEach(v=>{const hide=b.dataset.f!=='all'&&v.dataset.h!==b.dataset.f;v.classList.toggle('hide',hide);if(hide)v.querySelector('video').pause()});
 });
 document.getElementById('copy').onclick=async e=>{
   try{await navigator.clipboard.writeText(document.getElementById('bib').textContent);e.target.textContent='Copied'}
