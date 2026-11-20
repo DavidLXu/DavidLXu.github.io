@@ -8,7 +8,7 @@
   zh_description: 从精准插接到双手协作，通过仿真视频探索 36 项灵巧操作任务。独立静态展示，支持任务筛选与视频回放。
   detail: Task collection · Simulation videos · 中文
   zh_detail: 任务展示 · 仿真视频 · 动作理念
-  url: /RevoBench/
+  url: https://davidlxu.github.io/RevoBench-Web/
 
 - id: push-any-letter
   group: research-tools
