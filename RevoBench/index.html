@@ -3,12 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RevoBench 已迁移</title>
+  <title>RevoBench 网站已迁移</title>
   <link rel="canonical" href="https://davidlxu.github.io/RevoBench-Web/">
-  <script>location.replace("https://davidlxu.github.io/RevoBench-Web/" + location.search + location.hash)</script>
-  <noscript><meta http-equiv="refresh" content="0; url=https://davidlxu.github.io/RevoBench-Web/"></noscript>
+  <style>
+    body { font: 1rem/1.6 system-ui, sans-serif; }
+    main { max-width: 38rem; margin: 4rem auto; padding: 0 1rem; }
+  </style>
 </head>
 <body>
-  <p>RevoBench 已迁移至 <a href="https://davidlxu.github.io/RevoBench-Web/">RevoBench-Web</a>。</p>
+  <main>
+    <h1>RevoBench 网站已迁移</h1>
+    <p><a id="new-site" href="https://davidlxu.github.io/RevoBench-Web/#tasks">访问 RevoBench 新网站</a></p>
+  </main>
+  <script>
+    const link = document.getElementById('new-site');
+    const destination = new URL(link.href);
+    if (location.search) destination.search = location.search;
+    if (location.hash) destination.hash = location.hash;
+    link.href = destination.href;
+  </script>
 </body>
 </html>
