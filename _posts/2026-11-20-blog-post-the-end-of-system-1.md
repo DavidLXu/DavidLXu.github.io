@@ -208,6 +208,7 @@ tags:
     <li><strong>Fast reflexes</strong> (slip, force spikes, contact onset) belong in System 0. An RL policy can consume raw joint torques, motor currents or simple pressure readings as part of its observation and learn the reflex end to end in simulation. It does not need a semantic "tactile understanding."</li>
     <li><strong>Slow judgments</strong> (is the lid seated? is this fruit ripe? did the connector click?) can be inferred by a multimodal foundation model from vision, sound, and a short text summary of force readings. That is reasoning about physical evidence, which is what foundation models are increasingly good at.</li>
   </ul>
+  <p>TacTalent gives a concrete example. With a few demonstrations in context, GPT-6 Astra takes RGB images from tactile sensors through its existing visual interface and uses them for closed-loop manipulation in simulation. Adding those images raises mean success on UniVTAC from 76.3% to 93.8%. The model can interpret contact without a dedicated tactile encoder. The gain on UniVTAC also shows how much information the sensor still adds. <a href="https://tactalent.github.io/" target="_blank" rel="noopener">TacTalent results</a></p>
   <p>What is left in the middle, a learned tactile representation trained from human demonstrations, looks just like System 1 did: expensive data and a narrow interface, squeezed from both sides. That is a conjecture, not a result. But it is the direction I would bet on.</p>
 </div>
 <div data-lang="zh" style="display: none;">
@@ -217,6 +218,7 @@ tags:
     <li><strong>快反射</strong>（打滑、力突变、接触起始）属于 System 0。RL 策略可以把原始关节力矩、电机电流或简单的压力读数直接作为观测，在仿真里端到端学会反射，不需要什么语义层面的“触觉理解”。</li>
     <li><strong>慢判断</strong>（盖子盖严了吗？水果熟了吗？插头卡到位了吗？）可以由多模态基座模型从视觉、声音和一段力读数的文本摘要中推断出来。这本质上是对物理证据的推理，而这正是基座模型越来越擅长的事。</li>
   </ul>
+  <p>TacTalent 给了一个具体例子。给 GPT-6 Astra 几条示范后，模型通过已有的视觉接口读取触觉传感器输出的 RGB 图像，在仿真中做闭环操作。加上触觉图像后，UniVTAC 上的平均成功率从 76.3% 提高到 93.8%。这说明理解接触信息可以省掉专用的触觉编码器，也说明传感器本身仍然提供了有用的观测。 <a href="https://tactalent.github.io/" target="_blank" rel="noopener">TacTalent 实验结果</a></p>
   <p>剩下夹在中间的部分，也就是从人类示教中学来的触觉表征，看起来和当年的 System 1 一模一样：数据昂贵、接口狭窄、被两头挤压。这是一个猜想，不是结论，但如果要下注，我会押这个方向。</p>
 </div>
 
@@ -250,16 +252,18 @@ tags:
     <ul>
       <li>Tang, Zhang, Guo et al., MIT HAN Lab. <a href="https://mit-han-lab.github.io/pear-blog/" target="_blank" rel="noopener">Training Reasoning Models in Simulation to Natively Use Real Robots (PEAR)</a>. arXiv 2611.18562.</li>
       <li>Grid Robotics. <a href="https://grid-robotics-official.github.io/agentic-robotics-roadmap/" target="_blank" rel="noopener">Envisioning Agentic Robotics: A New Era of Robotic Systems</a>. arXiv 2611.18359.</li>
+      <li>Yang et al. <a href="https://tactalent.github.io/" target="_blank" rel="noopener">GPT-6 Astra Is a Native Visuo-Tactile Policy for Contact-Rich Manipulation (TacTalent)</a>. arXiv 2610.26846.</li>
     </ul>
-    <p>Numbers are as reported by the PEAR authors. Sections 03 and 05 (dexterous-hand RL, tactile) are the author's own analysis and are not claims made by either source.</p>
+    <p>The figures in Section 02 are from PEAR. The proposals for dexterous-hand RL and the division of tactile processing in Sections 03 and 05 are the author's own.</p>
   </div>
   <div data-lang="zh" style="display: none;">
     <p><strong>参考资料</strong></p>
     <ul>
       <li>Tang, Zhang, Guo 等，MIT HAN Lab。<a href="https://mit-han-lab.github.io/pear-blog/" target="_blank" rel="noopener">Training Reasoning Models in Simulation to Natively Use Real Robots（PEAR）</a>。arXiv 2611.18562。</li>
       <li>Grid Robotics。<a href="https://grid-robotics-official.github.io/agentic-robotics-roadmap/" target="_blank" rel="noopener">Envisioning Agentic Robotics: A New Era of Robotic Systems</a>。arXiv 2611.18359。</li>
+      <li>Yang 等。<a href="https://tactalent.github.io/" target="_blank" rel="noopener">GPT-6 Astra Is a Native Visuo-Tactile Policy for Contact-Rich Manipulation（TacTalent）</a>。arXiv 2610.26846。</li>
     </ul>
-    <p>文中数据均引自 PEAR 作者的报告。第 03 节和第 05 节（灵巧手 RL、触觉）是作者本人的分析，并非上述两篇来源的观点。</p>
+    <p>第 02 节的数据引自 PEAR。第 03 节和第 05 节对灵巧手 RL 和触觉处理分工的设想是作者本人的判断。</p>
   </div>
 </div>
 </div>
