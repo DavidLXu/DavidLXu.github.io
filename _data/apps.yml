@@ -1,3 +1,15 @@
+- id: agentic-dexterity
+  group: research-tools
+  title: Agentic Dexterity
+  zh_title: Agentic Dexterity
+  category: Dexterous manipulation
+  zh_category: 灵巧操作
+  description: Compare dexterous-hand simulation benchmarks and trace how agents use simulator feedback.
+  zh_description: 对照灵巧手仿真基准的任务与验收条件，探索 Agent 如何使用仿真反馈。
+  detail: Benchmarks · Agent workflows · 中文
+  zh_detail: 仿真基准 · Agent 工作流
+  url: /apps/agentic-dexterity/
+
 - id: revobench
   group: research-tools
   title: RevoBench Task Collection
