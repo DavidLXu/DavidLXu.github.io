@@ -106,3 +106,10 @@
     embodiment: [single_arm, dexterous_hand, humanoid]
     data: [vision, force, teleop, simulation]
   reason: "Sections III-IV: parallel thumb-index grasp control and fingertip co-design; DexSimple learns simulated grasps and ACT learns teleoperated manipulation and insertion on xArm-XHand and G1-Inspire. Observations include object point clouds or camera images and joint proprioception (force facet)."
+/posts/2026/11/agentic-manipulation-policies-paper-notes/:
+  facets:
+    task: [manipulation, grasp]
+    method: [planning]
+    embodiment: [single_arm, bimanual, mobile]
+    data: [vision, simulation, force, language]
+  reason: "Sections 2A and 4A–F describe closed-loop waypoint planning from language, RGB-D and robot proprioception, tested on simulated single-arm, dual-arm and mobile manipulation and three physical Franka arms."
