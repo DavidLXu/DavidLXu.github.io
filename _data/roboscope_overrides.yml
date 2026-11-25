@@ -147,3 +147,9 @@
     task: [manipulation, assembly]
     data: [vision, simulation]
   reason: "Sections 3–4 reconstruct worlds from visual inputs and evaluate peg and gear insertion on a physical Dexmate robot with Sharpa hands."
+/posts/2026/11/dr-grasp-rl-paper-notes/:
+  facets:
+    method: [rl, imitation]
+    embodiment: [single_arm, dexterous_hand]
+    data: [simulation, tactile, force]
+  reason: "Sections 3.1–3.4 describe PPO with simulated tactile inputs on an xArm7 and XHand, followed by behavior cloning and DAgger using robot proprioception, tracked object poses and known meshes."
