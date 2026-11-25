@@ -113,3 +113,37 @@
     embodiment: [single_arm, bimanual, mobile]
     data: [vision, simulation, force, language]
   reason: "Sections 2A and 4A–F describe closed-loop waypoint planning from language, RGB-D and robot proprioception, tested on simulated single-arm, dual-arm and mobile manipulation and three physical Franka arms."
+/posts/2026/11/champ-paper-notes/:
+  facets:
+    task: [locomotion, manipulation, long_horizon]
+    method: [vla, imitation]
+    embodiment: [humanoid, bimanual, dexterous_hand]
+    data: [vision, human_video, simulation, teleop, language]
+  reason: "Sections 3–4 train on human and robot motion and evaluate teleoperation-finetuned whole-body policies on the G1 with two Dex3 hands."
+/posts/2026/11/egostudy-paper-notes/:
+  facets:
+    embodiment: [bimanual, dexterous_hand, humanoid]
+    data: [vision, human_video, simulation, language]
+  reason: "Sections 3–4 use egocentric human recordings, physical XHand trajectories and a simulated GR1 humanoid. Closed-loop results come from the simulated GR1."
+/posts/2026/11/dexduet-paper-notes/:
+  facets:
+    method: [rl, retargeting]
+    embodiment: [bimanual, dexterous_hand, humanoid]
+    data: [human_video, simulation]
+  reason: "Sections 3–4 retarget human motion and train contact-preserving per-hand policies using simulation. Section 4.3 includes human demonstrations reconstructed from video for G1 replay."
+/posts/2026/11/hive-bench-paper-notes/:
+  facets:
+    embodiment: [bimanual, dexterous_hand, humanoid]
+  reason: "Appendix A gives the GR1 humanoid two articulated six-coordinate hands in simulation. The physical ARX A7 uses grippers."
+/posts/2026/11/dexlatentworld-paper-notes/:
+  facets:
+    task: [grasp, manipulation]
+    method: [world_model, planning, representation, retargeting]
+    embodiment: [dexterous_hand, single_arm]
+    data: [vision, human_video, simulation]
+  reason: "Sections 3–5 learn motion latents from retargeted H2O sequences, test planning in simulation and deploy a UR7e with a Sharpa Wave hand."
+/posts/2026/11/real2worlds2real-paper-notes/:
+  facets:
+    task: [manipulation, assembly]
+    data: [vision, simulation]
+  reason: "Sections 3–4 reconstruct worlds from visual inputs and evaluate peg and gear insertion on a physical Dexmate robot with Sharpa hands."
