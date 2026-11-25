@@ -1,0 +1,98 @@
+- name: Adroit
+  year: 2018
+  engine: MuJoCo
+  hand: Shadow Hand
+  tags: [单手操作]
+  focus: 掌内重定向与工具使用
+  task: 解锁并推开带闩的门、用锤子钉钉、在指间调整笔的朝向，或把球移到指定位置。四个环境各有独立的动作空间和目标。
+  evaluation: 按任务读取环境的成功标志。例如 Hammer 要把钉子推进到离目标不足 1 厘米处。稠密奖励还会奖励抓锤和提锤，累计回报与成功率应分别记录。
+  experiment: 在 Hammer 上让 agent 根据训练回放修改奖励函数。固定训练步数和初始钉板高度的测试分布，以最终钉入成功率比较各版奖励。
+  url: https://robotics.farama.org/envs/adroit_hand/
+
+- name: DexArt
+  year: 2023
+  engine: SAPIEN
+  hand: xArm6 + Allegro Hand
+  tags: [单手操作, 泛化]
+  focus: 操作未见过的关节物体
+  task: 用四指手转动水龙头、提起带活动把手的桶、打开笔记本或马桶盖。同一类物体的把手形状、尺寸和关节位置各有差异。
+  evaluation: 82 个实例分为 50 个已见和 32 个未见实例。按任务分别比较两组成功率，例如开盖看盖板转角；原论文还在笔记本任务上改变相机视角。
+  experiment: 让 agent 根据点云选择笔记本盖板的接触位置，在相同的未见实例上，对照固定接触位置的方案，检查哪一种更常达到开盖角度。
+  url: https://www.chenbao.tech/dexart/
+
+- name: Bi-DexHands
+  year: 2022
+  engine: Isaac Gym
+  hand: 双 Shadow Hand
+  tags: [双手协作, 泛化]
+  focus: 双手分工与技能迁移
+  task: 两只五指手配合开瓶、传接物体、抬锅、堆叠积木。拧瓶盖时，一只手稳定容器，另一只手要维持指尖接触并施加旋转。
+  evaluation: 项目提供按任务记录的强化学习回报，以及单任务、多任务和少样本设置。比较算法时需对齐任务、交互步数和训练设置。
+  experiment: 为双手交接增加一个可读取接触状态的协调 agent。与按固定时间松手的方案共用底层控制器，统计交接成功率和提前松手造成的掉落次数。
+  url: https://github.com/PKU-MARL/DexterousHands
+
+- name: MyoSuite · MyoChallenge
+  year: 2022
+  engine: MuJoCo
+  hand: myoHand 肌骨手
+  tags: [单手操作, 肌肉驱动, 泛化]
+  focus: 肌肉驱动的掌内操作
+  task: 用肌肉激励控制手指，将骰子转到指定朝向，或让两颗保定球在掌心绕转。两项任务都需要在改变接触点时托住物体。
+  evaluation: 保定球第一阶段要求两球换位；第二阶段扩大目标变化范围并改变球的尺寸与摩擦。比较时分别报告各阶段表现，同时检查转动进度和掉球情况。
+  experiment: 让 agent 根据训练回放挑选下一批球径和摩擦条件。固定交互次数，与均匀采样训练对照，再在独立的第二阶段测试条件下统计掉球率。
+  url: https://myosuite.readthedocs.io/en/stable/suite.html
+
+- name: DexJoCo
+  year: 2026
+  engine: MuJoCo
+  hand: Franka Panda + Allegro Hand
+  tags: [单手操作, 双手协作, 泛化]
+  focus: 工具使用与有序执行
+  task: 11 项单臂或双臂任务包括用喷壶浇水、折眼镜、双手装配和操作微波炉。微波炉任务要求开门、放入食物、关门，再按启动键。
+  evaluation: 环境通过步骤顺序、物体位姿、关节状态及接触判定目标是否达成。项目另提供 1,100 条人工示范，可用于比较模仿学习和视觉语言动作策略。
+  experiment: 在微波炉任务中，让 agent 每步调用同一组技能，依据相机图像判断是否重新关门。对照只规划一次的版本，记录整段成功率与误按启动键次数。
+  url: https://dexjoco.github.io/#dexjoco
+
+- name: Bench2Dex
+  year: 2026
+  engine: Isaac Lab
+  hand: 12 款灵巧手
+  tags: [双手协作, 触觉, 泛化]
+  focus: 指尖触觉与长程双手操作
+  task: 26 项双手任务涉及使用工具和操作关节物体。例如，双手分步打开微波炉、把面包装入碗中、把碗送入炉内，再关门。指尖可输出模拟视触觉图像。
+  evaluation: 分别计量已按依赖顺序到达的阶段和稳定成功率。最终条件默认需保持 0.5 秒。作者另设几何扰动、外观扰动及二者同时变化的测试。
+  experiment: 用相同的视觉输入和底层控制器，分别启用和关闭由指尖触觉触发的重新抓取。比较几何扰动下送碗阶段的完成率与整段稳定成功率。
+  url: https://bench2dex.github.io/
+
+- name: DexSuite
+  year: 2026
+  engine: Genesis
+  hand: Allegro Hand / Sharpa Hand 等
+  tags: [单手操作, 泛化]
+  focus: 同一任务下比较不同末端
+  task: 框架提供 30 个任务。正式评测包括夹爪与 Allegro 手共用的抓放、堆叠等任务，也包括用 Allegro 手挂杯子、用 Sharpa 手把面包插入烤面包机。
+  evaluation: 官方对 16 个任务与末端组合分别报告成功率，每个随机种子评测 50 回合，共 3 个种子。共用任务沿用相同的初始化和成功判据。
+  experiment: 在抓放任务中保留同一个高层 agent，为夹爪和 Allegro 手各配一个抓取控制器。用成对的物体初始位姿测试，记录错误出现在抓起还是放下阶段。
+  url: https://dexsuiteorg.github.io/
+
+- name: HandsOn
+  year: 2026
+  engine: Isaac Sim / PhysX
+  hand: ROKAE AR5-08 + Wuji Hand
+  tags: [单手操作, 双手协作, 泛化]
+  focus: 指令迁移与动作接口
+  task: Core-50 包含有示范的 50 项任务，如双手抬箱、打开笔记本。Transfer-16 留出 16 项任务，考察新物体关系、技能组合和柔性物体操作。
+  evaluation: 两组分别报告成功率，利用各任务的阶段判据追踪已达成又丢失的目标。论文中的所有结果均使用第一代 Wuji Hand 与 PhysX。
+  experiment: 固定相机输入、模型调用次数与仿真时长，让同一 agent 分别输出手掌和手指目标，或调用预训练抓取技能；比较两组任务上的成功率与首次失败阶段。
+  url: https://arxiv.org/html/2610.26765v1
+
+- name: DexHandExam
+  year: 2026
+  engine: MuJoCo
+  hand: Sharpa Wave / Wuji Hand
+  tags: [单手操作, 双手协作]
+  focus: 编程 agent 的接触控制
+  task: Embodied First Exam 中的 30 项灵巧手任务，从掌内翻转方块、调整握笔到翻书、开罐和组装汉堡。物体靠接触力与重力运动。
+  evaluation: 标准设置仅提供传感器观测，特权设置开放仿真状态和重置。物体掉落会终止回合；须依序完成各阶段，并满足末端保持或释放条件才计成功。
+  experiment: 让同一编程 agent 在两种设置下开罐。分别记录能否稳住瓶身、旋开瓶盖并保持最终状态，再比较完整成功率和特权模式的重置次数。
+  url: https://www.embodied-first-exam.ai/suite/dexhand/
