@@ -2,9 +2,11 @@
 layout: null
 title: Agentic Dexterity
 permalink: /apps/agentic-dexterity/
-excerpt: 灵巧手仿真基准与 Agent 工作流。
+excerpt: 灵巧手仿真基准、带位姿与接触标注的数据集，以及 Agent 工作流。
 ---
 {% assign benchmarks = site.data.agentic_dexterity_benchmarks %}
+{% assign datasets = site.data.agentic_dexterity_datasets %}
+{% assign papers = site.data.agentic_dexterity_papers %}
 {% assign methods = site.data.agentic_dexterity_methods %}
 <!doctype html>
 <html lang="zh-CN">
@@ -20,7 +22,7 @@ excerpt: 灵巧手仿真基准与 Agent 工作流。
   <a class="skip" href="#benchmarks">跳到仿真基准</a>
   <header class="mast wrap">
     <a class="home" href="../index.html"><span aria-hidden="true" class="app-icon">⠿</span> Apps</a>
-    <nav aria-label="页内导航"><a href="#benchmarks">仿真基准</a><a href="#methods">Agent 工作流</a></nav>
+    <a class="papers-jump" href="#papers">论文对照 · {{ papers.size }} 篇</a>
   </header>
   <main class="wrap">
     <section class="hero" aria-labelledby="title">
@@ -28,30 +30,25 @@ excerpt: 灵巧手仿真基准与 Agent 工作流。
       <div class="hero-copy">
         <p class="eyebrow">灵巧手仿真研究指南</p>
         <h1 id="title">Agentic <em>Dexterity</em></h1>
-        <p class="lead">从手指转动一支笔，到双手配合打开容器。<br>对照仿真任务的成功条件，探索 Agent 如何设计、训练和检验灵巧操作。</p>
-      </div>
-      <div class="hero-base">
-        <div class="counts"><a href="#benchmarks"><b>{{ benchmarks.size }}</b> 组仿真基准</a><a href="#methods"><b>{{ methods.size }}</b> 种 Agent 工作流</a></div>
-        <a class="credit" href="https://projectsuperdex.com/">手部插图 · Project SuperDex</a>
+        <p class="lead">对照操作任务、标注数据与 Agent 使用仿真反馈的方法。</p>
       </div>
     </section>
 
-    <section class="section" id="benchmarks">
-      <header class="section-head"><div><p class="kicker" lang="en">Benchmark atlas</p><h2>灵巧手仿真基准</h2></div>
-        <p>按研究问题筛选。展开条目，可查看代表任务、评分方法，以及可以在该环境中尝试的 Agent 实验。</p>
-      </header>
-      <div class="toolbar" hidden data-interactive>
-        <div class="filters" role="group" aria-label="按研究方向筛选">
-          {% assign filters = "全部,单手操作,双手协作,泛化,触觉,肌肉驱动" | split: "," %}
-          {% for filter in filters %}<button type="button" data-filter="{{ filter }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ filter }}</button>{% endfor %}
-        </div>
-        <span id="result-count" role="status">{{ benchmarks.size }} 项</span>
-      </div>
+    <nav class="switcher" aria-label="选择栏目"><a href="#benchmarks">仿真</a><a href="#datasets">数据</a><a href="#methods">Agent</a></nav>
+    <div class="board">
+    <section class="lane" id="benchmarks" aria-labelledby="bench-heading">
+      <header class="lane-head"><h2 id="bench-heading">仿真</h2><span role="status">{{ benchmarks.size }} 项</span></header>
+      <p class="intro">各个基准测什么，怎样算成功？</p>
+      <label class="filter" hidden>研究方向
+        <select><option value="">全部方向</option>
+          {% assign filters = "单手操作,双手协作,泛化,触觉,肌肉驱动,任务验收" | split: "," %}
+          {% for filter in filters %}<option>{{ filter }}</option>{% endfor %}
+        </select>
+      </label>
       <div class="atlas">
-        <div class="columns row-head" aria-hidden="true"><span>基准 / 年份</span><span>仿真平台</span><span>评测重点</span><span></span></div>
         {% for bench in benchmarks %}
-        <details class="benchmark" data-tags="{{ bench.tags | join: ' ' }}"{% if forloop.first %} open{% endif %}>
-          <summary class="columns"><span class="entry"><strong>{{ bench.name }}</strong><small>{{ bench.year }}</small></span><span class="engine">{{ bench.engine }}</span><span class="focus">{{ bench.focus }}</span><span class="expand" aria-hidden="true"></span></summary>
+        <details class="benchmark" data-tags="{{ bench.tags | join: ' ' }}">
+          <summary><strong>{{ bench.name }}</strong><span class="focus">{{ bench.focus }}</span><small>{{ bench.engine }} · {{ bench.year }}</small><span class="expand" aria-hidden="true"></span></summary>
           <div class="bench-body">
             <div class="bench-meta"><span>{{ bench.hand }}</span>{% for tag in bench.tags %}<small>{{ tag }}</small>{% endfor %}</div>
             <div class="facts">
@@ -66,23 +63,76 @@ excerpt: 灵巧手仿真基准与 Agent 工作流。
       </div>
     </section>
 
-    <section class="section" id="methods">
-      <header class="section-head"><div><p class="kicker" lang="en">Agent workflows</p><h2>Agent 在仿真里做什么？</h2></div><p>同样是“用 Agent”，写奖励函数、修改控制代价和逐步发出动作指令，用到的反馈各不相同。</p></header>
-      <div class="workbench">
-        <div class="method-list" role="group" aria-label="选择工作流" hidden data-interactive>
-          {% for method in methods %}<button type="button" aria-controls="method-{{ method.id }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" data-method="{{ method.id }}"><strong>{{ method.name }}</strong><span>{{ method.phase }}</span></button>{% endfor %}
-        </div>
-        <div class="method-pages">
-          {% for method in methods %}
-          <article class="method" id="method-{{ method.id }}">
-            <p class="method-name">{{ method.name }}</p><h3>{{ method.title }}</h3>
-            <dl class="loop"><dt>输入</dt><dd>{{ method.input }}</dd><dt>执行</dt><dd>{{ method.action }}</dd><dt>反馈</dt><dd>{{ method.feedback }}</dd></dl>
-            <p class="evidence"><strong>论文验证了什么</strong>{{ method.evidence }}</p>
-            <a class="source" href="{{ method.url }}">{{ method.name }} · 原始资料</a>
-          </article>
-          {% endfor %}
-        </div>
+    <section class="lane" id="datasets" aria-labelledby="data-heading">
+      <header class="lane-head"><h2 id="data-heading">数据</h2><span role="status">{{ datasets.size }} 项</span></header>
+      <p class="intro">标注从哪里来，精度如何验证？</p>
+      <label class="filter" hidden>数据来源
+        <select><option value="">全部来源</option>
+          {% assign categories = datasets | map: 'category' | uniq %}
+          {% for category in categories %}<option>{{ category }}</option>{% endfor %}
+        </select>
+      </label>
+      <div class="atlas">
+        {% for dataset in datasets %}
+        <details class="dataset" data-tags="{{ dataset.category }}">
+          <summary><strong>{{ dataset.name }}</strong><span class="focus">{{ dataset.labels }}</span><small>{{ dataset.category }}</small><span class="expand" aria-hidden="true"></span></summary>
+          <div class="bench-body">
+            <div class="facts">
+              <div><h3>数据如何生成</h3><p>{{ dataset.scope }}。{{ dataset.capture }}</p></div>
+              <div><h3>标注与精度依据</h3><p>{{ dataset.quality }}</p></div>
+              <div><h3>可以怎样使用</h3><p>{{ dataset.use }}</p></div>
+            </div>
+            <div class="dataset-links"><a class="source" href="{{ dataset.source }}">{{ dataset.name }} · 数据入口</a><a class="source" href="{{ dataset.reference }}">{{ dataset.reference_label }}</a></div>
+          </div>
+        </details>
+        {% endfor %}
       </div>
+    </section>
+
+    <section class="lane" id="methods" aria-labelledby="agent-heading">
+      <header class="lane-head"><h2 id="agent-heading">Agent</h2><span role="status">{{ methods.size }} 项</span></header>
+      <p class="intro">Agent 在哪一步介入，靠什么反馈改进？</p>
+      <label class="filter" hidden>介入阶段
+        <select><option value="">全部阶段</option>
+          {% assign phases = methods | map: 'phase' | uniq %}
+          {% for phase in phases %}<option>{{ phase }}</option>{% endfor %}
+        </select>
+      </label>
+      <div class="atlas">
+        {% for method in methods %}
+        <details class="method" id="method-{{ method.id }}" data-tags="{{ method.phase }}">
+          <summary><strong>{{ method.name }}</strong><span class="focus">{{ method.title }}</span><small>{{ method.phase }}</small><span class="expand" aria-hidden="true"></span></summary>
+          <div class="bench-body">
+            <div class="facts"><div><h3>输入</h3><p>{{ method.input }}</p></div><div><h3>执行</h3><p>{{ method.action }}</p></div><div><h3>反馈</h3><p>{{ method.feedback }}</p></div><div><h3>论文验证了什么</h3><p>{{ method.evidence }}</p></div></div>
+            <a class="source" href="{{ method.url }}">{{ method.name }} · 原始资料</a>
+          </div>
+        </details>
+        {% endfor %}
+      </div>
+    </section>
+    </div>
+
+    <section class="papers" id="papers" aria-labelledby="papers-heading">
+      <h2 id="papers-heading">Agent 如何构建机器人仿真？</h2>
+      <p>从创建场景到编写验收器，下面按论文实际产出梳理 {{ papers.size }} 项工作。展开条目，可以查看方法以及在 RevoBench 中可尝试的做法。</p>
+      <p class="comparison-note">RevoBench 的 2026 年 11 月 6 日快照列出 175 项任务，其中 22 项通过物理与数据验收。任务成功后，还需单独复核轨迹连续性、起止姿态和抓持部位。<a class="source" href="https://davidlxu.github.io/RevoBench-Web/">查看任务与验收说明</a></p>
+      <div class="paper-tools" hidden>
+        <label>按用途筛选 <select id="paper-topic"><option value="">全部用途</option>{% assign topics = papers | map: 'topic' | uniq %}{% for topic in topics %}<option>{{ topic }}</option>{% endfor %}</select></label>
+        <label>搜索论文 <input id="paper-query" type="search" placeholder="名称、编号或关键词"></label>
+        <span id="paper-count" role="status">{{ papers.size }} 篇</span>
+      </div>
+      <div class="paper-list">
+        {% for paper in papers %}
+        <details class="paper" data-topic="{{ paper.topic }}">
+          <summary><strong>{{ paper.name | escape }}</strong><span>{{ paper.scope }}</span><small>{{ paper.topic }} · 20{{ paper.id | slice: 0, 2 }}-{{ paper.id | slice: 2, 2 }}</small><span class="expand" aria-hidden="true"></span></summary>
+          <div class="paper-body">
+            <p><b>模型与分工</b>{{ paper.agent }}</p><p><b>论文方法</b>{{ paper.work }}</p><p><b>对 RevoBench 的启发</b>{{ paper.transfer }}</p>
+            <a class="source" href="https://arxiv.org/abs/{{ paper.id }}" lang="en">{{ paper.title | escape }} · arXiv {{ paper.id }}</a>
+          </div>
+        </details>
+        {% endfor %}
+      </div>
+      <p id="paper-empty" hidden>没有匹配的论文。请更换关键词或选择「全部用途」。</p>
     </section>
 
     <footer><span>Agentic Dexterity</span><span>手部插图经配色与裁切 · <a href="https://projectsuperdex.com/">Project SuperDex</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span></footer>

@@ -1,0 +1,65 @@
+- name: DexX-Force
+  category: 仿真生成
+  scope: FR3 + Sharpa 右手 · 抓取与提举
+  labels: 五指接触力、物体位姿、执行动作
+  capture: DEX-X 是生成策略的方法。公开的 DexX-Force 数据集使用 Dexonomy 和 DexYCB 提供的参考，让策略在仿真中完成 10,343 次抓取与提举。每条轨迹对齐了 29 个关节的状态、执行动作和物体位姿。
+  quality: 仿真以 120 Hz 推进，约以 30 Hz 保存轨迹。每个状态记录五指对目标物体的三维力（N），另存包含桌面等其他碰撞体的合力。接触位置附有有效性掩码。力值描述仿真中的接触，实物上的力误差需另行测量。
+  use: 要找出提举时哪些手指在承重，可以读取 tactile_object_force_w，再对齐物体高度和动作时间戳。接触位置只取掩码有效的帧。
+  source: https://huggingface.co/datasets/Ruoqu/DexX-Force
+  reference: https://huggingface.co/datasets/Ruoqu/DexX-Force/blob/main/docs/FORMAT.md
+  reference_label: 标注字段与单位
+
+- name: DexGraspNet
+  category: 仿真生成
+  scope: Shadow Hand · 静态抓姿
+  labels: 手腕位姿、手指关节、物体尺度
+  capture: 从 5,355 个物体模型出发，优化 Shadow Hand 的手腕位姿和关节角，得到约 132 万个通过仿真验证的抓姿。样本单位是一次抓取的构型。
+  quality: 每个候选抓姿分别在六个轴向重力条件下运行 100 个仿真步，筛除失去接触或最大穿透深度超过 1 毫米的构型。1 毫米是几何筛选阈值。
+  use: 可给定同一物体采样多种手型，比较哪些初始抓姿适合后续提举。完整的接近、闭手与提举动作需要另外生成。
+  source: https://pku-epic.github.io/DexGraspNet/
+  reference: https://arxiv.org/abs/2210.02697
+  reference_label: 验证方法
+
+- name: HRDexDB
+  category: 真机抓取
+  scope: Inspire 与 Allegro 多指手子集
+  labels: 机器人状态、物体 6D 位姿、分区接触
+  capture: 取多指机器人实际抓取物体的序列，将同步多视角观测、机器人状态与物体跟踪结果对齐。数据索引标出每次抓取的结果、可用模态，以及经过核验的人手配对记录。
+  quality: 论文将 Inspire 与 Allegro 的手表面划为 60 个区域，距重建物面不超过 3 毫米即标为接触。这个距离是几何判据；相应手型的原始触觉传感器读数另存。
+  use: 要训练遮挡下的接触识别，可用区域标签监督图像模型。跨手比较时，按索引选有对应数据的回合，并配套使用同一版本的物体网格和位姿。
+  source: https://huggingface.co/datasets/HRDexDB/HRDexDB
+  reference: https://arxiv.org/html/2604.14944v3
+  reference_label: 接触标注方法
+
+- name: TactiDex
+  category: 人手动捕与接触
+  scope: 单手与双手 · 49 个物体
+  labels: 全手压力图、手与物体位姿、任务阶段
+  capture: 内层手套记录手指运动，外层手套测量全手压力，光学动捕跟踪手与物体。700 多条操作序列附有同步信号、语言描述与任务阶段，可按阶段查看压力如何转移。
+  quality: 动捕系统用标定棒校准，论文报告平均射线误差为 0.2 毫米。这个数值描述相机系统的标定。压力来自外层手套，向仿真法向力的换算另用测力计标定。
+  use: 适合比较双手交接前后掌面和指尖的受压区域，或用阶段标签对齐不同示范中的握紧与松手时刻。
+  source: https://tactidex.github.io/
+  reference: https://arxiv.org/html/2607.09190v1
+  reference_label: 采集与标定
+
+- name: GRAB
+  category: 人手动捕与接触
+  scope: 10 位参与者 · 51 个物体
+  labels: 手指与全身姿态、物体轨迹、表面接触
+  capture: 54 台 Vicon 相机以 120 Hz 跟踪反光标记，双手手指共布置 36 个标记。将人体模型和已知物体网格拟合到清理后的动捕轨迹，得到连续的抓取、递交和使用动作。
+  quality: 观测量是标记点的位置，姿态来自模型拟合，接触区域再由人体与物体网格的几何关系求得。接触标签可定位触碰部位，接触力大小不在标注范围内。
+  use: 可提取手指绕过物体、形成抓握和释放时的姿态序列，作为机器人手重定向的参考动作。
+  source: https://grab.is.tue.mpg.de/
+  reference: https://arxiv.org/abs/2008.11200
+  reference_label: 动捕与几何拟合
+
+- name: ContactPose
+  category: 人手动捕与接触
+  scope: 2,306 个抓姿 · 25 个物体
+  labels: 物面接触图、三维手关节、抓取意图
+  capture: 热像仪读取手离开后残留在物体上的热印，并投影到物体网格。每个静态抓姿还关联三维手关节、物体姿态，以及使用或递交物体的意图。
+  quality: 作者用平面压力传感器独立核对热印。在热图阈值为 0.4 时，两者的二值接触判定一致率为 95.4%。热印给出一次抓握的接触区域，无法据此恢复逐帧指力。
+  use: 可比较同一个杯子在自用与递交时，手掌和手指分别覆盖哪些表面区域。
+  source: https://github.com/facebookresearch/ContactPose
+  reference: https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123580358-supp.pdf
+  reference_label: 接触精度验证
