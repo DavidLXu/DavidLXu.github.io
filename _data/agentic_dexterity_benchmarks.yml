@@ -1,3 +1,25 @@
+- name: RevoBench
+  year: 2026
+  engine: 桌面操作任务集
+  hand: RevoTron 双臂灵巧手
+  tags: [双手协作, 任务验收]
+  focus: 参考轨迹能否完成任务，动作与接触是否合理
+  task: 调味瓶归位、双手抬锅、折叠眼镜等日常操作。Agent 根据数字资产搭建任务，编写示范并回放检查。
+  evaluation: 2026-11-06 展示快照有 175 项任务，其中 22 项通过物理与数据验收。动作质量另查四点：是否从默认姿态出发并回位、轨迹是否连续、姿态是否自然、是否用有效内侧接触抓持。
+  experiment: 选一条已经把物体放到目标位置的轨迹，复查执行视频和接触记录，标出手臂绕行或拇指背部代偿发生的帧。
+  url: https://davidlxu.github.io/RevoBench-Web/
+
+- name: EmbodiedSWE-Bench
+  year: 2026
+  engine: Isaac Lab · PhysX / Newton
+  hand: 单臂夹爪、双臂夹爪与 G1 三指手
+  tags: [双手协作, 泛化, 任务验收]
+  focus: 编程 Agent 能否解出长程任务，并迁移到新初态
+  task: 开发者主导设计场景与参考解，Agent 获得指令和仿真接口，编写可执行的求解程序。组装桌子的评分能区分已装好的桌腿与只旋入一部分的桌腿。
+  evaluation: Agent 在固定种子上开发，在其他初态上评分。成功判据和分阶段得分由仿真状态计算。配套的 EmbodiedSWE-Gen 将已验证的解变成多样化示范。
+  experiment: 给两组 Agent 同一组测试初态，仅让其中一组参考相似任务的已验证程序，再比较阶段得分和完成时间。
+  url: https://arxiv.org/html/2609.27308v2
+
 - name: Adroit
   year: 2018
   engine: MuJoCo

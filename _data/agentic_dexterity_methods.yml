@@ -1,3 +1,23 @@
+- id: gym-anything
+  name: Gym-Anything for Robotics
+  title: 让编程 Agent 创建环境，再用独立审计检验任务
+  phase: 环境构建与验收
+  input: 从产业活动中选出的物理工作，以及对仿真质量和任务有效性的书面要求。
+  action: 创建者编写物理场景和强化学习环境。审计者根据约定检查实现，尝试找出物理行为、奖励或任务目标的漏洞。
+  feedback: 将审计发现交还创建者修改，再重新检查模拟行为与任务可解性。
+  evidence: 系统产出 RoboWorld：25 组仿真，分为 175 个训练环境和 25 个测试环境。这个规模统计覆盖多个行业与物理现象。
+  url: https://arxiv.org/abs/2610.40565
+
+- id: robouniverse
+  name: RoboUniverse-10K
+  title: 从真实视频构建带独立评分器的物理环境
+  phase: 环境构建与验收
+  input: 真实操作视频，以及待重建的任务目标与场景。
+  action: Real2Sim 管线将操作转写为可执行、可重置的任务，生成环境和验证逻辑，再由质量审核环节复核。
+  feedback: 执行 Agent 在隔离环境中操作；评分逻辑和特权状态对它隐藏。专家复核留出任务，用于检查模型对新任务的零样本表现。
+  evidence: 作者发布 10,807 个环境，并单列 500 项 RoboUniverse-Verified 任务。模型交互记录的单位是多轮轨迹，和逐帧标注指力的机器人数据有不同用途。
+  url: https://arxiv.org/abs/2611.31002
+
 - id: gendexhand
   name: GenDexHand
   title: 从物体模型搭建可练习的场景

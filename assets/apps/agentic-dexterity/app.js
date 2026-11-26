@@ -1,34 +1,59 @@
 (() => {
-  "use strict";
+  const lanes = [...document.querySelectorAll(".lane")];
+  const links = document.querySelectorAll(".switcher a");
 
-  function selectButton(buttons, selected) {
-    for (const button of buttons) {
-      button.setAttribute("aria-pressed", String(button === selected));
+  for (const lane of lanes) {
+    const label = lane.querySelector(".filter");
+    const select = label.querySelector("select");
+    const entries = lane.querySelectorAll("details");
+    const count = lane.querySelector('[role="status"]');
+
+    function filterEntries() {
+      let visible = 0;
+      for (const entry of entries) {
+        entry.hidden = Boolean(select.value) && !entry.dataset.tags.split(" ").includes(select.value);
+        if (!entry.hidden) visible++;
+      }
+      count.textContent = visible + " 项";
     }
+    select.addEventListener("change", filterEntries);
+    filterEntries();
+    label.hidden = false;
   }
 
-  const benchmarks = [...document.querySelectorAll(".benchmark")];
-  const filters = document.querySelectorAll("[data-filter]");
-  for (const button of filters) {
-    button.addEventListener("click", () => {
-      selectButton(filters, button);
-      const tag = button.dataset.filter;
-      const matches = benchmarks.filter(item => tag === "全部" || item.dataset.tags.split(" ").includes(tag));
-      for (const item of benchmarks) item.hidden = !matches.includes(item);
-      if (matches.length && !matches.some(item => item.open)) matches[0].open = true;
-      document.getElementById("result-count").textContent = matches.length + " 项";
-    });
-  }
-
-  const methods = document.querySelectorAll("[data-method]");
-  function showMethod(button) {
-    selectButton(methods, button);
-    for (const article of document.querySelectorAll(".method")) {
-      article.hidden = article.id !== button.getAttribute("aria-controls");
+  const paperTopic = document.getElementById("paper-topic");
+  const paperQuery = document.getElementById("paper-query");
+  const papers = [...document.querySelectorAll(".paper")].map(element => ({
+    element,
+    text: element.textContent.toLowerCase()
+  }));
+  function filterPapers() {
+    const query = paperQuery.value.trim().toLowerCase();
+    let count = 0;
+    for (const { element, text } of papers) {
+      const matches = (!paperTopic.value || element.dataset.topic === paperTopic.value) && text.includes(query);
+      element.hidden = !matches;
+      if (matches) count++;
     }
+    document.getElementById("paper-count").textContent = count + " 篇";
+    document.getElementById("paper-empty").hidden = count > 0;
   }
-  for (const button of methods) button.addEventListener("click", () => showMethod(button));
-  showMethod(methods[0]);
+  paperQuery.addEventListener("input", filterPapers);
+  paperTopic.addEventListener("change", filterPapers);
+  document.querySelector(".paper-tools").hidden = false;
+  filterPapers();
 
-  for (const control of document.querySelectorAll("[data-interactive]")) control.hidden = false;
+  function selectLane() {
+    const target = document.getElementById(location.hash.slice(1));
+    const selected = target?.closest(".lane") || lanes[0];
+    for (const lane of lanes) lane.classList.toggle("selected", lane === selected);
+    for (const link of links) {
+      if (link.hash === "#" + selected.id) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    }
+    if (target?.matches("details")) target.open = true;
+  }
+  selectLane();
+  document.documentElement.classList.add("has-js");
+  window.addEventListener("hashchange", selectLane);
 })();
