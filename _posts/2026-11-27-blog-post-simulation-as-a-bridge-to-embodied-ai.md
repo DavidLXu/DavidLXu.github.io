@@ -1,8 +1,8 @@
 ---
-title: "Could Simulation Connect Foundation Models and Embodied AI?"
+title: "Simulation May Be the Missing Piece Connecting General-Purpose Models and Embodied AI"
 date: 2026-11-27
 permalink: /posts/2026/11/simulation-as-a-bridge-to-embodied-ai/
-excerpt: "I think simulation can turn a foundation model’s suggestions into something a robot can learn from, because we can try an action and see what happens after the gripper lets go."
+excerpt: "I think simulation could break the data bottleneck in embodied AI by giving general-purpose models a place to generate and evaluate training data offline."
 tags:
   - Personal Thoughts
   - Embodied Intelligence
@@ -15,33 +15,39 @@ tags:
 
 This post supports **English / 中文** switching via the site language toggle in the top navigation.
 
-Ask a language model how to put a cup on a table and it can give a sensible piece of advice: lower the cup until the base touches the surface, then open the gripper. What could a robot learn from that sentence? For imitation learning, I'd want a record of what the robot saw and how it moved. For reinforcement learning, I'd want to know what happened to the cup. The sentence gives me somewhere to start, but I still need a way to get both kinds of data.
+One question has been on my mind lately. Why is it still so hard to put data from general-purpose models to work in embodied AI and get data flowing between the two?
 
-This is the gap I keep coming back to. We can teach a robot a skill on one bench and still have quite a job getting it to work on the next. Meanwhile, a general-purpose model can draw on experience across many tasks, much of it expressed in language. **I think simulation could connect the two.** It gives us somewhere to try a model's suggestion and keep a record of what follows.
+In embodied AI, much of the work on reinforcement learning and imitation learning still happens within small circles. Neither approach has achieved the kind of generalization we see in language models. Yet I think the way to connect these fields is already in front of us: **simulation**.
 
-## A sandbox for the robot
+Step back from robotics for a moment and look at how general-purpose models developed. The same underlying logic runs through both.
 
-Consider how a coding model can learn in a sandbox. It calls a tool, runs a candidate program, and gets a test result. A training system can use that result as a reward and give the model another attempt. Someone has to write a test that captures the intended behavior, but once it's written, nobody has to read every program to find out whether it passed.
+**1. Sandboxes and rewards: how models already learn by interacting with an environment**
 
-A simulator could do much the same for the cup. Give the model a few actions the robot can actually execute, such as lowering the gripper and opening it. Let it choose when to release. We can record the observations and actions, wait for the cup to settle, and check whether it's upright on the table. Now two plans that sound equally reasonable on paper can earn different rewards. We can also move the table a little higher and see which plan still works.
+General-purpose models rely heavily on reinforcement learning to develop skills such as calling tools and executing code. The ingredients are simple: **an isolated sandbox, an environment the model can interact with, and a reward we can define**. With enough trial and error, we can train the particular skill we want to improve.
 
-## What the model can do offline
+Carry that logic over to the physical world and **a simulator becomes the robot’s code sandbox**. A model can “call” its body much as it calls a tool, and learn to interact with the physical world through measurable rewards in simulation.
 
-One way we've been getting useful training data is to ask a model for examples, look through what it produces, and ask again with a more precise constraint. A good example late in the batch tells me something about the model: it could produce that answer, even when its first attempt gave me little reason to expect it. It reminds me of prompt engineering around GPT-3.5, when a surprising amount of human work went into finding the wording that brought out a capability.
+**2. Where does the data come from? Models can already generate it offline**
 
-For the cup, I'd spend that effort offline. A model could propose release timings, or suggest a starting condition we had overlooked. We could run those trials before the physical robot ever touches a cup. Successful trajectories give an imitation learner demonstrations. Failed attempts and their rewards can also inform reinforcement learning. I expect stronger models to need less coaxing to propose worthwhile trials. What counts as worthwhile will still depend on the task.
+Many people see a shortage of data as the bottleneck in embodied AI. Consider what today’s models can already do, though. They can generate high-quality data themselves.
 
-## Why judging can be easier than acting
+One approach has worked well for us. We keep refining what we ask of a model until it **generates a good batch of data offline**, then use that batch for training. The model already has the ability to get it right. For now, it takes considerable human effort to guide it and set constraints. It reminds me of the GPT-3.5 days, when we racked our brains over **prompt engineering** to draw out what the model could do.
 
-Having a model propose examples and then help grade them sounds circular. I can hear when a pianist misses a note in a piece I know, though I couldn't play the passage myself. For some robot tasks there is a similar difference in difficulty. It takes a controller many coordinated actions to put the cup down. To judge the result, an evaluator may only need to look a moment after the fingers open.
+As the underlying models grow more capable, I expect them to need less and less of that painstaking prompting. They’ll be able to generate good data on their own.
 
-The timing matters. Freeze the scene at first contact and a cup about to tip can look like a success. A person who specifies “upright after release” has contributed information. The simulator contributes the outcome of the attempt. A model helping to score it now has evidence outside its own answer. Where the simulator exposes the cup's pose directly, a simple check can settle that part of the judgment.
+**3. Can a model pull itself up by its bootstraps? Being the referee is always easier than being the athlete**
 
-## Slow thinking, fast reactions
+When a model generates its own data and gives itself a score, an obvious objection comes up. How can it make any progress by grading its own work?
 
-Offline we can afford a hundred attempts at the same placement and spend time inspecting the failures. At the table the robot has one cup in its gripper and only so long to react. This is what I mean by using slow thinking to train fast reactions. A policy trained on those trials may learn when to open its fingers from what it senses in the moment. The search that took so long can pay off in a movement that takes a fraction of a second.
+The rules, constraints, and evaluation criteria that people set are themselves **an input from outside the model**. More importantly, **in any field, it’s always easier to be the referee than the athlete**. You can appreciate a piece of music or taste a dish long before you can play the piece or cook the dish yourself. Likewise, it’s much easier for a model to judge whether a robot finished a task and whether its movements made sense than to generate the low-level actions that control the robot.
 
-In coding, running a candidate and feeding the result back into training already feels like a natural way to work. In robotics, the part that still feels early to me is getting the whole process to carry across setups. I'd start with a modest test. Change the cup and the table height, then try the learned policy on a real arm. When the fingers open, does the cup stay up? That's the result that would convince me the model's offline work had bought the robot some experience it could use.
+This is a case of **training fast reactions through slow thinking, trading time for room to maneuver**. Working offline in simulation, a general-purpose model can take its time reasoning through possibilities, generating examples, and choosing which ones to keep. That slow work eventually becomes muscle memory for an embodied model acting in the physical world.
+
+**4. Where things stand and what could break the bottleneck**
+
+General-purpose models already benefit from a mature training loop that brings together sandboxes, offline data generation and filtering, and reinforcement learning. In embodied AI, that way of working is still in its infancy.
+
+I think we’ll finally break the data bottleneck in embodied AI when simulation lets us put general-purpose models’ ability to generate and judge data offline to work for robots.
 
 </div>
 
@@ -49,32 +55,40 @@ In coding, running a candidate and feeding the result back into training already
 
 本文支持通过网站顶部语言切换按钮在 **English / 中文** 间切换。
 
-问大模型怎么把杯子放到桌上，它大概能给出一句挺在理的建议：把杯子往下放，等杯底碰到桌面，再松开夹爪。可拿着这句话，我能教机器人什么？做模仿学习，我想要的是机器人一路看到了什么、手是怎么动的；做强化学习，我还得知道，松手以后杯子怎么样了。这句话给了我一个值得尝试的动作，离能拿来训练的数据还差一次动手。
+**打通通用大模型与具身智能，关键拼图或许就在“仿真”**
 
-这也是我最近一直在想的问题。同一个技能，在这张实验台上学会了，换张台子可能又得费一番功夫。另一边，通用大模型能调动许多任务里的经验，其中很大一部分是用语言表达的。这两边的数据到底怎么打通？**我觉得关键拼图可能就在仿真。** 有了仿真，模型提的建议就有地方试，试过以后还留得下记录。
+最近一直在思考一个问题：通用大模型和具身智能（Embodied AI）之间的数据，为什么至今没有真正有效地打通？
 
-## 给机器人一个沙箱
+在具身智能领域，无论是强化学习还是模仿学习，目前大多还是在各自的小圈子里打转，并没有像语言模型那样产生真正的泛化能力。但其实，打通这两者的核心路径已经摆在眼前了——**仿真环境（Simulation）**。
 
-想想代码模型在沙箱里怎么学。模型调用工具，把写好的程序跑一遍，测试给出结果。训练时可以把这个结果当作奖励，让模型再试。人得先想明白用什么测试来衡量这段程序，但测试一旦写好，就用不着每次都找个人读代码，判断这一版过没过关。
+如果我们跳出具身智能的局限，回头看看通用大模型的发展路径，就会发现这两套技术在底层逻辑上是完全相通的。
 
-把杯子放进仿真器，也可以这么做。先给模型几个机器人真能执行的动作，比如降低夹爪、张开手指，让它自己选什么时候松手。我们可以记下沿途的观测和动作，再等杯子停稳，看它还立不立在桌上。两套用文字讲起来都挺合理的方案，到这里就可能拿到不同的奖励。把桌面调高一点，还能再试试哪套方案管用。
+**1. 沙箱与 Reward：大模型早已跑通的“环境交互”**
 
-## 离线生成的数据从哪来
+现在的通用大模型在训练工具调用（Tool Use）、代码执行等能力时，非常依赖强化学习。这套机制的核心要素非常简单：**一个隔离的沙箱、一个交互环境、一套可定义的 Reward（奖励机制）**，通过海量试错去定向拔高模型的某项能力。
 
-我们现在生成训练数据，有个挺管用的办法：让模型先出一批例子，看过一遍，再把要求提得具体一点，让它接着出。有时翻到后面才看到一个好例子。只看第一次回答，我可能根本想不到它能做到这一步。这让我想起 GPT-3.5 那会儿做提示工程，人的功夫很大一部分花在琢磨怎么问，才能把模型已有的能力引出来。
+把这套逻辑平移到物理世界，**仿真器就是机器人的“代码沙箱”**。大模型完全可以在仿真环境里用同样的方式“调用身体”，通过可量化的 Reward 学会物理交互。
 
-放杯子这件事上，我愿意把这个功夫花在离线阶段。让模型提几种松手时机，或者想一个我们漏掉的初始条件。等真机碰到杯子之前，这些设想在仿真里就能先过一遍。成功的轨迹可以留下来做模仿学习的示范，失败的尝试连同奖励，也能用来做强化学习。我猜底座模型越强，提出值得一试的方案就越用不着人反复提示。至于什么算值得试，还得看我们想让机器人学会什么。
+**2. 数据从哪来？大模型本身就有“离线生成”的潜力**
 
-## 为什么有时裁判更好当
+很多人觉得具身智能卡在数据不够，但换个角度看，现在的大模型其实已经具备了生成高质量数据的能力。
 
-让模型出题，再让模型参与打分，听起来像“左脚踩右脚”。可一首熟悉的钢琴曲，别人弹错一个音，我可能听得出来；让我自己弹，那一小节我都弹不下来。有些机器人任务也有这个差别。要把杯子放稳，控制器得协调一连串动作。要判断这次放稳了没有，有时只消在松手之后多看一眼。
+我们现在用一种很有效的方法：通过不断地向模型提出要求，让它**离线生成**一批比较好的数据，再拿去训练。这说明模型本身是有能力做对的，只不过现阶段还需要人类投入大量的精力去引导和约束——就像当年 GPT-3.5 时期，大家需要绞尽脑汁做 **Prompt Engineering** 才能把模型的能力逼出来一样。
 
-这一眼什么时候看，很有讲究。画面停在杯底刚碰到桌面的瞬间，一个马上要倒的杯子也像是放好了。人把“松手以后还立得住”写进标准，就已经给了模型额外的信息。仿真器再给出这次动作的后果。到了这一步，参与评分的模型手里就有了独立于它自己回答的证据。如果仿真器能直接读出杯子的姿态，这一项判断交给一条简单的规则就够了。
+当然，随着底座能力的增强，未来一定会越来越不需要这种繁琐的 Prompt Engineering，模型自己就能把数据生成得很好。
 
-## 用慢思考训练快反应
+**3. 打破“左脚踩右脚”的质疑：裁判永远比运动员好当**
 
-离线时，同一个杯子可以放一百遍，失败的那几次还可以慢慢看。真到了桌前，夹爪里只有一个杯子，留给机器人反应的时间也有限。这才是我理解的“用慢思考训练快反应”。策略从这些轨迹里学到的，也许就是凭眼下的观测判断该不该松手。之前花时间搜索和筛选的价值，最后落在手指张开的那一瞬间。
+说到让模型自己生成数据、自己给自己打分，很多人会质疑：这不是“左脚踩右脚”，纯属原地踏步吗？
 
-写代码时，生成一个方案、跑一遍、拿结果回去训练，已经是很自然的做法。在具身智能里，我觉得还处在早期的，是怎么让这整套办法换个环境也管用。我想先看一个很小的检验：换个杯子，改一改桌面高度，把学到的策略放到真机上。手指张开以后，杯子还站得住吗？如果站得住，我才会相信，大模型在离线阶段做的那些功课，真给机器人换来了一点可以带走的经验。
+其实并不是。人在背后设定的规则、约束和评估标准，本身就是一种**外部注入的力**。更重要的是，**在任何领域，“做裁判”永远比“做运动员”简单**。就像欣赏一首曲子、品尝一道菜，门槛远低于亲自演奏和掌勺；让模型去做一个打分器，判断任务有没有完成、动作合不合理，也远比直接让它生成控制机器人的底层动作要容易得多。
+
+这就是典型的**用“慢思考”训练“快反应”，用时间去换取空间**。大模型在离线和仿真环境里慢慢推演、生成、筛选（慢思考），最终沉淀为具身模型在物理世界里的肌肉记忆（快反应）。
+
+**4. 现状与破局**
+
+目前，通用大模型把“沙箱环境 + 离线数据生成与筛选 + 强化学习”这套飞轮转得已经非常成熟了，但在具身智能圈子里，这套范式还处于极其早期的阶段。
+
+一旦我们能通过仿真环境，把大模型离线生成和评判数据的能力真正接进来，具身智能的数据瓶颈才算被打破。
 
 </div>
