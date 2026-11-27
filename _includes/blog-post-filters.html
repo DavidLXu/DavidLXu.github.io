@@ -15,7 +15,14 @@
     <button type="button" class="blog-filter-archive__filter" data-blog-filter="book-notes" aria-pressed="false">
       <span data-i18n-en="Book Notes" data-i18n-zh="读书笔记">Book Notes</span>
     </button>
+    <button type="button" class="blog-filter-archive__filter" data-blog-filter="video-notes" aria-pressed="false">
+      <span data-i18n-en="Video Notes" data-i18n-zh="视频笔记">Video Notes</span>
+    </button>
   </div>
+
+  <p data-blog-empty hidden>
+    <span data-i18n-en="No posts here yet." data-i18n-zh="这个板块还没有文章。">No posts here yet.</span>
+  </p>
 
   {% for year_group in posts_by_year %}
     <section class="blog-filter-archive__year" data-blog-year>
@@ -23,7 +30,9 @@
       {% for post in year_group.items %}
         {% assign post_title_downcase = post.title | downcase %}
         {% assign blog_category = "other" %}
-        {% if post_title_downcase contains "paper notes" %}
+        {% if post.tags contains "Video Notes" or post_title_downcase contains "[video notes]" %}
+          {% assign blog_category = "video-notes" %}
+        {% elsif post_title_downcase contains "paper notes" %}
           {% assign blog_category = "paper-notes" %}
         {% elsif post.tags contains "Book Notes" or post_title_downcase contains "[book notes]" %}
           {% assign blog_category = "book-notes" %}
@@ -49,7 +58,7 @@
       var buttons = archive.querySelectorAll("[data-blog-filter]");
       var items = archive.querySelectorAll("[data-blog-category]");
       var years = archive.querySelectorAll("[data-blog-year]");
-      if (!buttons.length || !items.length) return;
+      var emptyMessage = archive.querySelector("[data-blog-empty]");
 
       function applyFilter(filter) {
         items.forEach(function (item) {
@@ -61,6 +70,7 @@
           var visibleItems = yearSection.querySelectorAll("[data-blog-category]:not([hidden])");
           yearSection.hidden = visibleItems.length === 0;
         });
+        emptyMessage.hidden = !!archive.querySelector("[data-blog-category]:not([hidden])");
       }
 
       buttons.forEach(function (button) {
