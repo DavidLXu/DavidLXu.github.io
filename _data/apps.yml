@@ -1,3 +1,15 @@
+- id: dexformer2
+  group: research-tools
+  title: DexFormer 2.0
+  zh_title: DexFormer 2.0
+  category: Cross-embodiment grasping showcase
+  zh_category: 跨本体灵巧抓取展示
+  description: Explore a single foundation policy controlling 24 arm–hand combinations across 4 arms and 6 dexterous hands, with Space × Time attention, zero-shot transfer, and sim-to-real rollouts.
+  zh_description: 探索用同一套策略控制 4 种机械臂与 6 种灵巧手组成的 24 种本体组合，交互查看 Space × Time 架构、零样本跨本体泛化与真机部署。
+  detail: 24 embodiments · Space × Time · EN
+  zh_detail: 24 种本体 · Space × Time · 英文
+  url: https://davidlxu.github.io/dexformer2-web/
+
 - id: agentic-dexterity
   group: research-tools
   title: Agentic Dexterity
