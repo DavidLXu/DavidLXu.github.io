@@ -1,5 +1,6 @@
 ---
 title: "Updating website"
+title_zh: "网站更新记录"
 date: 2026-02-21
 permalink: /posts/2026/02/updating-website/
 excerpt: "A major site update done mostly by Codex — page refactoring, content restructuring, and bilingual support."

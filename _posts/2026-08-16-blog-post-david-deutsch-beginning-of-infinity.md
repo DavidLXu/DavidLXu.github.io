@@ -1,5 +1,6 @@
 ---
 title: "[Book Notes] David Deutsch: Good Explanations and the Beginning of Infinite Progress"
+title_zh: "[读书笔记] 戴维·多伊奇：好解释与《无穷的开始》"
 date: 2026-08-16
 permalink: /posts/2026/08/david-deutsch-beginning-of-infinity/
 excerpt: "David Deutsch's philosophy of good explanations connects knowledge, fallibility, universal computation, open institutions, and the possibility of unbounded progress."

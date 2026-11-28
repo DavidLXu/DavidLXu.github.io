@@ -1,5 +1,6 @@
 ---
 title: "Force Control and the Missing Layer in Embodied Intelligence"
+title_zh: "力控与具身智能中被忽略的底层"
 date: 2026-04-17
 permalink: /posts/2026/04/force-control-and-embodied-intelligence/
 excerpt: "A late-night conversation over grilled skewers revealed a gap: most embodied AI researchers don't think about what the robot arm is actually doing at the control level — and closing that gap might reshape how we think about action spaces."

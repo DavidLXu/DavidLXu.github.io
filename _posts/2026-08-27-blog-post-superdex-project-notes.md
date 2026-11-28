@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] Project SuperDex: Contact-First Simulation for Dexterous Manipulation"
+title_zh: "[项目笔记] Project SuperDex：接触优先的灵巧操作物理仿真栈"
 date: 2026-08-27
 permalink: /posts/2026/08/superdex-project-notes/
 tags:

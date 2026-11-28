@@ -1,5 +1,6 @@
 ---
 title: "Why On-Policy Data Matters in Post-Training"
+title_zh: "为什么 On-Policy 数据在后训练中如此关键"
 date: 2026-06-19
 permalink: /posts/2026/06/on-policy-data-post-training/
 tags:

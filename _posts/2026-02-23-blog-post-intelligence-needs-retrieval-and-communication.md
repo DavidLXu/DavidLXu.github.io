@@ -1,5 +1,6 @@
 ---
 title: "Intelligence Is Not Only Reasoning"
+title_zh: "智能不只是推理：信息检索与不完备信息下的交流"
 date: 2026-02-23
 permalink: /posts/2026/02/intelligence-needs-retrieval-and-communication/
 excerpt: "Intelligence depends on retrieval and communication as much as reasoning — a powerful model limited by information gaps is still limited."

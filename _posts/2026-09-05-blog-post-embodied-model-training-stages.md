@@ -1,5 +1,6 @@
 ---
 title: "Four Stages of Embodied Model Training: From Semantic Priors to Robot Deployment"
+title_zh: "具身模型训练的四个阶段：从语义先验到机器人部署"
 date: 2026-09-05
 permalink: /posts/2026/09/embodied-model-training-stages/
 excerpt: "A bilingual framework for comparing VLA, world-action, and native sensorimotor models—with an interactive map of training stages and the human-to-robot data continuum."

@@ -1,5 +1,6 @@
 ---
 title: "Simulation May Be the Missing Piece Connecting General-Purpose Models and Embodied AI"
+title_zh: "打通通用大模型与具身智能，关键拼图或许就在“仿真”"
 date: 2026-11-27
 permalink: /posts/2026/11/simulation-as-a-bridge-to-embodied-ai/
 excerpt: "I think simulation could break the data bottleneck in embodied AI by giving general-purpose models a place to generate and evaluate training data offline."
@@ -54,8 +55,6 @@ I think we’ll finally break the data bottleneck in embodied AI when simulation
 <div data-lang="zh" markdown="1" style="display: none;">
 
 本文支持通过网站顶部语言切换按钮在 **English / 中文** 间切换。
-
-**打通通用大模型与具身智能，关键拼图或许就在“仿真”**
 
 最近一直在思考一个问题：通用大模型和具身智能（Embodied AI）之间的数据，为什么至今没有真正有效地打通？
 

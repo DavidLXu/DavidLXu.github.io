@@ -1,5 +1,6 @@
 ---
 title: "How RGB Tactile Sensors Turn Color Into Depth"
+title_zh: "RGB 视触觉传感器如何把颜色还原成深度"
 date: 2026-06-25
 permalink: /posts/2026/06/rgb-tactile-depth/
 tags:

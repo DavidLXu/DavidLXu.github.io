@@ -1,5 +1,6 @@
 ---
 title: "Before the Robot GPT-3.5 Moment: Latent Actions, World Models, and Embodied Memory"
+title_zh: "在机器人的 GPT-3.5 时刻到来之前：潜动作、世界模型与具身记忆"
 date: 2026-05-13
 permalink: /posts/2026/05/robot-gpt35-moment-embodied-memory/
 excerpt: "A reflective essay on latent actions, world models, KV-cache memory, and why robotics may still be before its GPT-3.5 moment."

@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] PAL Robotics in mjlab"
+title_zh: "[项目笔记] mjlab 中的 PAL Robotics 机器人集成"
 date: 2026-03-24
 permalink: /posts/2026/03/pal-mjlab-project-notes/
 tags:

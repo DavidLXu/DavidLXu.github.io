@@ -1,5 +1,6 @@
 ---
 title: "[Book Notes] Kevin Kelly: Out of Control, Innovation at the Fringes, and the Logic of Living Systems"
+title_zh: "[读书笔记] 凯文·凯利：《失控》、边缘创新与活系统的底层逻辑"
 date: 2026-11-28
 permalink: /posts/2026/11/kevin-kelly-out-of-control/
 excerpt: "Reading notes on Kevin Kelly's Out of Control (1994): why complex systems trade central command for bottom-up bio-logic, why innovation emerges from the fringes, why Zhang Xiaolong prized the book, and what it implies for AI and robotics."

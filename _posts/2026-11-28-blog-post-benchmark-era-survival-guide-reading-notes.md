@@ -1,5 +1,6 @@
 ---
 title: "[Reading Notes] Survival Guide to the Era of Benchmarks: Turning Agent Trajectories into Terminal-Bench-Grade Tasks"
+title_zh: "[阅读笔记] 大 Bench 时代生存指南：把 Agent 轨迹做成 Terminal-Bench 级别题目"
 date: 2026-11-28
 permalink: /posts/2026/11/benchmark-era-survival-guide-reading-notes/
 excerpt: "Notes on James Zhu's benchmark guide: a five-step workflow (Find, Slice, Containerize, Run, Verify & Audit) for turning real Claude Code / Codex failure logs into Terminal-Bench-grade tasks, plus why frontier internal evals need OOD scenarios and human judgment."

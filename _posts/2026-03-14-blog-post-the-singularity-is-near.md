@@ -1,5 +1,6 @@
 ---
 title: "The Singularity is Near"
+title_zh: "奇点临近：以工程化方式悄然发生的 Agent 时代"
 date: 2026-03-14
 permalink: /posts/2026/03/the-singularity-is-near/
 excerpt: "Autonomous agents are now cheap and networked enough to spread faster than any institution can contain — the question is what order emerges after control becomes partial."

@@ -1,5 +1,6 @@
 ---
 title: "[Book Notes] Hans Moravec: Embodied Intelligence, Mind Children, and Life Beyond Biology"
+title_zh: "[读书笔记] 汉斯·莫拉维克：具身智能、《心智之子》与超越生物的生命"
 date: 2026-10-28
 permalink: /posts/2026/10/hans-moravec-mind-children/
 excerpt: "An introduction to Hans Moravec's ideas: why perception and movement are hard for machines, how minds might outlive biological bodies, and why he imagined robots as humanity's descendants."

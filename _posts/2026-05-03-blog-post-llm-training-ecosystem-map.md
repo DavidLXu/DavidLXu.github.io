@@ -1,5 +1,6 @@
 ---
 title: "A Practical Map of LLM Training Ecosystems"
+title_zh: "大模型训练生态实用地图"
 date: 2026-05-03
 permalink: /posts/2026/05/llm-training-ecosystem-map/
 excerpt: "A compact field note on how Megatron, Hugging Face, PyTorch, vLLM, SGLang, and verl fit together in a practical LLM training pipeline."

@@ -1,5 +1,6 @@
 ---
 title: "[Book Notes] Michael Polanyi: Tacit Knowledge, Personal Knowing, and What AI Still Cannot Tell"
+title_zh: "[读书笔记] 迈克尔·波兰尼：隐性知识、个人求知与 AI 仍无法言说之物"
 date: 2026-04-05
 permalink: /posts/2026/04/michael-polanyi-tacit-knowledge-ai/
 excerpt: "Polanyi's framework of tacit knowledge and personal knowing offers a lens for understanding what AI still cannot do — and why embodied, context-dependent skill remains hard to formalize."

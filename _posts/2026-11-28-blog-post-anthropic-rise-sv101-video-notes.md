@@ -1,5 +1,6 @@
 ---
 title: "[Video Notes] The Rise of Anthropic: Scaling Laws, Governance, Commercial Flywheels, and the Safety Paradox (Silicon Valley 101)"
+title_zh: "[视频笔记] Anthropic 崛起史：Scaling Law、治理架构、商业飞轮与安全悖论（硅谷101）"
 date: 2026-11-28
 permalink: /posts/2026/11/anthropic-rise-sv101-video-notes/
 excerpt: "Viewing notes on Silicon Valley 101's 99-minute documentary tracing Anthropic's five-year sprint toward a $1.4T IPO valuation, its five-class governance design, commercial flywheels, compute risks, and safety controversies."

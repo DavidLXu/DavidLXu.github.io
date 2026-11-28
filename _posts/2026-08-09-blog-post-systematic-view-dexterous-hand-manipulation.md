@@ -1,5 +1,6 @@
 ---
 title: "A Systematic View of Dexterous Hand Manipulation"
+title_zh: "灵巧手操作的系统化工程图景"
 date: 2026-08-09
 permalink: /posts/2026/08/systematic-view-dexterous-hand-manipulation/
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "A Map of Tactile Simulation for Vision-Based Tactile Robotics"
+title_zh: "视触觉机器人仿真技术地图"
 date: 2026-05-14
 permalink: /posts/2026/05/tactile-simulation-map/
 tags:

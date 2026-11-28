@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] Push Any Letter: 52 Shapes, Planner Demonstrations, and Eight Imitation Policies"
+title_zh: "[项目笔记] Push Any Letter：52 种字母、规划器示范与八种模仿学习策略"
 date: 2026-10-26
 permalink: /posts/2026/10/push-any-letter-imitation-learning/
 excerpt: "A reproducible V1 report on 6,240 replay-verified demonstrations: state ACT reaches 61.35%, while image ACT and Flow finish one success apart on 520 unseen-angle tasks."

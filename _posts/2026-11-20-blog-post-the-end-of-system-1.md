@@ -1,5 +1,6 @@
 ---
 title: "The Death of System 1: Why VLA and WAM Imitation Learning Is Fading"
+title_zh: "System 1 之死：为什么 VLA 与 WAM 模仿学习正在消亡"
 date: 2026-11-20
 permalink: /posts/2026/11/the-end-of-system-1/
 excerpt: "The robot stack is splitting into two RL problems: a foundation-model brain trained like an LLM, and a dexterous body trained like a controller. The imitation-learned middle is getting squeezed out."

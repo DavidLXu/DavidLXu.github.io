@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] InSpatio-World and InSpatio-WorldFM"
+title_zh: "[项目笔记] InSpatio-World 与 InSpatio-WorldFM：面向空间智能的实时帧模型"
 date: 2026-03-24
 permalink: /posts/2026/03/inspatio-worldfm-project-notes/
 tags:

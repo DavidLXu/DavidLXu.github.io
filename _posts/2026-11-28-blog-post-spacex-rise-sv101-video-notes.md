@@ -1,5 +1,6 @@
 ---
 title: "[Video Notes] The Rise of SpaceX: Everything for Mars — Visiting Starbase and Hawthorne HQ (Silicon Valley 101)"
+title_zh: "[视频笔记] SpaceX 崛起史：一切，为了去火星——实地探访星舰基地与霍桑总部（硅谷101）"
 date: 2026-11-28
 permalink: /posts/2026/11/spacex-rise-sv101-video-notes/
 excerpt: "Viewing notes on Silicon Valley 101's documentary with former SpaceX executive and Falcon 9 chief engineer Lewis Hong, tracing SpaceX from a small LA warehouse and Falcon 1 failures to rocket reuse, Starlink, Starshield, and Starbase."

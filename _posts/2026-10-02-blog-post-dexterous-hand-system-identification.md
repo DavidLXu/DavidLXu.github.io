@@ -1,5 +1,6 @@
 ---
 title: "SysID: Solving the Hidden Dynamics Between a Policy and a Dexterous Hand"
+title_zh: "SysID：解开策略与灵巧手之间的隐蔽动力学"
 date: 2026-10-02
 permalink: /posts/2026/10/dexterous-hand-system-identification/
 excerpt: "A policy command is only a request; system identification is what lets simulation learn how a dexterous hand actually responds."

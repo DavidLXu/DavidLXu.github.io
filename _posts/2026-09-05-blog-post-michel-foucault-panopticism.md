@@ -1,5 +1,6 @@
 ---
 title: "[Book Notes] Michel Foucault: The Panopticon and the Habits of Discipline"
+title_zh: "[读书笔记] 米歇尔·福柯：全景敞视监狱与规训的习惯"
 date: 2026-09-05
 permalink: /posts/2026/09/michel-foucault-panopticism/
 excerpt: "Reading Foucault's Discipline and Punish through Bentham's Panopticon: uncertain observation, self-discipline, normalization, and the limits of applying this model to workplaces, schools, and AI monitoring."

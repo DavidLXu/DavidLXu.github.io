@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] RL in a World Model, in Rust: What Our Pushing Experiments Taught Us"
+title_zh: "[项目笔记] 用 Rust 在世界模型里做强化学习：推方块实验的教训"
 date: 2026-09-10
 permalink: /posts/2026/09/rl-in-wm-in-rust/
 excerpt: "A small Rust pushing task exposed a large gap: 82% success inside a learned model, 0% in the simulator. Notes on rollout error, cold-start RL, and a strong imitation baseline."

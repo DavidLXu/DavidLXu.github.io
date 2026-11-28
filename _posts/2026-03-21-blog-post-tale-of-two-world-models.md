@@ -1,5 +1,6 @@
 ---
 title: "A Tale of Two World Models: WAMs vs. Action-Conditioned World Models"
+title_zh: "双城记：世界动作模型（WAM）与动作条件世界模型"
 date: 2026-03-21
 permalink: /posts/2026/03/tale-of-two-world-models/
 tags:

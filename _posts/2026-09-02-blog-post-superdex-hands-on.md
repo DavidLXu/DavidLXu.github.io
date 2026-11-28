@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] Project SuperDex Hands-On: Dexterous Hands, Soft Bodies, and RL on Apple Silicon"
+title_zh: "[项目笔记] Project SuperDex 实测：Apple Silicon 上的灵巧手、柔体与强化学习"
 date: 2026-09-02
 permalink: /posts/2026/09/superdex-hands-on/
 tags:

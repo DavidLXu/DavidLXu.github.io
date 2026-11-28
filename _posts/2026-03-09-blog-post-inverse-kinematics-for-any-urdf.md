@@ -1,5 +1,6 @@
 ---
 title: "Inverse Kinematics for Any URDF: Tasks, Weights, and Solver Design"
+title_zh: "面向任意 URDF 的逆运动学：任务定义、权重分配与求解器设计"
 date: 2026-03-09
 permalink: /posts/2026/03/inverse-kinematics-for-any-urdf/
 excerpt: "A practical guide to formulating IK as weighted nonlinear least-squares, with task definition, damping, and solver design that works for any URDF."

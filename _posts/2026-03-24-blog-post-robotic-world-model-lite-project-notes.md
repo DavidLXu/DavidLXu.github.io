@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] Robotic World Model Lite"
+title_zh: "[项目笔记] Robotic World Model Lite：轻量级足式机器人世界模型"
 date: 2026-03-24
 permalink: /posts/2026/03/robotic-world-model-lite-project-notes/
 tags:

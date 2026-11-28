@@ -1,5 +1,6 @@
 ---
 title: "[Book Notes] Douglas Hofstadter: Strange Loops, Meaning, and the Emergence of Mind"
+title_zh: "[读书笔记] 道格拉斯·霍夫施塔特：怪圈、意义与心智的涌现（GEB）"
 date: 2026-08-16
 permalink: /posts/2026/08/douglas-hofstadter-geb/
 excerpt: "Gödel, Escher, Bach explores how meaning, intelligence, and the self can emerge from formal rules through recursion, layered description, and strange loops."

@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] Auto-claude-code-research-in-sleep (ARIS)"
+title_zh: "[项目笔记] Auto-claude-code-research-in-sleep (ARIS)"
 date: 2026-03-14
 permalink: /posts/2026/03/aris-project-notes/
 tags:

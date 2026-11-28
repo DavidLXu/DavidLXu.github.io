@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] TwinDEX: Scaling Dexterous Manipulation with Twinned Hardware"
+title_zh: "[项目笔记] TwinDEX：用配对式无机器人外骨骼规模化灵巧操作"
 date: 2026-09-02
 permalink: /posts/2026/09/twindex-robot-free-dexterous-manipulation/
 excerpt: "TwinDEX co-designs a wearable exoskeleton and a matching robotic hand so that robot-free demonstrations preserve kinematics, contact, appearance, sensing, and timing at deployment."

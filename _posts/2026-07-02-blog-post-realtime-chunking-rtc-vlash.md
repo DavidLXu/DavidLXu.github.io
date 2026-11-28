@@ -1,5 +1,6 @@
 ---
 title: "Real-Time Chunking for VLAs: RTC, Training-Time RTC, and VLASH"
+title_zh: "VLA 的实时动作分块：RTC、训练期 RTC 与 VLASH"
 date: 2026-07-02
 permalink: /posts/2026/07/realtime-chunking-rtc-vlash/
 tags:

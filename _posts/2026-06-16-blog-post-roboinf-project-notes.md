@@ -1,5 +1,6 @@
 ---
 title: "[Project Notes] RoboInF: Scaling Robot Manipulation Data in Simulation for General Instruction Following"
+title_zh: "[项目笔记] RoboInF：面向通用指令遵循的仿真操作数据规模化引擎"
 date: 2026-06-16
 permalink: /posts/2026/06/roboinf-project-notes/
 tags:

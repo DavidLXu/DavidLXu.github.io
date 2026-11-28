@@ -1,5 +1,6 @@
 ---
 title: "[Book Notes] Jeff Hawkins: A Thousand Brains and Intelligence as Many Models in Motion"
+title_zh: "[读书笔记] 杰夫·霍金斯：《千脑智能》与运动中的多重世界模型"
 date: 2026-09-01
 permalink: /posts/2026/09/jeff-hawkins-thousand-brains/
 excerpt: "A Thousand Brains reframes intelligence as sensorimotor world-modeling carried out by many cortical modules, with consequences for neuroscience, robotics, AI, and the risks created by human belief."

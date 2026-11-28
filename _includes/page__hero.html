@@ -33,7 +33,7 @@
         {% if paginator %}
           {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}
         {% else %}
-          {{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}
+          {% if page.title_zh %}<span data-lang="en">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</span><span data-lang="zh" style="display: none;">{{ page.title_zh | markdownify | remove: "<p>" | remove: "</p>" }}</span>{% else %}{{ page.title | default: site.title | markdownify | remove: "<p>" | remove: "</p>" }}{% endif %}
         {% endif %}
       </h1>
       {% if page.excerpt %}

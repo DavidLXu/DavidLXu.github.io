@@ -1,5 +1,6 @@
 ---
 title: "From Byte-Level LLM Smoke Tests to Tokenized FSDP Pretraining"
+title_zh: "从字节级冒烟测试到分词化 FSDP 预训练：LLM 预训练实践笔记"
 date: 2026-04-29
 permalink: /posts/2026/04/llm-pretraining-from-byte-level-to-fsdp-knowhow/
 tags:

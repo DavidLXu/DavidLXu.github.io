@@ -1,5 +1,6 @@
 ---
 title: "Distilling Persons into Agents: A Survey of Recent 'Person-as-Skill' Projects"
+title_zh: "把人蒸馏成 Agent：近期“Person-as-Skill”项目观察"
 date: 2026-04-05
 permalink: /posts/2026/04/distilling-persons-into-agents/
 excerpt: "A survey of projects that compress human personas into AI agent skills — from departed colleagues to public figures — and what this trend reveals about AI, memory, and identity."
