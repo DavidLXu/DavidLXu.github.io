@@ -12,8 +12,8 @@
     <button type="button" class="blog-filter-archive__filter" data-blog-filter="paper-notes" aria-pressed="false">
       <span data-i18n-en="Paper Notes" data-i18n-zh="论文笔记">Paper Notes</span>
     </button>
-    <button type="button" class="blog-filter-archive__filter" data-blog-filter="book-notes" aria-pressed="false">
-      <span data-i18n-en="Book Notes" data-i18n-zh="读书笔记">Book Notes</span>
+    <button type="button" class="blog-filter-archive__filter" data-blog-filter="reading-notes" aria-pressed="false">
+      <span data-i18n-en="Reading Notes" data-i18n-zh="阅读笔记">Reading Notes</span>
     </button>
     <button type="button" class="blog-filter-archive__filter" data-blog-filter="video-notes" aria-pressed="false">
       <span data-i18n-en="Video Notes" data-i18n-zh="视频笔记">Video Notes</span>
@@ -34,8 +34,8 @@
           {% assign blog_category = "video-notes" %}
         {% elsif post_title_downcase contains "paper notes" %}
           {% assign blog_category = "paper-notes" %}
-        {% elsif post.tags contains "Book Notes" or post_title_downcase contains "[book notes]" %}
-          {% assign blog_category = "book-notes" %}
+        {% elsif post.tags contains "Reading Notes" or post_title_downcase contains "[reading notes]" or post.tags contains "Book Notes" or post_title_downcase contains "[book notes]" %}
+          {% assign blog_category = "reading-notes" %}
         {% elsif post.title contains "[" or post.title contains "]" %}
           {% assign blog_category = "other" %}
         {% else %}

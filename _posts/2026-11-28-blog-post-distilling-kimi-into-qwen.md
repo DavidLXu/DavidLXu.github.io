@@ -1,10 +1,10 @@
 ---
-title: "[Book Notes] Distilling Kimi-K3.1-Pro into Qwen3.8-27B: Jagged Intelligence, Off-Policy Distillation, and Protecting Adjacent Skills"
+title: "[Reading Notes] Distilling Kimi-K3.1-Pro into Qwen3.8-27B: Jagged Intelligence, Off-Policy Distillation, and Protecting Adjacent Skills"
 date: 2026-11-28
 permalink: /posts/2026/11/distilling-kimi-into-qwen/
 excerpt: "Notes on Together AI's distillation study: how off-policy SFT with 3,834 teacher translations taught Qwen3.8-27B Lao at 93% of Kimi-K3.1-Pro's score while preventing catastrophic forgetting in Thai."
 tags:
-  - Book Notes
+  - Reading Notes
   - AI
   - Post-Training
   - Knowledge Distillation
