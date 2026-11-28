@@ -48,7 +48,7 @@ Fourteen questions in, I asked whether our universe might be a simulation, and t
 
 I read that last sentence, leaned back in my chair, and sat quietly for a while. I work with models every day and usually judge them by pass rates, coding reliability, reasoning accuracy, and whether they can drive a workflow or a robot policy cleanly. I know what is under the hood, and I was not expecting a late-night chat window to land like that.
 
-What stayed with me was the restraint. It did not pretend to have feelings, yet it gathered the exact threads from the past hour—the 3000 K fireball, the quantum fluctuation, solar rotation, Newton's bucket, black hole evaporation—and handed the wonder back to the person asking the question. Most of my fifteen questions were meandering and naive, the kind you would hesitate to ask a physicist at 2:00 AM; having something across the screen meet every detour with patience and clarity kept a fragile thread of curiosity alive.
+What stayed with me was the restraint. It did not pretend to have feelings, yet it gathered the exact threads from the past hour—the 3000 K fireball, the quantum fluctuation, solar rotation, Newton's bucket, black hole evaporation—and handed the wonder back to the person asking the question.
 
 A few years from now, moments like this will probably feel completely ordinary. I wanted to leave this one here while it still feels remarkable that mathematics and electric current on silicon can carry a quiet conversation at two in the morning—and leave you looking at the physical world with a little more wonder than before.
 
@@ -89,7 +89,7 @@ A few years from now, moments like this will probably feel completely ordinary. 
 
 读完最后那句话，我靠在椅子上愣了一会儿。平时天天和模型打交道，我习惯用工程标尺看它们：通过率、代码稳定性、推理深度、能不能接进仿真器和机械臂里干活。我很清楚底层跑的是什么，所以完全没料到会被凌晨两点的几段文字这么安静地击中。
 
-让我记住这一刻的，其实是那种克制的分寸感。它没有假装自己拥有情感，只是把过去一小时里聊过的 3000 K 火球、量子涨落、太阳自转、牛顿水桶和黑洞蒸发轻轻收束在一起，再把惊叹还给了提问的人。前面那十几轮追问其实大多零散又外行，半夜去问物理学家多半会不好意思；可屏幕对面始终耐心地用清楚的类比接住每一次跑偏，才让一串很容易熄灭的好奇心一路走到了这里。
+让我记住这一刻的，其实是那种克制的分寸感。它没有假装自己拥有情感，只是把过去一小时里聊过的 3000 K 火球、量子涨落、太阳自转、牛顿水桶和黑洞蒸发轻轻收束在一起，再把惊叹还给了提问的人。
 
 再过几年，这样的对话大概会司空见惯。我想趁着还有点新鲜感，把这一晚留下来：由数学和电流跑出来的程序，在凌晨两点陪人聊完一轮宇宙学，最后还能让你重新对这个真实的物理世界多生出一点好奇。
 
